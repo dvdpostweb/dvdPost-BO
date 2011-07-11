@@ -1,0 +1,546 @@
+/// <XRTypeInfo>
+///   <AssemblyFullName>DevExpress.XtraReports.v6.1, Version=6.1.2.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4</AssemblyFullName>
+///   <AssemblyLocation>c:\windows\assembly\gac\devexpress.xtrareports.v6.1\6.1.2.0__79868b8147b5eae4\devexpress.xtrareports.v6.1.dll</AssemblyLocation>
+///   <TypeName>DevExpress.XtraReports.UI.XtraReport</TypeName>
+///   <Localization>en-US</Localization>
+///   <References>
+///     <Reference Path="c:\windows\assembly\gac\devexpress.xtrareports.v6.1\6.1.2.0__79868b8147b5eae4\devexpress.xtrareports.v6.1.dll" />
+///     <Reference Path="c:\windows\assembly\gac\devexpress.data.v6.1\6.1.2.0__79868b8147b5eae4\devexpress.data.v6.1.dll" />
+///     <Reference Path="c:\windows\microsoft.net\framework\v1.1.4322\mscorlib.dll" />
+///     <Reference Path="c:\windows\assembly\gac\system.windows.forms\1.0.5000.0__b77a5c561934e089\system.windows.forms.dll" />
+///     <Reference Path="c:\windows\assembly\gac\system\1.0.5000.0__b77a5c561934e089\system.dll" />
+///     <Reference Path="c:\windows\assembly\gac\system.xml\1.0.5000.0__b77a5c561934e089\system.xml.dll" />
+///     <Reference Path="c:\windows\assembly\gac\accessibility\1.0.5000.0__b03f5f7f11d50a3a\accessibility.dll" />
+///     <Reference Path="c:\windows\assembly\gac\system.drawing\1.0.5000.0__b03f5f7f11d50a3a\system.drawing.dll" />
+///     <Reference Path="c:\windows\assembly\gac\system.runtime.serialization.formatters.soap\1.0.5000.0__b03f5f7f11d50a3a\system.runtime.serialization.formatters.soap.dll" />
+///     <Reference Path="c:\windows\assembly\gac\system.data\1.0.5000.0__b77a5c561934e089\system.data.dll" />
+///     <Reference Path="c:\windows\assembly\gac\system.enterpriseservices\1.0.5000.0__b03f5f7f11d50a3a\system.enterpriseservices.dll" />
+///     <Reference Path="c:\windows\assembly\gac\microsoft.visualc\7.0.5000.0__b03f5f7f11d50a3a\microsoft.visualc.dll" />
+///     <Reference Path="c:\windows\assembly\gac\system.directoryservices\1.0.5000.0__b03f5f7f11d50a3a\system.directoryservices.dll" />
+///     <Reference Path="c:\windows\assembly\gac\system.runtime.remoting\1.0.5000.0__b77a5c561934e089\system.runtime.remoting.dll" />
+///     <Reference Path="c:\windows\assembly\gac\system.web\1.0.5000.0__b03f5f7f11d50a3a\system.web.dll" />
+///     <Reference Path="c:\windows\assembly\gac\system.web.regularexpressions\1.0.5000.0__b03f5f7f11d50a3a\system.web.regularexpressions.dll" />
+///     <Reference Path="c:\windows\assembly\gac\cscompmgd\7.0.5000.0__b03f5f7f11d50a3a\cscompmgd.dll" />
+///     <Reference Path="c:\windows\assembly\gac\devexpress.utils.v6.1\6.1.2.0__79868b8147b5eae4\devexpress.utils.v6.1.dll" />
+///     <Reference Path="c:\windows\assembly\gac\system.design\1.0.5000.0__b03f5f7f11d50a3a\system.design.dll" />
+///     <Reference Path="c:\windows\assembly\gac\devexpress.xtrabars.v6.1\6.1.2.0__79868b8147b5eae4\devexpress.xtrabars.v6.1.dll" />
+///     <Reference Path="c:\windows\assembly\gac\devexpress.xtraeditors.v6.1\6.1.2.0__79868b8147b5eae4\devexpress.xtraeditors.v6.1.dll" />
+///     <Reference Path="c:\windows\assembly\gac\devexpress.xtraprinting.v6.1\6.1.2.0__79868b8147b5eae4\devexpress.xtraprinting.v6.1.dll" />
+///     <Reference Path="c:\windows\assembly\gac\devexpress.xtranavbar.v6.1\6.1.2.0__79868b8147b5eae4\devexpress.xtranavbar.v6.1.dll" />
+///     <Reference Path="c:\windows\assembly\gac\devexpress.xtracharts.v6.1\6.1.2.0__79868b8147b5eae4\devexpress.xtracharts.v6.1.dll" />
+///   </References>
+/// </XRTypeInfo>
+namespace XtraReportSerialization {
+    
+    public class xtraReport1 : DevExpress.XtraReports.UI.XtraReport {
+        private DevExpress.XtraReports.UI.PageHeaderBand PageHeader;
+        private DevExpress.XtraReports.UI.DetailBand Detail;
+        private DevExpress.XtraReports.UI.ReportFooterBand ReportFooter;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel9;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel8;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel7;
+        private DevExpress.XtraReports.UI.XRLabel Compte;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel2;
+        private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo2;
+        private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo1;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel1;
+        private DevExpress.XtraReports.UI.XRPictureBox xrPictureBox1;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel6;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel5;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel4;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel3;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel12;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel11;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel10;
+        private DevExpress.XtraReports.UI.XRPanel xrPanel1;
+        private System.Resources.ResourceManager _resources;
+        public xtraReport1() {
+            this.InitializeComponent();
+        }
+        private System.Resources.ResourceManager resources {
+            get {
+                if (_resources == null) {
+                    string resourceString = "zsrvvgEAAACeAAAAKVN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGlic1N5c3Rlb" +
+"S5SZXNvdXJjZXMuUnVudGltZVJlc291cmNlU2V0LCBtc2NvcmxpYiwgVmVyc2lvbj0xLjAuNTAwMC4wL" +
+"CBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkBAAAAHgAAAAUAA" +
+"ABdU3lzdGVtLlN0cmluZywgbXNjb3JsaWIsIFZlcnNpb249MS4wLjUwMDAuMCwgQ3VsdHVyZT1uZXV0c" +
+"mFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XlN5c3RlbS5Cb29sZWFuLCBtc2NvcmxpY" +
+"iwgVmVyc2lvbj0xLjAuNTAwMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1Y" +
+"zU2MTkzNGUwODlpU3lzdGVtLkRyYXdpbmcuU2l6ZSwgU3lzdGVtLkRyYXdpbmcsIFZlcnNpb249MS4wL" +
+"jUwMDAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iMDNmNWY3ZjExZDUwYTNhXFN5c" +
+"3RlbS5JbnQzMiwgbXNjb3JsaWIsIFZlcnNpb249MS4wLjUwMDAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQd" +
+"WJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5a1N5c3RlbS5EcmF3aW5nLkJpdG1hcCwgU3lzdGVtL" +
+"kRyYXdpbmcsIFZlcnNpb249MS4wLjUwMDAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlb" +
+"j1iMDNmNWY3ZjExZDUwYTNhUEEGzImHd0I+ojMtbaLq6EOlUSs6uAzKNrsdQBG8OmflxyF9Cs6IufTWX" +
+"VBL59B4hvD+dgX6b3+O/6QkfRKYOIYTlB2aF04GIBp4Dzsb625MGzXjWx41tXcgeaedKJnKri2tJhU4z" +
+"iKfPYAgLFFKEl1ZR7+pYgCDo3XRAAAAFQYAAC0FAABzAAAAMQAAAAYEAAAtAQAAGAMAALcEAABjAgAAo" +
+"gAAAG4FAAAgAgAAQQQAAFABAACvBQAAUgAAAOoFAACeAgAAVQMAAAAAAAD2AAAAsgEAANsCAADLAwAAf" +
+"AQAAPIEAACQAwAA8QEAAIcBAAD2CQAALCQAdABoAGkAcwAuAEQAYQB0AGEAUwBvAHUAcgBjAGUAUwBjA" +
+"GgAZQBtAGEAAAAAABwkAHQAaABpAHMALgBEAHIAYQB3AEcAcgBpAGQAAgAAABwkAHQAaABpAHMALgBHA" +
+"HIAaQBkAFMAaQB6AGUAOAAAACokAHQAaABpAHMALgBQAHIAZQB2AGkAZQB3AFIAbwB3AEMAbwB1AG4Ad" +
+"ADfAAAAKiQAdABoAGkAcwAuAFMAaABvAHcASAB0AG0AbABXAGEAcgBuAGkAbgBnAOQAAAAgJAB0AGgAa" +
+"QBzAC4AUwBuAGEAcABUAG8ARwByAGkAZAAaAQAAMkMAbwBtAHAAdABlAC4AVQBzAGUAcgBEAGUAcwBpA" +
+"GcAbgBlAHIATABvAGMAawBlAGQAUAEAAB5EAGUAdABhAGkAbAAuAEUAeABwAGEAbgBkAGUAZACGAQAAM" +
+"kQAZQB0AGEAaQBsAC4AVQBzAGUAcgBEAGUAcwBpAGcAbgBlAHIATABvAGMAawBlAGQAvAEAACZQAGEAZ" +
+"wBlAEgAZQBhAGQAZQByAC4ARQB4AHAAYQBuAGQAZQBkAPIBAAA6UABhAGcAZQBIAGUAYQBkAGUAcgAuA" +
+"FUAcwBlAHIARABlAHMAaQBnAG4AZQByAEwAbwBjAGsAZQBkACgCAAAqUgBlAHAAbwByAHQARgBvAG8Ad" +
+"ABlAHIALgBFAHgAcABhAG4AZABlAGQAXgIAAD5SAGUAcABvAHIAdABGAG8AbwB0AGUAcgAuAFUAcwBlA" +
+"HIARABlAHMAaQBnAG4AZQByAEwAbwBjAGsAZQBkAJQCAAA2eAByAEwAYQBiAGUAbAAxAC4AVQBzAGUAc" +
+"gBEAGUAcwBpAGcAbgBlAHIATABvAGMAawBlAGQAygIAADh4AHIATABhAGIAZQBsADEAMAAuAFUAcwBlA" +
+"HIARABlAHMAaQBnAG4AZQByAEwAbwBjAGsAZQBkAAADAAA4eAByAEwAYQBiAGUAbAAxADEALgBVAHMAZ" +
+"QByAEQAZQBzAGkAZwBuAGUAcgBMAG8AYwBrAGUAZAA2AwAAOHgAcgBMAGEAYgBlAGwAMQAyAC4AVQBzA" +
+"GUAcgBEAGUAcwBpAGcAbgBlAHIATABvAGMAawBlAGQAbAMAADZ4AHIATABhAGIAZQBsADIALgBVAHMAZ" +
+"QByAEQAZQBzAGkAZwBuAGUAcgBMAG8AYwBrAGUAZACiAwAANngAcgBMAGEAYgBlAGwAMwAuAFUAcwBlA" +
+"HIARABlAHMAaQBnAG4AZQByAEwAbwBjAGsAZQBkANgDAAA2eAByAEwAYQBiAGUAbAA0AC4AVQBzAGUAc" +
+"gBEAGUAcwBpAGcAbgBlAHIATABvAGMAawBlAGQADgQAADZ4AHIATABhAGIAZQBsADUALgBVAHMAZQByA" +
+"EQAZQBzAGkAZwBuAGUAcgBMAG8AYwBrAGUAZABEBAAANngAcgBMAGEAYgBlAGwANgAuAFUAcwBlAHIAR" +
+"ABlAHMAaQBnAG4AZQByAEwAbwBjAGsAZQBkAHoEAAA2eAByAEwAYQBiAGUAbAA3AC4AVQBzAGUAcgBEA" +
+"GUAcwBpAGcAbgBlAHIATABvAGMAawBlAGQAsAQAADZ4AHIATABhAGIAZQBsADgALgBVAHMAZQByAEQAZ" +
+"QBzAGkAZwBuAGUAcgBMAG8AYwBrAGUAZADmBAAANngAcgBMAGEAYgBlAGwAOQAuAFUAcwBlAHIARABlA" +
+"HMAaQBnAG4AZQByAEwAbwBjAGsAZQBkABwFAAA8eAByAFAAYQBnAGUASQBuAGYAbwAxAC4AVQBzAGUAc" +
+"gBEAGUAcwBpAGcAbgBlAHIATABvAGMAawBlAGQAUgUAADx4AHIAUABhAGcAZQBJAG4AZgBvADIALgBVA" +
+"HMAZQByAEQAZQBzAGkAZwBuAGUAcgBMAG8AYwBrAGUAZACIBQAANngAcgBQAGEAbgBlAGwAMQAuAFUAc" +
+"wBlAHIARABlAHMAaQBnAG4AZQByAEwAbwBjAGsAZQBkAL4FAAAmeAByAFAAaQBjAHQAdQByAGUAQgBvA" +
+"HgAMQAuAEkAbQBhAGcAZQD0BQAAQHgAcgBQAGkAYwB0AHUAcgBlAEIAbwB4ADEALgBVAHMAZQByAEQAZ" +
+"QBzAGkAZwBuAGUAcgBMAG8AYwBrAGUAZACpKwAAAAABAAEAAAD/////AQAAAAAAAAAEAQAAAA5TeXN0Z" +
+"W0uQm9vbGVhbgEAAAAHbV92YWx1ZQABAQsCAAEAAAD/////AQAAAAAAAAAMAgAAAFRTeXN0ZW0uRHJhd" +
+"2luZywgVmVyc2lvbj0xLjAuNTAwMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWIwM" +
+"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" +
+"fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDh" +
+"IWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6" +
+"erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFB" +
+"AQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2N" +
+"zg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanq" +
+"KmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAP" +
+"wD0i4/a4+GkOoXFl/ZniV2glaMutrFtYqcZGZc4471ctv2pvh7cY2aZ4iGfW2i/+OV8GXv/ACMeo/8AX" +
+"1J/6Ea6XRui0AfcNt+0X4IuMbNP10Z9YI//AI5Wzpnxr8H3soQx6nbg/wAcsC4/8dYmvjvRu1dpo/8AD" +
+"QB9laHrmk63b+fpV9FcoOoU4Zfqp5H41o18yeDNTu9I1GG+s5CskZ6dmHcH2NfR+i38WqaXb38P3ZkBx" +
+"n7p7j8DQA3xDqlvomg3+s3Z/wBHsbaS4kx1KopYge/FfGEfxE8V+IvFTeILjVrqGYy7oI4pSqQLnhFHp" +
+"j8++a+if2r757H4F675bsj3DQQAj0aZMj8gRXyR4O+6lAH3R8N/EDeJfCFnqcuBcEeXOB03r1P48H8a6" +
+"OvKv2brgt4d1C1JOI50cD/eXH/steq0AFFFFABRRRQAUUUUAFFFFAGf4k1e00Dw7qWu3/mfZNOtZbqfy" +
+"1y2yNSzYHc4BrwW3/bB+GU/3NJ8UD62sP8A8dr1v42/8kb8af8AYBvf/RD1+Wuk9qAPv+3/AGqvh5P9z" +
+"TPEY+ttF/8AHK3PDv7QfgrXNXs9MtbHWo5budII2kgjChmIAzhycZNfCWk9q9K+FH/I+eHv+wnb/wDox" +
+"aAPtvx7410nwZb2k2qxXUgunZIxAgY/KASTkj1Fc7b/ABl8LzY2Weqj6xJ/8XXPftT/APIP0D/rtN/JK" +
+"8j0rtQB9G2/xO0CbG221AZ9Y1/+Krr9LvYdR0+G9gDCOVdyhhgj61836V2r3/wN/wAinYf9cz/6EaANq" +
+"iiigAooooAKKKKACiiigAooooAKKKKAPzq+LnwF8cfD61ufFGrfYLrTZbwq0lnKXMW9iVLgqCAeB9SBX" +
+"H6N0Wvuz9ryNX/Z98Sbhnb9mYex+0R18J6N0WgD0/wf4V8SavZi90vQtRvbbcU82C3d13DqMgYzyK6WH" +
+"TdQ0ydbfUrG5s5sZ2TxFG/I17j+yL/ySX/uITf+gpXVfGrR4NT8DXVw0YNxY4nifHIwQGH0xn8hQB4bo" +
+"/8ADXt/wgumfSrq0Y5ETh1/4EOf5V4ho/8ADXrnwgkxqVzHnhoM/kw/xoAk/ab02XVPgf4jghTfJFFHc" +
+"AegjlR2P/fKmvjzwd0Sv0Gu7eC7tJrW5iWWCZGjkRhkMpGCD7EV83Tfs863Y+KJV0i/sm0Z5d0TzOwki" +
+"Qn7rDHJHqDz7UAekfs6WjReELm7YY8+5wPcKo/qTXp1Z/hvSLXQdDtNJswfJt4woJ6se7H3Jya0KACii" +
+"igAooooAKKKKACiiigDB+Iuj3PiHwB4h0CyeJLnUtMuLSFpSQgeSNlBJAJxk1+dHxR+D3i74UzaeviQW" +
+"ksV8G8me0kLxllxlSSAQeR2/rX6a183ft/xIfhtoMxHzrrAUH2MTk/+gigD5F0ntX0N8BvhV4o1qXRfG" +
+"EAtINNivo5QZpCGkWOQbioAPoRzjkV886T2r9DP2df+SLeGv+vd/wD0a9AEPxw8G6r4vsNOGlyWymyeR" +
+"5BM5XIIGMce3fFeAaYMMB6V9EfG/wATr4d8GSwwybb3UM28IB5AI+dvwHH1Ir520vqKAO68H6Xd6xfx2" +
+"dmgaQjJJOAoHUmve/DdlLp2h2tlOUMkSkMVOR1J/rXJ/BjRDYeHjqc6YmvcFMjkRjp+Z5/Ku8oAKKKKA" +
+"CiiigAooooAKKKKAK2oahYaeiyX99bWiOdqtPKqBj6DJqW2nguYEntpo5onGVeNgysPYjrXhv7XX/Hj4" +
+"b/67z/+gpXf/Aj/AJJVov8Auy/+jXoA7eiiigDyj9rn/k3zxN9Lf/0oir4R0botfd37XP8Ayb54m+lv/" +
+"wClEVfCOjdFoA+5f2Rf+SS/9xCb/wBBSvQ/iEyr4G1osQB9ilH5qa86/ZHdF+EvzMoxqE3U/wCylafxx" +
+"8Xadb+HpNAtLuKe+vGCyJG4YxICCd2OhOAMe5oA8m0f+GvXPhBGTqVxJjhYMfmw/wAK8j0f+Gvc/hLYv" +
+"Bost64x9oYBPdVzz+ZP5UAb3iDxP4c8Pru1zXdN03IyFublI2YewJyfwrxX4j/HO01JG0fwRNNtY4m1H" +
+"aU49IweR/vHHt6187ftWu5/aX8SqXYqBaYGeB/o0VJ4O+6lAH2T8BtS1DVPCVxNqN7cXcq3RUPNIXYDa" +
+"pxk12+tX8OlaNe6pcHENnbyXEh/2UUsf0Fee/s5f8iZdf8AX4f/AEBaX9qPWzoXwK8TXKOFluLdbNOev" +
+"muEYf8AfLN+VAHz5p/7UfxDuXObHQApPGLaTp/38rqNL/aD8b3OPMtNGGfS3f8A+Lr5i0H+GvQdB6LQB" +
+"9C6Z8Y/FVzjzLfTBn0hb/4qu98A+NNV13WI7S8itVjZGOY0IOQM9ya+e9C/hr1/4P8A/Iywf9c3/wDQT" +
+"QB1vx38aXPgD4Y6n4lsYoJb2Exx2yTglC7uF5AIJwCT17V84aX+078QrrHmWWgjPpbSf/HK7P8Ab71sW" +
+"vgfw/oKuQ9/qLXBAPVYkx/OUflXy54f/hoA+mtL+PnjS5x5lro4z6QP/wDF11Ol/FzxPc48y300Z9Im/" +
+"wDiq+f9B/hrvtB/hoA+i/h54jvtfS6N6kCmIKV8tSOufUn0rx39v7/kl+h/9hpf/RMtek/Bf7mofSP/A" +
+"Nmrzb9v7/kl+h/9hpf/AETLQB8haT2r9DP2duPgt4aJ/wCfd/8A0a9fnnpPavsaDxgPCn7LegRW8u3Ud" +
+"St5La3weVBkfe/4A4z6sKAOR+MPi3/hKvHdw9vLvsLI/Z7bB4YA8v8Aicn6Yqx8NNDk8Q+I7TTlB8stv" +
+"mYfwxjlj/T6kV5zphJIJ6mvqT9n7w3/AGZ4ZOs3MeLnUOY8jlYh0/M8/TFAHpUMUcMKQxIEjRQqqOgA4" +
+"Ap9FB4GTQBxvxW+IOleANFju7xTc3tyStpaK2GlI6knsoyMn3FeY+F/jvrF1qW7VdJszZOfuW+5XQeuS" +
+"SD+n4V4j8XPGcvjf4n6lqKy77G3kNrYqDlREhIBH+8ct/wKr/hyOTyll2N5ecbscZ9M0AfWXhHxzZeI9" +
+"Xlsba0liVVZo5XYfOAfTt614ZL+2Doy6nc2aeCb5hDM0Yc3ygtgkZxsOPpmuo+DcvleK7Lnhwyn8VNfD" +
+"1/aXVn4p1GC8tpreUXUmUlQow+Y9jQB9paf+1Fpl3jHhG7TPreqf/ZK9J8RfEyz0jQNB1Y6XPMusweck" +
+"fmhTGNqnBODn7wr4a8KQzXE8UMETyyucKiDJJ9hX1F8RdPvz8PfAY+xXGbbTz5/7s/uvki+96dD19KAO" +
+"5sPita3eMaNMmfWcH+ldVqfizSNI8Gy+KtXmFlYQxeZIWOT1wFHqSeAO5IrwHw9yVArkP2vvFl4lp4T8" +
+"CxO8UC2p1G7TpvZnZIwfoFc/wDAhQA74o/FhviVe2kcGlrY6fZSO0G590r7sDLdhwBwOnqa9d+F/wARd" +
+"J0T4c6dpxgmnvbeRo3iBC/KzM28HnjnH1r5S8LA7VOOK9T8Mfw0AfYFhcpeWMF3GCEnjWRQeoBGaKyvA" +
+"cwn8H6Y4PSAJ/3z8v8ASigDg/2uf+TfPE30t/8A0oir4R0botfd37XP/Jvnib6W/wD6URV8I6N0WgDud" +
+"DllVQqyuq+gY4rstIJJBJJPvXFaN2rtNH/hoA9J8AaFe69qMdtaxt5YIMsuPljX1P8AhX0ZY20NnZw2k" +
+"C7YoUCKPYV86eAfEGoaBeLNZyny2I82En5ZB7+/vX0PpF/BqemwX1scxzLuAPUHuD7g0AfBH7VOm6g/7" +
+"SHiW6WxuTblbVhKIjtIFtHk56Y4P5VV8HfdSvuX4s/8ku8Vf9ge7/8ARLV8NeDvupQB9ffs5f8AImXX/" +
+"X4f/QFrzT/goFrgtfAfh/QFfEmoai1wQD1SFCD+sq/lXpf7OX/ImXX/AF+H/wBAWvn3/goJba6/jXw5e" +
+"SWUv9hx2LRw3I5Q3Bdi6n0O0IeevboaAPGfAGkahr2s2ekaXbm4vLqQRxRg4yT7noPftXvHif4Uah4E8" +
+"OW+p61q1k1zPKIo7WDcxJwSTuIHQD9RVj9g7wvFcXmseLbmIMbVVtLViOA7AlyPcKFH0Y1b/aF8UjXvi" +
+"I2mW8m6z0gG3XByDKeZD+eF/wCA0AYmhfw17X8FrCSbUpb/AJEdum3PqzcY/LNeK6CCSgHU19S/D/SP7" +
+"G8L2tu67Z5B5s3rubt+AwPwoA+QP29dc+2/FjSNDRw0em6YHYZ+7JK7E/8AjqpXEfCDwXrvjjWRpehW6" +
+"PIieZLJI22OJM4yx+pHAyaT9rCDWV/aF8Q3WrWM1qlw8Zsy4+WWBY1RXU9wdv55HUGvqT9jfw5DoHwiO" +
+"v3SrFNq0r3DyMMFYY8quT6cO3/AqAPL/GfgOXwFd2NhearbXl5cRGV44VIEa5wMk9cnP5Vb0H+Gsfxn4" +
+"lfxZ451HWiW8mSXbbqf4Yl4Ue3Ayfcmug8IWk19f21nAu6WaRUUe5NAHuvwesZIdInvnyFuGCoPULnJ/" +
+"M4/CvK/2/v+SX6H/wBhpf8A0TLX0LpVlFp2m29jCP3cMYQe+O/49a+ev2/v+SX6H/2Gl/8ARMtAHyFpP" +
+"avRrvX7zV7DR7CZsW2l2v2eBAeBlmZm+pLfkB6V5zpPaut0ntQB1ul9RX1z8DtW/tT4e2SO26WyJtn+i" +
+"8r/AOOkD8K+RtL6ivfP2a9V8nVL7SHb5bmISxgn+JDyB9Qf0oA91rj/AI0+IP8AhF/hV4j1pZPLlhsXS" +
+"FvSV/kQ/wDfTCuwrw39t6/Nn8EWtw2Ptup28BHqBuk/9kFAHyH4YDSOgGSzEfia++9F8DWFt8L4PCrwR" +
+"hjagyPjn7QRkvn2b9Bivh/4NWY1DxxoFkV3LNqECMMZ4LjP6V+idAHz34AElj4nsklUpJFdKjg9juwRW" +
+"B+3l4VSSw8P+MoIgJYZmsLlgvLKwLx5PsVf/vqu48SWT2XxGvEt42JknWZAoySWw3H4k12Hx78Of8JV8" +
+"IfEGlrGWnFqbmAAc+ZERIAPc7cfjQB8d/AXVF0b4jaBqEhAjS8RHJ7K3ysfyJr7W+K2prpfgLU5TjfNH" +
+"9nQHuX+U/oSfwr4D8NEpIhHBU5r6o+LHiwa34P8JQxuC93bi8uAD0YDZ/6F5n5UAWvgjpwvvEKzyLujt" +
+"IzKcjjd0X+efwr5p/av1CW//aP8QpIxKWgt7eMZzgCFCf1Yn8a+xPgNp32fwvNqDrhruXCn1ROP5lvyr" +
+"4x/aesmsv2j/FKMrKss0Myk9w8KNn8yaAO6jsLG2+B/hC8tkT7Td3941y4HzEqUVQT6BQDj3PrXSaZpc" +
+"tlp2lXrcxX8DSIcdCrshH/jufxFeV+GtXvJPD1vokj7rSG4a4iU/wALsqq35hV/Kvo2LTvtXwR8LX0UZ" +
+"eW3nlj+UZIDyP8A1UfnQB6j8KJvN8G26f8APKR0/XP9aKT4Xadf6b4dMd/AYGkl8xEb7wBAHI7dKKAOU" +
+"/a5/wCTfPE30t//AEoir4R0botfd37XP/Jvnib6W/8A6URV8I6N0WgD7D/Zm8D+FPEHw2/tHWNGhu7r7" +
+"bJH5juwO0BcDgj1NbfxU+F+j6bosmt+HLZrVrYhp4A5ZWToWGckEdfTGan/AGRf+SS/9xCb/wBBSvUPE" +
+"1ul34d1K2f7strKp/FTQB8z6P8Aw17b8Ib0vYXNgx/1bCRPoeD/ACH514npHBAr1T4TybNcK/34GH8j/" +
+"SgDrfiz/wAku8Vf9ge7/wDRLV8NeDvupX3L8Wf+SXeKv+wPd/8Aolq+GvB33UoA+vv2cv8AkTLr/r8P/" +
+"oC12njTwxo3jDw3d+H9etEurK6TawI+ZD2dT2YHkGuL/Zy/5Ey6/wCvw/8AoC16bQB5RpWj6b8B/gnqU" +
+"dvefbHt2lmjmeMIZppCFjBAJ6fID7AmvlfS55bq4e5nkaSWVy7uxyWYnJJr1f8AbN8Zfade03wTaS5jt" +
+"FF3egH/AJaMMIp+i5P/AAMV5JoPRaAPaPgjof8Abfiq3WRN1tajz5s9CB0H4nA/OvpuvOfgD4f/ALH8F" +
+"pqE6bbnUSJTnqIx90fzP4ivRI3SRA8bq6NyGU5BoA4f4zfDHQfid4cGmarm3u4CXsr6NQZLdj14/iU4G" +
+"V78dCAa5H46arbfDr4K2HhLTZv39xbx6ZAejGJEAkfHuOD/AL9e0V8R/tHeMv8AhLPivd29tNv0/SP9C" +
+"gweCyn9434tkZ7gCgDG0H+GvoT9nbQzcX0+uTJmK1Hlwk95GHJ/Af8AoVfPvhxGkkjjRSzMQAAMkmvtP" +
+"wFosXhjwfZafIUjeOMPcMTgeY3Lc/Xj8BQB0FfOP7f3/JL9D/7DS/8AomWvo6vnH9v7/kl+h/8AYaX/A" +
+"NEy0AfIWk9q9P8AhL4XuvGHi2y0O1JQSsWmlxkRxjlm/L9SBXmGk9q+1f2PvBy6X4Pl8WXSD7VqpKW+e" +
+"qQK2P8Ax5gfwUUAeGC0m0/UrixuF2TW8rRSL6MpII/Su7+HGpnR/FGnahu2pHMBIf8AYPDfoTU3x70T+" +
+"yPiddTxpth1FFulwONx4b/x5SfxrC0rqtAH2KCCMg5Br4k/bm8ZazefEmHwSLgf2LYQQXXkiMZ+0MH+Y" +
+"tjP3WAxnH419e/D/Uv7V8IafdM26QRCOQnruX5ST9cZ/GvlT9vLxjDdeKtL8Dx6cqyWUaX0l5v5YuGUR" +
+"7cdAADnPfpQB5N8O9TvtG1a01TTXEd3bOJIXKBtrDocHg179ofxY+IN0yCbVg2SB/x6Rj/2WvDPhJrSe" +
+"HfE+n61JZJepavvMDnAk4IweD6+lfUHhv4yWmp39tbx+C7OFpZVQFZVyMkD+5QB7ZBZWxuEv5LeI3piC" +
+"NNsG7Hp7V5Z+0N8ZH+Fdxotsnh9NW/tRZixe58oRhNgx905zv8A0r16vEP2nfhB4g+KF74fn0O/021Gm" +
+"pOsou3dS28oRt2qf7p60AfJ+nTQ3GozT21v9nhklZ44t27y1JyFzxnA4zXomjXM08dtHLIzLAnlxg/wr" +
+"ktgfixP41j+Nfhxrfw31ez07WprW4a5h82OW2LFDgkEZYA5H07iuk+HWjXmv6zbaVY7PPmztLnCjAJJJ" +
+"+goA+gfhP4xS5j03w3FpohSOEr5vm5yQpYnGO5z+deDft2eGJrbx5oni2KE/Zr2z+ySuBwJY2JGT6lWG" +
+"P8AdPpXvPw88A6zoGvW99ezWbRRBsiNyScqR3A9am+N0nw/1/SovAXizXLW0v8AVpkTT4g26aOcnEbhR" +
+"yBk4ycA5IzzQB8XeFui17z8H/GGoeGrpIw7TafIw863JyP95fRv5968r13wTrvgTxC+j63b7WBJhnXmO" +
+"dM8Mp/p1Heuu8Mfw0AfYNncQ3dpFdW7h4pUDo3qCMiiuR+EV81x4ZNrI2TbSYX2U8j9c0UAc3+1z/yb5" +
+"4m+lv8A+lEVfCOjdFr7p/bAnSH9n7xCrHmVrZF56n7RGf5A18LaN0WgD7l/ZF/5JL/3EJv/AEFK9P8AF" +
+"FwLXw1qdyxAEVpK3PshryP9knVdPi+F8tvcXltBJHqMnyySqpIKIc4P+eK3fjT400lPDc2iadqFvdXt0" +
+"ypIsMgby0ByckcAnAGPc0AeUaRywNeofCwE+IIiB0jfP5V5do/8Net/CKAvqU8+Pljhxn3JH+BoA6f4s" +
+"/8AJLvFX/YHu/8A0S1fDXg77qV9x/Fx1T4WeKmc4H9j3Qz9Ymr4c8HfdSgD6+/Zy/5Ey6/6/D/6Atd94" +
+"i1az0HQb/WtQk8u0sbd7iZvRVUk/jxXA/s5f8iZdD/p8P8A6Atec/t3+Oho/gyw8FWc2LvWpPOuQp5W3" +
+"jIIB9Nz4/74agD5n1nxBeeKvF2peIr9s3F/ctMwzkKCeFHsBgD2FejfCDQJfE3i3TtIjB2SyAysP4Yxy" +
+"x/IGvINB/hr6/8A2StI07TdFvfE2o3dpDPcHyIBJKqlYxyzcnoTgf8AATQB7Z4ouING8IXske2GOC1Mc" +
+"QHAU42qB+JFecfCzxBe2V1DppzNazyBQhP3CT1H+FR/GLxpYakINB0i7juY1cSXMsTZQkfdUEdfU/hVf" +
+"4VQ+d4mswRkIS5/BSR+tAHZ/HfxmngT4YatrqyBLwx/Z7IdzO/CkeuOW+imvgLRHaWQyOxZmOSSckmvY" +
+"f26vHY1Xx1YeB7KbdbaOgnuwp4NxIMgH/dTH/fbCvHPD/8ADQB9DfszeGzrnjOO9mj3WmmKLh8jgv8Aw" +
+"D8+f+AmvffjJfi18Ji1B+a7nVMew+Y/yH51z37P9jo/hP4a2099qVhBdX/+lXBedQVBHyKcnsvOPUmuY" +
+"+I/iyDxN4ijjsHL2FmCkT4x5jH7zfTgAfT3oA734Wa/e3QXSromZEjJjkJ+ZQOx9RXmP7f3/JL9D/7DS" +
+"/8AomWvQ/g1Buubu4/uRBPzOf6V5t/wUAuIV+HXh+0aRRNJq/mImeSqxOGP4Fl/OgD5I0ntX6Gfs7f8k" +
+"W8Nf9e7/wDo16/PPSe1foT+zjIkvwV8NmNgwEEinHYiV8igDE/ab0X7V4c0/W40y9jOY5CP7kg6n6MoH" +
+"/Aq8X0rtX1Z440pdb8I6ppjKGaa3YR57OBlT/30BXyppgIYA9RQB7t8CNR3Wd7pbt90ieMZ9eG/9lrzD" +
+"9uXwNoC+FYvHdrpoXXX1CC3ubsSOS0PluANudo5Cc4B4roPhlqX9meJbSZm2xSHypPTa3H6HB/Cux/ai" +
+"0htZ+BfiSBF3SW8KXa8Zx5Tq7H/AL5DUAfFnwzjtJvEelxX6b7R7qJZ1zjKFgGGR04zX3TpPwr8EaVeQ" +
+"XdlpLJLA6yRk3EjAMDkcE18D+FWKPG4JBBB4r9GPB2qR634V0vVY3Vxc2scjEHo20bh+ByPwoAuzX1pD" +
+"fQWUs6rcXAYxIerBeteYfH74yx/Cm50aBvD76s2prK2RdeSIxHs/wBls53+3SqfizXm1Dx2Z7GQ7bJhD" +
+"Cy92U5J/Mn8BWP+1H8KvFvxLuPDFzoKWKmwinFys0+zDP5ZGOOfumgDyf4qfFqL4nppQHh7+y3sWkO83" +
+"Pmlw+3j7q4+7Wr8HvEi+FdfXVGszd/umjEYfZ175wa4/wAV/C/xL8PIrGTxB9kAvGZYhBLv5XGc/mK6L" +
+"4caDqHiLUl0/TUV59hfDMFGB15NAH0l4M+IieI9Xh08aU1sZQxD+fuxgE9MD0r4Y+K011of7Snia8V5D" +
+"Nba89zEXfcR+83rz9Mcdq+zfht4I17RPENte38MSQxq24iUMeVIHT618iftS232X9pLxQAuBI9vKPlx9" +
+"63jJ/XNAH0h+1JfW+p+HPB+pWrh4LvzJomHdWSNgfyNefeH7aeCK2kljZEnj8yIkcMuSuR+II/Cs698U" +
+"R6/8GvB1hJLuvdInntZVJ52YQxn6bfl/wCAmu/uViHw48EsAPNMd0D67RNx/M0Adt8Or97G0udufn2fp" +
+"u/xoqf4YWH22zuztBCFP13UUAfCPjfx9408Vatd2PiHxNqepWkN5I0cE85MaHcQCF6DA4HHApNG6LXNX" +
+"v8AyMeo/wDX1J/6Ea6XRui0AdvojMuAGI+hrs9HJJBPNcXo3au00b+GgDs9H/hr3n4Vae1r4eN3IuHun" +
+"3DP90cD9c15h8MfB99rdzFc3EEkOmqcvKwxvx/Cvr9e1e+QxxwwpDEgSNFCqo6ADoKAPhr9qfx54xh+N" +
+"/iTwpD4k1GLQ1jt4xYxzFYtrQRswKjrkkk59a5vwd91KT9qz/k5rxN9LT/0mipfB33UoA9x+H+ralp6i" +
+"Oyvp7dHILKjkAn3FeH/ALadxPP+0PfpNK7rDY2qRgnhFMQYgeg3Mx+pNex+D+sf4V4v+2Z/ycVqn/Xpa" +
+"f8AohKAOK0H+GvQtAdwFAdsfWvPdB/hr0HQei0Ad9oXVa9r+CcBfVrifHEcBH4kj/A14poX8NfQHwOt9" +
+"umX91/fkSMfgCT/ADFAH58/E6ea5+MXjCW4leWQ65djc5ycCZgB+Vafh/8AhrI+Iv8AyV3xf/2HLz/0e" +
+"9a/h/8AhoA9E0F3IUF2P413ug/w1wOg/wANd9oP8NAHrNpcXmj/AAQ8Za3p8z217Bpt1LbzL95HjgZlY" +
+"e4Jr4A1jxf4o8XXMFx4n1/UdXlhXbE13O0nlg9duTxnviv0L8SW/wBn/Zp8TAjDSaBfyH8YpMfpivzY0" +
+"ntQB12k9q9m+C3i7xNp3iTQtHsdcvoNOk1GFXtlmPlkNIAw29Oc814zpPavSvhR/wAj54e/7Cdv/wCjF" +
+"oA+qf2jNd1jRdP0f+ydRuLLz5ZRKYXKlgAuASOe5rxPTCWYMxJJOSTXrf7U/wDyD9A/67TfySvI9K7UA" +
+"dZpX8Ner+A/M1zS9U0fU5pLizntTCyO2RtYFSB+BryjSu1esfCX/XXn/XNf5mgD4pv9Bu/DHizUfD98P" +
+"39hcvCxxgNg8MPYjBHsa9g+H3xA8SaL4bk0CyulFpJnYWXLw7uuw9s//XGDXov7RvwmufEl0ni3w3bCT" +
+"VI0CXluvDXCD7rL6uBxjuMY6YPk3g7wz4gvdQWwg0e9NwG2srQsuw/7Wfu/jQB6j8JdOfU/ENvuGY4f3" +
+"0h9gf6nFe9VzHw68LJ4X0byZGWW8mw08i9PZR7DmunoA+KvjX8QNX8Y+NbjS9QgtYLbRL65trYQqQWXf" +
+"tyxJOThB0wKtfDTXrzw3rMOqWKxNMgZdsgJUgjBzj61c8RfBT4j3fjjW9St9CR7W61GeaF/tcQ3I0jFT" +
+"gtkcGtnR/hH49t8eboyLj/p6iP/ALNQB9LeG76TU9AsNRmRUkubdJWVegJAJxXw/wDtpWgtv2gJJtuPt" +
+"Wm28vXOcAp+H3K+3fCdpPYeGNMsrpNk8FrHHIuQcMFAIyK8A/aT+D/ijx38YfD2t6Rp0dxpK2kVrfymd" +
+"EMYWZyxwSGPyv2B6UAfPHhYnaozxXrmh311dW1lbTSlorSMxwr2VSxY/qxqt8X/AIX/APCvPEMU9hOJd" +
+"H1CRzaKx/eREYJRvXGRg9+/NehfBb4dXGsWlrrupSJHpjHckanLzbSQR/sjIPv/ADoA9Z+FmmtYeFopZ" +
+"V2y3R805/u9F/Tn8aK6pFVECIoVVGAAOAKKAOPb4V/DZpXlPgXw6ZHYszfYI8kk5J6VKnw0+Hsf3PBeg" +
+"r9LGP8AwrrKKAOaTwB4IT7nhTRl+lon+FWrXwj4WtZVlt/D2lxuv3WFqmR+lbdFAAAFAAAAHQCiiigDm" +
+"9Y8A+CdY1WXVtV8KaNe3823zLmezR5HwABliMnAAH4UQeAfBMH+p8KaPH/u2iD+ldJRQBkQ+GPDsH+p0" +
+"Swjx/dgUf0qjrvgDwRrupvqms+E9G1C+dVVri4s0eRgowAWIzwK6WigDk4/hp8Po/8AV+C9BX6WKf4VZ" +
+"j8B+C4/9X4V0dfpaJ/hXR0UAYkfhHwvH/q/D+mr9Ldf8K07Cys7CEw2VtFbxltxWNAoz68VYooA5G6+G" +
+"Pw7ur2e9uPBOgS3NxI0s0rWMZZ3Y5Zicckkk5qSP4b+AI/9X4N0JfpZIP6V1VFAHPR+BvBsf+r8MaQv0" +
+"tU/wqxH4V8NR/6vQtOX6W6/4Vs0UAVp9PsZ9Mk0ye0gksZYjA9uyAxtGRgqV6EEcYrlU+FHwzT7ngLw4" +
+"v00+P8Awrs6KAOST4ZfDxPueCtBX6WMf+FWrPwH4Ls7iK4tfCujwzROHjdLRAVYHIIOOCDXR0UAUdX0f" +
+"StXSNNU061vViJMYniD7SeuM9KpJ4R8Lp9zw/pq/S3X/CtuigDKTw5oCfc0axX6QrVyzsLKyLG0tIYCw" +
+"w3loBmrNFABRRRQAUUUUAFFFFABRRRQB4T+11/x4+G/+u8/8krvvgR/ySrRf92X/wBGvTvixYWN7Z6f9" +
+"ss7e52TNs82JX25HOMjit7wVBBbeF7KG2hjhiVDhI1CqPmJ6CgDYooooA//2QsBAAEAAAD/////AQAAA" +
+"AAAAAAEAQAAAA5TeXN0ZW0uQm9vbGVhbgEAAAAHbV92YWx1ZQABAAs=";
+                    this._resources = new DevExpress.XtraReports.Serialization.XRResourceManager(resourceString);
+                }
+                return this._resources;
+            }
+        }
+        private void InitializeComponent() {
+            DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.XtraReports.UI.XRSummary xrSummary2 = new DevExpress.XtraReports.UI.XRSummary();
+            this.PageHeader = new DevExpress.XtraReports.UI.PageHeaderBand();
+            this.Detail = new DevExpress.XtraReports.UI.DetailBand();
+            this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
+            this.xrLabel9 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel8 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
+            this.Compte = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrPageInfo2 = new DevExpress.XtraReports.UI.XRPageInfo();
+            this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
+            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrPictureBox1 = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel12 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel11 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel10 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrPanel1 = new DevExpress.XtraReports.UI.XRPanel();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            // 
+            // PageHeader
+            // 
+            this.PageHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.xrLabel9,
+                        this.xrLabel8,
+                        this.xrLabel7,
+                        this.Compte,
+                        this.xrLabel2,
+                        this.xrPageInfo2,
+                        this.xrPageInfo1,
+                        this.xrLabel1,
+                        this.xrPictureBox1});
+            this.PageHeader.Height = 108;
+            this.PageHeader.Name = "PageHeader";
+            // 
+            // Detail
+            // 
+            this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.xrLabel6,
+                        this.xrLabel5,
+                        this.xrLabel4,
+                        this.xrLabel3});
+            this.Detail.Height = 25;
+            this.Detail.Name = "Detail";
+            // 
+            // ReportFooter
+            // 
+            this.ReportFooter.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.xrLabel12,
+                        this.xrLabel11,
+                        this.xrLabel10,
+                        this.xrPanel1});
+            this.ReportFooter.Height = 47;
+            this.ReportFooter.Name = "ReportFooter";
+            // 
+            // xrLabel9
+            // 
+            this.xrLabel9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.xrLabel9.Location = new System.Drawing.Point(517, 83);
+            this.xrLabel9.Name = "xrLabel9";
+            this.xrLabel9.ParentStyleUsing.UseFont = false;
+            this.xrLabel9.Size = new System.Drawing.Size(100, 25);
+            this.xrLabel9.Text = "Crédit";
+            this.xrLabel9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // xrLabel8
+            // 
+            this.xrLabel8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.xrLabel8.Location = new System.Drawing.Point(417, 83);
+            this.xrLabel8.Name = "xrLabel8";
+            this.xrLabel8.ParentStyleUsing.UseFont = false;
+            this.xrLabel8.Size = new System.Drawing.Size(100, 25);
+            this.xrLabel8.Text = "Débit";
+            this.xrLabel8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // xrLabel7
+            // 
+            this.xrLabel7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.xrLabel7.Location = new System.Drawing.Point(108, 83);
+            this.xrLabel7.Name = "xrLabel7";
+            this.xrLabel7.ParentStyleUsing.UseFont = false;
+            this.xrLabel7.Size = new System.Drawing.Size(309, 25);
+            this.xrLabel7.Text = "Description";
+            // 
+            // Compte
+            // 
+            this.Compte.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.Compte.Location = new System.Drawing.Point(8, 83);
+            this.Compte.Name = "Compte";
+            this.Compte.ParentStyleUsing.UseFont = false;
+            this.Compte.Size = new System.Drawing.Size(100, 25);
+            this.Compte.Text = "Compte";
+            // 
+            // xrLabel2
+            // 
+            this.xrLabel2.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "ParaTable.AtDate", "Exercice {0:yyyy}")});
+            this.xrLabel2.Font = new System.Drawing.Font("Times New Roman", 14F);
+            this.xrLabel2.Location = new System.Drawing.Point(142, 50);
+            this.xrLabel2.Name = "xrLabel2";
+            this.xrLabel2.ParentStyleUsing.UseFont = false;
+            this.xrLabel2.Size = new System.Drawing.Size(258, 25);
+            this.xrLabel2.Text = "xrLabel2";
+            // 
+            // xrPageInfo2
+            // 
+            this.xrPageInfo2.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.xrPageInfo2.Format = "Page {0} of {1}";
+            this.xrPageInfo2.Location = new System.Drawing.Point(517, 42);
+            this.xrPageInfo2.Name = "xrPageInfo2";
+            this.xrPageInfo2.ParentStyleUsing.UseFont = false;
+            this.xrPageInfo2.Size = new System.Drawing.Size(100, 25);
+            // 
+            // xrPageInfo1
+            // 
+            this.xrPageInfo1.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.xrPageInfo1.Format = "{0:dd MMM yyyy}";
+            this.xrPageInfo1.Location = new System.Drawing.Point(517, 8);
+            this.xrPageInfo1.Name = "xrPageInfo1";
+            this.xrPageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
+            this.xrPageInfo1.ParentStyleUsing.UseFont = false;
+            this.xrPageInfo1.Size = new System.Drawing.Size(100, 25);
+            // 
+            // xrLabel1
+            // 
+            this.xrLabel1.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold);
+            this.xrLabel1.Location = new System.Drawing.Point(142, 25);
+            this.xrLabel1.Name = "xrLabel1";
+            this.xrLabel1.ParentStyleUsing.UseFont = false;
+            this.xrLabel1.Size = new System.Drawing.Size(341, 25);
+            this.xrLabel1.Text = "Balance des Comptes Généeaux";
+            // 
+            // xrPictureBox1
+            // 
+            this.xrPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("xrPictureBox1.Image")));
+            this.xrPictureBox1.Location = new System.Drawing.Point(8, 8);
+            this.xrPictureBox1.Name = "xrPictureBox1";
+            this.xrPictureBox1.Size = new System.Drawing.Size(116, 41);
+            // 
+            // xrLabel6
+            // 
+            this.xrLabel6.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "GLAcctBalanceView1.Description", "")});
+            this.xrLabel6.Location = new System.Drawing.Point(108, 0);
+            this.xrLabel6.Name = "xrLabel6";
+            this.xrLabel6.Size = new System.Drawing.Size(309, 25);
+            this.xrLabel6.Text = "xrLabel6";
+            // 
+            // xrLabel5
+            // 
+            this.xrLabel5.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "GLAcctBalanceView1.CrBalance_E", "{0:n2}")});
+            this.xrLabel5.Location = new System.Drawing.Point(517, 0);
+            this.xrLabel5.Name = "xrLabel5";
+            this.xrLabel5.Size = new System.Drawing.Size(100, 25);
+            this.xrLabel5.Text = "xrLabel5";
+            this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // xrLabel4
+            // 
+            this.xrLabel4.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "GLAcctBalanceView1.DbBalance_E", "{0:n2}")});
+            this.xrLabel4.Location = new System.Drawing.Point(417, 0);
+            this.xrLabel4.Name = "xrLabel4";
+            this.xrLabel4.Size = new System.Drawing.Size(100, 25);
+            this.xrLabel4.Text = "xrLabel4";
+            this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // xrLabel3
+            // 
+            this.xrLabel3.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "GLAcctBalanceView1.Name", "")});
+            this.xrLabel3.Location = new System.Drawing.Point(8, 0);
+            this.xrLabel3.Name = "xrLabel3";
+            this.xrLabel3.Size = new System.Drawing.Size(100, 25);
+            this.xrLabel3.Text = "xrLabel3";
+            // 
+            // xrLabel12
+            // 
+            this.xrLabel12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.xrLabel12.Location = new System.Drawing.Point(250, 8);
+            this.xrLabel12.Name = "xrLabel12";
+            this.xrLabel12.ParentStyleUsing.UseFont = false;
+            this.xrLabel12.Size = new System.Drawing.Size(167, 25);
+            this.xrLabel12.Text = "Total des Comptes";
+            // 
+            // xrLabel11
+            // 
+            this.xrLabel11.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "GLAcctBalanceView1.CrBalance_E", "")});
+            this.xrLabel11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.xrLabel11.Location = new System.Drawing.Point(517, 8);
+            this.xrLabel11.Name = "xrLabel11";
+            this.xrLabel11.ParentStyleUsing.UseFont = false;
+            this.xrLabel11.Size = new System.Drawing.Size(100, 25);
+            xrSummary1.FormatString = "{0:n2}";
+            xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
+            this.xrLabel11.Summary = xrSummary1;
+            this.xrLabel11.Text = "xrLabel11";
+            this.xrLabel11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // xrLabel10
+            // 
+            this.xrLabel10.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "GLAcctBalanceView1.DbBalance_E", "")});
+            this.xrLabel10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.xrLabel10.Location = new System.Drawing.Point(417, 8);
+            this.xrLabel10.Name = "xrLabel10";
+            this.xrLabel10.ParentStyleUsing.UseFont = false;
+            this.xrLabel10.Size = new System.Drawing.Size(100, 25);
+            xrSummary2.FormatString = "{0:n2}";
+            xrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
+            this.xrLabel10.Summary = xrSummary2;
+            this.xrLabel10.Text = "xrLabel10";
+            this.xrLabel10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // xrPanel1
+            // 
+            this.xrPanel1.Borders = DevExpress.XtraPrinting.BorderSide.All;
+            this.xrPanel1.BorderWidth = 2;
+            this.xrPanel1.Location = new System.Drawing.Point(217, 0);
+            this.xrPanel1.Name = "xrPanel1";
+            this.xrPanel1.ParentStyleUsing.UseBorders = false;
+            this.xrPanel1.ParentStyleUsing.UseBorderWidth = false;
+            this.xrPanel1.Size = new System.Drawing.Size(408, 41);
+            // 
+            // xtraReport1
+            // 
+            this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
+                        this.PageHeader,
+                        this.Detail,
+                        this.ReportFooter});
+            this.Name = "xtraReport1";
+            this.PageHeight = 1169;
+            this.PageWidth = 827;
+            this.PaperKind = System.Drawing.Printing.PaperKind.A4;
+            this.ScriptLanguage = DevExpress.XtraReports.ScriptLanguage.VisualBasic;
+            this.SortFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
+                        new DevExpress.XtraReports.UI.GroupField("Name", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
+        }
+    }
+}
+    

@@ -1,0 +1,287 @@
+Public Class clsStatLogistic
+
+    Public Shared Function GetExcept(ByVal dateFrom As String, ByVal dateTo As String) As String
+        Dim sql As String
+        sql = " select *" & _
+                " from " & _
+                " ( " & _
+                "  select 'orders_canceled' type_process,date(date_added) 'date',count(*) dvd" & _
+                "  from orders_canceled" & _
+                " where date(date_added) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(date_added) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' " & _
+                "  group by date(date_added)" & _
+                " ) orders_canceled" & _
+                " union" & _
+                "  select 'bizarrement_perdu' type_process,date(date_added) 'date',count(*) dvd" & _
+                "  from products_dvd_state_history" & _
+                " where date(date_added) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(date_added) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' " & _
+                "  and status = 15" & _
+                "  group by date(date_added)" & _
+                " union" & _
+                "  select 'except' type_process,date(date_purchased) 'date',count(*) dvd" & _
+                "  from orders o join orders_products op on o.orders_id = op.orders_id" & _
+                " where date(date_purchased) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(date_purchased) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' " & _
+                "  and orders_status = 1 and not op.pick_boxid is null" & _
+                "  group by date(date_purchased)" & _
+                " order by date,type_process"
+
+        Return sql
+    End Function
+
+    Public Shared Function getDvd_Per_State(ByVal dateFrom As String, ByVal dateTo As String) As String
+        Dim sql As String
+        sql = " select date(date_added),pds.name,count(*) cpt_dvd" & _
+                " from products_dvd_state_history " & _
+                " join products_dvd_state pds on pds.id = type_process " & _
+                " where date(date_added) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(date_added) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' " & _
+                " group by date(date_added),pds.name " & _
+                " order by date(date_added),pds.name "
+        Return sql
+    End Function
+    Public Shared Function getDvd_Per_State_Per_User(ByVal dateFrom As String, ByVal dateTo As String) As String
+        Dim sql As String
+        sql = " select date(date_added),su.fullname,pds.name,count(*) cpt_dvd" & _
+                " from products_dvd_state_history " & _
+                " join securityuser su on user_modified = userid" & _
+                " join products_dvd_state pds on pds.id = type_process " & _
+                " where date(date_added) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(date_added) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' " & _
+                " group by date(date_added),su.fullname,pds.name " & _
+                " order by date(date_added),pds.name,su.fullname "
+        Return sql
+    End Function
+    Public Shared Function getSelectStateStock() As String
+        Dim sql As String
+        sql = "select products_dvd_status_name,pd.inout,count(*) cpt" & _
+                " from products_dvd pd " & _
+                " join products_dvd_status pds on pd.products_dvd_status = pds.products_dvd_status_id " & _
+                " group by products_dvd_status_name,pd.inout "
+        Return sql
+    End Function
+
+    Public Shared Function getSelectAboProcessServed(ByVal dateFrom As String, ByVal dateTo As String) As String
+
+        Dim sql As String
+
+        sql = " select date_start,((served/total) * 100) pourcent_served,((partial_served/total) * 100) pourcent_partial_served,total,served,partial_served " & _
+              " from ( " & _
+              "     select xx.date_start date_start,sum(if(reason in (" & DvdPostData.Customer_stat.TypeReason.SERVED & "," & DvdPostData.Customer_stat.TypeReason.PARTIAL_SERVED & "," & DvdPostData.Customer_stat.TypeReason.NOTFOUNDDVD & "," & DvdPostData.Customer_stat.TypeReason.MSGERROR & "),cpt,0)) total, " & _
+              "     sum(if(reason = " & DvdPostData.Customer_stat.TypeReason.SERVED & ",cpt,0)) served," & _
+              "     sum(if(reason = " & DvdPostData.Customer_stat.TypeReason.PARTIAL_SERVED & ",cpt,0)) partial_served " & _
+              "     from ( " & _
+              "         select cabs.reason,date(date_start) date_start,count(*) cpt " & _
+              "         from aboprocess_stats abs " & _
+              "         join customers_aboprocess_stats cabs on abs.aboprocess_id = cabs.aboprocess_id " & _
+              "     where date(abs.date_start) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(abs.date_start) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' " & _
+              "     group by cabs.reason,date(abs.date_start) " & _
+              "     ) xx group by date_start " & _
+              " ) xxx group by date_start "
+
+        Return sql
+    End Function
+
+    Public Shared Function getSelectRateRotationAverage(ByVal dateFrom As String, ByVal dateTo As String) As String
+        Dim sql As String
+        sql = "select abo_type,sum(averageRotation) / count(*) average_time from RateRotationAbo " & _
+              " where date(date_added) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(date_added) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' " & _
+              " group by abo_type "
+        Return sql
+    End Function
+
+    Public Shared Function getSelectSizeWishlistNoServed(ByVal dateFrom As String, ByVal dateTo As String) As String
+        Dim sql As String
+
+        sql = " select date_start,sum(if (nbwishlistnorm > 0 and nbwishlistnorm <= 5,1,0)) wl_5," & _
+              "  sum(if (nbwishlistnorm > 5 and nbwishlistnorm <= 10,1,0)) wl_10, " & _
+         " sum(if (nbwishlistnorm > 10 and nbwishlistnorm <= 15,1,0)) wl_15," & _
+         " sum(if (nbwishlistnorm > 15 and nbwishlistnorm <= 20,1,0)) wl_20," & _
+         " sum(if(nbwishlistnorm > 20,1,0)) wl_Plus20," & _
+         " count(*) total " & _
+         " from " & _
+         "( " & _
+         "      select cabs.*,date(abs.date_start) date_start " & _
+         "      from aboprocess_stats abs " & _
+         "      join customers_aboprocess_stats cabs on abs.aboprocess_id = cabs.aboprocess_id " & _
+         "      where date(abs.date_start) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' " & _
+         "          and date(abs.date_start) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' and cabs.reason = 5 and nbwishlistnorm > 0 " & _
+         " ) x group by date_start"
+        Return sql
+    End Function
+
+    Public Shared Function getSelectedHighMediumLowDVDSent(ByVal dateFrom As String, ByVal dateTo As String) As String
+        Dim sql As String
+
+        sql = " select sum(dvd_highsent) high,sum(dvd_mediumsent) mediums , sum(dvd_lowsent) low, sum(dvd_sent) total" & _
+              " from aboprocess_stats abs " & _
+              " where date(abs.date_start) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(abs.date_start) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'"
+        Return sql
+    End Function
+
+    Public Shared Function getSelectProcessState(ByVal dateFrom As String, ByVal dateTo As String) As String
+        Dim sql As String
+
+        sql = " select pds.name,pdsh.date_added 'date',pdsh.products_id,pdsh.products_dvd_id,pdsh.box_id,pdsh.pibox_id, pds.name process,ss.fullname user,pdss.products_dvd_status_name status " & _
+              " from products_dvd_state_history pdsh " & _
+              " join securityuser ss on  pdsh.user_modified = ss.UserID " & _
+              " join products_dvd_state pds on pds.id = pdsh.type_process " & _
+              " join products_dvd_status pdss on pdsh.status = pdss.products_dvd_status_id " & _
+              " where date(pdsh.date_added) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(pdsh.date_added) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
+              " order by date(pdsh.date_added),pds.name "
+        Return sql
+    End Function
+
+    Public Shared Function getSelectServedWlRank(ByVal dateFrom As String, ByVal dateTo As String) As String
+
+        Dim sql As String
+
+        sql = " select xx.date_start,xx.wl_norm,xx.rank,count(*) cpt_customers from (" & _
+              "   select if(nbwishlistnorm = 0,0, " & _
+              "            if (nbwishlistnorm > 0 and nbwishlistnorm <= 5,5, " & _
+              "                if (nbwishlistnorm > 5 and nbwishlistnorm <= 10,10, " & _
+              "                    if (nbwishlistnorm > 10 and nbwishlistnorm <= 15,15," & _
+              "                        if (nbwishlistnorm > 15 and nbwishlistnorm <= 20,20, " & _
+              "                             if(nbwishlistnorm > 20,25,-1)))))) wl_norm, " & _
+              " (select max(customer_abo_rank) from aboprocess_stats aa join customers_aboprocess_stats aac on aa.aboprocess_id = aac.aboprocess_id " & _
+              "  where date(aa.date_start) = date(abs.date_start - 1) and aac.customers_id = cas.customers_id ) rank ,reason,customers_id,dvd_norm_abo,dvd_adult_abo,date(abs.date_start) date_start " & _
+              "      from aboprocess_stats abs " & _
+              " join customers_aboprocess_stats cas on abs.aboprocess_id = cas.aboprocess_id " & _
+              " where date(abs.date_start) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(abs.date_start) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' and cas.dvd_norm_to_send  > 0 and cas.reason in (0,8) " & _
+              " ) xx " & _
+              " group by xx.wl_norm,xx.rank,xx.date_start " & _
+              " order by date_start,rank desc"
+        Return sql
+
+    End Function
+
+    Public Shared Function getSelectNoServedWlRank(ByVal dateFrom As String, ByVal dateTo As String) As String
+
+        Dim sql As String
+
+        sql = " select xx.date_start,xx.wl_norm,xx.customer_abo_rank,count(*) cpt_customers from (" & _
+              "   select if(nbwishlistnorm = 0,0, " & _
+              "            if (nbwishlistnorm > 0 and nbwishlistnorm <= 5,5, " & _
+              "                if (nbwishlistnorm > 5 and nbwishlistnorm <= 10,10, " & _
+              "                    if (nbwishlistnorm > 10 and nbwishlistnorm <= 15,15," & _
+              "                        if (nbwishlistnorm > 15 and nbwishlistnorm <= 20,20, " & _
+              "                             if(nbwishlistnorm > 20,25,-1)))))) wl_norm,customer_abo_rank,reason,customers_id,dvd_norm_abo,dvd_adult_abo,date(abs.date_start) date_start " & _
+              "      from aboprocess_stats abs " & _
+              " join customers_aboprocess_stats cas on abs.aboprocess_id = cas.aboprocess_id " & _
+              " where date(abs.date_start) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(abs.date_start) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' and (cas.dvd_norm_to_send + cas.dvd_adult_to_send) = 0 and cas.reason = 5 " & _
+              " ) xx " & _
+              " group by xx.wl_norm,xx.customer_abo_rank,xx.date_start " & _
+              " order by date_start,wl_norm,customer_abo_rank desc"
+        Return sql
+
+    End Function
+
+    Public Shared Function getselectCustomersNoServedRecurring(ByVal dateFrom As String, ByVal dateTo As String) As String
+        Dim sql As String
+
+        sql = " select ( " & _
+                "   select count(distinct customers_id) " & _
+                "   from aboprocess_stats abs " & _
+                "   join customers_aboprocess_stats cas on abs.aboprocess_id = cas.aboprocess_id " & _
+                "   where date(abs.date_start) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(abs.date_start) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' " & _
+                "   and cas.reason in(" & DvdPostData.Customer_stat.TypeReason.NOTFOUNDDVD & "," & DvdPostData.Customer_stat.TypeReason.SERVED & "," & DvdPostData.Customer_stat.TypeReason.PARTIAL_SERVED & ")) cust_must_served, " & _
+                " ( " & _
+                "   select count(distinct customers_id) " & _
+                "   from aboprocess_stats abs " & _
+                "   join customers_aboprocess_stats cas on abs.aboprocess_id = cas.aboprocess_id " & _
+                "   where date(abs.date_start) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(abs.date_start) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' " & _
+                "   and cas.reason in(" & DvdPostData.Customer_stat.TypeReason.NOTFOUNDDVD & ")) cust_not_served "
+
+        Return sql
+
+    End Function
+
+    Public Shared Function getSelectCustomerNothingServed(ByVal dateFrom As String, ByVal dateTo As String) As String
+        Dim sql As String
+
+        sql = "        select noServed.* from " & _
+                " ( " & _
+                "   select distinct customers_id" & _
+                "   from aboprocess_stats abs" & _
+                "   join customers_aboprocess_stats cas on abs.aboprocess_id = cas.aboprocess_id" & _
+                "   where date(abs.date_start) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(abs.date_start) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' " & _
+                "   and cas.reason in(5)" & _
+                " ) noServed" & _
+                " left join " & _
+                " ( " & _
+                "   select distinct customers_id" & _
+                "   from aboprocess_stats abs " & _
+                "   join customers_aboprocess_stats cas on abs.aboprocess_id = cas.aboprocess_id" & _
+                "   where date(abs.date_start) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(abs.date_start) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' " & _
+                "   and cas.reason in(0,8)" & _
+                " ) oneServed" & _
+                " on noServed.customers_id = oneServed.customers_id" & _
+                "        where(oneServed.customers_id Is null)" & _
+                " order by noServed.customers_id desc "
+        Return sql
+    End Function
+    Public Shared Function getSelectTimeElapsedPerDVD() As String
+        Dim sql As String
+
+        sql = "SELECT time_elapsed,count(*) cpt_dvd,(select count(*) from products_dvd pd where  pd.products_dvd_status = 1 and pd.inout = 1) total_dvd from " & _
+              "( " & _
+              "     select if(duration <= 30,'1 month'," & _
+              "                 if (duration <= 60,'2 months'," & _
+              "                     if (duration <= 90,'3 months', " & _
+              "                         if (duration <= 120,'4 months', " & _
+              "                             if (duration <= 150,'5 months', " & _
+              "                                 if (duration <= 180,'6 months', " & _
+              "                                     if (duration > 180,'more 6 months','error'))))))) time_elapsed,products_id,products_dvd " & _
+              " from (" & _
+              " select op.products_id,op.products_dvd,(date(now()) - max(date(date_purchased))) duration,max(date(date_purchased))" & _
+              " from orders o " & _
+              " join orders_products op on o.orders_id = op.orders_id " & _
+              " join products_dvd pd on pd.products_id = op.products_id and pd.products_dvdid = op.products_dvd " & _
+              "        where(pd.products_dvd_status = 1 And pd.inout = 1) " & _
+              " group by op.products_id,op.products_dvd " & _
+              " ) xx " & _
+              " ) xxx group by time_elapsed"
+
+        Return sql
+
+    End Function
+
+    Public Shared Function getSelectTimeElapsedPerProductAvailable() As String
+        Dim sql As String
+
+        sql = " SELECT time_elapsed,count(*) cpt_dvd,(select count(distinct pd.products_id) from products_dvd pd where  pd.products_dvd_status = 1 and pd.inout = 1) total_dvd from" & _
+                " (" & _
+                " select if(duration <= 30,'1 month'," & _
+                "          if (duration <= 60,'2 months'," & _
+                "            if (duration <= 90,'3 months'," & _
+                "              if (duration <= 120,'4 months'," & _
+                "                if (duration <= 150,'5 months'," & _
+                "                  if (duration <= 180,'6 months'," & _
+                "                    if (duration > 180,'more 6 months','error'))))))) time_elapsed,products_id" & _
+                " from (" & _
+                " select op.products_id,(date(now()) - max(date(date_purchased))) duration,max(date(date_purchased))" & _
+                " from orders o" & _
+                " join orders_products op on o.orders_id = op.orders_id" & _
+                " join products_dvd pd on pd.products_id = op.products_id and pd.products_dvdid = op.products_dvd" & _
+                "        where(pd.products_dvd_status = 1 And pd.inout = 1)" & _
+                " group by op.products_id" & _
+                " ) xx" & _
+                " ) xxx group by time_elapsed"
+        Return sql
+    End Function
+
+    Public Shared Function getSelectProductsNoDvdFound(ByVal dateFrom As String, ByVal dateTo As String) As String
+        Dim sql As String
+        sql = " select products_id,products_title,products_availability,count(*) cpt_cust from" & _
+                "( " & _
+                "   select w.customers_id,w.product_id from" & _
+                "   wishlist w" & _
+                "  join    (     select distinct customers_id" & _
+                "               from aboprocess_stats abs" & _
+                "               join customers_aboprocess_stats cabs on abs.aboprocess_id = cabs.aboprocess_id" & _
+                "               where date(abs.date_start) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(abs.date_start) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' and cabs.reason = 5 " & _
+                "           ) cust_aboprocess on w.customers_id = cust_aboprocess.customers_id" & _
+                " ) xx" & _
+                " join products p on xx.product_id = p.products_id" & _
+                " where p.products_next = 0" & _
+                " group by products_id" & _
+                " order by cpt_cust desc"
+        Return sql
+    End Function
+End Class

@@ -1,0 +1,1611 @@
+<!--
+AssemblyName=DevExpress%2EXtraReports%2C%20Version%3D1%2E6%2E0%2E0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4
+AssemblyLocation=c:\windows\assembly\gac\devexpress.xtrareports\1.6.0.0__79868b8147b5eae4\devexpress.xtrareports.dll
+TypeName=DevExpress.XtraReports.UI.XtraReport
+Localization=en-US
+-->
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<a1:ReportStorage id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.Serialization/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">
+<ShowHtmlWarning>false</ShowHtmlWarning>
+<DrawGrid>true</DrawGrid>
+<GridSize xsi:type="a2:Size" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<width>8</width>
+<height>8</height>
+</GridSize>
+<SnapToGrid>true</SnapToGrid>
+<PreviewRowCount>100</PreviewRowCount>
+<DataSourceSchema id="ref-6"></DataSourceSchema>
+<BandCount>7</BandCount>
+<Band0 href="#ref-7"/>
+<Band1 href="#ref-8"/>
+<Band2 href="#ref-9"/>
+<Band3 href="#ref-10"/>
+<Band4 href="#ref-11"/>
+<Band5 href="#ref-12"/>
+<Band6 href="#ref-13"/>
+<Visible>true</Visible>
+<Tag href="#ref-6"/>
+<Dock xsi:type="a3:XRDockStyle" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Dock>
+<Name id="ref-14">XtraReport</Name>
+<Style_X_Font id="ref-15">Times New Roman, 9.75pt</Style_X_Font>
+<Style_X_ForeColor id="ref-16">ControlText</Style_X_ForeColor>
+<Style_X_BackColor id="ref-17">Transparent</Style_X_BackColor>
+<Style_X_BorderColor href="#ref-16"/>
+<Style_X_Borders xsi:type="a4:BorderSide" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Style_X_Borders>
+<Style_X_TextAlignment xsi:type="a4:TextAlignment" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">TopLeft</Style_X_TextAlignment>
+<Style_X_BorderWidth>1</Style_X_BorderWidth>
+<Style_X_StyleUsing_X_UseFont>true</Style_X_StyleUsing_X_UseFont>
+<Style_X_StyleUsing_X_UseForeColor>true</Style_X_StyleUsing_X_UseForeColor>
+<Style_X_StyleUsing_X_UseBackColor>true</Style_X_StyleUsing_X_UseBackColor>
+<Style_X_StyleUsing_X_UseBorderColor>true</Style_X_StyleUsing_X_UseBorderColor>
+<Style_X_StyleUsing_X_UseBorders>true</Style_X_StyleUsing_X_UseBorders>
+<Style_X_StyleUsing_X_UseBorderWidth>true</Style_X_StyleUsing_X_UseBorderWidth>
+<Style_X_StyleUsing_X_UseTextAlignment>false</Style_X_StyleUsing_X_UseTextAlignment>
+<ParentStyleUsing_X_UseFont>true</ParentStyleUsing_X_UseFont>
+<ParentStyleUsing_X_UseForeColor>true</ParentStyleUsing_X_UseForeColor>
+<ParentStyleUsing_X_UseBackColor>true</ParentStyleUsing_X_UseBackColor>
+<ParentStyleUsing_X_UseBorderColor>true</ParentStyleUsing_X_UseBorderColor>
+<ParentStyleUsing_X_UseBorders>true</ParentStyleUsing_X_UseBorders>
+<ParentStyleUsing_X_UseBorderWidth>true</ParentStyleUsing_X_UseBorderWidth>
+<ParentStyleUsing_X_UseTextAlignment>false</ParentStyleUsing_X_UseTextAlignment>
+<Dpi>100</Dpi>
+<EvenStyleName href="#ref-6"/>
+<OddStyleName href="#ref-6"/>
+<StyleName href="#ref-6"/>
+<BindingItemCount>0</BindingItemCount>
+<Bounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<x>0</x>
+<y>0</y>
+<width>100</width>
+<height>23</height>
+</Bounds>
+<Text href="#ref-6"/>
+<NavigateUrl href="#ref-6"/>
+<Target href="#ref-6"/>
+<Bookmark href="#ref-6"/>
+<CanGrow>true</CanGrow>
+<CanShrink>false</CanShrink>
+<WordWrap>true</WordWrap>
+<EventsScript_X_OnHtmlItemCreated href="#ref-6"/>
+<EventsScript_X_OnBeforePrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseUp href="#ref-6"/>
+<EventsScript_X_OnBandHeightChanged href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseDown href="#ref-6"/>
+<EventsScript_X_OnLocationChanged href="#ref-6"/>
+<EventsScript_X_OnAfterPrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseMove href="#ref-6"/>
+<EventsScript_X_OnPreviewDoubleClick href="#ref-6"/>
+<EventsScript_X_OnDataSourceRowChanged href="#ref-6"/>
+<EventsScript_X_OnSizeChanged href="#ref-6"/>
+<EventsScript_X_OnDraw href="#ref-6"/>
+<EventsScript_X_OnPreviewClick href="#ref-6"/>
+<EventsScript_X_OnTextChanged href="#ref-6"/>
+<EventsScript_X_OnParentChanged href="#ref-6"/>
+<Height>100</Height>
+<PageBreak xsi:type="a3:PageBreak" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</PageBreak>
+<DataMember href="#ref-6"/>
+<DataSource id="ref-18">dataSource</DataSource>
+<XMLDataPath href="#ref-6"/>
+<UseDefaultPrinterSettings>false</UseDefaultPrinterSettings>
+<ReportUnit xsi:type="a3:ReportUnit" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">HundredthsOfAnInch</ReportUnit>
+<Landscape>false</Landscape>
+<PaperKind xsi:type="a5:PaperKind" xmlns:a5="http://schemas.microsoft.com/clr/nsassem/System.Drawing.Printing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">Letter</PaperKind>
+<PaperName href="#ref-6"/>
+<Margins xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<x>100</x>
+<y>100</y>
+<width>100</width>
+<height>100</height>
+</Margins>
+<HtmlCharSet id="ref-19">utf-8</HtmlCharSet>
+<HtmlCompressed>false</HtmlCompressed>
+<PageSize xsi:type="a2:Size" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<width>850</width>
+<height>1100</height>
+</PageSize>
+<StyleSheet_X_FileName href="#ref-6"/>
+<StyleSheet_X_StyleCount>0</StyleSheet_X_StyleCount>
+<ShowPreviewMarginLines>true</ShowPreviewMarginLines>
+<ScriptLanguage xsi:type="a6:ScriptLanguage" xmlns:a6="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">CSharp</ScriptLanguage>
+<ScriptReferences href="#ref-6"/>
+<Watermark_X_Text href="#ref-6"/>
+<Watermark_X_Font id="ref-20">Verdana, 36pt</Watermark_X_Font>
+<Watermark_X_ForeColor id="ref-21">Red</Watermark_X_ForeColor>
+<Watermark_X_Transparency>50</Watermark_X_Transparency>
+<Watermark_X_TextDirection xsi:type="a7:DirectionMode" xmlns:a7="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting.Drawing/DevExpress.XtraPrinting%2C%20Version%3D1.8.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">ForwardDiagonal</Watermark_X_TextDirection>
+<Watermark_X_Image xsi:type="xsd:anyType" xsi:null="1"/>
+<Watermark_X_ImageAlign xsi:type="a2:ContentAlignment" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">MiddleCenter</Watermark_X_ImageAlign>
+<Watermark_X_ImageViewMode xsi:type="a7:ImageViewMode" xmlns:a7="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting.Drawing/DevExpress.XtraPrinting%2C%20Version%3D1.8.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">Clip</Watermark_X_ImageViewMode>
+<Watermark_X_ImageTiling>false</Watermark_X_ImageTiling>
+<Watermark_X_PageRange href="#ref-6"/>
+</a1:ReportStorage>
+<a1:ObjectStorage id="ref-7" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.Serialization/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">
+<Type_X_AssemblyName id="ref-22">DevExpress.XtraReports, Version=1.6.0.0, Culture=neutral, PublicKeyToken=79868b8147b5eae4</Type_X_AssemblyName>
+<Type_X_TypeName id="ref-23">DevExpress.XtraReports.UI.PageHeaderBand</Type_X_TypeName>
+<Visible>true</Visible>
+<Tag href="#ref-6"/>
+<Dock xsi:type="a3:XRDockStyle" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Dock>
+<Name id="ref-24">PageHeader</Name>
+<Style_X_Font id="ref-25">Times New Roman, 9.75pt</Style_X_Font>
+<Style_X_ForeColor href="#ref-16"/>
+<Style_X_BackColor href="#ref-17"/>
+<Style_X_BorderColor href="#ref-16"/>
+<Style_X_Borders xsi:type="a4:BorderSide" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Style_X_Borders>
+<Style_X_TextAlignment xsi:type="a4:TextAlignment" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">TopLeft</Style_X_TextAlignment>
+<Style_X_BorderWidth>1</Style_X_BorderWidth>
+<Style_X_StyleUsing_X_UseFont>true</Style_X_StyleUsing_X_UseFont>
+<Style_X_StyleUsing_X_UseForeColor>true</Style_X_StyleUsing_X_UseForeColor>
+<Style_X_StyleUsing_X_UseBackColor>true</Style_X_StyleUsing_X_UseBackColor>
+<Style_X_StyleUsing_X_UseBorderColor>true</Style_X_StyleUsing_X_UseBorderColor>
+<Style_X_StyleUsing_X_UseBorders>true</Style_X_StyleUsing_X_UseBorders>
+<Style_X_StyleUsing_X_UseBorderWidth>true</Style_X_StyleUsing_X_UseBorderWidth>
+<Style_X_StyleUsing_X_UseTextAlignment>false</Style_X_StyleUsing_X_UseTextAlignment>
+<ParentStyleUsing_X_UseFont>true</ParentStyleUsing_X_UseFont>
+<ParentStyleUsing_X_UseForeColor>true</ParentStyleUsing_X_UseForeColor>
+<ParentStyleUsing_X_UseBackColor>true</ParentStyleUsing_X_UseBackColor>
+<ParentStyleUsing_X_UseBorderColor>true</ParentStyleUsing_X_UseBorderColor>
+<ParentStyleUsing_X_UseBorders>true</ParentStyleUsing_X_UseBorders>
+<ParentStyleUsing_X_UseBorderWidth>true</ParentStyleUsing_X_UseBorderWidth>
+<ParentStyleUsing_X_UseTextAlignment>false</ParentStyleUsing_X_UseTextAlignment>
+<Dpi>100</Dpi>
+<EvenStyleName href="#ref-6"/>
+<OddStyleName href="#ref-6"/>
+<StyleName href="#ref-6"/>
+<BindingItemCount>0</BindingItemCount>
+<Bounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<x>0</x>
+<y>0</y>
+<width>100</width>
+<height>23</height>
+</Bounds>
+<Text href="#ref-6"/>
+<NavigateUrl href="#ref-6"/>
+<Target href="#ref-6"/>
+<Bookmark href="#ref-6"/>
+<CanGrow>true</CanGrow>
+<CanShrink>false</CanShrink>
+<WordWrap>true</WordWrap>
+<EventsScript_X_OnHtmlItemCreated href="#ref-6"/>
+<EventsScript_X_OnBeforePrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseUp href="#ref-6"/>
+<EventsScript_X_OnBandHeightChanged href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseDown href="#ref-6"/>
+<EventsScript_X_OnLocationChanged href="#ref-6"/>
+<EventsScript_X_OnAfterPrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseMove href="#ref-6"/>
+<EventsScript_X_OnPreviewDoubleClick href="#ref-6"/>
+<EventsScript_X_OnDataSourceRowChanged href="#ref-6"/>
+<EventsScript_X_OnSizeChanged href="#ref-6"/>
+<EventsScript_X_OnDraw href="#ref-6"/>
+<EventsScript_X_OnPreviewClick href="#ref-6"/>
+<EventsScript_X_OnTextChanged href="#ref-6"/>
+<EventsScript_X_OnParentChanged href="#ref-6"/>
+<Height>99</Height>
+<PageBreak xsi:type="a3:PageBreak" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</PageBreak>
+<ItemCount>3</ItemCount>
+<Item0 href="#ref-26"/>
+<Item1 href="#ref-27"/>
+<Item2 href="#ref-28"/>
+</a1:ObjectStorage>
+<a1:ObjectStorage id="ref-8" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.Serialization/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">
+<Type_X_AssemblyName href="#ref-22"/>
+<Type_X_TypeName id="ref-29">DevExpress.XtraReports.UI.DetailBand</Type_X_TypeName>
+<Visible>false</Visible>
+<Tag href="#ref-6"/>
+<Dock xsi:type="a3:XRDockStyle" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Dock>
+<Name id="ref-30">Detail</Name>
+<Style_X_Font id="ref-31">Times New Roman, 9.75pt</Style_X_Font>
+<Style_X_ForeColor href="#ref-16"/>
+<Style_X_BackColor href="#ref-17"/>
+<Style_X_BorderColor href="#ref-16"/>
+<Style_X_Borders xsi:type="a4:BorderSide" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Style_X_Borders>
+<Style_X_TextAlignment xsi:type="a4:TextAlignment" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">TopLeft</Style_X_TextAlignment>
+<Style_X_BorderWidth>1</Style_X_BorderWidth>
+<Style_X_StyleUsing_X_UseFont>true</Style_X_StyleUsing_X_UseFont>
+<Style_X_StyleUsing_X_UseForeColor>true</Style_X_StyleUsing_X_UseForeColor>
+<Style_X_StyleUsing_X_UseBackColor>true</Style_X_StyleUsing_X_UseBackColor>
+<Style_X_StyleUsing_X_UseBorderColor>true</Style_X_StyleUsing_X_UseBorderColor>
+<Style_X_StyleUsing_X_UseBorders>true</Style_X_StyleUsing_X_UseBorders>
+<Style_X_StyleUsing_X_UseBorderWidth>true</Style_X_StyleUsing_X_UseBorderWidth>
+<Style_X_StyleUsing_X_UseTextAlignment>false</Style_X_StyleUsing_X_UseTextAlignment>
+<ParentStyleUsing_X_UseFont>true</ParentStyleUsing_X_UseFont>
+<ParentStyleUsing_X_UseForeColor>true</ParentStyleUsing_X_UseForeColor>
+<ParentStyleUsing_X_UseBackColor>true</ParentStyleUsing_X_UseBackColor>
+<ParentStyleUsing_X_UseBorderColor>true</ParentStyleUsing_X_UseBorderColor>
+<ParentStyleUsing_X_UseBorders>true</ParentStyleUsing_X_UseBorders>
+<ParentStyleUsing_X_UseBorderWidth>true</ParentStyleUsing_X_UseBorderWidth>
+<ParentStyleUsing_X_UseTextAlignment>false</ParentStyleUsing_X_UseTextAlignment>
+<Dpi>100</Dpi>
+<EvenStyleName href="#ref-6"/>
+<OddStyleName href="#ref-6"/>
+<StyleName href="#ref-6"/>
+<BindingItemCount>0</BindingItemCount>
+<Bounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<x>0</x>
+<y>0</y>
+<width>100</width>
+<height>23</height>
+</Bounds>
+<Text href="#ref-6"/>
+<NavigateUrl href="#ref-6"/>
+<Target href="#ref-6"/>
+<Bookmark href="#ref-6"/>
+<CanGrow>true</CanGrow>
+<CanShrink>false</CanShrink>
+<WordWrap>true</WordWrap>
+<EventsScript_X_OnHtmlItemCreated href="#ref-6"/>
+<EventsScript_X_OnBeforePrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseUp href="#ref-6"/>
+<EventsScript_X_OnBandHeightChanged href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseDown href="#ref-6"/>
+<EventsScript_X_OnLocationChanged href="#ref-6"/>
+<EventsScript_X_OnAfterPrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseMove href="#ref-6"/>
+<EventsScript_X_OnPreviewDoubleClick href="#ref-6"/>
+<EventsScript_X_OnDataSourceRowChanged href="#ref-6"/>
+<EventsScript_X_OnSizeChanged href="#ref-6"/>
+<EventsScript_X_OnDraw href="#ref-6"/>
+<EventsScript_X_OnPreviewClick href="#ref-6"/>
+<EventsScript_X_OnTextChanged href="#ref-6"/>
+<EventsScript_X_OnParentChanged href="#ref-6"/>
+<Height>27</Height>
+<PageBreak xsi:type="a3:PageBreak" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</PageBreak>
+<PrintOnEmptyDataSource>true</PrintOnEmptyDataSource>
+<MultiColumn_X_ColumnCount>1</MultiColumn_X_ColumnCount>
+<MultiColumn_X_Direction xsi:type="a3:ColumnDirection" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">DownThenAcross</MultiColumn_X_Direction>
+<MultiColumn_X_ColumnWidth>0</MultiColumn_X_ColumnWidth>
+<MultiColumn_X_ColumnSpacing>0</MultiColumn_X_ColumnSpacing>
+<MultiColumn_X_Mode xsi:type="a3:MultiColumnMode" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</MultiColumn_X_Mode>
+<RepeatCountOnEmptyDataSource>1</RepeatCountOnEmptyDataSource>
+<ItemCount>2</ItemCount>
+<Item0 href="#ref-32"/>
+<Item1 href="#ref-33"/>
+</a1:ObjectStorage>
+<a1:ObjectStorage id="ref-9" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.Serialization/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">
+<Type_X_AssemblyName href="#ref-22"/>
+<Type_X_TypeName id="ref-34">DevExpress.XtraReports.UI.GroupHeaderBand</Type_X_TypeName>
+<Visible>true</Visible>
+<Tag href="#ref-6"/>
+<Dock xsi:type="a3:XRDockStyle" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Dock>
+<Name id="ref-35">GroupHeader1</Name>
+<Style_X_Font id="ref-36">Arial, 9.75pt</Style_X_Font>
+<Style_X_ForeColor href="#ref-16"/>
+<Style_X_BackColor href="#ref-17"/>
+<Style_X_BorderColor href="#ref-16"/>
+<Style_X_Borders xsi:type="a4:BorderSide" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Style_X_Borders>
+<Style_X_TextAlignment xsi:type="a4:TextAlignment" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">TopLeft</Style_X_TextAlignment>
+<Style_X_BorderWidth>1</Style_X_BorderWidth>
+<Style_X_StyleUsing_X_UseFont>true</Style_X_StyleUsing_X_UseFont>
+<Style_X_StyleUsing_X_UseForeColor>true</Style_X_StyleUsing_X_UseForeColor>
+<Style_X_StyleUsing_X_UseBackColor>true</Style_X_StyleUsing_X_UseBackColor>
+<Style_X_StyleUsing_X_UseBorderColor>true</Style_X_StyleUsing_X_UseBorderColor>
+<Style_X_StyleUsing_X_UseBorders>true</Style_X_StyleUsing_X_UseBorders>
+<Style_X_StyleUsing_X_UseBorderWidth>true</Style_X_StyleUsing_X_UseBorderWidth>
+<Style_X_StyleUsing_X_UseTextAlignment>false</Style_X_StyleUsing_X_UseTextAlignment>
+<ParentStyleUsing_X_UseFont>false</ParentStyleUsing_X_UseFont>
+<ParentStyleUsing_X_UseForeColor>true</ParentStyleUsing_X_UseForeColor>
+<ParentStyleUsing_X_UseBackColor>true</ParentStyleUsing_X_UseBackColor>
+<ParentStyleUsing_X_UseBorderColor>true</ParentStyleUsing_X_UseBorderColor>
+<ParentStyleUsing_X_UseBorders>true</ParentStyleUsing_X_UseBorders>
+<ParentStyleUsing_X_UseBorderWidth>true</ParentStyleUsing_X_UseBorderWidth>
+<ParentStyleUsing_X_UseTextAlignment>false</ParentStyleUsing_X_UseTextAlignment>
+<Dpi>100</Dpi>
+<EvenStyleName href="#ref-6"/>
+<OddStyleName href="#ref-6"/>
+<StyleName href="#ref-6"/>
+<BindingItemCount>0</BindingItemCount>
+<Bounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<x>0</x>
+<y>0</y>
+<width>100</width>
+<height>23</height>
+</Bounds>
+<Text href="#ref-6"/>
+<NavigateUrl href="#ref-6"/>
+<Target href="#ref-6"/>
+<Bookmark href="#ref-6"/>
+<CanGrow>true</CanGrow>
+<CanShrink>false</CanShrink>
+<WordWrap>true</WordWrap>
+<EventsScript_X_OnHtmlItemCreated href="#ref-6"/>
+<EventsScript_X_OnBeforePrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseUp href="#ref-6"/>
+<EventsScript_X_OnBandHeightChanged href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseDown href="#ref-6"/>
+<EventsScript_X_OnLocationChanged href="#ref-6"/>
+<EventsScript_X_OnAfterPrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseMove href="#ref-6"/>
+<EventsScript_X_OnPreviewDoubleClick href="#ref-6"/>
+<EventsScript_X_OnDataSourceRowChanged href="#ref-6"/>
+<EventsScript_X_OnSizeChanged href="#ref-6"/>
+<EventsScript_X_OnDraw href="#ref-6"/>
+<EventsScript_X_OnPreviewClick href="#ref-6"/>
+<EventsScript_X_OnTextChanged href="#ref-6"/>
+<EventsScript_X_OnParentChanged href="#ref-6"/>
+<Height>25</Height>
+<PageBreak xsi:type="a3:PageBreak" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</PageBreak>
+<Level>0</Level>
+<RepeatEveryPage>false</RepeatEveryPage>
+<GroupFieldCount>1</GroupFieldCount>
+<GroupField0_X_FieldName id="ref-37">Entity_Name</GroupField0_X_FieldName>
+<GroupField0_X_SortOrder xsi:type="a3:XRColumnSortOrder" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">Ascending</GroupField0_X_SortOrder>
+<GroupUnion xsi:type="a3:GroupUnion" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</GroupUnion>
+<ItemCount>3</ItemCount>
+<Item0 href="#ref-38"/>
+<Item1 href="#ref-39"/>
+<Item2 href="#ref-40"/>
+</a1:ObjectStorage>
+<a1:ObjectStorage id="ref-10" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.Serialization/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">
+<Type_X_AssemblyName href="#ref-22"/>
+<Type_X_TypeName id="ref-41">DevExpress.XtraReports.UI.ReportFooterBand</Type_X_TypeName>
+<Visible>true</Visible>
+<Tag href="#ref-6"/>
+<Dock xsi:type="a3:XRDockStyle" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Dock>
+<Name id="ref-42">ReportFooter</Name>
+<Style_X_Font id="ref-43">Arial, 9.75pt</Style_X_Font>
+<Style_X_ForeColor href="#ref-16"/>
+<Style_X_BackColor href="#ref-17"/>
+<Style_X_BorderColor href="#ref-16"/>
+<Style_X_Borders xsi:type="a4:BorderSide" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">All</Style_X_Borders>
+<Style_X_TextAlignment xsi:type="a4:TextAlignment" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">TopLeft</Style_X_TextAlignment>
+<Style_X_BorderWidth>1</Style_X_BorderWidth>
+<Style_X_StyleUsing_X_UseFont>true</Style_X_StyleUsing_X_UseFont>
+<Style_X_StyleUsing_X_UseForeColor>true</Style_X_StyleUsing_X_UseForeColor>
+<Style_X_StyleUsing_X_UseBackColor>true</Style_X_StyleUsing_X_UseBackColor>
+<Style_X_StyleUsing_X_UseBorderColor>true</Style_X_StyleUsing_X_UseBorderColor>
+<Style_X_StyleUsing_X_UseBorders>true</Style_X_StyleUsing_X_UseBorders>
+<Style_X_StyleUsing_X_UseBorderWidth>true</Style_X_StyleUsing_X_UseBorderWidth>
+<Style_X_StyleUsing_X_UseTextAlignment>false</Style_X_StyleUsing_X_UseTextAlignment>
+<ParentStyleUsing_X_UseFont>false</ParentStyleUsing_X_UseFont>
+<ParentStyleUsing_X_UseForeColor>true</ParentStyleUsing_X_UseForeColor>
+<ParentStyleUsing_X_UseBackColor>true</ParentStyleUsing_X_UseBackColor>
+<ParentStyleUsing_X_UseBorderColor>true</ParentStyleUsing_X_UseBorderColor>
+<ParentStyleUsing_X_UseBorders>false</ParentStyleUsing_X_UseBorders>
+<ParentStyleUsing_X_UseBorderWidth>true</ParentStyleUsing_X_UseBorderWidth>
+<ParentStyleUsing_X_UseTextAlignment>false</ParentStyleUsing_X_UseTextAlignment>
+<Dpi>100</Dpi>
+<EvenStyleName href="#ref-6"/>
+<OddStyleName href="#ref-6"/>
+<StyleName href="#ref-6"/>
+<BindingItemCount>0</BindingItemCount>
+<Bounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<x>0</x>
+<y>0</y>
+<width>100</width>
+<height>23</height>
+</Bounds>
+<Text href="#ref-6"/>
+<NavigateUrl href="#ref-6"/>
+<Target href="#ref-6"/>
+<Bookmark href="#ref-6"/>
+<CanGrow>true</CanGrow>
+<CanShrink>false</CanShrink>
+<WordWrap>true</WordWrap>
+<EventsScript_X_OnHtmlItemCreated href="#ref-6"/>
+<EventsScript_X_OnBeforePrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseUp href="#ref-6"/>
+<EventsScript_X_OnBandHeightChanged href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseDown href="#ref-6"/>
+<EventsScript_X_OnLocationChanged href="#ref-6"/>
+<EventsScript_X_OnAfterPrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseMove href="#ref-6"/>
+<EventsScript_X_OnPreviewDoubleClick href="#ref-6"/>
+<EventsScript_X_OnDataSourceRowChanged href="#ref-6"/>
+<EventsScript_X_OnSizeChanged href="#ref-6"/>
+<EventsScript_X_OnDraw href="#ref-6"/>
+<EventsScript_X_OnPreviewClick href="#ref-6"/>
+<EventsScript_X_OnTextChanged href="#ref-6"/>
+<EventsScript_X_OnParentChanged href="#ref-6"/>
+<Height>100</Height>
+<PageBreak xsi:type="a3:PageBreak" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</PageBreak>
+<ItemCount>0</ItemCount>
+</a1:ObjectStorage>
+<a1:ObjectStorage id="ref-11" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.Serialization/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">
+<Type_X_AssemblyName href="#ref-22"/>
+<Type_X_TypeName href="#ref-34"/>
+<Visible>true</Visible>
+<Tag href="#ref-6"/>
+<Dock xsi:type="a3:XRDockStyle" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Dock>
+<Name id="ref-44">GroupHeader3</Name>
+<Style_X_Font id="ref-45">Times New Roman, 9.75pt</Style_X_Font>
+<Style_X_ForeColor href="#ref-16"/>
+<Style_X_BackColor href="#ref-17"/>
+<Style_X_BorderColor href="#ref-16"/>
+<Style_X_Borders xsi:type="a4:BorderSide" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Style_X_Borders>
+<Style_X_TextAlignment xsi:type="a4:TextAlignment" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">TopLeft</Style_X_TextAlignment>
+<Style_X_BorderWidth>1</Style_X_BorderWidth>
+<Style_X_StyleUsing_X_UseFont>true</Style_X_StyleUsing_X_UseFont>
+<Style_X_StyleUsing_X_UseForeColor>true</Style_X_StyleUsing_X_UseForeColor>
+<Style_X_StyleUsing_X_UseBackColor>true</Style_X_StyleUsing_X_UseBackColor>
+<Style_X_StyleUsing_X_UseBorderColor>true</Style_X_StyleUsing_X_UseBorderColor>
+<Style_X_StyleUsing_X_UseBorders>true</Style_X_StyleUsing_X_UseBorders>
+<Style_X_StyleUsing_X_UseBorderWidth>true</Style_X_StyleUsing_X_UseBorderWidth>
+<Style_X_StyleUsing_X_UseTextAlignment>false</Style_X_StyleUsing_X_UseTextAlignment>
+<ParentStyleUsing_X_UseFont>true</ParentStyleUsing_X_UseFont>
+<ParentStyleUsing_X_UseForeColor>true</ParentStyleUsing_X_UseForeColor>
+<ParentStyleUsing_X_UseBackColor>true</ParentStyleUsing_X_UseBackColor>
+<ParentStyleUsing_X_UseBorderColor>true</ParentStyleUsing_X_UseBorderColor>
+<ParentStyleUsing_X_UseBorders>true</ParentStyleUsing_X_UseBorders>
+<ParentStyleUsing_X_UseBorderWidth>true</ParentStyleUsing_X_UseBorderWidth>
+<ParentStyleUsing_X_UseTextAlignment>false</ParentStyleUsing_X_UseTextAlignment>
+<Dpi>100</Dpi>
+<EvenStyleName href="#ref-6"/>
+<OddStyleName href="#ref-6"/>
+<StyleName href="#ref-6"/>
+<BindingItemCount>0</BindingItemCount>
+<Bounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<x>0</x>
+<y>0</y>
+<width>100</width>
+<height>23</height>
+</Bounds>
+<Text href="#ref-6"/>
+<NavigateUrl href="#ref-6"/>
+<Target href="#ref-6"/>
+<Bookmark href="#ref-6"/>
+<CanGrow>true</CanGrow>
+<CanShrink>false</CanShrink>
+<WordWrap>true</WordWrap>
+<EventsScript_X_OnHtmlItemCreated href="#ref-6"/>
+<EventsScript_X_OnBeforePrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseUp href="#ref-6"/>
+<EventsScript_X_OnBandHeightChanged href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseDown href="#ref-6"/>
+<EventsScript_X_OnLocationChanged href="#ref-6"/>
+<EventsScript_X_OnAfterPrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseMove href="#ref-6"/>
+<EventsScript_X_OnPreviewDoubleClick href="#ref-6"/>
+<EventsScript_X_OnDataSourceRowChanged href="#ref-6"/>
+<EventsScript_X_OnSizeChanged href="#ref-6"/>
+<EventsScript_X_OnDraw href="#ref-6"/>
+<EventsScript_X_OnPreviewClick href="#ref-6"/>
+<EventsScript_X_OnTextChanged href="#ref-6"/>
+<EventsScript_X_OnParentChanged href="#ref-6"/>
+<Height>42</Height>
+<PageBreak xsi:type="a3:PageBreak" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</PageBreak>
+<Level>1</Level>
+<RepeatEveryPage>false</RepeatEveryPage>
+<GroupFieldCount>1</GroupFieldCount>
+<GroupField0_X_FieldName id="ref-46">Entity_CurrCode</GroupField0_X_FieldName>
+<GroupField0_X_SortOrder xsi:type="a3:XRColumnSortOrder" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">Ascending</GroupField0_X_SortOrder>
+<GroupUnion xsi:type="a3:GroupUnion" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</GroupUnion>
+<ItemCount>3</ItemCount>
+<Item0 href="#ref-47"/>
+<Item1 href="#ref-48"/>
+<Item2 href="#ref-49"/>
+</a1:ObjectStorage>
+<a1:ObjectStorage id="ref-12" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.Serialization/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">
+<Type_X_AssemblyName href="#ref-22"/>
+<Type_X_TypeName id="ref-50">DevExpress.XtraReports.UI.GroupFooterBand</Type_X_TypeName>
+<Visible>true</Visible>
+<Tag href="#ref-6"/>
+<Dock xsi:type="a3:XRDockStyle" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Dock>
+<Name id="ref-51">GroupFooter1</Name>
+<Style_X_Font id="ref-52">Times New Roman, 9.75pt</Style_X_Font>
+<Style_X_ForeColor href="#ref-16"/>
+<Style_X_BackColor href="#ref-17"/>
+<Style_X_BorderColor href="#ref-16"/>
+<Style_X_Borders xsi:type="a4:BorderSide" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Style_X_Borders>
+<Style_X_TextAlignment xsi:type="a4:TextAlignment" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">TopLeft</Style_X_TextAlignment>
+<Style_X_BorderWidth>1</Style_X_BorderWidth>
+<Style_X_StyleUsing_X_UseFont>true</Style_X_StyleUsing_X_UseFont>
+<Style_X_StyleUsing_X_UseForeColor>true</Style_X_StyleUsing_X_UseForeColor>
+<Style_X_StyleUsing_X_UseBackColor>true</Style_X_StyleUsing_X_UseBackColor>
+<Style_X_StyleUsing_X_UseBorderColor>true</Style_X_StyleUsing_X_UseBorderColor>
+<Style_X_StyleUsing_X_UseBorders>true</Style_X_StyleUsing_X_UseBorders>
+<Style_X_StyleUsing_X_UseBorderWidth>true</Style_X_StyleUsing_X_UseBorderWidth>
+<Style_X_StyleUsing_X_UseTextAlignment>false</Style_X_StyleUsing_X_UseTextAlignment>
+<ParentStyleUsing_X_UseFont>true</ParentStyleUsing_X_UseFont>
+<ParentStyleUsing_X_UseForeColor>true</ParentStyleUsing_X_UseForeColor>
+<ParentStyleUsing_X_UseBackColor>true</ParentStyleUsing_X_UseBackColor>
+<ParentStyleUsing_X_UseBorderColor>true</ParentStyleUsing_X_UseBorderColor>
+<ParentStyleUsing_X_UseBorders>true</ParentStyleUsing_X_UseBorders>
+<ParentStyleUsing_X_UseBorderWidth>true</ParentStyleUsing_X_UseBorderWidth>
+<ParentStyleUsing_X_UseTextAlignment>false</ParentStyleUsing_X_UseTextAlignment>
+<Dpi>100</Dpi>
+<EvenStyleName href="#ref-6"/>
+<OddStyleName href="#ref-6"/>
+<StyleName href="#ref-6"/>
+<BindingItemCount>0</BindingItemCount>
+<Bounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<x>0</x>
+<y>0</y>
+<width>100</width>
+<height>23</height>
+</Bounds>
+<Text href="#ref-6"/>
+<NavigateUrl href="#ref-6"/>
+<Target href="#ref-6"/>
+<Bookmark href="#ref-6"/>
+<CanGrow>true</CanGrow>
+<CanShrink>false</CanShrink>
+<WordWrap>true</WordWrap>
+<EventsScript_X_OnHtmlItemCreated href="#ref-6"/>
+<EventsScript_X_OnBeforePrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseUp href="#ref-6"/>
+<EventsScript_X_OnBandHeightChanged href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseDown href="#ref-6"/>
+<EventsScript_X_OnLocationChanged href="#ref-6"/>
+<EventsScript_X_OnAfterPrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseMove href="#ref-6"/>
+<EventsScript_X_OnPreviewDoubleClick href="#ref-6"/>
+<EventsScript_X_OnDataSourceRowChanged href="#ref-6"/>
+<EventsScript_X_OnSizeChanged href="#ref-6"/>
+<EventsScript_X_OnDraw href="#ref-6"/>
+<EventsScript_X_OnPreviewClick href="#ref-6"/>
+<EventsScript_X_OnTextChanged href="#ref-6"/>
+<EventsScript_X_OnParentChanged href="#ref-6"/>
+<Height>3</Height>
+<PageBreak xsi:type="a3:PageBreak" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</PageBreak>
+<Level>0</Level>
+<RepeatEveryPage>false</RepeatEveryPage>
+<ItemCount>0</ItemCount>
+</a1:ObjectStorage>
+<a1:ObjectStorage id="ref-13" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.Serialization/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">
+<Type_X_AssemblyName href="#ref-22"/>
+<Type_X_TypeName href="#ref-50"/>
+<Visible>true</Visible>
+<Tag href="#ref-6"/>
+<Dock xsi:type="a3:XRDockStyle" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Dock>
+<Name id="ref-53">GroupFooter2</Name>
+<Style_X_Font id="ref-54">Times New Roman, 9.75pt</Style_X_Font>
+<Style_X_ForeColor href="#ref-16"/>
+<Style_X_BackColor href="#ref-17"/>
+<Style_X_BorderColor href="#ref-16"/>
+<Style_X_Borders xsi:type="a4:BorderSide" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Style_X_Borders>
+<Style_X_TextAlignment xsi:type="a4:TextAlignment" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">TopLeft</Style_X_TextAlignment>
+<Style_X_BorderWidth>1</Style_X_BorderWidth>
+<Style_X_StyleUsing_X_UseFont>true</Style_X_StyleUsing_X_UseFont>
+<Style_X_StyleUsing_X_UseForeColor>true</Style_X_StyleUsing_X_UseForeColor>
+<Style_X_StyleUsing_X_UseBackColor>true</Style_X_StyleUsing_X_UseBackColor>
+<Style_X_StyleUsing_X_UseBorderColor>true</Style_X_StyleUsing_X_UseBorderColor>
+<Style_X_StyleUsing_X_UseBorders>true</Style_X_StyleUsing_X_UseBorders>
+<Style_X_StyleUsing_X_UseBorderWidth>true</Style_X_StyleUsing_X_UseBorderWidth>
+<Style_X_StyleUsing_X_UseTextAlignment>false</Style_X_StyleUsing_X_UseTextAlignment>
+<ParentStyleUsing_X_UseFont>true</ParentStyleUsing_X_UseFont>
+<ParentStyleUsing_X_UseForeColor>true</ParentStyleUsing_X_UseForeColor>
+<ParentStyleUsing_X_UseBackColor>true</ParentStyleUsing_X_UseBackColor>
+<ParentStyleUsing_X_UseBorderColor>true</ParentStyleUsing_X_UseBorderColor>
+<ParentStyleUsing_X_UseBorders>true</ParentStyleUsing_X_UseBorders>
+<ParentStyleUsing_X_UseBorderWidth>true</ParentStyleUsing_X_UseBorderWidth>
+<ParentStyleUsing_X_UseTextAlignment>false</ParentStyleUsing_X_UseTextAlignment>
+<Dpi>100</Dpi>
+<EvenStyleName href="#ref-6"/>
+<OddStyleName href="#ref-6"/>
+<StyleName href="#ref-6"/>
+<BindingItemCount>0</BindingItemCount>
+<Bounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<x>0</x>
+<y>0</y>
+<width>100</width>
+<height>23</height>
+</Bounds>
+<Text href="#ref-6"/>
+<NavigateUrl href="#ref-6"/>
+<Target href="#ref-6"/>
+<Bookmark href="#ref-6"/>
+<CanGrow>true</CanGrow>
+<CanShrink>false</CanShrink>
+<WordWrap>true</WordWrap>
+<EventsScript_X_OnHtmlItemCreated href="#ref-6"/>
+<EventsScript_X_OnBeforePrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseUp href="#ref-6"/>
+<EventsScript_X_OnBandHeightChanged href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseDown href="#ref-6"/>
+<EventsScript_X_OnLocationChanged href="#ref-6"/>
+<EventsScript_X_OnAfterPrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseMove href="#ref-6"/>
+<EventsScript_X_OnPreviewDoubleClick href="#ref-6"/>
+<EventsScript_X_OnDataSourceRowChanged href="#ref-6"/>
+<EventsScript_X_OnSizeChanged href="#ref-6"/>
+<EventsScript_X_OnDraw href="#ref-6"/>
+<EventsScript_X_OnPreviewClick href="#ref-6"/>
+<EventsScript_X_OnTextChanged href="#ref-6"/>
+<EventsScript_X_OnParentChanged href="#ref-6"/>
+<Height>40</Height>
+<PageBreak xsi:type="a3:PageBreak" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</PageBreak>
+<Level>1</Level>
+<RepeatEveryPage>false</RepeatEveryPage>
+<ItemCount>2</ItemCount>
+<Item0 href="#ref-55"/>
+<Item1 href="#ref-56"/>
+</a1:ObjectStorage>
+<a1:ObjectStorage id="ref-26" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.Serialization/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">
+<Type_X_AssemblyName href="#ref-22"/>
+<Type_X_TypeName id="ref-57">DevExpress.XtraReports.UI.XRLabel</Type_X_TypeName>
+<Visible>true</Visible>
+<Tag href="#ref-6"/>
+<Dock xsi:type="a3:XRDockStyle" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Dock>
+<Name id="ref-58">xrLabel11</Name>
+<Style_X_Font id="ref-59">Arial, 9.75pt, style=Bold, Underline</Style_X_Font>
+<Style_X_ForeColor href="#ref-16"/>
+<Style_X_BackColor href="#ref-17"/>
+<Style_X_BorderColor href="#ref-16"/>
+<Style_X_Borders xsi:type="a4:BorderSide" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Style_X_Borders>
+<Style_X_TextAlignment xsi:type="a4:TextAlignment" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">TopLeft</Style_X_TextAlignment>
+<Style_X_BorderWidth>1</Style_X_BorderWidth>
+<Style_X_StyleUsing_X_UseFont>true</Style_X_StyleUsing_X_UseFont>
+<Style_X_StyleUsing_X_UseForeColor>true</Style_X_StyleUsing_X_UseForeColor>
+<Style_X_StyleUsing_X_UseBackColor>true</Style_X_StyleUsing_X_UseBackColor>
+<Style_X_StyleUsing_X_UseBorderColor>true</Style_X_StyleUsing_X_UseBorderColor>
+<Style_X_StyleUsing_X_UseBorders>true</Style_X_StyleUsing_X_UseBorders>
+<Style_X_StyleUsing_X_UseBorderWidth>true</Style_X_StyleUsing_X_UseBorderWidth>
+<Style_X_StyleUsing_X_UseTextAlignment>false</Style_X_StyleUsing_X_UseTextAlignment>
+<ParentStyleUsing_X_UseFont>false</ParentStyleUsing_X_UseFont>
+<ParentStyleUsing_X_UseForeColor>true</ParentStyleUsing_X_UseForeColor>
+<ParentStyleUsing_X_UseBackColor>true</ParentStyleUsing_X_UseBackColor>
+<ParentStyleUsing_X_UseBorderColor>true</ParentStyleUsing_X_UseBorderColor>
+<ParentStyleUsing_X_UseBorders>true</ParentStyleUsing_X_UseBorders>
+<ParentStyleUsing_X_UseBorderWidth>true</ParentStyleUsing_X_UseBorderWidth>
+<ParentStyleUsing_X_UseTextAlignment>false</ParentStyleUsing_X_UseTextAlignment>
+<Dpi>100</Dpi>
+<EvenStyleName href="#ref-6"/>
+<OddStyleName href="#ref-6"/>
+<StyleName href="#ref-6"/>
+<BindingItemCount>1</BindingItemCount>
+<BindingItem0_X_PropertyName id="ref-60">Text</BindingItem0_X_PropertyName>
+<BindingItem0_X_DataMember id="ref-61">CashRealBalanceViewA3.EffDate</BindingItem0_X_DataMember>
+<BindingItem0_X_FormatString id="ref-62">{0:dd/MM/yyyy}</BindingItem0_X_FormatString>
+<BindingItem0_X_DataSource href="#ref-6"/>
+<Bounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<x>433</x>
+<y>17</y>
+<width>100</width>
+<height>25</height>
+</Bounds>
+<Text href="#ref-58"/>
+<NavigateUrl href="#ref-6"/>
+<Target href="#ref-6"/>
+<Bookmark href="#ref-6"/>
+<CanGrow>true</CanGrow>
+<CanShrink>false</CanShrink>
+<WordWrap>true</WordWrap>
+<Draw href="#ref-6"/>
+<ParentChanged href="#ref-6"/>
+<EventsScript_X_OnHtmlItemCreated href="#ref-6"/>
+<EventsScript_X_OnBeforePrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseUp href="#ref-6"/>
+<EventsScript_X_OnBandHeightChanged href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseDown href="#ref-6"/>
+<EventsScript_X_OnLocationChanged href="#ref-6"/>
+<EventsScript_X_OnAfterPrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseMove href="#ref-6"/>
+<EventsScript_X_OnPreviewDoubleClick href="#ref-6"/>
+<EventsScript_X_OnDataSourceRowChanged href="#ref-6"/>
+<EventsScript_X_OnSizeChanged href="#ref-6"/>
+<EventsScript_X_OnDraw href="#ref-6"/>
+<EventsScript_X_OnPreviewClick href="#ref-6"/>
+<EventsScript_X_OnTextChanged href="#ref-6"/>
+<EventsScript_X_OnParentChanged href="#ref-6"/>
+<Multiline>false</Multiline>
+<Angle>0</Angle>
+<Summary_X_FormatString href="#ref-6"/>
+<Summary_X_Func xsi:type="a3:SummaryFunc" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">Sum</Summary_X_Func>
+<Summary_X_Running xsi:type="a3:SummaryRunning" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Summary_X_Running>
+<Summary_X_Scripts_X_OnGetResult href="#ref-6"/>
+<Summary_X_Scripts_X_OnRowChanged href="#ref-6"/>
+<Summary_X_Scripts_X_OnReset href="#ref-6"/>
+<Summary_X_IgnoreNullValues>false</Summary_X_IgnoreNullValues>
+<ItemCount>0</ItemCount>
+</a1:ObjectStorage>
+<a1:ObjectStorage id="ref-27" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.Serialization/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">
+<Type_X_AssemblyName href="#ref-22"/>
+<Type_X_TypeName href="#ref-57"/>
+<Visible>true</Visible>
+<Tag href="#ref-6"/>
+<Dock xsi:type="a3:XRDockStyle" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Dock>
+<Name id="ref-63">xrLabel1</Name>
+<Style_X_Font id="ref-64">Arial, 12pt, style=Bold, Underline</Style_X_Font>
+<Style_X_ForeColor href="#ref-16"/>
+<Style_X_BackColor href="#ref-17"/>
+<Style_X_BorderColor href="#ref-16"/>
+<Style_X_Borders xsi:type="a4:BorderSide" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Style_X_Borders>
+<Style_X_TextAlignment xsi:type="a4:TextAlignment" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">MiddleCenter</Style_X_TextAlignment>
+<Style_X_BorderWidth>1</Style_X_BorderWidth>
+<Style_X_StyleUsing_X_UseFont>true</Style_X_StyleUsing_X_UseFont>
+<Style_X_StyleUsing_X_UseForeColor>true</Style_X_StyleUsing_X_UseForeColor>
+<Style_X_StyleUsing_X_UseBackColor>true</Style_X_StyleUsing_X_UseBackColor>
+<Style_X_StyleUsing_X_UseBorderColor>true</Style_X_StyleUsing_X_UseBorderColor>
+<Style_X_StyleUsing_X_UseBorders>true</Style_X_StyleUsing_X_UseBorders>
+<Style_X_StyleUsing_X_UseBorderWidth>true</Style_X_StyleUsing_X_UseBorderWidth>
+<Style_X_StyleUsing_X_UseTextAlignment>false</Style_X_StyleUsing_X_UseTextAlignment>
+<ParentStyleUsing_X_UseFont>false</ParentStyleUsing_X_UseFont>
+<ParentStyleUsing_X_UseForeColor>true</ParentStyleUsing_X_UseForeColor>
+<ParentStyleUsing_X_UseBackColor>false</ParentStyleUsing_X_UseBackColor>
+<ParentStyleUsing_X_UseBorderColor>true</ParentStyleUsing_X_UseBorderColor>
+<ParentStyleUsing_X_UseBorders>false</ParentStyleUsing_X_UseBorders>
+<ParentStyleUsing_X_UseBorderWidth>true</ParentStyleUsing_X_UseBorderWidth>
+<ParentStyleUsing_X_UseTextAlignment>false</ParentStyleUsing_X_UseTextAlignment>
+<Dpi>100</Dpi>
+<EvenStyleName href="#ref-6"/>
+<OddStyleName href="#ref-6"/>
+<StyleName href="#ref-6"/>
+<BindingItemCount>0</BindingItemCount>
+<Bounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<x>25</x>
+<y>50</y>
+<width>558</width>
+<height>42</height>
+</Bounds>
+<Text id="ref-65">WEEKLY CASH REPORT BY ENTITY CURRENCY</Text>
+<NavigateUrl href="#ref-6"/>
+<Target href="#ref-6"/>
+<Bookmark href="#ref-6"/>
+<CanGrow>true</CanGrow>
+<CanShrink>false</CanShrink>
+<WordWrap>true</WordWrap>
+<Draw href="#ref-6"/>
+<ParentChanged href="#ref-6"/>
+<EventsScript_X_OnHtmlItemCreated href="#ref-6"/>
+<EventsScript_X_OnBeforePrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseUp href="#ref-6"/>
+<EventsScript_X_OnBandHeightChanged href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseDown href="#ref-6"/>
+<EventsScript_X_OnLocationChanged href="#ref-6"/>
+<EventsScript_X_OnAfterPrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseMove href="#ref-6"/>
+<EventsScript_X_OnPreviewDoubleClick href="#ref-6"/>
+<EventsScript_X_OnDataSourceRowChanged href="#ref-6"/>
+<EventsScript_X_OnSizeChanged href="#ref-6"/>
+<EventsScript_X_OnDraw href="#ref-6"/>
+<EventsScript_X_OnPreviewClick href="#ref-6"/>
+<EventsScript_X_OnTextChanged href="#ref-6"/>
+<EventsScript_X_OnParentChanged href="#ref-6"/>
+<Multiline>true</Multiline>
+<Angle>0</Angle>
+<Summary_X_FormatString href="#ref-6"/>
+<Summary_X_Func xsi:type="a3:SummaryFunc" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">Sum</Summary_X_Func>
+<Summary_X_Running xsi:type="a3:SummaryRunning" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Summary_X_Running>
+<Summary_X_Scripts_X_OnGetResult href="#ref-6"/>
+<Summary_X_Scripts_X_OnRowChanged href="#ref-6"/>
+<Summary_X_Scripts_X_OnReset href="#ref-6"/>
+<Summary_X_IgnoreNullValues>false</Summary_X_IgnoreNullValues>
+<ItemCount>0</ItemCount>
+</a1:ObjectStorage>
+<a1:ObjectStorage id="ref-28" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.Serialization/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">
+<Type_X_AssemblyName href="#ref-22"/>
+<Type_X_TypeName id="ref-66">DevExpress.XtraReports.UI.XRPictureBox</Type_X_TypeName>
+<Visible>true</Visible>
+<Tag href="#ref-6"/>
+<Dock xsi:type="a3:XRDockStyle" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Dock>
+<Name id="ref-67">xrPictureBox1</Name>
+<Style_X_Font id="ref-68">Times New Roman, 9.75pt</Style_X_Font>
+<Style_X_ForeColor href="#ref-16"/>
+<Style_X_BackColor href="#ref-17"/>
+<Style_X_BorderColor href="#ref-16"/>
+<Style_X_Borders xsi:type="a4:BorderSide" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Style_X_Borders>
+<Style_X_TextAlignment xsi:type="a4:TextAlignment" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">TopLeft</Style_X_TextAlignment>
+<Style_X_BorderWidth>1</Style_X_BorderWidth>
+<Style_X_StyleUsing_X_UseFont>true</Style_X_StyleUsing_X_UseFont>
+<Style_X_StyleUsing_X_UseForeColor>true</Style_X_StyleUsing_X_UseForeColor>
+<Style_X_StyleUsing_X_UseBackColor>true</Style_X_StyleUsing_X_UseBackColor>
+<Style_X_StyleUsing_X_UseBorderColor>true</Style_X_StyleUsing_X_UseBorderColor>
+<Style_X_StyleUsing_X_UseBorders>true</Style_X_StyleUsing_X_UseBorders>
+<Style_X_StyleUsing_X_UseBorderWidth>true</Style_X_StyleUsing_X_UseBorderWidth>
+<Style_X_StyleUsing_X_UseTextAlignment>false</Style_X_StyleUsing_X_UseTextAlignment>
+<ParentStyleUsing_X_UseFont>true</ParentStyleUsing_X_UseFont>
+<ParentStyleUsing_X_UseForeColor>true</ParentStyleUsing_X_UseForeColor>
+<ParentStyleUsing_X_UseBackColor>true</ParentStyleUsing_X_UseBackColor>
+<ParentStyleUsing_X_UseBorderColor>true</ParentStyleUsing_X_UseBorderColor>
+<ParentStyleUsing_X_UseBorders>true</ParentStyleUsing_X_UseBorders>
+<ParentStyleUsing_X_UseBorderWidth>true</ParentStyleUsing_X_UseBorderWidth>
+<ParentStyleUsing_X_UseTextAlignment>false</ParentStyleUsing_X_UseTextAlignment>
+<Dpi>100</Dpi>
+<EvenStyleName href="#ref-6"/>
+<OddStyleName href="#ref-6"/>
+<StyleName href="#ref-6"/>
+<BindingItemCount>0</BindingItemCount>
+<Bounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<x>25</x>
+<y>0</y>
+<width>133</width>
+<height>42</height>
+</Bounds>
+<Text href="#ref-6"/>
+<NavigateUrl href="#ref-6"/>
+<Target href="#ref-6"/>
+<Bookmark href="#ref-6"/>
+<CanGrow>true</CanGrow>
+<CanShrink>false</CanShrink>
+<WordWrap>true</WordWrap>
+<Draw href="#ref-6"/>
+<ParentChanged href="#ref-6"/>
+<EventsScript_X_OnHtmlItemCreated href="#ref-6"/>
+<EventsScript_X_OnBeforePrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseUp href="#ref-6"/>
+<EventsScript_X_OnBandHeightChanged href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseDown href="#ref-6"/>
+<EventsScript_X_OnLocationChanged href="#ref-6"/>
+<EventsScript_X_OnAfterPrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseMove href="#ref-6"/>
+<EventsScript_X_OnPreviewDoubleClick href="#ref-6"/>
+<EventsScript_X_OnDataSourceRowChanged href="#ref-6"/>
+<EventsScript_X_OnSizeChanged href="#ref-6"/>
+<EventsScript_X_OnDraw href="#ref-6"/>
+<EventsScript_X_OnPreviewClick href="#ref-6"/>
+<EventsScript_X_OnTextChanged href="#ref-6"/>
+<EventsScript_X_OnParentChanged href="#ref-6"/>
+<Image href="#ref-69"/>
+<Sizing xsi:type="a4:ImageSizeMode" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">StretchImage</Sizing>
+<ItemCount>0</ItemCount>
+</a1:ObjectStorage>
+<a1:ObjectStorage id="ref-32" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.Serialization/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">
+<Type_X_AssemblyName href="#ref-22"/>
+<Type_X_TypeName href="#ref-57"/>
+<Visible>false</Visible>
+<Tag href="#ref-6"/>
+<Dock xsi:type="a3:XRDockStyle" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Dock>
+<Name id="ref-70">xrLabel8</Name>
+<Style_X_Font id="ref-71">Times New Roman, 9.75pt</Style_X_Font>
+<Style_X_ForeColor href="#ref-16"/>
+<Style_X_BackColor href="#ref-17"/>
+<Style_X_BorderColor href="#ref-16"/>
+<Style_X_Borders xsi:type="a4:BorderSide" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Style_X_Borders>
+<Style_X_TextAlignment xsi:type="a4:TextAlignment" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">TopLeft</Style_X_TextAlignment>
+<Style_X_BorderWidth>1</Style_X_BorderWidth>
+<Style_X_StyleUsing_X_UseFont>true</Style_X_StyleUsing_X_UseFont>
+<Style_X_StyleUsing_X_UseForeColor>true</Style_X_StyleUsing_X_UseForeColor>
+<Style_X_StyleUsing_X_UseBackColor>true</Style_X_StyleUsing_X_UseBackColor>
+<Style_X_StyleUsing_X_UseBorderColor>true</Style_X_StyleUsing_X_UseBorderColor>
+<Style_X_StyleUsing_X_UseBorders>true</Style_X_StyleUsing_X_UseBorders>
+<Style_X_StyleUsing_X_UseBorderWidth>true</Style_X_StyleUsing_X_UseBorderWidth>
+<Style_X_StyleUsing_X_UseTextAlignment>false</Style_X_StyleUsing_X_UseTextAlignment>
+<ParentStyleUsing_X_UseFont>true</ParentStyleUsing_X_UseFont>
+<ParentStyleUsing_X_UseForeColor>true</ParentStyleUsing_X_UseForeColor>
+<ParentStyleUsing_X_UseBackColor>true</ParentStyleUsing_X_UseBackColor>
+<ParentStyleUsing_X_UseBorderColor>true</ParentStyleUsing_X_UseBorderColor>
+<ParentStyleUsing_X_UseBorders>true</ParentStyleUsing_X_UseBorders>
+<ParentStyleUsing_X_UseBorderWidth>true</ParentStyleUsing_X_UseBorderWidth>
+<ParentStyleUsing_X_UseTextAlignment>false</ParentStyleUsing_X_UseTextAlignment>
+<Dpi>100</Dpi>
+<EvenStyleName href="#ref-6"/>
+<OddStyleName href="#ref-6"/>
+<StyleName href="#ref-6"/>
+<BindingItemCount>1</BindingItemCount>
+<BindingItem0_X_PropertyName id="ref-72">Text</BindingItem0_X_PropertyName>
+<BindingItem0_X_DataMember id="ref-73">CashRealBalanceViewA3.Balance_BaseCurr</BindingItem0_X_DataMember>
+<BindingItem0_X_FormatString href="#ref-6"/>
+<BindingItem0_X_DataSource href="#ref-6"/>
+<Bounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<x>442</x>
+<y>0</y>
+<width>100</width>
+<height>25</height>
+</Bounds>
+<Text href="#ref-70"/>
+<NavigateUrl href="#ref-6"/>
+<Target href="#ref-6"/>
+<Bookmark href="#ref-6"/>
+<CanGrow>true</CanGrow>
+<CanShrink>false</CanShrink>
+<WordWrap>true</WordWrap>
+<Draw href="#ref-6"/>
+<ParentChanged href="#ref-6"/>
+<EventsScript_X_OnHtmlItemCreated href="#ref-6"/>
+<EventsScript_X_OnBeforePrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseUp href="#ref-6"/>
+<EventsScript_X_OnBandHeightChanged href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseDown href="#ref-6"/>
+<EventsScript_X_OnLocationChanged href="#ref-6"/>
+<EventsScript_X_OnAfterPrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseMove href="#ref-6"/>
+<EventsScript_X_OnPreviewDoubleClick href="#ref-6"/>
+<EventsScript_X_OnDataSourceRowChanged href="#ref-6"/>
+<EventsScript_X_OnSizeChanged href="#ref-6"/>
+<EventsScript_X_OnDraw href="#ref-6"/>
+<EventsScript_X_OnPreviewClick href="#ref-6"/>
+<EventsScript_X_OnTextChanged href="#ref-6"/>
+<EventsScript_X_OnParentChanged href="#ref-6"/>
+<Multiline>false</Multiline>
+<Angle>0</Angle>
+<Summary_X_FormatString id="ref-74">{0:n2}</Summary_X_FormatString>
+<Summary_X_Func xsi:type="a3:SummaryFunc" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">Sum</Summary_X_Func>
+<Summary_X_Running xsi:type="a3:SummaryRunning" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">Group</Summary_X_Running>
+<Summary_X_Scripts_X_OnGetResult href="#ref-6"/>
+<Summary_X_Scripts_X_OnRowChanged href="#ref-6"/>
+<Summary_X_Scripts_X_OnReset href="#ref-6"/>
+<Summary_X_IgnoreNullValues>false</Summary_X_IgnoreNullValues>
+<ItemCount>0</ItemCount>
+</a1:ObjectStorage>
+<a1:ObjectStorage id="ref-33" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.Serialization/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">
+<Type_X_AssemblyName href="#ref-22"/>
+<Type_X_TypeName href="#ref-57"/>
+<Visible>true</Visible>
+<Tag href="#ref-6"/>
+<Dock xsi:type="a3:XRDockStyle" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Dock>
+<Name id="ref-75">xrLabel3</Name>
+<Style_X_Font id="ref-76">Times New Roman, 9.75pt</Style_X_Font>
+<Style_X_ForeColor href="#ref-16"/>
+<Style_X_BackColor href="#ref-17"/>
+<Style_X_BorderColor href="#ref-16"/>
+<Style_X_Borders xsi:type="a4:BorderSide" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Style_X_Borders>
+<Style_X_TextAlignment xsi:type="a4:TextAlignment" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">TopLeft</Style_X_TextAlignment>
+<Style_X_BorderWidth>1</Style_X_BorderWidth>
+<Style_X_StyleUsing_X_UseFont>true</Style_X_StyleUsing_X_UseFont>
+<Style_X_StyleUsing_X_UseForeColor>true</Style_X_StyleUsing_X_UseForeColor>
+<Style_X_StyleUsing_X_UseBackColor>true</Style_X_StyleUsing_X_UseBackColor>
+<Style_X_StyleUsing_X_UseBorderColor>true</Style_X_StyleUsing_X_UseBorderColor>
+<Style_X_StyleUsing_X_UseBorders>true</Style_X_StyleUsing_X_UseBorders>
+<Style_X_StyleUsing_X_UseBorderWidth>true</Style_X_StyleUsing_X_UseBorderWidth>
+<Style_X_StyleUsing_X_UseTextAlignment>false</Style_X_StyleUsing_X_UseTextAlignment>
+<ParentStyleUsing_X_UseFont>true</ParentStyleUsing_X_UseFont>
+<ParentStyleUsing_X_UseForeColor>true</ParentStyleUsing_X_UseForeColor>
+<ParentStyleUsing_X_UseBackColor>true</ParentStyleUsing_X_UseBackColor>
+<ParentStyleUsing_X_UseBorderColor>true</ParentStyleUsing_X_UseBorderColor>
+<ParentStyleUsing_X_UseBorders>true</ParentStyleUsing_X_UseBorders>
+<ParentStyleUsing_X_UseBorderWidth>true</ParentStyleUsing_X_UseBorderWidth>
+<ParentStyleUsing_X_UseTextAlignment>false</ParentStyleUsing_X_UseTextAlignment>
+<Dpi>100</Dpi>
+<EvenStyleName href="#ref-6"/>
+<OddStyleName href="#ref-6"/>
+<StyleName href="#ref-6"/>
+<BindingItemCount>1</BindingItemCount>
+<BindingItem0_X_PropertyName href="#ref-72"/>
+<BindingItem0_X_DataMember id="ref-77">CashRealBalanceViewA3.Balance_EntityCurr</BindingItem0_X_DataMember>
+<BindingItem0_X_FormatString href="#ref-6"/>
+<BindingItem0_X_DataSource href="#ref-6"/>
+<Bounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<x>300</x>
+<y>0</y>
+<width>100</width>
+<height>25</height>
+</Bounds>
+<Text href="#ref-75"/>
+<NavigateUrl href="#ref-6"/>
+<Target href="#ref-6"/>
+<Bookmark href="#ref-6"/>
+<CanGrow>true</CanGrow>
+<CanShrink>false</CanShrink>
+<WordWrap>true</WordWrap>
+<Draw href="#ref-6"/>
+<ParentChanged href="#ref-6"/>
+<EventsScript_X_OnHtmlItemCreated href="#ref-6"/>
+<EventsScript_X_OnBeforePrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseUp href="#ref-6"/>
+<EventsScript_X_OnBandHeightChanged href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseDown href="#ref-6"/>
+<EventsScript_X_OnLocationChanged href="#ref-6"/>
+<EventsScript_X_OnAfterPrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseMove href="#ref-6"/>
+<EventsScript_X_OnPreviewDoubleClick href="#ref-6"/>
+<EventsScript_X_OnDataSourceRowChanged href="#ref-6"/>
+<EventsScript_X_OnSizeChanged href="#ref-6"/>
+<EventsScript_X_OnDraw href="#ref-6"/>
+<EventsScript_X_OnPreviewClick href="#ref-6"/>
+<EventsScript_X_OnTextChanged href="#ref-6"/>
+<EventsScript_X_OnParentChanged href="#ref-6"/>
+<Multiline>false</Multiline>
+<Angle>0</Angle>
+<Summary_X_FormatString id="ref-78">{0:n2}</Summary_X_FormatString>
+<Summary_X_Func xsi:type="a3:SummaryFunc" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">Sum</Summary_X_Func>
+<Summary_X_Running xsi:type="a3:SummaryRunning" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">Group</Summary_X_Running>
+<Summary_X_Scripts_X_OnGetResult href="#ref-6"/>
+<Summary_X_Scripts_X_OnRowChanged href="#ref-6"/>
+<Summary_X_Scripts_X_OnReset href="#ref-6"/>
+<Summary_X_IgnoreNullValues>false</Summary_X_IgnoreNullValues>
+<ItemCount>0</ItemCount>
+</a1:ObjectStorage>
+<a1:ObjectStorage id="ref-38" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.Serialization/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">
+<Type_X_AssemblyName href="#ref-22"/>
+<Type_X_TypeName href="#ref-57"/>
+<Visible>true</Visible>
+<Tag href="#ref-6"/>
+<Dock xsi:type="a3:XRDockStyle" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Dock>
+<Name id="ref-79">xrLabel9</Name>
+<Style_X_Font id="ref-80">Times New Roman, 9.75pt</Style_X_Font>
+<Style_X_ForeColor href="#ref-16"/>
+<Style_X_BackColor href="#ref-17"/>
+<Style_X_BorderColor href="#ref-16"/>
+<Style_X_Borders xsi:type="a4:BorderSide" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Style_X_Borders>
+<Style_X_TextAlignment xsi:type="a4:TextAlignment" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">TopRight</Style_X_TextAlignment>
+<Style_X_BorderWidth>1</Style_X_BorderWidth>
+<Style_X_StyleUsing_X_UseFont>true</Style_X_StyleUsing_X_UseFont>
+<Style_X_StyleUsing_X_UseForeColor>true</Style_X_StyleUsing_X_UseForeColor>
+<Style_X_StyleUsing_X_UseBackColor>true</Style_X_StyleUsing_X_UseBackColor>
+<Style_X_StyleUsing_X_UseBorderColor>true</Style_X_StyleUsing_X_UseBorderColor>
+<Style_X_StyleUsing_X_UseBorders>true</Style_X_StyleUsing_X_UseBorders>
+<Style_X_StyleUsing_X_UseBorderWidth>true</Style_X_StyleUsing_X_UseBorderWidth>
+<Style_X_StyleUsing_X_UseTextAlignment>false</Style_X_StyleUsing_X_UseTextAlignment>
+<ParentStyleUsing_X_UseFont>true</ParentStyleUsing_X_UseFont>
+<ParentStyleUsing_X_UseForeColor>true</ParentStyleUsing_X_UseForeColor>
+<ParentStyleUsing_X_UseBackColor>true</ParentStyleUsing_X_UseBackColor>
+<ParentStyleUsing_X_UseBorderColor>true</ParentStyleUsing_X_UseBorderColor>
+<ParentStyleUsing_X_UseBorders>true</ParentStyleUsing_X_UseBorders>
+<ParentStyleUsing_X_UseBorderWidth>true</ParentStyleUsing_X_UseBorderWidth>
+<ParentStyleUsing_X_UseTextAlignment>false</ParentStyleUsing_X_UseTextAlignment>
+<Dpi>100</Dpi>
+<EvenStyleName href="#ref-6"/>
+<OddStyleName href="#ref-6"/>
+<StyleName href="#ref-6"/>
+<BindingItemCount>1</BindingItemCount>
+<BindingItem0_X_PropertyName href="#ref-72"/>
+<BindingItem0_X_DataMember id="ref-81">CashRealBalanceViewA3.Entity_CurrCode</BindingItem0_X_DataMember>
+<BindingItem0_X_FormatString href="#ref-6"/>
+<BindingItem0_X_DataSource href="#ref-6"/>
+<Bounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<x>500</x>
+<y>0</y>
+<width>67</width>
+<height>25</height>
+</Bounds>
+<Text href="#ref-79"/>
+<NavigateUrl href="#ref-6"/>
+<Target href="#ref-6"/>
+<Bookmark href="#ref-6"/>
+<CanGrow>true</CanGrow>
+<CanShrink>false</CanShrink>
+<WordWrap>true</WordWrap>
+<Draw href="#ref-6"/>
+<ParentChanged href="#ref-6"/>
+<EventsScript_X_OnHtmlItemCreated href="#ref-6"/>
+<EventsScript_X_OnBeforePrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseUp href="#ref-6"/>
+<EventsScript_X_OnBandHeightChanged href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseDown href="#ref-6"/>
+<EventsScript_X_OnLocationChanged href="#ref-6"/>
+<EventsScript_X_OnAfterPrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseMove href="#ref-6"/>
+<EventsScript_X_OnPreviewDoubleClick href="#ref-6"/>
+<EventsScript_X_OnDataSourceRowChanged href="#ref-6"/>
+<EventsScript_X_OnSizeChanged href="#ref-6"/>
+<EventsScript_X_OnDraw href="#ref-6"/>
+<EventsScript_X_OnPreviewClick href="#ref-6"/>
+<EventsScript_X_OnTextChanged href="#ref-6"/>
+<EventsScript_X_OnParentChanged href="#ref-6"/>
+<Multiline>false</Multiline>
+<Angle>0</Angle>
+<Summary_X_FormatString href="#ref-6"/>
+<Summary_X_Func xsi:type="a3:SummaryFunc" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">Sum</Summary_X_Func>
+<Summary_X_Running xsi:type="a3:SummaryRunning" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Summary_X_Running>
+<Summary_X_Scripts_X_OnGetResult href="#ref-6"/>
+<Summary_X_Scripts_X_OnRowChanged href="#ref-6"/>
+<Summary_X_Scripts_X_OnReset href="#ref-6"/>
+<Summary_X_IgnoreNullValues>false</Summary_X_IgnoreNullValues>
+<ItemCount>0</ItemCount>
+</a1:ObjectStorage>
+<a1:ObjectStorage id="ref-39" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.Serialization/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">
+<Type_X_AssemblyName href="#ref-22"/>
+<Type_X_TypeName href="#ref-57"/>
+<Visible>true</Visible>
+<Tag href="#ref-6"/>
+<Dock xsi:type="a3:XRDockStyle" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Dock>
+<Name id="ref-82">xrLabel5</Name>
+<Style_X_Font id="ref-83">Times New Roman, 9.75pt</Style_X_Font>
+<Style_X_ForeColor href="#ref-16"/>
+<Style_X_BackColor href="#ref-17"/>
+<Style_X_BorderColor href="#ref-16"/>
+<Style_X_Borders xsi:type="a4:BorderSide" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Style_X_Borders>
+<Style_X_TextAlignment xsi:type="a4:TextAlignment" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">TopRight</Style_X_TextAlignment>
+<Style_X_BorderWidth>1</Style_X_BorderWidth>
+<Style_X_StyleUsing_X_UseFont>true</Style_X_StyleUsing_X_UseFont>
+<Style_X_StyleUsing_X_UseForeColor>true</Style_X_StyleUsing_X_UseForeColor>
+<Style_X_StyleUsing_X_UseBackColor>true</Style_X_StyleUsing_X_UseBackColor>
+<Style_X_StyleUsing_X_UseBorderColor>true</Style_X_StyleUsing_X_UseBorderColor>
+<Style_X_StyleUsing_X_UseBorders>true</Style_X_StyleUsing_X_UseBorders>
+<Style_X_StyleUsing_X_UseBorderWidth>true</Style_X_StyleUsing_X_UseBorderWidth>
+<Style_X_StyleUsing_X_UseTextAlignment>false</Style_X_StyleUsing_X_UseTextAlignment>
+<ParentStyleUsing_X_UseFont>true</ParentStyleUsing_X_UseFont>
+<ParentStyleUsing_X_UseForeColor>true</ParentStyleUsing_X_UseForeColor>
+<ParentStyleUsing_X_UseBackColor>true</ParentStyleUsing_X_UseBackColor>
+<ParentStyleUsing_X_UseBorderColor>true</ParentStyleUsing_X_UseBorderColor>
+<ParentStyleUsing_X_UseBorders>true</ParentStyleUsing_X_UseBorders>
+<ParentStyleUsing_X_UseBorderWidth>true</ParentStyleUsing_X_UseBorderWidth>
+<ParentStyleUsing_X_UseTextAlignment>false</ParentStyleUsing_X_UseTextAlignment>
+<Dpi>100</Dpi>
+<EvenStyleName href="#ref-6"/>
+<OddStyleName href="#ref-6"/>
+<StyleName href="#ref-6"/>
+<BindingItemCount>1</BindingItemCount>
+<BindingItem0_X_PropertyName id="ref-84">Text</BindingItem0_X_PropertyName>
+<BindingItem0_X_DataMember href="#ref-77"/>
+<BindingItem0_X_FormatString href="#ref-6"/>
+<BindingItem0_X_DataSource href="#ref-6"/>
+<Bounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<x>258</x>
+<y>0</y>
+<width>175</width>
+<height>25</height>
+</Bounds>
+<Text href="#ref-82"/>
+<NavigateUrl href="#ref-6"/>
+<Target href="#ref-6"/>
+<Bookmark href="#ref-6"/>
+<CanGrow>true</CanGrow>
+<CanShrink>false</CanShrink>
+<WordWrap>true</WordWrap>
+<Draw href="#ref-6"/>
+<ParentChanged href="#ref-6"/>
+<EventsScript_X_OnHtmlItemCreated href="#ref-6"/>
+<EventsScript_X_OnBeforePrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseUp href="#ref-6"/>
+<EventsScript_X_OnBandHeightChanged href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseDown href="#ref-6"/>
+<EventsScript_X_OnLocationChanged href="#ref-6"/>
+<EventsScript_X_OnAfterPrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseMove href="#ref-6"/>
+<EventsScript_X_OnPreviewDoubleClick href="#ref-6"/>
+<EventsScript_X_OnDataSourceRowChanged href="#ref-6"/>
+<EventsScript_X_OnSizeChanged href="#ref-6"/>
+<EventsScript_X_OnDraw href="#ref-6"/>
+<EventsScript_X_OnPreviewClick href="#ref-6"/>
+<EventsScript_X_OnTextChanged href="#ref-6"/>
+<EventsScript_X_OnParentChanged href="#ref-6"/>
+<Multiline>false</Multiline>
+<Angle>0</Angle>
+<Summary_X_FormatString id="ref-85">{0:n2}</Summary_X_FormatString>
+<Summary_X_Func xsi:type="a3:SummaryFunc" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">Sum</Summary_X_Func>
+<Summary_X_Running xsi:type="a3:SummaryRunning" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">Group</Summary_X_Running>
+<Summary_X_Scripts_X_OnGetResult href="#ref-6"/>
+<Summary_X_Scripts_X_OnRowChanged href="#ref-6"/>
+<Summary_X_Scripts_X_OnReset href="#ref-6"/>
+<Summary_X_IgnoreNullValues>false</Summary_X_IgnoreNullValues>
+<ItemCount>0</ItemCount>
+</a1:ObjectStorage>
+<a1:ObjectStorage id="ref-40" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.Serialization/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">
+<Type_X_AssemblyName href="#ref-22"/>
+<Type_X_TypeName href="#ref-57"/>
+<Visible>true</Visible>
+<Tag href="#ref-6"/>
+<Dock xsi:type="a3:XRDockStyle" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Dock>
+<Name id="ref-86">xrLabel2</Name>
+<Style_X_Font id="ref-87">Arial, 9.75pt</Style_X_Font>
+<Style_X_ForeColor href="#ref-16"/>
+<Style_X_BackColor href="#ref-17"/>
+<Style_X_BorderColor href="#ref-16"/>
+<Style_X_Borders xsi:type="a4:BorderSide" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Style_X_Borders>
+<Style_X_TextAlignment xsi:type="a4:TextAlignment" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">TopLeft</Style_X_TextAlignment>
+<Style_X_BorderWidth>1</Style_X_BorderWidth>
+<Style_X_StyleUsing_X_UseFont>true</Style_X_StyleUsing_X_UseFont>
+<Style_X_StyleUsing_X_UseForeColor>true</Style_X_StyleUsing_X_UseForeColor>
+<Style_X_StyleUsing_X_UseBackColor>true</Style_X_StyleUsing_X_UseBackColor>
+<Style_X_StyleUsing_X_UseBorderColor>true</Style_X_StyleUsing_X_UseBorderColor>
+<Style_X_StyleUsing_X_UseBorders>true</Style_X_StyleUsing_X_UseBorders>
+<Style_X_StyleUsing_X_UseBorderWidth>true</Style_X_StyleUsing_X_UseBorderWidth>
+<Style_X_StyleUsing_X_UseTextAlignment>false</Style_X_StyleUsing_X_UseTextAlignment>
+<ParentStyleUsing_X_UseFont>false</ParentStyleUsing_X_UseFont>
+<ParentStyleUsing_X_UseForeColor>true</ParentStyleUsing_X_UseForeColor>
+<ParentStyleUsing_X_UseBackColor>true</ParentStyleUsing_X_UseBackColor>
+<ParentStyleUsing_X_UseBorderColor>true</ParentStyleUsing_X_UseBorderColor>
+<ParentStyleUsing_X_UseBorders>true</ParentStyleUsing_X_UseBorders>
+<ParentStyleUsing_X_UseBorderWidth>true</ParentStyleUsing_X_UseBorderWidth>
+<ParentStyleUsing_X_UseTextAlignment>false</ParentStyleUsing_X_UseTextAlignment>
+<Dpi>100</Dpi>
+<EvenStyleName href="#ref-6"/>
+<OddStyleName href="#ref-6"/>
+<StyleName href="#ref-6"/>
+<BindingItemCount>1</BindingItemCount>
+<BindingItem0_X_PropertyName id="ref-88">Text</BindingItem0_X_PropertyName>
+<BindingItem0_X_DataMember id="ref-89">CashRealBalanceViewA3.Entity_Name</BindingItem0_X_DataMember>
+<BindingItem0_X_FormatString href="#ref-6"/>
+<BindingItem0_X_DataSource href="#ref-6"/>
+<Bounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<x>83</x>
+<y>0</y>
+<width>142</width>
+<height>25</height>
+</Bounds>
+<Text href="#ref-86"/>
+<NavigateUrl href="#ref-6"/>
+<Target href="#ref-6"/>
+<Bookmark href="#ref-6"/>
+<CanGrow>true</CanGrow>
+<CanShrink>false</CanShrink>
+<WordWrap>true</WordWrap>
+<Draw href="#ref-6"/>
+<ParentChanged href="#ref-6"/>
+<EventsScript_X_OnHtmlItemCreated href="#ref-6"/>
+<EventsScript_X_OnBeforePrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseUp href="#ref-6"/>
+<EventsScript_X_OnBandHeightChanged href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseDown href="#ref-6"/>
+<EventsScript_X_OnLocationChanged href="#ref-6"/>
+<EventsScript_X_OnAfterPrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseMove href="#ref-6"/>
+<EventsScript_X_OnPreviewDoubleClick href="#ref-6"/>
+<EventsScript_X_OnDataSourceRowChanged href="#ref-6"/>
+<EventsScript_X_OnSizeChanged href="#ref-6"/>
+<EventsScript_X_OnDraw href="#ref-6"/>
+<EventsScript_X_OnPreviewClick href="#ref-6"/>
+<EventsScript_X_OnTextChanged href="#ref-6"/>
+<EventsScript_X_OnParentChanged href="#ref-6"/>
+<Multiline>false</Multiline>
+<Angle>0</Angle>
+<Summary_X_FormatString href="#ref-6"/>
+<Summary_X_Func xsi:type="a3:SummaryFunc" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">Sum</Summary_X_Func>
+<Summary_X_Running xsi:type="a3:SummaryRunning" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Summary_X_Running>
+<Summary_X_Scripts_X_OnGetResult href="#ref-6"/>
+<Summary_X_Scripts_X_OnRowChanged href="#ref-6"/>
+<Summary_X_Scripts_X_OnReset href="#ref-6"/>
+<Summary_X_IgnoreNullValues>false</Summary_X_IgnoreNullValues>
+<ItemCount>0</ItemCount>
+</a1:ObjectStorage>
+<a1:ObjectStorage id="ref-47" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.Serialization/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">
+<Type_X_AssemblyName href="#ref-22"/>
+<Type_X_TypeName href="#ref-57"/>
+<Visible>true</Visible>
+<Tag href="#ref-6"/>
+<Dock xsi:type="a3:XRDockStyle" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Dock>
+<Name id="ref-90">xrLabel10</Name>
+<Style_X_Font id="ref-91">Arial, 9.75pt, style=Bold</Style_X_Font>
+<Style_X_ForeColor href="#ref-16"/>
+<Style_X_BackColor href="#ref-17"/>
+<Style_X_BorderColor href="#ref-16"/>
+<Style_X_Borders xsi:type="a4:BorderSide" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">Top, Right, Bottom</Style_X_Borders>
+<Style_X_TextAlignment xsi:type="a4:TextAlignment" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">TopLeft</Style_X_TextAlignment>
+<Style_X_BorderWidth>1</Style_X_BorderWidth>
+<Style_X_StyleUsing_X_UseFont>true</Style_X_StyleUsing_X_UseFont>
+<Style_X_StyleUsing_X_UseForeColor>true</Style_X_StyleUsing_X_UseForeColor>
+<Style_X_StyleUsing_X_UseBackColor>true</Style_X_StyleUsing_X_UseBackColor>
+<Style_X_StyleUsing_X_UseBorderColor>true</Style_X_StyleUsing_X_UseBorderColor>
+<Style_X_StyleUsing_X_UseBorders>true</Style_X_StyleUsing_X_UseBorders>
+<Style_X_StyleUsing_X_UseBorderWidth>true</Style_X_StyleUsing_X_UseBorderWidth>
+<Style_X_StyleUsing_X_UseTextAlignment>false</Style_X_StyleUsing_X_UseTextAlignment>
+<ParentStyleUsing_X_UseFont>false</ParentStyleUsing_X_UseFont>
+<ParentStyleUsing_X_UseForeColor>true</ParentStyleUsing_X_UseForeColor>
+<ParentStyleUsing_X_UseBackColor>true</ParentStyleUsing_X_UseBackColor>
+<ParentStyleUsing_X_UseBorderColor>true</ParentStyleUsing_X_UseBorderColor>
+<ParentStyleUsing_X_UseBorders>false</ParentStyleUsing_X_UseBorders>
+<ParentStyleUsing_X_UseBorderWidth>true</ParentStyleUsing_X_UseBorderWidth>
+<ParentStyleUsing_X_UseTextAlignment>false</ParentStyleUsing_X_UseTextAlignment>
+<Dpi>100</Dpi>
+<EvenStyleName href="#ref-6"/>
+<OddStyleName href="#ref-6"/>
+<StyleName href="#ref-6"/>
+<BindingItemCount>1</BindingItemCount>
+<BindingItem0_X_PropertyName href="#ref-72"/>
+<BindingItem0_X_DataMember href="#ref-81"/>
+<BindingItem0_X_FormatString href="#ref-6"/>
+<BindingItem0_X_DataSource href="#ref-6"/>
+<Bounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<x>533</x>
+<y>8</y>
+<width>108</width>
+<height>25</height>
+</Bounds>
+<Text href="#ref-90"/>
+<NavigateUrl href="#ref-6"/>
+<Target href="#ref-6"/>
+<Bookmark href="#ref-6"/>
+<CanGrow>true</CanGrow>
+<CanShrink>false</CanShrink>
+<WordWrap>true</WordWrap>
+<Draw href="#ref-6"/>
+<ParentChanged href="#ref-6"/>
+<EventsScript_X_OnHtmlItemCreated href="#ref-6"/>
+<EventsScript_X_OnBeforePrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseUp href="#ref-6"/>
+<EventsScript_X_OnBandHeightChanged href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseDown href="#ref-6"/>
+<EventsScript_X_OnLocationChanged href="#ref-6"/>
+<EventsScript_X_OnAfterPrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseMove href="#ref-6"/>
+<EventsScript_X_OnPreviewDoubleClick href="#ref-6"/>
+<EventsScript_X_OnDataSourceRowChanged href="#ref-6"/>
+<EventsScript_X_OnSizeChanged href="#ref-6"/>
+<EventsScript_X_OnDraw href="#ref-6"/>
+<EventsScript_X_OnPreviewClick href="#ref-6"/>
+<EventsScript_X_OnTextChanged href="#ref-6"/>
+<EventsScript_X_OnParentChanged href="#ref-6"/>
+<Multiline>false</Multiline>
+<Angle>0</Angle>
+<Summary_X_FormatString href="#ref-6"/>
+<Summary_X_Func xsi:type="a3:SummaryFunc" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">Sum</Summary_X_Func>
+<Summary_X_Running xsi:type="a3:SummaryRunning" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Summary_X_Running>
+<Summary_X_Scripts_X_OnGetResult href="#ref-6"/>
+<Summary_X_Scripts_X_OnRowChanged href="#ref-6"/>
+<Summary_X_Scripts_X_OnReset href="#ref-6"/>
+<Summary_X_IgnoreNullValues>false</Summary_X_IgnoreNullValues>
+<ItemCount>0</ItemCount>
+</a1:ObjectStorage>
+<a1:ObjectStorage id="ref-48" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.Serialization/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">
+<Type_X_AssemblyName href="#ref-22"/>
+<Type_X_TypeName href="#ref-57"/>
+<Visible>true</Visible>
+<Tag href="#ref-6"/>
+<Dock xsi:type="a3:XRDockStyle" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Dock>
+<Name id="ref-92">xrLabel14</Name>
+<Style_X_Font id="ref-93">Arial, 9.75pt, style=Bold</Style_X_Font>
+<Style_X_ForeColor href="#ref-16"/>
+<Style_X_BackColor href="#ref-17"/>
+<Style_X_BorderColor href="#ref-16"/>
+<Style_X_Borders xsi:type="a4:BorderSide" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">Left, Top, Bottom</Style_X_Borders>
+<Style_X_TextAlignment xsi:type="a4:TextAlignment" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">TopCenter</Style_X_TextAlignment>
+<Style_X_BorderWidth>1</Style_X_BorderWidth>
+<Style_X_StyleUsing_X_UseFont>true</Style_X_StyleUsing_X_UseFont>
+<Style_X_StyleUsing_X_UseForeColor>true</Style_X_StyleUsing_X_UseForeColor>
+<Style_X_StyleUsing_X_UseBackColor>true</Style_X_StyleUsing_X_UseBackColor>
+<Style_X_StyleUsing_X_UseBorderColor>true</Style_X_StyleUsing_X_UseBorderColor>
+<Style_X_StyleUsing_X_UseBorders>true</Style_X_StyleUsing_X_UseBorders>
+<Style_X_StyleUsing_X_UseBorderWidth>true</Style_X_StyleUsing_X_UseBorderWidth>
+<Style_X_StyleUsing_X_UseTextAlignment>false</Style_X_StyleUsing_X_UseTextAlignment>
+<ParentStyleUsing_X_UseFont>false</ParentStyleUsing_X_UseFont>
+<ParentStyleUsing_X_UseForeColor>true</ParentStyleUsing_X_UseForeColor>
+<ParentStyleUsing_X_UseBackColor>true</ParentStyleUsing_X_UseBackColor>
+<ParentStyleUsing_X_UseBorderColor>true</ParentStyleUsing_X_UseBorderColor>
+<ParentStyleUsing_X_UseBorders>false</ParentStyleUsing_X_UseBorders>
+<ParentStyleUsing_X_UseBorderWidth>true</ParentStyleUsing_X_UseBorderWidth>
+<ParentStyleUsing_X_UseTextAlignment>false</ParentStyleUsing_X_UseTextAlignment>
+<Dpi>100</Dpi>
+<EvenStyleName href="#ref-6"/>
+<OddStyleName href="#ref-6"/>
+<StyleName href="#ref-6"/>
+<BindingItemCount>0</BindingItemCount>
+<Bounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<x>8</x>
+<y>8</y>
+<width>242</width>
+<height>25</height>
+</Bounds>
+<Text id="ref-94">ENTITY</Text>
+<NavigateUrl href="#ref-6"/>
+<Target href="#ref-6"/>
+<Bookmark href="#ref-6"/>
+<CanGrow>true</CanGrow>
+<CanShrink>false</CanShrink>
+<WordWrap>true</WordWrap>
+<Draw href="#ref-6"/>
+<ParentChanged href="#ref-6"/>
+<EventsScript_X_OnHtmlItemCreated href="#ref-6"/>
+<EventsScript_X_OnBeforePrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseUp href="#ref-6"/>
+<EventsScript_X_OnBandHeightChanged href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseDown href="#ref-6"/>
+<EventsScript_X_OnLocationChanged href="#ref-6"/>
+<EventsScript_X_OnAfterPrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseMove href="#ref-6"/>
+<EventsScript_X_OnPreviewDoubleClick href="#ref-6"/>
+<EventsScript_X_OnDataSourceRowChanged href="#ref-6"/>
+<EventsScript_X_OnSizeChanged href="#ref-6"/>
+<EventsScript_X_OnDraw href="#ref-6"/>
+<EventsScript_X_OnPreviewClick href="#ref-6"/>
+<EventsScript_X_OnTextChanged href="#ref-6"/>
+<EventsScript_X_OnParentChanged href="#ref-6"/>
+<Multiline>false</Multiline>
+<Angle>0</Angle>
+<Summary_X_FormatString href="#ref-6"/>
+<Summary_X_Func xsi:type="a3:SummaryFunc" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">Sum</Summary_X_Func>
+<Summary_X_Running xsi:type="a3:SummaryRunning" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Summary_X_Running>
+<Summary_X_Scripts_X_OnGetResult href="#ref-6"/>
+<Summary_X_Scripts_X_OnRowChanged href="#ref-6"/>
+<Summary_X_Scripts_X_OnReset href="#ref-6"/>
+<Summary_X_IgnoreNullValues>false</Summary_X_IgnoreNullValues>
+<ItemCount>0</ItemCount>
+</a1:ObjectStorage>
+<a1:ObjectStorage id="ref-49" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.Serialization/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">
+<Type_X_AssemblyName href="#ref-22"/>
+<Type_X_TypeName href="#ref-57"/>
+<Visible>true</Visible>
+<Tag href="#ref-6"/>
+<Dock xsi:type="a3:XRDockStyle" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Dock>
+<Name id="ref-95">xrLabel13</Name>
+<Style_X_Font id="ref-96">Arial, 9.75pt, style=Bold</Style_X_Font>
+<Style_X_ForeColor href="#ref-16"/>
+<Style_X_BackColor href="#ref-17"/>
+<Style_X_BorderColor href="#ref-16"/>
+<Style_X_Borders xsi:type="a4:BorderSide" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">Top, Bottom</Style_X_Borders>
+<Style_X_TextAlignment xsi:type="a4:TextAlignment" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">TopCenter</Style_X_TextAlignment>
+<Style_X_BorderWidth>1</Style_X_BorderWidth>
+<Style_X_StyleUsing_X_UseFont>true</Style_X_StyleUsing_X_UseFont>
+<Style_X_StyleUsing_X_UseForeColor>true</Style_X_StyleUsing_X_UseForeColor>
+<Style_X_StyleUsing_X_UseBackColor>true</Style_X_StyleUsing_X_UseBackColor>
+<Style_X_StyleUsing_X_UseBorderColor>true</Style_X_StyleUsing_X_UseBorderColor>
+<Style_X_StyleUsing_X_UseBorders>true</Style_X_StyleUsing_X_UseBorders>
+<Style_X_StyleUsing_X_UseBorderWidth>true</Style_X_StyleUsing_X_UseBorderWidth>
+<Style_X_StyleUsing_X_UseTextAlignment>false</Style_X_StyleUsing_X_UseTextAlignment>
+<ParentStyleUsing_X_UseFont>false</ParentStyleUsing_X_UseFont>
+<ParentStyleUsing_X_UseForeColor>true</ParentStyleUsing_X_UseForeColor>
+<ParentStyleUsing_X_UseBackColor>true</ParentStyleUsing_X_UseBackColor>
+<ParentStyleUsing_X_UseBorderColor>true</ParentStyleUsing_X_UseBorderColor>
+<ParentStyleUsing_X_UseBorders>false</ParentStyleUsing_X_UseBorders>
+<ParentStyleUsing_X_UseBorderWidth>true</ParentStyleUsing_X_UseBorderWidth>
+<ParentStyleUsing_X_UseTextAlignment>false</ParentStyleUsing_X_UseTextAlignment>
+<Dpi>100</Dpi>
+<EvenStyleName href="#ref-6"/>
+<OddStyleName href="#ref-6"/>
+<StyleName href="#ref-6"/>
+<BindingItemCount>0</BindingItemCount>
+<Bounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<x>250</x>
+<y>8</y>
+<width>283</width>
+<height>25</height>
+</Bounds>
+<Text id="ref-97">Amount in 
+</Text>
+<NavigateUrl href="#ref-6"/>
+<Target href="#ref-6"/>
+<Bookmark href="#ref-6"/>
+<CanGrow>true</CanGrow>
+<CanShrink>false</CanShrink>
+<WordWrap>true</WordWrap>
+<Draw href="#ref-6"/>
+<ParentChanged href="#ref-6"/>
+<EventsScript_X_OnHtmlItemCreated href="#ref-6"/>
+<EventsScript_X_OnBeforePrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseUp href="#ref-6"/>
+<EventsScript_X_OnBandHeightChanged href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseDown href="#ref-6"/>
+<EventsScript_X_OnLocationChanged href="#ref-6"/>
+<EventsScript_X_OnAfterPrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseMove href="#ref-6"/>
+<EventsScript_X_OnPreviewDoubleClick href="#ref-6"/>
+<EventsScript_X_OnDataSourceRowChanged href="#ref-6"/>
+<EventsScript_X_OnSizeChanged href="#ref-6"/>
+<EventsScript_X_OnDraw href="#ref-6"/>
+<EventsScript_X_OnPreviewClick href="#ref-6"/>
+<EventsScript_X_OnTextChanged href="#ref-6"/>
+<EventsScript_X_OnParentChanged href="#ref-6"/>
+<Multiline>true</Multiline>
+<Angle>0</Angle>
+<Summary_X_FormatString href="#ref-6"/>
+<Summary_X_Func xsi:type="a3:SummaryFunc" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">Sum</Summary_X_Func>
+<Summary_X_Running xsi:type="a3:SummaryRunning" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Summary_X_Running>
+<Summary_X_Scripts_X_OnGetResult href="#ref-6"/>
+<Summary_X_Scripts_X_OnRowChanged href="#ref-6"/>
+<Summary_X_Scripts_X_OnReset href="#ref-6"/>
+<Summary_X_IgnoreNullValues>false</Summary_X_IgnoreNullValues>
+<ItemCount>0</ItemCount>
+</a1:ObjectStorage>
+<a1:ObjectStorage id="ref-55" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.Serialization/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">
+<Type_X_AssemblyName href="#ref-22"/>
+<Type_X_TypeName href="#ref-57"/>
+<Visible>true</Visible>
+<Tag href="#ref-6"/>
+<Dock xsi:type="a3:XRDockStyle" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Dock>
+<Name id="ref-98">xrLabel6</Name>
+<Style_X_Font id="ref-99">Arial, 9.75pt, style=Bold</Style_X_Font>
+<Style_X_ForeColor href="#ref-16"/>
+<Style_X_BackColor href="#ref-17"/>
+<Style_X_BorderColor href="#ref-16"/>
+<Style_X_Borders xsi:type="a4:BorderSide" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Style_X_Borders>
+<Style_X_TextAlignment xsi:type="a4:TextAlignment" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">TopRight</Style_X_TextAlignment>
+<Style_X_BorderWidth>1</Style_X_BorderWidth>
+<Style_X_StyleUsing_X_UseFont>true</Style_X_StyleUsing_X_UseFont>
+<Style_X_StyleUsing_X_UseForeColor>true</Style_X_StyleUsing_X_UseForeColor>
+<Style_X_StyleUsing_X_UseBackColor>true</Style_X_StyleUsing_X_UseBackColor>
+<Style_X_StyleUsing_X_UseBorderColor>true</Style_X_StyleUsing_X_UseBorderColor>
+<Style_X_StyleUsing_X_UseBorders>true</Style_X_StyleUsing_X_UseBorders>
+<Style_X_StyleUsing_X_UseBorderWidth>true</Style_X_StyleUsing_X_UseBorderWidth>
+<Style_X_StyleUsing_X_UseTextAlignment>false</Style_X_StyleUsing_X_UseTextAlignment>
+<ParentStyleUsing_X_UseFont>false</ParentStyleUsing_X_UseFont>
+<ParentStyleUsing_X_UseForeColor>true</ParentStyleUsing_X_UseForeColor>
+<ParentStyleUsing_X_UseBackColor>true</ParentStyleUsing_X_UseBackColor>
+<ParentStyleUsing_X_UseBorderColor>true</ParentStyleUsing_X_UseBorderColor>
+<ParentStyleUsing_X_UseBorders>false</ParentStyleUsing_X_UseBorders>
+<ParentStyleUsing_X_UseBorderWidth>true</ParentStyleUsing_X_UseBorderWidth>
+<ParentStyleUsing_X_UseTextAlignment>false</ParentStyleUsing_X_UseTextAlignment>
+<Dpi>100</Dpi>
+<EvenStyleName href="#ref-6"/>
+<OddStyleName href="#ref-6"/>
+<StyleName href="#ref-6"/>
+<BindingItemCount>1</BindingItemCount>
+<BindingItem0_X_PropertyName id="ref-100">Text</BindingItem0_X_PropertyName>
+<BindingItem0_X_DataMember id="ref-101">CashRealBalanceViewA3.Entity_CurrCode</BindingItem0_X_DataMember>
+<BindingItem0_X_FormatString href="#ref-6"/>
+<BindingItem0_X_DataSource href="#ref-6"/>
+<Bounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<x>500</x>
+<y>8</y>
+<width>67</width>
+<height>25</height>
+</Bounds>
+<Text id="ref-102">xrLabel9</Text>
+<NavigateUrl href="#ref-6"/>
+<Target href="#ref-6"/>
+<Bookmark href="#ref-6"/>
+<CanGrow>true</CanGrow>
+<CanShrink>false</CanShrink>
+<WordWrap>true</WordWrap>
+<Draw href="#ref-6"/>
+<ParentChanged href="#ref-6"/>
+<EventsScript_X_OnHtmlItemCreated href="#ref-6"/>
+<EventsScript_X_OnBeforePrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseUp href="#ref-6"/>
+<EventsScript_X_OnBandHeightChanged href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseDown href="#ref-6"/>
+<EventsScript_X_OnLocationChanged href="#ref-6"/>
+<EventsScript_X_OnAfterPrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseMove href="#ref-6"/>
+<EventsScript_X_OnPreviewDoubleClick href="#ref-6"/>
+<EventsScript_X_OnDataSourceRowChanged href="#ref-6"/>
+<EventsScript_X_OnSizeChanged href="#ref-6"/>
+<EventsScript_X_OnDraw href="#ref-6"/>
+<EventsScript_X_OnPreviewClick href="#ref-6"/>
+<EventsScript_X_OnTextChanged href="#ref-6"/>
+<EventsScript_X_OnParentChanged href="#ref-6"/>
+<Multiline>false</Multiline>
+<Angle>0</Angle>
+<Summary_X_FormatString href="#ref-6"/>
+<Summary_X_Func xsi:type="a3:SummaryFunc" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">Sum</Summary_X_Func>
+<Summary_X_Running xsi:type="a3:SummaryRunning" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Summary_X_Running>
+<Summary_X_Scripts_X_OnGetResult href="#ref-6"/>
+<Summary_X_Scripts_X_OnRowChanged href="#ref-6"/>
+<Summary_X_Scripts_X_OnReset href="#ref-6"/>
+<Summary_X_IgnoreNullValues>false</Summary_X_IgnoreNullValues>
+<ItemCount>0</ItemCount>
+</a1:ObjectStorage>
+<a1:ObjectStorage id="ref-56" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.Serialization/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">
+<Type_X_AssemblyName href="#ref-22"/>
+<Type_X_TypeName href="#ref-57"/>
+<Visible>true</Visible>
+<Tag href="#ref-6"/>
+<Dock xsi:type="a3:XRDockStyle" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Dock>
+<Name id="ref-103">xrLabel4</Name>
+<Style_X_Font id="ref-104">Arial, 9.75pt, style=Bold</Style_X_Font>
+<Style_X_ForeColor href="#ref-16"/>
+<Style_X_BackColor href="#ref-17"/>
+<Style_X_BorderColor href="#ref-16"/>
+<Style_X_Borders xsi:type="a4:BorderSide" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">None</Style_X_Borders>
+<Style_X_TextAlignment xsi:type="a4:TextAlignment" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraPrinting/DevExpress.Utils%2C%20Version%3D2.1.5.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">TopRight</Style_X_TextAlignment>
+<Style_X_BorderWidth>1</Style_X_BorderWidth>
+<Style_X_StyleUsing_X_UseFont>true</Style_X_StyleUsing_X_UseFont>
+<Style_X_StyleUsing_X_UseForeColor>true</Style_X_StyleUsing_X_UseForeColor>
+<Style_X_StyleUsing_X_UseBackColor>true</Style_X_StyleUsing_X_UseBackColor>
+<Style_X_StyleUsing_X_UseBorderColor>true</Style_X_StyleUsing_X_UseBorderColor>
+<Style_X_StyleUsing_X_UseBorders>true</Style_X_StyleUsing_X_UseBorders>
+<Style_X_StyleUsing_X_UseBorderWidth>true</Style_X_StyleUsing_X_UseBorderWidth>
+<Style_X_StyleUsing_X_UseTextAlignment>false</Style_X_StyleUsing_X_UseTextAlignment>
+<ParentStyleUsing_X_UseFont>false</ParentStyleUsing_X_UseFont>
+<ParentStyleUsing_X_UseForeColor>true</ParentStyleUsing_X_UseForeColor>
+<ParentStyleUsing_X_UseBackColor>true</ParentStyleUsing_X_UseBackColor>
+<ParentStyleUsing_X_UseBorderColor>true</ParentStyleUsing_X_UseBorderColor>
+<ParentStyleUsing_X_UseBorders>false</ParentStyleUsing_X_UseBorders>
+<ParentStyleUsing_X_UseBorderWidth>true</ParentStyleUsing_X_UseBorderWidth>
+<ParentStyleUsing_X_UseTextAlignment>false</ParentStyleUsing_X_UseTextAlignment>
+<Dpi>100</Dpi>
+<EvenStyleName href="#ref-6"/>
+<OddStyleName href="#ref-6"/>
+<StyleName href="#ref-6"/>
+<BindingItemCount>1</BindingItemCount>
+<BindingItem0_X_PropertyName id="ref-105">Text</BindingItem0_X_PropertyName>
+<BindingItem0_X_DataMember id="ref-106">CashRealBalanceViewA3.Balance_EntityCurr</BindingItem0_X_DataMember>
+<BindingItem0_X_FormatString href="#ref-6"/>
+<BindingItem0_X_DataSource href="#ref-6"/>
+<Bounds xsi:type="a2:Rectangle" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<x>250</x>
+<y>8</y>
+<width>183</width>
+<height>25</height>
+</Bounds>
+<Text id="ref-107">xrLabel3</Text>
+<NavigateUrl href="#ref-6"/>
+<Target href="#ref-6"/>
+<Bookmark href="#ref-6"/>
+<CanGrow>true</CanGrow>
+<CanShrink>false</CanShrink>
+<WordWrap>true</WordWrap>
+<Draw href="#ref-6"/>
+<ParentChanged href="#ref-6"/>
+<EventsScript_X_OnHtmlItemCreated href="#ref-6"/>
+<EventsScript_X_OnBeforePrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseUp href="#ref-6"/>
+<EventsScript_X_OnBandHeightChanged href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseDown href="#ref-6"/>
+<EventsScript_X_OnLocationChanged href="#ref-6"/>
+<EventsScript_X_OnAfterPrint href="#ref-6"/>
+<EventsScript_X_OnPreviewMouseMove href="#ref-6"/>
+<EventsScript_X_OnPreviewDoubleClick href="#ref-6"/>
+<EventsScript_X_OnDataSourceRowChanged href="#ref-6"/>
+<EventsScript_X_OnSizeChanged href="#ref-6"/>
+<EventsScript_X_OnDraw href="#ref-6"/>
+<EventsScript_X_OnPreviewClick href="#ref-6"/>
+<EventsScript_X_OnTextChanged href="#ref-6"/>
+<EventsScript_X_OnParentChanged href="#ref-6"/>
+<Multiline>false</Multiline>
+<Angle>0</Angle>
+<Summary_X_FormatString id="ref-108">{0:n2}</Summary_X_FormatString>
+<Summary_X_Func xsi:type="a3:SummaryFunc" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">Sum</Summary_X_Func>
+<Summary_X_Running xsi:type="a3:SummaryRunning" xmlns:a3="http://schemas.microsoft.com/clr/nsassem/DevExpress.XtraReports.UI/DevExpress.XtraReports%2C%20Version%3D1.6.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3D79868b8147b5eae4">Group</Summary_X_Running>
+<Summary_X_Scripts_X_OnGetResult href="#ref-6"/>
+<Summary_X_Scripts_X_OnRowChanged href="#ref-6"/>
+<Summary_X_Scripts_X_OnReset href="#ref-6"/>
+<Summary_X_IgnoreNullValues>false</Summary_X_IgnoreNullValues>
+<ItemCount>0</ItemCount>
+</a1:ObjectStorage>
+<a2:Bitmap id="ref-69" xmlns:a2="http://schemas.microsoft.com/clr/nsassem/System.Drawing/System.Drawing%2C%20Version%3D1.0.5000.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Db03f5f7f11d50a3a">
+<Data href="#ref-109"/>
+</a2:Bitmap>
+<SOAP-ENC:Array id="ref-109" xsi:type="SOAP-ENC:base64">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</SOAP-ENC:Array>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

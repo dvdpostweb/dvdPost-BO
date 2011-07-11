@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Bank">
+		<param name="Name" value="BANK">
+		<param name="Local" value="kribi-0003-000A-BANK.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Bank Account">
+		<param name="Name" value="Bank_Account">
+		<param name="Local" value="kribi-0004-000A-BANK_ACCOUNT.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Bank Account Credit">
+		<param name="Name" value="Bank_Account_Credit">
+		<param name="Local" value="kribi-0006-000A-BANK_ACCOUNT_CREDIT.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Bank Account Deposit">
+		<param name="Name" value="Bank_Account_Deposit">
+		<param name="Local" value="kribi-0005-000A-BANK_ACCOUNT_DEPOSIT.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Browse Screen">
+		<param name="Local" value="ToolBar_In_Maintenance.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Entity">
+		<param name="Name" value="Entity">
+		<param name="Local" value="kribi-0002-000A-ENTITY.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Holding">
+		<param name="Name" value="Holding">
+		<param name="Local" value="kribi-0001-000A-HOLDING.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Item">
+		<param name="Name" value="Item">
+		<param name="Local" value="kribi-0007-000A-ITEM.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Location">
+		<param name="Name" value="Loc">
+		<param name="Local" value="kribi-0009-000A-LOC.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Location Level">
+		<param name="Name" value="Loc Level">
+		<param name="Local" value="kribi-0008-000A-LOC_LEVEL.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Maintenance Screen">
+		<param name="Local" value="ToolBar_In_Browse.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetUp">
+		<param name="Name" value="Untitled: d:\BizzKeys\DevelVB6\BizzKeys\bin\Help\EN\ToBeDone.htm">
+		<param name="Local" value="ToBeDone.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Tool Bars">
+		<param name="Name" value="ToolsBars">
+		<param name="Local" value="Toolbars.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Unplanned Transaction">
+		<param name="Name" value="UNP Trans">
+		<param name="Local" value="kribi-0010-000A-Stock-UNP-Transaction.htm">
+		</OBJECT>
+</UL>
+</BODY></HTML>

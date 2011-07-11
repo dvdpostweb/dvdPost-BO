@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="Window Styles" value="0x800025">
+	<param name="ImageType" value="Folder">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SetUp">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Entity">
+			<param name="Local" value="kribi-0002-000A-ENTITY.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Holding">
+			<param name="Local" value="kribi-0001-000A-HOLDING.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Bank Accounts">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Bank Account">
+				<param name="Local" value="kribi-0004-000A-BANK_ACCOUNT.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Deposit Account">
+				<param name="Local" value="kribi-0005-000A-BANK_ACCOUNT_DEPOSIT.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Credit Account">
+				<param name="Local" value="kribi-0006-000A-BANK_ACCOUNT_CREDIT.htm">
+				</OBJECT>
+		</UL>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Stock">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Unplanned Transaction">
+			<param name="Local" value="kribi-0010-000A-Stock-UNP-Transaction.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Location Level">
+			<param name="Local" value="kribi-0008-000A-LOC_LEVEL.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Location">
+			<param name="Local" value="kribi-0009-000A-LOC.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Item">
+			<param name="Local" value="kribi-0007-000A-ITEM.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Tool Bars">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Maintenance Screen">
+			<param name="Local" value="ToolBar_In_Maintenance.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Browse Screen">
+			<param name="Local" value="ToolBar_In_Browse.htm">
+			</OBJECT>
+	</UL>
+</UL>
+</BODY></HTML>
