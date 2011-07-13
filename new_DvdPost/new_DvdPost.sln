@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "main", "main\main.csproj", "{B91B945E-8322-4FEA-9FBB-AC932F62AAD9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DvdPostBL", "DvdPostBL\DvdPostBL.csproj", "{00F8DF85-63D3-4515-8AE7-0D084DDA2ADF}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "newDvdPostInstaller", "newDvdPostInstaller\newDvdPostInstaller.vdproj", "{8720C9FB-805A-4EA7-84B3-2EBBF4EAB467}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B91B945E-8322-4FEA-9FBB-AC932F62AAD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B91B945E-8322-4FEA-9FBB-AC932F62AAD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B91B945E-8322-4FEA-9FBB-AC932F62AAD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B91B945E-8322-4FEA-9FBB-AC932F62AAD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00F8DF85-63D3-4515-8AE7-0D084DDA2ADF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00F8DF85-63D3-4515-8AE7-0D084DDA2ADF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00F8DF85-63D3-4515-8AE7-0D084DDA2ADF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00F8DF85-63D3-4515-8AE7-0D084DDA2ADF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8720C9FB-805A-4EA7-84B3-2EBBF4EAB467}.Debug|Any CPU.ActiveCfg = Debug
+		{8720C9FB-805A-4EA7-84B3-2EBBF4EAB467}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
