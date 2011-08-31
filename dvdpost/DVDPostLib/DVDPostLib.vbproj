@@ -363,7 +363,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LOGISTIC\frmBoxList.vb">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="PRODUCTS\frmActorsBrowseMaint.vb">
       <SubType>Form</SubType>
@@ -378,10 +377,8 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reports\rptNewEnveloppe.vb">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\rptDVDLabel2.vb">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Site\frmTranslate.vb">
       <SubType>Form</SubType>
@@ -414,7 +411,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reports\rptMSEnveloppesFlat.vb">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="SALE\frmModifyShoppingOrder.vb">
       <SubType>Form</SubType>
@@ -1163,14 +1159,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\SSHConnect\SSH\SSHLibrary\SSHLibrary.csproj">
-      <Project>{E10B6B5D-3E4D-417D-BD93-D8C7DDB9B756}</Project>
-      <Name>SSHLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\SSHConnect\SSH\SSH\SSH.csproj">
-      <Project>{E61B4BC6-B14C-4E2A-AEE2-26DAB371693C}</Project>
-      <Name>SSH</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DVDPostBuziness\DVDPostBuziness.vbproj">
       <Project>{875CB9D2-5351-44A4-90C1-389E04CA26B3}</Project>
       <Name>DVDPostBuziness</Name>
