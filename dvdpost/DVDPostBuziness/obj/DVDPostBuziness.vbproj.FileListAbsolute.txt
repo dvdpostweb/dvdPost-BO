@@ -30,3 +30,19 @@ D:\Ict7\Clients\DvdPost\DvdPost BO\DVDPost\DVDPostBuziness\obj\Release\DVDPostBu
 D:\Ict7\Clients\DvdPost\DvdPost BO\DVDPost\DVDPostBuziness\obj\Release\DVDPostBuziness.dll
 D:\Ict7\Clients\DvdPost\DvdPost BO\DVDPost\DVDPostBuziness\obj\Release\DVDPostBuziness.xml
 D:\Ict7\Clients\DvdPost\DvdPost BO\DVDPost\DVDPostBuziness\obj\Release\DVDPostBuziness.pdb
+D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\DVDPostBuziness\bin\Debug\DVDPostBuziness.dll
+D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\DVDPostBuziness\bin\Debug\DVDPostBuziness.pdb
+D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\DVDPostBuziness\bin\Debug\DVDPostBuziness.xml
+D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\DVDPostBuziness\bin\Debug\DvdPostData.dll
+D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\DVDPostBuziness\bin\Debug\DVDPostTools.dll
+D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\DVDPostBuziness\bin\Debug\MySql.Data.dll
+D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\DVDPostBuziness\bin\Debug\DvdPostData.pdb
+D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\DVDPostBuziness\bin\Debug\DvdPostData.xml
+D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\DVDPostBuziness\bin\Debug\DVDPostTools.pdb
+D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\DVDPostBuziness\obj\Debug\ResolveAssemblyReference.cache
+D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\DVDPostBuziness\obj\Debug\DVDPostBuziness.FrmPurchaseControl.resources
+D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\DVDPostBuziness\obj\Debug\DVDPostBuziness.Resources.resources
+D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\DVDPostBuziness\obj\Debug\DVDPostBuziness.vbproj.GenerateResource.Cache
+D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\DVDPostBuziness\obj\Debug\DVDPostBuziness.dll
+D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\DVDPostBuziness\obj\Debug\DVDPostBuziness.xml
+D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\DVDPostBuziness\obj\Debug\DVDPostBuziness.pdb

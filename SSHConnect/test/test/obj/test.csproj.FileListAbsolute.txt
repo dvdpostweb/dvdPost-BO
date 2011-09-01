@@ -1,0 +1,11 @@
+D:\Ict7\Clients\DvdPost\SSHConnect\test\test\obj\Debug\ResolveAssemblyReference.cache
+D:\Ict7\Clients\DvdPost\SSHConnect\test\test\bin\Debug\test.exe
+D:\Ict7\Clients\DvdPost\SSHConnect\test\test\bin\Debug\test.pdb
+D:\Ict7\Clients\DvdPost\SSHConnect\test\test\bin\Debug\SSH.dll
+D:\Ict7\Clients\DvdPost\SSHConnect\test\test\bin\Debug\SSHLibrary.dll
+D:\Ict7\Clients\DvdPost\SSHConnect\test\test\bin\Debug\SSH.pdb
+D:\Ict7\Clients\DvdPost\SSHConnect\test\test\bin\Debug\SSHLibrary.pdb
+D:\Ict7\Clients\DvdPost\SSHConnect\test\test\obj\Debug\test.exe
+D:\Ict7\Clients\DvdPost\SSHConnect\test\test\obj\Debug\test.pdb
+D:\Ict7\Clients\DvdPost\SSHConnect\test\test\bin\Debug\Org.Mentalis.Security.dll
+D:\Ict7\Clients\DvdPost\SSHConnect\test\test\bin\Debug\DiffieHellman.dll

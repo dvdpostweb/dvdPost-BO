@@ -6,31 +6,7 @@ DVDPostBuziness
 </name>
 </assembly>
 <members>
-<member name="F:DVDPostBuziness.clsDom70_128._sumNumAccount">
-	<summary>
-  create file to export domiciliation Isabel Activation (dvdpost =&gt; isabel activation)
- </summary>
-	<remarks></remarks>
-</member><member name="M:DVDPostBuziness.ClsCustomers.Initialisation(System.Int32,System.Boolean)">
-	<summary>
- getcptdroselia 
- update validityto = now()
- update customers_dvd_home 
- </summary>
-	<param name="customers_id"></param>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:DVDPostBuziness.ClsCustomers.Reconduction(DvdPostData.ClsCustomersData.Payment_Method,DvdPostData.ClsCustomersData.Country,System.Int32,System.Boolean,System.Boolean)">
-	<summary>
- reconduction de type classique 
- sinon reconduction Immediat 
- </summary>
-	<param name="pay_method"></param>
-	<param name="idcountry"></param>
-	<param name="customers_id"></param>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="T:DVDPostBuziness.ClsDom80_128">
+<member name="T:DVDPostBuziness.ClsDom80_128">
 	<summary>
   create file to export domiciliation Isabel payment (dvdpost =&gt; isabel payment)
  </summary>
@@ -69,6 +45,30 @@ DVDPostBuziness
 	<param name="lstCodaType"></param>
 	<param name="filePath"></param>
 	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:DVDPostBuziness.ClsCustomers.Initialisation(System.Int32,System.Boolean)">
+	<summary>
+ getcptdroselia 
+ update validityto = now()
+ update customers_dvd_home 
+ </summary>
+	<param name="customers_id"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:DVDPostBuziness.ClsCustomers.Reconduction(DvdPostData.ClsCustomersData.Payment_Method,DvdPostData.ClsCustomersData.Country,System.Int32,System.Boolean,System.Boolean)">
+	<summary>
+ reconduction de type classique 
+ sinon reconduction Immediat 
+ </summary>
+	<param name="pay_method"></param>
+	<param name="idcountry"></param>
+	<param name="customers_id"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="F:DVDPostBuziness.clsDom70_128._sumNumAccount">
+	<summary>
+  create file to export domiciliation Isabel Activation (dvdpost =&gt; isabel activation)
+ </summary>
 	<remarks></remarks>
 </member>
 </members>

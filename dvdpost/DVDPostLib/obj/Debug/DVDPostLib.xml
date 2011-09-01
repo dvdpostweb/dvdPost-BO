@@ -6,7 +6,1095 @@ DVDPostLib
 </name>
 </assembly>
 <members>
-<member name="T:DVDPostLib.dsPur_Sls.PS_AnaDataTable">
+<member name="M:DVDPostLib.frmABOProcessPerStep_type.LockDVDProduct(System.Int32)">
+	<summary>
+ delete the product of the view product
+ </summary>
+	<param name="product_id"></param>
+	<remarks></remarks>
+</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemaxDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemax_idDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemax_inputDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemax_leverancierDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsFeeSharing.productsDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsFeeSharing.MovieMax_Info_View1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemax_outputDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsFeeSharing.fee_view1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemaxRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemax_idRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemax_inputRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemax_leverancierRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsFeeSharing.productsRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsFeeSharing.MovieMax_Info_View1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemax_outputRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsFeeSharing.fee_view1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemaxRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemax_idRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemax_inputRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemax_leverancierRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsFeeSharing.productsRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsFeeSharing.MovieMax_Info_View1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemax_outputRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsFeeSharing.fee_view1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsFeeSharing">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="M:DVDPostLib.frmProcessOUT.btnProcessXml_Click(System.Object,System.EventArgs)">
+	<summary>
+  au cas ou probleme de commit transaction
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="T:DVDPostLib.DsUsers.securityuserDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.DsUsers.securityuser_roleDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.DsUsers.securitymenu_roleDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.DsUsers.securityroleDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.DsUsers.securityuserRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.DsUsers.securityuser_roleRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.DsUsers.securitymenu_roleRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.DsUsers.securityroleRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.DsUsers.securityuserRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.DsUsers.securityuser_roleRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.DsUsers.securitymenu_roleRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.DsUsers.securityroleRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.DsUsers">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="M:DVDPostLib.frmABOProcessPerStep.LockDVDProduct(System.Int32)">
+	<summary>
+ delete the product of the view product
+ </summary>
+	<param name="product_id"></param>
+	<remarks></remarks>
+</member><member name="M:DVDPostLib.frmABOProcessPerStep.ChooseDVDinWishlistInStock(System.Data.DataRowView,System.String,System.Data.DataView,System.Data.DataView)">
+	<summary>
+ save the dvd list of customer in the temporary table 
+ </summary>
+	<param name="PRoductType"></param>
+	<remarks></remarks>
+</member><member name="T:DVDPostLib.dsCustomers.customersDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.customers_infoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.customers_instant_profileDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.mail_messagesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.mail_messages_sent_historyDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.customers_view1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.mail_messages1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.languagesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.orders_status_historyDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.ordersDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.orders_productsDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.productsDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.products_adultDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.products_descriptionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.directorsDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.products_actors_view1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.prod_instock_image_view1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.customers_view2DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.aboDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.abo_actionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.customers_mikeDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.customers_nl_tempDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.siteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.propsectsDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.customers_abo_payment_methodDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.phone_requestDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.weekdaysDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.phone_request_hoursDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.phone_request_reasonDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.QuizzDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.code_tmpDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.custserv_view1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.customersRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.customers_infoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.customers_instant_profileRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.mail_messagesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.mail_messages_sent_historyRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.customers_view1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.mail_messages1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.languagesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.orders_status_historyRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.ordersRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.orders_productsRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.productsRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.products_adultRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.products_descriptionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.directorsRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.products_actors_view1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.prod_instock_image_view1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.customers_view2Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.aboRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.abo_actionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.customers_mikeRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.customers_nl_tempRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.siteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.propsectsRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.customers_abo_payment_methodRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.phone_requestRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.weekdaysRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.phone_request_hoursRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.phone_request_reasonRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.QuizzRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.code_tmpRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.custserv_view1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.customersRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.customers_infoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.customers_instant_profileRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.mail_messagesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.mail_messages_sent_historyRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.customers_view1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.mail_messages1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.languagesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.orders_status_historyRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.ordersRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.orders_productsRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.productsRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.products_adultRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.products_descriptionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.directorsRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.products_actors_view1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.prod_instock_image_view1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.customers_view2RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.aboRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.abo_actionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.customers_mikeRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.customers_nl_tempRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.siteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.propsectsRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.customers_abo_payment_methodRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.phone_requestRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.weekdaysRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.phone_request_hoursRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.phone_request_reasonRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.QuizzRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.code_tmpRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers.custserv_view1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomers">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.EurofidesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.payment_offline_requestDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.OgoneExpDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.customersDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.customersView1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.languagesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.siteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.mail_messagesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.Offline_Payment_Recovery_FlowDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.Offline_Payment_Step_View1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.Offline_DvdAtHomeDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.ogone_batchDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.EurofidesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.payment_offline_requestRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.OgoneExpRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.customersRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.customersView1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.languagesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.siteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.mail_messagesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.Offline_Payment_Recovery_FlowRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.Offline_Payment_Step_View1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.Offline_DvdAtHomeRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.ogone_batchRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.EurofidesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.payment_offline_requestRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.OgoneExpRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.customersRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.customersView1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.languagesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.siteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.mail_messagesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.Offline_Payment_Recovery_FlowRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.Offline_Payment_Step_View1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.Offline_DvdAtHomeRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCompta.ogone_batchRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCompta">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:DVDPostLib.dsEnvelopeLabels.envelope_labels_multishipmentDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsEnvelopeLabels.ordersDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsEnvelopeLabels.envelope_labels_multishipment_detDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsEnvelopeLabels.envelope_labelsDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsEnvelopeLabels.orders_out_view1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsEnvelopeLabels.envelope_labels_multishipmentRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsEnvelopeLabels.ordersRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsEnvelopeLabels.envelope_labels_multishipment_detRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsEnvelopeLabels.envelope_labelsRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsEnvelopeLabels.orders_out_view1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsEnvelopeLabels.envelope_labels_multishipmentRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsEnvelopeLabels.ordersRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsEnvelopeLabels.envelope_labels_multishipment_detRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsEnvelopeLabels.envelope_labelsRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsEnvelopeLabels.orders_out_view1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsEnvelopeLabels">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="M:DVDPostLib.frmThemeEvent.AddEventCtrl(System.Windows.Forms.Control,System.Type)">
+	<summary>
+ sub recursive pour mettre a jour ts les controls d'un type
+ </summary>
+	<param name="ctrl"></param>
+	<param name="typectrl"></param>
+	<remarks></remarks>
+</member><member name="M:DVDPostLib.frmThemeEvent.SearchAllCtrl(System.Windows.Forms.Control,System.Type,System.Boolean)">
+	<summary>
+ sub recursive pour mettre a jour ts les controls d'un type
+ </summary>
+	<param name="ctrl"></param>
+	<param name="typectrl"></param>
+	<param name="enabled"></param>
+	<remarks></remarks>
+</member><member name="T:DVDPostLib.dsAboRent.customersDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.productsDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.aboDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.abo_actionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.AboRentDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.ordersDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.CustOrderDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.abo_view2DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.abo_view1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.abo_stop_whyDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.abo_stop_why_explainedDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.abo_stop_why_view1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.ogone_paymentDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.domiciliation_paymentDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.wishlist_assigned_view1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.aboreconduction_view1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.ogone_payment_ValidateDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.domiciliation_payment_ValidateDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.mail_messages_sent_history_view1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.customersRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.productsRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.aboRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.abo_actionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.AboRentRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.ordersRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.CustOrderRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.abo_view2Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.abo_view1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.abo_stop_whyRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.abo_stop_why_explainedRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.abo_stop_why_view1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.ogone_paymentRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.domiciliation_paymentRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.wishlist_assigned_view1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.aboreconduction_view1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.ogone_payment_ValidateRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.domiciliation_payment_ValidateRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.mail_messages_sent_history_view1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.customersRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.productsRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.aboRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.abo_actionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.AboRentRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.ordersRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.CustOrderRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.abo_view2RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.abo_view1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.abo_stop_whyRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.abo_stop_why_explainedRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.abo_stop_why_view1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.ogone_paymentRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.domiciliation_paymentRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.wishlist_assigned_view1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.aboreconduction_view1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.ogone_payment_ValidateRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.domiciliation_payment_ValidateRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent.mail_messages_sent_history_view1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsAboRent">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:DVDPostLib.DsSite.landingsDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.DsSite.listed_productsDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.DsSite.product_listsDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.DsSite.themes_eventsDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.DsSite.TranslateDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.DsSite.landingsRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.DsSite.listed_productsRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.DsSite.product_listsRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.DsSite.themes_eventsRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.DsSite.TranslateRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.DsSite.landingsRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.DsSite.listed_productsRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.DsSite.product_listsRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.DsSite.themes_eventsRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.DsSite.TranslateRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.DsSite">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:DVDPostLib.dsPur_Sls.PS_AnaDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -237,6 +1325,331 @@ Row event argument class
 </member><member name="T:DVDPostLib.dsPur_Sls">
 	<summary>
 Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="M:DVDPostLib.frmCustomers_Maint.addCreditToCustomers(System.Int32,System.Int32,DvdPostData.clsCreditHistory.ActionId,System.Int32)">
+	<summary>
+ insert in credit_history ' by gauthier
+ </summary>
+</member><member name="M:DVDPostLib.frmABOProcessNew.LockDVDProduct(System.Int32)">
+	<summary>
+ delete the product of the view product
+ </summary>
+	<param name="product_id"></param>
+	<remarks></remarks>
+</member><member name="M:DVDPostLib.frmABOProcessNew.ChooseDVDinWishlistInStock(System.Data.DataRowView,System.String,System.Data.DataView,System.Data.DataView)">
+	<summary>
+ save the dvd list of customer in the temporary table 
+ </summary>
+	<param name="PRoductType"></param>
+	<remarks></remarks>
+</member><member name="T:DVDPostLib.dsABOProcess.wishlistDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.customersDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.compensation_summaryDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.user_log_view1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.wishlist_masterDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.customers2DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.customers_dvd_to_sendDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.customers_DVD_NORMDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.customers_DVD_ADULTDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.wishlistRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.customersRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.compensation_summaryRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.user_log_view1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.wishlist_masterRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.customers2Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.customers_dvd_to_sendRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.customers_DVD_NORMRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.customers_DVD_ADULTRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.wishlistRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.customersRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.compensation_summaryRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.user_log_view1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.wishlist_masterRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.customers2RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.customers_dvd_to_sendRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.customers_DVD_NORMRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess.customers_DVD_ADULTRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsABOProcess">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.customers_search_resultDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.address_book_defaultDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.countryDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.products_aboDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.aboDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.discount_codeDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.languagesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.generalentityDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.custservDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.domiciliation_statusDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.cc_expiration_statusDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.customersDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.customer_attributesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.address_book_allDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.customers_abo_payment_methodDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.customers_search_resultRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.address_book_defaultRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.countryRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.products_aboRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.aboRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.discount_codeRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.languagesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.generalentityRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.custservRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.domiciliation_statusRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.cc_expiration_statusRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.customersRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.customer_attributesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.address_book_allRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.customers_abo_payment_methodRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.customers_search_resultRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.address_book_defaultRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.countryRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.products_aboRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.aboRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.discount_codeRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.languagesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.generalentityRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.custservRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.domiciliation_statusRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.cc_expiration_statusRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.customersRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.customer_attributesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.address_book_allRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint.customers_abo_payment_methodRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:DVDPostLib.dsCustomerMaint">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="P:DVDPostLib.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:DVDPostLib.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:DVDPostLib.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
 </member><member name="T:DVDPostLib.dsProducts.productsDataTable">
 	<summary>
@@ -962,1419 +2375,6 @@ Row event argument class
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="M:DVDPostLib.frmThemeEvent.AddEventCtrl(System.Windows.Forms.Control,System.Type)">
-	<summary>
- sub recursive pour mettre a jour ts les controls d'un type
- </summary>
-	<param name="ctrl"></param>
-	<param name="typectrl"></param>
-	<remarks></remarks>
-</member><member name="M:DVDPostLib.frmThemeEvent.SearchAllCtrl(System.Windows.Forms.Control,System.Type,System.Boolean)">
-	<summary>
- sub recursive pour mettre a jour ts les controls d'un type
- </summary>
-	<param name="ctrl"></param>
-	<param name="typectrl"></param>
-	<param name="enabled"></param>
-	<remarks></remarks>
-</member><member name="M:DVDPostLib.frmProcessOUT.btnProcessXml_Click(System.Object,System.EventArgs)">
-	<summary>
-  au cas ou probleme de commit transaction
- </summary>
-	<param name="sender"></param>
-	<param name="e"></param>
-	<remarks></remarks>
-</member><member name="T:DVDPostLib.DsSite.landingsDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.DsSite.listed_productsDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.DsSite.product_listsDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.DsSite.themes_eventsDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.DsSite.TranslateDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.DsSite.landingsRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.DsSite.listed_productsRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.DsSite.product_listsRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.DsSite.themes_eventsRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.DsSite.TranslateRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.DsSite.landingsRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.DsSite.listed_productsRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.DsSite.product_listsRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.DsSite.themes_eventsRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.DsSite.TranslateRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.DsSite">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="M:DVDPostLib.frmABOProcessPerStep.LockDVDProduct(System.Int32)">
-	<summary>
- delete the product of the view product
- </summary>
-	<param name="product_id"></param>
-	<remarks></remarks>
-</member><member name="M:DVDPostLib.frmABOProcessPerStep.ChooseDVDinWishlistInStock(System.Data.DataRowView,System.String,System.Data.DataView,System.Data.DataView)">
-	<summary>
- save the dvd list of customer in the temporary table 
- </summary>
-	<param name="PRoductType"></param>
-	<remarks></remarks>
-</member><member name="T:DVDPostLib.dsCustomers.customersDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.customers_infoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.customers_instant_profileDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.mail_messagesDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.mail_messages_sent_historyDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.customers_view1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.mail_messages1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.languagesDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.orders_status_historyDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.ordersDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.orders_productsDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.productsDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.products_adultDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.products_descriptionDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.directorsDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.products_actors_view1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.prod_instock_image_view1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.customers_view2DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.aboDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.abo_actionDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.customers_mikeDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.customers_nl_tempDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.siteDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.propsectsDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.customers_abo_payment_methodDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.phone_requestDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.weekdaysDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.phone_request_hoursDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.phone_request_reasonDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.QuizzDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.code_tmpDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.custserv_view1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.customersRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.customers_infoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.customers_instant_profileRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.mail_messagesRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.mail_messages_sent_historyRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.customers_view1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.mail_messages1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.languagesRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.orders_status_historyRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.ordersRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.orders_productsRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.productsRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.products_adultRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.products_descriptionRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.directorsRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.products_actors_view1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.prod_instock_image_view1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.customers_view2Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.aboRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.abo_actionRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.customers_mikeRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.customers_nl_tempRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.siteRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.propsectsRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.customers_abo_payment_methodRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.phone_requestRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.weekdaysRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.phone_request_hoursRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.phone_request_reasonRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.QuizzRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.code_tmpRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.custserv_view1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.customersRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.customers_infoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.customers_instant_profileRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.mail_messagesRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.mail_messages_sent_historyRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.customers_view1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.mail_messages1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.languagesRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.orders_status_historyRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.ordersRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.orders_productsRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.productsRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.products_adultRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.products_descriptionRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.directorsRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.products_actors_view1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.prod_instock_image_view1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.customers_view2RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.aboRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.abo_actionRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.customers_mikeRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.customers_nl_tempRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.siteRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.propsectsRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.customers_abo_payment_methodRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.phone_requestRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.weekdaysRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.phone_request_hoursRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.phone_request_reasonRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.QuizzRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.code_tmpRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers.custserv_view1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomers">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:DVDPostLib.DsUsers.securityuserDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.DsUsers.securityuser_roleDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.DsUsers.securitymenu_roleDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.DsUsers.securityroleDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.DsUsers.securityuserRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.DsUsers.securityuser_roleRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.DsUsers.securitymenu_roleRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.DsUsers.securityroleRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.DsUsers.securityuserRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.DsUsers.securityuser_roleRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.DsUsers.securitymenu_roleRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.DsUsers.securityroleRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.DsUsers">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="M:DVDPostLib.frmABOProcessPerStep_type.LockDVDProduct(System.Int32)">
-	<summary>
- delete the product of the view product
- </summary>
-	<param name="product_id"></param>
-	<remarks></remarks>
-</member><member name="T:DVDPostLib.dsABOProcess.wishlistDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.customersDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.compensation_summaryDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.user_log_view1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.wishlist_masterDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.customers2DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.customers_dvd_to_sendDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.customers_DVD_NORMDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.customers_DVD_ADULTDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.wishlistRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.customersRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.compensation_summaryRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.user_log_view1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.wishlist_masterRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.customers2Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.customers_dvd_to_sendRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.customers_DVD_NORMRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.customers_DVD_ADULTRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.wishlistRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.customersRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.compensation_summaryRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.user_log_view1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.wishlist_masterRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.customers2RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.customers_dvd_to_sendRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.customers_DVD_NORMRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess.customers_DVD_ADULTRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsABOProcess">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.customers_search_resultDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.address_book_defaultDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.countryDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.products_aboDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.aboDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.discount_codeDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.languagesDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.generalentityDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.custservDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.domiciliation_statusDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.cc_expiration_statusDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.customersDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.customer_attributesDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.address_book_allDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.customers_abo_payment_methodDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.customers_search_resultRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.address_book_defaultRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.countryRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.products_aboRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.aboRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.discount_codeRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.languagesRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.generalentityRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.custservRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.domiciliation_statusRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.cc_expiration_statusRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.customersRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.customer_attributesRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.address_book_allRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.customers_abo_payment_methodRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.customers_search_resultRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.address_book_defaultRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.countryRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.products_aboRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.aboRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.discount_codeRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.languagesRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.generalentityRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.custservRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.domiciliation_statusRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.cc_expiration_statusRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.customersRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.customer_attributesRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.address_book_allRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint.customers_abo_payment_methodRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCustomerMaint">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:DVDPostLib.dsEnvelopeLabels.envelope_labels_multishipmentDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsEnvelopeLabels.ordersDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsEnvelopeLabels.envelope_labels_multishipment_detDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsEnvelopeLabels.envelope_labelsDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsEnvelopeLabels.orders_out_view1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsEnvelopeLabels.envelope_labels_multishipmentRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsEnvelopeLabels.ordersRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsEnvelopeLabels.envelope_labels_multishipment_detRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsEnvelopeLabels.envelope_labelsRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsEnvelopeLabels.orders_out_view1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsEnvelopeLabels.envelope_labels_multishipmentRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsEnvelopeLabels.ordersRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsEnvelopeLabels.envelope_labels_multishipment_detRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsEnvelopeLabels.envelope_labelsRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsEnvelopeLabels.orders_out_view1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsEnvelopeLabels">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.EurofidesDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.payment_offline_requestDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.OgoneExpDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.customersDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.customersView1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.languagesDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.siteDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.mail_messagesDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.Offline_Payment_Recovery_FlowDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.Offline_Payment_Step_View1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.Offline_DvdAtHomeDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.ogone_batchDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.EurofidesRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.payment_offline_requestRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.OgoneExpRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.customersRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.customersView1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.languagesRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.siteRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.mail_messagesRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.Offline_Payment_Recovery_FlowRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.Offline_Payment_Step_View1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.Offline_DvdAtHomeRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.ogone_batchRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.EurofidesRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.payment_offline_requestRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.OgoneExpRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.customersRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.customersView1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.languagesRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.siteRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.mail_messagesRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.Offline_Payment_Recovery_FlowRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.Offline_Payment_Step_View1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.Offline_DvdAtHomeRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCompta.ogone_batchRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsCompta">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="M:DVDPostLib.frmCustomers_Maint.addCreditToCustomers(System.Int32,System.Int32,DvdPostData.clsCreditHistory.ActionId,System.Int32)">
-	<summary>
- insert in credit_history ' by gauthier
- </summary>
-</member><member name="P:DVDPostLib.My.Resources.Resources.ResourceManager">
-	<summary>
-  Returns the cached ResourceManager instance used by this class.
-</summary>
-</member><member name="P:DVDPostLib.My.Resources.Resources.Culture">
-	<summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
-</summary>
-</member><member name="T:DVDPostLib.My.Resources.Resources">
-	<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.customersDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.productsDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.aboDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.abo_actionDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.AboRentDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.ordersDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.CustOrderDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.abo_view2DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.abo_view1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.abo_stop_whyDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.abo_stop_why_explainedDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.abo_stop_why_view1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.ogone_paymentDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.domiciliation_paymentDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.wishlist_assigned_view1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.aboreconduction_view1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.ogone_payment_ValidateDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.domiciliation_payment_ValidateDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.mail_messages_sent_history_view1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.customersRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.productsRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.aboRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.abo_actionRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.AboRentRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.ordersRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.CustOrderRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.abo_view2Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.abo_view1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.abo_stop_whyRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.abo_stop_why_explainedRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.abo_stop_why_view1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.ogone_paymentRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.domiciliation_paymentRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.wishlist_assigned_view1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.aboreconduction_view1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.ogone_payment_ValidateRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.domiciliation_payment_ValidateRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.mail_messages_sent_history_view1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.customersRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.productsRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.aboRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.abo_actionRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.AboRentRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.ordersRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.CustOrderRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.abo_view2RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.abo_view1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.abo_stop_whyRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.abo_stop_why_explainedRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.abo_stop_why_view1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.ogone_paymentRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.domiciliation_paymentRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.wishlist_assigned_view1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.aboreconduction_view1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.ogone_payment_ValidateRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.domiciliation_payment_ValidateRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent.mail_messages_sent_history_view1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsAboRent">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemaxDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemax_idDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemax_inputDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemax_leverancierDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing.productsDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing.MovieMax_Info_View1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemax_outputDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing.fee_view1DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemaxRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemax_idRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemax_inputRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemax_leverancierRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing.productsRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing.MovieMax_Info_View1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemax_outputRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing.fee_view1Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemaxRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemax_idRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemax_inputRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemax_leverancierRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing.productsRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing.MovieMax_Info_View1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing.feesharing_moviemax_outputRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing.fee_view1RowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:DVDPostLib.dsFeeSharing">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="M:DVDPostLib.frmABOProcessNew.LockDVDProduct(System.Int32)">
-	<summary>
- delete the product of the view product
- </summary>
-	<param name="product_id"></param>
-	<remarks></remarks>
-</member><member name="M:DVDPostLib.frmABOProcessNew.ChooseDVDinWishlistInStock(System.Data.DataRowView,System.String,System.Data.DataView,System.Data.DataView)">
-	<summary>
- save the dvd list of customer in the temporary table 
- </summary>
-	<param name="PRoductType"></param>
-	<remarks></remarks>
 </member>
 </members>
 </doc>
