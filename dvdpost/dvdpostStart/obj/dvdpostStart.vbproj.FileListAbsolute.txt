@@ -18,3 +18,13 @@ D:\Ict7\Clients\DvdPost\DvdPost BO\DVDPost\dvdpostStart\obj\Debug\dvdpostStart.v
 D:\Ict7\Clients\DvdPost\DvdPost BO\DVDPost\dvdpostStart\obj\Debug\dvdpostStart.exe
 D:\Ict7\Clients\DvdPost\DvdPost BO\DVDPost\dvdpostStart\obj\Debug\dvdpostStart.xml
 D:\Ict7\Clients\DvdPost\DvdPost BO\DVDPost\dvdpostStart\obj\Debug\dvdpostStart.pdb
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\dvdpostStart\bin\Debug\dvdpostStart.exe.config
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\dvdpostStart\bin\Debug\dvdpostStart.exe
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\dvdpostStart\bin\Debug\dvdpostStart.pdb
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\dvdpostStart\bin\Debug\dvdpostStart.xml
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\dvdpostStart\obj\Debug\ResolveAssemblyReference.cache
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\dvdpostStart\obj\Debug\dvdpostStart.Resources.resources
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\dvdpostStart\obj\Debug\dvdpostStart.vbproj.GenerateResource.Cache
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\dvdpostStart\obj\Debug\dvdpostStart.exe
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\dvdpostStart\obj\Debug\dvdpostStart.xml
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\dvdpostStart\obj\Debug\dvdpostStart.pdb

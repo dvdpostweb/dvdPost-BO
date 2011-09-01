@@ -63,3 +63,7 @@ D:\Ict7\Clients\DvdPost\DvdPost BO\DVDPost\BK\bin\DVDPost.pdb
 D:\Ict7\Clients\DvdPost\DvdPost BO\DVDPost\BK\bin\DVDPostLib.pdb
 D:\Ict7\Clients\DvdPost\DvdPost BO\DVDPost\BK\bin\DVDPostLib.xml
 D:\Ict7\Clients\DvdPost\DvdPost BO\DVDPost\BK\bin\fr\DVDPostLib.resources.dll
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\BK\obj\Debug\ResolveAssemblyReference.cache
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\BK\obj\Debug\DVDPost.exe
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\BK\obj\Debug\DVDPost.xml
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\BK\obj\Debug\DVDPost.pdb

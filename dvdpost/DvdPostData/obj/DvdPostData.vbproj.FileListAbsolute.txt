@@ -24,3 +24,31 @@ D:\Ict7\Clients\DvdPost\DvdPost BO\DVDPost\DvdPostData\obj\Debug\DvdPostData.vbp
 D:\Ict7\Clients\DvdPost\DvdPost BO\DVDPost\DvdPostData\obj\Debug\DvdPostData.dll
 D:\Ict7\Clients\DvdPost\DvdPost BO\DVDPost\DvdPostData\obj\Debug\DvdPostData.xml
 D:\Ict7\Clients\DvdPost\DvdPost BO\DVDPost\DvdPostData\obj\Debug\DvdPostData.pdb
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\bin\Debug\DvdPostData.dll
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\bin\Debug\DvdPostData.pdb
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\bin\Debug\DvdPostData.xml
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\bin\Debug\BizzLib.dll
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\bin\Debug\DevExpress.Data.v8.1.dll
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\bin\Debug\DevExpress.Utils.v8.1.dll
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\bin\Debug\DevExpress.XtraEditors.v8.1.dll
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\bin\Debug\DVDPostTools.dll
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\bin\Debug\MySql.Data.dll
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\bin\Debug\DevExpress.XtraCharts.v8.1.dll
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\bin\Debug\DevExpress.XtraLayout.v8.1.dll
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\bin\Debug\DevExpress.XtraReports.v8.1.dll
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\bin\Debug\DevExpress.XtraRichTextEdit.v8.1.dll
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\bin\Debug\DevExpress.XtraPivotGrid.v8.1.dll
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\bin\Debug\DevExpress.XtraCharts.v8.1.UI.dll
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\bin\Debug\DevExpress.XtraPivotGrid.v8.1.Core.dll
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\bin\Debug\DevExpress.XtraGrid.v8.1.dll
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\bin\Debug\DevExpress.XtraBars.v8.1.dll
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\bin\Debug\DevExpress.Charts.v8.1.Core.dll
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\bin\Debug\DevExpress.XtraNavBar.v8.1.dll
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\bin\Debug\DevExpress.XtraPrinting.v8.1.dll
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\bin\Debug\DVDPostTools.pdb
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\obj\Debug\ResolveAssemblyReference.cache
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\obj\Debug\DvdPostData.Resources.resources
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\obj\Debug\DvdPostData.vbproj.GenerateResource.Cache
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\obj\Debug\DvdPostData.dll
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\obj\Debug\DvdPostData.xml
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DvdPostData\obj\Debug\DvdPostData.pdb

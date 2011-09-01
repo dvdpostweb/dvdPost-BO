@@ -8,3 +8,8 @@ D:\Ict7\Clients\DvdPost\DvdPost BO\DVDPost\DVDPostTools\bin\Debug\DVDPostTools.p
 D:\Ict7\Clients\DvdPost\DvdPost BO\DVDPost\DVDPostTools\obj\Debug\ResolveAssemblyReference.cache
 D:\Ict7\Clients\DvdPost\DvdPost BO\DVDPost\DVDPostTools\obj\Debug\DVDPostTools.dll
 D:\Ict7\Clients\DvdPost\DvdPost BO\DVDPost\DVDPostTools\obj\Debug\DVDPostTools.pdb
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DVDPostTools\bin\Debug\DVDPostTools.dll
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DVDPostTools\bin\Debug\DVDPostTools.pdb
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DVDPostTools\obj\Debug\ResolveAssemblyReference.cache
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DVDPostTools\obj\Debug\DVDPostTools.dll
+D:\DVDPost\DvdPost-BO\dvdPost-BO\dvdpost\DVDPostTools\obj\Debug\DVDPostTools.pdb

@@ -6,16 +6,21 @@ DvdPostData
 </name>
 </assembly>
 <members>
-<member name="M:DvdPostData.clsProductDvd.GetUpdateStepProductDisabled">
+<member name="M:DvdPostData.AboProcessData.GetCustomerwithAbo(System.Int32,System.Int32)">
 	<summary>
-  compte le nombre de dvd encore physiquement en etat pour ce titre 
- si il n'y en a plus alors passer le status du product a -1 pour les products qui etaient a -2 
+  search customers that entry to the process abo  
+  disturb dvd to customers 
  </summary>
-	<returns></returns>
 	<remarks></remarks>
-</member><member name="M:DvdPostData.ClsPurchaseSale.GetDeletePrevisionPurchaseCurrentdate">
+</member><member name="M:DvdPostData.AboProcessData.GetCustomerwithAbo">
 	<summary>
- delete the data if the table contains data of today 
+  search customers that entry to the process abo  
+  disturb dvd to customers 
+ </summary>
+	<remarks></remarks>
+</member><member name="M:DvdPostData.AboProcessData.GetProductDVDAvailable(DvdPostData.clsProductDvd.Type_DVD)">
+	<summary>
+  list of DVD in stock
  </summary>
 	<returns></returns>
 	<remarks></remarks>
@@ -71,21 +76,9 @@ DvdPostData
  </summary>
 	<returns></returns>
 	<remarks></remarks>
-</member><member name="M:DvdPostData.AboProcessData.GetCustomerwithAbo(System.Int32,System.Int32)">
+</member><member name="M:DvdPostData.ClsPurchaseSale.GetDeletePrevisionPurchaseCurrentdate">
 	<summary>
-  search customers that entry to the process abo  
-  disturb dvd to customers 
- </summary>
-	<remarks></remarks>
-</member><member name="M:DvdPostData.AboProcessData.GetCustomerwithAbo">
-	<summary>
-  search customers that entry to the process abo  
-  disturb dvd to customers 
- </summary>
-	<remarks></remarks>
-</member><member name="M:DvdPostData.AboProcessData.GetProductDVDAvailable(DvdPostData.clsProductDvd.Type_DVD)">
-	<summary>
-  list of DVD in stock
+ delete the data if the table contains data of today 
  </summary>
 	<returns></returns>
 	<remarks></remarks>
@@ -98,6 +91,18 @@ DvdPostData
 	<param name="delay"></param>
 	<param name="isclosed"></param>
 	<param name="account_movements_id"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:DvdPostData.clsOdersStatusHistory.GetListOrderHistoryOUTTEST">
+	<summary>
+  if problem with sent mail use for send the out mail
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:DvdPostData.clsOdersStatusHistory.GetListOrderHistoryINTEST">
+	<summary>
+ if problem with sent mail use for send the IN mail
+ </summary>
 	<returns></returns>
 	<remarks></remarks>
 </member><member name="M:DvdPostData.ClsMatching.getUpdateBankAccountMovements(System.Int32,DvdPostData.ClsMatching.matching_type,System.String)">
@@ -123,15 +128,10 @@ DvdPostData
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
-</member><member name="M:DvdPostData.clsOdersStatusHistory.GetListOrderHistoryOUTTEST">
+</member><member name="M:DvdPostData.clsProductDvd.GetUpdateStepProductDisabled">
 	<summary>
-  if problem with sent mail use for send the out mail
- </summary>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="M:DvdPostData.clsOdersStatusHistory.GetListOrderHistoryINTEST">
-	<summary>
- if problem with sent mail use for send the IN mail
+  compte le nombre de dvd encore physiquement en etat pour ce titre 
+ si il n'y en a plus alors passer le status du product a -1 pour les products qui etaient a -2 
  </summary>
 	<returns></returns>
 	<remarks></remarks>
