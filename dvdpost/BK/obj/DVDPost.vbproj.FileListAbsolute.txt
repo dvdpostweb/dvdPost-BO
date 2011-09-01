@@ -101,11 +101,11 @@ D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\BK\bin\DVDPostTools.pdb
 D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\BK\bin\DvdPostData.pdb
 D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\BK\bin\DvdPostData.xml
 D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\BK\bin\SSHLibrary.pdb
-D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\BK\bin\DVDPostLib.pdb
-D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\BK\bin\DVDPostLib.xml
 D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\BK\bin\SSH.pdb
-D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\BK\bin\fr\DVDPostLib.resources.dll
 D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\BK\obj\Debug\fr\DVDPost.resources.dll
 D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\BK\obj\Debug\DVDPost.TrustInfo.xml
 D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\BK\obj\Debug\DVDPost.exe.manifest
 D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\BK\obj\Debug\DVDPost.application
+D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\BK\bin\DVDPostLib.pdb
+D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\BK\bin\DVDPostLib.xml
+D:\Ict7\Clients\DvdPost\dvdpostGit\DVDPost\BK\bin\fr\DVDPostLib.resources.dll

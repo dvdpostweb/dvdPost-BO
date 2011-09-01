@@ -4,7 +4,7 @@
   <description asmv2:iconFile="favicon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="DVDPost" version="2.0.4261.19779" language="neutral" processorArchitecture="x86" />
+    <assemblyIdentity name="DVDPost" version="2.0.4261.24907" language="neutral" processorArchitecture="x86" />
     <commandLine file="DVDPost.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -153,13 +153,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DVDPost.exe" size="491520">
-      <assemblyIdentity name="DVDPost" version="2.0.4261.19779" language="neutral" processorArchitecture="x86" />
+      <assemblyIdentity name="DVDPost" version="2.0.4261.24907" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>DvBgXcYlEwvwZgzj/7+QTkW3yZU=</dsig:DigestValue>
+        <dsig:DigestValue>nt9DZQIul651Lts/nDDl18xjrxA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -171,7 +171,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>ay5fOH3oCg8+tOWcsbo8teGDVk4=</dsig:DigestValue>
+        <dsig:DigestValue>f+Zzu2R7/H9FdhSfXZwHXdE57bM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -183,19 +183,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>k/YcrCSLY9ERnK1c794HIxNBYL4=</dsig:DigestValue>
+        <dsig:DigestValue>FRFj9gTVjYXo/fjeXKx40dh8Hac=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DVDPostLib.dll" size="6705152">
-      <assemblyIdentity name="DVDPostLib" version="2.0.4261.2" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="DVDPostLib" version="2.0.4261.4" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>xd+ALQO/CBvsxEVNock7O11k4nE=</dsig:DigestValue>
+        <dsig:DigestValue>AUJ1nwDxlPq6yAooGK9nnn5srqw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -207,7 +207,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>y84pipcCNMFIjfcuiRdpZfcNweY=</dsig:DigestValue>
+        <dsig:DigestValue>ULhXzj5+v8nb2CMSYR6Y5upiB04=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

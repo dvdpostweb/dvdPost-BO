@@ -32,9 +32,11 @@ Partial Public Class DsSite
     
     Private tableproduct_lists As product_listsDataTable
     
-    Private tablethemes_events As themes_eventsDataTable
+    Private tablethemes_events2 As themes_events2DataTable
     
     Private tableTranslate As TranslateDataTable
+    
+    Private tablethemes_events As themes_eventsDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -72,11 +74,14 @@ Partial Public Class DsSite
             If (Not (ds.Tables("product_lists")) Is Nothing) Then
                 MyBase.Tables.Add(New product_listsDataTable(ds.Tables("product_lists")))
             End If
-            If (Not (ds.Tables("themes_events")) Is Nothing) Then
-                MyBase.Tables.Add(New themes_eventsDataTable(ds.Tables("themes_events")))
+            If (Not (ds.Tables("themes_events2")) Is Nothing) Then
+                MyBase.Tables.Add(New themes_events2DataTable(ds.Tables("themes_events2")))
             End If
             If (Not (ds.Tables("Translate")) Is Nothing) Then
                 MyBase.Tables.Add(New TranslateDataTable(ds.Tables("Translate")))
+            End If
+            If (Not (ds.Tables("themes_events")) Is Nothing) Then
+                MyBase.Tables.Add(New themes_eventsDataTable(ds.Tables("themes_events")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -125,9 +130,9 @@ Partial Public Class DsSite
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property themes_events() As themes_eventsDataTable
+    Public ReadOnly Property themes_events2() As themes_events2DataTable
         Get
-            Return Me.tablethemes_events
+            Return Me.tablethemes_events2
         End Get
     End Property
     
@@ -137,6 +142,15 @@ Partial Public Class DsSite
     Public ReadOnly Property Translate() As TranslateDataTable
         Get
             Return Me.tableTranslate
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property themes_events() As themes_eventsDataTable
+        Get
+            Return Me.tablethemes_events
         End Get
     End Property
     
@@ -208,11 +222,14 @@ Partial Public Class DsSite
             If (Not (ds.Tables("product_lists")) Is Nothing) Then
                 MyBase.Tables.Add(New product_listsDataTable(ds.Tables("product_lists")))
             End If
-            If (Not (ds.Tables("themes_events")) Is Nothing) Then
-                MyBase.Tables.Add(New themes_eventsDataTable(ds.Tables("themes_events")))
+            If (Not (ds.Tables("themes_events2")) Is Nothing) Then
+                MyBase.Tables.Add(New themes_events2DataTable(ds.Tables("themes_events2")))
             End If
             If (Not (ds.Tables("Translate")) Is Nothing) Then
                 MyBase.Tables.Add(New TranslateDataTable(ds.Tables("Translate")))
+            End If
+            If (Not (ds.Tables("themes_events")) Is Nothing) Then
+                MyBase.Tables.Add(New themes_eventsDataTable(ds.Tables("themes_events")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -261,16 +278,22 @@ Partial Public Class DsSite
                 Me.tableproduct_lists.InitVars
             End If
         End If
-        Me.tablethemes_events = CType(MyBase.Tables("themes_events"),themes_eventsDataTable)
+        Me.tablethemes_events2 = CType(MyBase.Tables("themes_events2"),themes_events2DataTable)
         If (initTable = true) Then
-            If (Not (Me.tablethemes_events) Is Nothing) Then
-                Me.tablethemes_events.InitVars
+            If (Not (Me.tablethemes_events2) Is Nothing) Then
+                Me.tablethemes_events2.InitVars
             End If
         End If
         Me.tableTranslate = CType(MyBase.Tables("Translate"),TranslateDataTable)
         If (initTable = true) Then
             If (Not (Me.tableTranslate) Is Nothing) Then
                 Me.tableTranslate.InitVars
+            End If
+        End If
+        Me.tablethemes_events = CType(MyBase.Tables("themes_events"),themes_eventsDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tablethemes_events) Is Nothing) Then
+                Me.tablethemes_events.InitVars
             End If
         End If
     End Sub
@@ -288,10 +311,12 @@ Partial Public Class DsSite
         MyBase.Tables.Add(Me.tablelisted_products)
         Me.tableproduct_lists = New product_listsDataTable
         MyBase.Tables.Add(Me.tableproduct_lists)
-        Me.tablethemes_events = New themes_eventsDataTable
-        MyBase.Tables.Add(Me.tablethemes_events)
+        Me.tablethemes_events2 = New themes_events2DataTable
+        MyBase.Tables.Add(Me.tablethemes_events2)
         Me.tableTranslate = New TranslateDataTable
         MyBase.Tables.Add(Me.tableTranslate)
+        Me.tablethemes_events = New themes_eventsDataTable
+        MyBase.Tables.Add(Me.tablethemes_events)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -310,12 +335,17 @@ Partial Public Class DsSite
     End Function
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-    Private Function ShouldSerializethemes_events() As Boolean
+    Private Function ShouldSerializethemes_events2() As Boolean
         Return false
     End Function
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
     Private Function ShouldSerializeTranslate() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+    Private Function ShouldSerializethemes_events() As Boolean
         Return false
     End Function
     
@@ -381,9 +411,11 @@ Partial Public Class DsSite
     
     Public Delegate Sub product_listsRowChangeEventHandler(ByVal sender As Object, ByVal e As product_listsRowChangeEvent)
     
-    Public Delegate Sub themes_eventsRowChangeEventHandler(ByVal sender As Object, ByVal e As themes_eventsRowChangeEvent)
+    Public Delegate Sub themes_events2RowChangeEventHandler(ByVal sender As Object, ByVal e As themes_events2RowChangeEvent)
     
     Public Delegate Sub TranslateRowChangeEventHandler(ByVal sender As Object, ByVal e As TranslateRowChangeEvent)
+    
+    Public Delegate Sub themes_eventsRowChangeEventHandler(ByVal sender As Object, ByVal e As themes_eventsRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -1418,7 +1450,7 @@ Partial Public Class DsSite
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0"),  _
      Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class themes_eventsDataTable
+    Partial Public Class themes_events2DataTable
         Inherits Global.System.Data.DataTable
         Implements Global.System.Collections.IEnumerable
         
@@ -1451,7 +1483,7 @@ Partial Public Class DsSite
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "themes_events"
+            Me.TableName = "themes_events2"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -1580,37 +1612,37 @@ Partial Public Class DsSite
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As themes_eventsRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As themes_events2Row
             Get
-                Return CType(Me.Rows(index),themes_eventsRow)
+                Return CType(Me.Rows(index),themes_events2Row)
             End Get
         End Property
         
-        Public Event themes_eventsRowChanging As themes_eventsRowChangeEventHandler
+        Public Event themes_events2RowChanging As themes_events2RowChangeEventHandler
         
-        Public Event themes_eventsRowChanged As themes_eventsRowChangeEventHandler
+        Public Event themes_events2RowChanged As themes_events2RowChangeEventHandler
         
-        Public Event themes_eventsRowDeleting As themes_eventsRowChangeEventHandler
+        Public Event themes_events2RowDeleting As themes_events2RowChangeEventHandler
         
-        Public Event themes_eventsRowDeleted As themes_eventsRowChangeEventHandler
+        Public Event themes_events2RowDeleted As themes_events2RowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Overloads Sub Addthemes_eventsRow(ByVal row As themes_eventsRow)
+        Public Overloads Sub Addthemes_events2Row(ByVal row As themes_events2Row)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Overloads Function Addthemes_eventsRow(ByVal id As UInteger, ByVal name As String, ByVal selected As Short, ByVal background_image As Boolean, ByVal background_color As String, ByVal background_attachment As String, ByVal banner_hp As Boolean, ByVal banner_menu As Boolean, ByVal banner_menu_text_color As String, ByVal page_border_color As String, ByVal logo_image As Boolean, ByVal title_page As Boolean, ByVal kind As String) As themes_eventsRow
-            Dim rowthemes_eventsRow As themes_eventsRow = CType(Me.NewRow,themes_eventsRow)
+        Public Overloads Function Addthemes_events2Row(ByVal id As UInteger, ByVal name As String, ByVal selected As Short, ByVal background_image As Boolean, ByVal background_color As String, ByVal background_attachment As String, ByVal banner_hp As Boolean, ByVal banner_menu As Boolean, ByVal banner_menu_text_color As String, ByVal page_border_color As String, ByVal logo_image As Boolean, ByVal title_page As Boolean, ByVal kind As String) As themes_events2Row
+            Dim rowthemes_events2Row As themes_events2Row = CType(Me.NewRow,themes_events2Row)
             Dim columnValuesArray() As Object = New Object() {id, name, selected, background_image, background_color, background_attachment, banner_hp, banner_menu, banner_menu_text_color, page_border_color, logo_image, title_page, kind}
-            rowthemes_eventsRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowthemes_eventsRow)
-            Return rowthemes_eventsRow
+            rowthemes_events2Row.ItemArray = columnValuesArray
+            Me.Rows.Add(rowthemes_events2Row)
+            Return rowthemes_events2Row
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function FindByid(ByVal id As UInteger) As themes_eventsRow
-            Return CType(Me.Rows.Find(New Object() {id}),themes_eventsRow)
+        Public Function FindByid(ByVal id As UInteger) As themes_events2Row
+            Return CType(Me.Rows.Find(New Object() {id}),themes_events2Row)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -1620,14 +1652,14 @@ Partial Public Class DsSite
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As themes_eventsDataTable = CType(MyBase.Clone,themes_eventsDataTable)
+            Dim cln As themes_events2DataTable = CType(MyBase.Clone,themes_events2DataTable)
             cln.InitVars
             Return cln
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New themes_eventsDataTable
+            Return New themes_events2DataTable
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -1686,54 +1718,54 @@ Partial Public Class DsSite
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function Newthemes_eventsRow() As themes_eventsRow
-            Return CType(Me.NewRow,themes_eventsRow)
+        Public Function Newthemes_events2Row() As themes_events2Row
+            Return CType(Me.NewRow,themes_events2Row)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New themes_eventsRow(builder)
+            Return New themes_events2Row(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(themes_eventsRow)
+            Return GetType(themes_events2Row)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.themes_eventsRowChangedEvent) Is Nothing) Then
-                RaiseEvent themes_eventsRowChanged(Me, New themes_eventsRowChangeEvent(CType(e.Row,themes_eventsRow), e.Action))
+            If (Not (Me.themes_events2RowChangedEvent) Is Nothing) Then
+                RaiseEvent themes_events2RowChanged(Me, New themes_events2RowChangeEvent(CType(e.Row,themes_events2Row), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.themes_eventsRowChangingEvent) Is Nothing) Then
-                RaiseEvent themes_eventsRowChanging(Me, New themes_eventsRowChangeEvent(CType(e.Row,themes_eventsRow), e.Action))
+            If (Not (Me.themes_events2RowChangingEvent) Is Nothing) Then
+                RaiseEvent themes_events2RowChanging(Me, New themes_events2RowChangeEvent(CType(e.Row,themes_events2Row), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.themes_eventsRowDeletedEvent) Is Nothing) Then
-                RaiseEvent themes_eventsRowDeleted(Me, New themes_eventsRowChangeEvent(CType(e.Row,themes_eventsRow), e.Action))
+            If (Not (Me.themes_events2RowDeletedEvent) Is Nothing) Then
+                RaiseEvent themes_events2RowDeleted(Me, New themes_events2RowChangeEvent(CType(e.Row,themes_events2Row), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.themes_eventsRowDeletingEvent) Is Nothing) Then
-                RaiseEvent themes_eventsRowDeleting(Me, New themes_eventsRowChangeEvent(CType(e.Row,themes_eventsRow), e.Action))
+            If (Not (Me.themes_events2RowDeletingEvent) Is Nothing) Then
+                RaiseEvent themes_events2RowDeleting(Me, New themes_events2RowChangeEvent(CType(e.Row,themes_events2Row), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Sub Removethemes_eventsRow(ByVal row As themes_eventsRow)
+        Public Sub Removethemes_events2Row(ByVal row As themes_events2Row)
             Me.Rows.Remove(row)
         End Sub
         
@@ -1759,7 +1791,7 @@ Partial Public Class DsSite
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "themes_eventsDataTable"
+            attribute2.FixedValue = "themes_events2DataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -2081,6 +2113,434 @@ Partial Public Class DsSite
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute
             attribute2.Name = "tableTypeName"
             attribute2.FixedValue = "TranslateDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0"),  _
+     Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class themes_eventsDataTable
+        Inherits Global.System.Data.DataTable
+        Implements Global.System.Collections.IEnumerable
+        
+        Private columnid As Global.System.Data.DataColumn
+        
+        Private columnname As Global.System.Data.DataColumn
+        
+        Private columnselected As Global.System.Data.DataColumn
+        
+        Private columnbackground_image As Global.System.Data.DataColumn
+        
+        Private columnbackground_color As Global.System.Data.DataColumn
+        
+        Private columnbackground_attachment As Global.System.Data.DataColumn
+        
+        Private columnbanner_hp As Global.System.Data.DataColumn
+        
+        Private columncolor_hp As Global.System.Data.DataColumn
+        
+        Private columnbanner_menu As Global.System.Data.DataColumn
+        
+        Private columnbanner_menu_text_color As Global.System.Data.DataColumn
+        
+        Private columnpage_border_color As Global.System.Data.DataColumn
+        
+        Private columnlogo_image As Global.System.Data.DataColumn
+        
+        Private columnstyle As Global.System.Data.DataColumn
+        
+        Private columnkind As Global.System.Data.DataColumn
+        
+        Private columnthemes_events_selection_id As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "themes_events"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property idColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnid
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property nameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnname
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property selectedColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnselected
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property background_imageColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnbackground_image
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property background_colorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnbackground_color
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property background_attachmentColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnbackground_attachment
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property banner_hpColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnbanner_hp
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property color_hpColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncolor_hp
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property banner_menuColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnbanner_menu
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property banner_menu_text_colorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnbanner_menu_text_color
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property page_border_colorColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpage_border_color
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property logo_imageColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnlogo_image
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property styleColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnstyle
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property kindColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnkind
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property themes_events_selection_idColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnthemes_events_selection_id
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As themes_eventsRow
+            Get
+                Return CType(Me.Rows(index),themes_eventsRow)
+            End Get
+        End Property
+        
+        Public Event themes_eventsRowChanging As themes_eventsRowChangeEventHandler
+        
+        Public Event themes_eventsRowChanged As themes_eventsRowChangeEventHandler
+        
+        Public Event themes_eventsRowDeleting As themes_eventsRowChangeEventHandler
+        
+        Public Event themes_eventsRowDeleted As themes_eventsRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Overloads Sub Addthemes_eventsRow(ByVal row As themes_eventsRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Overloads Function Addthemes_eventsRow(ByVal id As UInteger, ByVal name As String, ByVal selected As Integer, ByVal background_image As SByte, ByVal background_color As String, ByVal background_attachment As String, ByVal banner_hp As SByte, ByVal color_hp As String, ByVal banner_menu As SByte, ByVal banner_menu_text_color As String, ByVal page_border_color As String, ByVal logo_image As SByte, ByVal style As String, ByVal kind As String, ByVal themes_events_selection_id As Integer) As themes_eventsRow
+            Dim rowthemes_eventsRow As themes_eventsRow = CType(Me.NewRow,themes_eventsRow)
+            Dim columnValuesArray() As Object = New Object() {id, name, selected, background_image, background_color, background_attachment, banner_hp, color_hp, banner_menu, banner_menu_text_color, page_border_color, logo_image, style, kind, themes_events_selection_id}
+            rowthemes_eventsRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowthemes_eventsRow)
+            Return rowthemes_eventsRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function FindByid(ByVal id As UInteger) As themes_eventsRow
+            Return CType(Me.Rows.Find(New Object() {id}),themes_eventsRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Overridable Function GetEnumerator() As Global.System.Collections.IEnumerator Implements Global.System.Collections.IEnumerable.GetEnumerator
+            Return Me.Rows.GetEnumerator
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As themes_eventsDataTable = CType(MyBase.Clone,themes_eventsDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New themes_eventsDataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Sub InitVars()
+            Me.columnid = MyBase.Columns("id")
+            Me.columnname = MyBase.Columns("name")
+            Me.columnselected = MyBase.Columns("selected")
+            Me.columnbackground_image = MyBase.Columns("background_image")
+            Me.columnbackground_color = MyBase.Columns("background_color")
+            Me.columnbackground_attachment = MyBase.Columns("background_attachment")
+            Me.columnbanner_hp = MyBase.Columns("banner_hp")
+            Me.columncolor_hp = MyBase.Columns("color_hp")
+            Me.columnbanner_menu = MyBase.Columns("banner_menu")
+            Me.columnbanner_menu_text_color = MyBase.Columns("banner_menu_text_color")
+            Me.columnpage_border_color = MyBase.Columns("page_border_color")
+            Me.columnlogo_image = MyBase.Columns("logo_image")
+            Me.columnstyle = MyBase.Columns("style")
+            Me.columnkind = MyBase.Columns("kind")
+            Me.columnthemes_events_selection_id = MyBase.Columns("themes_events_selection_id")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Private Sub InitClass()
+            Me.columnid = New Global.System.Data.DataColumn("id", GetType(UInteger), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid)
+            Me.columnname = New Global.System.Data.DataColumn("name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnname)
+            Me.columnselected = New Global.System.Data.DataColumn("selected", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnselected)
+            Me.columnbackground_image = New Global.System.Data.DataColumn("background_image", GetType(SByte), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnbackground_image)
+            Me.columnbackground_color = New Global.System.Data.DataColumn("background_color", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnbackground_color)
+            Me.columnbackground_attachment = New Global.System.Data.DataColumn("background_attachment", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnbackground_attachment)
+            Me.columnbanner_hp = New Global.System.Data.DataColumn("banner_hp", GetType(SByte), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnbanner_hp)
+            Me.columncolor_hp = New Global.System.Data.DataColumn("color_hp", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncolor_hp)
+            Me.columnbanner_menu = New Global.System.Data.DataColumn("banner_menu", GetType(SByte), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnbanner_menu)
+            Me.columnbanner_menu_text_color = New Global.System.Data.DataColumn("banner_menu_text_color", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnbanner_menu_text_color)
+            Me.columnpage_border_color = New Global.System.Data.DataColumn("page_border_color", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpage_border_color)
+            Me.columnlogo_image = New Global.System.Data.DataColumn("logo_image", GetType(SByte), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnlogo_image)
+            Me.columnstyle = New Global.System.Data.DataColumn("style", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnstyle)
+            Me.columnkind = New Global.System.Data.DataColumn("kind", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnkind)
+            Me.columnthemes_events_selection_id = New Global.System.Data.DataColumn("themes_events_selection_id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnthemes_events_selection_id)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
+            Me.columnid.AllowDBNull = false
+            Me.columnid.Unique = true
+            Me.columnname.AllowDBNull = false
+            Me.columnname.MaxLength = 45
+            Me.columnbackground_color.AllowDBNull = false
+            Me.columnbackground_color.MaxLength = 11
+            Me.columnbackground_attachment.AllowDBNull = false
+            Me.columnbackground_attachment.MaxLength = 6
+            Me.columnbanner_hp.AllowDBNull = false
+            Me.columncolor_hp.MaxLength = 10
+            Me.columnbanner_menu.AllowDBNull = false
+            Me.columnbanner_menu_text_color.AllowDBNull = false
+            Me.columnbanner_menu_text_color.MaxLength = 11
+            Me.columnpage_border_color.AllowDBNull = false
+            Me.columnpage_border_color.MaxLength = 11
+            Me.columnlogo_image.AllowDBNull = false
+            Me.columnstyle.AllowDBNull = false
+            Me.columnstyle.MaxLength = 8
+            Me.columnkind.AllowDBNull = false
+            Me.columnkind.MaxLength = 6
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Newthemes_eventsRow() As themes_eventsRow
+            Return CType(Me.NewRow,themes_eventsRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New themes_eventsRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(themes_eventsRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.themes_eventsRowChangedEvent) Is Nothing) Then
+                RaiseEvent themes_eventsRowChanged(Me, New themes_eventsRowChangeEvent(CType(e.Row,themes_eventsRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.themes_eventsRowChangingEvent) Is Nothing) Then
+                RaiseEvent themes_eventsRowChanging(Me, New themes_eventsRowChangeEvent(CType(e.Row,themes_eventsRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.themes_eventsRowDeletedEvent) Is Nothing) Then
+                RaiseEvent themes_eventsRowDeleted(Me, New themes_eventsRowChangeEvent(CType(e.Row,themes_eventsRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.themes_eventsRowDeletingEvent) Is Nothing) Then
+                RaiseEvent themes_eventsRowDeleting(Me, New themes_eventsRowChangeEvent(CType(e.Row,themes_eventsRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Removethemes_eventsRow(ByVal row As themes_eventsRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence
+            Dim ds As DsSite = New DsSite
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "themes_eventsDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -2782,24 +3242,24 @@ Partial Public Class DsSite
     '''Represents strongly named DataRow class.
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")>  _
-    Partial Public Class themes_eventsRow
+    Partial Public Class themes_events2Row
         Inherits Global.System.Data.DataRow
         
-        Private tablethemes_events As themes_eventsDataTable
+        Private tablethemes_events2 As themes_events2DataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tablethemes_events = CType(Me.Table,themes_eventsDataTable)
+            Me.tablethemes_events2 = CType(Me.Table,themes_events2DataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property id() As UInteger
             Get
-                Return CType(Me(Me.tablethemes_events.idColumn),UInteger)
+                Return CType(Me(Me.tablethemes_events2.idColumn),UInteger)
             End Get
             Set
-                Me(Me.tablethemes_events.idColumn) = value
+                Me(Me.tablethemes_events2.idColumn) = value
             End Set
         End Property
         
@@ -2807,13 +3267,13 @@ Partial Public Class DsSite
         Public Property name() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablethemes_events.nameColumn),String)
+                    Return CType(Me(Me.tablethemes_events2.nameColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'name' in table 'themes_events' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'name' in table 'themes_events2' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablethemes_events.nameColumn) = value
+                Me(Me.tablethemes_events2.nameColumn) = value
             End Set
         End Property
         
@@ -2821,13 +3281,13 @@ Partial Public Class DsSite
         Public Property selected() As Short
             Get
                 Try 
-                    Return CType(Me(Me.tablethemes_events.selectedColumn),Short)
+                    Return CType(Me(Me.tablethemes_events2.selectedColumn),Short)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'selected' in table 'themes_events' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'selected' in table 'themes_events2' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablethemes_events.selectedColumn) = value
+                Me(Me.tablethemes_events2.selectedColumn) = value
             End Set
         End Property
         
@@ -2835,13 +3295,13 @@ Partial Public Class DsSite
         Public Property background_image() As Boolean
             Get
                 Try 
-                    Return CType(Me(Me.tablethemes_events.background_imageColumn),Boolean)
+                    Return CType(Me(Me.tablethemes_events2.background_imageColumn),Boolean)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'background_image' in table 'themes_events' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'background_image' in table 'themes_events2' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablethemes_events.background_imageColumn) = value
+                Me(Me.tablethemes_events2.background_imageColumn) = value
             End Set
         End Property
         
@@ -2849,13 +3309,13 @@ Partial Public Class DsSite
         Public Property background_color() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablethemes_events.background_colorColumn),String)
+                    Return CType(Me(Me.tablethemes_events2.background_colorColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'background_color' in table 'themes_events' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'background_color' in table 'themes_events2' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablethemes_events.background_colorColumn) = value
+                Me(Me.tablethemes_events2.background_colorColumn) = value
             End Set
         End Property
         
@@ -2863,13 +3323,14 @@ Partial Public Class DsSite
         Public Property background_attachment() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablethemes_events.background_attachmentColumn),String)
+                    Return CType(Me(Me.tablethemes_events2.background_attachmentColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'background_attachment' in table 'themes_events' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'background_attachment' in table 'themes_events2' is DBNull."& _ 
+                            "", e)
                 End Try
             End Get
             Set
-                Me(Me.tablethemes_events.background_attachmentColumn) = value
+                Me(Me.tablethemes_events2.background_attachmentColumn) = value
             End Set
         End Property
         
@@ -2877,13 +3338,13 @@ Partial Public Class DsSite
         Public Property banner_hp() As Boolean
             Get
                 Try 
-                    Return CType(Me(Me.tablethemes_events.banner_hpColumn),Boolean)
+                    Return CType(Me(Me.tablethemes_events2.banner_hpColumn),Boolean)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'banner_hp' in table 'themes_events' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'banner_hp' in table 'themes_events2' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablethemes_events.banner_hpColumn) = value
+                Me(Me.tablethemes_events2.banner_hpColumn) = value
             End Set
         End Property
         
@@ -2891,13 +3352,13 @@ Partial Public Class DsSite
         Public Property banner_menu() As Boolean
             Get
                 Try 
-                    Return CType(Me(Me.tablethemes_events.banner_menuColumn),Boolean)
+                    Return CType(Me(Me.tablethemes_events2.banner_menuColumn),Boolean)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'banner_menu' in table 'themes_events' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'banner_menu' in table 'themes_events2' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablethemes_events.banner_menuColumn) = value
+                Me(Me.tablethemes_events2.banner_menuColumn) = value
             End Set
         End Property
         
@@ -2905,14 +3366,14 @@ Partial Public Class DsSite
         Public Property banner_menu_text_color() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablethemes_events.banner_menu_text_colorColumn),String)
+                    Return CType(Me(Me.tablethemes_events2.banner_menu_text_colorColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'banner_menu_text_color' in table 'themes_events' is DBNull."& _ 
-                            "", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'banner_menu_text_color' in table 'themes_events2' is DBNull"& _ 
+                            ".", e)
                 End Try
             End Get
             Set
-                Me(Me.tablethemes_events.banner_menu_text_colorColumn) = value
+                Me(Me.tablethemes_events2.banner_menu_text_colorColumn) = value
             End Set
         End Property
         
@@ -2920,13 +3381,13 @@ Partial Public Class DsSite
         Public Property page_border_color() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablethemes_events.page_border_colorColumn),String)
+                    Return CType(Me(Me.tablethemes_events2.page_border_colorColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'page_border_color' in table 'themes_events' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'page_border_color' in table 'themes_events2' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablethemes_events.page_border_colorColumn) = value
+                Me(Me.tablethemes_events2.page_border_colorColumn) = value
             End Set
         End Property
         
@@ -2934,13 +3395,13 @@ Partial Public Class DsSite
         Public Property logo_image() As Boolean
             Get
                 Try 
-                    Return CType(Me(Me.tablethemes_events.logo_imageColumn),Boolean)
+                    Return CType(Me(Me.tablethemes_events2.logo_imageColumn),Boolean)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'logo_image' in table 'themes_events' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'logo_image' in table 'themes_events2' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablethemes_events.logo_imageColumn) = value
+                Me(Me.tablethemes_events2.logo_imageColumn) = value
             End Set
         End Property
         
@@ -2948,13 +3409,13 @@ Partial Public Class DsSite
         Public Property title_page() As Boolean
             Get
                 Try 
-                    Return CType(Me(Me.tablethemes_events.title_pageColumn),Boolean)
+                    Return CType(Me(Me.tablethemes_events2.title_pageColumn),Boolean)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'title_page' in table 'themes_events' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'title_page' in table 'themes_events2' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablethemes_events.title_pageColumn) = value
+                Me(Me.tablethemes_events2.title_pageColumn) = value
             End Set
         End Property
         
@@ -2962,134 +3423,134 @@ Partial Public Class DsSite
         Public Property kind() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablethemes_events.kindColumn),String)
+                    Return CType(Me(Me.tablethemes_events2.kindColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'kind' in table 'themes_events' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'kind' in table 'themes_events2' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablethemes_events.kindColumn) = value
+                Me(Me.tablethemes_events2.kindColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function IsnameNull() As Boolean
-            Return Me.IsNull(Me.tablethemes_events.nameColumn)
+            Return Me.IsNull(Me.tablethemes_events2.nameColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub SetnameNull()
-            Me(Me.tablethemes_events.nameColumn) = Global.System.Convert.DBNull
+            Me(Me.tablethemes_events2.nameColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function IsselectedNull() As Boolean
-            Return Me.IsNull(Me.tablethemes_events.selectedColumn)
+            Return Me.IsNull(Me.tablethemes_events2.selectedColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub SetselectedNull()
-            Me(Me.tablethemes_events.selectedColumn) = Global.System.Convert.DBNull
+            Me(Me.tablethemes_events2.selectedColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function Isbackground_imageNull() As Boolean
-            Return Me.IsNull(Me.tablethemes_events.background_imageColumn)
+            Return Me.IsNull(Me.tablethemes_events2.background_imageColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub Setbackground_imageNull()
-            Me(Me.tablethemes_events.background_imageColumn) = Global.System.Convert.DBNull
+            Me(Me.tablethemes_events2.background_imageColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function Isbackground_colorNull() As Boolean
-            Return Me.IsNull(Me.tablethemes_events.background_colorColumn)
+            Return Me.IsNull(Me.tablethemes_events2.background_colorColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub Setbackground_colorNull()
-            Me(Me.tablethemes_events.background_colorColumn) = Global.System.Convert.DBNull
+            Me(Me.tablethemes_events2.background_colorColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function Isbackground_attachmentNull() As Boolean
-            Return Me.IsNull(Me.tablethemes_events.background_attachmentColumn)
+            Return Me.IsNull(Me.tablethemes_events2.background_attachmentColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub Setbackground_attachmentNull()
-            Me(Me.tablethemes_events.background_attachmentColumn) = Global.System.Convert.DBNull
+            Me(Me.tablethemes_events2.background_attachmentColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function Isbanner_hpNull() As Boolean
-            Return Me.IsNull(Me.tablethemes_events.banner_hpColumn)
+            Return Me.IsNull(Me.tablethemes_events2.banner_hpColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub Setbanner_hpNull()
-            Me(Me.tablethemes_events.banner_hpColumn) = Global.System.Convert.DBNull
+            Me(Me.tablethemes_events2.banner_hpColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function Isbanner_menuNull() As Boolean
-            Return Me.IsNull(Me.tablethemes_events.banner_menuColumn)
+            Return Me.IsNull(Me.tablethemes_events2.banner_menuColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub Setbanner_menuNull()
-            Me(Me.tablethemes_events.banner_menuColumn) = Global.System.Convert.DBNull
+            Me(Me.tablethemes_events2.banner_menuColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function Isbanner_menu_text_colorNull() As Boolean
-            Return Me.IsNull(Me.tablethemes_events.banner_menu_text_colorColumn)
+            Return Me.IsNull(Me.tablethemes_events2.banner_menu_text_colorColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub Setbanner_menu_text_colorNull()
-            Me(Me.tablethemes_events.banner_menu_text_colorColumn) = Global.System.Convert.DBNull
+            Me(Me.tablethemes_events2.banner_menu_text_colorColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function Ispage_border_colorNull() As Boolean
-            Return Me.IsNull(Me.tablethemes_events.page_border_colorColumn)
+            Return Me.IsNull(Me.tablethemes_events2.page_border_colorColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub Setpage_border_colorNull()
-            Me(Me.tablethemes_events.page_border_colorColumn) = Global.System.Convert.DBNull
+            Me(Me.tablethemes_events2.page_border_colorColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function Islogo_imageNull() As Boolean
-            Return Me.IsNull(Me.tablethemes_events.logo_imageColumn)
+            Return Me.IsNull(Me.tablethemes_events2.logo_imageColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub Setlogo_imageNull()
-            Me(Me.tablethemes_events.logo_imageColumn) = Global.System.Convert.DBNull
+            Me(Me.tablethemes_events2.logo_imageColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function Istitle_pageNull() As Boolean
-            Return Me.IsNull(Me.tablethemes_events.title_pageColumn)
+            Return Me.IsNull(Me.tablethemes_events2.title_pageColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub Settitle_pageNull()
-            Me(Me.tablethemes_events.title_pageColumn) = Global.System.Convert.DBNull
+            Me(Me.tablethemes_events2.title_pageColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function IskindNull() As Boolean
-            Return Me.IsNull(Me.tablethemes_events.kindColumn)
+            Return Me.IsNull(Me.tablethemes_events2.kindColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub SetkindNull()
-            Me(Me.tablethemes_events.kindColumn) = Global.System.Convert.DBNull
+            Me(Me.tablethemes_events2.kindColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -3264,6 +3725,229 @@ Partial Public Class DsSite
     End Class
     
     '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")>  _
+    Partial Public Class themes_eventsRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tablethemes_events As themes_eventsDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tablethemes_events = CType(Me.Table,themes_eventsDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property id() As UInteger
+            Get
+                Return CType(Me(Me.tablethemes_events.idColumn),UInteger)
+            End Get
+            Set
+                Me(Me.tablethemes_events.idColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property name() As String
+            Get
+                Return CType(Me(Me.tablethemes_events.nameColumn),String)
+            End Get
+            Set
+                Me(Me.tablethemes_events.nameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property selected() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tablethemes_events.selectedColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'selected' in table 'themes_events' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablethemes_events.selectedColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property background_image() As SByte
+            Get
+                Try 
+                    Return CType(Me(Me.tablethemes_events.background_imageColumn),SByte)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'background_image' in table 'themes_events' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablethemes_events.background_imageColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property background_color() As String
+            Get
+                Return CType(Me(Me.tablethemes_events.background_colorColumn),String)
+            End Get
+            Set
+                Me(Me.tablethemes_events.background_colorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property background_attachment() As String
+            Get
+                Return CType(Me(Me.tablethemes_events.background_attachmentColumn),String)
+            End Get
+            Set
+                Me(Me.tablethemes_events.background_attachmentColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property banner_hp() As SByte
+            Get
+                Return CType(Me(Me.tablethemes_events.banner_hpColumn),SByte)
+            End Get
+            Set
+                Me(Me.tablethemes_events.banner_hpColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property color_hp() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablethemes_events.color_hpColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'color_hp' in table 'themes_events' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablethemes_events.color_hpColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property banner_menu() As SByte
+            Get
+                Return CType(Me(Me.tablethemes_events.banner_menuColumn),SByte)
+            End Get
+            Set
+                Me(Me.tablethemes_events.banner_menuColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property banner_menu_text_color() As String
+            Get
+                Return CType(Me(Me.tablethemes_events.banner_menu_text_colorColumn),String)
+            End Get
+            Set
+                Me(Me.tablethemes_events.banner_menu_text_colorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property page_border_color() As String
+            Get
+                Return CType(Me(Me.tablethemes_events.page_border_colorColumn),String)
+            End Get
+            Set
+                Me(Me.tablethemes_events.page_border_colorColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property logo_image() As SByte
+            Get
+                Return CType(Me(Me.tablethemes_events.logo_imageColumn),SByte)
+            End Get
+            Set
+                Me(Me.tablethemes_events.logo_imageColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property style() As String
+            Get
+                Return CType(Me(Me.tablethemes_events.styleColumn),String)
+            End Get
+            Set
+                Me(Me.tablethemes_events.styleColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property kind() As String
+            Get
+                Return CType(Me(Me.tablethemes_events.kindColumn),String)
+            End Get
+            Set
+                Me(Me.tablethemes_events.kindColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property themes_events_selection_id() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tablethemes_events.themes_events_selection_idColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'themes_events_selection_id' in table 'themes_events' is DBN"& _ 
+                            "ull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablethemes_events.themes_events_selection_idColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsselectedNull() As Boolean
+            Return Me.IsNull(Me.tablethemes_events.selectedColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetselectedNull()
+            Me(Me.tablethemes_events.selectedColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isbackground_imageNull() As Boolean
+            Return Me.IsNull(Me.tablethemes_events.background_imageColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setbackground_imageNull()
+            Me(Me.tablethemes_events.background_imageColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Iscolor_hpNull() As Boolean
+            Return Me.IsNull(Me.tablethemes_events.color_hpColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setcolor_hpNull()
+            Me(Me.tablethemes_events.color_hpColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isthemes_events_selection_idNull() As Boolean
+            Return Me.IsNull(Me.tablethemes_events.themes_events_selection_idColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setthemes_events_selection_idNull()
+            Me(Me.tablethemes_events.themes_events_selection_idColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")>  _
@@ -3366,22 +4050,22 @@ Partial Public Class DsSite
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")>  _
-    Public Class themes_eventsRowChangeEvent
+    Public Class themes_events2RowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As themes_eventsRow
+        Private eventRow As themes_events2Row
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Sub New(ByVal row As themes_eventsRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As themes_events2Row, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public ReadOnly Property Row() As themes_eventsRow
+        Public ReadOnly Property Row() As themes_events2Row
             Get
                 Return Me.eventRow
             End Get
@@ -3415,6 +4099,39 @@ Partial Public Class DsSite
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public ReadOnly Property Row() As TranslateRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")>  _
+    Public Class themes_eventsRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As themes_eventsRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub New(ByVal row As themes_eventsRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property Row() As themes_eventsRow
             Get
                 Return Me.eventRow
             End Get
