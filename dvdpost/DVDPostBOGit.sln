@@ -18,15 +18,7 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "dvdpostStart", "dvdpostStar
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BizzLib Old", "BizzLib old\BizzLib Old.vbproj", "{15DD02A3-8D24-4E86-9E24-1F775CE1D7BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSH", "..\..\SSHConnect\SSH\SSH\SSH.csproj", "{E61B4BC6-B14C-4E2A-AEE2-26DAB371693C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSHLibrary", "..\..\SSHConnect\SSH\SSHLibrary\SSHLibrary.csproj", "{E10B6B5D-3E4D-417D-BD93-D8C7DDB9B756}"
-EndProject
 Global
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x86 = Debug|x86
@@ -94,20 +86,12 @@ Global
 		{15DD02A3-8D24-4E86-9E24-1F775CE1D7BF}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{15DD02A3-8D24-4E86-9E24-1F775CE1D7BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15DD02A3-8D24-4E86-9E24-1F775CE1D7BF}.Release|x86.ActiveCfg = Release|Any CPU
-		{E61B4BC6-B14C-4E2A-AEE2-26DAB371693C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E61B4BC6-B14C-4E2A-AEE2-26DAB371693C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E61B4BC6-B14C-4E2A-AEE2-26DAB371693C}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{E61B4BC6-B14C-4E2A-AEE2-26DAB371693C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E61B4BC6-B14C-4E2A-AEE2-26DAB371693C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E61B4BC6-B14C-4E2A-AEE2-26DAB371693C}.Release|x86.ActiveCfg = Release|Any CPU
-		{E10B6B5D-3E4D-417D-BD93-D8C7DDB9B756}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E10B6B5D-3E4D-417D-BD93-D8C7DDB9B756}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E10B6B5D-3E4D-417D-BD93-D8C7DDB9B756}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{E10B6B5D-3E4D-417D-BD93-D8C7DDB9B756}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E10B6B5D-3E4D-417D-BD93-D8C7DDB9B756}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E10B6B5D-3E4D-417D-BD93-D8C7DDB9B756}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
 	EndGlobalSection
 EndGlobal
