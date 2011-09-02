@@ -26,3 +26,10 @@ D:\Ict7\Clients\DvdPost\dvdpostGit\Dvdpost_Last\SSHConnect\SSH\SSHLibrary\bin\De
 D:\Ict7\Clients\DvdPost\dvdpostGit\Dvdpost_Last\SSHConnect\SSH\SSHLibrary\obj\Debug\ResolveAssemblyReference.cache
 D:\Ict7\Clients\DvdPost\dvdpostGit\Dvdpost_Last\SSHConnect\SSH\SSHLibrary\obj\Debug\SSHLibrary.dll
 D:\Ict7\Clients\DvdPost\dvdpostGit\Dvdpost_Last\SSHConnect\SSH\SSHLibrary\obj\Debug\SSHLibrary.pdb
+D:\Ict7\Clients\DvdPost\dvdpostGit\DvdPost\SSHConnect\SSH\SSHLibrary\bin\Debug\SSHLibrary.dll
+D:\Ict7\Clients\DvdPost\dvdpostGit\DvdPost\SSHConnect\SSH\SSHLibrary\bin\Debug\SSHLibrary.pdb
+D:\Ict7\Clients\DvdPost\dvdpostGit\DvdPost\SSHConnect\SSH\SSHLibrary\bin\Debug\DiffieHellman.dll
+D:\Ict7\Clients\DvdPost\dvdpostGit\DvdPost\SSHConnect\SSH\SSHLibrary\bin\Debug\Org.Mentalis.Security.dll
+D:\Ict7\Clients\DvdPost\dvdpostGit\DvdPost\SSHConnect\SSH\SSHLibrary\obj\Debug\ResolveAssemblyReference.cache
+D:\Ict7\Clients\DvdPost\dvdpostGit\DvdPost\SSHConnect\SSH\SSHLibrary\obj\Debug\SSHLibrary.dll
+D:\Ict7\Clients\DvdPost\dvdpostGit\DvdPost\SSHConnect\SSH\SSHLibrary\obj\Debug\SSHLibrary.pdb
