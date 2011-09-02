@@ -1,5 +1,6 @@
 Public Class clsData_Holding
     Inherits BizzLib.clsOneTableData
+    'Igor
 
     Public Sub New(ByVal SessionInfo As BizzLib.clsSessionInfo, ByVal DataSet1 As DataSet, ByVal DataSetType As String, ByVal TableName As String, ByVal WhereClause As String, ByVal OrderByTxt As String)
         MyBase.New(SessionInfo, DataSet1, DataSetType, TableName, "HoldingID", "SELECT * FROM generalholding ", WhereClause, OrderByTxt)
