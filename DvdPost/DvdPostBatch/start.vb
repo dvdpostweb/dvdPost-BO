@@ -79,13 +79,16 @@ Module start
                 DVDPostBuziness.clsOffLinePayments.matchingOffline()
                 'DVDPostBuziness.ClsBankTransfer.matching()
                 clscust.CreateCustomersRotation()
+                Dim sql As String
+                Sql = DvdPostData.ClsPurchaseSale.GetInsertCreateRateRotationAbo()
+                DvdPostData.clsConnection.ExecuteNonQuery(Sql)
 
-                'Dim cls As New DVDPostBuziness.ClsPurchaseSale
-                'cls.CreatePrevisionAchat()
+                ' Dim cls As New DVDPostBuziness.ClsPurchaseSale
+                ' cls.CreatePrevisionAchat()
 
                 DVDPostBuziness.ClsVod.InsertStatVod()
                 clscust.UpdateDvd_at_Home()
-                DvdPostData.clsConnection.CommitTransaction(True)
+
             Else
                 Console.WriteLine("Error Argument")
             End If
