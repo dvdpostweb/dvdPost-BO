@@ -131,6 +131,10 @@
     <Reference Include="DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
       <HintPath>..\DLL\DevExpress.XtraEditors.v8.1.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.XtraEditors.v8.1.Design, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DevExpress.XtraEditors.v8.1.Design.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.XtraGrid.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
       <HintPath>..\DLL\DevExpress.XtraGrid.v8.1.dll</HintPath>
     </Reference>
