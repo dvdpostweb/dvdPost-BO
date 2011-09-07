@@ -85,6 +85,7 @@ Module start
 
                 DVDPostBuziness.ClsVod.InsertStatVod()
                 clscust.UpdateDvd_at_Home()
+                DvdPostData.clsConnection.CommitTransaction(True)
             Else
                 Console.WriteLine("Error Argument")
             End If

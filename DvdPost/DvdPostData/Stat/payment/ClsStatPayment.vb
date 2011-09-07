@@ -157,7 +157,7 @@ Public Class ClsStatPayment
     End Function
     Private Shared Function GetStatBaseCustomersCreditHistory(ByVal dateFrom As String, ByVal dateTo As String) As String
         Dim sql As String
-        sql = "    select c.customers_id,c.customers_abo_type,c.customers_abo_suspended, sum(chh_start.credit) total_start, (sum(chh_start.credit_paid) - sum(chh_start.credit_free)) total_start_paid, sum(chh_start.credit_free) total_start_free," & _
+        sql = "    select c.customers_id,c.customers_abo_type,c.customers_abo_suspended, sum(chh_start.credit_paid) total_start, (sum(chh_start.credit_paid) - sum(chh_start.credit_free)) total_start_paid, sum(chh_start.credit_free) total_start_free," & _
        "sum(chh_end.credit_paid) + sum(quantity_free) + sum(quantity_paid) total_end, sum(chh_end.credit_paid) - sum(chh_end.credit_free) + sum(quantity_paid) total_end_paid,  sum(chh_end.credit_free) + sum(quantity_free) total_end_free, " & _
        "sum(chh_consum.quantity_paid_consum) total_credit_paid_consum,sum(chh_consum.quantity_paid_received) total_credit_paid_received, " & _
        "sum(chh_consum.quantity_free_consum) total_credit_free_consum,sum(chh_consum.quantity_free_received) total_credit_free_received,c.customers_abo_dvd_credit credit_current  " & _
