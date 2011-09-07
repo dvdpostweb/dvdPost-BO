@@ -16,14 +16,11 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DvdPostBOSetup", "4BoulesSe
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "dvdpostStart", "dvdpostStart\dvdpostStart.vbproj", "{616BC4FC-EFD0-4FB4-A1B3-6B2CDDDD14AD}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BizzLib Old", "BizzLib old\BizzLib Old.vbproj", "{15DD02A3-8D24-4E86-9E24-1F775CE1D7BF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSH", "SSHConnect\SSH\SSH\SSH.csproj", "{E61B4BC6-B14C-4E2A-AEE2-26DAB371693C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSHLibrary", "SSHConnect\SSH\SSHLibrary\SSHLibrary.csproj", "{E10B6B5D-3E4D-417D-BD93-D8C7DDB9B756}"
 EndProject
 Global
-
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x86 = Debug|x86
@@ -87,10 +84,6 @@ Global
 		{616BC4FC-EFD0-4FB4-A1B3-6B2CDDDD14AD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{616BC4FC-EFD0-4FB4-A1B3-6B2CDDDD14AD}.Release|x86.ActiveCfg = Release|x86
 		{616BC4FC-EFD0-4FB4-A1B3-6B2CDDDD14AD}.Release|x86.Build.0 = Release|x86
-		{15DD02A3-8D24-4E86-9E24-1F775CE1D7BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{15DD02A3-8D24-4E86-9E24-1F775CE1D7BF}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{15DD02A3-8D24-4E86-9E24-1F775CE1D7BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{15DD02A3-8D24-4E86-9E24-1F775CE1D7BF}.Release|x86.ActiveCfg = Release|Any CPU
 		{E61B4BC6-B14C-4E2A-AEE2-26DAB371693C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E61B4BC6-B14C-4E2A-AEE2-26DAB371693C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E61B4BC6-B14C-4E2A-AEE2-26DAB371693C}.Debug|x86.ActiveCfg = Debug|Any CPU
