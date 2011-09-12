@@ -723,7 +723,7 @@ Public Class frmSearchProduct
     End Sub
     Private Sub loadSubtitle()
 
-        Dim key As String = "undertitles_id"
+        Dim key As String = "id"
         Dim value As String = "code"
         Dim dtSubtitle As DataTable
         Dim sql As String
@@ -739,7 +739,7 @@ Public Class frmSearchProduct
     End Sub
     Private Sub loadLanguage()
         Dim sql As String
-        Dim key As String = "languages_id"
+        Dim key As String = "id"
         Dim value As String = "code"
         Dim dtLanguage As DataTable
 

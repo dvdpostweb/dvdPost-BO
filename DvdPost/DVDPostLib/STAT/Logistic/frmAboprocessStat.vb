@@ -381,7 +381,7 @@ Public Class frmAboprocessStat
     Private Sub loadData(ByVal sql As String)
 
         Dim dt As DataTable
-        dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
+        dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.WRITE)
 
         Grid1.DataSource = Nothing
         Grid1.Views(0).PopulateColumns()

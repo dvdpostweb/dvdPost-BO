@@ -53,6 +53,8 @@ Partial Class FrmProductsVOD
         Me.colAvailable = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.chkcolAvailable = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
         Me.XTabView = New DevExpress.XtraTab.XtraTabPage
+        Me.cmbSource = New DevExpress.XtraEditors.LookUpEdit
+        Me.lblSource = New DevExpress.XtraEditors.LabelControl
         Me.cmbQuality = New DevExpress.XtraEditors.LookUpEdit
         Me.lblHigh = New DevExpress.XtraEditors.LabelControl
         Me.cmbStatus = New DevExpress.XtraEditors.LookUpEdit
@@ -104,7 +106,7 @@ Partial Class FrmProductsVOD
         Me.colAvailableUploaded = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.RepositorychkAvailable = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
         Me.WebSiteDvdPost = New System.Windows.Forms.WebBrowser
-        Me.TabFtp = New DevExpress.XtraTab.XtraTabPage
+        Me.XTabFtp = New DevExpress.XtraTab.XtraTabPage
         Me.lblDbFtp = New System.Windows.Forms.Label
         Me.lblFtpLocal = New System.Windows.Forms.Label
         Me.txtSourceFtp = New DevExpress.XtraEditors.TextEdit
@@ -119,6 +121,11 @@ Partial Class FrmProductsVOD
         Me.colNameFileFtp = New DevExpress.XtraGrid.Columns.GridColumn
         Me.BtnCompare = New System.Windows.Forms.Button
         Me.lblFTP = New System.Windows.Forms.Label
+        Me.XtabAutomateTranscode = New DevExpress.XtraTab.XtraTabPage
+        Me.btnGenerateVod = New DevExpress.XtraEditors.SimpleButton
+        Me.txtPathOfFile = New DevExpress.XtraEditors.TextEdit
+        Me.btnChooseFileTxt = New DevExpress.XtraEditors.SimpleButton
+        Me.lblTxtFile = New System.Windows.Forms.Label
         Me.TextEdit2 = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton
@@ -127,8 +134,14 @@ Partial Class FrmProductsVOD
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl
         Me.TextEdit4 = New DevExpress.XtraEditors.TextEdit
         Me.FolderChoose = New System.Windows.Forms.FolderBrowserDialog
-        Me.cmbSource = New DevExpress.XtraEditors.LookUpEdit
-        Me.lblSource = New DevExpress.XtraEditors.LabelControl
+        Me.LstResult = New System.Windows.Forms.ListBox
+        Me.lstError = New System.Windows.Forms.ListBox
+        Me.lblOk = New System.Windows.Forms.Label
+        Me.lblError = New System.Windows.Forms.Label
+        Me.cmbSupportVod = New DevExpress.XtraEditors.LookUpEdit
+        Me.lblSupport = New DevExpress.XtraEditors.LabelControl
+        Me.colSupportVod = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+        Me.RepositorycmbSupportVod = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         colDateStartUploaded = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         CType(Me.cmbViewListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtQuickSearchRepos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -148,6 +161,7 @@ Partial Class FrmProductsVOD
         CType(Me.cmbLanguages, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkcolAvailable, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XTabView.SuspendLayout()
+        CType(Me.cmbSource.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbQuality.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbStatus.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbStudioEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -171,17 +185,20 @@ Partial Class FrmProductsVOD
         CType(Me.RepositoryCmbStudio, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositorycmbLanguage, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositorychkAvailable, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabFtp.SuspendLayout()
+        Me.XTabFtp.SuspendLayout()
         CType(Me.txtSourceFtp.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtSourceLocal.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridDBFtp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewDBFtp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridFtpLocal, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewFtpLocal, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.XtabAutomateTranscode.SuspendLayout()
+        CType(Me.txtPathOfFile.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmbSource.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbSupportVod.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositorycmbSupportVod, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'colDateStartUploaded
@@ -202,7 +219,7 @@ Partial Class FrmProductsVOD
         Me.XTabControlVod.SelectedTabPage = Me.XTabSearch
         Me.XTabControlVod.Size = New System.Drawing.Size(1408, 820)
         Me.XTabControlVod.TabIndex = 4
-        Me.XTabControlVod.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTabSearch, Me.XTabResult, Me.XTabView, Me.XTabProcess, Me.XTabViewVod, Me.TabFtp})
+        Me.XTabControlVod.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTabSearch, Me.XTabResult, Me.XTabView, Me.XTabProcess, Me.XTabViewVod, Me.XTabFtp, Me.XtabAutomateTranscode})
         Me.XTabControlVod.Text = "VOD"
         '
         'XTabSearch
@@ -327,7 +344,7 @@ Partial Class FrmProductsVOD
         Me.GridProductsDVD.MainView = Me.GridViewSearch
         Me.GridProductsDVD.Margin = New System.Windows.Forms.Padding(4)
         Me.GridProductsDVD.Name = "GridProductsDVD"
-        Me.GridProductsDVD.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbLanguages, Me.chkcolAvailable, Me.cmbStudio})
+        Me.GridProductsDVD.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbLanguages, Me.chkcolAvailable, Me.cmbStudio, Me.RepositorycmbSupportVod})
         Me.GridProductsDVD.Size = New System.Drawing.Size(1399, 786)
         Me.GridProductsDVD.TabIndex = 4
         Me.GridProductsDVD.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewSearch})
@@ -335,7 +352,7 @@ Partial Class FrmProductsVOD
         'GridViewSearch
         '
         Me.GridViewSearch.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand1})
-        Me.GridViewSearch.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.colImdb_id, Me.collanguage_id, Me.colproducts_name, Me.ColAvailable_from, Me.colExpireAt, Me.colLanguage_subtitle, Me.colAvailable, Me.colStudio, Me.colStatus, Me.colQuality})
+        Me.GridViewSearch.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.colImdb_id, Me.collanguage_id, Me.colproducts_name, Me.ColAvailable_from, Me.colExpireAt, Me.colLanguage_subtitle, Me.colAvailable, Me.colStudio, Me.colStatus, Me.colQuality, Me.colSupportVod})
         Me.GridViewSearch.CustomizationFormBounds = New System.Drawing.Rectangle(1685, 658, 225, 209)
         Me.GridViewSearch.GridControl = Me.GridProductsDVD
         Me.GridViewSearch.Name = "GridViewSearch"
@@ -480,6 +497,8 @@ Partial Class FrmProductsVOD
         '
         'XTabView
         '
+        Me.XTabView.Controls.Add(Me.cmbSupportVod)
+        Me.XTabView.Controls.Add(Me.lblSupport)
         Me.XTabView.Controls.Add(Me.cmbSource)
         Me.XTabView.Controls.Add(Me.lblSource)
         Me.XTabView.Controls.Add(Me.cmbQuality)
@@ -511,6 +530,29 @@ Partial Class FrmProductsVOD
         Me.XTabView.Name = "XTabView"
         Me.XTabView.Size = New System.Drawing.Size(1399, 786)
         Me.XTabView.Text = "View"
+        '
+        'cmbSource
+        '
+        Me.cmbSource.AllowDrop = True
+        Me.cmbSource.Enabled = False
+        Me.cmbSource.Location = New System.Drawing.Point(455, 334)
+        Me.cmbSource.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbSource.Name = "cmbSource"
+        Me.cmbSource.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbSource.Properties.DisplayMember = "status_desc"
+        Me.cmbSource.Properties.NullText = ""
+        Me.cmbSource.Properties.ValueMember = "status_id"
+        Me.cmbSource.Size = New System.Drawing.Size(149, 22)
+        Me.cmbSource.TabIndex = 81
+        '
+        'lblSource
+        '
+        Me.lblSource.Location = New System.Drawing.Point(328, 338)
+        Me.lblSource.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblSource.Name = "lblSource"
+        Me.lblSource.Size = New System.Drawing.Size(38, 16)
+        Me.lblSource.TabIndex = 80
+        Me.lblSource.Text = "source"
         '
         'cmbQuality
         '
@@ -1028,22 +1070,22 @@ Partial Class FrmProductsVOD
         Me.WebSiteDvdPost.Size = New System.Drawing.Size(820, 786)
         Me.WebSiteDvdPost.TabIndex = 6
         '
-        'TabFtp
+        'XTabFtp
         '
-        Me.TabFtp.Controls.Add(Me.lblDbFtp)
-        Me.TabFtp.Controls.Add(Me.lblFtpLocal)
-        Me.TabFtp.Controls.Add(Me.txtSourceFtp)
-        Me.TabFtp.Controls.Add(Me.TxtSourceLocal)
-        Me.TabFtp.Controls.Add(Me.btnFolderLocal)
-        Me.TabFtp.Controls.Add(Me.lblLocal)
-        Me.TabFtp.Controls.Add(Me.GridDBFtp)
-        Me.TabFtp.Controls.Add(Me.GridFtpLocal)
-        Me.TabFtp.Controls.Add(Me.BtnCompare)
-        Me.TabFtp.Controls.Add(Me.lblFTP)
-        Me.TabFtp.Margin = New System.Windows.Forms.Padding(4)
-        Me.TabFtp.Name = "TabFtp"
-        Me.TabFtp.Size = New System.Drawing.Size(1399, 786)
-        Me.TabFtp.Text = "Compare Ftp"
+        Me.XTabFtp.Controls.Add(Me.lblDbFtp)
+        Me.XTabFtp.Controls.Add(Me.lblFtpLocal)
+        Me.XTabFtp.Controls.Add(Me.txtSourceFtp)
+        Me.XTabFtp.Controls.Add(Me.TxtSourceLocal)
+        Me.XTabFtp.Controls.Add(Me.btnFolderLocal)
+        Me.XTabFtp.Controls.Add(Me.lblLocal)
+        Me.XTabFtp.Controls.Add(Me.GridDBFtp)
+        Me.XTabFtp.Controls.Add(Me.GridFtpLocal)
+        Me.XTabFtp.Controls.Add(Me.BtnCompare)
+        Me.XTabFtp.Controls.Add(Me.lblFTP)
+        Me.XTabFtp.Margin = New System.Windows.Forms.Padding(4)
+        Me.XTabFtp.Name = "XTabFtp"
+        Me.XTabFtp.Size = New System.Drawing.Size(1399, 786)
+        Me.XTabFtp.Text = "Compare Ftp"
         '
         'lblDbFtp
         '
@@ -1185,6 +1227,56 @@ Partial Class FrmProductsVOD
         Me.lblFTP.TabIndex = 2
         Me.lblFTP.Text = "FTP"
         '
+        'XtabAutomateTranscode
+        '
+        Me.XtabAutomateTranscode.Controls.Add(Me.lblError)
+        Me.XtabAutomateTranscode.Controls.Add(Me.lblOk)
+        Me.XtabAutomateTranscode.Controls.Add(Me.lstError)
+        Me.XtabAutomateTranscode.Controls.Add(Me.LstResult)
+        Me.XtabAutomateTranscode.Controls.Add(Me.btnGenerateVod)
+        Me.XtabAutomateTranscode.Controls.Add(Me.txtPathOfFile)
+        Me.XtabAutomateTranscode.Controls.Add(Me.btnChooseFileTxt)
+        Me.XtabAutomateTranscode.Controls.Add(Me.lblTxtFile)
+        Me.XtabAutomateTranscode.Name = "XtabAutomateTranscode"
+        Me.XtabAutomateTranscode.Size = New System.Drawing.Size(1399, 786)
+        Me.XtabAutomateTranscode.Text = "Automate Transcode"
+        '
+        'btnGenerateVod
+        '
+        Me.btnGenerateVod.Location = New System.Drawing.Point(22, 71)
+        Me.btnGenerateVod.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnGenerateVod.Name = "btnGenerateVod"
+        Me.btnGenerateVod.Size = New System.Drawing.Size(155, 28)
+        Me.btnGenerateVod.TabIndex = 9
+        Me.btnGenerateVod.Text = "Generate Create vod"
+        '
+        'txtPathOfFile
+        '
+        Me.txtPathOfFile.Location = New System.Drawing.Point(274, 19)
+        Me.txtPathOfFile.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtPathOfFile.Name = "txtPathOfFile"
+        Me.txtPathOfFile.Size = New System.Drawing.Size(628, 22)
+        Me.txtPathOfFile.TabIndex = 8
+        '
+        'btnChooseFileTxt
+        '
+        Me.btnChooseFileTxt.Location = New System.Drawing.Point(22, 19)
+        Me.btnChooseFileTxt.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnChooseFileTxt.Name = "btnChooseFileTxt"
+        Me.btnChooseFileTxt.Size = New System.Drawing.Size(53, 28)
+        Me.btnChooseFileTxt.TabIndex = 7
+        Me.btnChooseFileTxt.Text = "..."
+        '
+        'lblTxtFile
+        '
+        Me.lblTxtFile.AutoSize = True
+        Me.lblTxtFile.Location = New System.Drawing.Point(83, 27)
+        Me.lblTxtFile.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTxtFile.Name = "lblTxtFile"
+        Me.lblTxtFile.Size = New System.Drawing.Size(100, 17)
+        Me.lblTxtFile.TabIndex = 6
+        Me.lblTxtFile.Text = "Source files txt"
+        '
         'TextEdit2
         '
         Me.TextEdit2.Location = New System.Drawing.Point(157, 28)
@@ -1245,28 +1337,77 @@ Partial Class FrmProductsVOD
         Me.FolderChoose.RootFolder = System.Environment.SpecialFolder.MyComputer
         Me.FolderChoose.SelectedPath = "Z:\VOD\tmp"
         '
-        'cmbSource
+        'LstResult
         '
-        Me.cmbSource.AllowDrop = True
-        Me.cmbSource.Enabled = False
-        Me.cmbSource.Location = New System.Drawing.Point(455, 334)
-        Me.cmbSource.Margin = New System.Windows.Forms.Padding(4)
-        Me.cmbSource.Name = "cmbSource"
-        Me.cmbSource.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cmbSource.Properties.DisplayMember = "status_desc"
-        Me.cmbSource.Properties.NullText = ""
-        Me.cmbSource.Properties.ValueMember = "status_id"
-        Me.cmbSource.Size = New System.Drawing.Size(149, 22)
-        Me.cmbSource.TabIndex = 81
+        Me.LstResult.FormattingEnabled = True
+        Me.LstResult.ItemHeight = 16
+        Me.LstResult.Location = New System.Drawing.Point(386, 71)
+        Me.LstResult.Name = "LstResult"
+        Me.LstResult.Size = New System.Drawing.Size(381, 164)
+        Me.LstResult.TabIndex = 10
         '
-        'lblSource
+        'lstError
         '
-        Me.lblSource.Location = New System.Drawing.Point(328, 338)
-        Me.lblSource.Margin = New System.Windows.Forms.Padding(4)
-        Me.lblSource.Name = "lblSource"
-        Me.lblSource.Size = New System.Drawing.Size(38, 16)
-        Me.lblSource.TabIndex = 80
-        Me.lblSource.Text = "source"
+        Me.lstError.FormattingEnabled = True
+        Me.lstError.ItemHeight = 16
+        Me.lstError.Location = New System.Drawing.Point(386, 267)
+        Me.lstError.Name = "lstError"
+        Me.lstError.Size = New System.Drawing.Size(381, 164)
+        Me.lstError.TabIndex = 11
+        '
+        'lblOk
+        '
+        Me.lblOk.AutoSize = True
+        Me.lblOk.Location = New System.Drawing.Point(274, 125)
+        Me.lblOk.Name = "lblOk"
+        Me.lblOk.Size = New System.Drawing.Size(62, 17)
+        Me.lblOk.TabIndex = 12
+        Me.lblOk.Text = "new Vod"
+        '
+        'lblError
+        '
+        Me.lblError.AutoSize = True
+        Me.lblError.Location = New System.Drawing.Point(271, 315)
+        Me.lblError.Name = "lblError"
+        Me.lblError.Size = New System.Drawing.Size(40, 17)
+        Me.lblError.TabIndex = 13
+        Me.lblError.Text = "Error"
+        '
+        'cmbSupportVod
+        '
+        Me.cmbSupportVod.AllowDrop = True
+        Me.cmbSupportVod.Enabled = False
+        Me.cmbSupportVod.Location = New System.Drawing.Point(456, 380)
+        Me.cmbSupportVod.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbSupportVod.Name = "cmbSupportVod"
+        Me.cmbSupportVod.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbSupportVod.Properties.DisplayMember = "status_desc"
+        Me.cmbSupportVod.Properties.NullText = ""
+        Me.cmbSupportVod.Properties.ValueMember = "status_id"
+        Me.cmbSupportVod.Size = New System.Drawing.Size(149, 22)
+        Me.cmbSupportVod.TabIndex = 83
+        '
+        'lblSupport
+        '
+        Me.lblSupport.Location = New System.Drawing.Point(329, 384)
+        Me.lblSupport.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblSupport.Name = "lblSupport"
+        Me.lblSupport.Size = New System.Drawing.Size(43, 16)
+        Me.lblSupport.TabIndex = 82
+        Me.lblSupport.Text = "support"
+        '
+        'colSupportVod
+        '
+        Me.colSupportVod.Caption = "Support"
+        Me.colSupportVod.ColumnEdit = Me.RepositorycmbSupportVod
+        Me.colSupportVod.Name = "colSupportVod"
+        Me.colSupportVod.Visible = True
+        '
+        'RepositorycmbSupportVod
+        '
+        Me.RepositorycmbSupportVod.AutoHeight = False
+        Me.RepositorycmbSupportVod.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositorycmbSupportVod.Name = "RepositorycmbSupportVod"
         '
         'FrmProductsVOD
         '
@@ -1298,6 +1439,7 @@ Partial Class FrmProductsVOD
         CType(Me.chkcolAvailable, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XTabView.ResumeLayout(False)
         Me.XTabView.PerformLayout()
+        CType(Me.cmbSource.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbQuality.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbStatus.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbStudioEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1322,18 +1464,22 @@ Partial Class FrmProductsVOD
         CType(Me.RepositoryCmbStudio, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositorycmbLanguage, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositorychkAvailable, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabFtp.ResumeLayout(False)
-        Me.TabFtp.PerformLayout()
+        Me.XTabFtp.ResumeLayout(False)
+        Me.XTabFtp.PerformLayout()
         CType(Me.txtSourceFtp.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtSourceLocal.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridDBFtp, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewDBFtp, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridFtpLocal, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewFtpLocal, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.XtabAutomateTranscode.ResumeLayout(False)
+        Me.XtabAutomateTranscode.PerformLayout()
+        CType(Me.txtPathOfFile.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmbSource.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbSupportVod.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositorycmbSupportVod, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1423,7 +1569,7 @@ Partial Class FrmProductsVOD
     Friend WithEvents RepositorychkAvailable As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents lblHigh As DevExpress.XtraEditors.LabelControl
     Friend WithEvents btnRipped As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents TabFtp As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents XTabFtp As DevExpress.XtraTab.XtraTabPage
     Friend WithEvents lblFTP As System.Windows.Forms.Label
     Friend WithEvents BtnCompare As System.Windows.Forms.Button
     Friend WithEvents GridFtpLocal As DevExpress.XtraGrid.GridControl
@@ -1443,4 +1589,17 @@ Partial Class FrmProductsVOD
     Friend WithEvents colQuality2 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
     Friend WithEvents cmbSource As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents lblSource As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents XtabAutomateTranscode As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents txtPathOfFile As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents btnChooseFileTxt As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents lblTxtFile As System.Windows.Forms.Label
+    Friend WithEvents btnGenerateVod As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents lblError As System.Windows.Forms.Label
+    Friend WithEvents lblOk As System.Windows.Forms.Label
+    Friend WithEvents lstError As System.Windows.Forms.ListBox
+    Friend WithEvents LstResult As System.Windows.Forms.ListBox
+    Friend WithEvents cmbSupportVod As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents lblSupport As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents colSupportVod As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents RepositorycmbSupportVod As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
 End Class

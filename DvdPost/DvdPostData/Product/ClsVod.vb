@@ -1,4 +1,21 @@
 Public Class ClsVod
+
+    Public Enum ListField
+        ID = 0
+        IMDB_ID
+        FILENAME
+        AVAILABLE_FROM
+        EXPIRE_AT
+        AVAILABLE
+        LANGUAGE
+        SUBTITLE
+        CREATED_AT
+        UPDATED_AT
+        STUDIO
+        STATUS
+        SOURCE
+        VOD_SUPPORT
+    End Enum
     Public Shared Function getViewVod(ByVal customers_id As Integer) As String
 
         Dim sql As String
@@ -13,7 +30,13 @@ Public Class ClsVod
 
         Return sql
     End Function
+    Public Shared Function getSelectVod(ByVal imdb_id As Long, ByVal lang As Integer, ByVal subtitle As Integer) As String
+        Dim sql As String
+        sql = " select * from streaming_products where imdb_id = " & imdb_id & _
+              " and language_id = " & lang & " and subtitle_id = " & subtitle
 
+        Return sql
+    End Function
     Public Shared Function SearchAllViewVod() As String
         Dim sql As String
         sql = " SELECT distinct sp.*, P.products_title products_name " & _
@@ -80,6 +103,11 @@ Public Class ClsVod
         sql = "SHOW COLUMNS FROM streaming_products LIKE 'source' "
         Return sql
     End Function
+    Public Shared Function GetSupportVod() As String
+        Dim sql As String
+        sql = "select support_id,support_name from vod_support"
+        Return sql
+    End Function
     Public Shared Function GetStudio() As String
         Dim sql As String
         sql = "select studio_id,studio_name from studio"
@@ -88,19 +116,19 @@ Public Class ClsVod
 
     Public Shared Function GetLanguage() As String
         Dim sql As String
-        sql = "select languages_id,code FROM languages"
+        sql = "select languages_id id,code FROM languages"
         Return sql
     End Function
 
     Public Shared Function GetAllSubtitle() As String
         Dim sql As String
-        sql = "select undertitles_id,short code FROM products_undertitles where language_id = 1"
+        sql = "select undertitles_id id,short_alpha code FROM products_undertitles where language_id = 1"
         Return sql
     End Function
 
     Public Shared Function GetAllLanguage() As String
         Dim sql As String
-        sql = "select languages_id,short code FROM products_languages where languagenav_id = 1"
+        sql = "select languages_id id,short_alpha code FROM products_languages where languagenav_id = 1"
         Return sql
     End Function
 
@@ -116,7 +144,8 @@ Public Class ClsVod
                                         ByVal studio_id As Integer, _
                                         ByVal status As String, _
                                         ByVal quality As String, _
-                                        ByVal source As String) As String
+                                        ByVal source As String, _
+                                        ByVal support As Integer) As String
         Dim sql As String
         Dim strLanguageSubtitle As String
         Dim strlanguage As String
@@ -153,11 +182,27 @@ Public Class ClsVod
               ", quality = " & strQuality & _
               ", source = '" & source & "'" & _
               ", imdb_id = " & imdb_id & _
+              ", vod_support_id = " & support & _
               " where id = " & streaming_products_id
 
         Return sql
     End Function
+    Public Shared Function GetSelectCheckVod(ByVal imdb_id As Integer, _
+                                            ByVal language_id As Integer, _
+                                            ByVal language_subtitle_id As Integer, _
+                                            ByVal support_id As Integer, _
+                                            ByVal source As String) As String
+        Dim sql As String
 
+        sql = " select * from streaming_products " & _
+                " where imdb_id = " & imdb_id & _
+                " and language_id = " & language_id & _
+                " and subtitle_id = " & language_subtitle_id & _
+                " and support_id = " & support_id & _
+                " and source = '" & source & "'"
+
+        Return sql
+    End Function
     Public Shared Function GetInsertVod(ByVal imdb_id As Integer, _
                                         ByVal filename As String, _
                                         ByVal available_from As DateTime, _
@@ -167,7 +212,9 @@ Public Class ClsVod
                                         ByVal language_subtitle_id As Integer, _
                                         ByVal studio_id As Integer, _
                                         ByVal status As String, _
-                                        ByVal quality As String, ByVal source As String) As String
+                                        ByVal quality As String, _
+                                        ByVal source As String, _
+                                        ByVal support As Integer) As String
         Dim sql As String
         Dim strLanguageSubtitle As String
         Dim strQuality As String
@@ -192,7 +239,7 @@ Public Class ClsVod
         End If
 
         sql = "insert into streaming_products values (null," & imdb_id & ",'" & filename & "','" & DVDPostTools.ClsDate.formatDateDB(available_from) & _
-              "','" & DVDPostTools.ClsDate.formatDateDB(expire_at) & "'," & available & "," & strlanguage & "," & strLanguageSubtitle & ",now(),now()," & studio_id & ",'" & status & "'," & strQuality & ",'" & source & "')"
+              "','" & DVDPostTools.ClsDate.formatDateDB(expire_at) & "'," & available & "," & strlanguage & "," & strLanguageSubtitle & ",now(),now()," & studio_id & ",'" & status & "'," & strQuality & ",'" & source & "'" & support & ")"
         Return sql
     End Function
 

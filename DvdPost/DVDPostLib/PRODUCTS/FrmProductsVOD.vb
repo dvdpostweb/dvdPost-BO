@@ -2,6 +2,10 @@ Imports System.Collections.Generic
 Public Class FrmProductsVOD
     Inherits BizzLib.frmBKForm
     Private _dtLanguage As DataTable
+    Dim _dtLanguageSound As DataTable
+    Dim _dtLanguageSubtitle As DataTable
+    Dim _dtSupport As DataTable
+
 
     Const KEYWEBSITE As String = "WEBSITEVOD"
 
@@ -158,7 +162,23 @@ Public Class FrmProductsVOD
         End Select
     End Sub
 
- 
+    Private Sub loadSupportVod()
+        Dim sql As String
+        Dim key As String = "support_id"
+        Dim value As String = "support_name"
+        sql = DvdPostData.ClsVod.GetSupportVod()
+        _dtSupport = DvdPostData.clsConnection.FillDataSet(sql)
+
+
+        cmbSupportVod.Properties.ValueMember = key
+        cmbSupportVod.Properties.DisplayMember = value
+        cmbSupportVod.Properties.DataSource = _dtSupport
+
+        RepositorycmbSupportVod.ValueMember = key
+        RepositorycmbSupportVod.DisplayMember = value
+        RepositorycmbSupportVod.DataSource = _dtSupport
+
+    End Sub
     Private Sub loadStudio()
         Dim sql As String
         Dim dt As DataTable
@@ -250,31 +270,30 @@ Public Class FrmProductsVOD
 
     Private Sub loadLanguage()
         Dim sql As String
-        Dim key As String = "languages_id"
+        Dim key As String = "id"
         Dim value As String = "code"
-        Dim dtLanguageSound As DataTable
-        Dim dtLanguageSubtitle As DataTable
+
         sql = DvdPostData.ClsVod.GetAllLanguage()
-        dtLanguageSound = DvdPostData.clsConnection.FillDataSet(sql)
-        dtLanguageSubtitle = DvdPostData.clsConnection.FillDataSet(sql)
+        _dtLanguageSound = DvdPostData.clsConnection.FillDataSet(sql)
+        _dtLanguageSubtitle = DvdPostData.clsConnection.FillDataSet(sql)
 
         RepositorycmbLanguage.ValueMember = key
         RepositorycmbLanguage.DisplayMember = value
-        RepositorycmbLanguage.DataSource = dtLanguageSound
+        RepositorycmbLanguage.DataSource = _dtLanguageSound
 
         cmbLanguages.ValueMember = key
         cmbLanguages.DisplayMember = value
-        cmbLanguages.DataSource = dtLanguageSound
+        cmbLanguages.DataSource = _dtLanguageSound
 
 
         cmbLanguageSound.Properties.ValueMember = key
         cmbLanguageSound.Properties.DisplayMember = value
-        cmbLanguageSound.Properties.DataSource = dtLanguageSound
+        cmbLanguageSound.Properties.DataSource = _dtLanguageSound
 
-        dtLanguageSubtitle = DVDPostBuziness.ClsCombo.addRowEmpty(dtLanguageSubtitle)
+        _dtLanguageSubtitle = DVDPostBuziness.ClsCombo.addRowEmpty(_dtLanguageSubtitle)
         cmbLanguageSubtitle.Properties.ValueMember = key
         cmbLanguageSubtitle.Properties.DisplayMember = value
-        cmbLanguageSubtitle.Properties.DataSource = dtLanguageSubtitle
+        cmbLanguageSubtitle.Properties.DataSource = _dtLanguageSubtitle
     End Sub
 
     'Private Sub loadInfoVod(ByVal streaming_products_id As Integer)
@@ -326,10 +345,10 @@ Public Class FrmProductsVOD
          
 
             If txtId.EditValue Is Nothing Then
-                sql = DvdPostData.ClsVod.GetInsertVod(txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStart.EditValue, cmbDateExpired.EditValue, chkAvailable.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue)
+                sql = DvdPostData.ClsVod.GetInsertVod(txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStart.EditValue, cmbDateExpired.EditValue, chkAvailable.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue)
                 DvdPostData.clsConnection.ExecuteNonQuery(sql)
             Else
-                sql = DvdPostData.ClsVod.GetUpdateVod(txtId.EditValue, txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStart.EditValue, cmbDateExpired.EditValue, chkAvailable.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue)
+                sql = DvdPostData.ClsVod.GetUpdateVod(txtId.EditValue, txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStart.EditValue, cmbDateExpired.EditValue, chkAvailable.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue)
                 DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
             End If
@@ -465,7 +484,7 @@ Public Class FrmProductsVOD
                 filename = fileInfo.Name
                 language_audio_id = SearchLangID(elts(DVDPostBuziness.clsFileZilla.FormatFile.LANGUAGE_AUDIO_ID), filename)
                 language_subtitle_id = SearchLangID(elts(DVDPostBuziness.clsFileZilla.FormatFile.LANGUAGE_SUBTITLE_ID), filename)
-                sql = DvdPostData.ClsVod.GetInsertVod(elts(DVDPostBuziness.clsFileZilla.FormatFile.IMDB_ID), extension + filename, Date.MinValue, Date.MinValue, True, language_audio_id, language_subtitle_id, elts(DVDPostBuziness.clsFileZilla.FormatFile.STUDIO_ID), "uploaded", strQuality, "SOFTLAYER")
+                sql = DvdPostData.ClsVod.GetInsertVod(elts(DVDPostBuziness.clsFileZilla.FormatFile.IMDB_ID), extension + filename, Date.MinValue, Date.MinValue, True, language_audio_id, language_subtitle_id, elts(DVDPostBuziness.clsFileZilla.FormatFile.STUDIO_ID), "uploaded", strQuality, "SOFTLAYER", 1)
                 DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
                 fileZilla.InsertNodeQueue(file, fileInfo.Name, fileInfo.Length)
@@ -620,5 +639,149 @@ Public Class FrmProductsVOD
         If FolderChoose.ShowDialog() = Windows.Forms.DialogResult.OK Then
             TxtSourceLocal.EditValue = FolderChoose.SelectedPath
         End If
+    End Sub
+
+    Private Sub btnChooseFileTxt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnChooseFileTxt.Click
+        If txtPathOfFile.EditValue <> "" Then FolderChoose.SelectedPath = txtPathOfFile.EditValue
+        FolderChoose.SelectedPath = ""
+        If FolderChoose.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            txtPathOfFile.EditValue = FolderChoose.SelectedPath
+        End If
+    End Sub
+    Private Function GetInfoVod(ByVal result() As String) As DataRow
+
+        Dim sql As String
+        Dim dt As DataTable
+
+        sql = DvdPostData.ClsVod.getSelectVod(result(DvdPostData.ClsVod.ListField.IMDB_ID), result(DvdPostData.ClsVod.ListField.LANGUAGE), result(DvdPostData.ClsVod.ListField.SUBTITLE))
+        dt = DvdPostData.clsConnection.FillDataSet(sql)
+
+        If dt.Rows.Count > 0 Then
+            Return dt.Rows(0)
+        Else
+            Return Nothing
+        End If
+
+    End Function
+    Private Function CheckEltFileName(ByVal elt As String, ByVal key As String) As String
+
+        If elt(0) <> key Then
+            Return Nothing
+        Else
+            Return elt.Substring(1)
+        End If
+
+    End Function
+    Private Function GetId(ByVal key As String, ByVal dt As DataTable) As Object
+
+        Dim dr() As DataRow = dt.Select("code ='" & key & "'")
+
+        If dr.Length <> 1 Then
+            Return Nothing
+        Else
+            Return dr("id")
+        End If
+
+    End Function
+
+    Private Function GetIdLanguage(ByVal key As String, ByVal dt As DataTable) As Object
+
+        Dim dr() As DataRow = dt.Select("short_alpha ='" & key & "'")
+
+        If dr.Length <> 1 Then
+            Return Nothing
+        Else
+            Return dr("id")
+        End If
+
+    End Function
+
+    Private Sub CheckParseFileName(ByVal name As String, ByRef result() As String)
+        ' rules path NameFile@Imdbid_DTypeOfVod_ALanguage_SSubtitle_BitRate.Extension   FATAL@1473357_Dpc_Afre_Snon_3000k.f4v
+
+        Dim elt() As String
+        Dim tmp() As String
+        Dim valueElt As String
+        elt = name.Split("_")
+
+        If elt.Length <> 5 Then
+            result = Nothing
+            Return
+        Else
+            tmp = elt(0).Split("@")
+            If tmp.Length <> 2 Then
+                result = Nothing
+                Return
+            Else
+                result(DvdPostData.ClsVod.ListField.FILENAME) = tmp(0)
+                result(DvdPostData.ClsVod.ListField.IMDB_ID) = tmp(1)
+            End If
+
+            valueElt = CheckEltFileName(elt(1), "D")
+            If valueElt Is Nothing Then
+                result = Nothing
+                Return
+            Else
+                result(DvdPostData.ClsVod.ListField.VOD_SUPPORT) = valueElt
+            End If
+
+            valueElt = CheckEltFileName(elt(2), "A")
+            If valueElt Is Nothing Then
+                result = Nothing
+                Return
+            Else
+                result(DvdPostData.ClsVod.ListField.LANGUAGE) = valueElt
+            End If
+
+            valueElt = CheckEltFileName(elt(3), "S")
+            If valueElt Is Nothing Then
+                result = Nothing
+                Return
+            Else
+                result(DvdPostData.ClsVod.ListField.SUBTITLE) = valueElt
+            End If
+
+            'Dim fi As System.IO.FileInfo = New System.IO.FileInfo(name)
+            'result(DvdPostData.ClsVod.ListField.LANGUAGE) = fi.Extension
+        End If
+
+    End Sub
+    Private Sub FillEmptyValue(ByRef result() As String)
+
+        result = [Enum].GetNames(GetType(DvdPostData.ClsVod.ListField))
+    End Sub
+    Private Sub btnGenerateVod_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGenerateVod.Click
+        ' parse file path 
+        Dim struct As List(Of String)
+        struct = DVDPostTools.clsFile.openFile(txtPathOfFile.EditValue)
+        Dim result() As String = Nothing
+        Dim dr As DataRow
+
+        For Each name As String In struct
+            FillEmptyValue(result)
+            CheckParseFileName(name, result)
+            If result IsNot Nothing Then
+
+                result(DvdPostData.ClsVod.ListField.LANGUAGE) = GetIdLanguage(result(DvdPostData.ClsVod.ListField.LANGUAGE), _dtLanguageSound)
+                result(DvdPostData.ClsVod.ListField.SUBTITLE) = GetIdLanguage(result(DvdPostData.ClsVod.ListField.SUBTITLE), _dtLanguageSubtitle)
+                result(DvdPostData.ClsVod.ListField.VOD_SUPPORT) = GetId(result(DvdPostData.ClsVod.ListField.VOD_SUPPORT), _dtSupport)
+
+                dr = GetInfoVod(result)
+
+                If dr Is Nothing Then
+                    result(DvdPostData.ClsVod.ListField.EXPIRE_AT) = ""
+                    result(DvdPostData.ClsVod.ListField.STUDIO) = ""
+                Else
+                    result(DvdPostData.ClsVod.ListField.EXPIRE_AT) = dr("expire_at")
+                    result(DvdPostData.ClsVod.ListField.STUDIO) = dr("studio_id")
+                End If
+
+
+            Else
+                lstError.Items.Add(name)
+            End If
+        Next
+
+
     End Sub
 End Class
