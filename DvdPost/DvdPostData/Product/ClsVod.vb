@@ -265,7 +265,7 @@ Public Class ClsVod
         If studio_id = "" Then
             strStudio = "null"
         Else
-            strStudio = "'" & quality & "'"
+            strStudio = "'" & studio_id & "'"
         End If
 
         sql = "insert into streaming_products values (null," & imdb_id & ",'" & filename & "','" & DVDPostTools.ClsDate.formatDateDB(available_from) & _
