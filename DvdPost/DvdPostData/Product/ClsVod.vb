@@ -269,7 +269,7 @@ Public Class ClsVod
         End If
 
         sql = "insert into streaming_products values (null," & imdb_id & ",'" & filename & "','" & DVDPostTools.ClsDate.formatDateDB(available_from) & _
-              "','" & DVDPostTools.ClsDate.formatDateDB(expire_at) & "'," & available & "," & strlanguage & "," & strLanguageSubtitle & ",now(),now()," & strStudio & ",'" & status & "'," & strQuality & ",'" & source & "'," & support & ")"
+              "','" & DVDPostTools.ClsDate.formatDateDB(expire_at) & "'," & available & "," & strlanguage & "," & strLanguageSubtitle & ",now(),now()," & strStudio & ",'" & status & "'," & strQuality & ",'" & source & "'," & support & ",1)"
         Return sql
     End Function
 

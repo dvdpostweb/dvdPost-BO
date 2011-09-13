@@ -694,22 +694,22 @@ Public Class FrmProductsVOD
         Dim elt() As String
         Dim tmp() As String
         Dim valueElt As String
-        elt = name.Split("_")
+        elt = name.Split("@")
 
-        If elt.Length <> 5 Then
+        If elt.Length <> 2 Then
             result = Nothing
             Return
         Else
-            tmp = elt(0).Split("@")
-            If tmp.Length <> 2 Then
+            tmp = elt(1).Split("_")
+            If tmp.Length <> 5 Then
                 result = Nothing
                 Return
             Else
-                result(DvdPostData.ClsVod.ListField.FILENAME) = tmp(0)
-                result(DvdPostData.ClsVod.ListField.IMDB_ID) = tmp(1)
+                result(DvdPostData.ClsVod.ListField.FILENAME) = elt(0)
+                result(DvdPostData.ClsVod.ListField.IMDB_ID) = tmp(0)
             End If
 
-            valueElt = CheckEltFileName(elt(1), "D")
+            valueElt = CheckEltFileName(tmp(1), "D")
             If valueElt Is Nothing Then
                 result = Nothing
                 Return
@@ -717,7 +717,7 @@ Public Class FrmProductsVOD
                 result(DvdPostData.ClsVod.ListField.VOD_SUPPORT) = valueElt
             End If
 
-            valueElt = CheckEltFileName(elt(2), "A")
+            valueElt = CheckEltFileName(tmp(2), "A")
             If valueElt Is Nothing Then
                 result = Nothing
                 Return
@@ -725,7 +725,7 @@ Public Class FrmProductsVOD
                 result(DvdPostData.ClsVod.ListField.LANGUAGE) = valueElt
             End If
 
-            valueElt = CheckEltFileName(elt(3), "S")
+            valueElt = CheckEltFileName(tmp(3), "S")
             If valueElt Is Nothing Then
                 result = Nothing
                 Return
