@@ -68,6 +68,7 @@ Public Class FrmProductsVOD
         End If
 
         cmbSource.EditValue = row("source")
+        cmbSupportVod.EditValue = row("vod_support_id")
 
 
     End Sub
@@ -85,6 +86,7 @@ Public Class FrmProductsVOD
         cmbStudioEdit.Enabled = enable
         cmbQuality.Enabled = enable
         cmbSource.Enabled = enable
+        cmbSupportVod.Enabled = enable
 
     End Sub
     Private Sub ChangeStep(ByVal stepCurrent As StepForm)
@@ -164,8 +166,8 @@ Public Class FrmProductsVOD
 
     Private Sub loadSupportVod()
         Dim sql As String
-        Dim key As String = "support_id"
-        Dim value As String = "support_name"
+        Dim key As String = "id"
+        Dim value As String = "code"
         sql = DvdPostData.ClsVod.GetSupportVod()
         _dtSupport = DvdPostData.clsConnection.FillDataSet(sql)
 
@@ -275,6 +277,7 @@ Public Class FrmProductsVOD
 
         sql = DvdPostData.ClsVod.GetAllLanguage()
         _dtLanguageSound = DvdPostData.clsConnection.FillDataSet(sql)
+        sql = DvdPostData.ClsVod.GetAllSubtitle()
         _dtLanguageSubtitle = DvdPostData.clsConnection.FillDataSet(sql)
 
         RepositorycmbLanguage.ValueMember = key
@@ -332,7 +335,7 @@ Public Class FrmProductsVOD
             dt = DvdPostData.clsConnection.FillDataSet(sql)
         End If
         If Not dt Is Nothing Then
-            GridProductsDVD.DataSource = dt
+            GridVod.DataSource = dt
             ChangeStep(StepForm.LOAD)
             _typesearch = typeSearch.DETAIL
         End If
@@ -342,7 +345,7 @@ Public Class FrmProductsVOD
     Private Function Save() As Boolean
         Dim sql As String
         Try
-         
+
 
             If txtId.EditValue Is Nothing Then
                 sql = DvdPostData.ClsVod.GetInsertVod(txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStart.EditValue, cmbDateExpired.EditValue, chkAvailable.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue)
@@ -381,7 +384,7 @@ Public Class FrmProductsVOD
         ChangeStep(StepForm.EDIT)
     End Sub
 
-    Private Sub GridProductsDVD_DoubleClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GridProductsDVD.DoubleClick
+    Private Sub GridVod_DoubleClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GridVod.DoubleClick
         loadInfoVod()
         ChangeStep(StepForm.CHOOSEVOD)
     End Sub
@@ -395,12 +398,13 @@ Public Class FrmProductsVOD
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
         Dim menuStrip As New DVDPostBuziness.contextMenu()
-        GridProductsDVD.ContextMenuStrip = menuStrip
+        GridVod.ContextMenuStrip = menuStrip
         loadLanguage()
         loadStudio()
         loadStatus()
         loadquality()
         loadSource()
+        loadSupportVod()
         txtSourcePath.EditValue = FolderChoose.SelectedPath
         LoadLanguageProcess()
         ' Add any initialization after the InitializeComponent() call.
@@ -424,7 +428,7 @@ Public Class FrmProductsVOD
         dt = DvdPostData.clsConnection.FillDataSet(sql)
 
         If Not dt Is Nothing Then
-            GridProductsDVD.DataSource = dt
+            GridVod.DataSource = dt
             ChangeStep(StepForm.LOAD)
             _typesearch = typeSearch.ALL
         End If
@@ -519,17 +523,7 @@ Public Class FrmProductsVOD
     End Sub
 
     Private Sub GridVodWatch_DoubleClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GridVodWatch.DoubleClick
-        Dim imdb_id As Integer
-
-        If gridViewVodWatch.FocusedRowHandle > -1 Then
-            imdb_id = gridViewVodWatch.GetDataRow(gridViewVodWatch.FocusedRowHandle)("imdb_id")
-            Dim url As String = Configuration.ConfigurationManager.AppSettings(KEYWEBSITE)
-            WebSiteDvdPost.Url = New Uri(url & imdb_id)
-            loadInfoVodWatch()
-        Else
-            MsgBox("after watch movie select product please !", MsgBoxStyle.Critical)
-        End If
-
+        GridVod_DoubleClick(sender, e)
     End Sub
     Private Sub loadInfoVodWatch()
 
@@ -547,7 +541,7 @@ Public Class FrmProductsVOD
 
         sql = DvdPostData.ClsVod.SearchViewVodProductRipped()
         dt = DvdPostData.clsConnection.FillDataSet(sql)
-        GridProductsDVD.DataSource = dt
+        GridVod.DataSource = dt
         ChangeStep(StepForm.LOAD)
 
     End Sub
@@ -642,12 +636,21 @@ Public Class FrmProductsVOD
     End Sub
 
     Private Sub btnChooseFileTxt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnChooseFileTxt.Click
-        If txtPathOfFile.EditValue <> "" Then FolderChoose.SelectedPath = txtPathOfFile.EditValue
-        FolderChoose.SelectedPath = ""
-        If FolderChoose.ShowDialog() = Windows.Forms.DialogResult.OK Then
-            txtPathOfFile.EditValue = FolderChoose.SelectedPath
+        If txtPathOfFile.EditValue <> "" Then OpenFile.FileName = txtPathOfFile.EditValue
+        OpenFile.FileName = ""
+        If OpenFile.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            txtPathOfFile.EditValue = OpenFile.FileName
         End If
     End Sub
+    Private Function ExistAlreadyMovie(ByVal result() As String) As Boolean
+        Dim sql As String
+        Dim dt As DataTable
+
+        sql = DvdPostData.ClsVod.getSelectVod(result(DvdPostData.ClsVod.ListField.IMDB_ID), result(DvdPostData.ClsVod.ListField.LANGUAGE), result(DvdPostData.ClsVod.ListField.SUBTITLE), result(DvdPostData.ClsVod.ListField.SOURCE), result(DvdPostData.ClsVod.ListField.VOD_SUPPORT))
+        dt = DvdPostData.clsConnection.FillDataSet(sql)
+
+        Return dt.Rows.Count > 0
+    End Function
     Private Function GetInfoVod(ByVal result() As String) As DataRow
 
         Dim sql As String
@@ -674,24 +677,13 @@ Public Class FrmProductsVOD
     End Function
     Private Function GetId(ByVal key As String, ByVal dt As DataTable) As Object
 
+        If key = "non" Then Return 0
         Dim dr() As DataRow = dt.Select("code ='" & key & "'")
 
         If dr.Length <> 1 Then
             Return Nothing
         Else
-            Return dr("id")
-        End If
-
-    End Function
-
-    Private Function GetIdLanguage(ByVal key As String, ByVal dt As DataTable) As Object
-
-        Dim dr() As DataRow = dt.Select("short_alpha ='" & key & "'")
-
-        If dr.Length <> 1 Then
-            Return Nothing
-        Else
-            Return dr("id")
+            Return dr(0)("id")
         End If
 
     End Function
@@ -753,29 +745,69 @@ Public Class FrmProductsVOD
     Private Sub btnGenerateVod_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGenerateVod.Click
         ' parse file path 
         Dim struct As List(Of String)
+        LstResult.Items.Clear()
+        lstError.Items.Clear()
+        If txtPathOfFile.EditValue = String.Empty Then
+            Return
+        End If
         struct = DVDPostTools.clsFile.openFile(txtPathOfFile.EditValue)
         Dim result() As String = Nothing
         Dim dr As DataRow
+        Dim sql As String
+
 
         For Each name As String In struct
             FillEmptyValue(result)
             CheckParseFileName(name, result)
             If result IsNot Nothing Then
 
-                result(DvdPostData.ClsVod.ListField.LANGUAGE) = GetIdLanguage(result(DvdPostData.ClsVod.ListField.LANGUAGE), _dtLanguageSound)
-                result(DvdPostData.ClsVod.ListField.SUBTITLE) = GetIdLanguage(result(DvdPostData.ClsVod.ListField.SUBTITLE), _dtLanguageSubtitle)
+
+                result(DvdPostData.ClsVod.ListField.LANGUAGE) = GetId(result(DvdPostData.ClsVod.ListField.LANGUAGE), _dtLanguageSound)
+                result(DvdPostData.ClsVod.ListField.SUBTITLE) = GetId(result(DvdPostData.ClsVod.ListField.SUBTITLE), _dtLanguageSubtitle)
                 result(DvdPostData.ClsVod.ListField.VOD_SUPPORT) = GetId(result(DvdPostData.ClsVod.ListField.VOD_SUPPORT), _dtSupport)
+
+                If result(DvdPostData.ClsVod.ListField.LANGUAGE) Is Nothing _
+                   Or result(DvdPostData.ClsVod.ListField.SUBTITLE) Is Nothing _
+                   Or result(DvdPostData.ClsVod.ListField.VOD_SUPPORT) Is Nothing Then
+                    lstError.Items.Add(name)
+                    Continue For
+
+                End If
 
                 dr = GetInfoVod(result)
 
                 If dr Is Nothing Then
-                    result(DvdPostData.ClsVod.ListField.EXPIRE_AT) = ""
-                    result(DvdPostData.ClsVod.ListField.STUDIO) = ""
+                    result(DvdPostData.ClsVod.ListField.EXPIRE_AT) = Date.MinValue
+                    result(DvdPostData.ClsVod.ListField.STUDIO) = "null"
                 Else
                     result(DvdPostData.ClsVod.ListField.EXPIRE_AT) = dr("expire_at")
                     result(DvdPostData.ClsVod.ListField.STUDIO) = dr("studio_id")
                 End If
 
+                result(DvdPostData.ClsVod.ListField.AVAILABLE_FROM) = Now()
+                result(DvdPostData.ClsVod.ListField.STATUS) = "uploaded"
+                result(DvdPostData.ClsVod.ListField.AVAILABLE) = "true"
+                result(DvdPostData.ClsVod.ListField.SOURCE) = "ALPHANETWORKS"
+
+
+                If Not ExistAlreadyMovie(result) Then
+                    sql = DvdPostData.ClsVod.GetInsertVod( _
+                            result(DvdPostData.ClsVod.ListField.IMDB_ID), _
+                            result(DvdPostData.ClsVod.ListField.FILENAME), _
+                            result(DvdPostData.ClsVod.ListField.AVAILABLE_FROM), _
+                            result(DvdPostData.ClsVod.ListField.EXPIRE_AT), _
+                            result(DvdPostData.ClsVod.ListField.AVAILABLE), _
+                            result(DvdPostData.ClsVod.ListField.LANGUAGE), _
+                            result(DvdPostData.ClsVod.ListField.SUBTITLE), _
+                            result(DvdPostData.ClsVod.ListField.STUDIO), _
+                            result(DvdPostData.ClsVod.ListField.STATUS), _
+                            Nothing, _
+                            result(DvdPostData.ClsVod.ListField.SOURCE), _
+                            result(DvdPostData.ClsVod.ListField.VOD_SUPPORT))
+
+                    DvdPostData.clsConnection.ExecuteNonQuery(sql)
+                    LstResult.Items.Add(name)
+                End If
 
             Else
                 lstError.Items.Add(name)
@@ -783,5 +815,18 @@ Public Class FrmProductsVOD
         Next
 
 
+    End Sub
+
+    Private Sub RepositoryBtnWatchMovie_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RepositoryBtnWatchMovie.Click
+        Dim imdb_id As Integer
+
+        If gridViewVodWatch.FocusedRowHandle > -1 Then
+            imdb_id = gridViewVodWatch.GetDataRow(gridViewVodWatch.FocusedRowHandle)("imdb_id")
+            Dim url As String = Configuration.ConfigurationManager.AppSettings(KEYWEBSITE)
+            WebSiteDvdPost.Url = New Uri(url & imdb_id)
+            loadInfoVodWatch()
+        Else
+            MsgBox("after watch movie select product please !", MsgBoxStyle.Critical)
+        End If
     End Sub
 End Class

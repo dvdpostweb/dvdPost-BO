@@ -724,6 +724,7 @@ Public Class frmDVD_Maint
         Me.colbox_id = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.colpibox_id = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.colinout = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+        Me.cmbInOut = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.colcover_boxid = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.colstock_type = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.colEntityID = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
@@ -804,7 +805,6 @@ Public Class frmDVD_Maint
         Me.LabelControl35 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl58 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl59 = New DevExpress.XtraEditors.LabelControl
-        Me.cmbInOut = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         CType(Me.PrintSystem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MainDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbViewListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -996,6 +996,7 @@ Public Class frmDVD_Maint
         CType(Me.GridProducts_DVD, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewProducts_DVD, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbProducts_DVD_Status, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbInOut, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl13, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl13.SuspendLayout()
         CType(Me.txtNbrOfDVDToAdd.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1036,7 +1037,6 @@ Public Class frmDVD_Maint
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmbInOut, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PopMenuNew
@@ -4218,6 +4218,13 @@ Public Class frmDVD_Maint
         Me.colinout.Name = "colinout"
         Me.colinout.Visible = True
         '
+        'cmbInOut
+        '
+        Me.cmbInOut.AutoHeight = False
+        Me.cmbInOut.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbInOut.Name = "cmbInOut"
+        Me.cmbInOut.NullText = ""
+        '
         'colcover_boxid
         '
         Me.colcover_boxid.Caption = "cover_boxid"
@@ -4956,13 +4963,6 @@ Public Class frmDVD_Maint
         Me.LabelControl59.TabIndex = 1
         Me.LabelControl59.Text = "Rating Moyen"
         '
-        'cmbInOut
-        '
-        Me.cmbInOut.AutoHeight = False
-        Me.cmbInOut.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cmbInOut.Name = "cmbInOut"
-        Me.cmbInOut.NullText = ""
-        '
         'frmDVD_Maint
         '
         Me.AcceptButton = Me.btnOK1
@@ -5173,6 +5173,7 @@ Public Class frmDVD_Maint
         CType(Me.GridProducts_DVD, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewProducts_DVD, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbProducts_DVD_Status, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbInOut, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl13, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl13.ResumeLayout(False)
         CType(Me.txtNbrOfDVDToAdd.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -5218,7 +5219,6 @@ Public Class frmDVD_Maint
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmbInOut, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

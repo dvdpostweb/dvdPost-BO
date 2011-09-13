@@ -30,10 +30,33 @@ Public Class ClsVod
 
         Return sql
     End Function
+    Public Shared Function getSelectVod(ByVal imdb_id As Long, ByVal lang As Integer, ByVal subtitle As Integer, ByVal source As String, ByVal support As Integer) As String
+        Dim sql As String
+        Dim strLanguageSubtitle As String
+        If subtitle = 0 Then
+            strLanguageSubtitle = "subtitle_id is null"
+        Else
+            strLanguageSubtitle = "subtitle_id = " & subtitle
+        End If
+
+        sql = " select * from streaming_products where imdb_id = " & imdb_id & _
+              " and language_id = " & lang & " and " & strLanguageSubtitle & _
+              " and vod_support_id = " & support & _
+              " and source = '" & source & "'"
+
+        Return sql
+    End Function
     Public Shared Function getSelectVod(ByVal imdb_id As Long, ByVal lang As Integer, ByVal subtitle As Integer) As String
         Dim sql As String
+        Dim strLanguageSubtitle As String
+        If subtitle = 0 Then
+            strLanguageSubtitle = "subtitle_id is null"
+        Else
+            strLanguageSubtitle = "subtitle_id = " & subtitle
+        End If
+
         sql = " select * from streaming_products where imdb_id = " & imdb_id & _
-              " and language_id = " & lang & " and subtitle_id = " & subtitle
+              " and language_id = " & lang & " and " & strLanguageSubtitle
 
         Return sql
     End Function
@@ -105,7 +128,7 @@ Public Class ClsVod
     End Function
     Public Shared Function GetSupportVod() As String
         Dim sql As String
-        sql = "select support_id,support_name from vod_support"
+        sql = "select id,name code from vod_support"
         Return sql
     End Function
     Public Shared Function GetStudio() As String
@@ -209,8 +232,8 @@ Public Class ClsVod
                                         ByVal expire_at As DateTime, _
                                         ByVal available As Boolean, _
                                         ByVal language_id As Integer, _
-                                        ByVal language_subtitle_id As Integer, _
-                                        ByVal studio_id As Integer, _
+                                        ByVal language_subtitle_id As String, _
+                                        ByVal studio_id As String, _
                                         ByVal status As String, _
                                         ByVal quality As String, _
                                         ByVal source As String, _
@@ -219,6 +242,7 @@ Public Class ClsVod
         Dim strLanguageSubtitle As String
         Dim strQuality As String
         Dim strlanguage As String
+        Dim strStudio As String
 
         If language_id <= 0 Then
             strlanguage = "null"
@@ -226,7 +250,7 @@ Public Class ClsVod
             strlanguage = language_id
         End If
 
-        If language_subtitle_id <= 0 Then
+        If language_subtitle_id Is Nothing OrElse language_subtitle_id <= 0 Then
             strLanguageSubtitle = "null"
         Else
             strLanguageSubtitle = language_subtitle_id
@@ -238,8 +262,14 @@ Public Class ClsVod
             strQuality = "'" & quality & "'"
         End If
 
+        If studio_id = "" Then
+            strStudio = "null"
+        Else
+            strStudio = "'" & quality & "'"
+        End If
+
         sql = "insert into streaming_products values (null," & imdb_id & ",'" & filename & "','" & DVDPostTools.ClsDate.formatDateDB(available_from) & _
-              "','" & DVDPostTools.ClsDate.formatDateDB(expire_at) & "'," & available & "," & strlanguage & "," & strLanguageSubtitle & ",now(),now()," & studio_id & ",'" & status & "'," & strQuality & ",'" & source & "'" & support & ")"
+              "','" & DVDPostTools.ClsDate.formatDateDB(expire_at) & "'," & available & "," & strlanguage & "," & strLanguageSubtitle & ",now(),now()," & strStudio & ",'" & status & "'," & strQuality & ",'" & source & "'," & support & ")"
         Return sql
     End Function
 
