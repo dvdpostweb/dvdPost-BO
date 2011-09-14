@@ -22,7 +22,84 @@ Partial Class FrmProductsVOD
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container
         Dim colDateStartUploaded As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmProductsVOD))
+        Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
+        Me.barDockControlTop = New DevExpress.XtraBars.BarDockControl
+        Me.barDockControlBottom = New DevExpress.XtraBars.BarDockControl
+        Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl
+        Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl
+        Me.Main_Bar = New DevExpress.XtraBars.Bar
+        Me.btnNew = New DevExpress.XtraBars.BarButtonItem
+        Me.btnEdit = New DevExpress.XtraBars.BarButtonItem
+        Me.btnDelete = New DevExpress.XtraBars.BarButtonItem
+        Me.btnSave = New DevExpress.XtraBars.BarButtonItem
+        Me.btnUndo = New DevExpress.XtraBars.BarButtonItem
+        Me.Misc_Bar = New DevExpress.XtraBars.Bar
+        Me.MainBtns_btnExcel = New DevExpress.XtraBars.BarButtonItem
+        Me.MainBtns_btnBigger = New DevExpress.XtraBars.BarButtonItem
+        Me.MainBtns_btnSmaller = New DevExpress.XtraBars.BarButtonItem
+        Me.MainBtns_btnBestFit = New DevExpress.XtraBars.BarButtonItem
+        Me.btnOK = New DevExpress.XtraBars.BarButtonItem
+        Me.btnUser1 = New DevExpress.XtraBars.BarButtonItem
+        Me.btnUser2 = New DevExpress.XtraBars.BarButtonItem
+        Me.btnUser3 = New DevExpress.XtraBars.BarButtonItem
+        Me.btnUser4 = New DevExpress.XtraBars.BarButtonItem
+        Me.btnUser5 = New DevExpress.XtraBars.BarButtonItem
+        Me.btnExportXML = New DevExpress.XtraBars.BarButtonItem
+        Me.btnImportXML = New DevExpress.XtraBars.BarButtonItem
+        Me.View_Bar = New DevExpress.XtraBars.Bar
+        Me.btnView = New DevExpress.XtraBars.BarButtonItem
+        Me.cmbViewList = New DevExpress.XtraBars.BarEditItem
+        Me.btnEditView = New DevExpress.XtraBars.BarButtonItem
+        Me.btnNewView = New DevExpress.XtraBars.BarButtonItem
+        Me.btnDeleteView = New DevExpress.XtraBars.BarButtonItem
+        Me.btnSaveView = New DevExpress.XtraBars.BarButtonItem
+        Me.btnMakeViewCommon = New DevExpress.XtraBars.BarButtonItem
+        Me.btnSendViewUser = New DevExpress.XtraBars.BarButtonItem
+        Me.btnCopyView = New DevExpress.XtraBars.BarButtonItem
+        Me.QuickSearch_Bar = New DevExpress.XtraBars.Bar
+        Me.txtQuickSearch = New DevExpress.XtraBars.BarEditItem
+        Me.btnQuickSearch = New DevExpress.XtraBars.BarButtonItem
+        Me.Report_Bar = New DevExpress.XtraBars.Bar
+        Me.btnPrint = New DevExpress.XtraBars.BarButtonItem
+        Me.cmbReportList = New DevExpress.XtraBars.BarEditItem
+        Me.btnEditReportInfo = New DevExpress.XtraBars.BarButtonItem
+        Me.btnNewReport = New DevExpress.XtraBars.BarButtonItem
+        Me.btnDeleteReport = New DevExpress.XtraBars.BarButtonItem
+        Me.btnDesignReport = New DevExpress.XtraBars.BarButtonItem
+        Me.btnMakeReportCommon = New DevExpress.XtraBars.BarButtonItem
+        Me.btnSendReportUser = New DevExpress.XtraBars.BarButtonItem
+        Me.btnCopyReport = New DevExpress.XtraBars.BarButtonItem
+        Me.Filter_Bar = New DevExpress.XtraBars.Bar
+        Me.btnFilter = New DevExpress.XtraBars.BarButtonItem
+        Me.cmbFilterList = New DevExpress.XtraBars.BarEditItem
+        Me.btnEditFilter = New DevExpress.XtraBars.BarButtonItem
+        Me.btnNewFilter = New DevExpress.XtraBars.BarButtonItem
+        Me.btnDeleteFilter = New DevExpress.XtraBars.BarButtonItem
+        Me.btnMakeFilterCommon = New DevExpress.XtraBars.BarButtonItem
+        Me.btnSendFilterUSer = New DevExpress.XtraBars.BarButtonItem
+        Me.btnCopyFilter = New DevExpress.XtraBars.BarButtonItem
+        Me.DefaultSet_Bar = New DevExpress.XtraBars.Bar
+        Me.btnDefault = New DevExpress.XtraBars.BarButtonItem
+        Me.cmbDefaultList = New DevExpress.XtraBars.BarEditItem
+        Me.btnEditDefault = New DevExpress.XtraBars.BarButtonItem
+        Me.btnNewDefault = New DevExpress.XtraBars.BarButtonItem
+        Me.btnDeleteDefault = New DevExpress.XtraBars.BarButtonItem
+        Me.btnSaveDefault = New DevExpress.XtraBars.BarButtonItem
+        Me.btnMakeDefaultCommon = New DevExpress.XtraBars.BarButtonItem
+        Me.btnSendDefaultUser = New DevExpress.XtraBars.BarButtonItem
+        Me.btnCopyDefault = New DevExpress.XtraBars.BarButtonItem
+        Me.Misc_Bar2 = New DevExpress.XtraBars.Bar
+        Me.btnTranslation = New DevExpress.XtraBars.BarButtonItem
+        Me.btnComments = New DevExpress.XtraBars.BarButtonItem
+        Me.btnAttachements = New DevExpress.XtraBars.BarButtonItem
+        Me.Nav_Bar = New DevExpress.XtraBars.Bar
+        Me.btnFirst = New DevExpress.XtraBars.BarButtonItem
+        Me.btnPrevious = New DevExpress.XtraBars.BarButtonItem
+        Me.btnNext = New DevExpress.XtraBars.BarButtonItem
+        Me.btnLast = New DevExpress.XtraBars.BarButtonItem
         Me.XTabControlVod = New DevExpress.XtraTab.XtraTabControl
         Me.XTabSearch = New DevExpress.XtraTab.XtraTabPage
         Me.btnRipped = New DevExpress.XtraEditors.SimpleButton
@@ -42,6 +119,7 @@ Partial Class FrmProductsVOD
         Me.colSupportVod = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.RepositorycmbSupportVod = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.colQuality = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+        Me.colSource = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.colStudio = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.cmbStudio = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.colStatus = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
@@ -55,6 +133,8 @@ Partial Class FrmProductsVOD
         Me.colAvailable = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.chkcolAvailable = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
         Me.XTabView = New DevExpress.XtraTab.XtraTabPage
+        Me.lblCredit = New DevExpress.XtraEditors.LabelControl
+        Me.spedCredit = New DevExpress.XtraEditors.SpinEdit
         Me.cmbSupportVod = New DevExpress.XtraEditors.LookUpEdit
         Me.lblSupport = New DevExpress.XtraEditors.LabelControl
         Me.cmbSource = New DevExpress.XtraEditors.LookUpEdit
@@ -145,12 +225,14 @@ Partial Class FrmProductsVOD
         Me.TextEdit4 = New DevExpress.XtraEditors.TextEdit
         Me.FolderChoose = New System.Windows.Forms.FolderBrowserDialog
         Me.OpenFile = New System.Windows.Forms.OpenFileDialog
+        Me.colCredit = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         colDateStartUploaded = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         CType(Me.cmbViewListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtQuickSearchRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbReportListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbFilterListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbDefaultListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XTabControlVod, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XTabControlVod.SuspendLayout()
         Me.XTabSearch.SuspendLayout()
@@ -165,6 +247,7 @@ Partial Class FrmProductsVOD
         CType(Me.cmbLanguages, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkcolAvailable, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XTabView.SuspendLayout()
+        CType(Me.spedCredit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbSupportVod.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbSource.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbQuality.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -214,14 +297,616 @@ Partial Class FrmProductsVOD
         colDateStartUploaded.Visible = True
         colDateStartUploaded.Width = 68
         '
+        'BarManager1
+        '
+        Me.BarManager1.Categories.AddRange(New DevExpress.XtraBars.BarManagerCategory() {New DevExpress.XtraBars.BarManagerCategory("Main", New System.Guid("434484d9-7ac5-47e5-9412-313a111b7240")), New DevExpress.XtraBars.BarManagerCategory("Miscelaneous", New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")), New DevExpress.XtraBars.BarManagerCategory("Views", New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")), New DevExpress.XtraBars.BarManagerCategory("Filters", New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")), New DevExpress.XtraBars.BarManagerCategory("Reporting", New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")), New DevExpress.XtraBars.BarManagerCategory("Default Values", New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")), New DevExpress.XtraBars.BarManagerCategory("Quick Search", New System.Guid("2d735e09-7c7c-4ed4-b3ca-996e094a2026")), New DevExpress.XtraBars.BarManagerCategory("Misc_Maintenance", New System.Guid("d45f4b42-7c78-4255-9839-0f9b81be7603")), New DevExpress.XtraBars.BarManagerCategory("Navigation", New System.Guid("d55c49d9-25b9-4030-98b4-b0b1e7d65b90"))})
+        Me.BarManager1.Form = Me
+        Me.BarManager1.MaxItemId = 73
+        Me.BarManager1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbViewListRepos, Me.txtQuickSearchRepos, Me.cmbReportListRepos, Me.cmbFilterListRepos, Me.cmbDefaultListRepos})
+        '
+        'Main_Bar
+        '
+        Me.Main_Bar.BarName = "Main_Bar"
+        Me.Main_Bar.DockCol = 0
+        Me.Main_Bar.DockRow = 0
+        Me.Main_Bar.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
+        Me.Main_Bar.FloatLocation = New System.Drawing.Point(246, 185)
+        Me.Main_Bar.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.btnNew), New DevExpress.XtraBars.LinkPersistInfo(Me.btnEdit), New DevExpress.XtraBars.LinkPersistInfo(Me.btnDelete), New DevExpress.XtraBars.LinkPersistInfo(Me.btnSave), New DevExpress.XtraBars.LinkPersistInfo(Me.btnUndo)})
+        Me.Main_Bar.Offset = 7
+        Me.Main_Bar.Text = "Main Bar"
+        Me.Main_Bar.Visible = False
+        '
+        'btnNew
+        '
+        Me.btnNew.Caption = "New"
+        Me.btnNew.CategoryGuid = New System.Guid("434484d9-7ac5-47e5-9412-313a111b7240")
+        Me.btnNew.Glyph = CType(resources.GetObject("btnNew.Glyph"), System.Drawing.Image)
+        Me.btnNew.Id = 0
+        Me.btnNew.Name = "btnNew"
+        '
+        'btnEdit
+        '
+        Me.btnEdit.Caption = "Edit"
+        Me.btnEdit.CategoryGuid = New System.Guid("434484d9-7ac5-47e5-9412-313a111b7240")
+        Me.btnEdit.Glyph = CType(resources.GetObject("btnEdit.Glyph"), System.Drawing.Image)
+        Me.btnEdit.Id = 2
+        Me.btnEdit.Name = "btnEdit"
+        '
+        'btnDelete
+        '
+        Me.btnDelete.Caption = "Delete"
+        Me.btnDelete.CategoryGuid = New System.Guid("434484d9-7ac5-47e5-9412-313a111b7240")
+        Me.btnDelete.Glyph = CType(resources.GetObject("btnDelete.Glyph"), System.Drawing.Image)
+        Me.btnDelete.Id = 1
+        Me.btnDelete.Name = "btnDelete"
+        '
+        'btnSave
+        '
+        Me.btnSave.Caption = "Save"
+        Me.btnSave.CategoryGuid = New System.Guid("434484d9-7ac5-47e5-9412-313a111b7240")
+        Me.btnSave.Glyph = CType(resources.GetObject("btnSave.Glyph"), System.Drawing.Image)
+        Me.btnSave.Id = 3
+        Me.btnSave.Name = "btnSave"
+        '
+        'btnUndo
+        '
+        Me.btnUndo.Caption = "Undo"
+        Me.btnUndo.Glyph = CType(resources.GetObject("btnUndo.Glyph"), System.Drawing.Image)
+        Me.btnUndo.Id = 70
+        Me.btnUndo.Name = "btnUndo"
+        Me.btnUndo.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        '
+        'Misc_Bar
+        '
+        Me.Misc_Bar.BarName = "Misc_Bar"
+        Me.Misc_Bar.DockCol = 1
+        Me.Misc_Bar.DockRow = 0
+        Me.Misc_Bar.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
+        Me.Misc_Bar.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.MainBtns_btnExcel), New DevExpress.XtraBars.LinkPersistInfo(Me.MainBtns_btnBigger), New DevExpress.XtraBars.LinkPersistInfo(Me.MainBtns_btnSmaller), New DevExpress.XtraBars.LinkPersistInfo(Me.MainBtns_btnBestFit), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.btnOK, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(Me.btnUser1), New DevExpress.XtraBars.LinkPersistInfo(Me.btnUser2), New DevExpress.XtraBars.LinkPersistInfo(Me.btnUser3), New DevExpress.XtraBars.LinkPersistInfo(Me.btnUser4), New DevExpress.XtraBars.LinkPersistInfo(Me.btnUser5), New DevExpress.XtraBars.LinkPersistInfo(Me.btnExportXML), New DevExpress.XtraBars.LinkPersistInfo(Me.btnImportXML)})
+        Me.Misc_Bar.Offset = 182
+        Me.Misc_Bar.Text = "Misc. Bar"
+        Me.Misc_Bar.Visible = False
+        '
+        'MainBtns_btnExcel
+        '
+        Me.MainBtns_btnExcel.Caption = "Excell"
+        Me.MainBtns_btnExcel.CategoryGuid = New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")
+        Me.MainBtns_btnExcel.Glyph = CType(resources.GetObject("MainBtns_btnExcel.Glyph"), System.Drawing.Image)
+        Me.MainBtns_btnExcel.Id = 5
+        Me.MainBtns_btnExcel.Name = "MainBtns_btnExcel"
+        '
+        'MainBtns_btnBigger
+        '
+        Me.MainBtns_btnBigger.Caption = "Bigger"
+        Me.MainBtns_btnBigger.CategoryGuid = New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")
+        Me.MainBtns_btnBigger.Glyph = CType(resources.GetObject("MainBtns_btnBigger.Glyph"), System.Drawing.Image)
+        Me.MainBtns_btnBigger.Id = 6
+        Me.MainBtns_btnBigger.Name = "MainBtns_btnBigger"
+        '
+        'MainBtns_btnSmaller
+        '
+        Me.MainBtns_btnSmaller.Caption = "Smaller"
+        Me.MainBtns_btnSmaller.CategoryGuid = New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")
+        Me.MainBtns_btnSmaller.Glyph = CType(resources.GetObject("MainBtns_btnSmaller.Glyph"), System.Drawing.Image)
+        Me.MainBtns_btnSmaller.Id = 7
+        Me.MainBtns_btnSmaller.Name = "MainBtns_btnSmaller"
+        '
+        'MainBtns_btnBestFit
+        '
+        Me.MainBtns_btnBestFit.Caption = "BestFit"
+        Me.MainBtns_btnBestFit.CategoryGuid = New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")
+        Me.MainBtns_btnBestFit.Glyph = CType(resources.GetObject("MainBtns_btnBestFit.Glyph"), System.Drawing.Image)
+        Me.MainBtns_btnBestFit.Id = 8
+        Me.MainBtns_btnBestFit.Name = "MainBtns_btnBestFit"
+        '
+        'btnOK
+        '
+        Me.btnOK.Caption = "OK"
+        Me.btnOK.CategoryGuid = New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")
+        Me.btnOK.Glyph = CType(resources.GetObject("btnOK.Glyph"), System.Drawing.Image)
+        Me.btnOK.Id = 46
+        Me.btnOK.Name = "btnOK"
+        Me.btnOK.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        '
+        'btnUser1
+        '
+        Me.btnUser1.Border = DevExpress.XtraEditors.Controls.BorderStyles.Flat
+        Me.btnUser1.Caption = "1"
+        Me.btnUser1.CategoryGuid = New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")
+        Me.btnUser1.Id = 58
+        Me.btnUser1.Name = "btnUser1"
+        Me.btnUser1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        '
+        'btnUser2
+        '
+        Me.btnUser2.Border = DevExpress.XtraEditors.Controls.BorderStyles.Flat
+        Me.btnUser2.Caption = "2"
+        Me.btnUser2.CategoryGuid = New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")
+        Me.btnUser2.Id = 59
+        Me.btnUser2.Name = "btnUser2"
+        Me.btnUser2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        '
+        'btnUser3
+        '
+        Me.btnUser3.Border = DevExpress.XtraEditors.Controls.BorderStyles.Flat
+        Me.btnUser3.Caption = "3"
+        Me.btnUser3.CategoryGuid = New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")
+        Me.btnUser3.Id = 60
+        Me.btnUser3.Name = "btnUser3"
+        Me.btnUser3.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        '
+        'btnUser4
+        '
+        Me.btnUser4.Border = DevExpress.XtraEditors.Controls.BorderStyles.Flat
+        Me.btnUser4.Caption = "4"
+        Me.btnUser4.CategoryGuid = New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")
+        Me.btnUser4.Id = 61
+        Me.btnUser4.Name = "btnUser4"
+        Me.btnUser4.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        '
+        'btnUser5
+        '
+        Me.btnUser5.Border = DevExpress.XtraEditors.Controls.BorderStyles.Flat
+        Me.btnUser5.Caption = "5"
+        Me.btnUser5.CategoryGuid = New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")
+        Me.btnUser5.Id = 62
+        Me.btnUser5.Name = "btnUser5"
+        Me.btnUser5.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
+        '
+        'btnExportXML
+        '
+        Me.btnExportXML.Border = DevExpress.XtraEditors.Controls.BorderStyles.Simple
+        Me.btnExportXML.Caption = "Export"
+        Me.btnExportXML.Id = 71
+        Me.btnExportXML.Name = "btnExportXML"
+        '
+        'btnImportXML
+        '
+        Me.btnImportXML.Border = DevExpress.XtraEditors.Controls.BorderStyles.Simple
+        Me.btnImportXML.Caption = "Import"
+        Me.btnImportXML.Id = 72
+        Me.btnImportXML.Name = "btnImportXML"
+        '
+        'View_Bar
+        '
+        Me.View_Bar.BarName = "View_Bar"
+        Me.View_Bar.DockCol = 4
+        Me.View_Bar.DockRow = 0
+        Me.View_Bar.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
+        Me.View_Bar.FloatLocation = New System.Drawing.Point(517, 188)
+        Me.View_Bar.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.btnView), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, Me.cmbViewList, "", False, True, True, 133), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.btnViewDetail, DevExpress.XtraBars.BarItemPaintStyle.Standard)})
+        Me.View_Bar.Offset = 395
+        Me.View_Bar.Text = "View Bar"
+        Me.View_Bar.Visible = False
+        '
+        'btnView
+        '
+        Me.btnView.Caption = "View"
+        Me.btnView.CategoryGuid = New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")
+        Me.btnView.Glyph = CType(resources.GetObject("btnView.Glyph"), System.Drawing.Image)
+        Me.btnView.Id = 19
+        Me.btnView.Name = "btnView"
+        '
+        'cmbViewList
+        '
+        Me.cmbViewList.Caption = "ViewList"
+        Me.cmbViewList.CategoryGuid = New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")
+        Me.cmbViewList.Edit = Me.cmbViewListRepos
+        Me.cmbViewList.Id = 21
+        Me.cmbViewList.Name = "cmbViewList"
+        '
+        'btnEditView
+        '
+        Me.btnEditView.Caption = "Edit"
+        Me.btnEditView.CategoryGuid = New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")
+        Me.btnEditView.Glyph = CType(resources.GetObject("btnEditView.Glyph"), System.Drawing.Image)
+        Me.btnEditView.Id = 13
+        Me.btnEditView.Name = "btnEditView"
+        '
+        'btnNewView
+        '
+        Me.btnNewView.Caption = "New"
+        Me.btnNewView.CategoryGuid = New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")
+        Me.btnNewView.Glyph = CType(resources.GetObject("btnNewView.Glyph"), System.Drawing.Image)
+        Me.btnNewView.Id = 12
+        Me.btnNewView.Name = "btnNewView"
+        '
+        'btnDeleteView
+        '
+        Me.btnDeleteView.Caption = "Delete"
+        Me.btnDeleteView.CategoryGuid = New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")
+        Me.btnDeleteView.Glyph = CType(resources.GetObject("btnDeleteView.Glyph"), System.Drawing.Image)
+        Me.btnDeleteView.Id = 14
+        Me.btnDeleteView.Name = "btnDeleteView"
+        '
+        'btnSaveView
+        '
+        Me.btnSaveView.Caption = "Save"
+        Me.btnSaveView.CategoryGuid = New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")
+        Me.btnSaveView.Glyph = CType(resources.GetObject("btnSaveView.Glyph"), System.Drawing.Image)
+        Me.btnSaveView.Id = 17
+        Me.btnSaveView.Name = "btnSaveView"
+        '
+        'btnMakeViewCommon
+        '
+        Me.btnMakeViewCommon.Caption = "Make Common"
+        Me.btnMakeViewCommon.CategoryGuid = New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")
+        Me.btnMakeViewCommon.Glyph = CType(resources.GetObject("btnMakeViewCommon.Glyph"), System.Drawing.Image)
+        Me.btnMakeViewCommon.Id = 15
+        Me.btnMakeViewCommon.Name = "btnMakeViewCommon"
+        '
+        'btnSendViewUser
+        '
+        Me.btnSendViewUser.Caption = "Send to USer"
+        Me.btnSendViewUser.CategoryGuid = New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")
+        Me.btnSendViewUser.Glyph = CType(resources.GetObject("btnSendViewUser.Glyph"), System.Drawing.Image)
+        Me.btnSendViewUser.Id = 16
+        Me.btnSendViewUser.Name = "btnSendViewUser"
+        '
+        'btnCopyView
+        '
+        Me.btnCopyView.Caption = "Copy"
+        Me.btnCopyView.CategoryGuid = New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")
+        Me.btnCopyView.Glyph = CType(resources.GetObject("btnCopyView.Glyph"), System.Drawing.Image)
+        Me.btnCopyView.Id = 18
+        Me.btnCopyView.Name = "btnCopyView"
+        '
+        'QuickSearch_Bar
+        '
+        Me.QuickSearch_Bar.BarName = "QuickSearch_Bar"
+        Me.QuickSearch_Bar.DockCol = 2
+        Me.QuickSearch_Bar.DockRow = 0
+        Me.QuickSearch_Bar.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
+        Me.QuickSearch_Bar.FloatLocation = New System.Drawing.Point(251, 153)
+        Me.QuickSearch_Bar.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, Me.txtQuickSearch, "", False, True, True, 122), New DevExpress.XtraBars.LinkPersistInfo(Me.btnQuickSearch)})
+        Me.QuickSearch_Bar.Offset = 498
+        Me.QuickSearch_Bar.Text = "Quick Search Bar"
+        Me.QuickSearch_Bar.Visible = False
+        '
+        'txtQuickSearch
+        '
+        Me.txtQuickSearch.CategoryGuid = New System.Guid("2d735e09-7c7c-4ed4-b3ca-996e094a2026")
+        Me.txtQuickSearch.Edit = Me.txtQuickSearchRepos
+        Me.txtQuickSearch.Id = 23
+        Me.txtQuickSearch.Name = "txtQuickSearch"
+        '
+        'btnQuickSearch
+        '
+        Me.btnQuickSearch.Caption = "Search"
+        Me.btnQuickSearch.CategoryGuid = New System.Guid("2d735e09-7c7c-4ed4-b3ca-996e094a2026")
+        Me.btnQuickSearch.Glyph = CType(resources.GetObject("btnQuickSearch.Glyph"), System.Drawing.Image)
+        Me.btnQuickSearch.Id = 22
+        Me.btnQuickSearch.Name = "btnQuickSearch"
+        '
+        'Report_Bar
+        '
+        Me.Report_Bar.BarName = "Report_Bar"
+        Me.Report_Bar.DockCol = 7
+        Me.Report_Bar.DockRow = 0
+        Me.Report_Bar.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
+        Me.Report_Bar.FloatLocation = New System.Drawing.Point(31, 162)
+        Me.Report_Bar.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.btnPrint), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, Me.cmbReportList, "", False, True, True, 131), New DevExpress.XtraBars.LinkPersistInfo(Me.btnReportDetail)})
+        Me.Report_Bar.Offset = 1065
+        Me.Report_Bar.Text = "Report Bar"
+        Me.Report_Bar.Visible = False
+        '
+        'btnPrint
+        '
+        Me.btnPrint.Caption = "Print"
+        Me.btnPrint.CategoryGuid = New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")
+        Me.btnPrint.Glyph = CType(resources.GetObject("btnPrint.Glyph"), System.Drawing.Image)
+        Me.btnPrint.Id = 24
+        Me.btnPrint.Name = "btnPrint"
+        '
+        'cmbReportList
+        '
+        Me.cmbReportList.Caption = "Report List"
+        Me.cmbReportList.CategoryGuid = New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")
+        Me.cmbReportList.Edit = Me.cmbReportListRepos
+        Me.cmbReportList.Id = 26
+        Me.cmbReportList.Name = "cmbReportList"
+        '
+        'btnEditReportInfo
+        '
+        Me.btnEditReportInfo.Caption = "Edit"
+        Me.btnEditReportInfo.CategoryGuid = New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")
+        Me.btnEditReportInfo.Glyph = CType(resources.GetObject("btnEditReportInfo.Glyph"), System.Drawing.Image)
+        Me.btnEditReportInfo.Id = 28
+        Me.btnEditReportInfo.Name = "btnEditReportInfo"
+        '
+        'btnNewReport
+        '
+        Me.btnNewReport.Caption = "New"
+        Me.btnNewReport.CategoryGuid = New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")
+        Me.btnNewReport.Glyph = CType(resources.GetObject("btnNewReport.Glyph"), System.Drawing.Image)
+        Me.btnNewReport.Id = 29
+        Me.btnNewReport.Name = "btnNewReport"
+        '
+        'btnDeleteReport
+        '
+        Me.btnDeleteReport.Caption = "Delete"
+        Me.btnDeleteReport.CategoryGuid = New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")
+        Me.btnDeleteReport.Glyph = CType(resources.GetObject("btnDeleteReport.Glyph"), System.Drawing.Image)
+        Me.btnDeleteReport.Id = 30
+        Me.btnDeleteReport.Name = "btnDeleteReport"
+        '
+        'btnDesignReport
+        '
+        Me.btnDesignReport.Caption = "Design Report"
+        Me.btnDesignReport.CategoryGuid = New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")
+        Me.btnDesignReport.Glyph = CType(resources.GetObject("btnDesignReport.Glyph"), System.Drawing.Image)
+        Me.btnDesignReport.Id = 31
+        Me.btnDesignReport.Name = "btnDesignReport"
+        '
+        'btnMakeReportCommon
+        '
+        Me.btnMakeReportCommon.Caption = "Make Common"
+        Me.btnMakeReportCommon.CategoryGuid = New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")
+        Me.btnMakeReportCommon.Glyph = CType(resources.GetObject("btnMakeReportCommon.Glyph"), System.Drawing.Image)
+        Me.btnMakeReportCommon.Id = 32
+        Me.btnMakeReportCommon.Name = "btnMakeReportCommon"
+        '
+        'btnSendReportUser
+        '
+        Me.btnSendReportUser.Caption = "Send to User"
+        Me.btnSendReportUser.CategoryGuid = New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")
+        Me.btnSendReportUser.Glyph = CType(resources.GetObject("btnSendReportUser.Glyph"), System.Drawing.Image)
+        Me.btnSendReportUser.Id = 33
+        Me.btnSendReportUser.Name = "btnSendReportUser"
+        '
+        'btnCopyReport
+        '
+        Me.btnCopyReport.Caption = "Copy"
+        Me.btnCopyReport.CategoryGuid = New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")
+        Me.btnCopyReport.Glyph = CType(resources.GetObject("btnCopyReport.Glyph"), System.Drawing.Image)
+        Me.btnCopyReport.Id = 34
+        Me.btnCopyReport.Name = "btnCopyReport"
+        '
+        'Filter_Bar
+        '
+        Me.Filter_Bar.BarName = "Filter_Bar"
+        Me.Filter_Bar.DockCol = 5
+        Me.Filter_Bar.DockRow = 0
+        Me.Filter_Bar.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
+        Me.Filter_Bar.FloatLocation = New System.Drawing.Point(337, 218)
+        Me.Filter_Bar.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.btnFilter), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, Me.cmbFilterList, "", False, True, True, 132), New DevExpress.XtraBars.LinkPersistInfo(Me.btnFilterDetail)})
+        Me.Filter_Bar.Offset = 1053
+        Me.Filter_Bar.Text = "Filter Bar"
+        Me.Filter_Bar.Visible = False
+        '
+        'btnFilter
+        '
+        Me.btnFilter.Caption = "btnFilter"
+        Me.btnFilter.CategoryGuid = New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")
+        Me.btnFilter.Glyph = CType(resources.GetObject("btnFilter.Glyph"), System.Drawing.Image)
+        Me.btnFilter.Id = 35
+        Me.btnFilter.Name = "btnFilter"
+        '
+        'cmbFilterList
+        '
+        Me.cmbFilterList.Caption = "cmbFilterList"
+        Me.cmbFilterList.CategoryGuid = New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")
+        Me.cmbFilterList.Edit = Me.cmbFilterListRepos
+        Me.cmbFilterList.Id = 38
+        Me.cmbFilterList.Name = "cmbFilterList"
+        '
+        'btnEditFilter
+        '
+        Me.btnEditFilter.Caption = "Edit"
+        Me.btnEditFilter.CategoryGuid = New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")
+        Me.btnEditFilter.Glyph = CType(resources.GetObject("btnEditFilter.Glyph"), System.Drawing.Image)
+        Me.btnEditFilter.Id = 39
+        Me.btnEditFilter.Name = "btnEditFilter"
+        '
+        'btnNewFilter
+        '
+        Me.btnNewFilter.Caption = "New"
+        Me.btnNewFilter.CategoryGuid = New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")
+        Me.btnNewFilter.Glyph = CType(resources.GetObject("btnNewFilter.Glyph"), System.Drawing.Image)
+        Me.btnNewFilter.Id = 40
+        Me.btnNewFilter.Name = "btnNewFilter"
+        '
+        'btnDeleteFilter
+        '
+        Me.btnDeleteFilter.Caption = "Delete"
+        Me.btnDeleteFilter.CategoryGuid = New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")
+        Me.btnDeleteFilter.Glyph = CType(resources.GetObject("btnDeleteFilter.Glyph"), System.Drawing.Image)
+        Me.btnDeleteFilter.Id = 41
+        Me.btnDeleteFilter.Name = "btnDeleteFilter"
+        '
+        'btnMakeFilterCommon
+        '
+        Me.btnMakeFilterCommon.Caption = "Make Common"
+        Me.btnMakeFilterCommon.CategoryGuid = New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")
+        Me.btnMakeFilterCommon.Glyph = CType(resources.GetObject("btnMakeFilterCommon.Glyph"), System.Drawing.Image)
+        Me.btnMakeFilterCommon.Id = 43
+        Me.btnMakeFilterCommon.Name = "btnMakeFilterCommon"
+        '
+        'btnSendFilterUSer
+        '
+        Me.btnSendFilterUSer.Caption = "Send to USer"
+        Me.btnSendFilterUSer.CategoryGuid = New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")
+        Me.btnSendFilterUSer.Glyph = CType(resources.GetObject("btnSendFilterUSer.Glyph"), System.Drawing.Image)
+        Me.btnSendFilterUSer.Id = 44
+        Me.btnSendFilterUSer.Name = "btnSendFilterUSer"
+        '
+        'btnCopyFilter
+        '
+        Me.btnCopyFilter.Caption = "Copy"
+        Me.btnCopyFilter.CategoryGuid = New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")
+        Me.btnCopyFilter.Glyph = CType(resources.GetObject("btnCopyFilter.Glyph"), System.Drawing.Image)
+        Me.btnCopyFilter.Id = 45
+        Me.btnCopyFilter.Name = "btnCopyFilter"
+        '
+        'DefaultSet_Bar
+        '
+        Me.DefaultSet_Bar.BarName = "DefaultSet_Bar"
+        Me.DefaultSet_Bar.DockCol = 6
+        Me.DefaultSet_Bar.DockRow = 0
+        Me.DefaultSet_Bar.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
+        Me.DefaultSet_Bar.FloatLocation = New System.Drawing.Point(298, 224)
+        Me.DefaultSet_Bar.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.btnDefault), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, Me.cmbDefaultList, "", False, True, True, 132), New DevExpress.XtraBars.LinkPersistInfo(Me.btnDefaultDetail)})
+        Me.DefaultSet_Bar.Offset = 1060
+        Me.DefaultSet_Bar.Text = "Default Set Bar"
+        Me.DefaultSet_Bar.Visible = False
+        '
+        'btnDefault
+        '
+        Me.btnDefault.Caption = "Default"
+        Me.btnDefault.CategoryGuid = New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")
+        Me.btnDefault.Glyph = CType(resources.GetObject("btnDefault.Glyph"), System.Drawing.Image)
+        Me.btnDefault.Id = 47
+        Me.btnDefault.Name = "btnDefault"
+        '
+        'cmbDefaultList
+        '
+        Me.cmbDefaultList.Caption = "cmbDefaultList"
+        Me.cmbDefaultList.CategoryGuid = New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")
+        Me.cmbDefaultList.Edit = Me.cmbDefaultListRepos
+        Me.cmbDefaultList.Id = 49
+        Me.cmbDefaultList.Name = "cmbDefaultList"
+        '
+        'btnEditDefault
+        '
+        Me.btnEditDefault.Caption = "Edit"
+        Me.btnEditDefault.CategoryGuid = New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")
+        Me.btnEditDefault.Glyph = CType(resources.GetObject("btnEditDefault.Glyph"), System.Drawing.Image)
+        Me.btnEditDefault.Id = 51
+        Me.btnEditDefault.Name = "btnEditDefault"
+        '
+        'btnNewDefault
+        '
+        Me.btnNewDefault.Caption = "New"
+        Me.btnNewDefault.CategoryGuid = New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")
+        Me.btnNewDefault.Glyph = CType(resources.GetObject("btnNewDefault.Glyph"), System.Drawing.Image)
+        Me.btnNewDefault.Id = 52
+        Me.btnNewDefault.Name = "btnNewDefault"
+        '
+        'btnDeleteDefault
+        '
+        Me.btnDeleteDefault.Caption = "Delete"
+        Me.btnDeleteDefault.CategoryGuid = New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")
+        Me.btnDeleteDefault.Glyph = CType(resources.GetObject("btnDeleteDefault.Glyph"), System.Drawing.Image)
+        Me.btnDeleteDefault.Id = 53
+        Me.btnDeleteDefault.Name = "btnDeleteDefault"
+        '
+        'btnSaveDefault
+        '
+        Me.btnSaveDefault.Caption = "Save"
+        Me.btnSaveDefault.CategoryGuid = New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")
+        Me.btnSaveDefault.Glyph = CType(resources.GetObject("btnSaveDefault.Glyph"), System.Drawing.Image)
+        Me.btnSaveDefault.Id = 54
+        Me.btnSaveDefault.Name = "btnSaveDefault"
+        '
+        'btnMakeDefaultCommon
+        '
+        Me.btnMakeDefaultCommon.Caption = "Make Common"
+        Me.btnMakeDefaultCommon.CategoryGuid = New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")
+        Me.btnMakeDefaultCommon.Glyph = CType(resources.GetObject("btnMakeDefaultCommon.Glyph"), System.Drawing.Image)
+        Me.btnMakeDefaultCommon.Id = 55
+        Me.btnMakeDefaultCommon.Name = "btnMakeDefaultCommon"
+        '
+        'btnSendDefaultUser
+        '
+        Me.btnSendDefaultUser.Caption = "Send to USer"
+        Me.btnSendDefaultUser.CategoryGuid = New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")
+        Me.btnSendDefaultUser.Glyph = CType(resources.GetObject("btnSendDefaultUser.Glyph"), System.Drawing.Image)
+        Me.btnSendDefaultUser.Id = 56
+        Me.btnSendDefaultUser.Name = "btnSendDefaultUser"
+        '
+        'btnCopyDefault
+        '
+        Me.btnCopyDefault.Caption = "Copy"
+        Me.btnCopyDefault.CategoryGuid = New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")
+        Me.btnCopyDefault.Glyph = CType(resources.GetObject("btnCopyDefault.Glyph"), System.Drawing.Image)
+        Me.btnCopyDefault.Id = 57
+        Me.btnCopyDefault.Name = "btnCopyDefault"
+        '
+        'Misc_Bar2
+        '
+        Me.Misc_Bar2.BarName = "Misc_Bar2"
+        Me.Misc_Bar2.DockCol = 8
+        Me.Misc_Bar2.DockRow = 0
+        Me.Misc_Bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
+        Me.Misc_Bar2.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.btnTranslation), New DevExpress.XtraBars.LinkPersistInfo(Me.btnComments), New DevExpress.XtraBars.LinkPersistInfo(Me.btnAttachements)})
+        Me.Misc_Bar2.Offset = 1123
+        Me.Misc_Bar2.Text = "Misc_Bar2 for Maintenance Screen"
+        Me.Misc_Bar2.Visible = False
+        '
+        'btnTranslation
+        '
+        Me.btnTranslation.Caption = "Translation"
+        Me.btnTranslation.CategoryGuid = New System.Guid("d45f4b42-7c78-4255-9839-0f9b81be7603")
+        Me.btnTranslation.Glyph = CType(resources.GetObject("btnTranslation.Glyph"), System.Drawing.Image)
+        Me.btnTranslation.Id = 63
+        Me.btnTranslation.Name = "btnTranslation"
+        '
+        'btnComments
+        '
+        Me.btnComments.Caption = "Comments"
+        Me.btnComments.CategoryGuid = New System.Guid("d45f4b42-7c78-4255-9839-0f9b81be7603")
+        Me.btnComments.Glyph = CType(resources.GetObject("btnComments.Glyph"), System.Drawing.Image)
+        Me.btnComments.Id = 64
+        Me.btnComments.Name = "btnComments"
+        '
+        'btnAttachements
+        '
+        Me.btnAttachements.Caption = "Attachements"
+        Me.btnAttachements.CategoryGuid = New System.Guid("d45f4b42-7c78-4255-9839-0f9b81be7603")
+        Me.btnAttachements.Glyph = CType(resources.GetObject("btnAttachements.Glyph"), System.Drawing.Image)
+        Me.btnAttachements.Id = 65
+        Me.btnAttachements.Name = "btnAttachements"
+        '
+        'Nav_Bar
+        '
+        Me.Nav_Bar.BarName = "Nav_Bar"
+        Me.Nav_Bar.DockCol = 3
+        Me.Nav_Bar.DockRow = 0
+        Me.Nav_Bar.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
+        Me.Nav_Bar.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.btnFirst), New DevExpress.XtraBars.LinkPersistInfo(Me.btnPrevious), New DevExpress.XtraBars.LinkPersistInfo(Me.btnNext), New DevExpress.XtraBars.LinkPersistInfo(Me.btnLast)})
+        Me.Nav_Bar.Offset = 172
+        Me.Nav_Bar.Text = "Nav Bar"
+        Me.Nav_Bar.Visible = False
+        '
+        'btnFirst
+        '
+        Me.btnFirst.Caption = "First"
+        Me.btnFirst.CategoryGuid = New System.Guid("d55c49d9-25b9-4030-98b4-b0b1e7d65b90")
+        Me.btnFirst.Glyph = CType(resources.GetObject("btnFirst.Glyph"), System.Drawing.Image)
+        Me.btnFirst.Id = 66
+        Me.btnFirst.Name = "btnFirst"
+        '
+        'btnPrevious
+        '
+        Me.btnPrevious.Caption = "Previous"
+        Me.btnPrevious.CategoryGuid = New System.Guid("d55c49d9-25b9-4030-98b4-b0b1e7d65b90")
+        Me.btnPrevious.Glyph = CType(resources.GetObject("btnPrevious.Glyph"), System.Drawing.Image)
+        Me.btnPrevious.Id = 67
+        Me.btnPrevious.Name = "btnPrevious"
+        '
+        'btnNext
+        '
+        Me.btnNext.Caption = "Next"
+        Me.btnNext.CategoryGuid = New System.Guid("d55c49d9-25b9-4030-98b4-b0b1e7d65b90")
+        Me.btnNext.Glyph = CType(resources.GetObject("btnNext.Glyph"), System.Drawing.Image)
+        Me.btnNext.Id = 68
+        Me.btnNext.Name = "btnNext"
+        '
+        'btnLast
+        '
+        Me.btnLast.Caption = "Last"
+        Me.btnLast.CategoryGuid = New System.Guid("d55c49d9-25b9-4030-98b4-b0b1e7d65b90")
+        Me.btnLast.Glyph = CType(resources.GetObject("btnLast.Glyph"), System.Drawing.Image)
+        Me.btnLast.Id = 69
+        Me.btnLast.Name = "btnLast"
+        '
         'XTabControlVod
         '
         Me.XTabControlVod.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.XTabControlVod.Location = New System.Drawing.Point(0, 35)
-        Me.XTabControlVod.Margin = New System.Windows.Forms.Padding(4)
+        Me.XTabControlVod.Location = New System.Drawing.Point(0, 30)
         Me.XTabControlVod.Name = "XTabControlVod"
         Me.XTabControlVod.SelectedTabPage = Me.XTabSearch
-        Me.XTabControlVod.Size = New System.Drawing.Size(1408, 820)
+        Me.XTabControlVod.Size = New System.Drawing.Size(1056, 665)
         Me.XTabControlVod.TabIndex = 4
         Me.XTabControlVod.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTabSearch, Me.XTabResult, Me.XTabView, Me.XTabProcess, Me.XTabViewVod, Me.XTabFtp, Me.XtabAutomateTranscode})
         Me.XTabControlVod.Text = "VOD"
@@ -238,126 +923,112 @@ Partial Class FrmProductsVOD
         Me.XTabSearch.Controls.Add(Me.lblProduct_id)
         Me.XTabSearch.Controls.Add(Me.txtTitleSearch)
         Me.XTabSearch.Controls.Add(Me.lblPartTitle)
-        Me.XTabSearch.Margin = New System.Windows.Forms.Padding(4)
         Me.XTabSearch.Name = "XTabSearch"
-        Me.XTabSearch.Size = New System.Drawing.Size(1399, 786)
+        Me.XTabSearch.Size = New System.Drawing.Size(1047, 634)
         Me.XTabSearch.Text = "Search"
         '
         'btnRipped
         '
-        Me.btnRipped.Location = New System.Drawing.Point(592, 260)
-        Me.btnRipped.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnRipped.Location = New System.Drawing.Point(444, 211)
         Me.btnRipped.Name = "btnRipped"
-        Me.btnRipped.Size = New System.Drawing.Size(100, 28)
+        Me.btnRipped.Size = New System.Drawing.Size(75, 23)
         Me.btnRipped.TabIndex = 18
         Me.btnRipped.Text = "ripped"
         '
         'BtnViewAll
         '
-        Me.BtnViewAll.Location = New System.Drawing.Point(447, 260)
-        Me.BtnViewAll.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnViewAll.Location = New System.Drawing.Point(335, 211)
         Me.BtnViewAll.Name = "BtnViewAll"
-        Me.BtnViewAll.Size = New System.Drawing.Size(100, 28)
+        Me.BtnViewAll.Size = New System.Drawing.Size(75, 23)
         Me.BtnViewAll.TabIndex = 17
         Me.BtnViewAll.Text = "View all"
         '
         'BtnNewVodProduct
         '
-        Me.BtnNewVodProduct.Location = New System.Drawing.Point(259, 260)
-        Me.BtnNewVodProduct.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnNewVodProduct.Location = New System.Drawing.Point(194, 211)
         Me.BtnNewVodProduct.Name = "BtnNewVodProduct"
-        Me.BtnNewVodProduct.Size = New System.Drawing.Size(100, 28)
+        Me.BtnNewVodProduct.Size = New System.Drawing.Size(75, 23)
         Me.BtnNewVodProduct.TabIndex = 16
         Me.BtnNewVodProduct.Text = "New"
         '
         'btnSearch
         '
-        Me.btnSearch.Location = New System.Drawing.Point(75, 260)
-        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnSearch.Location = New System.Drawing.Point(56, 211)
         Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(100, 28)
+        Me.btnSearch.Size = New System.Drawing.Size(75, 23)
         Me.btnSearch.TabIndex = 15
         Me.btnSearch.Text = "Search"
         '
         'txtImdb
         '
-        Me.txtImdb.Location = New System.Drawing.Point(209, 139)
-        Me.txtImdb.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtImdb.Location = New System.Drawing.Point(157, 113)
         Me.txtImdb.Name = "txtImdb"
-        Me.txtImdb.Size = New System.Drawing.Size(149, 22)
+        Me.txtImdb.Size = New System.Drawing.Size(112, 20)
         Me.txtImdb.TabIndex = 14
         '
         'LblImdb
         '
-        Me.LblImdb.Location = New System.Drawing.Point(35, 143)
-        Me.LblImdb.Margin = New System.Windows.Forms.Padding(4)
+        Me.LblImdb.Location = New System.Drawing.Point(26, 116)
         Me.LblImdb.Name = "LblImdb"
-        Me.LblImdb.Size = New System.Drawing.Size(45, 16)
+        Me.LblImdb.Size = New System.Drawing.Size(38, 13)
         Me.LblImdb.TabIndex = 13
         Me.LblImdb.Text = "Imdb ID"
         '
         'TxtProducts_id
         '
-        Me.TxtProducts_id.Location = New System.Drawing.Point(209, 84)
-        Me.TxtProducts_id.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtProducts_id.Location = New System.Drawing.Point(157, 68)
         Me.TxtProducts_id.Name = "TxtProducts_id"
-        Me.TxtProducts_id.Size = New System.Drawing.Size(149, 22)
+        Me.TxtProducts_id.Size = New System.Drawing.Size(112, 20)
         Me.TxtProducts_id.TabIndex = 12
         '
         'lblProduct_id
         '
-        Me.lblProduct_id.Location = New System.Drawing.Point(35, 87)
-        Me.lblProduct_id.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblProduct_id.Location = New System.Drawing.Point(26, 71)
         Me.lblProduct_id.Name = "lblProduct_id"
-        Me.lblProduct_id.Size = New System.Drawing.Size(59, 16)
+        Me.lblProduct_id.Size = New System.Drawing.Size(51, 13)
         Me.lblProduct_id.TabIndex = 11
         Me.lblProduct_id.Text = "Product ID"
         '
         'txtTitleSearch
         '
-        Me.txtTitleSearch.Location = New System.Drawing.Point(209, 34)
-        Me.txtTitleSearch.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtTitleSearch.Location = New System.Drawing.Point(157, 28)
         Me.txtTitleSearch.Name = "txtTitleSearch"
-        Me.txtTitleSearch.Size = New System.Drawing.Size(629, 22)
+        Me.txtTitleSearch.Size = New System.Drawing.Size(472, 20)
         Me.txtTitleSearch.TabIndex = 10
         '
         'lblPartTitle
         '
-        Me.lblPartTitle.Location = New System.Drawing.Point(35, 43)
-        Me.lblPartTitle.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblPartTitle.Location = New System.Drawing.Point(26, 35)
         Me.lblPartTitle.Name = "lblPartTitle"
-        Me.lblPartTitle.Size = New System.Drawing.Size(67, 16)
+        Me.lblPartTitle.Size = New System.Drawing.Size(56, 13)
         Me.lblPartTitle.TabIndex = 9
         Me.lblPartTitle.Text = "Part of Title"
         '
         'XTabResult
         '
         Me.XTabResult.Controls.Add(Me.GridVod)
-        Me.XTabResult.Margin = New System.Windows.Forms.Padding(4)
         Me.XTabResult.Name = "XTabResult"
-        Me.XTabResult.Size = New System.Drawing.Size(1399, 786)
+        Me.XTabResult.Size = New System.Drawing.Size(1047, 634)
         Me.XTabResult.Text = "Result"
         '
         'GridVod
         '
         Me.GridVod.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridVod.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4)
         Me.GridVod.EmbeddedNavigator.Name = ""
         Me.GridVod.FormsUseDefaultLookAndFeel = False
         Me.GridVod.Location = New System.Drawing.Point(0, 0)
         Me.GridVod.MainView = Me.GridViewSearch
-        Me.GridVod.Margin = New System.Windows.Forms.Padding(4)
         Me.GridVod.Name = "GridVod"
         Me.GridVod.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbLanguages, Me.chkcolAvailable, Me.cmbStudio, Me.RepositorycmbSupportVod})
-        Me.GridVod.Size = New System.Drawing.Size(1399, 786)
+        Me.GridVod.Size = New System.Drawing.Size(1047, 634)
         Me.GridVod.TabIndex = 4
         Me.GridVod.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewSearch})
         '
         'GridViewSearch
         '
         Me.GridViewSearch.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand1})
-        Me.GridViewSearch.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.colImdb_id, Me.collanguage_id, Me.colproducts_name, Me.ColAvailable_from, Me.colExpireAt, Me.colLanguage_subtitle, Me.colAvailable, Me.colStudio, Me.colStatus, Me.colQuality, Me.colSupportVod})
-        Me.GridViewSearch.CustomizationFormBounds = New System.Drawing.Rectangle(1685, 658, 225, 209)
+        Me.GridViewSearch.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.colImdb_id, Me.collanguage_id, Me.colproducts_name, Me.ColAvailable_from, Me.colExpireAt, Me.colLanguage_subtitle, Me.colAvailable, Me.colStudio, Me.colStatus, Me.colSource, Me.colQuality, Me.colSupportVod, Me.colCredit})
+        Me.GridViewSearch.CustomizationFormBounds = New System.Drawing.Rectangle(1375, 449, 225, 209)
         Me.GridViewSearch.GridControl = Me.GridVod
         Me.GridViewSearch.Name = "GridViewSearch"
         Me.GridViewSearch.OptionsView.ColumnAutoWidth = True
@@ -370,6 +1041,7 @@ Partial Class FrmProductsVOD
         Me.GridBand1.Caption = "GridBand1"
         Me.GridBand1.Columns.Add(Me.colSupportVod)
         Me.GridBand1.Columns.Add(Me.colQuality)
+        Me.GridBand1.Columns.Add(Me.colSource)
         Me.GridBand1.Columns.Add(Me.colStudio)
         Me.GridBand1.Columns.Add(Me.colStatus)
         Me.GridBand1.Columns.Add(Me.colImdb_id)
@@ -381,7 +1053,7 @@ Partial Class FrmProductsVOD
         Me.GridBand1.Columns.Add(Me.colAvailable)
         Me.GridBand1.MinWidth = 20
         Me.GridBand1.Name = "GridBand1"
-        Me.GridBand1.Width = 1087
+        Me.GridBand1.Width = 1162
         '
         'colSupportVod
         '
@@ -406,6 +1078,14 @@ Partial Class FrmProductsVOD
         Me.colQuality.Name = "colQuality"
         Me.colQuality.OptionsColumn.AllowEdit = False
         Me.colQuality.Visible = True
+        '
+        'colSource
+        '
+        Me.colSource.Caption = "source"
+        Me.colSource.FieldName = "source"
+        Me.colSource.Name = "colSource"
+        Me.colSource.OptionsColumn.AllowEdit = False
+        Me.colSource.Visible = True
         '
         'colStudio
         '
@@ -520,6 +1200,8 @@ Partial Class FrmProductsVOD
         '
         'XTabView
         '
+        Me.XTabView.Controls.Add(Me.lblCredit)
+        Me.XTabView.Controls.Add(Me.spedCredit)
         Me.XTabView.Controls.Add(Me.cmbSupportVod)
         Me.XTabView.Controls.Add(Me.lblSupport)
         Me.XTabView.Controls.Add(Me.cmbSource)
@@ -549,31 +1231,47 @@ Partial Class FrmProductsVOD
         Me.XTabView.Controls.Add(Me.lblImdbView)
         Me.XTabView.Controls.Add(Me.btnSaveVod)
         Me.XTabView.Controls.Add(Me.btnEditVod)
-        Me.XTabView.Margin = New System.Windows.Forms.Padding(4)
         Me.XTabView.Name = "XTabView"
-        Me.XTabView.Size = New System.Drawing.Size(1399, 786)
+        Me.XTabView.Size = New System.Drawing.Size(1047, 634)
         Me.XTabView.Text = "View"
+        '
+        'lblCredit
+        '
+        Me.lblCredit.Location = New System.Drawing.Point(247, 362)
+        Me.lblCredit.Name = "lblCredit"
+        Me.lblCredit.Size = New System.Drawing.Size(27, 13)
+        Me.lblCredit.TabIndex = 85
+        Me.lblCredit.Text = "credit"
+        '
+        'spedCredit
+        '
+        Me.spedCredit.EditValue = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.spedCredit.Location = New System.Drawing.Point(342, 355)
+        Me.spedCredit.Name = "spedCredit"
+        Me.spedCredit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+        Me.spedCredit.Properties.MaxValue = New Decimal(New Integer() {3, 0, 0, 0})
+        Me.spedCredit.Properties.MinValue = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.spedCredit.Size = New System.Drawing.Size(112, 20)
+        Me.spedCredit.TabIndex = 84
         '
         'cmbSupportVod
         '
         Me.cmbSupportVod.AllowDrop = True
         Me.cmbSupportVod.Enabled = False
-        Me.cmbSupportVod.Location = New System.Drawing.Point(456, 380)
-        Me.cmbSupportVod.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbSupportVod.Location = New System.Drawing.Point(342, 309)
         Me.cmbSupportVod.Name = "cmbSupportVod"
         Me.cmbSupportVod.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbSupportVod.Properties.DisplayMember = "status_desc"
         Me.cmbSupportVod.Properties.NullText = ""
         Me.cmbSupportVod.Properties.ValueMember = "status_id"
-        Me.cmbSupportVod.Size = New System.Drawing.Size(149, 22)
+        Me.cmbSupportVod.Size = New System.Drawing.Size(112, 20)
         Me.cmbSupportVod.TabIndex = 83
         '
         'lblSupport
         '
-        Me.lblSupport.Location = New System.Drawing.Point(329, 384)
-        Me.lblSupport.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblSupport.Location = New System.Drawing.Point(247, 312)
         Me.lblSupport.Name = "lblSupport"
-        Me.lblSupport.Size = New System.Drawing.Size(43, 16)
+        Me.lblSupport.Size = New System.Drawing.Size(37, 13)
         Me.lblSupport.TabIndex = 82
         Me.lblSupport.Text = "support"
         '
@@ -581,22 +1279,20 @@ Partial Class FrmProductsVOD
         '
         Me.cmbSource.AllowDrop = True
         Me.cmbSource.Enabled = False
-        Me.cmbSource.Location = New System.Drawing.Point(455, 334)
-        Me.cmbSource.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbSource.Location = New System.Drawing.Point(341, 271)
         Me.cmbSource.Name = "cmbSource"
         Me.cmbSource.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbSource.Properties.DisplayMember = "status_desc"
         Me.cmbSource.Properties.NullText = ""
         Me.cmbSource.Properties.ValueMember = "status_id"
-        Me.cmbSource.Size = New System.Drawing.Size(149, 22)
+        Me.cmbSource.Size = New System.Drawing.Size(112, 20)
         Me.cmbSource.TabIndex = 81
         '
         'lblSource
         '
-        Me.lblSource.Location = New System.Drawing.Point(328, 338)
-        Me.lblSource.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblSource.Location = New System.Drawing.Point(249, 275)
         Me.lblSource.Name = "lblSource"
-        Me.lblSource.Size = New System.Drawing.Size(38, 16)
+        Me.lblSource.Size = New System.Drawing.Size(32, 13)
         Me.lblSource.TabIndex = 80
         Me.lblSource.Text = "source"
         '
@@ -604,257 +1300,232 @@ Partial Class FrmProductsVOD
         '
         Me.cmbQuality.AllowDrop = True
         Me.cmbQuality.Enabled = False
-        Me.cmbQuality.Location = New System.Drawing.Point(456, 289)
-        Me.cmbQuality.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbQuality.Location = New System.Drawing.Point(342, 235)
         Me.cmbQuality.Name = "cmbQuality"
         Me.cmbQuality.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbQuality.Properties.DisplayMember = "status_desc"
         Me.cmbQuality.Properties.NullText = ""
         Me.cmbQuality.Properties.ValueMember = "status_id"
-        Me.cmbQuality.Size = New System.Drawing.Size(149, 22)
+        Me.cmbQuality.Size = New System.Drawing.Size(112, 20)
         Me.cmbQuality.TabIndex = 79
         '
         'lblHigh
         '
-        Me.lblHigh.Location = New System.Drawing.Point(329, 293)
-        Me.lblHigh.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblHigh.Location = New System.Drawing.Point(247, 238)
         Me.lblHigh.Name = "lblHigh"
-        Me.lblHigh.Size = New System.Drawing.Size(37, 16)
+        Me.lblHigh.Size = New System.Drawing.Size(32, 13)
         Me.lblHigh.TabIndex = 78
         Me.lblHigh.Text = "quality"
         '
         'cmbStatus
         '
         Me.cmbStatus.Enabled = False
-        Me.cmbStatus.Location = New System.Drawing.Point(456, 235)
-        Me.cmbStatus.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbStatus.Location = New System.Drawing.Point(342, 191)
         Me.cmbStatus.Name = "cmbStatus"
         Me.cmbStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbStatus.Properties.DisplayMember = "status_desc"
         Me.cmbStatus.Properties.NullText = ""
         Me.cmbStatus.Properties.ValueMember = "status_id"
-        Me.cmbStatus.Size = New System.Drawing.Size(149, 22)
+        Me.cmbStatus.Size = New System.Drawing.Size(112, 20)
         Me.cmbStatus.TabIndex = 77
         '
         'lblStatus
         '
-        Me.lblStatus.Location = New System.Drawing.Point(329, 239)
-        Me.lblStatus.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblStatus.Location = New System.Drawing.Point(247, 194)
         Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.Size = New System.Drawing.Size(34, 16)
+        Me.lblStatus.Size = New System.Drawing.Size(30, 13)
         Me.lblStatus.TabIndex = 76
         Me.lblStatus.Text = "status"
         '
         'cmbStudioEdit
         '
         Me.cmbStudioEdit.Enabled = False
-        Me.cmbStudioEdit.Location = New System.Drawing.Point(151, 132)
-        Me.cmbStudioEdit.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbStudioEdit.Location = New System.Drawing.Point(113, 107)
         Me.cmbStudioEdit.Name = "cmbStudioEdit"
         Me.cmbStudioEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbStudioEdit.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("studio_id", "id", 63, DevExpress.Utils.FormatType.Numeric, "", True, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("studio_name", "name", 64, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
         Me.cmbStudioEdit.Properties.DisplayMember = "status_desc"
         Me.cmbStudioEdit.Properties.NullText = ""
         Me.cmbStudioEdit.Properties.ValueMember = "status_id"
-        Me.cmbStudioEdit.Size = New System.Drawing.Size(149, 22)
+        Me.cmbStudioEdit.Size = New System.Drawing.Size(112, 20)
         Me.cmbStudioEdit.TabIndex = 75
         '
         'lblStudio
         '
-        Me.lblStudio.Location = New System.Drawing.Point(24, 135)
-        Me.lblStudio.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblStudio.Location = New System.Drawing.Point(18, 110)
         Me.lblStudio.Name = "lblStudio"
-        Me.lblStudio.Size = New System.Drawing.Size(34, 16)
+        Me.lblStudio.Size = New System.Drawing.Size(29, 13)
         Me.lblStudio.TabIndex = 74
         Me.lblStudio.Text = "studio"
         '
         'txtId
         '
         Me.txtId.Enabled = False
-        Me.txtId.Location = New System.Drawing.Point(505, 81)
-        Me.txtId.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtId.Location = New System.Drawing.Point(379, 66)
         Me.txtId.Name = "txtId"
-        Me.txtId.Size = New System.Drawing.Size(149, 22)
+        Me.txtId.Size = New System.Drawing.Size(112, 20)
         Me.txtId.TabIndex = 73
         '
         'lblId
         '
-        Me.lblId.Location = New System.Drawing.Point(456, 85)
-        Me.lblId.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblId.Location = New System.Drawing.Point(342, 69)
         Me.lblId.Name = "lblId"
-        Me.lblId.Size = New System.Drawing.Size(12, 16)
+        Me.lblId.Size = New System.Drawing.Size(11, 13)
         Me.lblId.TabIndex = 72
         Me.lblId.Text = "ID"
         '
         'btnCancelVod
         '
         Me.btnCancelVod.Enabled = False
-        Me.btnCancelVod.Location = New System.Drawing.Point(289, 28)
-        Me.btnCancelVod.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCancelVod.Location = New System.Drawing.Point(217, 23)
         Me.btnCancelVod.Name = "btnCancelVod"
-        Me.btnCancelVod.Size = New System.Drawing.Size(100, 28)
+        Me.btnCancelVod.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelVod.TabIndex = 71
         Me.btnCancelVod.Text = "Cancel"
         '
         'cmbLanguageSubtitle
         '
         Me.cmbLanguageSubtitle.Enabled = False
-        Me.cmbLanguageSubtitle.Location = New System.Drawing.Point(151, 220)
-        Me.cmbLanguageSubtitle.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbLanguageSubtitle.Location = New System.Drawing.Point(113, 179)
         Me.cmbLanguageSubtitle.Name = "cmbLanguageSubtitle"
         Me.cmbLanguageSubtitle.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbLanguageSubtitle.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("languages_id", "id", 63, DevExpress.Utils.FormatType.Numeric, "", True, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("code", "code", 64, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
         Me.cmbLanguageSubtitle.Properties.DisplayMember = "status_desc"
         Me.cmbLanguageSubtitle.Properties.NullText = ""
         Me.cmbLanguageSubtitle.Properties.ValueMember = "status_id"
-        Me.cmbLanguageSubtitle.Size = New System.Drawing.Size(149, 22)
+        Me.cmbLanguageSubtitle.Size = New System.Drawing.Size(112, 20)
         Me.cmbLanguageSubtitle.TabIndex = 70
         '
         'cmbLanguageSound
         '
         Me.cmbLanguageSound.Enabled = False
-        Me.cmbLanguageSound.Location = New System.Drawing.Point(151, 176)
-        Me.cmbLanguageSound.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbLanguageSound.Location = New System.Drawing.Point(113, 143)
         Me.cmbLanguageSound.Name = "cmbLanguageSound"
         Me.cmbLanguageSound.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbLanguageSound.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("languages_id", "id", 63, DevExpress.Utils.FormatType.Numeric, "", True, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("code", "code", 64, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
         Me.cmbLanguageSound.Properties.DisplayMember = "status_desc"
         Me.cmbLanguageSound.Properties.NullText = ""
         Me.cmbLanguageSound.Properties.ValueMember = "status_id"
-        Me.cmbLanguageSound.Size = New System.Drawing.Size(149, 22)
+        Me.cmbLanguageSound.Size = New System.Drawing.Size(112, 20)
         Me.cmbLanguageSound.TabIndex = 69
         '
         'cmbDateExpired
         '
         Me.cmbDateExpired.EditValue = Nothing
         Me.cmbDateExpired.Enabled = False
-        Me.cmbDateExpired.Location = New System.Drawing.Point(151, 329)
-        Me.cmbDateExpired.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbDateExpired.Location = New System.Drawing.Point(113, 267)
         Me.cmbDateExpired.Name = "cmbDateExpired"
         Me.cmbDateExpired.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbDateExpired.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-        Me.cmbDateExpired.Size = New System.Drawing.Size(149, 22)
+        Me.cmbDateExpired.Size = New System.Drawing.Size(112, 20)
         Me.cmbDateExpired.TabIndex = 68
         '
         'cmbDateStart
         '
         Me.cmbDateStart.EditValue = Nothing
         Me.cmbDateStart.Enabled = False
-        Me.cmbDateStart.Location = New System.Drawing.Point(151, 272)
-        Me.cmbDateStart.Margin = New System.Windows.Forms.Padding(4)
+        Me.cmbDateStart.Location = New System.Drawing.Point(113, 221)
         Me.cmbDateStart.Name = "cmbDateStart"
         Me.cmbDateStart.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbDateStart.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-        Me.cmbDateStart.Size = New System.Drawing.Size(149, 22)
+        Me.cmbDateStart.Size = New System.Drawing.Size(112, 20)
         Me.cmbDateStart.TabIndex = 67
         '
         'TxtFilename
         '
         Me.TxtFilename.Enabled = False
-        Me.TxtFilename.Location = New System.Drawing.Point(456, 127)
-        Me.TxtFilename.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtFilename.Location = New System.Drawing.Point(342, 103)
         Me.TxtFilename.Name = "TxtFilename"
-        Me.TxtFilename.Size = New System.Drawing.Size(239, 22)
+        Me.TxtFilename.Size = New System.Drawing.Size(179, 20)
         Me.TxtFilename.TabIndex = 66
         '
         'chkAvailable
         '
-        Me.chkAvailable.Location = New System.Drawing.Point(453, 183)
-        Me.chkAvailable.Margin = New System.Windows.Forms.Padding(4)
+        Me.chkAvailable.Location = New System.Drawing.Point(340, 149)
         Me.chkAvailable.Name = "chkAvailable"
         Me.chkAvailable.Properties.Caption = ""
-        Me.chkAvailable.Size = New System.Drawing.Size(75, 21)
+        Me.chkAvailable.Size = New System.Drawing.Size(56, 19)
         Me.chkAvailable.TabIndex = 65
         '
         'lblAvailable
         '
-        Me.lblAvailable.Location = New System.Drawing.Point(329, 187)
-        Me.lblAvailable.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblAvailable.Location = New System.Drawing.Point(247, 152)
         Me.lblAvailable.Name = "lblAvailable"
-        Me.lblAvailable.Size = New System.Drawing.Size(50, 16)
+        Me.lblAvailable.Size = New System.Drawing.Size(42, 13)
         Me.lblAvailable.TabIndex = 64
         Me.lblAvailable.Text = "available"
         '
         'lblNameFile
         '
-        Me.lblNameFile.Location = New System.Drawing.Point(329, 135)
-        Me.lblNameFile.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblNameFile.Location = New System.Drawing.Point(247, 110)
         Me.lblNameFile.Name = "lblNameFile"
-        Me.lblNameFile.Size = New System.Drawing.Size(53, 16)
+        Me.lblNameFile.Size = New System.Drawing.Size(43, 13)
         Me.lblNameFile.TabIndex = 63
         Me.lblNameFile.Text = "file name"
         '
         'lblDateExpired
         '
-        Me.lblDateExpired.Location = New System.Drawing.Point(24, 337)
-        Me.lblDateExpired.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblDateExpired.Location = New System.Drawing.Point(18, 274)
         Me.lblDateExpired.Name = "lblDateExpired"
-        Me.lblDateExpired.Size = New System.Drawing.Size(71, 16)
+        Me.lblDateExpired.Size = New System.Drawing.Size(61, 13)
         Me.lblDateExpired.TabIndex = 62
         Me.lblDateExpired.Text = "date expired"
         '
         'lblDateStart
         '
-        Me.lblDateStart.Location = New System.Drawing.Point(24, 281)
-        Me.lblDateStart.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblDateStart.Location = New System.Drawing.Point(18, 228)
         Me.lblDateStart.Name = "lblDateStart"
-        Me.lblDateStart.Size = New System.Drawing.Size(55, 16)
+        Me.lblDateStart.Size = New System.Drawing.Size(48, 13)
         Me.lblDateStart.TabIndex = 61
         Me.lblDateStart.Text = "date start"
         '
         'lblLanguage_subtitle
         '
-        Me.lblLanguage_subtitle.Location = New System.Drawing.Point(24, 224)
-        Me.lblLanguage_subtitle.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblLanguage_subtitle.Location = New System.Drawing.Point(18, 182)
         Me.lblLanguage_subtitle.Name = "lblLanguage_subtitle"
-        Me.lblLanguage_subtitle.Size = New System.Drawing.Size(97, 16)
+        Me.lblLanguage_subtitle.Size = New System.Drawing.Size(82, 13)
         Me.lblLanguage_subtitle.TabIndex = 60
         Me.lblLanguage_subtitle.Text = "language subtitle"
         '
         'lblLanguageSound
         '
-        Me.lblLanguageSound.Location = New System.Drawing.Point(24, 180)
-        Me.lblLanguageSound.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblLanguageSound.Location = New System.Drawing.Point(18, 146)
         Me.lblLanguageSound.Name = "lblLanguageSound"
-        Me.lblLanguageSound.Size = New System.Drawing.Size(90, 16)
+        Me.lblLanguageSound.Size = New System.Drawing.Size(76, 13)
         Me.lblLanguageSound.TabIndex = 59
         Me.lblLanguageSound.Text = "language sound"
         '
         'txtImdbView
         '
         Me.txtImdbView.Enabled = False
-        Me.txtImdbView.Location = New System.Drawing.Point(151, 100)
-        Me.txtImdbView.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtImdbView.Location = New System.Drawing.Point(113, 81)
         Me.txtImdbView.Name = "txtImdbView"
-        Me.txtImdbView.Size = New System.Drawing.Size(149, 22)
+        Me.txtImdbView.Size = New System.Drawing.Size(112, 20)
         Me.txtImdbView.TabIndex = 58
         '
         'lblImdbView
         '
-        Me.lblImdbView.Location = New System.Drawing.Point(24, 103)
-        Me.lblImdbView.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblImdbView.Location = New System.Drawing.Point(18, 84)
         Me.lblImdbView.Name = "lblImdbView"
-        Me.lblImdbView.Size = New System.Drawing.Size(45, 16)
+        Me.lblImdbView.Size = New System.Drawing.Size(38, 13)
         Me.lblImdbView.TabIndex = 57
         Me.lblImdbView.Text = "Imdb ID"
         '
         'btnSaveVod
         '
         Me.btnSaveVod.Enabled = False
-        Me.btnSaveVod.Location = New System.Drawing.Point(24, 28)
-        Me.btnSaveVod.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnSaveVod.Location = New System.Drawing.Point(18, 23)
         Me.btnSaveVod.Name = "btnSaveVod"
-        Me.btnSaveVod.Size = New System.Drawing.Size(100, 28)
+        Me.btnSaveVod.Size = New System.Drawing.Size(75, 23)
         Me.btnSaveVod.TabIndex = 52
         Me.btnSaveVod.Text = "Save"
         '
         'btnEditVod
         '
         Me.btnEditVod.Enabled = False
-        Me.btnEditVod.Location = New System.Drawing.Point(151, 28)
-        Me.btnEditVod.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnEditVod.Location = New System.Drawing.Point(113, 23)
         Me.btnEditVod.Name = "btnEditVod"
-        Me.btnEditVod.Size = New System.Drawing.Size(105, 28)
+        Me.btnEditVod.Size = New System.Drawing.Size(79, 23)
         Me.btnEditVod.TabIndex = 51
         Me.btnEditVod.Text = "Edit"
         '
@@ -868,80 +1539,71 @@ Partial Class FrmProductsVOD
         Me.XTabProcess.Controls.Add(Me.btnGenerateRipping)
         Me.XTabProcess.Controls.Add(Me.btnSource)
         Me.XTabProcess.Controls.Add(Me.lblPathSourceTitle)
-        Me.XTabProcess.Margin = New System.Windows.Forms.Padding(4)
         Me.XTabProcess.Name = "XTabProcess"
-        Me.XTabProcess.Size = New System.Drawing.Size(1399, 786)
+        Me.XTabProcess.Size = New System.Drawing.Size(1047, 634)
         Me.XTabProcess.Text = "Processus vod"
         '
         'lblDestinationPathFile
         '
         Me.lblDestinationPathFile.AutoSize = True
-        Me.lblDestinationPathFile.Location = New System.Drawing.Point(101, 79)
-        Me.lblDestinationPathFile.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblDestinationPathFile.Location = New System.Drawing.Point(76, 64)
         Me.lblDestinationPathFile.Name = "lblDestinationPathFile"
-        Me.lblDestinationPathFile.Size = New System.Drawing.Size(169, 17)
+        Me.lblDestinationPathFile.Size = New System.Drawing.Size(126, 13)
         Me.lblDestinationPathFile.TabIndex = 8
         Me.lblDestinationPathFile.Text = "Destination queue filezilla"
         '
         'txtDestinationPath
         '
         Me.txtDestinationPath.EditValue = "z:\vod\tmp\xml"
-        Me.txtDestinationPath.Location = New System.Drawing.Point(292, 75)
-        Me.txtDestinationPath.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtDestinationPath.Location = New System.Drawing.Point(219, 61)
         Me.txtDestinationPath.Name = "txtDestinationPath"
-        Me.txtDestinationPath.Size = New System.Drawing.Size(628, 22)
+        Me.txtDestinationPath.Size = New System.Drawing.Size(471, 20)
         Me.txtDestinationPath.TabIndex = 7
         '
         'btnDestination
         '
-        Me.btnDestination.Location = New System.Drawing.Point(40, 71)
-        Me.btnDestination.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnDestination.Location = New System.Drawing.Point(30, 58)
         Me.btnDestination.Name = "btnDestination"
-        Me.btnDestination.Size = New System.Drawing.Size(53, 28)
+        Me.btnDestination.Size = New System.Drawing.Size(40, 23)
         Me.btnDestination.TabIndex = 6
         Me.btnDestination.Text = "..."
         '
         'txtSourcePath
         '
-        Me.txtSourcePath.Location = New System.Drawing.Point(292, 20)
-        Me.txtSourcePath.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtSourcePath.Location = New System.Drawing.Point(219, 16)
         Me.txtSourcePath.Name = "txtSourcePath"
-        Me.txtSourcePath.Size = New System.Drawing.Size(628, 22)
+        Me.txtSourcePath.Size = New System.Drawing.Size(471, 20)
         Me.txtSourcePath.TabIndex = 5
         '
         'ProgressBarRipping
         '
-        Me.ProgressBarRipping.Location = New System.Drawing.Point(292, 167)
-        Me.ProgressBarRipping.Margin = New System.Windows.Forms.Padding(4)
+        Me.ProgressBarRipping.Location = New System.Drawing.Point(219, 136)
         Me.ProgressBarRipping.Name = "ProgressBarRipping"
-        Me.ProgressBarRipping.Size = New System.Drawing.Size(467, 28)
+        Me.ProgressBarRipping.Size = New System.Drawing.Size(350, 23)
         Me.ProgressBarRipping.TabIndex = 4
         '
         'btnGenerateRipping
         '
-        Me.btnGenerateRipping.Location = New System.Drawing.Point(12, 167)
-        Me.btnGenerateRipping.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnGenerateRipping.Location = New System.Drawing.Point(9, 136)
         Me.btnGenerateRipping.Name = "btnGenerateRipping"
-        Me.btnGenerateRipping.Size = New System.Drawing.Size(155, 28)
+        Me.btnGenerateRipping.Size = New System.Drawing.Size(116, 23)
         Me.btnGenerateRipping.TabIndex = 3
         Me.btnGenerateRipping.Text = "Generate Ripping"
         '
         'btnSource
         '
-        Me.btnSource.Location = New System.Drawing.Point(40, 20)
-        Me.btnSource.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnSource.Location = New System.Drawing.Point(30, 16)
         Me.btnSource.Name = "btnSource"
-        Me.btnSource.Size = New System.Drawing.Size(53, 28)
+        Me.btnSource.Size = New System.Drawing.Size(40, 23)
         Me.btnSource.TabIndex = 2
         Me.btnSource.Text = "..."
         '
         'lblPathSourceTitle
         '
         Me.lblPathSourceTitle.AutoSize = True
-        Me.lblPathSourceTitle.Location = New System.Drawing.Point(101, 28)
-        Me.lblPathSourceTitle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblPathSourceTitle.Location = New System.Drawing.Point(76, 23)
         Me.lblPathSourceTitle.Name = "lblPathSourceTitle"
-        Me.lblPathSourceTitle.Size = New System.Drawing.Size(113, 17)
+        Me.lblPathSourceTitle.Size = New System.Drawing.Size(85, 13)
         Me.lblPathSourceTitle.TabIndex = 0
         Me.lblPathSourceTitle.Text = "Source files mp4"
         '
@@ -949,23 +1611,20 @@ Partial Class FrmProductsVOD
         '
         Me.XTabViewVod.Controls.Add(Me.GridVodWatch)
         Me.XTabViewVod.Controls.Add(Me.WebSiteDvdPost)
-        Me.XTabViewVod.Margin = New System.Windows.Forms.Padding(4)
         Me.XTabViewVod.Name = "XTabViewVod"
-        Me.XTabViewVod.Size = New System.Drawing.Size(1399, 786)
+        Me.XTabViewVod.Size = New System.Drawing.Size(1047, 634)
         Me.XTabViewVod.Text = "view vod"
         '
         'GridVodWatch
         '
         Me.GridVodWatch.Dock = System.Windows.Forms.DockStyle.Left
-        Me.GridVodWatch.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4)
         Me.GridVodWatch.EmbeddedNavigator.Name = ""
         Me.GridVodWatch.FormsUseDefaultLookAndFeel = False
         Me.GridVodWatch.Location = New System.Drawing.Point(0, 0)
         Me.GridVodWatch.MainView = Me.gridViewVodWatch
-        Me.GridVodWatch.Margin = New System.Windows.Forms.Padding(4)
         Me.GridVodWatch.Name = "GridVodWatch"
         Me.GridVodWatch.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositorycmbLanguage, Me.RepositorychkAvailable, Me.RepositoryCmbStudio, Me.RepositoryBtnWatchMovie})
-        Me.GridVodWatch.Size = New System.Drawing.Size(685, 786)
+        Me.GridVodWatch.Size = New System.Drawing.Size(514, 634)
         Me.GridVodWatch.TabIndex = 5
         Me.GridVodWatch.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridViewVodWatch})
         '
@@ -973,7 +1632,7 @@ Partial Class FrmProductsVOD
         '
         Me.gridViewVodWatch.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand2})
         Me.gridViewVodWatch.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.ColImdbUploaded, Me.colLangAudioUploaded, Me.colProductNameUploaded, colDateStartUploaded, Me.colDateExpiredUploaded, Me.colLangSubtitleUploaded, Me.colAvailableUploaded, Me.colStudioUploaded, Me.colStatusUploaded, Me.colQuality2, Me.colBtnWatchFilm})
-        Me.gridViewVodWatch.CustomizationFormBounds = New System.Drawing.Rectangle(1685, 658, 225, 209)
+        Me.gridViewVodWatch.CustomizationFormBounds = New System.Drawing.Rectangle(1375, 449, 225, 209)
         Me.gridViewVodWatch.GridControl = Me.GridVodWatch
         Me.gridViewVodWatch.Name = "gridViewVodWatch"
         Me.gridViewVodWatch.OptionsView.ColumnAutoWidth = True
@@ -997,7 +1656,7 @@ Partial Class FrmProductsVOD
         Me.GridBand2.Columns.Add(Me.colAvailableUploaded)
         Me.GridBand2.MinWidth = 20
         Me.GridBand2.Name = "GridBand2"
-        Me.GridBand2.Width = 664
+        Me.GridBand2.Width = 590
         '
         'colBtnWatchFilm
         '
@@ -1006,7 +1665,7 @@ Partial Class FrmProductsVOD
         Me.colBtnWatchFilm.FieldName = "colBtnWatchFilm"
         Me.colBtnWatchFilm.Name = "colBtnWatchFilm"
         Me.colBtnWatchFilm.Visible = True
-        Me.colBtnWatchFilm.Width = 65
+        Me.colBtnWatchFilm.Width = 81
         '
         'RepositoryBtnWatchMovie
         '
@@ -1075,7 +1734,7 @@ Partial Class FrmProductsVOD
         Me.colLangAudioUploaded.Name = "colLangAudioUploaded"
         Me.colLangAudioUploaded.OptionsColumn.AllowEdit = False
         Me.colLangAudioUploaded.Visible = True
-        Me.colLangAudioUploaded.Width = 84
+        Me.colLangAudioUploaded.Width = 62
         '
         'RepositorycmbLanguage
         '
@@ -1095,7 +1754,7 @@ Partial Class FrmProductsVOD
         Me.colLangSubtitleUploaded.Name = "colLangSubtitleUploaded"
         Me.colLangSubtitleUploaded.OptionsColumn.AllowEdit = False
         Me.colLangSubtitleUploaded.Visible = True
-        Me.colLangSubtitleUploaded.Width = 57
+        Me.colLangSubtitleUploaded.Width = 42
         '
         'colDateExpiredUploaded
         '
@@ -1115,7 +1774,7 @@ Partial Class FrmProductsVOD
         Me.colAvailableUploaded.OptionsColumn.AllowEdit = False
         Me.colAvailableUploaded.OptionsColumn.ReadOnly = True
         Me.colAvailableUploaded.Visible = True
-        Me.colAvailableUploaded.Width = 73
+        Me.colAvailableUploaded.Width = 20
         '
         'RepositorychkAvailable
         '
@@ -1127,11 +1786,10 @@ Partial Class FrmProductsVOD
         'WebSiteDvdPost
         '
         Me.WebSiteDvdPost.Dock = System.Windows.Forms.DockStyle.Right
-        Me.WebSiteDvdPost.Location = New System.Drawing.Point(579, 0)
-        Me.WebSiteDvdPost.Margin = New System.Windows.Forms.Padding(4)
-        Me.WebSiteDvdPost.MinimumSize = New System.Drawing.Size(27, 25)
+        Me.WebSiteDvdPost.Location = New System.Drawing.Point(432, 0)
+        Me.WebSiteDvdPost.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebSiteDvdPost.Name = "WebSiteDvdPost"
-        Me.WebSiteDvdPost.Size = New System.Drawing.Size(820, 786)
+        Me.WebSiteDvdPost.Size = New System.Drawing.Size(615, 634)
         Me.WebSiteDvdPost.TabIndex = 6
         '
         'XTabFtp
@@ -1146,78 +1804,69 @@ Partial Class FrmProductsVOD
         Me.XTabFtp.Controls.Add(Me.GridFtpLocal)
         Me.XTabFtp.Controls.Add(Me.BtnCompare)
         Me.XTabFtp.Controls.Add(Me.lblFTP)
-        Me.XTabFtp.Margin = New System.Windows.Forms.Padding(4)
         Me.XTabFtp.Name = "XTabFtp"
-        Me.XTabFtp.Size = New System.Drawing.Size(1399, 786)
+        Me.XTabFtp.Size = New System.Drawing.Size(1047, 634)
         Me.XTabFtp.Text = "Compare Ftp"
         '
         'lblDbFtp
         '
         Me.lblDbFtp.AutoSize = True
-        Me.lblDbFtp.Location = New System.Drawing.Point(701, 105)
-        Me.lblDbFtp.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblDbFtp.Location = New System.Drawing.Point(526, 85)
         Me.lblDbFtp.Name = "lblDbFtp"
-        Me.lblDbFtp.Size = New System.Drawing.Size(73, 17)
+        Me.lblDbFtp.Size = New System.Drawing.Size(56, 13)
         Me.lblDbFtp.TabIndex = 14
         Me.lblDbFtp.Text = "DB % FTP"
         '
         'lblFtpLocal
         '
         Me.lblFtpLocal.AutoSize = True
-        Me.lblFtpLocal.Location = New System.Drawing.Point(187, 105)
-        Me.lblFtpLocal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblFtpLocal.Location = New System.Drawing.Point(140, 85)
         Me.lblFtpLocal.Name = "lblFtpLocal"
-        Me.lblFtpLocal.Size = New System.Drawing.Size(79, 17)
+        Me.lblFtpLocal.Size = New System.Drawing.Size(60, 13)
         Me.lblFtpLocal.TabIndex = 13
         Me.lblFtpLocal.Text = "FT % Local"
         '
         'txtSourceFtp
         '
         Me.txtSourceFtp.EditValue = "ftp://upload.cdnlayer.com/media/secureflash/"
-        Me.txtSourceFtp.Location = New System.Drawing.Point(56, 38)
-        Me.txtSourceFtp.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtSourceFtp.Location = New System.Drawing.Point(42, 31)
         Me.txtSourceFtp.Name = "txtSourceFtp"
-        Me.txtSourceFtp.Size = New System.Drawing.Size(351, 22)
+        Me.txtSourceFtp.Size = New System.Drawing.Size(263, 20)
         Me.txtSourceFtp.TabIndex = 12
         '
         'TxtSourceLocal
         '
         Me.TxtSourceLocal.EditValue = "z:\vod\tmp"
-        Me.TxtSourceLocal.Location = New System.Drawing.Point(61, 74)
-        Me.TxtSourceLocal.Margin = New System.Windows.Forms.Padding(4)
+        Me.TxtSourceLocal.Location = New System.Drawing.Point(46, 60)
         Me.TxtSourceLocal.Name = "TxtSourceLocal"
-        Me.TxtSourceLocal.Size = New System.Drawing.Size(243, 22)
+        Me.TxtSourceLocal.Size = New System.Drawing.Size(182, 20)
         Me.TxtSourceLocal.TabIndex = 11
         '
         'btnFolderLocal
         '
-        Me.btnFolderLocal.Location = New System.Drawing.Point(312, 78)
-        Me.btnFolderLocal.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnFolderLocal.Location = New System.Drawing.Point(234, 63)
         Me.btnFolderLocal.Name = "btnFolderLocal"
-        Me.btnFolderLocal.Size = New System.Drawing.Size(53, 28)
+        Me.btnFolderLocal.Size = New System.Drawing.Size(40, 23)
         Me.btnFolderLocal.TabIndex = 10
         Me.btnFolderLocal.Text = "..."
         '
         'lblLocal
         '
         Me.lblLocal.AutoSize = True
-        Me.lblLocal.Location = New System.Drawing.Point(15, 82)
-        Me.lblLocal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblLocal.Location = New System.Drawing.Point(11, 67)
         Me.lblLocal.Name = "lblLocal"
-        Me.lblLocal.Size = New System.Drawing.Size(37, 17)
+        Me.lblLocal.Size = New System.Drawing.Size(29, 13)
         Me.lblLocal.TabIndex = 9
         Me.lblLocal.Text = "local"
         '
         'GridDBFtp
         '
-        Me.GridDBFtp.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4)
         Me.GridDBFtp.EmbeddedNavigator.Name = ""
         Me.GridDBFtp.FormsUseDefaultLookAndFeel = False
-        Me.GridDBFtp.Location = New System.Drawing.Point(476, 124)
+        Me.GridDBFtp.Location = New System.Drawing.Point(357, 101)
         Me.GridDBFtp.MainView = Me.GridViewDBFtp
-        Me.GridDBFtp.Margin = New System.Windows.Forms.Padding(4)
         Me.GridDBFtp.Name = "GridDBFtp"
-        Me.GridDBFtp.Size = New System.Drawing.Size(648, 652)
+        Me.GridDBFtp.Size = New System.Drawing.Size(486, 530)
         Me.GridDBFtp.TabIndex = 7
         Me.GridDBFtp.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewDBFtp})
         '
@@ -1241,14 +1890,12 @@ Partial Class FrmProductsVOD
         '
         'GridFtpLocal
         '
-        Me.GridFtpLocal.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4)
         Me.GridFtpLocal.EmbeddedNavigator.Name = ""
         Me.GridFtpLocal.FormsUseDefaultLookAndFeel = False
-        Me.GridFtpLocal.Location = New System.Drawing.Point(16, 124)
+        Me.GridFtpLocal.Location = New System.Drawing.Point(12, 101)
         Me.GridFtpLocal.MainView = Me.GridViewFtpLocal
-        Me.GridFtpLocal.Margin = New System.Windows.Forms.Padding(4)
         Me.GridFtpLocal.Name = "GridFtpLocal"
-        Me.GridFtpLocal.Size = New System.Drawing.Size(424, 649)
+        Me.GridFtpLocal.Size = New System.Drawing.Size(318, 527)
         Me.GridFtpLocal.TabIndex = 5
         Me.GridFtpLocal.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewFtpLocal})
         '
@@ -1273,10 +1920,9 @@ Partial Class FrmProductsVOD
         '
         'BtnCompare
         '
-        Me.BtnCompare.Location = New System.Drawing.Point(307, 4)
-        Me.BtnCompare.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnCompare.Location = New System.Drawing.Point(230, 3)
         Me.BtnCompare.Name = "BtnCompare"
-        Me.BtnCompare.Size = New System.Drawing.Size(100, 28)
+        Me.BtnCompare.Size = New System.Drawing.Size(75, 23)
         Me.BtnCompare.TabIndex = 4
         Me.BtnCompare.Text = "Compare"
         Me.BtnCompare.UseVisualStyleBackColor = True
@@ -1284,10 +1930,9 @@ Partial Class FrmProductsVOD
         'lblFTP
         '
         Me.lblFTP.AutoSize = True
-        Me.lblFTP.Location = New System.Drawing.Point(12, 42)
-        Me.lblFTP.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblFTP.Location = New System.Drawing.Point(9, 34)
         Me.lblFTP.Name = "lblFTP"
-        Me.lblFTP.Size = New System.Drawing.Size(34, 17)
+        Me.lblFTP.Size = New System.Drawing.Size(27, 13)
         Me.lblFTP.TabIndex = 2
         Me.lblFTP.Text = "FTP"
         '
@@ -1301,79 +1946,78 @@ Partial Class FrmProductsVOD
         Me.XtabAutomateTranscode.Controls.Add(Me.txtPathOfFile)
         Me.XtabAutomateTranscode.Controls.Add(Me.btnChooseFileTxt)
         Me.XtabAutomateTranscode.Controls.Add(Me.lblTxtFile)
+        Me.XtabAutomateTranscode.Margin = New System.Windows.Forms.Padding(2)
         Me.XtabAutomateTranscode.Name = "XtabAutomateTranscode"
-        Me.XtabAutomateTranscode.Size = New System.Drawing.Size(1399, 786)
+        Me.XtabAutomateTranscode.Size = New System.Drawing.Size(1047, 634)
         Me.XtabAutomateTranscode.Text = "Automate Transcode"
         '
         'lblError
         '
         Me.lblError.AutoSize = True
-        Me.lblError.Location = New System.Drawing.Point(271, 315)
+        Me.lblError.Location = New System.Drawing.Point(203, 256)
+        Me.lblError.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblError.Name = "lblError"
-        Me.lblError.Size = New System.Drawing.Size(40, 17)
+        Me.lblError.Size = New System.Drawing.Size(29, 13)
         Me.lblError.TabIndex = 13
         Me.lblError.Text = "Error"
         '
         'lblOk
         '
         Me.lblOk.AutoSize = True
-        Me.lblOk.Location = New System.Drawing.Point(274, 125)
+        Me.lblOk.Location = New System.Drawing.Point(206, 102)
+        Me.lblOk.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblOk.Name = "lblOk"
-        Me.lblOk.Size = New System.Drawing.Size(62, 17)
+        Me.lblOk.Size = New System.Drawing.Size(49, 13)
         Me.lblOk.TabIndex = 12
         Me.lblOk.Text = "new Vod"
         '
         'lstError
         '
         Me.lstError.FormattingEnabled = True
-        Me.lstError.ItemHeight = 16
-        Me.lstError.Location = New System.Drawing.Point(386, 267)
+        Me.lstError.Location = New System.Drawing.Point(290, 217)
+        Me.lstError.Margin = New System.Windows.Forms.Padding(2)
         Me.lstError.Name = "lstError"
-        Me.lstError.Size = New System.Drawing.Size(381, 164)
+        Me.lstError.Size = New System.Drawing.Size(287, 134)
         Me.lstError.TabIndex = 11
         '
         'LstResult
         '
         Me.LstResult.FormattingEnabled = True
-        Me.LstResult.ItemHeight = 16
-        Me.LstResult.Location = New System.Drawing.Point(386, 71)
+        Me.LstResult.Location = New System.Drawing.Point(290, 58)
+        Me.LstResult.Margin = New System.Windows.Forms.Padding(2)
         Me.LstResult.Name = "LstResult"
-        Me.LstResult.Size = New System.Drawing.Size(381, 164)
+        Me.LstResult.Size = New System.Drawing.Size(287, 134)
         Me.LstResult.TabIndex = 10
         '
         'btnGenerateVod
         '
-        Me.btnGenerateVod.Location = New System.Drawing.Point(22, 71)
-        Me.btnGenerateVod.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnGenerateVod.Location = New System.Drawing.Point(16, 58)
         Me.btnGenerateVod.Name = "btnGenerateVod"
-        Me.btnGenerateVod.Size = New System.Drawing.Size(155, 28)
+        Me.btnGenerateVod.Size = New System.Drawing.Size(116, 23)
         Me.btnGenerateVod.TabIndex = 9
         Me.btnGenerateVod.Text = "Generate Create vod"
         '
         'txtPathOfFile
         '
-        Me.txtPathOfFile.Location = New System.Drawing.Point(274, 19)
-        Me.txtPathOfFile.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtPathOfFile.Location = New System.Drawing.Point(206, 15)
         Me.txtPathOfFile.Name = "txtPathOfFile"
-        Me.txtPathOfFile.Size = New System.Drawing.Size(628, 22)
+        Me.txtPathOfFile.Size = New System.Drawing.Size(471, 20)
         Me.txtPathOfFile.TabIndex = 8
         '
         'btnChooseFileTxt
         '
-        Me.btnChooseFileTxt.Location = New System.Drawing.Point(22, 19)
-        Me.btnChooseFileTxt.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnChooseFileTxt.Location = New System.Drawing.Point(16, 15)
         Me.btnChooseFileTxt.Name = "btnChooseFileTxt"
-        Me.btnChooseFileTxt.Size = New System.Drawing.Size(53, 28)
+        Me.btnChooseFileTxt.Size = New System.Drawing.Size(40, 23)
         Me.btnChooseFileTxt.TabIndex = 7
         Me.btnChooseFileTxt.Text = "..."
         '
         'lblTxtFile
         '
         Me.lblTxtFile.AutoSize = True
-        Me.lblTxtFile.Location = New System.Drawing.Point(83, 27)
-        Me.lblTxtFile.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTxtFile.Location = New System.Drawing.Point(62, 22)
         Me.lblTxtFile.Name = "lblTxtFile"
-        Me.lblTxtFile.Size = New System.Drawing.Size(100, 17)
+        Me.lblTxtFile.Size = New System.Drawing.Size(76, 13)
         Me.lblTxtFile.TabIndex = 6
         Me.lblTxtFile.Text = "Source files txt"
         '
@@ -1437,21 +2081,36 @@ Partial Class FrmProductsVOD
         Me.FolderChoose.RootFolder = System.Environment.SpecialFolder.MyComputer
         Me.FolderChoose.SelectedPath = "Z:\VOD\tmp"
         '
+        'colCredit
+        '
+        Me.colCredit.Caption = "credit"
+        Me.colCredit.FieldName = "credit"
+        Me.colCredit.Name = "colCredit"
+        Me.colCredit.OptionsColumn.AllowEdit = False
+        '
         'FrmProductsVOD
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1408, 855)
+        Me.ClientSize = New System.Drawing.Size(1056, 695)
         Me.Controls.Add(Me.XTabControlVod)
-        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.Controls.Add(Me.barDockControlLeft)
+        Me.Controls.Add(Me.barDockControlRight)
+        Me.Controls.Add(Me.barDockControlBottom)
+        Me.Controls.Add(Me.barDockControlTop)
         Me.Name = "FrmProductsVOD"
         Me.Text = "FrmProductsVOD"
+        Me.Controls.SetChildIndex(Me.barDockControlTop, 0)
+        Me.Controls.SetChildIndex(Me.barDockControlBottom, 0)
+        Me.Controls.SetChildIndex(Me.barDockControlRight, 0)
+        Me.Controls.SetChildIndex(Me.barDockControlLeft, 0)
         Me.Controls.SetChildIndex(Me.XTabControlVod, 0)
         CType(Me.cmbViewListRepos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtQuickSearchRepos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbReportListRepos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbFilterListRepos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbDefaultListRepos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XTabControlVod, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XTabControlVod.ResumeLayout(False)
         Me.XTabSearch.ResumeLayout(False)
@@ -1468,6 +2127,7 @@ Partial Class FrmProductsVOD
         CType(Me.chkcolAvailable, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XTabView.ResumeLayout(False)
         Me.XTabView.PerformLayout()
+        CType(Me.spedCredit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbSupportVod.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbSource.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbQuality.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1634,4 +2294,99 @@ Partial Class FrmProductsVOD
     Friend WithEvents OpenFile As System.Windows.Forms.OpenFileDialog
     Friend WithEvents RepositoryBtnWatchMovie As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
     Friend WithEvents colBtnWatchFilm As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Private WithEvents BarManager1 As DevExpress.XtraBars.BarManager
+    Private WithEvents Main_Bar As DevExpress.XtraBars.Bar
+    Private WithEvents btnNew As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnEdit As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnDelete As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnSave As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnUndo As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents Misc_Bar As DevExpress.XtraBars.Bar
+    Private WithEvents MainBtns_btnExcel As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents MainBtns_btnBigger As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents MainBtns_btnSmaller As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents MainBtns_btnBestFit As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnOK As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnUser1 As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnUser2 As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnUser3 As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnUser4 As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnUser5 As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnExportXML As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnImportXML As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents View_Bar As DevExpress.XtraBars.Bar
+    Private WithEvents btnView As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents cmbViewList As DevExpress.XtraBars.BarEditItem
+    'Private WithEvents btnViewDetail As DevExpress.XtraBars.BarSubItem
+    Private WithEvents btnEditView As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnNewView As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnDeleteView As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnSaveView As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnMakeViewCommon As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnSendViewUser As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnCopyView As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents QuickSearch_Bar As DevExpress.XtraBars.Bar
+    Private WithEvents txtQuickSearch As DevExpress.XtraBars.BarEditItem
+    Private WithEvents btnQuickSearch As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents Report_Bar As DevExpress.XtraBars.Bar
+    Private WithEvents btnPrint As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents cmbReportList As DevExpress.XtraBars.BarEditItem
+    'Private WithEvents btnReportDetail As DevExpress.XtraBars.BarSubItem
+    Private WithEvents btnEditReportInfo As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnNewReport As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnDeleteReport As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnDesignReport As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnMakeReportCommon As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnSendReportUser As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnCopyReport As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents Filter_Bar As DevExpress.XtraBars.Bar
+    Private WithEvents btnFilter As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents cmbFilterList As DevExpress.XtraBars.BarEditItem
+    'Private WithEvents btnFilterDetail As DevExpress.XtraBars.BarSubItem
+    Private WithEvents btnEditFilter As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnNewFilter As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnDeleteFilter As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnMakeFilterCommon As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnSendFilterUSer As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnCopyFilter As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents DefaultSet_Bar As DevExpress.XtraBars.Bar
+    Private WithEvents btnDefault As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents cmbDefaultList As DevExpress.XtraBars.BarEditItem
+    'Private WithEvents btnDefaultDetail As DevExpress.XtraBars.BarSubItem
+    Private WithEvents btnEditDefault As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnNewDefault As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnDeleteDefault As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnSaveDefault As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnMakeDefaultCommon As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnSendDefaultUser As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnCopyDefault As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents Misc_Bar2 As DevExpress.XtraBars.Bar
+    Private WithEvents btnTranslation As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnComments As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnAttachements As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents Nav_Bar As DevExpress.XtraBars.Bar
+    Private WithEvents btnFirst As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnPrevious As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnNext As DevExpress.XtraBars.BarButtonItem
+    Private WithEvents btnLast As DevExpress.XtraBars.BarButtonItem
+    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents colSource As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents lblCredit As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents spedCredit As DevExpress.XtraEditors.SpinEdit
+    Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents colCredit As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    'Private WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
+    'Private WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
+    'Private WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
+    'Private WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
 End Class

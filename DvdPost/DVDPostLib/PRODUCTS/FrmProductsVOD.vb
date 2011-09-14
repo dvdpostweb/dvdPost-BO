@@ -70,6 +70,7 @@ Public Class FrmProductsVOD
         cmbSource.EditValue = row("source")
         cmbSupportVod.EditValue = row("vod_support_id")
 
+        spedCredit.EditValue = row("credits")
 
     End Sub
 
@@ -87,6 +88,7 @@ Public Class FrmProductsVOD
         cmbQuality.Enabled = enable
         cmbSource.Enabled = enable
         cmbSupportVod.Enabled = enable
+        spedCredit.Enabled = enable
 
     End Sub
     Private Sub ChangeStep(ByVal stepCurrent As StepForm)
@@ -348,10 +350,10 @@ Public Class FrmProductsVOD
 
 
             If txtId.EditValue Is Nothing Then
-                sql = DvdPostData.ClsVod.GetInsertVod(txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStart.EditValue, cmbDateExpired.EditValue, chkAvailable.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue)
+                sql = DvdPostData.ClsVod.GetInsertVod(txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStart.EditValue, cmbDateExpired.EditValue, chkAvailable.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCredit.EditValue)
                 DvdPostData.clsConnection.ExecuteNonQuery(sql)
             Else
-                sql = DvdPostData.ClsVod.GetUpdateVod(txtId.EditValue, txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStart.EditValue, cmbDateExpired.EditValue, chkAvailable.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue)
+                sql = DvdPostData.ClsVod.GetUpdateVod(txtId.EditValue, txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStart.EditValue, cmbDateExpired.EditValue, chkAvailable.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCredit.EditValue)
                 DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
             End If
@@ -488,7 +490,7 @@ Public Class FrmProductsVOD
                 filename = fileInfo.Name
                 language_audio_id = SearchLangID(elts(DVDPostBuziness.clsFileZilla.FormatFile.LANGUAGE_AUDIO_ID), filename)
                 language_subtitle_id = SearchLangID(elts(DVDPostBuziness.clsFileZilla.FormatFile.LANGUAGE_SUBTITLE_ID), filename)
-                sql = DvdPostData.ClsVod.GetInsertVod(elts(DVDPostBuziness.clsFileZilla.FormatFile.IMDB_ID), extension + filename, Date.MinValue, Date.MinValue, True, language_audio_id, language_subtitle_id, elts(DVDPostBuziness.clsFileZilla.FormatFile.STUDIO_ID), "uploaded", strQuality, "SOFTLAYER", 1)
+                sql = DvdPostData.ClsVod.GetInsertVod(elts(DVDPostBuziness.clsFileZilla.FormatFile.IMDB_ID), extension + filename, Date.MinValue, Date.MinValue, True, language_audio_id, language_subtitle_id, elts(DVDPostBuziness.clsFileZilla.FormatFile.STUDIO_ID), "uploaded", strQuality, "SOFTLAYER", 1, 1)
                 DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
                 fileZilla.InsertNodeQueue(file, fileInfo.Name, fileInfo.Length)
@@ -808,7 +810,8 @@ Public Class FrmProductsVOD
                             result(DvdPostData.ClsVod.ListField.STATUS), _
                             Nothing, _
                             result(DvdPostData.ClsVod.ListField.SOURCE), _
-                            result(DvdPostData.ClsVod.ListField.VOD_SUPPORT))
+                            result(DvdPostData.ClsVod.ListField.VOD_SUPPORT), _
+                            result(DvdPostData.ClsVod.ListField.CREDIT))
 
                     DvdPostData.clsConnection.ExecuteNonQuery(sql)
                     LstResult.Items.Add(name)
@@ -833,5 +836,9 @@ Public Class FrmProductsVOD
         Else
             MsgBox("after watch movie select product please !", MsgBoxStyle.Critical)
         End If
+    End Sub
+
+    Private Sub XTabView_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles XTabView.Paint
+
     End Sub
 End Class

@@ -12,13 +12,13 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DvdPostData", "DvdPostData\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVDPostTools", "DVDPostTools\DVDPostTools.csproj", "{35D76B95-2EA0-4429-9676-EC1896F9EBD6}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DvdPostBOSetup", "4BoulesSetup\4BoulesSetup.vdproj", "{74703AC0-C29E-4395-B8C2-C89AE5F3D7F3}"
-EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "dvdpostStart", "dvdpostStart\dvdpostStart.vbproj", "{616BC4FC-EFD0-4FB4-A1B3-6B2CDDDD14AD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSH", "SSHConnect\SSH\SSH\SSH.csproj", "{E61B4BC6-B14C-4E2A-AEE2-26DAB371693C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SSHLibrary", "SSHConnect\SSH\SSHLibrary\SSHLibrary.csproj", "{E10B6B5D-3E4D-417D-BD93-D8C7DDB9B756}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DvdPostBOSetup", "4BoulesSetup\4BoulesSetup.vdproj", "{3C97DCC8-D4C8-49A5-911C-72CDBD2C714E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -72,10 +72,6 @@ Global
 		{35D76B95-2EA0-4429-9676-EC1896F9EBD6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{35D76B95-2EA0-4429-9676-EC1896F9EBD6}.Release|x86.ActiveCfg = Release|x86
 		{35D76B95-2EA0-4429-9676-EC1896F9EBD6}.Release|x86.Build.0 = Release|x86
-		{74703AC0-C29E-4395-B8C2-C89AE5F3D7F3}.Debug|Any CPU.ActiveCfg = Debug
-		{74703AC0-C29E-4395-B8C2-C89AE5F3D7F3}.Debug|x86.ActiveCfg = Debug
-		{74703AC0-C29E-4395-B8C2-C89AE5F3D7F3}.Release|Any CPU.ActiveCfg = Release
-		{74703AC0-C29E-4395-B8C2-C89AE5F3D7F3}.Release|x86.ActiveCfg = Release
 		{616BC4FC-EFD0-4FB4-A1B3-6B2CDDDD14AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{616BC4FC-EFD0-4FB4-A1B3-6B2CDDDD14AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{616BC4FC-EFD0-4FB4-A1B3-6B2CDDDD14AD}.Debug|x86.ActiveCfg = Debug|x86
@@ -85,17 +81,23 @@ Global
 		{616BC4FC-EFD0-4FB4-A1B3-6B2CDDDD14AD}.Release|x86.ActiveCfg = Release|x86
 		{616BC4FC-EFD0-4FB4-A1B3-6B2CDDDD14AD}.Release|x86.Build.0 = Release|x86
 		{E61B4BC6-B14C-4E2A-AEE2-26DAB371693C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E61B4BC6-B14C-4E2A-AEE2-26DAB371693C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E61B4BC6-B14C-4E2A-AEE2-26DAB371693C}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{E61B4BC6-B14C-4E2A-AEE2-26DAB371693C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E61B4BC6-B14C-4E2A-AEE2-26DAB371693C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E61B4BC6-B14C-4E2A-AEE2-26DAB371693C}.Release|x86.ActiveCfg = Release|Any CPU
 		{E10B6B5D-3E4D-417D-BD93-D8C7DDB9B756}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E10B6B5D-3E4D-417D-BD93-D8C7DDB9B756}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E10B6B5D-3E4D-417D-BD93-D8C7DDB9B756}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{E10B6B5D-3E4D-417D-BD93-D8C7DDB9B756}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E10B6B5D-3E4D-417D-BD93-D8C7DDB9B756}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E10B6B5D-3E4D-417D-BD93-D8C7DDB9B756}.Release|x86.ActiveCfg = Release|Any CPU
+		{3C97DCC8-D4C8-49A5-911C-72CDBD2C714E}.Debug|Any CPU.ActiveCfg = Debug
+		{3C97DCC8-D4C8-49A5-911C-72CDBD2C714E}.Debug|Any CPU.Build.0 = Debug
+		{3C97DCC8-D4C8-49A5-911C-72CDBD2C714E}.Debug|x86.ActiveCfg = Debug
+		{3C97DCC8-D4C8-49A5-911C-72CDBD2C714E}.Debug|x86.Build.0 = Debug
+		{3C97DCC8-D4C8-49A5-911C-72CDBD2C714E}.Release|Any CPU.ActiveCfg = Release
+		{3C97DCC8-D4C8-49A5-911C-72CDBD2C714E}.Release|Any CPU.Build.0 = Release
+		{3C97DCC8-D4C8-49A5-911C-72CDBD2C714E}.Release|x86.ActiveCfg = Release
+		{3C97DCC8-D4C8-49A5-911C-72CDBD2C714E}.Release|x86.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

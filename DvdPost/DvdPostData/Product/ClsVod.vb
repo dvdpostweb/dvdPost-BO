@@ -15,6 +15,7 @@ Public Class ClsVod
         STATUS
         SOURCE
         VOD_SUPPORT
+        CREDIT
     End Enum
     Public Shared Function getViewVod(ByVal customers_id As Integer) As String
 
@@ -168,7 +169,8 @@ Public Class ClsVod
                                         ByVal status As String, _
                                         ByVal quality As String, _
                                         ByVal source As String, _
-                                        ByVal support As Integer) As String
+                                        ByVal support As Integer, _
+                                        ByVal credit As Integer) As String
         Dim sql As String
         Dim strLanguageSubtitle As String
         Dim strlanguage As String
@@ -205,6 +207,7 @@ Public Class ClsVod
               ", quality = " & strQuality & _
               ", source = '" & source & "'" & _
               ", imdb_id = " & imdb_id & _
+              ", credits = " & credit & _
               ", vod_support_id = " & support & _
               " where id = " & streaming_products_id
 
@@ -237,7 +240,8 @@ Public Class ClsVod
                                         ByVal status As String, _
                                         ByVal quality As String, _
                                         ByVal source As String, _
-                                        ByVal support As Integer) As String
+                                        ByVal support As Integer, _
+                                        ByVal credit As Integer) As String
         Dim sql As String
         Dim strLanguageSubtitle As String
         Dim strQuality As String
@@ -269,7 +273,7 @@ Public Class ClsVod
         End If
 
         sql = "insert into streaming_products values (null," & imdb_id & ",'" & filename & "','" & DVDPostTools.ClsDate.formatDateDB(available_from) & _
-              "','" & DVDPostTools.ClsDate.formatDateDB(expire_at) & "'," & available & "," & strlanguage & "," & strLanguageSubtitle & ",now(),now()," & strStudio & ",'" & status & "'," & strQuality & ",'" & source & "'," & support & ",1)"
+              "','" & DVDPostTools.ClsDate.formatDateDB(expire_at) & "'," & available & "," & strlanguage & "," & strLanguageSubtitle & ",now(),now()," & strStudio & ",'" & status & "'," & strQuality & ",'" & source & "'," & support & "," & credit & ")"
         Return sql
     End Function
 
