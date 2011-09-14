@@ -523,7 +523,12 @@ Public Class FrmProductsVOD
     End Sub
 
     Private Sub GridVodWatch_DoubleClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GridVodWatch.DoubleClick
-        GridVod_DoubleClick(sender, e)
+        Dim row As DataRow
+        If gridViewVodWatch.RowCount > 0 Then
+            row = gridViewVodWatch.GetDataRow(gridViewVodWatch.FocusedRowHandle())
+            loadData(row)
+        End If
+        ChangeStep(StepForm.CHOOSEVOD)
     End Sub
     Private Sub loadInfoVodWatch()
 
