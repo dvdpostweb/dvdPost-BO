@@ -838,7 +838,4 @@ Public Class FrmProductsVOD
         End If
     End Sub
 
-    Private Sub XTabView_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles XTabView.Paint
-
-    End Sub
 End Class

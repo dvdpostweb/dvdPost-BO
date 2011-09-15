@@ -827,7 +827,7 @@ Public Class clsProduct_DVD
             columnName = "customers_abo_dvd_home_adult"
         End If
         Dim _sql As String = "update customers c set " & columnName & " = (" & columnName & " + " & vQty & " ) " & _
-                             " where c.customers_id=" & vCustomers_id
+                             " where c.customers_id=" & vCustomers_id & " and " & columnName & " >= " & vQty
         DvdPostData.clsConnection.ExecuteNonQuery(_sql)
     End Sub
 
@@ -1475,8 +1475,13 @@ Public Class clsProduct_DVD
                     isChangeStatus = False
                     isorder = False
 
-                Case DvdPostData.clsOdersStatusHistory.OrderStatusNew.EXPEDITED, _
-                    DvdPostData.clsOdersStatusHistory.OrderStatusNew.INTERCHANGE, _
+                Case DvdPostData.clsOdersStatusHistory.OrderStatusNew.EXPEDITED
+                    isorder = True
+                    IsMustInBox = True
+                    IsDecreaseDVD_Home = True
+                    isChangeStatus = True
+
+                Case DvdPostData.clsOdersStatusHistory.OrderStatusNew.INTERCHANGE, _
                     DvdPostData.clsOdersStatusHistory.OrderStatusNew.DELAYED_BACK, _
                     DvdPostData.clsOdersStatusHistory.OrderStatusNew.DELAYED_GO, _
                     DvdPostData.clsOdersStatusHistory.OrderStatusNew.LOST_BY_POST, _
@@ -1484,7 +1489,7 @@ Public Class clsProduct_DVD
 
                     isorder = True
                     IsMustInBox = True
-                    IsDecreaseDVD_Home = True
+                    IsDecreaseDVD_Home = False
                     isChangeStatus = True
 
                     'Case DvdPostData.clsOdersStatusHistory.OrderStatus.ORDERS_STATUS_BADLABEL
