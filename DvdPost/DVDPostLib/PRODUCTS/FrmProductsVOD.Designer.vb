@@ -2470,10 +2470,6 @@ Partial Class FrmProductsVOD
     Friend WithEvents colSource As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
     Friend WithEvents lblCredit As DevExpress.XtraEditors.LabelControl
     Friend WithEvents spedCredit As DevExpress.XtraEditors.SpinEdit
-    ' Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
-    ' Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
-    '  Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
-    '  Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
     Friend WithEvents colCredit As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
     Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
