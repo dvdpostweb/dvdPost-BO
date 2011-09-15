@@ -56,10 +56,6 @@
     <Reference Include="DevExpress.XtraReports.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1, processorArchitecture=MSIL">
       <HintPath>..\DLL\DevExpress.XtraReports.v8.1.dll</HintPath>
     </Reference>
-    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\DLL\log4net-1.2.10\bin\net\1.0\debug\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="MySql.Data, Version=5.0.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\DLL\MySql.Data.dll</HintPath>

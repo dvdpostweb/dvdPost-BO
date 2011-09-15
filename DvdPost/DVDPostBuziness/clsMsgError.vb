@@ -1,35 +1,35 @@
-Imports log4net
+'Imports log4net
 Imports System
-Public Class EntryPoint
-    ' Application entry point.
-    Public Shared Sub start()
-        ' Uncomment the next line to enable log4net internal debugging
-        ' log4net.helpers.LogLog.InternalDebugging = true;
+'Public Class EntryPoint
+'    ' Application entry point.
+'    Public Shared Sub start()
+'        ' Uncomment the next line to enable log4net internal debugging
+'        ' log4net.helpers.LogLog.InternalDebugging = true;
 
-        ' This will instruct log4net to look for a configuration file
-        ' called ConsoleApp.exe.config in the application base
-        ' directory (i.e. the directory containing ConsoleApp.exe)
-        log4net.Config.XmlConfigurator.Configure()
+'        ' This will instruct log4net to look for a configuration file
+'        ' called ConsoleApp.exe.config in the application base
+'        ' directory (i.e. the directory containing ConsoleApp.exe)
+'        log4net.Config.XmlConfigurator.Configure()
 
-        ' Create a logger
-        Dim log As ILog = LogManager.GetLogger(GetType(EntryPoint))
+'        ' Create a logger
+'        Dim log As ILog = LogManager.GetLogger(GetType(EntryPoint))
 
-        ' Log an info level message
-        If log.IsInfoEnabled Then log.Info("Application [ConsoleApp] Start")
+'        ' Log an info level message
+'        If log.IsInfoEnabled Then log.Info("Application [ConsoleApp] Start")
 
-        ' Invoke shared LogEvents method on LoggingExample class
-        clsMsgError.LogEvents()
+'        ' Invoke shared LogEvents method on LoggingExample class
+'        clsMsgError.LogEvents()
 
-        Console.Write("Press Enter to exit...")
-        Console.ReadLine()
+'        Console.Write("Press Enter to exit...")
+'        Console.ReadLine()
 
-        If log.IsInfoEnabled Then log.Info("Application [ConsoleApp] Stop")
+'        If log.IsInfoEnabled Then log.Info("Application [ConsoleApp] Stop")
 
-        ' It's not possible to use shutdown hooks in the .NET Compact Framework,
-        ' so you have manually shutdown log4net to free all resoures.
-        LogManager.Shutdown()
-    End Sub
-End Class
+'        ' It's not possible to use shutdown hooks in the .NET Compact Framework,
+'        ' so you have manually shutdown log4net to free all resoures.
+'        LogManager.Shutdown()
+'    End Sub
+'End Class
 
 Public Class clsMsgError
 
@@ -37,41 +37,41 @@ Public Class clsMsgError
     Const Subject As String = "ERROR DVDPost Bo : "
     Const Author As String = " User : "
     Const PATHLOG As String = "Path_LOG"
-    Private Shared ReadOnly log As log4net.ILog = log4net.LogManager.GetLogger(GetType(clsMsgError))
+    'Private Shared ReadOnly log As log4net.ILog = log4net.LogManager.GetLogger(GetType(clsMsgError))
 
-    Public Shared Sub LogEvents()
-        ' Log a debug message. Test if debug is enabled before
-        ' attempting to log the message. This is not required but
-        ' can make running without logging faster.
-        If log.IsDebugEnabled Then log.Debug("This is a debug message")
+    'Public Shared Sub LogEvents()
+    '    ' Log a debug message. Test if debug is enabled before
+    '    ' attempting to log the message. This is not required but
+    '    ' can make running without logging faster.
+    '    If log.IsDebugEnabled Then log.Debug("This is a debug message")
 
-        Try
-            'Bar()
-        Catch ex As Exception
-            ' Log an error with an exception
-            log.Error("Exception thrown from method Bar", ex)
-        End Try
+    '    Try
+    '        'Bar()
+    '    Catch ex As Exception
+    '        ' Log an error with an exception
+    '        log.Error("Exception thrown from method Bar", ex)
+    '    End Try
 
-        log.Error("Hey this is an error!")
+    '    log.Error("Hey this is an error!")
 
-        Dim disposableFrame As IDisposable
+    '    Dim disposableFrame As IDisposable
 
-        Try
-            ' Push a message on to the Nested Diagnostic Context stack
-            log4net.NDC.Push("NDC_Message")
+    '    Try
+    '        ' Push a message on to the Nested Diagnostic Context stack
+    '        log4net.NDC.Push("NDC_Message")
 
-            log.Warn("This should have an NDC message")
+    '        log.Warn("This should have an NDC message")
 
-            ' Set a Mapped Diagnostic Context value  
-            log4net.MDC.Set("auth", "auth-none")
-            log.Warn("This should have an MDC message for the key 'auth'")
-        Finally
-            ' The NDC message is popped off the stack by using the Dispose method
-            If (Not disposableFrame Is Nothing) Then disposableFrame.Dispose()
-        End Try
+    '        ' Set a Mapped Diagnostic Context value  
+    '        log4net.MDC.Set("auth", "auth-none")
+    '        log.Warn("This should have an MDC message for the key 'auth'")
+    '    Finally
+    '        ' The NDC message is popped off the stack by using the Dispose method
+    '        If (Not disposableFrame Is Nothing) Then disposableFrame.Dispose()
+    '    End Try
 
-        log.Warn("See the NDC has been popped of! The MDC 'auth' key is still with us.")
-    End Sub
+    '    log.Warn("See the NDC has been popped of! The MDC 'auth' key is still with us.")
+    'End Sub
 
 
 
