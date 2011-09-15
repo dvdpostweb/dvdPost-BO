@@ -826,8 +826,8 @@ Public Class clsProduct_DVD
         If isAdult Then
             columnName = "customers_abo_dvd_home_adult"
         End If
-        Dim _sql As String = "update customers c set " & columnName & " = (" & columnName & " + " & vQty & " ) " & _
-                             " where c.customers_id=" & vCustomers_id & " and " & columnName & " >= " & vQty
+        Dim _sql As String = "update customers c set " & columnName & " = if(" & columnName & " >= abs(" & vQty & ")," & columnName & " + " & vQty & ",0) " & _
+                             " where c.customers_id=" & vCustomers_id
         DvdPostData.clsConnection.ExecuteNonQuery(_sql)
     End Sub
 
