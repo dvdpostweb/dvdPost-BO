@@ -796,6 +796,7 @@ Public Class FrmProductsVOD
                 result(DvdPostData.ClsVod.ListField.STATUS) = "uploaded"
                 result(DvdPostData.ClsVod.ListField.AVAILABLE) = "true"
                 result(DvdPostData.ClsVod.ListField.SOURCE) = "ALPHANETWORKS"
+                result(DvdPostData.ClsVod.ListField.CREDIT) = 1
 
 
                 If Not ExistAlreadyMovie(result) Then
@@ -812,7 +813,7 @@ Public Class FrmProductsVOD
                             Nothing, _
                             result(DvdPostData.ClsVod.ListField.SOURCE), _
                             result(DvdPostData.ClsVod.ListField.VOD_SUPPORT), _
-                            result(DvdPostData.ClsVod.ListField.CREDIT))
+                            Integer.Parse(result(DvdPostData.ClsVod.ListField.CREDIT)))
 
                     DvdPostData.clsConnection.ExecuteNonQuery(sql)
                     LstResult.Items.Add(name)
