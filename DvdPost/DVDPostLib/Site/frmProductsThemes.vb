@@ -52,7 +52,7 @@ Public Class frmProductsThemes
         sql = DvdPostData.ClsVod.GetLanguage()
         dt = DvdPostData.clsConnection.FillDataSet(sql)
 
-        cmbLanguage.Properties.ValueMember = "languages_id"
+        cmbLanguage.Properties.ValueMember = "id"
         cmbLanguage.Properties.DisplayMember = "code"
         cmbLanguage.Properties.DataSource = dt
 
