@@ -404,7 +404,6 @@ Partial Class frmProductsThemes
         Me.cmbLanguage.Margin = New System.Windows.Forms.Padding(4)
         Me.cmbLanguage.Name = "cmbLanguage"
         Me.cmbLanguage.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cmbLanguage.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("languages_id", "id", 63, DevExpress.Utils.FormatType.Numeric, "", True, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("code", "code", 64, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
         Me.cmbLanguage.Properties.DisplayMember = "status_desc"
         Me.cmbLanguage.Properties.NullText = ""
         Me.cmbLanguage.Properties.ValueMember = "status_id"
