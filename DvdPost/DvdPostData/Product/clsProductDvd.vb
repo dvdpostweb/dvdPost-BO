@@ -126,7 +126,7 @@ Public Class clsProductDvd
                " FROM products_dvd PD " & _
                " join products_dvd_status pds on PD.products_dvd_status = pds.products_dvd_status_id" & _
                " where PD.products_id = " & productId & sqlDvdId & " and box_id <> " & DvdPostData.clsProductDvd.BOXTYPE.LOST_AFTER_INVENTORY & _
-               " order by box_id,products_dvd_status desc "
+               " order by box_id "
 
         Return sql
     End Function
