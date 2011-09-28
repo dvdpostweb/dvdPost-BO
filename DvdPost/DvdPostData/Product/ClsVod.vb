@@ -31,6 +31,24 @@ Public Class ClsVod
 
         Return sql
     End Function
+
+    Public Shared Function getSelectVodNoMovieInfo() As String
+
+        Dim sql As String
+
+        sql = " SELECT s.imdb_id, s.filename FROM streaming_products s where status = 'uploaded' and (select count(*) from products p where p.imdb_id = s.imdb_id ) = 0 "
+
+        Return sql
+
+    End Function
+    Public Shared Function getSelectMovieData(ByVal imdb_id As Long)
+        Dim sql As String
+
+        sql = " select * from products where imdb_id = " & imdb_id 
+
+        Return sql
+
+    End Function
     Public Shared Function getSelectVod(ByVal imdb_id As Long, ByVal lang As Integer, ByVal subtitle As Integer, ByVal source As String, ByVal support As Integer) As String
         Dim sql As String
         Dim strLanguageSubtitle As String

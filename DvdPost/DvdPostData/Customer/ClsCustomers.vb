@@ -968,6 +968,14 @@ Public Class ClsCustomersData
         sql = "update customers set customers_abo_dvd_credit = customers_abo_dvd_credit + " & credit & " where customers_id = " & customers_id
         Return sql
     End Function
+
+    Public Shared Function GetUpdateCreditsAlreadyRecieved(ByVal customer_id As Integer) As String
+
+        Dim sql As String
+        sql = " update customer_attributes set credits_already_recieved = 0 where customer_id = " & customer_id
+
+        Return sql
+    End Function
     Public Shared Function GetUpdateAboType(ByVal customers_id As Integer, ByVal abo_type As Integer, ByVal nb_dvd_norm As Integer) As String
         Dim sql As String
         sql = "UPDATE customers set customers_abo_dvd_norm = " & nb_dvd_norm

@@ -659,6 +659,18 @@ Public Class FrmProductsVOD
 
         Return dt.Rows.Count > 0
     End Function
+
+    Private Function ExistMovieData(ByVal imdb_id As Long) As Boolean
+        Dim sql As String
+        Dim dt As DataTable
+
+        sql = DvdPostData.ClsVod.getSelectMovieData(imdb_id)
+        dt = DvdPostData.clsConnection.FillDataSet(sql)
+
+        Return dt.Rows.Count > 0
+
+    End Function
+
     Private Function GetInfoVod(ByVal result() As String) As DataRow
 
         Dim sql As String
@@ -817,6 +829,7 @@ Public Class FrmProductsVOD
 
                     DvdPostData.clsConnection.ExecuteNonQuery(sql)
                     LstResult.Items.Add(name)
+
                 End If
 
             Else
@@ -840,4 +853,14 @@ Public Class FrmProductsVOD
         End If
     End Sub
 
+    Private Sub btnAllNoMovieInfo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAllNoMovieInfo.Click
+        Dim sql As String
+        Dim dt As DataTable
+
+        sql = DvdPostData.ClsVod.getSelectVodNoMovieInfo()
+        dt = DvdPostData.clsConnection.FillDataSet(sql)
+
+        grdOnlyVODMovie.DataSource = dt
+    End Sub
+    
 End Class
