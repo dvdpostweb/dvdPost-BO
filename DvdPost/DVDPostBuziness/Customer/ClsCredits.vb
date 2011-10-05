@@ -48,6 +48,8 @@ Public Class ClsCredits
 
         DvdPostData.clsConnection.UpdateDataTableInDB(dt, sql)
     End Sub
+
+    'decrease credit if customer hold DVD at home next month
     Public Shared Sub UpdateCreditMoreMonth()
         Dim sql As String
         Dim dt As DataTable
