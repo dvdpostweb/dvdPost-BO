@@ -253,7 +253,7 @@ Public Class ClsStatPayment
               " join products_abo pa on pabo.products_id = pa.products_id " & _
               " left join studio s on s.studio_id = sp.studio_id " & _
               " left join directors d on d.directors_id = p.products_directors_id " & _
-              " where t.created_at >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and t.created_at <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
+              " where date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
               " order by customer_id "
 
         Return sql

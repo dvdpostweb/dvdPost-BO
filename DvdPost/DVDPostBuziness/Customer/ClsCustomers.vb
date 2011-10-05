@@ -449,7 +449,7 @@ Public Class ClsCustomers
         Dim sql As String
         strDurationActivation = ""
 
-        productPrice = GetPriceProduct(drCustomer)
+        'productPrice = GetPriceProduct(drCustomer) - not used any more
 
         If IsDiscount(drCustomer) Then
             productPrice = ManagePriceDiscount(drCustomer, cptdroselia, forcedcredit, strDurationActivation, Classique)
@@ -642,6 +642,7 @@ Public Class ClsCustomers
         DvdPostData.clsConnection.ExecuteNonQuery(sql)
     End Sub
 
+    'copy next discount code and duration of next discount, if exists, to discount_code in column customers.activation_discount_code_id
     Private Function ManagePriceNextDiscount(ByVal drcustomer As DataRow, _
                                              ByVal drReduction As DataRow, _
                                              ByRef strDurationActivation As String) As DataRow
@@ -707,12 +708,16 @@ Public Class ClsCustomers
         drDiscount = GetRowDiscount(discount_id)
 
 
+        'calculate price, from nextdiscount code
         UpdateNextProduct(drDiscount, customers_id, drCustomer)
 
+        'always is classic,just sometime is not
         If Classique Then
 
+            'currently this is not used
             If Not IsRecurringDiscount(drCustomer) Then
 
+                'returns next discount code
                 drDiscount = ManagePriceNextDiscount(drCustomer, drDiscount, strDurationActivation)
             End If
         Else
@@ -721,14 +726,15 @@ Public Class ClsCustomers
         End If
 
 
-        If drDiscount Is Nothing Then
+        If drDiscount Is Nothing Then ' discount doesn't exists
             forcedcredit = 0
             droselia = 0
             Return GetPriceProduct(drCustomer)
-        Else
+        Else ' if discount exists then calculate price with discount
             forcedcredit = GetDiscountActivationCredit(drDiscount)
             droselia = GetDroseliaValue(drDiscount)
 
+            'just info thatcustomer use discount
             sql = DvdPostData.ClsCustomersData.GetInsertDiscountUse(customers_id, discount_id)
             DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
@@ -947,6 +953,7 @@ Public Class ClsCustomers
                         AboAutoStop(drCustomers)
                     Else
 
+                        'calculate the price
                         price = ManageReduction(drCustomers, cptDroselia, forcedcredit, sqlDurationActivation, classique)
 
                         drCustomers("amount") = price
