@@ -803,6 +803,21 @@ Public Class ClsCustomers
 
     End Function
 
+    Private Sub ManageUpdateCredit(ByVal drCustomer As DataRow, ByVal price As String, Optional ByVal Forcedcredit As Integer = 0)
+
+        Dim dt As DataTable
+        dt = GetInfoAttributesCustomer(GetCustomersId(drCustomer))
+
+        If dt.Rows(0)("credits_already_recieved") = 0 Then
+            UpdateCredit(drCustomer, price, Forcedcredit)
+        Else
+            Dim sql As String
+            sql = DvdPostData.ClsCustomersData.GetUpdateCreditsAlreadyRecieved(GetCustomersId(drCustomer))
+            DvdPostData.clsConnection.ExecuteNonQuery(sql)
+        End If
+
+    End Sub
+
     Private Sub UpdateCredit(ByVal drCustomer As DataRow, ByVal price As String, Optional ByVal Forcedcredit As Integer = 0)
 
         Dim sql As String
@@ -941,7 +956,7 @@ Public Class ClsCustomers
 
                         End If
                         If classique Or (Decimal.Parse(price) = 0) Or forced Then
-                            UpdateCredit(drCustomers, price, forcedcredit)
+                            ManageUpdateCredit(drCustomers, price, forcedcredit)
                             UpdateDateReconduction(drCustomers, sqlDurationActivation)
                             createReconductionAboHistory(drCustomers, price)
                             If classique Then

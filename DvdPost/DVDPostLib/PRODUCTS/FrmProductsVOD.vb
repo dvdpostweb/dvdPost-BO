@@ -98,6 +98,7 @@ Public Class FrmProductsVOD
                 btnEditVod.Enabled = True
                 btnSaveVod.Enabled = False
                 btnCancelVod.Enabled = False
+                btnDeleteVOD.Enabled = True
 
                 EnableField(False)
 
@@ -108,6 +109,7 @@ Public Class FrmProductsVOD
                 btnEditVod.Enabled = False
                 btnSaveVod.Enabled = True
                 btnCancelVod.Enabled = True
+                btnDeleteVOD.Enabled = True
 
                 EnableField(True)
                 XTabView.PageVisible = True
@@ -117,6 +119,7 @@ Public Class FrmProductsVOD
                 btnEditVod.Enabled = False
                 btnSaveVod.Enabled = False
                 btnCancelVod.Enabled = False
+                btnDeleteVOD.Enabled = False
 
                 EnableField(False)
 
@@ -130,6 +133,7 @@ Public Class FrmProductsVOD
                 btnEditVod.Enabled = False
                 btnSaveVod.Enabled = True
                 btnCancelVod.Enabled = True
+                btnDeleteVOD.Enabled = False
 
                 EnableField(True)
                 XTabResult.PageVisible = False
@@ -140,6 +144,7 @@ Public Class FrmProductsVOD
                 btnEditVod.Enabled = True
                 btnSaveVod.Enabled = False
                 btnCancelVod.Enabled = False
+                btnDeleteVOD.Enabled = True
 
                 EnableField(False)
                 XTabView.PageVisible = True
@@ -659,6 +664,18 @@ Public Class FrmProductsVOD
 
         Return dt.Rows.Count > 0
     End Function
+
+    Private Function ExistMovieData(ByVal imdb_id As Long) As Boolean
+        Dim sql As String
+        Dim dt As DataTable
+
+        sql = DvdPostData.ClsVod.getSelectMovieData(imdb_id)
+        dt = DvdPostData.clsConnection.FillDataSet(sql)
+
+        Return dt.Rows.Count > 0
+
+    End Function
+
     Private Function GetInfoVod(ByVal result() As String) As DataRow
 
         Dim sql As String
@@ -817,6 +834,7 @@ Public Class FrmProductsVOD
 
                     DvdPostData.clsConnection.ExecuteNonQuery(sql)
                     LstResult.Items.Add(name)
+
                 End If
 
             Else
@@ -840,4 +858,29 @@ Public Class FrmProductsVOD
         End If
     End Sub
 
+    Private Sub btnAllNoMovieInfo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAllNoMovieInfo.Click
+        Dim sql As String
+        Dim dt As DataTable
+
+        sql = DvdPostData.ClsVod.getSelectVodNoMovieInfo()
+        dt = DvdPostData.clsConnection.FillDataSet(sql)
+
+        grdOnlyVODMovie.DataSource = dt
+    End Sub
+    
+    Private Sub btnDeleteVOD_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDeleteVOD.Click
+        Dim sql As String
+
+        sql = DvdPostData.ClsVod.GetDeleteVod(txtId.Text)
+
+
+        DvdPostData.clsConnection.ExecuteNonQuery(sql)
+
+        If _typesearch = typeSearch.DETAIL Then
+            btnSearch_Click(Nothing, Nothing)
+        Else
+            BtnViewAll_Click(Nothing, Nothing)
+        End If
+
+    End Sub
 End Class

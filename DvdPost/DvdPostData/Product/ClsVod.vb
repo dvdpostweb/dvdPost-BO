@@ -31,6 +31,24 @@ Public Class ClsVod
 
         Return sql
     End Function
+
+    Public Shared Function getSelectVodNoMovieInfo() As String
+
+        Dim sql As String
+
+        sql = " SELECT s.imdb_id, s.filename FROM streaming_products s where status = 'uploaded' and status <> 'deleted' and (select count(*) from products p where p.imdb_id = s.imdb_id ) = 0 "
+
+        Return sql
+
+    End Function
+    Public Shared Function getSelectMovieData(ByVal imdb_id As Long)
+        Dim sql As String
+
+        sql = " select * from products where imdb_id = " & imdb_id 
+
+        Return sql
+
+    End Function
     Public Shared Function getSelectVod(ByVal imdb_id As Long, ByVal lang As Integer, ByVal subtitle As Integer, ByVal source As String, ByVal support As Integer) As String
         Dim sql As String
         Dim strLanguageSubtitle As String
@@ -43,7 +61,7 @@ Public Class ClsVod
         sql = " select * from streaming_products where imdb_id = " & imdb_id & _
               " and language_id = " & lang & " and " & strLanguageSubtitle & _
               " and vod_support_id = " & support & _
-              " and source = '" & source & "'"
+              " and source = '" & source & "'" & " status <> 'deleted' "
 
         Return sql
     End Function
@@ -57,7 +75,7 @@ Public Class ClsVod
         End If
 
         sql = " select * from streaming_products where imdb_id = " & imdb_id & _
-              " and language_id = " & lang & " and " & strLanguageSubtitle
+              " and language_id = " & lang & " and " & strLanguageSubtitle & " status <> 'deleted' "
 
         Return sql
     End Function
@@ -65,7 +83,8 @@ Public Class ClsVod
         Dim sql As String
         sql = " SELECT distinct sp.*, P.products_title products_name " & _
               " from (select imdb_id,products_title from products group by imdb_id) P " & _
-              " join streaming_products sp on sp.imdb_id = P.imdb_id "
+              " join streaming_products sp on sp.imdb_id = P.imdb_id " & _
+              " where sp.status <> 'deleted' "
         Return sql
     End Function
 
@@ -74,7 +93,7 @@ Public Class ClsVod
         sql = " SELECT distinct sp.*, P.products_title products_name " & _
               " from (select imdb_id,products_title from products group by imdb_id) P " & _
               " join streaming_products sp on sp.imdb_id = P.imdb_id " & _
-              " where products_title like '%" & partTitle.Trim & "%'  "
+              " where sp.status <> 'deleted' and products_title like '%" & partTitle.Trim & "%'  "
         Return sql
     End Function
 
@@ -100,7 +119,7 @@ Public Class ClsVod
         sql = " SELECT distinct sp.*, P.products_title products_name " & _
               " from (select imdb_id,products_title,products_id from products group by imdb_id) P " & _
               " join streaming_products sp on sp.imdb_id = P.imdb_id " & _
-              " where P.products_id = " & products_id
+              " where sp.status <> 'deleted' and P.products_id = " & products_id
         Return sql
     End Function
 
@@ -109,7 +128,7 @@ Public Class ClsVod
         sql = " SELECT distinct sp.*, P.products_title products_name " & _
               " from (select imdb_id,products_title from products group by imdb_id) P " & _
               " join streaming_products sp on sp.imdb_id = P.imdb_id " & _
-              " where P.imdb_id = " & imdb_id
+              " where status <> 'deleted' and P.imdb_id = " & imdb_id
         Return sql
     End Function
 
@@ -213,6 +232,17 @@ Public Class ClsVod
 
         Return sql
     End Function
+
+    Public Shared Function GetDeleteVod(ByVal streaming_products_id As Integer) As String
+        Dim sql As String
+
+        sql = " update streaming_products sp " & _
+              " set status = 'deleted' " & _
+              " where id = " & streaming_products_id
+
+        Return sql
+    End Function
+
     Public Shared Function GetSelectCheckVod(ByVal imdb_id As Integer, _
                                             ByVal language_id As Integer, _
                                             ByVal language_subtitle_id As Integer, _

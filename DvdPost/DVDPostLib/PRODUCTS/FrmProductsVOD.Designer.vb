@@ -134,6 +134,7 @@ Partial Class FrmProductsVOD
         Me.chkcolAvailable = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
         Me.colCredit = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.XTabView = New DevExpress.XtraTab.XtraTabPage
+        Me.btnDeleteVOD = New DevExpress.XtraEditors.SimpleButton
         Me.lblCredit = New DevExpress.XtraEditors.LabelControl
         Me.spedCredit = New DevExpress.XtraEditors.SpinEdit
         Me.cmbSupportVod = New DevExpress.XtraEditors.LookUpEdit
@@ -217,6 +218,12 @@ Partial Class FrmProductsVOD
         Me.txtPathOfFile = New DevExpress.XtraEditors.TextEdit
         Me.btnChooseFileTxt = New DevExpress.XtraEditors.SimpleButton
         Me.lblTxtFile = New System.Windows.Forms.Label
+        Me.xTabVODOnlyMovie = New DevExpress.XtraTab.XtraTabPage
+        Me.grdOnlyVODMovie = New DevExpress.XtraGrid.GridControl
+        Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView
+        Me.imdb_id = New DevExpress.XtraGrid.Columns.GridColumn
+        Me.filename = New DevExpress.XtraGrid.Columns.GridColumn
+        Me.btnAllNoMovieInfo = New DevExpress.XtraEditors.SimpleButton
         Me.TextEdit2 = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
         Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton
@@ -283,6 +290,9 @@ Partial Class FrmProductsVOD
         CType(Me.GridViewFtpLocal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtabAutomateTranscode.SuspendLayout()
         CType(Me.txtPathOfFile.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.xTabVODOnlyMovie.SuspendLayout()
+        CType(Me.grdOnlyVODMovie, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -307,22 +317,6 @@ Partial Class FrmProductsVOD
         Me.BarManager1.Form = Me
         Me.BarManager1.MaxItemId = 73
         Me.BarManager1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbViewListRepos, Me.txtQuickSearchRepos, Me.cmbReportListRepos, Me.cmbFilterListRepos, Me.cmbDefaultListRepos})
-        '
-        'barDockControlTop
-        '
-        Me.barDockControlTop.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        '
-        'barDockControlBottom
-        '
-        Me.barDockControlBottom.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        '
-        'barDockControlLeft
-        '
-        Me.barDockControlLeft.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        '
-        'barDockControlRight
-        '
-        Me.barDockControlRight.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         '
         'Main_Bar
         '
@@ -923,13 +917,12 @@ Partial Class FrmProductsVOD
         'XTabControlVod
         '
         Me.XTabControlVod.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.XTabControlVod.Location = New System.Drawing.Point(0, 35)
-        Me.XTabControlVod.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.XTabControlVod.Location = New System.Drawing.Point(0, 30)
         Me.XTabControlVod.Name = "XTabControlVod"
         Me.XTabControlVod.SelectedTabPage = Me.XTabSearch
-        Me.XTabControlVod.Size = New System.Drawing.Size(1408, 820)
+        Me.XTabControlVod.Size = New System.Drawing.Size(1056, 665)
         Me.XTabControlVod.TabIndex = 4
-        Me.XTabControlVod.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTabSearch, Me.XTabResult, Me.XTabView, Me.XTabProcess, Me.XTabViewVod, Me.XTabFtp, Me.XtabAutomateTranscode})
+        Me.XTabControlVod.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTabSearch, Me.XTabResult, Me.XTabView, Me.XTabProcess, Me.XTabViewVod, Me.XTabFtp, Me.XtabAutomateTranscode, Me.xTabVODOnlyMovie})
         Me.XTabControlVod.Text = "VOD"
         '
         'XTabSearch
@@ -944,118 +937,104 @@ Partial Class FrmProductsVOD
         Me.XTabSearch.Controls.Add(Me.lblProduct_id)
         Me.XTabSearch.Controls.Add(Me.txtTitleSearch)
         Me.XTabSearch.Controls.Add(Me.lblPartTitle)
-        Me.XTabSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.XTabSearch.Name = "XTabSearch"
-        Me.XTabSearch.Size = New System.Drawing.Size(1399, 786)
+        Me.XTabSearch.Size = New System.Drawing.Size(1047, 634)
         Me.XTabSearch.Text = "Search"
         '
         'btnRipped
         '
-        Me.btnRipped.Location = New System.Drawing.Point(592, 260)
-        Me.btnRipped.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnRipped.Location = New System.Drawing.Point(444, 211)
         Me.btnRipped.Name = "btnRipped"
-        Me.btnRipped.Size = New System.Drawing.Size(100, 28)
+        Me.btnRipped.Size = New System.Drawing.Size(75, 23)
         Me.btnRipped.TabIndex = 18
         Me.btnRipped.Text = "ripped"
         '
         'BtnViewAll
         '
-        Me.BtnViewAll.Location = New System.Drawing.Point(447, 260)
-        Me.BtnViewAll.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnViewAll.Location = New System.Drawing.Point(335, 211)
         Me.BtnViewAll.Name = "BtnViewAll"
-        Me.BtnViewAll.Size = New System.Drawing.Size(100, 28)
+        Me.BtnViewAll.Size = New System.Drawing.Size(75, 23)
         Me.BtnViewAll.TabIndex = 17
         Me.BtnViewAll.Text = "View all"
         '
         'BtnNewVodProduct
         '
-        Me.BtnNewVodProduct.Location = New System.Drawing.Point(259, 260)
-        Me.BtnNewVodProduct.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnNewVodProduct.Location = New System.Drawing.Point(194, 211)
         Me.BtnNewVodProduct.Name = "BtnNewVodProduct"
-        Me.BtnNewVodProduct.Size = New System.Drawing.Size(100, 28)
+        Me.BtnNewVodProduct.Size = New System.Drawing.Size(75, 23)
         Me.BtnNewVodProduct.TabIndex = 16
         Me.BtnNewVodProduct.Text = "New"
         '
         'btnSearch
         '
-        Me.btnSearch.Location = New System.Drawing.Point(75, 260)
-        Me.btnSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSearch.Location = New System.Drawing.Point(56, 211)
         Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(100, 28)
+        Me.btnSearch.Size = New System.Drawing.Size(75, 23)
         Me.btnSearch.TabIndex = 15
         Me.btnSearch.Text = "Search"
         '
         'txtImdb
         '
-        Me.txtImdb.Location = New System.Drawing.Point(209, 139)
-        Me.txtImdb.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtImdb.Location = New System.Drawing.Point(157, 113)
         Me.txtImdb.Name = "txtImdb"
-        Me.txtImdb.Size = New System.Drawing.Size(149, 22)
+        Me.txtImdb.Size = New System.Drawing.Size(112, 20)
         Me.txtImdb.TabIndex = 14
         '
         'LblImdb
         '
-        Me.LblImdb.Location = New System.Drawing.Point(35, 143)
-        Me.LblImdb.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.LblImdb.Location = New System.Drawing.Point(26, 116)
         Me.LblImdb.Name = "LblImdb"
-        Me.LblImdb.Size = New System.Drawing.Size(45, 16)
+        Me.LblImdb.Size = New System.Drawing.Size(38, 13)
         Me.LblImdb.TabIndex = 13
         Me.LblImdb.Text = "Imdb ID"
         '
         'TxtProducts_id
         '
-        Me.TxtProducts_id.Location = New System.Drawing.Point(209, 84)
-        Me.TxtProducts_id.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtProducts_id.Location = New System.Drawing.Point(157, 68)
         Me.TxtProducts_id.Name = "TxtProducts_id"
-        Me.TxtProducts_id.Size = New System.Drawing.Size(149, 22)
+        Me.TxtProducts_id.Size = New System.Drawing.Size(112, 20)
         Me.TxtProducts_id.TabIndex = 12
         '
         'lblProduct_id
         '
-        Me.lblProduct_id.Location = New System.Drawing.Point(35, 87)
-        Me.lblProduct_id.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblProduct_id.Location = New System.Drawing.Point(26, 71)
         Me.lblProduct_id.Name = "lblProduct_id"
-        Me.lblProduct_id.Size = New System.Drawing.Size(59, 16)
+        Me.lblProduct_id.Size = New System.Drawing.Size(51, 13)
         Me.lblProduct_id.TabIndex = 11
         Me.lblProduct_id.Text = "Product ID"
         '
         'txtTitleSearch
         '
-        Me.txtTitleSearch.Location = New System.Drawing.Point(209, 34)
-        Me.txtTitleSearch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtTitleSearch.Location = New System.Drawing.Point(157, 28)
         Me.txtTitleSearch.Name = "txtTitleSearch"
-        Me.txtTitleSearch.Size = New System.Drawing.Size(629, 22)
+        Me.txtTitleSearch.Size = New System.Drawing.Size(472, 20)
         Me.txtTitleSearch.TabIndex = 10
         '
         'lblPartTitle
         '
-        Me.lblPartTitle.Location = New System.Drawing.Point(35, 43)
-        Me.lblPartTitle.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblPartTitle.Location = New System.Drawing.Point(26, 35)
         Me.lblPartTitle.Name = "lblPartTitle"
-        Me.lblPartTitle.Size = New System.Drawing.Size(67, 16)
+        Me.lblPartTitle.Size = New System.Drawing.Size(56, 13)
         Me.lblPartTitle.TabIndex = 9
         Me.lblPartTitle.Text = "Part of Title"
         '
         'XTabResult
         '
         Me.XTabResult.Controls.Add(Me.GridVod)
-        Me.XTabResult.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.XTabResult.Name = "XTabResult"
-        Me.XTabResult.Size = New System.Drawing.Size(1399, 786)
+        Me.XTabResult.Size = New System.Drawing.Size(1047, 634)
         Me.XTabResult.Text = "Result"
         '
         'GridVod
         '
         Me.GridVod.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridVod.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GridVod.EmbeddedNavigator.Name = ""
         Me.GridVod.FormsUseDefaultLookAndFeel = False
         Me.GridVod.Location = New System.Drawing.Point(0, 0)
         Me.GridVod.MainView = Me.GridViewSearch
-        Me.GridVod.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GridVod.Name = "GridVod"
         Me.GridVod.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbLanguages, Me.chkcolAvailable, Me.cmbStudio, Me.RepositorycmbSupportVod})
-        Me.GridVod.Size = New System.Drawing.Size(1399, 786)
+        Me.GridVod.Size = New System.Drawing.Size(1047, 634)
         Me.GridVod.TabIndex = 4
         Me.GridVod.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewSearch})
         '
@@ -1242,6 +1221,7 @@ Partial Class FrmProductsVOD
         '
         'XTabView
         '
+        Me.XTabView.Controls.Add(Me.btnDeleteVOD)
         Me.XTabView.Controls.Add(Me.lblCredit)
         Me.XTabView.Controls.Add(Me.spedCredit)
         Me.XTabView.Controls.Add(Me.cmbSupportVod)
@@ -1273,52 +1253,56 @@ Partial Class FrmProductsVOD
         Me.XTabView.Controls.Add(Me.lblImdbView)
         Me.XTabView.Controls.Add(Me.btnSaveVod)
         Me.XTabView.Controls.Add(Me.btnEditVod)
-        Me.XTabView.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.XTabView.Name = "XTabView"
-        Me.XTabView.Size = New System.Drawing.Size(1399, 786)
+        Me.XTabView.Size = New System.Drawing.Size(1047, 634)
         Me.XTabView.Text = "View"
+        '
+        'btnDeleteVOD
+        '
+        Me.btnDeleteVOD.Enabled = False
+        Me.btnDeleteVOD.Location = New System.Drawing.Point(317, 23)
+        Me.btnDeleteVOD.Name = "btnDeleteVOD"
+        Me.btnDeleteVOD.Size = New System.Drawing.Size(79, 23)
+        Me.btnDeleteVOD.TabIndex = 86
+        Me.btnDeleteVOD.Text = "Delete"
         '
         'lblCredit
         '
-        Me.lblCredit.Location = New System.Drawing.Point(329, 446)
-        Me.lblCredit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblCredit.Location = New System.Drawing.Point(247, 362)
         Me.lblCredit.Name = "lblCredit"
-        Me.lblCredit.Size = New System.Drawing.Size(32, 16)
+        Me.lblCredit.Size = New System.Drawing.Size(27, 13)
         Me.lblCredit.TabIndex = 85
         Me.lblCredit.Text = "credit"
         '
         'spedCredit
         '
         Me.spedCredit.EditValue = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.spedCredit.Location = New System.Drawing.Point(456, 437)
-        Me.spedCredit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.spedCredit.Location = New System.Drawing.Point(342, 355)
         Me.spedCredit.Name = "spedCredit"
         Me.spedCredit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
         Me.spedCredit.Properties.MaxValue = New Decimal(New Integer() {3, 0, 0, 0})
         Me.spedCredit.Properties.MinValue = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.spedCredit.Size = New System.Drawing.Size(149, 22)
+        Me.spedCredit.Size = New System.Drawing.Size(112, 20)
         Me.spedCredit.TabIndex = 84
         '
         'cmbSupportVod
         '
         Me.cmbSupportVod.AllowDrop = True
         Me.cmbSupportVod.Enabled = False
-        Me.cmbSupportVod.Location = New System.Drawing.Point(456, 380)
-        Me.cmbSupportVod.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbSupportVod.Location = New System.Drawing.Point(342, 309)
         Me.cmbSupportVod.Name = "cmbSupportVod"
         Me.cmbSupportVod.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbSupportVod.Properties.DisplayMember = "status_desc"
         Me.cmbSupportVod.Properties.NullText = ""
         Me.cmbSupportVod.Properties.ValueMember = "status_id"
-        Me.cmbSupportVod.Size = New System.Drawing.Size(149, 22)
+        Me.cmbSupportVod.Size = New System.Drawing.Size(112, 20)
         Me.cmbSupportVod.TabIndex = 83
         '
         'lblSupport
         '
-        Me.lblSupport.Location = New System.Drawing.Point(329, 384)
-        Me.lblSupport.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblSupport.Location = New System.Drawing.Point(247, 312)
         Me.lblSupport.Name = "lblSupport"
-        Me.lblSupport.Size = New System.Drawing.Size(43, 16)
+        Me.lblSupport.Size = New System.Drawing.Size(37, 13)
         Me.lblSupport.TabIndex = 82
         Me.lblSupport.Text = "support"
         '
@@ -1326,22 +1310,20 @@ Partial Class FrmProductsVOD
         '
         Me.cmbSource.AllowDrop = True
         Me.cmbSource.Enabled = False
-        Me.cmbSource.Location = New System.Drawing.Point(455, 334)
-        Me.cmbSource.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbSource.Location = New System.Drawing.Point(341, 271)
         Me.cmbSource.Name = "cmbSource"
         Me.cmbSource.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbSource.Properties.DisplayMember = "status_desc"
         Me.cmbSource.Properties.NullText = ""
         Me.cmbSource.Properties.ValueMember = "status_id"
-        Me.cmbSource.Size = New System.Drawing.Size(149, 22)
+        Me.cmbSource.Size = New System.Drawing.Size(112, 20)
         Me.cmbSource.TabIndex = 81
         '
         'lblSource
         '
-        Me.lblSource.Location = New System.Drawing.Point(332, 338)
-        Me.lblSource.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblSource.Location = New System.Drawing.Point(249, 275)
         Me.lblSource.Name = "lblSource"
-        Me.lblSource.Size = New System.Drawing.Size(38, 16)
+        Me.lblSource.Size = New System.Drawing.Size(32, 13)
         Me.lblSource.TabIndex = 80
         Me.lblSource.Text = "source"
         '
@@ -1349,257 +1331,232 @@ Partial Class FrmProductsVOD
         '
         Me.cmbQuality.AllowDrop = True
         Me.cmbQuality.Enabled = False
-        Me.cmbQuality.Location = New System.Drawing.Point(456, 289)
-        Me.cmbQuality.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbQuality.Location = New System.Drawing.Point(342, 235)
         Me.cmbQuality.Name = "cmbQuality"
         Me.cmbQuality.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbQuality.Properties.DisplayMember = "status_desc"
         Me.cmbQuality.Properties.NullText = ""
         Me.cmbQuality.Properties.ValueMember = "status_id"
-        Me.cmbQuality.Size = New System.Drawing.Size(149, 22)
+        Me.cmbQuality.Size = New System.Drawing.Size(112, 20)
         Me.cmbQuality.TabIndex = 79
         '
         'lblHigh
         '
-        Me.lblHigh.Location = New System.Drawing.Point(329, 293)
-        Me.lblHigh.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblHigh.Location = New System.Drawing.Point(247, 238)
         Me.lblHigh.Name = "lblHigh"
-        Me.lblHigh.Size = New System.Drawing.Size(37, 16)
+        Me.lblHigh.Size = New System.Drawing.Size(32, 13)
         Me.lblHigh.TabIndex = 78
         Me.lblHigh.Text = "quality"
         '
         'cmbStatus
         '
         Me.cmbStatus.Enabled = False
-        Me.cmbStatus.Location = New System.Drawing.Point(456, 235)
-        Me.cmbStatus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbStatus.Location = New System.Drawing.Point(342, 191)
         Me.cmbStatus.Name = "cmbStatus"
         Me.cmbStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbStatus.Properties.DisplayMember = "status_desc"
         Me.cmbStatus.Properties.NullText = ""
         Me.cmbStatus.Properties.ValueMember = "status_id"
-        Me.cmbStatus.Size = New System.Drawing.Size(149, 22)
+        Me.cmbStatus.Size = New System.Drawing.Size(112, 20)
         Me.cmbStatus.TabIndex = 77
         '
         'lblStatus
         '
-        Me.lblStatus.Location = New System.Drawing.Point(329, 239)
-        Me.lblStatus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblStatus.Location = New System.Drawing.Point(247, 194)
         Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.Size = New System.Drawing.Size(34, 16)
+        Me.lblStatus.Size = New System.Drawing.Size(30, 13)
         Me.lblStatus.TabIndex = 76
         Me.lblStatus.Text = "status"
         '
         'cmbStudioEdit
         '
         Me.cmbStudioEdit.Enabled = False
-        Me.cmbStudioEdit.Location = New System.Drawing.Point(151, 132)
-        Me.cmbStudioEdit.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbStudioEdit.Location = New System.Drawing.Point(113, 107)
         Me.cmbStudioEdit.Name = "cmbStudioEdit"
         Me.cmbStudioEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbStudioEdit.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("studio_id", "id", 63, DevExpress.Utils.FormatType.Numeric, "", True, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("studio_name", "name", 64, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
         Me.cmbStudioEdit.Properties.DisplayMember = "status_desc"
         Me.cmbStudioEdit.Properties.NullText = ""
         Me.cmbStudioEdit.Properties.ValueMember = "status_id"
-        Me.cmbStudioEdit.Size = New System.Drawing.Size(149, 22)
+        Me.cmbStudioEdit.Size = New System.Drawing.Size(112, 20)
         Me.cmbStudioEdit.TabIndex = 75
         '
         'lblStudio
         '
-        Me.lblStudio.Location = New System.Drawing.Point(24, 135)
-        Me.lblStudio.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblStudio.Location = New System.Drawing.Point(18, 110)
         Me.lblStudio.Name = "lblStudio"
-        Me.lblStudio.Size = New System.Drawing.Size(34, 16)
+        Me.lblStudio.Size = New System.Drawing.Size(29, 13)
         Me.lblStudio.TabIndex = 74
         Me.lblStudio.Text = "studio"
         '
         'txtId
         '
         Me.txtId.Enabled = False
-        Me.txtId.Location = New System.Drawing.Point(505, 81)
-        Me.txtId.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtId.Location = New System.Drawing.Point(379, 66)
         Me.txtId.Name = "txtId"
-        Me.txtId.Size = New System.Drawing.Size(149, 22)
+        Me.txtId.Size = New System.Drawing.Size(112, 20)
         Me.txtId.TabIndex = 73
         '
         'lblId
         '
-        Me.lblId.Location = New System.Drawing.Point(456, 85)
-        Me.lblId.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblId.Location = New System.Drawing.Point(342, 69)
         Me.lblId.Name = "lblId"
-        Me.lblId.Size = New System.Drawing.Size(12, 16)
+        Me.lblId.Size = New System.Drawing.Size(11, 13)
         Me.lblId.TabIndex = 72
         Me.lblId.Text = "ID"
         '
         'btnCancelVod
         '
         Me.btnCancelVod.Enabled = False
-        Me.btnCancelVod.Location = New System.Drawing.Point(289, 28)
-        Me.btnCancelVod.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCancelVod.Location = New System.Drawing.Point(215, 23)
         Me.btnCancelVod.Name = "btnCancelVod"
-        Me.btnCancelVod.Size = New System.Drawing.Size(100, 28)
+        Me.btnCancelVod.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelVod.TabIndex = 71
         Me.btnCancelVod.Text = "Cancel"
         '
         'cmbLanguageSubtitle
         '
         Me.cmbLanguageSubtitle.Enabled = False
-        Me.cmbLanguageSubtitle.Location = New System.Drawing.Point(151, 220)
-        Me.cmbLanguageSubtitle.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbLanguageSubtitle.Location = New System.Drawing.Point(113, 179)
         Me.cmbLanguageSubtitle.Name = "cmbLanguageSubtitle"
         Me.cmbLanguageSubtitle.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbLanguageSubtitle.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("languages_id", "id", 63, DevExpress.Utils.FormatType.Numeric, "", True, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("code", "code", 64, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
         Me.cmbLanguageSubtitle.Properties.DisplayMember = "status_desc"
         Me.cmbLanguageSubtitle.Properties.NullText = ""
         Me.cmbLanguageSubtitle.Properties.ValueMember = "status_id"
-        Me.cmbLanguageSubtitle.Size = New System.Drawing.Size(149, 22)
+        Me.cmbLanguageSubtitle.Size = New System.Drawing.Size(112, 20)
         Me.cmbLanguageSubtitle.TabIndex = 70
         '
         'cmbLanguageSound
         '
         Me.cmbLanguageSound.Enabled = False
-        Me.cmbLanguageSound.Location = New System.Drawing.Point(151, 176)
-        Me.cmbLanguageSound.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbLanguageSound.Location = New System.Drawing.Point(113, 143)
         Me.cmbLanguageSound.Name = "cmbLanguageSound"
         Me.cmbLanguageSound.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbLanguageSound.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("languages_id", "id", 63, DevExpress.Utils.FormatType.Numeric, "", True, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("code", "code", 64, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
         Me.cmbLanguageSound.Properties.DisplayMember = "status_desc"
         Me.cmbLanguageSound.Properties.NullText = ""
         Me.cmbLanguageSound.Properties.ValueMember = "status_id"
-        Me.cmbLanguageSound.Size = New System.Drawing.Size(149, 22)
+        Me.cmbLanguageSound.Size = New System.Drawing.Size(112, 20)
         Me.cmbLanguageSound.TabIndex = 69
         '
         'cmbDateExpired
         '
         Me.cmbDateExpired.EditValue = Nothing
         Me.cmbDateExpired.Enabled = False
-        Me.cmbDateExpired.Location = New System.Drawing.Point(151, 329)
-        Me.cmbDateExpired.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbDateExpired.Location = New System.Drawing.Point(113, 267)
         Me.cmbDateExpired.Name = "cmbDateExpired"
         Me.cmbDateExpired.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbDateExpired.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-        Me.cmbDateExpired.Size = New System.Drawing.Size(149, 22)
+        Me.cmbDateExpired.Size = New System.Drawing.Size(112, 20)
         Me.cmbDateExpired.TabIndex = 68
         '
         'cmbDateStart
         '
         Me.cmbDateStart.EditValue = Nothing
         Me.cmbDateStart.Enabled = False
-        Me.cmbDateStart.Location = New System.Drawing.Point(151, 272)
-        Me.cmbDateStart.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cmbDateStart.Location = New System.Drawing.Point(113, 221)
         Me.cmbDateStart.Name = "cmbDateStart"
         Me.cmbDateStart.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbDateStart.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-        Me.cmbDateStart.Size = New System.Drawing.Size(149, 22)
+        Me.cmbDateStart.Size = New System.Drawing.Size(112, 20)
         Me.cmbDateStart.TabIndex = 67
         '
         'TxtFilename
         '
         Me.TxtFilename.Enabled = False
-        Me.TxtFilename.Location = New System.Drawing.Point(456, 127)
-        Me.TxtFilename.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtFilename.Location = New System.Drawing.Point(342, 103)
         Me.TxtFilename.Name = "TxtFilename"
-        Me.TxtFilename.Size = New System.Drawing.Size(239, 22)
+        Me.TxtFilename.Size = New System.Drawing.Size(179, 20)
         Me.TxtFilename.TabIndex = 66
         '
         'chkAvailable
         '
-        Me.chkAvailable.Location = New System.Drawing.Point(453, 183)
-        Me.chkAvailable.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.chkAvailable.Location = New System.Drawing.Point(340, 149)
         Me.chkAvailable.Name = "chkAvailable"
         Me.chkAvailable.Properties.Caption = ""
-        Me.chkAvailable.Size = New System.Drawing.Size(75, 21)
+        Me.chkAvailable.Size = New System.Drawing.Size(56, 19)
         Me.chkAvailable.TabIndex = 65
         '
         'lblAvailable
         '
-        Me.lblAvailable.Location = New System.Drawing.Point(329, 187)
-        Me.lblAvailable.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblAvailable.Location = New System.Drawing.Point(247, 152)
         Me.lblAvailable.Name = "lblAvailable"
-        Me.lblAvailable.Size = New System.Drawing.Size(50, 16)
+        Me.lblAvailable.Size = New System.Drawing.Size(42, 13)
         Me.lblAvailable.TabIndex = 64
         Me.lblAvailable.Text = "available"
         '
         'lblNameFile
         '
-        Me.lblNameFile.Location = New System.Drawing.Point(329, 135)
-        Me.lblNameFile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblNameFile.Location = New System.Drawing.Point(247, 110)
         Me.lblNameFile.Name = "lblNameFile"
-        Me.lblNameFile.Size = New System.Drawing.Size(53, 16)
+        Me.lblNameFile.Size = New System.Drawing.Size(43, 13)
         Me.lblNameFile.TabIndex = 63
         Me.lblNameFile.Text = "file name"
         '
         'lblDateExpired
         '
-        Me.lblDateExpired.Location = New System.Drawing.Point(24, 337)
-        Me.lblDateExpired.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblDateExpired.Location = New System.Drawing.Point(18, 274)
         Me.lblDateExpired.Name = "lblDateExpired"
-        Me.lblDateExpired.Size = New System.Drawing.Size(71, 16)
+        Me.lblDateExpired.Size = New System.Drawing.Size(61, 13)
         Me.lblDateExpired.TabIndex = 62
         Me.lblDateExpired.Text = "date expired"
         '
         'lblDateStart
         '
-        Me.lblDateStart.Location = New System.Drawing.Point(24, 281)
-        Me.lblDateStart.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblDateStart.Location = New System.Drawing.Point(18, 228)
         Me.lblDateStart.Name = "lblDateStart"
-        Me.lblDateStart.Size = New System.Drawing.Size(55, 16)
+        Me.lblDateStart.Size = New System.Drawing.Size(48, 13)
         Me.lblDateStart.TabIndex = 61
         Me.lblDateStart.Text = "date start"
         '
         'lblLanguage_subtitle
         '
-        Me.lblLanguage_subtitle.Location = New System.Drawing.Point(24, 224)
-        Me.lblLanguage_subtitle.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblLanguage_subtitle.Location = New System.Drawing.Point(18, 182)
         Me.lblLanguage_subtitle.Name = "lblLanguage_subtitle"
-        Me.lblLanguage_subtitle.Size = New System.Drawing.Size(97, 16)
+        Me.lblLanguage_subtitle.Size = New System.Drawing.Size(82, 13)
         Me.lblLanguage_subtitle.TabIndex = 60
         Me.lblLanguage_subtitle.Text = "language subtitle"
         '
         'lblLanguageSound
         '
-        Me.lblLanguageSound.Location = New System.Drawing.Point(24, 180)
-        Me.lblLanguageSound.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblLanguageSound.Location = New System.Drawing.Point(18, 146)
         Me.lblLanguageSound.Name = "lblLanguageSound"
-        Me.lblLanguageSound.Size = New System.Drawing.Size(90, 16)
+        Me.lblLanguageSound.Size = New System.Drawing.Size(76, 13)
         Me.lblLanguageSound.TabIndex = 59
         Me.lblLanguageSound.Text = "language sound"
         '
         'txtImdbView
         '
         Me.txtImdbView.Enabled = False
-        Me.txtImdbView.Location = New System.Drawing.Point(151, 100)
-        Me.txtImdbView.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtImdbView.Location = New System.Drawing.Point(113, 81)
         Me.txtImdbView.Name = "txtImdbView"
-        Me.txtImdbView.Size = New System.Drawing.Size(149, 22)
+        Me.txtImdbView.Size = New System.Drawing.Size(112, 20)
         Me.txtImdbView.TabIndex = 58
         '
         'lblImdbView
         '
-        Me.lblImdbView.Location = New System.Drawing.Point(24, 103)
-        Me.lblImdbView.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.lblImdbView.Location = New System.Drawing.Point(18, 84)
         Me.lblImdbView.Name = "lblImdbView"
-        Me.lblImdbView.Size = New System.Drawing.Size(45, 16)
+        Me.lblImdbView.Size = New System.Drawing.Size(38, 13)
         Me.lblImdbView.TabIndex = 57
         Me.lblImdbView.Text = "Imdb ID"
         '
         'btnSaveVod
         '
         Me.btnSaveVod.Enabled = False
-        Me.btnSaveVod.Location = New System.Drawing.Point(24, 28)
-        Me.btnSaveVod.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSaveVod.Location = New System.Drawing.Point(18, 23)
         Me.btnSaveVod.Name = "btnSaveVod"
-        Me.btnSaveVod.Size = New System.Drawing.Size(100, 28)
+        Me.btnSaveVod.Size = New System.Drawing.Size(75, 23)
         Me.btnSaveVod.TabIndex = 52
         Me.btnSaveVod.Text = "Save"
         '
         'btnEditVod
         '
         Me.btnEditVod.Enabled = False
-        Me.btnEditVod.Location = New System.Drawing.Point(151, 28)
-        Me.btnEditVod.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnEditVod.Location = New System.Drawing.Point(113, 23)
         Me.btnEditVod.Name = "btnEditVod"
-        Me.btnEditVod.Size = New System.Drawing.Size(105, 28)
+        Me.btnEditVod.Size = New System.Drawing.Size(79, 23)
         Me.btnEditVod.TabIndex = 51
         Me.btnEditVod.Text = "Edit"
         '
@@ -1613,80 +1570,71 @@ Partial Class FrmProductsVOD
         Me.XTabProcess.Controls.Add(Me.btnGenerateRipping)
         Me.XTabProcess.Controls.Add(Me.btnSource)
         Me.XTabProcess.Controls.Add(Me.lblPathSourceTitle)
-        Me.XTabProcess.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.XTabProcess.Name = "XTabProcess"
-        Me.XTabProcess.Size = New System.Drawing.Size(1399, 784)
+        Me.XTabProcess.Size = New System.Drawing.Size(1047, 634)
         Me.XTabProcess.Text = "Processus vod"
         '
         'lblDestinationPathFile
         '
         Me.lblDestinationPathFile.AutoSize = True
-        Me.lblDestinationPathFile.Location = New System.Drawing.Point(101, 79)
-        Me.lblDestinationPathFile.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblDestinationPathFile.Location = New System.Drawing.Point(76, 64)
         Me.lblDestinationPathFile.Name = "lblDestinationPathFile"
-        Me.lblDestinationPathFile.Size = New System.Drawing.Size(169, 17)
+        Me.lblDestinationPathFile.Size = New System.Drawing.Size(126, 13)
         Me.lblDestinationPathFile.TabIndex = 8
         Me.lblDestinationPathFile.Text = "Destination queue filezilla"
         '
         'txtDestinationPath
         '
         Me.txtDestinationPath.EditValue = "z:\vod\tmp\xml"
-        Me.txtDestinationPath.Location = New System.Drawing.Point(292, 75)
-        Me.txtDestinationPath.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtDestinationPath.Location = New System.Drawing.Point(219, 61)
         Me.txtDestinationPath.Name = "txtDestinationPath"
-        Me.txtDestinationPath.Size = New System.Drawing.Size(628, 22)
+        Me.txtDestinationPath.Size = New System.Drawing.Size(471, 20)
         Me.txtDestinationPath.TabIndex = 7
         '
         'btnDestination
         '
-        Me.btnDestination.Location = New System.Drawing.Point(40, 71)
-        Me.btnDestination.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnDestination.Location = New System.Drawing.Point(30, 58)
         Me.btnDestination.Name = "btnDestination"
-        Me.btnDestination.Size = New System.Drawing.Size(53, 28)
+        Me.btnDestination.Size = New System.Drawing.Size(40, 23)
         Me.btnDestination.TabIndex = 6
         Me.btnDestination.Text = "..."
         '
         'txtSourcePath
         '
-        Me.txtSourcePath.Location = New System.Drawing.Point(292, 20)
-        Me.txtSourcePath.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtSourcePath.Location = New System.Drawing.Point(219, 16)
         Me.txtSourcePath.Name = "txtSourcePath"
-        Me.txtSourcePath.Size = New System.Drawing.Size(628, 22)
+        Me.txtSourcePath.Size = New System.Drawing.Size(471, 20)
         Me.txtSourcePath.TabIndex = 5
         '
         'ProgressBarRipping
         '
-        Me.ProgressBarRipping.Location = New System.Drawing.Point(292, 167)
-        Me.ProgressBarRipping.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ProgressBarRipping.Location = New System.Drawing.Point(219, 136)
         Me.ProgressBarRipping.Name = "ProgressBarRipping"
-        Me.ProgressBarRipping.Size = New System.Drawing.Size(467, 28)
+        Me.ProgressBarRipping.Size = New System.Drawing.Size(350, 23)
         Me.ProgressBarRipping.TabIndex = 4
         '
         'btnGenerateRipping
         '
-        Me.btnGenerateRipping.Location = New System.Drawing.Point(12, 167)
-        Me.btnGenerateRipping.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnGenerateRipping.Location = New System.Drawing.Point(9, 136)
         Me.btnGenerateRipping.Name = "btnGenerateRipping"
-        Me.btnGenerateRipping.Size = New System.Drawing.Size(155, 28)
+        Me.btnGenerateRipping.Size = New System.Drawing.Size(116, 23)
         Me.btnGenerateRipping.TabIndex = 3
         Me.btnGenerateRipping.Text = "Generate Ripping"
         '
         'btnSource
         '
-        Me.btnSource.Location = New System.Drawing.Point(40, 20)
-        Me.btnSource.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnSource.Location = New System.Drawing.Point(30, 16)
         Me.btnSource.Name = "btnSource"
-        Me.btnSource.Size = New System.Drawing.Size(53, 28)
+        Me.btnSource.Size = New System.Drawing.Size(40, 23)
         Me.btnSource.TabIndex = 2
         Me.btnSource.Text = "..."
         '
         'lblPathSourceTitle
         '
         Me.lblPathSourceTitle.AutoSize = True
-        Me.lblPathSourceTitle.Location = New System.Drawing.Point(101, 28)
-        Me.lblPathSourceTitle.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblPathSourceTitle.Location = New System.Drawing.Point(76, 23)
         Me.lblPathSourceTitle.Name = "lblPathSourceTitle"
-        Me.lblPathSourceTitle.Size = New System.Drawing.Size(113, 17)
+        Me.lblPathSourceTitle.Size = New System.Drawing.Size(85, 13)
         Me.lblPathSourceTitle.TabIndex = 0
         Me.lblPathSourceTitle.Text = "Source files mp4"
         '
@@ -1694,23 +1642,20 @@ Partial Class FrmProductsVOD
         '
         Me.XTabViewVod.Controls.Add(Me.GridVodWatch)
         Me.XTabViewVod.Controls.Add(Me.WebSiteDvdPost)
-        Me.XTabViewVod.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.XTabViewVod.Name = "XTabViewVod"
-        Me.XTabViewVod.Size = New System.Drawing.Size(1399, 784)
+        Me.XTabViewVod.Size = New System.Drawing.Size(1047, 634)
         Me.XTabViewVod.Text = "view vod"
         '
         'GridVodWatch
         '
         Me.GridVodWatch.Dock = System.Windows.Forms.DockStyle.Left
-        Me.GridVodWatch.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GridVodWatch.EmbeddedNavigator.Name = ""
         Me.GridVodWatch.FormsUseDefaultLookAndFeel = False
         Me.GridVodWatch.Location = New System.Drawing.Point(0, 0)
         Me.GridVodWatch.MainView = Me.gridViewVodWatch
-        Me.GridVodWatch.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GridVodWatch.Name = "GridVodWatch"
         Me.GridVodWatch.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositorycmbLanguage, Me.RepositorychkAvailable, Me.RepositoryCmbStudio, Me.RepositoryBtnWatchMovie})
-        Me.GridVodWatch.Size = New System.Drawing.Size(685, 784)
+        Me.GridVodWatch.Size = New System.Drawing.Size(514, 634)
         Me.GridVodWatch.TabIndex = 5
         Me.GridVodWatch.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridViewVodWatch})
         '
@@ -1872,11 +1817,10 @@ Partial Class FrmProductsVOD
         'WebSiteDvdPost
         '
         Me.WebSiteDvdPost.Dock = System.Windows.Forms.DockStyle.Right
-        Me.WebSiteDvdPost.Location = New System.Drawing.Point(579, 0)
-        Me.WebSiteDvdPost.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.WebSiteDvdPost.MinimumSize = New System.Drawing.Size(27, 25)
+        Me.WebSiteDvdPost.Location = New System.Drawing.Point(432, 0)
+        Me.WebSiteDvdPost.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebSiteDvdPost.Name = "WebSiteDvdPost"
-        Me.WebSiteDvdPost.Size = New System.Drawing.Size(820, 784)
+        Me.WebSiteDvdPost.Size = New System.Drawing.Size(615, 634)
         Me.WebSiteDvdPost.TabIndex = 6
         '
         'XTabFtp
@@ -1891,78 +1835,69 @@ Partial Class FrmProductsVOD
         Me.XTabFtp.Controls.Add(Me.GridFtpLocal)
         Me.XTabFtp.Controls.Add(Me.BtnCompare)
         Me.XTabFtp.Controls.Add(Me.lblFTP)
-        Me.XTabFtp.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.XTabFtp.Name = "XTabFtp"
-        Me.XTabFtp.Size = New System.Drawing.Size(1399, 784)
+        Me.XTabFtp.Size = New System.Drawing.Size(1047, 634)
         Me.XTabFtp.Text = "Compare Ftp"
         '
         'lblDbFtp
         '
         Me.lblDbFtp.AutoSize = True
-        Me.lblDbFtp.Location = New System.Drawing.Point(701, 105)
-        Me.lblDbFtp.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblDbFtp.Location = New System.Drawing.Point(526, 85)
         Me.lblDbFtp.Name = "lblDbFtp"
-        Me.lblDbFtp.Size = New System.Drawing.Size(73, 17)
+        Me.lblDbFtp.Size = New System.Drawing.Size(56, 13)
         Me.lblDbFtp.TabIndex = 14
         Me.lblDbFtp.Text = "DB % FTP"
         '
         'lblFtpLocal
         '
         Me.lblFtpLocal.AutoSize = True
-        Me.lblFtpLocal.Location = New System.Drawing.Point(187, 105)
-        Me.lblFtpLocal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblFtpLocal.Location = New System.Drawing.Point(140, 85)
         Me.lblFtpLocal.Name = "lblFtpLocal"
-        Me.lblFtpLocal.Size = New System.Drawing.Size(79, 17)
+        Me.lblFtpLocal.Size = New System.Drawing.Size(60, 13)
         Me.lblFtpLocal.TabIndex = 13
         Me.lblFtpLocal.Text = "FT % Local"
         '
         'txtSourceFtp
         '
         Me.txtSourceFtp.EditValue = "ftp://upload.cdnlayer.com/media/secureflash/"
-        Me.txtSourceFtp.Location = New System.Drawing.Point(56, 38)
-        Me.txtSourceFtp.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtSourceFtp.Location = New System.Drawing.Point(42, 31)
         Me.txtSourceFtp.Name = "txtSourceFtp"
-        Me.txtSourceFtp.Size = New System.Drawing.Size(351, 22)
+        Me.txtSourceFtp.Size = New System.Drawing.Size(263, 20)
         Me.txtSourceFtp.TabIndex = 12
         '
         'TxtSourceLocal
         '
         Me.TxtSourceLocal.EditValue = "z:\vod\tmp"
-        Me.TxtSourceLocal.Location = New System.Drawing.Point(61, 74)
-        Me.TxtSourceLocal.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TxtSourceLocal.Location = New System.Drawing.Point(46, 60)
         Me.TxtSourceLocal.Name = "TxtSourceLocal"
-        Me.TxtSourceLocal.Size = New System.Drawing.Size(243, 22)
+        Me.TxtSourceLocal.Size = New System.Drawing.Size(182, 20)
         Me.TxtSourceLocal.TabIndex = 11
         '
         'btnFolderLocal
         '
-        Me.btnFolderLocal.Location = New System.Drawing.Point(312, 78)
-        Me.btnFolderLocal.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnFolderLocal.Location = New System.Drawing.Point(234, 63)
         Me.btnFolderLocal.Name = "btnFolderLocal"
-        Me.btnFolderLocal.Size = New System.Drawing.Size(53, 28)
+        Me.btnFolderLocal.Size = New System.Drawing.Size(40, 23)
         Me.btnFolderLocal.TabIndex = 10
         Me.btnFolderLocal.Text = "..."
         '
         'lblLocal
         '
         Me.lblLocal.AutoSize = True
-        Me.lblLocal.Location = New System.Drawing.Point(15, 82)
-        Me.lblLocal.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblLocal.Location = New System.Drawing.Point(11, 67)
         Me.lblLocal.Name = "lblLocal"
-        Me.lblLocal.Size = New System.Drawing.Size(37, 17)
+        Me.lblLocal.Size = New System.Drawing.Size(29, 13)
         Me.lblLocal.TabIndex = 9
         Me.lblLocal.Text = "local"
         '
         'GridDBFtp
         '
-        Me.GridDBFtp.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GridDBFtp.EmbeddedNavigator.Name = ""
         Me.GridDBFtp.FormsUseDefaultLookAndFeel = False
-        Me.GridDBFtp.Location = New System.Drawing.Point(476, 124)
+        Me.GridDBFtp.Location = New System.Drawing.Point(357, 101)
         Me.GridDBFtp.MainView = Me.GridViewDBFtp
-        Me.GridDBFtp.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GridDBFtp.Name = "GridDBFtp"
-        Me.GridDBFtp.Size = New System.Drawing.Size(648, 652)
+        Me.GridDBFtp.Size = New System.Drawing.Size(486, 530)
         Me.GridDBFtp.TabIndex = 7
         Me.GridDBFtp.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewDBFtp})
         '
@@ -1986,14 +1921,12 @@ Partial Class FrmProductsVOD
         '
         'GridFtpLocal
         '
-        Me.GridFtpLocal.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GridFtpLocal.EmbeddedNavigator.Name = ""
         Me.GridFtpLocal.FormsUseDefaultLookAndFeel = False
-        Me.GridFtpLocal.Location = New System.Drawing.Point(16, 124)
+        Me.GridFtpLocal.Location = New System.Drawing.Point(12, 101)
         Me.GridFtpLocal.MainView = Me.GridViewFtpLocal
-        Me.GridFtpLocal.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.GridFtpLocal.Name = "GridFtpLocal"
-        Me.GridFtpLocal.Size = New System.Drawing.Size(424, 649)
+        Me.GridFtpLocal.Size = New System.Drawing.Size(318, 527)
         Me.GridFtpLocal.TabIndex = 5
         Me.GridFtpLocal.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewFtpLocal})
         '
@@ -2018,10 +1951,9 @@ Partial Class FrmProductsVOD
         '
         'BtnCompare
         '
-        Me.BtnCompare.Location = New System.Drawing.Point(307, 4)
-        Me.BtnCompare.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnCompare.Location = New System.Drawing.Point(230, 3)
         Me.BtnCompare.Name = "BtnCompare"
-        Me.BtnCompare.Size = New System.Drawing.Size(100, 28)
+        Me.BtnCompare.Size = New System.Drawing.Size(75, 23)
         Me.BtnCompare.TabIndex = 4
         Me.BtnCompare.Text = "Compare"
         Me.BtnCompare.UseVisualStyleBackColor = True
@@ -2029,10 +1961,9 @@ Partial Class FrmProductsVOD
         'lblFTP
         '
         Me.lblFTP.AutoSize = True
-        Me.lblFTP.Location = New System.Drawing.Point(12, 42)
-        Me.lblFTP.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblFTP.Location = New System.Drawing.Point(9, 34)
         Me.lblFTP.Name = "lblFTP"
-        Me.lblFTP.Size = New System.Drawing.Size(34, 17)
+        Me.lblFTP.Size = New System.Drawing.Size(27, 13)
         Me.lblFTP.TabIndex = 2
         Me.lblFTP.Text = "FTP"
         '
@@ -2046,84 +1977,134 @@ Partial Class FrmProductsVOD
         Me.XtabAutomateTranscode.Controls.Add(Me.txtPathOfFile)
         Me.XtabAutomateTranscode.Controls.Add(Me.btnChooseFileTxt)
         Me.XtabAutomateTranscode.Controls.Add(Me.lblTxtFile)
-        Me.XtabAutomateTranscode.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.XtabAutomateTranscode.Margin = New System.Windows.Forms.Padding(2)
         Me.XtabAutomateTranscode.Name = "XtabAutomateTranscode"
-        Me.XtabAutomateTranscode.Size = New System.Drawing.Size(1399, 784)
+        Me.XtabAutomateTranscode.Size = New System.Drawing.Size(1047, 634)
         Me.XtabAutomateTranscode.Text = "Automate Transcode"
+        Me.XtabAutomateTranscode.Tooltip = "Deletes data from last load"
         '
         'lblError
         '
         Me.lblError.AutoSize = True
-        Me.lblError.Location = New System.Drawing.Point(271, 315)
+        Me.lblError.Location = New System.Drawing.Point(203, 256)
+        Me.lblError.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblError.Name = "lblError"
-        Me.lblError.Size = New System.Drawing.Size(40, 17)
+        Me.lblError.Size = New System.Drawing.Size(29, 13)
         Me.lblError.TabIndex = 13
         Me.lblError.Text = "Error"
         '
         'lblOk
         '
         Me.lblOk.AutoSize = True
-        Me.lblOk.Location = New System.Drawing.Point(275, 126)
+        Me.lblOk.Location = New System.Drawing.Point(206, 102)
+        Me.lblOk.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblOk.Name = "lblOk"
-        Me.lblOk.Size = New System.Drawing.Size(62, 17)
+        Me.lblOk.Size = New System.Drawing.Size(49, 13)
         Me.lblOk.TabIndex = 12
         Me.lblOk.Text = "new Vod"
         '
         'lstError
         '
         Me.lstError.FormattingEnabled = True
-        Me.lstError.ItemHeight = 16
-        Me.lstError.Location = New System.Drawing.Point(387, 267)
-        Me.lstError.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.lstError.Location = New System.Drawing.Point(290, 217)
+        Me.lstError.Margin = New System.Windows.Forms.Padding(2)
         Me.lstError.Name = "lstError"
-        Me.lstError.Size = New System.Drawing.Size(381, 164)
+        Me.lstError.Size = New System.Drawing.Size(287, 134)
         Me.lstError.TabIndex = 11
         '
         'LstResult
         '
         Me.LstResult.FormattingEnabled = True
-        Me.LstResult.ItemHeight = 16
-        Me.LstResult.Location = New System.Drawing.Point(387, 71)
-        Me.LstResult.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.LstResult.Location = New System.Drawing.Point(290, 58)
+        Me.LstResult.Margin = New System.Windows.Forms.Padding(2)
         Me.LstResult.Name = "LstResult"
-        Me.LstResult.Size = New System.Drawing.Size(381, 164)
+        Me.LstResult.Size = New System.Drawing.Size(287, 134)
         Me.LstResult.TabIndex = 10
         '
         'btnGenerateVod
         '
-        Me.btnGenerateVod.Location = New System.Drawing.Point(21, 71)
-        Me.btnGenerateVod.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnGenerateVod.Location = New System.Drawing.Point(16, 58)
         Me.btnGenerateVod.Name = "btnGenerateVod"
-        Me.btnGenerateVod.Size = New System.Drawing.Size(155, 28)
+        Me.btnGenerateVod.Size = New System.Drawing.Size(116, 23)
         Me.btnGenerateVod.TabIndex = 9
         Me.btnGenerateVod.Text = "Generate Create vod"
         '
         'txtPathOfFile
         '
-        Me.txtPathOfFile.Location = New System.Drawing.Point(275, 18)
-        Me.txtPathOfFile.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.txtPathOfFile.Location = New System.Drawing.Point(206, 15)
         Me.txtPathOfFile.Name = "txtPathOfFile"
-        Me.txtPathOfFile.Size = New System.Drawing.Size(628, 22)
+        Me.txtPathOfFile.Size = New System.Drawing.Size(471, 20)
         Me.txtPathOfFile.TabIndex = 8
         '
         'btnChooseFileTxt
         '
-        Me.btnChooseFileTxt.Location = New System.Drawing.Point(21, 18)
-        Me.btnChooseFileTxt.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnChooseFileTxt.Location = New System.Drawing.Point(16, 15)
         Me.btnChooseFileTxt.Name = "btnChooseFileTxt"
-        Me.btnChooseFileTxt.Size = New System.Drawing.Size(53, 28)
+        Me.btnChooseFileTxt.Size = New System.Drawing.Size(40, 23)
         Me.btnChooseFileTxt.TabIndex = 7
         Me.btnChooseFileTxt.Text = "..."
         '
         'lblTxtFile
         '
         Me.lblTxtFile.AutoSize = True
-        Me.lblTxtFile.Location = New System.Drawing.Point(83, 27)
-        Me.lblTxtFile.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblTxtFile.Location = New System.Drawing.Point(62, 22)
         Me.lblTxtFile.Name = "lblTxtFile"
-        Me.lblTxtFile.Size = New System.Drawing.Size(100, 17)
+        Me.lblTxtFile.Size = New System.Drawing.Size(76, 13)
         Me.lblTxtFile.TabIndex = 6
         Me.lblTxtFile.Text = "Source files txt"
+        '
+        'xTabVODOnlyMovie
+        '
+        Me.xTabVODOnlyMovie.Controls.Add(Me.grdOnlyVODMovie)
+        Me.xTabVODOnlyMovie.Controls.Add(Me.btnAllNoMovieInfo)
+        Me.xTabVODOnlyMovie.Name = "xTabVODOnlyMovie"
+        Me.xTabVODOnlyMovie.Size = New System.Drawing.Size(1047, 634)
+        Me.xTabVODOnlyMovie.Text = "VODOnlyMovie"
+        '
+        'grdOnlyVODMovie
+        '
+        Me.grdOnlyVODMovie.EmbeddedNavigator.Name = ""
+        Me.grdOnlyVODMovie.FormsUseDefaultLookAndFeel = False
+        Me.grdOnlyVODMovie.Location = New System.Drawing.Point(26, 69)
+        Me.grdOnlyVODMovie.MainView = Me.GridView1
+        Me.grdOnlyVODMovie.Name = "grdOnlyVODMovie"
+        Me.grdOnlyVODMovie.Size = New System.Drawing.Size(486, 530)
+        Me.grdOnlyVODMovie.TabIndex = 19
+        Me.grdOnlyVODMovie.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'GridView1
+        '
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.imdb_id, Me.filename})
+        Me.GridView1.GridControl = Me.grdOnlyVODMovie
+        Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsBehavior.Editable = False
+        Me.GridView1.OptionsView.ShowFooter = True
+        '
+        'imdb_id
+        '
+        Me.imdb_id.Caption = "imdb_id"
+        Me.imdb_id.FieldName = "imdb_id"
+        Me.imdb_id.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText
+        Me.imdb_id.Name = "imdb_id"
+        Me.imdb_id.OptionsColumn.ReadOnly = True
+        Me.imdb_id.Visible = True
+        Me.imdb_id.VisibleIndex = 0
+        '
+        'filename
+        '
+        Me.filename.Caption = "file name"
+        Me.filename.FieldName = "filename"
+        Me.filename.Name = "filename"
+        Me.filename.Visible = True
+        Me.filename.VisibleIndex = 1
+        '
+        'btnAllNoMovieInfo
+        '
+        Me.btnAllNoMovieInfo.Location = New System.Drawing.Point(26, 30)
+        Me.btnAllNoMovieInfo.Name = "btnAllNoMovieInfo"
+        Me.btnAllNoMovieInfo.Size = New System.Drawing.Size(136, 23)
+        Me.btnAllNoMovieInfo.TabIndex = 18
+        Me.btnAllNoMovieInfo.Text = "Show All Only VOD Movie"
         '
         'TextEdit2
         '
@@ -2187,15 +2168,14 @@ Partial Class FrmProductsVOD
         '
         'FrmProductsVOD
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1408, 855)
+        Me.ClientSize = New System.Drawing.Size(1056, 695)
         Me.Controls.Add(Me.XTabControlVod)
         Me.Controls.Add(Me.barDockControlLeft)
         Me.Controls.Add(Me.barDockControlRight)
         Me.Controls.Add(Me.barDockControlBottom)
         Me.Controls.Add(Me.barDockControlTop)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "FrmProductsVOD"
         Me.Text = "FrmProductsVOD"
         Me.Controls.SetChildIndex(Me.barDockControlTop, 0)
@@ -2264,6 +2244,9 @@ Partial Class FrmProductsVOD
         Me.XtabAutomateTranscode.ResumeLayout(False)
         Me.XtabAutomateTranscode.PerformLayout()
         CType(Me.txtPathOfFile.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.xTabVODOnlyMovie.ResumeLayout(False)
+        CType(Me.grdOnlyVODMovie, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2471,6 +2454,13 @@ Partial Class FrmProductsVOD
     Friend WithEvents lblCredit As DevExpress.XtraEditors.LabelControl
     Friend WithEvents spedCredit As DevExpress.XtraEditors.SpinEdit
     Friend WithEvents colCredit As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents xTabVODOnlyMovie As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents btnAllNoMovieInfo As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents grdOnlyVODMovie As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents imdb_id As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents filename As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents btnDeleteVOD As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl

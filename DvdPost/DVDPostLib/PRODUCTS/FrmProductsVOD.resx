@@ -121,7 +121,7 @@
     <value>False</value>
   </metadata>
   <metadata name="BarManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>161, 17</value>
+    <value>142, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnNew.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -645,9 +645,9 @@
 </value>
   </data>
   <metadata name="FolderChoose.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>305, 17</value>
+    <value>267, 17</value>
   </metadata>
   <metadata name="OpenFile.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>451, 17</value>
+    <value>394, 17</value>
   </metadata>
 </root>

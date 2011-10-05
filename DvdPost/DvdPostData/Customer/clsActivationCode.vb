@@ -511,7 +511,7 @@ Public Class clsActivationCode
                                       " , " & credit0_auto_reconduct & _
                                       " , " & landing_page & _
                                       " , '" & landing_page_php & "'" & _
-                                      " , " & listing_products_allowed & _
+                                      " , " & IIf(listing_products_allowed Is Nothing, "DEFAULT(listing_products_allowed) ", listing_products_allowed) & _
                                       " , " & abo_auto_stop_next_reconduction & _
                                       " , " & goto_step & _
                                       " , '" & banner & "'" & _
