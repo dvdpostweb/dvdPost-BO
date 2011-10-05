@@ -134,6 +134,7 @@ Partial Class FrmProductsVOD
         Me.chkcolAvailable = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
         Me.colCredit = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.XTabView = New DevExpress.XtraTab.XtraTabPage
+        Me.btnDeleteVOD = New DevExpress.XtraEditors.SimpleButton
         Me.lblCredit = New DevExpress.XtraEditors.LabelControl
         Me.spedCredit = New DevExpress.XtraEditors.SpinEdit
         Me.cmbSupportVod = New DevExpress.XtraEditors.LookUpEdit
@@ -221,6 +222,7 @@ Partial Class FrmProductsVOD
         Me.grdOnlyVODMovie = New DevExpress.XtraGrid.GridControl
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView
         Me.imdb_id = New DevExpress.XtraGrid.Columns.GridColumn
+        Me.filename = New DevExpress.XtraGrid.Columns.GridColumn
         Me.btnAllNoMovieInfo = New DevExpress.XtraEditors.SimpleButton
         Me.TextEdit2 = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
@@ -231,7 +233,6 @@ Partial Class FrmProductsVOD
         Me.TextEdit4 = New DevExpress.XtraEditors.TextEdit
         Me.FolderChoose = New System.Windows.Forms.FolderBrowserDialog
         Me.OpenFile = New System.Windows.Forms.OpenFileDialog
-        Me.filename = New DevExpress.XtraGrid.Columns.GridColumn
         colDateStartUploaded = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         CType(Me.cmbViewListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtQuickSearchRepos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -309,6 +310,10 @@ Partial Class FrmProductsVOD
         'BarManager1
         '
         Me.BarManager1.Categories.AddRange(New DevExpress.XtraBars.BarManagerCategory() {New DevExpress.XtraBars.BarManagerCategory("Main", New System.Guid("434484d9-7ac5-47e5-9412-313a111b7240")), New DevExpress.XtraBars.BarManagerCategory("Miscelaneous", New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")), New DevExpress.XtraBars.BarManagerCategory("Views", New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")), New DevExpress.XtraBars.BarManagerCategory("Filters", New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")), New DevExpress.XtraBars.BarManagerCategory("Reporting", New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")), New DevExpress.XtraBars.BarManagerCategory("Default Values", New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")), New DevExpress.XtraBars.BarManagerCategory("Quick Search", New System.Guid("2d735e09-7c7c-4ed4-b3ca-996e094a2026")), New DevExpress.XtraBars.BarManagerCategory("Misc_Maintenance", New System.Guid("d45f4b42-7c78-4255-9839-0f9b81be7603")), New DevExpress.XtraBars.BarManagerCategory("Navigation", New System.Guid("d55c49d9-25b9-4030-98b4-b0b1e7d65b90"))})
+        Me.BarManager1.DockControls.Add(Me.barDockControlTop)
+        Me.BarManager1.DockControls.Add(Me.barDockControlBottom)
+        Me.BarManager1.DockControls.Add(Me.barDockControlLeft)
+        Me.BarManager1.DockControls.Add(Me.barDockControlRight)
         Me.BarManager1.Form = Me
         Me.BarManager1.MaxItemId = 73
         Me.BarManager1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbViewListRepos, Me.txtQuickSearchRepos, Me.cmbReportListRepos, Me.cmbFilterListRepos, Me.cmbDefaultListRepos})
@@ -1216,6 +1221,7 @@ Partial Class FrmProductsVOD
         '
         'XTabView
         '
+        Me.XTabView.Controls.Add(Me.btnDeleteVOD)
         Me.XTabView.Controls.Add(Me.lblCredit)
         Me.XTabView.Controls.Add(Me.spedCredit)
         Me.XTabView.Controls.Add(Me.cmbSupportVod)
@@ -1250,6 +1256,15 @@ Partial Class FrmProductsVOD
         Me.XTabView.Name = "XTabView"
         Me.XTabView.Size = New System.Drawing.Size(1047, 634)
         Me.XTabView.Text = "View"
+        '
+        'btnDeleteVOD
+        '
+        Me.btnDeleteVOD.Enabled = False
+        Me.btnDeleteVOD.Location = New System.Drawing.Point(317, 23)
+        Me.btnDeleteVOD.Name = "btnDeleteVOD"
+        Me.btnDeleteVOD.Size = New System.Drawing.Size(79, 23)
+        Me.btnDeleteVOD.TabIndex = 86
+        Me.btnDeleteVOD.Text = "Delete"
         '
         'lblCredit
         '
@@ -1393,7 +1408,7 @@ Partial Class FrmProductsVOD
         'btnCancelVod
         '
         Me.btnCancelVod.Enabled = False
-        Me.btnCancelVod.Location = New System.Drawing.Point(217, 23)
+        Me.btnCancelVod.Location = New System.Drawing.Point(215, 23)
         Me.btnCancelVod.Name = "btnCancelVod"
         Me.btnCancelVod.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelVod.TabIndex = 71
@@ -2075,6 +2090,14 @@ Partial Class FrmProductsVOD
         Me.imdb_id.Visible = True
         Me.imdb_id.VisibleIndex = 0
         '
+        'filename
+        '
+        Me.filename.Caption = "file name"
+        Me.filename.FieldName = "filename"
+        Me.filename.Name = "filename"
+        Me.filename.Visible = True
+        Me.filename.VisibleIndex = 1
+        '
         'btnAllNoMovieInfo
         '
         Me.btnAllNoMovieInfo.Location = New System.Drawing.Point(26, 30)
@@ -2142,14 +2165,6 @@ Partial Class FrmProductsVOD
         '
         Me.FolderChoose.RootFolder = System.Environment.SpecialFolder.MyComputer
         Me.FolderChoose.SelectedPath = "Z:\VOD\tmp"
-        '
-        'filename
-        '
-        Me.filename.Caption = "file name"
-        Me.filename.FieldName = "filename"
-        Me.filename.Name = "filename"
-        Me.filename.Visible = True
-        Me.filename.VisibleIndex = 1
         '
         'FrmProductsVOD
         '
@@ -2439,27 +2454,16 @@ Partial Class FrmProductsVOD
     Friend WithEvents lblCredit As DevExpress.XtraEditors.LabelControl
     Friend WithEvents spedCredit As DevExpress.XtraEditors.SpinEdit
     Friend WithEvents colCredit As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
-    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
     Friend WithEvents xTabVODOnlyMovie As DevExpress.XtraTab.XtraTabPage
     Friend WithEvents btnAllNoMovieInfo As DevExpress.XtraEditors.SimpleButton
-    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
     Friend WithEvents grdOnlyVODMovie As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents imdb_id As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents filename As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents btnDeleteVOD As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
-    Friend WithEvents filename As DevExpress.XtraGrid.Columns.GridColumn
 
 End Class

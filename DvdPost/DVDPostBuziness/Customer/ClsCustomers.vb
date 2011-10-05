@@ -812,7 +812,7 @@ Public Class ClsCustomers
             UpdateCredit(drCustomer, price, Forcedcredit)
         Else
             Dim sql As String
-            sql = DvdPostData.ClsCustomersData.GetUpdateCreditsAlreadyRecieved(GetCustomersId(drCustomer)
+            sql = DvdPostData.ClsCustomersData.GetUpdateCreditsAlreadyRecieved(GetCustomersId(drCustomer))
             DvdPostData.clsConnection.ExecuteNonQuery(sql)
         End If
 

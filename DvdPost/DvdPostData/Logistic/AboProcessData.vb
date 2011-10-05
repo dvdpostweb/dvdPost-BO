@@ -53,7 +53,8 @@ Public Class AboProcessData
                       " left join (select distinct customers_id from compensation cmp where compensation_date_setback IS NULL and cmp.products_id is not null) cd on c.customers_id = cd.customers_id " & _
                       " left join (select * from customers_rotations cr2 " & _
                       "            join(select max(create_at) max_date from customers_rotations) xx on cr2.create_at = xx.max_date) cr on cr.customer_id = c.customers_id " & _
-                      " where customers_abo = 1" & _
+                      " left join customer_attributes ca on ca.customer_id = c.customers_id " & _
+                      " where customers_abo = 1 and ca.only_vod = 0 " & _
                       " and (customers_abo_auto_stop_next_reconduction = 0 or (customers_abo_auto_stop_next_reconduction = 1 and customers_abo_validityto > DATE_ADD(now(), INTERVAL 3 DAY))) " & _
                         rangeSql & _
                       " order by customers_abo_rank desc"
