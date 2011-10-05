@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="cmbThemeEvent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>186, 167</value>
+    <value>155, 145</value>
   </data>
   <assembly alias="DevExpress.Utils.v8.1" name="DevExpress.Utils.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
   <data name="cmbThemeEvent.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v8.1">
@@ -133,7 +133,7 @@
     <value />
   </data>
   <data name="cmbThemeEvent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 22</value>
+    <value>94, 20</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="cmbThemeEvent.TabIndex" type="System.Int32, mscorlib">
@@ -152,10 +152,10 @@
     <value>0</value>
   </data>
   <data name="lblThemeEvent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 173</value>
+    <value>5, 150</value>
   </data>
   <data name="lblThemeEvent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 16</value>
+    <value>63, 13</value>
   </data>
   <data name="lblThemeEvent.TabIndex" type="System.Int32, mscorlib">
     <value>57</value>
@@ -176,7 +176,7 @@
     <value>1</value>
   </data>
   <data name="cmbKind.Location" type="System.Drawing.Point, System.Drawing">
-    <value>186, 120</value>
+    <value>155, 104</value>
   </data>
   <data name="cmbKind.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v8.1">
     <value>Combo</value>
@@ -185,7 +185,7 @@
     <value />
   </data>
   <data name="cmbKind.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 22</value>
+    <value>94, 20</value>
   </data>
   <data name="cmbKind.TabIndex" type="System.Int32, mscorlib">
     <value>56</value>
@@ -203,10 +203,10 @@
     <value>2</value>
   </data>
   <data name="lblKind.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 126</value>
+    <value>5, 109</value>
   </data>
   <data name="lblKind.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 16</value>
+    <value>20, 13</value>
   </data>
   <data name="lblKind.TabIndex" type="System.Int32, mscorlib">
     <value>55</value>
@@ -230,10 +230,10 @@
     <value />
   </data>
   <data name="TxtEventThemeId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>186, 36</value>
+    <value>155, 31</value>
   </data>
   <data name="TxtEventThemeId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
+    <value>161, 20</value>
   </data>
   <data name="TxtEventThemeId.TabIndex" type="System.Int32, mscorlib">
     <value>52</value>
@@ -251,10 +251,10 @@
     <value>4</value>
   </data>
   <data name="btnNewTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>446, 39</value>
+    <value>372, 34</value>
   </data>
   <data name="btnNewTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 27</value>
+    <value>75, 23</value>
   </data>
   <data name="btnNewTheme.TabIndex" type="System.Int32, mscorlib">
     <value>53</value>
@@ -275,10 +275,10 @@
     <value>5</value>
   </data>
   <data name="lblEventThemeId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 39</value>
+    <value>5, 34</value>
   </data>
   <data name="lblEventThemeId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 16</value>
+    <value>11, 13</value>
   </data>
   <data name="lblEventThemeId.TabIndex" type="System.Int32, mscorlib">
     <value>44</value>
@@ -299,10 +299,10 @@
     <value>6</value>
   </data>
   <data name="btnSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 245</value>
+    <value>5, 212</value>
   </data>
   <data name="btnSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 51</value>
+    <value>75, 45</value>
   </data>
   <data name="btnSearch.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
@@ -323,10 +323,10 @@
     <value>7</value>
   </data>
   <data name="lblTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 78</value>
+    <value>5, 68</value>
   </data>
   <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 16</value>
+    <value>18, 13</value>
   </data>
   <data name="lblTitle.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -350,10 +350,10 @@
     <value />
   </data>
   <data name="txtTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>186, 75</value>
+    <value>155, 65</value>
   </data>
   <data name="txtTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
+    <value>161, 20</value>
   </data>
   <data name="txtTitle.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
@@ -371,10 +371,10 @@
     <value>9</value>
   </data>
   <data name="GroupSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 29</value>
+    <value>23, 25</value>
   </data>
   <data name="GroupSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>788, 301</value>
+    <value>657, 261</value>
   </data>
   <data name="GroupSearch.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -395,7 +395,7 @@
     <value>0</value>
   </data>
   <data name="tabSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1183, 797</value>
+    <value>1183, 805</value>
   </data>
   <data name="tabSearch.Text" xml:space="preserve">
     <value>Search</value>
@@ -548,7 +548,7 @@
     <value>98</value>
   </data>
   <data name="GridThemeTop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1183, 797</value>
+    <value>1183, 805</value>
   </data>
   <data name="GridThemeTop.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -566,7 +566,7 @@
     <value>0</value>
   </data>
   <data name="tabResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1183, 797</value>
+    <value>1183, 805</value>
   </data>
   <data name="tabResult.Text" xml:space="preserve">
     <value>Result</value>
@@ -584,7 +584,7 @@
     <value>1</value>
   </data>
   <metadata name="DsSite1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>314, 17</value>
+    <value>274, 17</value>
   </metadata>
   <data name="chkSelected.Location" type="System.Drawing.Point, System.Drawing">
     <value>153, 142</value>
@@ -623,10 +623,10 @@
     <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
   </data>
   <metadata name="ContextMenu1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>161, 17</value>
+    <value>142, 17</value>
   </metadata>
   <data name="ContextMenu1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 28</value>
+    <value>101, 26</value>
   </data>
   <data name="&gt;&gt;ContextMenu1.Name" xml:space="preserve">
     <value>ContextMenu1</value>
@@ -638,22 +638,22 @@
     <value>Fill</value>
   </data>
   <data name="XtraTabControlTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 35</value>
+    <value>0, 30</value>
   </data>
   <data name="XtraTabControlTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1192, 831</value>
+    <value>1192, 836</value>
   </data>
   <data name="XtraTabControlTheme.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="chkHomepage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>191, 210</value>
+    <value>159, 182</value>
   </data>
   <data name="chkHomepage.Properties.Caption" xml:space="preserve">
     <value />
   </data>
   <data name="chkHomepage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 21</value>
+    <value>187, 19</value>
   </data>
   <data name="chkHomepage.TabIndex" type="System.Int32, mscorlib">
     <value>144</value>
@@ -674,7 +674,7 @@
     <value>False</value>
   </data>
   <data name="cmbStyle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>548, 216</value>
+    <value>457, 187</value>
   </data>
   <data name="cmbStyle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -686,7 +686,7 @@
     <value />
   </data>
   <data name="cmbStyle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 22</value>
+    <value>120, 20</value>
   </data>
   <data name="cmbStyle.TabIndex" type="System.Int32, mscorlib">
     <value>143</value>
@@ -704,13 +704,13 @@
     <value>1</value>
   </data>
   <data name="lblStyle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>463, 218</value>
+    <value>386, 189</value>
   </data>
   <data name="lblStyle.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
   <data name="lblStyle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>28, 16</value>
+    <value>24, 13</value>
   </data>
   <data name="lblStyle.TabIndex" type="System.Int32, mscorlib">
     <value>142</value>
@@ -734,7 +734,7 @@
     <value>False</value>
   </data>
   <data name="cmbLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>548, 172</value>
+    <value>457, 149</value>
   </data>
   <data name="cmbLanguage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -746,7 +746,7 @@
     <value />
   </data>
   <data name="cmbLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 22</value>
+    <value>120, 20</value>
   </data>
   <data name="cmbLanguage.TabIndex" type="System.Int32, mscorlib">
     <value>141</value>
@@ -764,13 +764,13 @@
     <value>3</value>
   </data>
   <data name="lblLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>463, 174</value>
+    <value>386, 151</value>
   </data>
   <data name="lblLanguage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
   <data name="lblLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 16</value>
+    <value>47, 13</value>
   </data>
   <data name="lblLanguage.TabIndex" type="System.Int32, mscorlib">
     <value>140</value>
@@ -791,7 +791,7 @@
     <value>4</value>
   </data>
   <data name="cmbThemeEventEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>548, 125</value>
+    <value>457, 108</value>
   </data>
   <data name="cmbThemeEventEdit.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v8.1">
     <value>Combo</value>
@@ -800,7 +800,7 @@
     <value />
   </data>
   <data name="cmbThemeEventEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 22</value>
+    <value>120, 20</value>
   </data>
   <data name="cmbThemeEventEdit.TabIndex" type="System.Int32, mscorlib">
     <value>139</value>
@@ -818,10 +818,10 @@
     <value>5</value>
   </data>
   <data name="lblThemeEventEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>463, 128</value>
+    <value>386, 111</value>
   </data>
   <data name="lblThemeEventEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 16</value>
+    <value>63, 13</value>
   </data>
   <data name="lblThemeEventEdit.TabIndex" type="System.Int32, mscorlib">
     <value>138</value>
@@ -842,7 +842,7 @@
     <value>6</value>
   </data>
   <data name="cmbKindEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>548, 81</value>
+    <value>457, 70</value>
   </data>
   <data name="cmbKindEdit.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v8.1">
     <value>Combo</value>
@@ -851,7 +851,7 @@
     <value />
   </data>
   <data name="cmbKindEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 22</value>
+    <value>120, 20</value>
   </data>
   <data name="cmbKindEdit.TabIndex" type="System.Int32, mscorlib">
     <value>137</value>
@@ -869,10 +869,10 @@
     <value>7</value>
   </data>
   <data name="lblKindEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>463, 84</value>
+    <value>386, 73</value>
   </data>
   <data name="lblKindEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 16</value>
+    <value>20, 13</value>
   </data>
   <data name="lblKindEdit.TabIndex" type="System.Int32, mscorlib">
     <value>136</value>
@@ -899,10 +899,10 @@
     <value>False</value>
   </data>
   <data name="txtUpdateDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>193, 333</value>
+    <value>161, 289</value>
   </data>
   <data name="txtUpdateDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 22</value>
+    <value>131, 20</value>
   </data>
   <data name="txtUpdateDate.TabIndex" type="System.Int32, mscorlib">
     <value>135</value>
@@ -920,10 +920,10 @@
     <value>9</value>
   </data>
   <data name="lblUpdateDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 336</value>
+    <value>41, 291</value>
   </data>
   <data name="lblUpdateDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 16</value>
+    <value>61, 13</value>
   </data>
   <data name="lblUpdateDate.TabIndex" type="System.Int32, mscorlib">
     <value>134</value>
@@ -950,10 +950,10 @@
     <value>False</value>
   </data>
   <data name="txtCreateDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>193, 291</value>
+    <value>161, 252</value>
   </data>
   <data name="txtCreateDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 22</value>
+    <value>131, 20</value>
   </data>
   <data name="txtCreateDate.TabIndex" type="System.Int32, mscorlib">
     <value>133</value>
@@ -971,10 +971,10 @@
     <value>11</value>
   </data>
   <data name="lblDateCreate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 297</value>
+    <value>41, 257</value>
   </data>
   <data name="lblDateCreate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 16</value>
+    <value>59, 13</value>
   </data>
   <data name="lblDateCreate.TabIndex" type="System.Int32, mscorlib">
     <value>132</value>
@@ -995,13 +995,13 @@
     <value>12</value>
   </data>
   <data name="chkStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>546, 245</value>
+    <value>455, 212</value>
   </data>
   <data name="chkStatus.Properties.Caption" xml:space="preserve">
     <value />
   </data>
   <data name="chkStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 21</value>
+    <value>187, 19</value>
   </data>
   <data name="chkStatus.TabIndex" type="System.Int32, mscorlib">
     <value>131</value>
@@ -1019,10 +1019,10 @@
     <value>13</value>
   </data>
   <data name="lblStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>463, 251</value>
+    <value>386, 218</value>
   </data>
   <data name="lblStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>36, 16</value>
+    <value>31, 13</value>
   </data>
   <data name="lblStatus.TabIndex" type="System.Int32, mscorlib">
     <value>130</value>
@@ -1043,10 +1043,10 @@
     <value>14</value>
   </data>
   <data name="lblHomePage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 215</value>
+    <value>41, 186</value>
   </data>
   <data name="lblHomePage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 16</value>
+    <value>54, 13</value>
   </data>
   <data name="lblHomePage.TabIndex" type="System.Int32, mscorlib">
     <value>128</value>
@@ -1073,10 +1073,10 @@
     <value>False</value>
   </data>
   <data name="TxtDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>193, 169</value>
+    <value>161, 146</value>
   </data>
   <data name="TxtDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 22</value>
+    <value>185, 20</value>
   </data>
   <data name="TxtDescription.TabIndex" type="System.Int32, mscorlib">
     <value>127</value>
@@ -1094,10 +1094,10 @@
     <value>16</value>
   </data>
   <data name="lblDescription.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 173</value>
+    <value>41, 150</value>
   </data>
   <data name="lblDescription.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 16</value>
+    <value>53, 13</value>
   </data>
   <data name="lblDescription.TabIndex" type="System.Int32, mscorlib">
     <value>126</value>
@@ -1118,10 +1118,10 @@
     <value>17</value>
   </data>
   <data name="lblId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 87</value>
+    <value>41, 75</value>
   </data>
   <data name="lblId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>11, 16</value>
+    <value>10, 13</value>
   </data>
   <data name="lblId.TabIndex" type="System.Int32, mscorlib">
     <value>125</value>
@@ -1142,10 +1142,10 @@
     <value>18</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>364, 20</value>
+    <value>303, 17</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 26</value>
+    <value>75, 23</value>
   </data>
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
     <value>118</value>
@@ -1166,10 +1166,10 @@
     <value>19</value>
   </data>
   <data name="btnSaveTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 20</value>
+    <value>207, 17</value>
   </data>
   <data name="btnSaveTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 26</value>
+    <value>75, 23</value>
   </data>
   <data name="btnSaveTheme.TabIndex" type="System.Int32, mscorlib">
     <value>117</value>
@@ -1190,10 +1190,10 @@
     <value>20</value>
   </data>
   <data name="btnEditTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 20</value>
+    <value>104, 17</value>
   </data>
   <data name="btnEditTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 26</value>
+    <value>75, 23</value>
   </data>
   <data name="btnEditTheme.TabIndex" type="System.Int32, mscorlib">
     <value>123</value>
@@ -1214,10 +1214,10 @@
     <value>21</value>
   </data>
   <data name="btnNewTheme_edit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 20</value>
+    <value>9, 17</value>
   </data>
   <data name="btnNewTheme_edit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 26</value>
+    <value>75, 23</value>
   </data>
   <data name="btnNewTheme_edit.TabIndex" type="System.Int32, mscorlib">
     <value>124</value>
@@ -1244,10 +1244,10 @@
     <value>False</value>
   </data>
   <data name="TxtEventThemeId_edit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>193, 84</value>
+    <value>161, 73</value>
   </data>
   <data name="TxtEventThemeId_edit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 22</value>
+    <value>65, 20</value>
   </data>
   <data name="TxtEventThemeId_edit.TabIndex" type="System.Int32, mscorlib">
     <value>115</value>
@@ -1271,10 +1271,10 @@
     <value>False</value>
   </data>
   <data name="txtTitleEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>193, 129</value>
+    <value>161, 112</value>
   </data>
   <data name="txtTitleEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 22</value>
+    <value>185, 20</value>
   </data>
   <data name="txtTitleEdit.TabIndex" type="System.Int32, mscorlib">
     <value>114</value>
@@ -1292,10 +1292,10 @@
     <value>24</value>
   </data>
   <data name="lblTitleEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 133</value>
+    <value>41, 115</value>
   </data>
   <data name="lblTitleEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 16</value>
+    <value>20, 13</value>
   </data>
   <data name="lblTitleEdit.TabIndex" type="System.Int32, mscorlib">
     <value>113</value>
@@ -1316,7 +1316,7 @@
     <value>25</value>
   </data>
   <data name="tabDetail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1183, 797</value>
+    <value>1183, 805</value>
   </data>
   <data name="tabDetail.Text" xml:space="preserve">
     <value>detail</value>
@@ -1352,7 +1352,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleBaseSize" type="System.Drawing.Size, System.Drawing">
-    <value>6, 15</value>
+    <value>5, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1192, 866</value>

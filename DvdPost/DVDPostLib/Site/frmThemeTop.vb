@@ -461,7 +461,6 @@ Public Class frmThemeTop
         resources.ApplyResources(Me.cmbLanguage, "cmbLanguage")
         Me.cmbLanguage.Name = "cmbLanguage"
         Me.cmbLanguage.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(CType(resources.GetObject("cmbLanguage.Properties.Buttons"), DevExpress.XtraEditors.Controls.ButtonPredefines))})
-        Me.cmbLanguage.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("languages_id", "id", 63, DevExpress.Utils.FormatType.Numeric, "", True, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("code", "code", 64, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
         Me.cmbLanguage.Properties.DisplayMember = "status_desc"
         Me.cmbLanguage.Properties.NullText = resources.GetString("cmbLanguage.Properties.NullText")
         Me.cmbLanguage.Properties.ValueMember = "status_id"
@@ -757,7 +756,7 @@ Public Class frmThemeTop
 
     Private Sub loadLanguage()
         Dim sql As String
-        Dim key As String = "languages_id"
+        Dim key As String = "id"
         Dim value As String = "code"
         Dim dtLanguage As DataTable
 
