@@ -830,7 +830,7 @@ Public Class ClsCustomers
         Dim credit As Integer
         Dim creditAction As DvdPostData.clsCreditHistory.ActionId
         If Forcedcredit = 0 Then
-            credit = GetCredit(getCustomersTypeAbo(drCustomer))
+            credit = GetCredit(getCustomersTypeAbo(drCustomer)) 'customers credit
         Else
             credit = Forcedcredit
         End If
@@ -957,7 +957,7 @@ Public Class ClsCustomers
                         price = ManageReduction(drCustomers, cptDroselia, forcedcredit, sqlDurationActivation, classique)
 
                         drCustomers("amount") = price
-                        If Decimal.Parse(price) > 0 Then
+                        If Decimal.Parse(price) > 0 Then 'add row in memory structure in order to gerate invoce
                             dtResult.Rows.Add(drCustomers.ItemArray())
                             clsMemberGetMember.AddPointFather(currentcustomers_id)
 

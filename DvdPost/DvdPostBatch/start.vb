@@ -53,6 +53,7 @@ Module start
                 clscust.ChangeCard_customers(DvdPostData.ClsCustomersData.Country.BELGIUM)
                 clscust.ChangeCard_customers(DvdPostData.ClsCustomersData.Country.NEDERLANDS)
 
+                'ogone reject payment for customer who pay after duration limit
                 clscust.RejetFileOgone()
 
                 clscust.ReconductionDomiciliation(DvdPostData.ClsCustomersData.Country.BELGIUM)
