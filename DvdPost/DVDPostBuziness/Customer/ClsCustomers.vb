@@ -830,7 +830,7 @@ Public Class ClsCustomers
         Dim credit As Integer
         Dim creditAction As DvdPostData.clsCreditHistory.ActionId
         If Forcedcredit = 0 Then
-            credit = GetCredit(getCustomersTypeAbo(drCustomer)) 'customers credit
+            credit = GetCredit(getCustomersTypeAbo(drCustomer))
         Else
             credit = Forcedcredit
         End If
