@@ -120,6 +120,8 @@ Public Class ClsCustomersInfo
                 sql = "SELECT * FROM customers where customers_id = " & mvarCurrentCustomerID
                 DvdPostData.clsConnection.UpdateDataTableInDB(DataSet1.Tables("customers"), sql)
 
+                sql = "SELECT * FROM customer_attributes where customer_id = " & mvarCurrentCustomerID
+                DvdPostData.clsConnection.UpdateDataTableInDB(DataSet1.Tables("customer_attributes"), sql)
             Catch ex As Exception
                 MsgBox("Error save customers", MsgBoxStyle.Critical)
                 ' DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.SignaletiqueCustomer, ex)

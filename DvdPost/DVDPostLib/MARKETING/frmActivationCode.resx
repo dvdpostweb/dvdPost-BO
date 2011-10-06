@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="HelpProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>363, 17</value>
+    <value>17, 134</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="StatusBar1.Location" type="System.Drawing.Point, System.Drawing">
@@ -139,8 +139,11 @@
   <data name="&gt;&gt;StatusBar1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 30</value>
+  </data>
   <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1192, 844</value>
+    <value>1192, 814</value>
   </data>
   <data name="&gt;&gt;Panel1.Name" xml:space="preserve">
     <value>Panel1</value>
@@ -155,46 +158,8 @@
     <value>0</value>
   </data>
   <metadata name="RightMouseMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>492, 17</value>
+    <value>17, 173</value>
   </metadata>
-  <metadata name="Grid1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>641, 17</value>
-  </metadata>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Grid1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="Grid1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="GridView1.GroupPanelText" xml:space="preserve">
-    <value>...</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Grid1.ShowHelp" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="Grid1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1183, 814</value>
-  </data>
-  <data name="Grid1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;Grid1.Name" xml:space="preserve">
-    <value>Grid1</value>
-  </data>
-  <data name="&gt;&gt;Grid1.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.GridControl, DevExpress.XtraGrid.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
-  </data>
-  <data name="&gt;&gt;Grid1.Parent" xml:space="preserve">
-    <value>TabResult</value>
-  </data>
-  <data name="&gt;&gt;Grid1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="Bar1.Text" xml:space="preserve">
-    <value>View Bar</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -204,9 +169,58 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1192, 866</value>
   </data>
+  <data name="&gt;&gt;barDockControlLeft.Name" xml:space="preserve">
+    <value>barDockControlLeft</value>
+  </data>
+  <data name="&gt;&gt;barDockControlLeft.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarDockControl, DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;barDockControlLeft.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;barDockControlLeft.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;barDockControlRight.Name" xml:space="preserve">
+    <value>barDockControlRight</value>
+  </data>
+  <data name="&gt;&gt;barDockControlRight.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarDockControl, DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;barDockControlRight.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;barDockControlRight.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;barDockControlBottom.Name" xml:space="preserve">
+    <value>barDockControlBottom</value>
+  </data>
+  <data name="&gt;&gt;barDockControlBottom.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarDockControl, DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;barDockControlBottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;barDockControlBottom.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;barDockControlTop.Name" xml:space="preserve">
+    <value>barDockControlTop</value>
+  </data>
+  <data name="&gt;&gt;barDockControlTop.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarDockControl, DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;barDockControlTop.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;barDockControlTop.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
   <data name="$this.HelpKeyword" xml:space="preserve">
     <value>Holding</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.HelpNavigator" type="System.Windows.Forms.HelpNavigator, System.Windows.Forms">
     <value>KeywordIndex</value>
   </data>
@@ -241,6 +255,7 @@
         AADwBwAA4AcAAOAHAAD4HwAA+B8AAPgfAAA=
 </value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.ShowHelp" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -298,18 +313,6 @@
   <data name="&gt;&gt;PopMenuAssociatedTasks.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;GridView1.Name" xml:space="preserve">
-    <value>GridView1</value>
-  </data>
-  <data name="&gt;&gt;GridView1.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView, DevExpress.XtraGrid.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
-  </data>
-  <data name="&gt;&gt;Bar1.Name" xml:space="preserve">
-    <value>Bar1</value>
-  </data>
-  <data name="&gt;&gt;Bar1.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.Bar, DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
-  </data>
   <data name="&gt;&gt;MenuItem9.Name" xml:space="preserve">
     <value>MenuItem9</value>
   </data>
@@ -327,6 +330,48 @@
   </data>
   <data name="&gt;&gt;objDS.Type" xml:space="preserve">
     <value>System.Data.DataSet, System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmbViewListRepos.Name" xml:space="preserve">
+    <value>cmbViewListRepos</value>
+  </data>
+  <data name="&gt;&gt;cmbViewListRepos.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;txtQuickSearchRepos.Name" xml:space="preserve">
+    <value>txtQuickSearchRepos</value>
+  </data>
+  <data name="&gt;&gt;txtQuickSearchRepos.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.Repository.RepositoryItemTextEdit, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;cmbReportListRepos.Name" xml:space="preserve">
+    <value>cmbReportListRepos</value>
+  </data>
+  <data name="&gt;&gt;cmbReportListRepos.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;cmbFilterListRepos.Name" xml:space="preserve">
+    <value>cmbFilterListRepos</value>
+  </data>
+  <data name="&gt;&gt;cmbFilterListRepos.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;cmbDefaultListRepos.Name" xml:space="preserve">
+    <value>cmbDefaultListRepos</value>
+  </data>
+  <data name="&gt;&gt;cmbDefaultListRepos.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;GridView1.Name" xml:space="preserve">
+    <value>GridView1</value>
+  </data>
+  <data name="&gt;&gt;GridView1.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView, DevExpress.XtraGrid.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;Bar1.Name" xml:space="preserve">
+    <value>Bar1</value>
+  </data>
+  <data name="&gt;&gt;Bar1.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.Bar, DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
   </data>
   <data name="&gt;&gt;BarManager1.Name" xml:space="preserve">
     <value>BarManager1</value>
@@ -362,6 +407,12 @@
     <value>btnSave</value>
   </data>
   <data name="&gt;&gt;btnSave.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;btnUndo.Name" xml:space="preserve">
+    <value>btnUndo</value>
+  </data>
+  <data name="&gt;&gt;btnUndo.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
   </data>
   <data name="&gt;&gt;Misc_Bar.Name" xml:space="preserve">
@@ -430,6 +481,18 @@
   <data name="&gt;&gt;btnUser5.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
   </data>
+  <data name="&gt;&gt;btnExportXML.Name" xml:space="preserve">
+    <value>btnExportXML</value>
+  </data>
+  <data name="&gt;&gt;btnExportXML.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;btnImportXML.Name" xml:space="preserve">
+    <value>btnImportXML</value>
+  </data>
+  <data name="&gt;&gt;btnImportXML.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
   <data name="&gt;&gt;View_Bar.Name" xml:space="preserve">
     <value>View_Bar</value>
   </data>
@@ -447,12 +510,6 @@
   </data>
   <data name="&gt;&gt;cmbViewList.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarEditItem, DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
-  </data>
-  <data name="&gt;&gt;cmbViewListRepos.Name" xml:space="preserve">
-    <value>cmbViewListRepos</value>
-  </data>
-  <data name="&gt;&gt;cmbViewListRepos.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
   </data>
   <data name="&gt;&gt;btnViewDetail.Name" xml:space="preserve">
     <value>btnViewDetail</value>
@@ -514,12 +571,6 @@
   <data name="&gt;&gt;txtQuickSearch.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarEditItem, DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
   </data>
-  <data name="&gt;&gt;txtQuickSearchRepos.Name" xml:space="preserve">
-    <value>txtQuickSearchRepos</value>
-  </data>
-  <data name="&gt;&gt;txtQuickSearchRepos.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.Repository.RepositoryItemTextEdit, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
-  </data>
   <data name="&gt;&gt;btnQuickSearch.Name" xml:space="preserve">
     <value>btnQuickSearch</value>
   </data>
@@ -543,12 +594,6 @@
   </data>
   <data name="&gt;&gt;cmbReportList.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarEditItem, DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
-  </data>
-  <data name="&gt;&gt;cmbReportListRepos.Name" xml:space="preserve">
-    <value>cmbReportListRepos</value>
-  </data>
-  <data name="&gt;&gt;cmbReportListRepos.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
   </data>
   <data name="&gt;&gt;btnReportDetail.Name" xml:space="preserve">
     <value>btnReportDetail</value>
@@ -616,12 +661,6 @@
   <data name="&gt;&gt;cmbFilterList.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarEditItem, DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
   </data>
-  <data name="&gt;&gt;cmbFilterListRepos.Name" xml:space="preserve">
-    <value>cmbFilterListRepos</value>
-  </data>
-  <data name="&gt;&gt;cmbFilterListRepos.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
-  </data>
   <data name="&gt;&gt;btnFilterDetail.Name" xml:space="preserve">
     <value>btnFilterDetail</value>
   </data>
@@ -681,12 +720,6 @@
   </data>
   <data name="&gt;&gt;cmbDefaultList.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarEditItem, DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
-  </data>
-  <data name="&gt;&gt;cmbDefaultListRepos.Name" xml:space="preserve">
-    <value>cmbDefaultListRepos</value>
-  </data>
-  <data name="&gt;&gt;cmbDefaultListRepos.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
   </data>
   <data name="&gt;&gt;btnDefaultDetail.Name" xml:space="preserve">
     <value>btnDefaultDetail</value>
@@ -790,29 +823,11 @@
   <data name="&gt;&gt;btnLast.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
   </data>
-  <data name="&gt;&gt;btnUndo.Name" xml:space="preserve">
-    <value>btnUndo</value>
-  </data>
-  <data name="&gt;&gt;btnUndo.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
-  </data>
-  <data name="&gt;&gt;btnExportXML.Name" xml:space="preserve">
-    <value>btnExportXML</value>
-  </data>
-  <data name="&gt;&gt;btnExportXML.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
-  </data>
-  <data name="&gt;&gt;btnImportXML.Name" xml:space="preserve">
-    <value>btnImportXML</value>
-  </data>
-  <data name="&gt;&gt;btnImportXML.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
-  </data>
   <data name="&gt;&gt;DS.Name" xml:space="preserve">
     <value>DS</value>
   </data>
   <data name="&gt;&gt;DS.Type" xml:space="preserve">
-    <value>DVDPostLib.dsMarketting, DVDPostLib, Version=2.0.4267.1, Culture=neutral, PublicKeyToken=null</value>
+    <value>DVDPostLib.dsMarketting, DVDPostLib, Version=2.0.4296.15, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;GridViewActivationCode.Name" xml:space="preserve">
     <value>GridViewActivationCode</value>
@@ -1000,56 +1015,8 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>BizzLib.frmGeneral_Browse, BizzLib, Version=1.0.3210.18722, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="&gt;&gt;barDockControlTop.Name" xml:space="preserve">
-    <value>barDockControlTop</value>
-  </data>
-  <data name="&gt;&gt;barDockControlTop.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarDockControl, DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
-  </data>
-  <data name="&gt;&gt;barDockControlTop.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;barDockControlTop.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;barDockControlBottom.Name" xml:space="preserve">
-    <value>barDockControlBottom</value>
-  </data>
-  <data name="&gt;&gt;barDockControlBottom.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarDockControl, DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
-  </data>
-  <data name="&gt;&gt;barDockControlBottom.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;barDockControlBottom.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;barDockControlRight.Name" xml:space="preserve">
-    <value>barDockControlRight</value>
-  </data>
-  <data name="&gt;&gt;barDockControlRight.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarDockControl, DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
-  </data>
-  <data name="&gt;&gt;barDockControlRight.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;barDockControlRight.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;barDockControlLeft.Name" xml:space="preserve">
-    <value>barDockControlLeft</value>
-  </data>
-  <data name="&gt;&gt;barDockControlLeft.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarDockControl, DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
-  </data>
-  <data name="&gt;&gt;barDockControlLeft.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;barDockControlLeft.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1192, 844</value>
+    <value>1192, 814</value>
   </data>
   <data name="GroupSearch.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowOnly</value>
@@ -1292,7 +1259,7 @@
     <value>True</value>
   </data>
   <data name="chkOnlyUsed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 18</value>
+    <value>75, 19</value>
   </data>
   <data name="chkOnlyUsed.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -1618,9 +1585,6 @@
   <data name="&gt;&gt;tabSearch.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="GridActivationCode.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>722, 17</value>
-  </metadata>
   <data name="GridActivationCode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -1937,7 +1901,7 @@
     <value>0</value>
   </data>
   <data name="TabChart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>984, 699</value>
+    <value>1095, 417</value>
   </data>
   <data name="&gt;&gt;TabChart.Name" xml:space="preserve">
     <value>TabChart</value>
@@ -1952,7 +1916,7 @@
     <value>5</value>
   </data>
   <data name="TabAnalyse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>984, 699</value>
+    <value>1095, 417</value>
   </data>
   <data name="&gt;&gt;TabAnalyse.Name" xml:space="preserve">
     <value>TabAnalyse</value>
@@ -1967,7 +1931,7 @@
     <value>4</value>
   </data>
   <data name="TabResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1183, 814</value>
+    <value>1183, 783</value>
   </data>
   <data name="&gt;&gt;TabResult.Name" xml:space="preserve">
     <value>TabResult</value>
@@ -2798,7 +2762,7 @@
     <value>True</value>
   </data>
   <data name="chkFree_Upgrade_Allowed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 18</value>
+    <value>150, 19</value>
   </data>
   <data name="chkFree_Upgrade_Allowed.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -3227,7 +3191,7 @@
     <value>True</value>
   </data>
   <data name="chkAuto_Stop_at_Next_Reconduction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 18</value>
+    <value>177, 19</value>
   </data>
   <data name="chkAuto_Stop_at_Next_Reconduction.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -3254,7 +3218,7 @@
     <value>Need Visa Card Warranty</value>
   </data>
   <data name="chkWaranty.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 18</value>
+    <value>150, 19</value>
   </data>
   <data name="chkWaranty.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -3656,7 +3620,7 @@
     <value>41</value>
   </data>
   <data name="TabParameters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>984, 699</value>
+    <value>1095, 417</value>
   </data>
   <data name="TabParameters.Text" xml:space="preserve">
     <value>Generate</value>
@@ -3674,10 +3638,10 @@
     <value>1</value>
   </data>
   <metadata name="SaveFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+    <value>17, 95</value>
   </metadata>
   <data name="UcPivotGrid1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>984, 699</value>
+    <value>1095, 417</value>
   </data>
   <data name="&gt;&gt;UcPivotGrid1.Name" xml:space="preserve">
     <value>UcPivotGrid1</value>
@@ -3692,7 +3656,7 @@
     <value>0</value>
   </data>
   <data name="UcChart1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>984, 699</value>
+    <value>1095, 417</value>
   </data>
   <data name="&gt;&gt;UcChart1.Name" xml:space="preserve">
     <value>UcChart1</value>
@@ -3707,11 +3671,129 @@
     <value>0</value>
   </data>
   <metadata name="objDS.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>154, 17</value>
+    <value>17, 17</value>
   </metadata>
+  <data name="Grid1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="Grid1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="Grid1.ShowHelp" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="Grid1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1183, 814</value>
+  </data>
+  <data name="Grid1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="GridView1.GroupPanelText" xml:space="preserve">
+    <value>...</value>
+  </data>
+  <data name="&gt;&gt;Grid1.Name" xml:space="preserve">
+    <value>Grid1</value>
+  </data>
+  <data name="&gt;&gt;Grid1.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.GridControl, DevExpress.XtraGrid.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="Bar1.Text" xml:space="preserve">
+    <value>View Bar</value>
+  </data>
   <metadata name="BarManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>238, 17</value>
+    <value>17, 212</value>
   </metadata>
+  <assembly alias="DevExpress.XtraBars.v8.1" name="DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
+  <data name="BarManager1.Categories" type="DevExpress.XtraBars.BarManagerCategory, DevExpress.XtraBars.v8.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFtEZXZFeHByZXNzLlh0cmFCYXJzLnY4LjEsIFZlcnNpb249OC4x
+        LjEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YjE3MWM5ZmQ2NGRhMWQxBQEAAAAm
+        RGV2RXhwcmVzcy5YdHJhQmFycy5CYXJNYW5hZ2VyQ2F0ZWdvcnkDAAAABE5hbWUER3VpZAdWaXNpYmxl
+        AQMAC1N5c3RlbS5HdWlkAQIAAAAGAwAAAARNYWluBPz///8LU3lzdGVtLkd1aWQLAAAAAl9hAl9iAl9j
+        Al9kAl9lAl9mAl9nAl9oAl9pAl9qAl9rAAAAAAAAAAAAAAAIBwcCAgICAgICAtmEREPFeuVHlBIxOhEb
+        ckABCw==
+</value>
+  </data>
+  <data name="BarManager1.Categories1" type="DevExpress.XtraBars.BarManagerCategory, DevExpress.XtraBars.v8.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFtEZXZFeHByZXNzLlh0cmFCYXJzLnY4LjEsIFZlcnNpb249OC4x
+        LjEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YjE3MWM5ZmQ2NGRhMWQxBQEAAAAm
+        RGV2RXhwcmVzcy5YdHJhQmFycy5CYXJNYW5hZ2VyQ2F0ZWdvcnkDAAAABE5hbWUER3VpZAdWaXNpYmxl
+        AQMAC1N5c3RlbS5HdWlkAQIAAAAGAwAAAAxNaXNjZWxhbmVvdXME/P///wtTeXN0ZW0uR3VpZAsAAAAC
+        X2ECX2ICX2MCX2QCX2UCX2YCX2cCX2gCX2kCX2oCX2sAAAAAAAAAAAAAAAgHBwICAgICAgICYbVnp1bC
+        GkWhmW6/hKByZQEL
+</value>
+  </data>
+  <data name="BarManager1.Categories2" type="DevExpress.XtraBars.BarManagerCategory, DevExpress.XtraBars.v8.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFtEZXZFeHByZXNzLlh0cmFCYXJzLnY4LjEsIFZlcnNpb249OC4x
+        LjEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YjE3MWM5ZmQ2NGRhMWQxBQEAAAAm
+        RGV2RXhwcmVzcy5YdHJhQmFycy5CYXJNYW5hZ2VyQ2F0ZWdvcnkDAAAABE5hbWUER3VpZAdWaXNpYmxl
+        AQMAC1N5c3RlbS5HdWlkAQIAAAAGAwAAAAVWaWV3cwT8////C1N5c3RlbS5HdWlkCwAAAAJfYQJfYgJf
+        YwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgIEAIWv1NsqRa5RDTt4
+        MwI6AQs=
+</value>
+  </data>
+  <data name="BarManager1.Categories3" type="DevExpress.XtraBars.BarManagerCategory, DevExpress.XtraBars.v8.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFtEZXZFeHByZXNzLlh0cmFCYXJzLnY4LjEsIFZlcnNpb249OC4x
+        LjEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YjE3MWM5ZmQ2NGRhMWQxBQEAAAAm
+        RGV2RXhwcmVzcy5YdHJhQmFycy5CYXJNYW5hZ2VyQ2F0ZWdvcnkDAAAABE5hbWUER3VpZAdWaXNpYmxl
+        AQMAC1N5c3RlbS5HdWlkAQIAAAAGAwAAAAdGaWx0ZXJzBPz///8LU3lzdGVtLkd1aWQLAAAAAl9hAl9i
+        Al9jAl9kAl9lAl9mAl9nAl9oAl9pAl9qAl9rAAAAAAAAAAAAAAAIBwcCAgICAgICAoO4ezTO+fxEssHZ
+        i6uGzqkBCw==
+</value>
+  </data>
+  <data name="BarManager1.Categories4" type="DevExpress.XtraBars.BarManagerCategory, DevExpress.XtraBars.v8.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFtEZXZFeHByZXNzLlh0cmFCYXJzLnY4LjEsIFZlcnNpb249OC4x
+        LjEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YjE3MWM5ZmQ2NGRhMWQxBQEAAAAm
+        RGV2RXhwcmVzcy5YdHJhQmFycy5CYXJNYW5hZ2VyQ2F0ZWdvcnkDAAAABE5hbWUER3VpZAdWaXNpYmxl
+        AQMAC1N5c3RlbS5HdWlkAQIAAAAGAwAAAAlSZXBvcnRpbmcE/P///wtTeXN0ZW0uR3VpZAsAAAACX2EC
+        X2ICX2MCX2QCX2UCX2YCX2cCX2gCX2kCX2oCX2sAAAAAAAAAAAAAAAgHBwICAgICAgICKb6znf/3D0Sm
+        zAJJvmwd9AEL
+</value>
+  </data>
+  <data name="BarManager1.Categories5" type="DevExpress.XtraBars.BarManagerCategory, DevExpress.XtraBars.v8.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFtEZXZFeHByZXNzLlh0cmFCYXJzLnY4LjEsIFZlcnNpb249OC4x
+        LjEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YjE3MWM5ZmQ2NGRhMWQxBQEAAAAm
+        RGV2RXhwcmVzcy5YdHJhQmFycy5CYXJNYW5hZ2VyQ2F0ZWdvcnkDAAAABE5hbWUER3VpZAdWaXNpYmxl
+        AQMAC1N5c3RlbS5HdWlkAQIAAAAGAwAAAA5EZWZhdWx0IFZhbHVlcwT8////C1N5c3RlbS5HdWlkCwAA
+        AAJfYQJfYgJfYwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgItAKqV
+        XbpaSJ412cXXbWjeAQs=
+</value>
+  </data>
+  <data name="BarManager1.Categories6" type="DevExpress.XtraBars.BarManagerCategory, DevExpress.XtraBars.v8.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFtEZXZFeHByZXNzLlh0cmFCYXJzLnY4LjEsIFZlcnNpb249OC4x
+        LjEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YjE3MWM5ZmQ2NGRhMWQxBQEAAAAm
+        RGV2RXhwcmVzcy5YdHJhQmFycy5CYXJNYW5hZ2VyQ2F0ZWdvcnkDAAAABE5hbWUER3VpZAdWaXNpYmxl
+        AQMAC1N5c3RlbS5HdWlkAQIAAAAGAwAAAAxRdWljayBTZWFyY2gE/P///wtTeXN0ZW0uR3VpZAsAAAAC
+        X2ECX2ICX2MCX2QCX2UCX2YCX2cCX2gCX2kCX2oCX2sAAAAAAAAAAAAAAAgHBwICAgICAgICCV5zLXx8
+        1E6zypluCUogJgEL
+</value>
+  </data>
+  <data name="BarManager1.Categories7" type="DevExpress.XtraBars.BarManagerCategory, DevExpress.XtraBars.v8.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFtEZXZFeHByZXNzLlh0cmFCYXJzLnY4LjEsIFZlcnNpb249OC4x
+        LjEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YjE3MWM5ZmQ2NGRhMWQxBQEAAAAm
+        RGV2RXhwcmVzcy5YdHJhQmFycy5CYXJNYW5hZ2VyQ2F0ZWdvcnkDAAAABE5hbWUER3VpZAdWaXNpYmxl
+        AQMAC1N5c3RlbS5HdWlkAQIAAAAGAwAAABBNaXNjX01haW50ZW5hbmNlBPz///8LU3lzdGVtLkd1aWQL
+        AAAAAl9hAl9iAl9jAl9kAl9lAl9mAl9nAl9oAl9pAl9qAl9rAAAAAAAAAAAAAAAIBwcCAgICAgICAkJL
+        X9R4fFVCmDkPm4G+dgMBCw==
+</value>
+  </data>
+  <data name="BarManager1.Categories8" type="DevExpress.XtraBars.BarManagerCategory, DevExpress.XtraBars.v8.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFtEZXZFeHByZXNzLlh0cmFCYXJzLnY4LjEsIFZlcnNpb249OC4x
+        LjEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YjE3MWM5ZmQ2NGRhMWQxBQEAAAAm
+        RGV2RXhwcmVzcy5YdHJhQmFycy5CYXJNYW5hZ2VyQ2F0ZWdvcnkDAAAABE5hbWUER3VpZAdWaXNpYmxl
+        AQMAC1N5c3RlbS5HdWlkAQIAAAAGAwAAAApOYXZpZ2F0aW9uBPz///8LU3lzdGVtLkd1aWQLAAAAAl9h
+        Al9iAl9jAl9kAl9lAl9mAl9nAl9oAl9pAl9qAl9rAAAAAAAAAAAAAAAIBwcCAgICAgICAtlJXNW5JTBA
+        mLSwsefWW5ABCw==
+</value>
+  </data>
   <data name="btnNew.Caption" xml:space="preserve">
     <value>New</value>
   </data>
@@ -4460,98 +4542,7 @@
   <data name="Nav_Bar.Text" xml:space="preserve">
     <value>Nav Bar</value>
   </data>
-  <assembly alias="DevExpress.XtraBars.v8.1" name="DevExpress.XtraBars.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
-  <data name="BarManager1.Categories" type="DevExpress.XtraBars.BarManagerCategory, DevExpress.XtraBars.v8.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFtEZXZFeHByZXNzLlh0cmFCYXJzLnY4LjEsIFZlcnNpb249OC4x
-        LjEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YjE3MWM5ZmQ2NGRhMWQxBQEAAAAm
-        RGV2RXhwcmVzcy5YdHJhQmFycy5CYXJNYW5hZ2VyQ2F0ZWdvcnkDAAAABE5hbWUER3VpZAdWaXNpYmxl
-        AQMAC1N5c3RlbS5HdWlkAQIAAAAGAwAAAARNYWluBPz///8LU3lzdGVtLkd1aWQLAAAAAl9hAl9iAl9j
-        Al9kAl9lAl9mAl9nAl9oAl9pAl9qAl9rAAAAAAAAAAAAAAAIBwcCAgICAgICAtmEREPFeuVHlBIxOhEb
-        ckABCw==
-</value>
-  </data>
-  <data name="BarManager1.Categories1" type="DevExpress.XtraBars.BarManagerCategory, DevExpress.XtraBars.v8.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFtEZXZFeHByZXNzLlh0cmFCYXJzLnY4LjEsIFZlcnNpb249OC4x
-        LjEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YjE3MWM5ZmQ2NGRhMWQxBQEAAAAm
-        RGV2RXhwcmVzcy5YdHJhQmFycy5CYXJNYW5hZ2VyQ2F0ZWdvcnkDAAAABE5hbWUER3VpZAdWaXNpYmxl
-        AQMAC1N5c3RlbS5HdWlkAQIAAAAGAwAAAAxNaXNjZWxhbmVvdXME/P///wtTeXN0ZW0uR3VpZAsAAAAC
-        X2ECX2ICX2MCX2QCX2UCX2YCX2cCX2gCX2kCX2oCX2sAAAAAAAAAAAAAAAgHBwICAgICAgICYbVnp1bC
-        GkWhmW6/hKByZQEL
-</value>
-  </data>
-  <data name="BarManager1.Categories2" type="DevExpress.XtraBars.BarManagerCategory, DevExpress.XtraBars.v8.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFtEZXZFeHByZXNzLlh0cmFCYXJzLnY4LjEsIFZlcnNpb249OC4x
-        LjEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YjE3MWM5ZmQ2NGRhMWQxBQEAAAAm
-        RGV2RXhwcmVzcy5YdHJhQmFycy5CYXJNYW5hZ2VyQ2F0ZWdvcnkDAAAABE5hbWUER3VpZAdWaXNpYmxl
-        AQMAC1N5c3RlbS5HdWlkAQIAAAAGAwAAAAVWaWV3cwT8////C1N5c3RlbS5HdWlkCwAAAAJfYQJfYgJf
-        YwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgIEAIWv1NsqRa5RDTt4
-        MwI6AQs=
-</value>
-  </data>
-  <data name="BarManager1.Categories3" type="DevExpress.XtraBars.BarManagerCategory, DevExpress.XtraBars.v8.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFtEZXZFeHByZXNzLlh0cmFCYXJzLnY4LjEsIFZlcnNpb249OC4x
-        LjEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YjE3MWM5ZmQ2NGRhMWQxBQEAAAAm
-        RGV2RXhwcmVzcy5YdHJhQmFycy5CYXJNYW5hZ2VyQ2F0ZWdvcnkDAAAABE5hbWUER3VpZAdWaXNpYmxl
-        AQMAC1N5c3RlbS5HdWlkAQIAAAAGAwAAAAdGaWx0ZXJzBPz///8LU3lzdGVtLkd1aWQLAAAAAl9hAl9i
-        Al9jAl9kAl9lAl9mAl9nAl9oAl9pAl9qAl9rAAAAAAAAAAAAAAAIBwcCAgICAgICAoO4ezTO+fxEssHZ
-        i6uGzqkBCw==
-</value>
-  </data>
-  <data name="BarManager1.Categories4" type="DevExpress.XtraBars.BarManagerCategory, DevExpress.XtraBars.v8.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFtEZXZFeHByZXNzLlh0cmFCYXJzLnY4LjEsIFZlcnNpb249OC4x
-        LjEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YjE3MWM5ZmQ2NGRhMWQxBQEAAAAm
-        RGV2RXhwcmVzcy5YdHJhQmFycy5CYXJNYW5hZ2VyQ2F0ZWdvcnkDAAAABE5hbWUER3VpZAdWaXNpYmxl
-        AQMAC1N5c3RlbS5HdWlkAQIAAAAGAwAAAAlSZXBvcnRpbmcE/P///wtTeXN0ZW0uR3VpZAsAAAACX2EC
-        X2ICX2MCX2QCX2UCX2YCX2cCX2gCX2kCX2oCX2sAAAAAAAAAAAAAAAgHBwICAgICAgICKb6znf/3D0Sm
-        zAJJvmwd9AEL
-</value>
-  </data>
-  <data name="BarManager1.Categories5" type="DevExpress.XtraBars.BarManagerCategory, DevExpress.XtraBars.v8.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFtEZXZFeHByZXNzLlh0cmFCYXJzLnY4LjEsIFZlcnNpb249OC4x
-        LjEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YjE3MWM5ZmQ2NGRhMWQxBQEAAAAm
-        RGV2RXhwcmVzcy5YdHJhQmFycy5CYXJNYW5hZ2VyQ2F0ZWdvcnkDAAAABE5hbWUER3VpZAdWaXNpYmxl
-        AQMAC1N5c3RlbS5HdWlkAQIAAAAGAwAAAA5EZWZhdWx0IFZhbHVlcwT8////C1N5c3RlbS5HdWlkCwAA
-        AAJfYQJfYgJfYwJfZAJfZQJfZgJfZwJfaAJfaQJfagJfawAAAAAAAAAAAAAACAcHAgICAgICAgItAKqV
-        XbpaSJ412cXXbWjeAQs=
-</value>
-  </data>
-  <data name="BarManager1.Categories6" type="DevExpress.XtraBars.BarManagerCategory, DevExpress.XtraBars.v8.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFtEZXZFeHByZXNzLlh0cmFCYXJzLnY4LjEsIFZlcnNpb249OC4x
-        LjEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YjE3MWM5ZmQ2NGRhMWQxBQEAAAAm
-        RGV2RXhwcmVzcy5YdHJhQmFycy5CYXJNYW5hZ2VyQ2F0ZWdvcnkDAAAABE5hbWUER3VpZAdWaXNpYmxl
-        AQMAC1N5c3RlbS5HdWlkAQIAAAAGAwAAAAxRdWljayBTZWFyY2gE/P///wtTeXN0ZW0uR3VpZAsAAAAC
-        X2ECX2ICX2MCX2QCX2UCX2YCX2cCX2gCX2kCX2oCX2sAAAAAAAAAAAAAAAgHBwICAgICAgICCV5zLXx8
-        1E6zypluCUogJgEL
-</value>
-  </data>
-  <data name="BarManager1.Categories7" type="DevExpress.XtraBars.BarManagerCategory, DevExpress.XtraBars.v8.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFtEZXZFeHByZXNzLlh0cmFCYXJzLnY4LjEsIFZlcnNpb249OC4x
-        LjEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YjE3MWM5ZmQ2NGRhMWQxBQEAAAAm
-        RGV2RXhwcmVzcy5YdHJhQmFycy5CYXJNYW5hZ2VyQ2F0ZWdvcnkDAAAABE5hbWUER3VpZAdWaXNpYmxl
-        AQMAC1N5c3RlbS5HdWlkAQIAAAAGAwAAABBNaXNjX01haW50ZW5hbmNlBPz///8LU3lzdGVtLkd1aWQL
-        AAAAAl9hAl9iAl9jAl9kAl9lAl9mAl9nAl9oAl9pAl9qAl9rAAAAAAAAAAAAAAAIBwcCAgICAgICAkJL
-        X9R4fFVCmDkPm4G+dgMBCw==
-</value>
-  </data>
-  <data name="BarManager1.Categories8" type="DevExpress.XtraBars.BarManagerCategory, DevExpress.XtraBars.v8.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFtEZXZFeHByZXNzLlh0cmFCYXJzLnY4LjEsIFZlcnNpb249OC4x
-        LjEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj05YjE3MWM5ZmQ2NGRhMWQxBQEAAAAm
-        RGV2RXhwcmVzcy5YdHJhQmFycy5CYXJNYW5hZ2VyQ2F0ZWdvcnkDAAAABE5hbWUER3VpZAdWaXNpYmxl
-        AQMAC1N5c3RlbS5HdWlkAQIAAAAGAwAAAApOYXZpZ2F0aW9uBPz///8LU3lzdGVtLkd1aWQLAAAAAl9h
-        Al9iAl9jAl9kAl9lAl9mAl9nAl9oAl9pAl9qAl9rAAAAAAAAAAAAAAAIBwcCAgICAgICAtlJXNW5JTBA
-        mLSwsefWW5ABCw==
-</value>
-  </data>
   <metadata name="DS.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>880, 17</value>
+    <value>17, 251</value>
   </metadata>
 </root>

@@ -5931,7 +5931,9 @@ Partial Public Class dsCustomerMaint
         
         Private columnupdated_at As Global.System.Data.DataColumn
         
-        Private columnvod_only As Global.System.Data.DataColumn
+        Private columnonly_vod As Global.System.Data.DataColumn
+        
+        Private columncredits_already_recieved As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub New()
@@ -6015,9 +6017,16 @@ Partial Public Class dsCustomerMaint
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public ReadOnly Property vod_onlyColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property only_vodColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnvod_only
+                Return Me.columnonly_vod
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property credits_already_recievedColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncredits_already_recieved
             End Get
         End Property
         
@@ -6050,9 +6059,9 @@ Partial Public Class dsCustomerMaint
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Overloads Function Addcustomer_attributesRow(ByVal customer_id As Integer, ByVal list_indicator_close As Boolean, ByVal number_of_logins As Integer, ByVal last_login_at As Date, ByVal created_at As Date, ByVal updated_at As Date, ByVal vod_only As Boolean) As customer_attributesRow
+        Public Overloads Function Addcustomer_attributesRow(ByVal customer_id As Integer, ByVal list_indicator_close As Boolean, ByVal number_of_logins As Integer, ByVal last_login_at As Date, ByVal created_at As Date, ByVal updated_at As Date, ByVal only_vod As Boolean, ByVal credits_already_recieved As Boolean) As customer_attributesRow
             Dim rowcustomer_attributesRow As customer_attributesRow = CType(Me.NewRow,customer_attributesRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, customer_id, list_indicator_close, number_of_logins, last_login_at, created_at, updated_at, vod_only}
+            Dim columnValuesArray() As Object = New Object() {Nothing, customer_id, list_indicator_close, number_of_logins, last_login_at, created_at, updated_at, only_vod, credits_already_recieved}
             rowcustomer_attributesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowcustomer_attributesRow)
             Return rowcustomer_attributesRow
@@ -6089,7 +6098,8 @@ Partial Public Class dsCustomerMaint
             Me.columnlast_login_at = MyBase.Columns("last_login_at")
             Me.columncreated_at = MyBase.Columns("created_at")
             Me.columnupdated_at = MyBase.Columns("updated_at")
-            Me.columnvod_only = MyBase.Columns("vod_only")
+            Me.columnonly_vod = MyBase.Columns("only_vod")
+            Me.columncredits_already_recieved = MyBase.Columns("credits_already_recieved")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -6108,8 +6118,10 @@ Partial Public Class dsCustomerMaint
             MyBase.Columns.Add(Me.columncreated_at)
             Me.columnupdated_at = New Global.System.Data.DataColumn("updated_at", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnupdated_at)
-            Me.columnvod_only = New Global.System.Data.DataColumn("vod_only", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnvod_only)
+            Me.columnonly_vod = New Global.System.Data.DataColumn("only_vod", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnonly_vod)
+            Me.columncredits_already_recieved = New Global.System.Data.DataColumn("credits_already_recieved", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncredits_already_recieved)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
             Me.columnid.AutoIncrement = true
             Me.columnid.AllowDBNull = false
@@ -10173,16 +10185,31 @@ Partial Public Class dsCustomerMaint
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Property vod_only() As Boolean
+        Public Property only_vod() As Boolean
             Get
                 Try 
-                    Return CType(Me(Me.tablecustomer_attributes.vod_onlyColumn),Boolean)
+                    Return CType(Me(Me.tablecustomer_attributes.only_vodColumn),Boolean)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'vod_only' in table 'customer_attributes' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'only_vod' in table 'customer_attributes' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablecustomer_attributes.vod_onlyColumn) = value
+                Me(Me.tablecustomer_attributes.only_vodColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property credits_already_recieved() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tablecustomer_attributes.credits_already_recievedColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'credits_already_recieved' in table 'customer_attributes' is"& _ 
+                            " DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablecustomer_attributes.credits_already_recievedColumn) = value
             End Set
         End Property
         
@@ -10247,13 +10274,23 @@ Partial Public Class dsCustomerMaint
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function Isvod_onlyNull() As Boolean
-            Return Me.IsNull(Me.tablecustomer_attributes.vod_onlyColumn)
+        Public Function Isonly_vodNull() As Boolean
+            Return Me.IsNull(Me.tablecustomer_attributes.only_vodColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Sub Setvod_onlyNull()
-            Me(Me.tablecustomer_attributes.vod_onlyColumn) = Global.System.Convert.DBNull
+        Public Sub Setonly_vodNull()
+            Me(Me.tablecustomer_attributes.only_vodColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Iscredits_already_recievedNull() As Boolean
+            Return Me.IsNull(Me.tablecustomer_attributes.credits_already_recievedColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setcredits_already_recievedNull()
+            Me(Me.tablecustomer_attributes.credits_already_recievedColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

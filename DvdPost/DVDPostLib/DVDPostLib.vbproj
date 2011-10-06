@@ -491,9 +491,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsCustomerMaint.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSets\dsCustomerMaint.vb">
-      <DependentUpon>dsCustomerMaint.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DataSets\dsCustomers.Designer.vb">
       <DependentUpon>dsCustomers.xsd</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -541,17 +538,13 @@
       <DependentUpon>dsPur_Sls.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSets\DsSite.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DsSite.xsd</DependentUpon>
+      <DependentUpon>DsSite.vb</DependentUpon>
     </Compile>
     <Compile Include="DataSets\DsSite.vb">
       <DependentUpon>DsSite.xsd</DependentUpon>
     </Compile>
     <Compile Include="DataSets\DsUsers.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DsUsers.xsd</DependentUpon>
+      <DependentUpon>DsUsers.vb</DependentUpon>
     </Compile>
     <Compile Include="DataSets\DsUsers.vb">
       <DependentUpon>DsUsers.xsd</DependentUpon>
@@ -1277,9 +1270,9 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="DataSets\dsCustomerMaint.xsd">
+      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>dsCustomerMaint.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
     </Content>
     <Content Include="DataSets\dsCustomers.xsd">
       <Generator>MSDataSetGenerator</Generator>
@@ -1406,7 +1399,6 @@
     <None Include="DataSets\DsSite.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DsSite.Designer.vb</LastGenOutput>
     </None>
     <None Include="DataSets\DsSite.xss">
       <DependentUpon>DsSite.xsd</DependentUpon>
@@ -1417,7 +1409,6 @@
     <None Include="DataSets\DsUsers.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DsUsers.Designer.vb</LastGenOutput>
     </None>
     <None Include="DataSets\DsUsers.xss">
       <DependentUpon>DsUsers.xsd</DependentUpon>
