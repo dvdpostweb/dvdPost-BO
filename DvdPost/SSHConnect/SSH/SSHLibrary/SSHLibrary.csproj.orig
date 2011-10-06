@@ -38,11 +38,19 @@
   <ItemGroup>
     <Reference Include="DiffieHellman, Version=0.0.0.0, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
+<<<<<<< HEAD
+      <HintPath>..\..\..\BK\bin\DiffieHellman.dll</HintPath>
+    </Reference>
+    <Reference Include="Org.Mentalis.Security, Version=1.0.13.715, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\BK\bin\Org.Mentalis.Security.dll</HintPath>
+=======
       <HintPath>..\..\..\DLL\DiffieHellman.dll</HintPath>
     </Reference>
     <Reference Include="Org.Mentalis.Security, Version=1.0.13.715, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\DLL\Org.Mentalis.Security.dll</HintPath>
+>>>>>>> link dll
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
