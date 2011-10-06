@@ -53,6 +53,7 @@ Module start
                 clscust.ChangeCard_customers(DvdPostData.ClsCustomersData.Country.BELGIUM)
                 clscust.ChangeCard_customers(DvdPostData.ClsCustomersData.Country.NEDERLANDS)
 
+                'ogone reject payment for customer who pay after duration limit
                 clscust.RejetFileOgone()
 
                 clscust.ReconductionDomiciliation(DvdPostData.ClsCustomersData.Country.BELGIUM)
@@ -80,12 +81,14 @@ Module start
                 'DVDPostBuziness.ClsBankTransfer.matching()
                 clscust.CreateCustomersRotation()
                 Dim sql As String
+                'call store procedure to calculate average of the duration of keeping dvdat home
                 Sql = DvdPostData.ClsPurchaseSale.GetInsertCreateRateRotationAbo()
                 DvdPostData.clsConnection.ExecuteNonQuery(Sql)
 
                 ' Dim cls As New DVDPostBuziness.ClsPurchaseSale
                 ' cls.CreatePrevisionAchat()
 
+                'calculate vod statistic
                 DVDPostBuziness.ClsVod.InsertStatVod()
                 clscust.UpdateDvd_at_Home()
 

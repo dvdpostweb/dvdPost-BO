@@ -413,6 +413,8 @@ Public Class clsOffLinePayments
         End Try
 
     End Function
+
+    'matching of paymets and suspends customer who didn't pay two invoices
     Public Shared Sub matchingOffline()
         Dim user_id As Integer = clsSession.user_id
 
@@ -423,7 +425,8 @@ Public Class clsOffLinePayments
         Dim cpt_unsuspended_holiday As Integer
 
         cpt_recovery = MatchingOfflineRequestCommunicationStructure()
-        cpt_find_open = MatchingCommunicationStructureOrNameFirtsName()
+        cpt_find_Open = MatchingCommunicationStructureOrNameFirtsName()
+        'for suspension call webservice
         cpt_unsuspended = UnsuspendedPayment()
         cpt_suspended = suspendedPayment()
         cpt_unsuspended_holiday = UnsuspendedHolidays()
