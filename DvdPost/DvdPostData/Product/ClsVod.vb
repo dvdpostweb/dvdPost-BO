@@ -36,7 +36,7 @@ Public Class ClsVod
 
         Dim sql As String
 
-        sql = " SELECT s.imdb_id, s.filename FROM streaming_products s where status = 'uploaded' and status <> 'deleted' and (select count(*) from products p where p.imdb_id = s.imdb_id ) = 0 "
+        sql = " SELECT s.imdb_id, s.filename FROM streaming_products s where source = 'ALPHANETWORKS' and status <> 'deleted' and (select count(*) from products p where p.imdb_id = s.imdb_id ) = 0 "
 
         Return sql
 

@@ -310,10 +310,6 @@ Partial Class FrmProductsVOD
         'BarManager1
         '
         Me.BarManager1.Categories.AddRange(New DevExpress.XtraBars.BarManagerCategory() {New DevExpress.XtraBars.BarManagerCategory("Main", New System.Guid("434484d9-7ac5-47e5-9412-313a111b7240")), New DevExpress.XtraBars.BarManagerCategory("Miscelaneous", New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")), New DevExpress.XtraBars.BarManagerCategory("Views", New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")), New DevExpress.XtraBars.BarManagerCategory("Filters", New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")), New DevExpress.XtraBars.BarManagerCategory("Reporting", New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")), New DevExpress.XtraBars.BarManagerCategory("Default Values", New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")), New DevExpress.XtraBars.BarManagerCategory("Quick Search", New System.Guid("2d735e09-7c7c-4ed4-b3ca-996e094a2026")), New DevExpress.XtraBars.BarManagerCategory("Misc_Maintenance", New System.Guid("d45f4b42-7c78-4255-9839-0f9b81be7603")), New DevExpress.XtraBars.BarManagerCategory("Navigation", New System.Guid("d55c49d9-25b9-4030-98b4-b0b1e7d65b90"))})
-        Me.BarManager1.DockControls.Add(Me.barDockControlTop)
-        Me.BarManager1.DockControls.Add(Me.barDockControlBottom)
-        Me.BarManager1.DockControls.Add(Me.barDockControlLeft)
-        Me.BarManager1.DockControls.Add(Me.barDockControlRight)
         Me.BarManager1.Form = Me
         Me.BarManager1.MaxItemId = 73
         Me.BarManager1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbViewListRepos, Me.txtQuickSearchRepos, Me.cmbReportListRepos, Me.cmbFilterListRepos, Me.cmbDefaultListRepos})
@@ -920,7 +916,7 @@ Partial Class FrmProductsVOD
         Me.XTabControlVod.Location = New System.Drawing.Point(0, 30)
         Me.XTabControlVod.Name = "XTabControlVod"
         Me.XTabControlVod.SelectedTabPage = Me.XTabSearch
-        Me.XTabControlVod.Size = New System.Drawing.Size(1056, 665)
+        Me.XTabControlVod.Size = New System.Drawing.Size(1020, 665)
         Me.XTabControlVod.TabIndex = 4
         Me.XTabControlVod.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTabSearch, Me.XTabResult, Me.XTabView, Me.XTabProcess, Me.XTabViewVod, Me.XTabFtp, Me.XtabAutomateTranscode, Me.xTabVODOnlyMovie})
         Me.XTabControlVod.Text = "VOD"
@@ -938,7 +934,7 @@ Partial Class FrmProductsVOD
         Me.XTabSearch.Controls.Add(Me.txtTitleSearch)
         Me.XTabSearch.Controls.Add(Me.lblPartTitle)
         Me.XTabSearch.Name = "XTabSearch"
-        Me.XTabSearch.Size = New System.Drawing.Size(1047, 634)
+        Me.XTabSearch.Size = New System.Drawing.Size(1011, 634)
         Me.XTabSearch.Text = "Search"
         '
         'btnRipped
@@ -1042,7 +1038,7 @@ Partial Class FrmProductsVOD
         '
         Me.GridViewSearch.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand1})
         Me.GridViewSearch.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.colImdb_id, Me.collanguage_id, Me.colproducts_name, Me.ColAvailable_from, Me.colExpireAt, Me.colLanguage_subtitle, Me.colAvailable, Me.colStudio, Me.colStatus, Me.colSource, Me.colQuality, Me.colSupportVod, Me.colCredit})
-        Me.GridViewSearch.CustomizationFormBounds = New System.Drawing.Rectangle(1375, 449, 225, 209)
+        Me.GridViewSearch.CustomizationFormBounds = New System.Drawing.Rectangle(799, 449, 225, 209)
         Me.GridViewSearch.GridControl = Me.GridVod
         Me.GridViewSearch.Name = "GridViewSearch"
         Me.GridViewSearch.OptionsView.ColumnAutoWidth = True
@@ -1254,7 +1250,7 @@ Partial Class FrmProductsVOD
         Me.XTabView.Controls.Add(Me.btnSaveVod)
         Me.XTabView.Controls.Add(Me.btnEditVod)
         Me.XTabView.Name = "XTabView"
-        Me.XTabView.Size = New System.Drawing.Size(1047, 634)
+        Me.XTabView.Size = New System.Drawing.Size(1011, 634)
         Me.XTabView.Text = "View"
         '
         'btnDeleteVOD
@@ -1663,7 +1659,7 @@ Partial Class FrmProductsVOD
         '
         Me.gridViewVodWatch.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand2})
         Me.gridViewVodWatch.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.ColImdbUploaded, Me.colLangAudioUploaded, Me.colProductNameUploaded, colDateStartUploaded, Me.colDateExpiredUploaded, Me.colLangSubtitleUploaded, Me.colAvailableUploaded, Me.colStudioUploaded, Me.colStatusUploaded, Me.colQuality2, Me.colBtnWatchFilm})
-        Me.gridViewVodWatch.CustomizationFormBounds = New System.Drawing.Rectangle(1375, 449, 225, 209)
+        Me.gridViewVodWatch.CustomizationFormBounds = New System.Drawing.Rectangle(799, 449, 225, 209)
         Me.gridViewVodWatch.GridControl = Me.GridVodWatch
         Me.gridViewVodWatch.Name = "gridViewVodWatch"
         Me.gridViewVodWatch.OptionsView.ColumnAutoWidth = True
@@ -2058,8 +2054,8 @@ Partial Class FrmProductsVOD
         Me.xTabVODOnlyMovie.Controls.Add(Me.grdOnlyVODMovie)
         Me.xTabVODOnlyMovie.Controls.Add(Me.btnAllNoMovieInfo)
         Me.xTabVODOnlyMovie.Name = "xTabVODOnlyMovie"
-        Me.xTabVODOnlyMovie.Size = New System.Drawing.Size(1047, 634)
-        Me.xTabVODOnlyMovie.Text = "VODOnlyMovie"
+        Me.xTabVODOnlyMovie.Size = New System.Drawing.Size(1011, 634)
+        Me.xTabVODOnlyMovie.Text = "VOD Without Info"
         '
         'grdOnlyVODMovie
         '
@@ -2089,6 +2085,7 @@ Partial Class FrmProductsVOD
         Me.imdb_id.OptionsColumn.ReadOnly = True
         Me.imdb_id.Visible = True
         Me.imdb_id.VisibleIndex = 0
+        Me.imdb_id.Width = 147
         '
         'filename
         '
@@ -2097,6 +2094,7 @@ Partial Class FrmProductsVOD
         Me.filename.Name = "filename"
         Me.filename.Visible = True
         Me.filename.VisibleIndex = 1
+        Me.filename.Width = 318
         '
         'btnAllNoMovieInfo
         '
@@ -2104,7 +2102,7 @@ Partial Class FrmProductsVOD
         Me.btnAllNoMovieInfo.Name = "btnAllNoMovieInfo"
         Me.btnAllNoMovieInfo.Size = New System.Drawing.Size(136, 23)
         Me.btnAllNoMovieInfo.TabIndex = 18
-        Me.btnAllNoMovieInfo.Text = "Show All Only VOD Movie"
+        Me.btnAllNoMovieInfo.Text = "Show All VOD Without Info"
         '
         'TextEdit2
         '
@@ -2170,7 +2168,7 @@ Partial Class FrmProductsVOD
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1056, 695)
+        Me.ClientSize = New System.Drawing.Size(1020, 695)
         Me.Controls.Add(Me.XTabControlVod)
         Me.Controls.Add(Me.barDockControlLeft)
         Me.Controls.Add(Me.barDockControlRight)
