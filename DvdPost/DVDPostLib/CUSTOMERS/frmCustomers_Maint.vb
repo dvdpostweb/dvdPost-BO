@@ -10981,7 +10981,7 @@ End Sub
             If objDS.discount_code.Select("discount_code_id = 0").Length = 0 Then
                 dr = objDS.discount_code.Newdiscount_codeRow()
                 dr.discount_code_id = 0
-                dr.discount_code = "empty"
+                dr.discount_code = ""
 
                 objDS.discount_code.Rows.Add(dr)
             End If

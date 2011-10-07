@@ -61,7 +61,7 @@ Public Class ClsVod
         sql = " select * from streaming_products where imdb_id = " & imdb_id & _
               " and language_id = " & lang & " and " & strLanguageSubtitle & _
               " and vod_support_id = " & support & _
-              " and source = '" & source & "'" & " status <> 'deleted' "
+              " and source = '" & source & "'" & " and status <> 'deleted' "
 
         Return sql
     End Function
@@ -75,7 +75,7 @@ Public Class ClsVod
         End If
 
         sql = " select * from streaming_products where imdb_id = " & imdb_id & _
-              " and language_id = " & lang & " and " & strLanguageSubtitle & " status <> 'deleted' "
+              " and language_id = " & lang & " and " & strLanguageSubtitle & " and  status <> 'deleted' "
 
         Return sql
     End Function

@@ -196,7 +196,10 @@ Public Class ClsCustomers
     End Function
 
     Private Function getCustomersNextDiscount(ByVal drCustomer As DataRow) As String
-        Return drCustomer("customers_next_discount_code")
+        If drCustomer("customers_next_discount_code") IsNot DBNull.Value Then
+            Return drCustomer("customers_next_discount_code")
+        End If
+        Return 0
     End Function
 
     Public Function GetCustomersAmount(ByVal drCustomer As DataRow) As String
