@@ -362,7 +362,10 @@ Public Class ClsCustomers
         Return dr("recurring_discount") = 1
     End Function
     Private Function GetActivationDiscountCode(ByVal drCustomer As DataRow) As Integer
-        Return drCustomer("activation_discount_code_id")
+        If drCustomer("activation_discount_code_id") IsNot DBNull.Value Then
+            Return drCustomer("activation_discount_code_id")
+        End If
+        Return 0
     End Function
     Private Function IsDiscount(ByVal drCustomer As DataRow) As Boolean
         Return drCustomer("activation_discount_code_type") = ClsCustomersData.CODE_DISCOUNT
@@ -699,13 +702,16 @@ Public Class ClsCustomers
                                         ByRef strDurationActivation As String, _
                                         Optional ByVal Classique As Boolean = True) As String
         Dim discount_id As Integer
-        Dim drDiscount As DataRow
+        Dim drDiscount As DataRow = Nothing
         Dim customers_id As Integer
         Dim sql As String
         customers_id = GetCustomersId(drCustomer)
 
-        discount_id = drCustomer("activation_discount_code_id")
-        drDiscount = GetRowDiscount(discount_id)
+        If drCustomer("activation_discount_code_id") IsNot DBNull.Value Then
+            discount_id = drCustomer("activation_discount_code_id")
+            drDiscount = GetRowDiscount(discount_id)
+        End If
+
 
 
         'calculate price, from nextdiscount code

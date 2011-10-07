@@ -2735,22 +2735,6 @@ Partial Public Class dsCustomerMaint
             Me.columndiscount_code_id.AllowDBNull = false
             Me.columndiscount_code_id.ReadOnly = true
             Me.columndiscount_code_id.Unique = true
-            Me.columndiscount_code.AllowDBNull = false
-            Me.columndiscount_type.AllowDBNull = false
-            Me.columndiscount_value.AllowDBNull = false
-            Me.columndiscount_limit.AllowDBNull = false
-            Me.columndiscount_commitment.AllowDBNull = false
-            Me.columndiscount_status.AllowDBNull = false
-            Me.columndiscount_text_fr.AllowDBNull = false
-            Me.columndiscount_text_nl.AllowDBNull = false
-            Me.columndiscount_text_en.AllowDBNull = false
-            Me.columndiscount_abo_validityto_type.AllowDBNull = false
-            Me.columndiscount_abo_validityto_value.AllowDBNull = false
-            Me.columncomment.AllowDBNull = false
-            Me.columndiscount_nbr_month_before_reuse.AllowDBNull = false
-            Me.columndiscount_recurring_nbr_of_month.AllowDBNull = false
-            Me.columnbypass_discountuse.AllowDBNull = false
-            Me.columnpayable.AllowDBNull = false
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -5759,10 +5743,7 @@ Partial Public Class dsCustomerMaint
             Me.columncustomers_enquiry_id.AllowDBNull = false
             Me.columnmgm_points.AllowDBNull = false
             Me.columnwishlist_kind.AllowDBNull = false
-            Me.columnactivation_discount_code_id.AllowDBNull = false
-            Me.columnactivation_discount_code_type.AllowDBNull = false
             Me.columnactivation_discount_code_type.MaxLength = 2
-            Me.columncustomers_next_discount_code.AllowDBNull = false
             Me.columncustomers_registration_step.AllowDBNull = false
             Me.columncustomers_abo_auto_stop_next_reconduction.AllowDBNull = false
             Me.columncustomers_language.AllowDBNull = false
@@ -7688,7 +7669,11 @@ Partial Public Class dsCustomerMaint
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property discount_code() As String
             Get
-                Return CType(Me(Me.tablediscount_code.discount_codeColumn),String)
+                Try 
+                    Return CType(Me(Me.tablediscount_code.discount_codeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'discount_code' in table 'discount_code' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tablediscount_code.discount_codeColumn) = value
@@ -7698,7 +7683,11 @@ Partial Public Class dsCustomerMaint
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property discount_type() As Integer
             Get
-                Return CType(Me(Me.tablediscount_code.discount_typeColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tablediscount_code.discount_typeColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'discount_type' in table 'discount_code' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tablediscount_code.discount_typeColumn) = value
@@ -7708,7 +7697,11 @@ Partial Public Class dsCustomerMaint
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property discount_value() As Decimal
             Get
-                Return CType(Me(Me.tablediscount_code.discount_valueColumn),Decimal)
+                Try 
+                    Return CType(Me(Me.tablediscount_code.discount_valueColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'discount_value' in table 'discount_code' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tablediscount_code.discount_valueColumn) = value
@@ -7718,7 +7711,11 @@ Partial Public Class dsCustomerMaint
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property discount_limit() As Integer
             Get
-                Return CType(Me(Me.tablediscount_code.discount_limitColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tablediscount_code.discount_limitColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'discount_limit' in table 'discount_code' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tablediscount_code.discount_limitColumn) = value
@@ -7728,7 +7725,11 @@ Partial Public Class dsCustomerMaint
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property discount_commitment() As Integer
             Get
-                Return CType(Me(Me.tablediscount_code.discount_commitmentColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tablediscount_code.discount_commitmentColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'discount_commitment' in table 'discount_code' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tablediscount_code.discount_commitmentColumn) = value
@@ -7738,7 +7739,11 @@ Partial Public Class dsCustomerMaint
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property discount_status() As Integer
             Get
-                Return CType(Me(Me.tablediscount_code.discount_statusColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tablediscount_code.discount_statusColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'discount_status' in table 'discount_code' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tablediscount_code.discount_statusColumn) = value
@@ -7748,7 +7753,11 @@ Partial Public Class dsCustomerMaint
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property discount_text_fr() As String
             Get
-                Return CType(Me(Me.tablediscount_code.discount_text_frColumn),String)
+                Try 
+                    Return CType(Me(Me.tablediscount_code.discount_text_frColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'discount_text_fr' in table 'discount_code' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tablediscount_code.discount_text_frColumn) = value
@@ -7758,7 +7767,11 @@ Partial Public Class dsCustomerMaint
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property discount_text_nl() As String
             Get
-                Return CType(Me(Me.tablediscount_code.discount_text_nlColumn),String)
+                Try 
+                    Return CType(Me(Me.tablediscount_code.discount_text_nlColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'discount_text_nl' in table 'discount_code' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tablediscount_code.discount_text_nlColumn) = value
@@ -7768,7 +7781,11 @@ Partial Public Class dsCustomerMaint
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property discount_text_en() As String
             Get
-                Return CType(Me(Me.tablediscount_code.discount_text_enColumn),String)
+                Try 
+                    Return CType(Me(Me.tablediscount_code.discount_text_enColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'discount_text_en' in table 'discount_code' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tablediscount_code.discount_text_enColumn) = value
@@ -7778,7 +7795,12 @@ Partial Public Class dsCustomerMaint
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property discount_abo_validityto_type() As Integer
             Get
-                Return CType(Me(Me.tablediscount_code.discount_abo_validityto_typeColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tablediscount_code.discount_abo_validityto_typeColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'discount_abo_validityto_type' in table 'discount_code' is D"& _ 
+                            "BNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tablediscount_code.discount_abo_validityto_typeColumn) = value
@@ -7788,7 +7810,12 @@ Partial Public Class dsCustomerMaint
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property discount_abo_validityto_value() As Integer
             Get
-                Return CType(Me(Me.tablediscount_code.discount_abo_validityto_valueColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tablediscount_code.discount_abo_validityto_valueColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'discount_abo_validityto_value' in table 'discount_code' is "& _ 
+                            "DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tablediscount_code.discount_abo_validityto_valueColumn) = value
@@ -7798,7 +7825,11 @@ Partial Public Class dsCustomerMaint
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property comment() As String
             Get
-                Return CType(Me(Me.tablediscount_code.commentColumn),String)
+                Try 
+                    Return CType(Me(Me.tablediscount_code.commentColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'comment' in table 'discount_code' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tablediscount_code.commentColumn) = value
@@ -7808,7 +7839,12 @@ Partial Public Class dsCustomerMaint
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property discount_nbr_month_before_reuse() As Integer
             Get
-                Return CType(Me(Me.tablediscount_code.discount_nbr_month_before_reuseColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tablediscount_code.discount_nbr_month_before_reuseColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'discount_nbr_month_before_reuse' in table 'discount_code' i"& _ 
+                            "s DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tablediscount_code.discount_nbr_month_before_reuseColumn) = value
@@ -7818,7 +7854,12 @@ Partial Public Class dsCustomerMaint
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property discount_recurring_nbr_of_month() As Integer
             Get
-                Return CType(Me(Me.tablediscount_code.discount_recurring_nbr_of_monthColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tablediscount_code.discount_recurring_nbr_of_monthColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'discount_recurring_nbr_of_month' in table 'discount_code' i"& _ 
+                            "s DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tablediscount_code.discount_recurring_nbr_of_monthColumn) = value
@@ -7828,7 +7869,11 @@ Partial Public Class dsCustomerMaint
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property bypass_discountuse() As Integer
             Get
-                Return CType(Me(Me.tablediscount_code.bypass_discountuseColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tablediscount_code.bypass_discountuseColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'bypass_discountuse' in table 'discount_code' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tablediscount_code.bypass_discountuseColumn) = value
@@ -7852,12 +7897,166 @@ Partial Public Class dsCustomerMaint
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property payable() As Integer
             Get
-                Return CType(Me(Me.tablediscount_code.payableColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tablediscount_code.payableColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'payable' in table 'discount_code' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tablediscount_code.payableColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isdiscount_codeNull() As Boolean
+            Return Me.IsNull(Me.tablediscount_code.discount_codeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setdiscount_codeNull()
+            Me(Me.tablediscount_code.discount_codeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isdiscount_typeNull() As Boolean
+            Return Me.IsNull(Me.tablediscount_code.discount_typeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setdiscount_typeNull()
+            Me(Me.tablediscount_code.discount_typeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isdiscount_valueNull() As Boolean
+            Return Me.IsNull(Me.tablediscount_code.discount_valueColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setdiscount_valueNull()
+            Me(Me.tablediscount_code.discount_valueColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isdiscount_limitNull() As Boolean
+            Return Me.IsNull(Me.tablediscount_code.discount_limitColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setdiscount_limitNull()
+            Me(Me.tablediscount_code.discount_limitColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isdiscount_commitmentNull() As Boolean
+            Return Me.IsNull(Me.tablediscount_code.discount_commitmentColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setdiscount_commitmentNull()
+            Me(Me.tablediscount_code.discount_commitmentColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isdiscount_statusNull() As Boolean
+            Return Me.IsNull(Me.tablediscount_code.discount_statusColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setdiscount_statusNull()
+            Me(Me.tablediscount_code.discount_statusColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isdiscount_text_frNull() As Boolean
+            Return Me.IsNull(Me.tablediscount_code.discount_text_frColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setdiscount_text_frNull()
+            Me(Me.tablediscount_code.discount_text_frColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isdiscount_text_nlNull() As Boolean
+            Return Me.IsNull(Me.tablediscount_code.discount_text_nlColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setdiscount_text_nlNull()
+            Me(Me.tablediscount_code.discount_text_nlColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isdiscount_text_enNull() As Boolean
+            Return Me.IsNull(Me.tablediscount_code.discount_text_enColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setdiscount_text_enNull()
+            Me(Me.tablediscount_code.discount_text_enColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isdiscount_abo_validityto_typeNull() As Boolean
+            Return Me.IsNull(Me.tablediscount_code.discount_abo_validityto_typeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setdiscount_abo_validityto_typeNull()
+            Me(Me.tablediscount_code.discount_abo_validityto_typeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isdiscount_abo_validityto_valueNull() As Boolean
+            Return Me.IsNull(Me.tablediscount_code.discount_abo_validityto_valueColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setdiscount_abo_validityto_valueNull()
+            Me(Me.tablediscount_code.discount_abo_validityto_valueColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IscommentNull() As Boolean
+            Return Me.IsNull(Me.tablediscount_code.commentColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetcommentNull()
+            Me(Me.tablediscount_code.commentColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isdiscount_nbr_month_before_reuseNull() As Boolean
+            Return Me.IsNull(Me.tablediscount_code.discount_nbr_month_before_reuseColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setdiscount_nbr_month_before_reuseNull()
+            Me(Me.tablediscount_code.discount_nbr_month_before_reuseColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isdiscount_recurring_nbr_of_monthNull() As Boolean
+            Return Me.IsNull(Me.tablediscount_code.discount_recurring_nbr_of_monthColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setdiscount_recurring_nbr_of_monthNull()
+            Me(Me.tablediscount_code.discount_recurring_nbr_of_monthColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isbypass_discountuseNull() As Boolean
+            Return Me.IsNull(Me.tablediscount_code.bypass_discountuseColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setbypass_discountuseNull()
+            Me(Me.tablediscount_code.bypass_discountuseColumn) = Global.System.Convert.DBNull
+        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function Isdiscount_validitytoNull() As Boolean
@@ -7867,6 +8066,16 @@ Partial Public Class dsCustomerMaint
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub Setdiscount_validitytoNull()
             Me(Me.tablediscount_code.discount_validitytoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IspayableNull() As Boolean
+            Return Me.IsNull(Me.tablediscount_code.payableColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetpayableNull()
+            Me(Me.tablediscount_code.payableColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -9278,7 +9487,12 @@ Partial Public Class dsCustomerMaint
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property activation_discount_code_id() As Integer
             Get
-                Return CType(Me(Me.tablecustomers.activation_discount_code_idColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tablecustomers.activation_discount_code_idColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'activation_discount_code_id' in table 'customers' is DBNull"& _ 
+                            ".", e)
+                End Try
             End Get
             Set
                 Me(Me.tablecustomers.activation_discount_code_idColumn) = value
@@ -9288,7 +9502,12 @@ Partial Public Class dsCustomerMaint
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property activation_discount_code_type() As String
             Get
-                Return CType(Me(Me.tablecustomers.activation_discount_code_typeColumn),String)
+                Try 
+                    Return CType(Me(Me.tablecustomers.activation_discount_code_typeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'activation_discount_code_type' in table 'customers' is DBNu"& _ 
+                            "ll.", e)
+                End Try
             End Get
             Set
                 Me(Me.tablecustomers.activation_discount_code_typeColumn) = value
@@ -9298,7 +9517,12 @@ Partial Public Class dsCustomerMaint
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property customers_next_discount_code() As Integer
             Get
-                Return CType(Me(Me.tablecustomers.customers_next_discount_codeColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tablecustomers.customers_next_discount_codeColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'customers_next_discount_code' in table 'customers' is DBNul"& _ 
+                            "l.", e)
+                End Try
             End Get
             Set
                 Me(Me.tablecustomers.customers_next_discount_codeColumn) = value
@@ -9890,6 +10114,36 @@ Partial Public Class dsCustomerMaint
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub Setmail_wl_norm_not_sufficientNull()
             Me(Me.tablecustomers.mail_wl_norm_not_sufficientColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isactivation_discount_code_idNull() As Boolean
+            Return Me.IsNull(Me.tablecustomers.activation_discount_code_idColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setactivation_discount_code_idNull()
+            Me(Me.tablecustomers.activation_discount_code_idColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isactivation_discount_code_typeNull() As Boolean
+            Return Me.IsNull(Me.tablecustomers.activation_discount_code_typeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setactivation_discount_code_typeNull()
+            Me(Me.tablecustomers.activation_discount_code_typeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Iscustomers_next_discount_codeNull() As Boolean
+            Return Me.IsNull(Me.tablecustomers.customers_next_discount_codeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setcustomers_next_discount_codeNull()
+            Me(Me.tablecustomers.customers_next_discount_codeColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
