@@ -652,7 +652,7 @@ Public Class ClsCustomersData
     Public Shared Function GetSelectActivationCode(ByVal Activation_code_id As Integer) As String
         Dim sql As String
 
-        sql = "select a.activation_code code,a.activation_id code_id,a.activation_code,a.abo_dvd_credit,ac.droselia,a.next_discount,a.validity_type type ,a.validity_value value,a.activation_code_validto_date date,next_abo_type  " & _
+        sql = "select a.activation_id code_id,a.activation_code code,a.activation_code,a.abo_dvd_credit,ac.droselia,a.next_discount,a.validity_type type ,a.validity_value value,a.activation_code_validto_date date,next_abo_type  " & _
         " from activation_code a left join activation_campaign ac on a.campaign_id = ac.id " & _
         " where a.activation_id = " & Activation_code_id
         Return sql
