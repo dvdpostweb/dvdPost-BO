@@ -225,6 +225,8 @@ Public Class frmSecurityUser_Maintenance
         Me.ChkEncrypted.Size = New System.Drawing.Size(71, 22)
         Me.ChkEncrypted.TabIndex = 44
         Me.ChkEncrypted.Text = "encrypted"
+        Me.ChkEncrypted.Visible = False
+        Me.ChkEncrypted.Checked = False
         '
         'btnBrowse
         '
