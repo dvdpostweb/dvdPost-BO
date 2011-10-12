@@ -145,173 +145,17 @@ Public Class frmActivationCode
     Friend WithEvents colSize_w As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents Grid1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView
-    Friend WithEvents Bar1 As DevExpress.XtraBars.Bar
+    Friend WithEvents BarManager2 As DevExpress.XtraBars.BarManager
     Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
-    Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
-    Friend WithEvents BarManager1 As DevExpress.XtraBars.BarManager
-    Friend WithEvents Main_Bar As DevExpress.XtraBars.Bar
-    Friend WithEvents btnNew As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnEdit As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnDelete As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnSave As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnUndo As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents Misc_Bar As DevExpress.XtraBars.Bar
-    Friend WithEvents MainBtns_btnExcel As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents MainBtns_btnBigger As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents MainBtns_btnSmaller As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents MainBtns_btnBestFit As DevExpress.XtraBars.BarButtonItem
-    'Friend WithEvents btnOK As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnUser1 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnUser2 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnUser3 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnUser4 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnUser5 As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnExportXML As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnImportXML As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents View_Bar As DevExpress.XtraBars.Bar
-    Friend WithEvents btnView As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents cmbViewList As DevExpress.XtraBars.BarEditItem
-    Friend WithEvents btnViewDetail As DevExpress.XtraBars.BarSubItem
-    Friend WithEvents btnEditView As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnNewView As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnDeleteView As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnSaveView As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnMakeViewCommon As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnSendViewUser As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnCopyView As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents QuickSearch_Bar As DevExpress.XtraBars.Bar
-    Friend WithEvents txtQuickSearch As DevExpress.XtraBars.BarEditItem
-    Friend WithEvents btnQuickSearch As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents Report_Bar As DevExpress.XtraBars.Bar
-    Friend WithEvents btnPrint As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents cmbReportList As DevExpress.XtraBars.BarEditItem
-    Friend WithEvents btnReportDetail As DevExpress.XtraBars.BarSubItem
-    Friend WithEvents btnEditReportInfo As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnNewReport As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnDeleteReport As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnDesignReport As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnMakeReportCommon As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnSendReportUser As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnCopyReport As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents Filter_Bar As DevExpress.XtraBars.Bar
-    Friend WithEvents btnFilter As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents cmbFilterList As DevExpress.XtraBars.BarEditItem
-    Friend WithEvents btnFilterDetail As DevExpress.XtraBars.BarSubItem
-    Friend WithEvents btnEditFilter As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnNewFilter As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnDeleteFilter As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnMakeFilterCommon As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnSendFilterUSer As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnCopyFilter As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents DefaultSet_Bar As DevExpress.XtraBars.Bar
-    Friend WithEvents btnDefault As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents cmbDefaultList As DevExpress.XtraBars.BarEditItem
-    Friend WithEvents btnDefaultDetail As DevExpress.XtraBars.BarSubItem
-    Friend WithEvents btnEditDefault As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnNewDefault As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnDeleteDefault As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnSaveDefault As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnMakeDefaultCommon As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnSendDefaultUser As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnCopyDefault As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents Misc_Bar2 As DevExpress.XtraBars.Bar
-    Friend WithEvents btnTranslation As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnComments As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnAttachements As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents Nav_Bar As DevExpress.XtraBars.Bar
-    Friend WithEvents btnFirst As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnPrevious As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnNext As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents btnLast As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
     Friend WithEvents txtComment As DevExpress.XtraEditors.TextEdit
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmActivationCode))
-        Dim BarShortcut1 As DevExpress.XtraBars.BarShortcut = New DevExpress.XtraBars.BarShortcut
         Me.Grid1 = New DevExpress.XtraGrid.GridControl
         Me.GridView1 = New DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView
-        Me.Bar1 = New DevExpress.XtraBars.Bar
-        Me.BarManager1 = New DevExpress.XtraBars.BarManager(Me.components)
-        Me.Main_Bar = New DevExpress.XtraBars.Bar
-        Me.btnNew = New DevExpress.XtraBars.BarButtonItem
-        Me.btnEdit = New DevExpress.XtraBars.BarButtonItem
-        Me.btnDelete = New DevExpress.XtraBars.BarButtonItem
-        Me.btnSave = New DevExpress.XtraBars.BarButtonItem
-        Me.Misc_Bar = New DevExpress.XtraBars.Bar
-        Me.MainBtns_btnExcel = New DevExpress.XtraBars.BarButtonItem
-        Me.MainBtns_btnBigger = New DevExpress.XtraBars.BarButtonItem
-        Me.MainBtns_btnSmaller = New DevExpress.XtraBars.BarButtonItem
-        Me.MainBtns_btnBestFit = New DevExpress.XtraBars.BarButtonItem
-        'Me.btnOK = New DevExpress.XtraBars.BarButtonItem
-        Me.btnUser1 = New DevExpress.XtraBars.BarButtonItem
-        Me.btnUser2 = New DevExpress.XtraBars.BarButtonItem
-        Me.btnUser3 = New DevExpress.XtraBars.BarButtonItem
-        Me.btnUser4 = New DevExpress.XtraBars.BarButtonItem
-        Me.btnUser5 = New DevExpress.XtraBars.BarButtonItem
-        Me.View_Bar = New DevExpress.XtraBars.Bar
-        Me.btnView = New DevExpress.XtraBars.BarButtonItem
-        Me.cmbViewList = New DevExpress.XtraBars.BarEditItem
-        Me.btnViewDetail = New DevExpress.XtraBars.BarSubItem
-        Me.btnEditView = New DevExpress.XtraBars.BarButtonItem
-        Me.btnNewView = New DevExpress.XtraBars.BarButtonItem
-        Me.btnDeleteView = New DevExpress.XtraBars.BarButtonItem
-        Me.btnSaveView = New DevExpress.XtraBars.BarButtonItem
-        Me.btnMakeViewCommon = New DevExpress.XtraBars.BarButtonItem
-        Me.btnSendViewUser = New DevExpress.XtraBars.BarButtonItem
-        Me.btnCopyView = New DevExpress.XtraBars.BarButtonItem
-        Me.QuickSearch_Bar = New DevExpress.XtraBars.Bar
-        Me.txtQuickSearch = New DevExpress.XtraBars.BarEditItem
-        Me.btnQuickSearch = New DevExpress.XtraBars.BarButtonItem
-        Me.Report_Bar = New DevExpress.XtraBars.Bar
-        Me.btnPrint = New DevExpress.XtraBars.BarButtonItem
-        Me.cmbReportList = New DevExpress.XtraBars.BarEditItem
-        Me.btnReportDetail = New DevExpress.XtraBars.BarSubItem
-        Me.btnEditReportInfo = New DevExpress.XtraBars.BarButtonItem
-        Me.btnNewReport = New DevExpress.XtraBars.BarButtonItem
-        Me.btnDeleteReport = New DevExpress.XtraBars.BarButtonItem
-        Me.btnDesignReport = New DevExpress.XtraBars.BarButtonItem
-        Me.btnMakeReportCommon = New DevExpress.XtraBars.BarButtonItem
-        Me.btnSendReportUser = New DevExpress.XtraBars.BarButtonItem
-        Me.btnCopyReport = New DevExpress.XtraBars.BarButtonItem
-        Me.Filter_Bar = New DevExpress.XtraBars.Bar
-        Me.btnFilter = New DevExpress.XtraBars.BarButtonItem
-        Me.cmbFilterList = New DevExpress.XtraBars.BarEditItem
-        Me.btnFilterDetail = New DevExpress.XtraBars.BarSubItem
-        Me.btnEditFilter = New DevExpress.XtraBars.BarButtonItem
-        Me.btnNewFilter = New DevExpress.XtraBars.BarButtonItem
-        Me.btnDeleteFilter = New DevExpress.XtraBars.BarButtonItem
-        Me.btnMakeFilterCommon = New DevExpress.XtraBars.BarButtonItem
-        Me.btnSendFilterUSer = New DevExpress.XtraBars.BarButtonItem
-        Me.btnCopyFilter = New DevExpress.XtraBars.BarButtonItem
-        Me.DefaultSet_Bar = New DevExpress.XtraBars.Bar
-        Me.btnDefault = New DevExpress.XtraBars.BarButtonItem
-        Me.cmbDefaultList = New DevExpress.XtraBars.BarEditItem
-        Me.btnDefaultDetail = New DevExpress.XtraBars.BarSubItem
-        Me.btnEditDefault = New DevExpress.XtraBars.BarButtonItem
-        Me.btnNewDefault = New DevExpress.XtraBars.BarButtonItem
-        Me.btnDeleteDefault = New DevExpress.XtraBars.BarButtonItem
-        Me.btnSaveDefault = New DevExpress.XtraBars.BarButtonItem
-        Me.btnMakeDefaultCommon = New DevExpress.XtraBars.BarButtonItem
-        Me.btnSendDefaultUser = New DevExpress.XtraBars.BarButtonItem
-        Me.btnCopyDefault = New DevExpress.XtraBars.BarButtonItem
-        Me.Misc_Bar2 = New DevExpress.XtraBars.Bar
-        Me.btnTranslation = New DevExpress.XtraBars.BarButtonItem
-        Me.btnComments = New DevExpress.XtraBars.BarButtonItem
-        Me.btnAttachements = New DevExpress.XtraBars.BarButtonItem
-        Me.Nav_Bar = New DevExpress.XtraBars.Bar
-        Me.btnFirst = New DevExpress.XtraBars.BarButtonItem
-        Me.btnPrevious = New DevExpress.XtraBars.BarButtonItem
-        Me.btnNext = New DevExpress.XtraBars.BarButtonItem
-        Me.btnLast = New DevExpress.XtraBars.BarButtonItem
-        Me.barDockControlTop = New DevExpress.XtraBars.BarDockControl
-        Me.barDockControlBottom = New DevExpress.XtraBars.BarDockControl
-        Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl
-        Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl
-        Me.btnUndo = New DevExpress.XtraBars.BarButtonItem
-        Me.btnExportXML = New DevExpress.XtraBars.BarButtonItem
-        Me.btnImportXML = New DevExpress.XtraBars.BarButtonItem
         Me.lblYear = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl
@@ -426,22 +270,25 @@ Public Class frmActivationCode
         Me.btnSaveDiscount = New DevExpress.XtraEditors.SimpleButton
         Me.btnEditActivation = New DevExpress.XtraEditors.SimpleButton
         Me.btnNewDiscount = New DevExpress.XtraEditors.SimpleButton
+        Me.BarManager2 = New DevExpress.XtraBars.BarManager(Me.components)
+        Me.barDockControlTop = New DevExpress.XtraBars.BarDockControl
+        Me.barDockControlBottom = New DevExpress.XtraBars.BarDockControl
+        Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl
+        Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl
         Me.Panel1.SuspendLayout()
-        CType(Me.Grid1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabParameters.SuspendLayout()
-        Me.TabResult.SuspendLayout()
         Me.TabAnalyse.SuspendLayout()
         Me.TabChart.SuspendLayout()
         CType(Me.objDS, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbViewListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtQuickSearchRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbReportListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbFilterListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbDefaultListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Grid1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtComment.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbGroup.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DS, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -495,6 +342,7 @@ Public Class frmActivationCode
         CType(Me.txtCreationDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtCreationDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbNextAboType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BarManager2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'StatusBar1
@@ -504,37 +352,6 @@ Public Class frmActivationCode
         'Panel1
         '
         resources.ApplyResources(Me.Panel1, "Panel1")
-        '
-        'Grid1
-        '
-        resources.ApplyResources(Me.Grid1, "Grid1")
-        Me.Grid1.EmbeddedNavigator.Name = ""
-        Me.Grid1.FormsUseDefaultLookAndFeel = False
-        Me.Grid1.MainView = Me.GridView1
-        Me.Grid1.Name = "Grid1"
-        Me.HelpProvider1.SetShowHelp(Me.Grid1, CType(resources.GetObject("Grid1.ShowHelp"), Boolean))
-        Me.Grid1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
-        '
-        'GridView1
-        '
-        Me.GridView1.GridControl = Me.Grid1
-        Me.GridView1.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways
-        resources.ApplyResources(Me.GridView1, "GridView1")
-        Me.GridView1.Name = "GridView1"
-        Me.GridView1.OptionsBehavior.AllowIncrementalSearch = True
-        Me.GridView1.OptionsBehavior.Editable = False
-        Me.GridView1.OptionsView.ShowBands = False
-        Me.GridView1.OptionsView.ShowFooter = True
-        '
-        'Bar1
-        '
-        Me.Bar1.BarName = "View_Bar"
-        Me.Bar1.DockCol = 2
-        Me.Bar1.DockRow = 0
-        Me.Bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
-        Me.Bar1.FloatLocation = New System.Drawing.Point(517, 188)
-        Me.Bar1.Offset = 279
-        resources.ApplyResources(Me.Bar1, "Bar1")
         '
         'TabControl1
         '
@@ -615,648 +432,30 @@ Public Class frmActivationCode
         '
         resources.ApplyResources(Me.TabChart, "TabChart")
         '
-        'BarManager1
-        '
-        Me.BarManager1.Bars.AddRange(New DevExpress.XtraBars.Bar() {Me.Main_Bar, Me.Misc_Bar, Me.View_Bar, Me.QuickSearch_Bar, Me.Report_Bar, Me.Filter_Bar, Me.DefaultSet_Bar, Me.Misc_Bar2, Me.Nav_Bar})
-        Me.BarManager1.Categories.AddRange(New DevExpress.XtraBars.BarManagerCategory() {CType(resources.GetObject("BarManager1.Categories"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager1.Categories1"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager1.Categories2"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager1.Categories3"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager1.Categories4"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager1.Categories5"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager1.Categories6"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager1.Categories7"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager1.Categories8"), DevExpress.XtraBars.BarManagerCategory)})
-        Me.BarManager1.DockControls.Add(Me.barDockControlTop)
-        Me.BarManager1.DockControls.Add(Me.barDockControlBottom)
-        Me.BarManager1.DockControls.Add(Me.barDockControlLeft)
-        Me.BarManager1.DockControls.Add(Me.barDockControlRight)
-        Me.BarManager1.Form = Me
-        Me.BarManager1.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.btnNew, Me.btnDelete, Me.btnEdit, Me.btnSave, Me.MainBtns_btnExcel, Me.MainBtns_btnBigger, Me.MainBtns_btnSmaller, Me.MainBtns_btnBestFit, Me.btnViewDetail, Me.btnNewView, Me.btnEditView, Me.btnDeleteView, Me.btnMakeViewCommon, Me.btnSendViewUser, Me.btnSaveView, Me.btnCopyView, Me.btnView, Me.cmbViewList, Me.btnQuickSearch, Me.txtQuickSearch, Me.btnPrint, Me.cmbReportList, Me.btnReportDetail, Me.btnEditReportInfo, Me.btnNewReport, Me.btnDeleteReport, Me.btnDesignReport, Me.btnMakeReportCommon, Me.btnSendReportUser, Me.btnCopyReport, Me.btnFilter, Me.btnFilterDetail, Me.cmbFilterList, Me.btnEditFilter, Me.btnNewFilter, Me.btnDeleteFilter, Me.btnMakeFilterCommon, Me.btnSendFilterUSer, Me.btnCopyFilter, Me.btnOK, Me.btnDefault, Me.cmbDefaultList, Me.btnDefaultDetail, Me.btnEditDefault, Me.btnNewDefault, Me.btnDeleteDefault, Me.btnSaveDefault, Me.btnMakeDefaultCommon, Me.btnSendDefaultUser, Me.btnCopyDefault, Me.btnUser1, Me.btnUser2, Me.btnUser3, Me.btnUser4, Me.btnUser5, Me.btnTranslation, Me.btnComments, Me.btnAttachements, Me.btnFirst, Me.btnPrevious, Me.btnNext, Me.btnLast, Me.btnUndo, Me.btnExportXML, Me.btnImportXML})
-        Me.BarManager1.MaxItemId = 73
-        Me.BarManager1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbViewListRepos, Me.txtQuickSearchRepos, Me.cmbReportListRepos, Me.cmbFilterListRepos, Me.cmbDefaultListRepos})
-        '
-        'Main_Bar
-        '
-        Me.Main_Bar.BarName = "Main_Bar"
-        Me.Main_Bar.DockCol = 0
-        Me.Main_Bar.DockRow = 0
-        Me.Main_Bar.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
-        Me.Main_Bar.FloatLocation = New System.Drawing.Point(246, 185)
-        Me.Main_Bar.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.btnNew), New DevExpress.XtraBars.LinkPersistInfo(Me.btnEdit), New DevExpress.XtraBars.LinkPersistInfo(Me.btnDelete), New DevExpress.XtraBars.LinkPersistInfo(Me.btnSave), New DevExpress.XtraBars.LinkPersistInfo(Me.btnUndo)})
-        Me.Main_Bar.Offset = 7
-        resources.ApplyResources(Me.Main_Bar, "Main_Bar")
-        Me.Main_Bar.Visible = False
-        '
-        'btnNew
-        '
-        resources.ApplyResources(Me.btnNew, "btnNew")
-        Me.btnNew.CategoryGuid = New System.Guid("434484d9-7ac5-47e5-9412-313a111b7240")
-        Me.btnNew.Glyph = CType(resources.GetObject("btnNew.Glyph"), System.Drawing.Image)
-        Me.btnNew.Id = 0
-        Me.btnNew.Name = "btnNew"
-        '
-        'btnEdit
-        '
-        resources.ApplyResources(Me.btnEdit, "btnEdit")
-        Me.btnEdit.CategoryGuid = New System.Guid("434484d9-7ac5-47e5-9412-313a111b7240")
-        Me.btnEdit.Glyph = CType(resources.GetObject("btnEdit.Glyph"), System.Drawing.Image)
-        Me.btnEdit.Id = 2
-        Me.btnEdit.Name = "btnEdit"
-        '
-        'btnDelete
-        '
-        resources.ApplyResources(Me.btnDelete, "btnDelete")
-        Me.btnDelete.CategoryGuid = New System.Guid("434484d9-7ac5-47e5-9412-313a111b7240")
-        Me.btnDelete.Glyph = CType(resources.GetObject("btnDelete.Glyph"), System.Drawing.Image)
-        Me.btnDelete.Id = 1
-        Me.btnDelete.Name = "btnDelete"
-        '
-        'btnSave
-        '
-        resources.ApplyResources(Me.btnSave, "btnSave")
-        Me.btnSave.CategoryGuid = New System.Guid("434484d9-7ac5-47e5-9412-313a111b7240")
-        Me.btnSave.Glyph = CType(resources.GetObject("btnSave.Glyph"), System.Drawing.Image)
-        Me.btnSave.Id = 3
-        Me.btnSave.Name = "btnSave"
-        '
-        'Misc_Bar
-        '
-        Me.Misc_Bar.BarName = "Misc_Bar"
-        Me.Misc_Bar.DockCol = 1
-        Me.Misc_Bar.DockRow = 0
-        Me.Misc_Bar.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
-        Me.Misc_Bar.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.MainBtns_btnExcel), New DevExpress.XtraBars.LinkPersistInfo(Me.MainBtns_btnBigger), New DevExpress.XtraBars.LinkPersistInfo(Me.MainBtns_btnSmaller), New DevExpress.XtraBars.LinkPersistInfo(Me.MainBtns_btnBestFit), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.btnOK, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph), New DevExpress.XtraBars.LinkPersistInfo(Me.btnUser1), New DevExpress.XtraBars.LinkPersistInfo(Me.btnUser2), New DevExpress.XtraBars.LinkPersistInfo(Me.btnUser3), New DevExpress.XtraBars.LinkPersistInfo(Me.btnUser4), New DevExpress.XtraBars.LinkPersistInfo(Me.btnUser5), New DevExpress.XtraBars.LinkPersistInfo(Me.btnExportXML), New DevExpress.XtraBars.LinkPersistInfo(Me.btnImportXML)})
-        Me.Misc_Bar.Offset = 182
-        resources.ApplyResources(Me.Misc_Bar, "Misc_Bar")
-        Me.Misc_Bar.Visible = False
-        '
-        'MainBtns_btnExcel
-        '
-        resources.ApplyResources(Me.MainBtns_btnExcel, "MainBtns_btnExcel")
-        Me.MainBtns_btnExcel.CategoryGuid = New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")
-        Me.MainBtns_btnExcel.Glyph = CType(resources.GetObject("MainBtns_btnExcel.Glyph"), System.Drawing.Image)
-        Me.MainBtns_btnExcel.Id = 5
-        Me.MainBtns_btnExcel.Name = "MainBtns_btnExcel"
-        '
-        'MainBtns_btnBigger
-        '
-        resources.ApplyResources(Me.MainBtns_btnBigger, "MainBtns_btnBigger")
-        Me.MainBtns_btnBigger.CategoryGuid = New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")
-        Me.MainBtns_btnBigger.Glyph = CType(resources.GetObject("MainBtns_btnBigger.Glyph"), System.Drawing.Image)
-        Me.MainBtns_btnBigger.Id = 6
-        Me.MainBtns_btnBigger.Name = "MainBtns_btnBigger"
-        '
-        'MainBtns_btnSmaller
-        '
-        resources.ApplyResources(Me.MainBtns_btnSmaller, "MainBtns_btnSmaller")
-        Me.MainBtns_btnSmaller.CategoryGuid = New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")
-        Me.MainBtns_btnSmaller.Glyph = CType(resources.GetObject("MainBtns_btnSmaller.Glyph"), System.Drawing.Image)
-        Me.MainBtns_btnSmaller.Id = 7
-        Me.MainBtns_btnSmaller.Name = "MainBtns_btnSmaller"
-        '
-        'MainBtns_btnBestFit
-        '
-        resources.ApplyResources(Me.MainBtns_btnBestFit, "MainBtns_btnBestFit")
-        Me.MainBtns_btnBestFit.CategoryGuid = New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")
-        Me.MainBtns_btnBestFit.Glyph = CType(resources.GetObject("MainBtns_btnBestFit.Glyph"), System.Drawing.Image)
-        Me.MainBtns_btnBestFit.Id = 8
-        Me.MainBtns_btnBestFit.Name = "MainBtns_btnBestFit"
-        '
-        'btnOK
-        '
-        'resources.ApplyResources(Me.btnOK, "btnOK")
-        'Me.btnOK.CategoryGuid = New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")
-        'Me.btnOK.Glyph = CType(resources.GetObject("btnOK.Glyph"), System.Drawing.Image)
-        'Me.btnOK.Id = 46
-        'Me.btnOK.ItemShortcut = BarShortcut1
-        'Me.btnOK.Name = "btnOK"
-        'Me.btnOK.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-        '
-        'btnUser1
-        '
-        Me.btnUser1.Border = DevExpress.XtraEditors.Controls.BorderStyles.Flat
-        resources.ApplyResources(Me.btnUser1, "btnUser1")
-        Me.btnUser1.CategoryGuid = New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")
-        Me.btnUser1.Id = 58
-        Me.btnUser1.Name = "btnUser1"
-        Me.btnUser1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-        '
-        'btnUser2
-        '
-        Me.btnUser2.Border = DevExpress.XtraEditors.Controls.BorderStyles.Flat
-        resources.ApplyResources(Me.btnUser2, "btnUser2")
-        Me.btnUser2.CategoryGuid = New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")
-        Me.btnUser2.Id = 59
-        Me.btnUser2.Name = "btnUser2"
-        Me.btnUser2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-        '
-        'btnUser3
-        '
-        Me.btnUser3.Border = DevExpress.XtraEditors.Controls.BorderStyles.Flat
-        resources.ApplyResources(Me.btnUser3, "btnUser3")
-        Me.btnUser3.CategoryGuid = New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")
-        Me.btnUser3.Id = 60
-        Me.btnUser3.Name = "btnUser3"
-        Me.btnUser3.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-        '
-        'btnUser4
-        '
-        Me.btnUser4.Border = DevExpress.XtraEditors.Controls.BorderStyles.Flat
-        resources.ApplyResources(Me.btnUser4, "btnUser4")
-        Me.btnUser4.CategoryGuid = New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")
-        Me.btnUser4.Id = 61
-        Me.btnUser4.Name = "btnUser4"
-        Me.btnUser4.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-        '
-        'btnUser5
-        '
-        Me.btnUser5.Border = DevExpress.XtraEditors.Controls.BorderStyles.Flat
-        resources.ApplyResources(Me.btnUser5, "btnUser5")
-        Me.btnUser5.CategoryGuid = New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")
-        Me.btnUser5.Id = 62
-        Me.btnUser5.Name = "btnUser5"
-        Me.btnUser5.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-        '
-        'View_Bar
-        '
-        Me.View_Bar.BarName = "View_Bar"
-        Me.View_Bar.DockCol = 4
-        Me.View_Bar.DockRow = 0
-        Me.View_Bar.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
-        Me.View_Bar.FloatLocation = New System.Drawing.Point(517, 188)
-        Me.View_Bar.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.btnView), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, Me.cmbViewList, "", False, True, True, 133), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, Me.btnViewDetail, DevExpress.XtraBars.BarItemPaintStyle.Standard)})
-        Me.View_Bar.Offset = 395
-        resources.ApplyResources(Me.View_Bar, "View_Bar")
-        Me.View_Bar.Visible = False
-        '
-        'btnView
-        '
-        resources.ApplyResources(Me.btnView, "btnView")
-        Me.btnView.CategoryGuid = New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")
-        Me.btnView.Glyph = CType(resources.GetObject("btnView.Glyph"), System.Drawing.Image)
-        Me.btnView.Id = 19
-        Me.btnView.Name = "btnView"
-        '
-        'cmbViewList
-        '
-        resources.ApplyResources(Me.cmbViewList, "cmbViewList")
-        Me.cmbViewList.CategoryGuid = New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")
-        Me.cmbViewList.Edit = Me.cmbViewListRepos
-        Me.cmbViewList.Id = 21
-        Me.cmbViewList.Name = "cmbViewList"
-        '
         'btnViewDetail
         '
-        resources.ApplyResources(Me.btnViewDetail, "btnViewDetail")
-        Me.btnViewDetail.CategoryGuid = New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")
         Me.btnViewDetail.Glyph = CType(resources.GetObject("btnViewDetail.Glyph"), System.Drawing.Image)
-        Me.btnViewDetail.Id = 11
-        Me.btnViewDetail.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.btnEditView), New DevExpress.XtraBars.LinkPersistInfo(Me.btnNewView), New DevExpress.XtraBars.LinkPersistInfo(Me.btnDeleteView), New DevExpress.XtraBars.LinkPersistInfo(Me.btnSaveView), New DevExpress.XtraBars.LinkPersistInfo(Me.btnMakeViewCommon), New DevExpress.XtraBars.LinkPersistInfo(Me.btnSendViewUser), New DevExpress.XtraBars.LinkPersistInfo(Me.btnCopyView)})
-        Me.btnViewDetail.Name = "btnViewDetail"
         '
-        'btnEditView
-        '
-        resources.ApplyResources(Me.btnEditView, "btnEditView")
-        Me.btnEditView.CategoryGuid = New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")
-        Me.btnEditView.Glyph = CType(resources.GetObject("btnEditView.Glyph"), System.Drawing.Image)
-        Me.btnEditView.Id = 13
-        Me.btnEditView.Name = "btnEditView"
-        '
-        'btnNewView
-        '
-        resources.ApplyResources(Me.btnNewView, "btnNewView")
-        Me.btnNewView.CategoryGuid = New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")
-        Me.btnNewView.Glyph = CType(resources.GetObject("btnNewView.Glyph"), System.Drawing.Image)
-        Me.btnNewView.Id = 12
-        Me.btnNewView.Name = "btnNewView"
-        '
-        'btnDeleteView
-        '
-        resources.ApplyResources(Me.btnDeleteView, "btnDeleteView")
-        Me.btnDeleteView.CategoryGuid = New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")
-        Me.btnDeleteView.Glyph = CType(resources.GetObject("btnDeleteView.Glyph"), System.Drawing.Image)
-        Me.btnDeleteView.Id = 14
-        Me.btnDeleteView.Name = "btnDeleteView"
-        '
-        'btnSaveView
-        '
-        resources.ApplyResources(Me.btnSaveView, "btnSaveView")
-        Me.btnSaveView.CategoryGuid = New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")
-        Me.btnSaveView.Glyph = CType(resources.GetObject("btnSaveView.Glyph"), System.Drawing.Image)
-        Me.btnSaveView.Id = 17
-        Me.btnSaveView.Name = "btnSaveView"
-        '
-        'btnMakeViewCommon
-        '
-        resources.ApplyResources(Me.btnMakeViewCommon, "btnMakeViewCommon")
-        Me.btnMakeViewCommon.CategoryGuid = New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")
-        Me.btnMakeViewCommon.Glyph = CType(resources.GetObject("btnMakeViewCommon.Glyph"), System.Drawing.Image)
-        Me.btnMakeViewCommon.Id = 15
-        Me.btnMakeViewCommon.Name = "btnMakeViewCommon"
-        '
-        'btnSendViewUser
-        '
-        resources.ApplyResources(Me.btnSendViewUser, "btnSendViewUser")
-        Me.btnSendViewUser.CategoryGuid = New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")
-        Me.btnSendViewUser.Glyph = CType(resources.GetObject("btnSendViewUser.Glyph"), System.Drawing.Image)
-        Me.btnSendViewUser.Id = 16
-        Me.btnSendViewUser.Name = "btnSendViewUser"
-        '
-        'btnCopyView
-        '
-        resources.ApplyResources(Me.btnCopyView, "btnCopyView")
-        Me.btnCopyView.CategoryGuid = New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")
-        Me.btnCopyView.Glyph = CType(resources.GetObject("btnCopyView.Glyph"), System.Drawing.Image)
-        Me.btnCopyView.Id = 18
-        Me.btnCopyView.Name = "btnCopyView"
-        '
-        'QuickSearch_Bar
-        '
-        Me.QuickSearch_Bar.BarName = "QuickSearch_Bar"
-        Me.QuickSearch_Bar.DockCol = 2
-        Me.QuickSearch_Bar.DockRow = 0
-        Me.QuickSearch_Bar.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
-        Me.QuickSearch_Bar.FloatLocation = New System.Drawing.Point(251, 153)
-        Me.QuickSearch_Bar.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, Me.txtQuickSearch, "", False, True, True, 122), New DevExpress.XtraBars.LinkPersistInfo(Me.btnQuickSearch)})
-        Me.QuickSearch_Bar.Offset = 498
-        resources.ApplyResources(Me.QuickSearch_Bar, "QuickSearch_Bar")
-        Me.QuickSearch_Bar.Visible = False
-        '
-        'txtQuickSearch
-        '
-        Me.txtQuickSearch.CategoryGuid = New System.Guid("2d735e09-7c7c-4ed4-b3ca-996e094a2026")
-        Me.txtQuickSearch.Edit = Me.txtQuickSearchRepos
-        Me.txtQuickSearch.Id = 23
-        Me.txtQuickSearch.Name = "txtQuickSearch"
-        '
-        'btnQuickSearch
-        '
-        resources.ApplyResources(Me.btnQuickSearch, "btnQuickSearch")
-        Me.btnQuickSearch.CategoryGuid = New System.Guid("2d735e09-7c7c-4ed4-b3ca-996e094a2026")
-        Me.btnQuickSearch.Glyph = CType(resources.GetObject("btnQuickSearch.Glyph"), System.Drawing.Image)
-        Me.btnQuickSearch.Id = 22
-        Me.btnQuickSearch.Name = "btnQuickSearch"
-        '
-        'Report_Bar
-        '
-        Me.Report_Bar.BarName = "Report_Bar"
-        Me.Report_Bar.DockCol = 7
-        Me.Report_Bar.DockRow = 0
-        Me.Report_Bar.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
-        Me.Report_Bar.FloatLocation = New System.Drawing.Point(31, 162)
-        Me.Report_Bar.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.btnPrint), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, Me.cmbReportList, "", False, True, True, 131), New DevExpress.XtraBars.LinkPersistInfo(Me.btnReportDetail)})
-        Me.Report_Bar.Offset = 1065
-        resources.ApplyResources(Me.Report_Bar, "Report_Bar")
-        Me.Report_Bar.Visible = False
-        '
-        'btnPrint
-        '
-        resources.ApplyResources(Me.btnPrint, "btnPrint")
-        Me.btnPrint.CategoryGuid = New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")
-        Me.btnPrint.Glyph = CType(resources.GetObject("btnPrint.Glyph"), System.Drawing.Image)
-        Me.btnPrint.Id = 24
-        Me.btnPrint.Name = "btnPrint"
-        '
-        'cmbReportList
-        '
-        resources.ApplyResources(Me.cmbReportList, "cmbReportList")
-        Me.cmbReportList.CategoryGuid = New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")
-        Me.cmbReportList.Edit = Me.cmbReportListRepos
-        Me.cmbReportList.Id = 26
-        Me.cmbReportList.Name = "cmbReportList"
-        '
-        'btnReportDetail
-        '
-        resources.ApplyResources(Me.btnReportDetail, "btnReportDetail")
-        Me.btnReportDetail.CategoryGuid = New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")
-        Me.btnReportDetail.Id = 27
-        Me.btnReportDetail.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.btnEditReportInfo), New DevExpress.XtraBars.LinkPersistInfo(Me.btnNewReport), New DevExpress.XtraBars.LinkPersistInfo(Me.btnDeleteReport), New DevExpress.XtraBars.LinkPersistInfo(Me.btnDesignReport), New DevExpress.XtraBars.LinkPersistInfo(Me.btnMakeReportCommon), New DevExpress.XtraBars.LinkPersistInfo(Me.btnSendReportUser), New DevExpress.XtraBars.LinkPersistInfo(Me.btnCopyReport)})
-        Me.btnReportDetail.Name = "btnReportDetail"
-        '
-        'btnEditReportInfo
-        '
-        resources.ApplyResources(Me.btnEditReportInfo, "btnEditReportInfo")
-        Me.btnEditReportInfo.CategoryGuid = New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")
-        Me.btnEditReportInfo.Glyph = CType(resources.GetObject("btnEditReportInfo.Glyph"), System.Drawing.Image)
-        Me.btnEditReportInfo.Id = 28
-        Me.btnEditReportInfo.Name = "btnEditReportInfo"
-        '
-        'btnNewReport
-        '
-        resources.ApplyResources(Me.btnNewReport, "btnNewReport")
-        Me.btnNewReport.CategoryGuid = New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")
-        Me.btnNewReport.Glyph = CType(resources.GetObject("btnNewReport.Glyph"), System.Drawing.Image)
-        Me.btnNewReport.Id = 29
-        Me.btnNewReport.Name = "btnNewReport"
-        '
-        'btnDeleteReport
-        '
-        resources.ApplyResources(Me.btnDeleteReport, "btnDeleteReport")
-        Me.btnDeleteReport.CategoryGuid = New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")
-        Me.btnDeleteReport.Glyph = CType(resources.GetObject("btnDeleteReport.Glyph"), System.Drawing.Image)
-        Me.btnDeleteReport.Id = 30
-        Me.btnDeleteReport.Name = "btnDeleteReport"
-        '
-        'btnDesignReport
-        '
-        resources.ApplyResources(Me.btnDesignReport, "btnDesignReport")
-        Me.btnDesignReport.CategoryGuid = New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")
-        Me.btnDesignReport.Glyph = CType(resources.GetObject("btnDesignReport.Glyph"), System.Drawing.Image)
-        Me.btnDesignReport.Id = 31
-        Me.btnDesignReport.Name = "btnDesignReport"
-        '
-        'btnMakeReportCommon
-        '
-        resources.ApplyResources(Me.btnMakeReportCommon, "btnMakeReportCommon")
-        Me.btnMakeReportCommon.CategoryGuid = New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")
-        Me.btnMakeReportCommon.Glyph = CType(resources.GetObject("btnMakeReportCommon.Glyph"), System.Drawing.Image)
-        Me.btnMakeReportCommon.Id = 32
-        Me.btnMakeReportCommon.Name = "btnMakeReportCommon"
-        '
-        'btnSendReportUser
-        '
-        resources.ApplyResources(Me.btnSendReportUser, "btnSendReportUser")
-        Me.btnSendReportUser.CategoryGuid = New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")
-        Me.btnSendReportUser.Glyph = CType(resources.GetObject("btnSendReportUser.Glyph"), System.Drawing.Image)
-        Me.btnSendReportUser.Id = 33
-        Me.btnSendReportUser.Name = "btnSendReportUser"
-        '
-        'btnCopyReport
-        '
-        resources.ApplyResources(Me.btnCopyReport, "btnCopyReport")
-        Me.btnCopyReport.CategoryGuid = New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")
-        Me.btnCopyReport.Glyph = CType(resources.GetObject("btnCopyReport.Glyph"), System.Drawing.Image)
-        Me.btnCopyReport.Id = 34
-        Me.btnCopyReport.Name = "btnCopyReport"
-        '
-        'Filter_Bar
-        '
-        Me.Filter_Bar.BarName = "Filter_Bar"
-        Me.Filter_Bar.DockCol = 5
-        Me.Filter_Bar.DockRow = 0
-        Me.Filter_Bar.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
-        Me.Filter_Bar.FloatLocation = New System.Drawing.Point(337, 218)
-        Me.Filter_Bar.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.btnFilter), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, Me.cmbFilterList, "", False, True, True, 132), New DevExpress.XtraBars.LinkPersistInfo(Me.btnFilterDetail)})
-        Me.Filter_Bar.Offset = 1053
-        resources.ApplyResources(Me.Filter_Bar, "Filter_Bar")
-        Me.Filter_Bar.Visible = False
-        '
-        'btnFilter
-        '
-        resources.ApplyResources(Me.btnFilter, "btnFilter")
-        Me.btnFilter.CategoryGuid = New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")
-        Me.btnFilter.Glyph = CType(resources.GetObject("btnFilter.Glyph"), System.Drawing.Image)
-        Me.btnFilter.Id = 35
-        Me.btnFilter.Name = "btnFilter"
-        '
-        'cmbFilterList
-        '
-        resources.ApplyResources(Me.cmbFilterList, "cmbFilterList")
-        Me.cmbFilterList.CategoryGuid = New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")
-        Me.cmbFilterList.Edit = Me.cmbFilterListRepos
-        Me.cmbFilterList.Id = 38
-        Me.cmbFilterList.Name = "cmbFilterList"
-        '
-        'btnFilterDetail
-        '
-        resources.ApplyResources(Me.btnFilterDetail, "btnFilterDetail")
-        Me.btnFilterDetail.CategoryGuid = New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")
-        Me.btnFilterDetail.Id = 37
-        Me.btnFilterDetail.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.btnEditFilter), New DevExpress.XtraBars.LinkPersistInfo(Me.btnNewFilter), New DevExpress.XtraBars.LinkPersistInfo(Me.btnDeleteFilter), New DevExpress.XtraBars.LinkPersistInfo(Me.btnMakeFilterCommon), New DevExpress.XtraBars.LinkPersistInfo(Me.btnSendFilterUSer), New DevExpress.XtraBars.LinkPersistInfo(Me.btnCopyFilter)})
-        Me.btnFilterDetail.Name = "btnFilterDetail"
-        '
-        'btnEditFilter
-        '
-        resources.ApplyResources(Me.btnEditFilter, "btnEditFilter")
-        Me.btnEditFilter.CategoryGuid = New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")
-        Me.btnEditFilter.Glyph = CType(resources.GetObject("btnEditFilter.Glyph"), System.Drawing.Image)
-        Me.btnEditFilter.Id = 39
-        Me.btnEditFilter.Name = "btnEditFilter"
-        '
-        'btnNewFilter
-        '
-        resources.ApplyResources(Me.btnNewFilter, "btnNewFilter")
-        Me.btnNewFilter.CategoryGuid = New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")
-        Me.btnNewFilter.Glyph = CType(resources.GetObject("btnNewFilter.Glyph"), System.Drawing.Image)
-        Me.btnNewFilter.Id = 40
-        Me.btnNewFilter.Name = "btnNewFilter"
-        '
-        'btnDeleteFilter
-        '
-        resources.ApplyResources(Me.btnDeleteFilter, "btnDeleteFilter")
-        Me.btnDeleteFilter.CategoryGuid = New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")
-        Me.btnDeleteFilter.Glyph = CType(resources.GetObject("btnDeleteFilter.Glyph"), System.Drawing.Image)
-        Me.btnDeleteFilter.Id = 41
-        Me.btnDeleteFilter.Name = "btnDeleteFilter"
-        '
-        'btnMakeFilterCommon
-        '
-        resources.ApplyResources(Me.btnMakeFilterCommon, "btnMakeFilterCommon")
-        Me.btnMakeFilterCommon.CategoryGuid = New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")
-        Me.btnMakeFilterCommon.Glyph = CType(resources.GetObject("btnMakeFilterCommon.Glyph"), System.Drawing.Image)
-        Me.btnMakeFilterCommon.Id = 43
-        Me.btnMakeFilterCommon.Name = "btnMakeFilterCommon"
-        '
-        'btnSendFilterUSer
-        '
-        resources.ApplyResources(Me.btnSendFilterUSer, "btnSendFilterUSer")
-        Me.btnSendFilterUSer.CategoryGuid = New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")
-        Me.btnSendFilterUSer.Glyph = CType(resources.GetObject("btnSendFilterUSer.Glyph"), System.Drawing.Image)
-        Me.btnSendFilterUSer.Id = 44
-        Me.btnSendFilterUSer.Name = "btnSendFilterUSer"
-        '
-        'btnCopyFilter
-        '
-        resources.ApplyResources(Me.btnCopyFilter, "btnCopyFilter")
-        Me.btnCopyFilter.CategoryGuid = New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")
-        Me.btnCopyFilter.Glyph = CType(resources.GetObject("btnCopyFilter.Glyph"), System.Drawing.Image)
-        Me.btnCopyFilter.Id = 45
-        Me.btnCopyFilter.Name = "btnCopyFilter"
-        '
-        'DefaultSet_Bar
-        '
-        Me.DefaultSet_Bar.BarName = "DefaultSet_Bar"
-        Me.DefaultSet_Bar.DockCol = 6
-        Me.DefaultSet_Bar.DockRow = 0
-        Me.DefaultSet_Bar.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
-        Me.DefaultSet_Bar.FloatLocation = New System.Drawing.Point(298, 224)
-        Me.DefaultSet_Bar.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.btnDefault), New DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.Width, Me.cmbDefaultList, "", False, True, True, 132), New DevExpress.XtraBars.LinkPersistInfo(Me.btnDefaultDetail)})
-        Me.DefaultSet_Bar.Offset = 1060
-        resources.ApplyResources(Me.DefaultSet_Bar, "DefaultSet_Bar")
-        Me.DefaultSet_Bar.Visible = False
-        '
-        'btnDefault
-        '
-        resources.ApplyResources(Me.btnDefault, "btnDefault")
-        Me.btnDefault.CategoryGuid = New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")
-        Me.btnDefault.Glyph = CType(resources.GetObject("btnDefault.Glyph"), System.Drawing.Image)
-        Me.btnDefault.Id = 47
-        Me.btnDefault.Name = "btnDefault"
-        '
-        'cmbDefaultList
-        '
-        resources.ApplyResources(Me.cmbDefaultList, "cmbDefaultList")
-        Me.cmbDefaultList.CategoryGuid = New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")
-        Me.cmbDefaultList.Edit = Me.cmbDefaultListRepos
-        Me.cmbDefaultList.Id = 49
-        Me.cmbDefaultList.Name = "cmbDefaultList"
-        '
-        'btnDefaultDetail
-        '
-        resources.ApplyResources(Me.btnDefaultDetail, "btnDefaultDetail")
-        Me.btnDefaultDetail.CategoryGuid = New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")
-        Me.btnDefaultDetail.Id = 50
-        Me.btnDefaultDetail.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.btnEditDefault), New DevExpress.XtraBars.LinkPersistInfo(Me.btnNewDefault), New DevExpress.XtraBars.LinkPersistInfo(Me.btnDeleteDefault), New DevExpress.XtraBars.LinkPersistInfo(Me.btnSaveDefault), New DevExpress.XtraBars.LinkPersistInfo(Me.btnMakeDefaultCommon), New DevExpress.XtraBars.LinkPersistInfo(Me.btnSendDefaultUser), New DevExpress.XtraBars.LinkPersistInfo(Me.btnCopyDefault)})
-        Me.btnDefaultDetail.Name = "btnDefaultDetail"
-        '
-        'btnEditDefault
-        '
-        resources.ApplyResources(Me.btnEditDefault, "btnEditDefault")
-        Me.btnEditDefault.CategoryGuid = New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")
-        Me.btnEditDefault.Glyph = CType(resources.GetObject("btnEditDefault.Glyph"), System.Drawing.Image)
-        Me.btnEditDefault.Id = 51
-        Me.btnEditDefault.Name = "btnEditDefault"
-        '
-        'btnNewDefault
-        '
-        resources.ApplyResources(Me.btnNewDefault, "btnNewDefault")
-        Me.btnNewDefault.CategoryGuid = New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")
-        Me.btnNewDefault.Glyph = CType(resources.GetObject("btnNewDefault.Glyph"), System.Drawing.Image)
-        Me.btnNewDefault.Id = 52
-        Me.btnNewDefault.Name = "btnNewDefault"
-        '
-        'btnDeleteDefault
-        '
-        resources.ApplyResources(Me.btnDeleteDefault, "btnDeleteDefault")
-        Me.btnDeleteDefault.CategoryGuid = New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")
-        Me.btnDeleteDefault.Glyph = CType(resources.GetObject("btnDeleteDefault.Glyph"), System.Drawing.Image)
-        Me.btnDeleteDefault.Id = 53
-        Me.btnDeleteDefault.Name = "btnDeleteDefault"
-        '
-        'btnSaveDefault
-        '
-        resources.ApplyResources(Me.btnSaveDefault, "btnSaveDefault")
-        Me.btnSaveDefault.CategoryGuid = New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")
-        Me.btnSaveDefault.Glyph = CType(resources.GetObject("btnSaveDefault.Glyph"), System.Drawing.Image)
-        Me.btnSaveDefault.Id = 54
-        Me.btnSaveDefault.Name = "btnSaveDefault"
-        '
-        'btnMakeDefaultCommon
-        '
-        resources.ApplyResources(Me.btnMakeDefaultCommon, "btnMakeDefaultCommon")
-        Me.btnMakeDefaultCommon.CategoryGuid = New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")
-        Me.btnMakeDefaultCommon.Glyph = CType(resources.GetObject("btnMakeDefaultCommon.Glyph"), System.Drawing.Image)
-        Me.btnMakeDefaultCommon.Id = 55
-        Me.btnMakeDefaultCommon.Name = "btnMakeDefaultCommon"
-        '
-        'btnSendDefaultUser
-        '
-        resources.ApplyResources(Me.btnSendDefaultUser, "btnSendDefaultUser")
-        Me.btnSendDefaultUser.CategoryGuid = New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")
-        Me.btnSendDefaultUser.Glyph = CType(resources.GetObject("btnSendDefaultUser.Glyph"), System.Drawing.Image)
-        Me.btnSendDefaultUser.Id = 56
-        Me.btnSendDefaultUser.Name = "btnSendDefaultUser"
-        '
-        'btnCopyDefault
-        '
-        resources.ApplyResources(Me.btnCopyDefault, "btnCopyDefault")
-        Me.btnCopyDefault.CategoryGuid = New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")
-        Me.btnCopyDefault.Glyph = CType(resources.GetObject("btnCopyDefault.Glyph"), System.Drawing.Image)
-        Me.btnCopyDefault.Id = 57
-        Me.btnCopyDefault.Name = "btnCopyDefault"
-        '
-        'Misc_Bar2
-        '
-        Me.Misc_Bar2.BarName = "Misc_Bar2"
-        Me.Misc_Bar2.DockCol = 8
-        Me.Misc_Bar2.DockRow = 0
-        Me.Misc_Bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
-        Me.Misc_Bar2.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.btnTranslation), New DevExpress.XtraBars.LinkPersistInfo(Me.btnComments), New DevExpress.XtraBars.LinkPersistInfo(Me.btnAttachements)})
-        Me.Misc_Bar2.Offset = 1123
-        resources.ApplyResources(Me.Misc_Bar2, "Misc_Bar2")
-        Me.Misc_Bar2.Visible = False
-        '
-        'btnTranslation
-        '
-        resources.ApplyResources(Me.btnTranslation, "btnTranslation")
-        Me.btnTranslation.CategoryGuid = New System.Guid("d45f4b42-7c78-4255-9839-0f9b81be7603")
-        Me.btnTranslation.Glyph = CType(resources.GetObject("btnTranslation.Glyph"), System.Drawing.Image)
-        Me.btnTranslation.Id = 63
-        Me.btnTranslation.Name = "btnTranslation"
-        '
-        'btnComments
-        '
-        resources.ApplyResources(Me.btnComments, "btnComments")
-        Me.btnComments.CategoryGuid = New System.Guid("d45f4b42-7c78-4255-9839-0f9b81be7603")
-        Me.btnComments.Glyph = CType(resources.GetObject("btnComments.Glyph"), System.Drawing.Image)
-        Me.btnComments.Id = 64
-        Me.btnComments.Name = "btnComments"
-        '
-        'btnAttachements
-        '
-        resources.ApplyResources(Me.btnAttachements, "btnAttachements")
-        Me.btnAttachements.CategoryGuid = New System.Guid("d45f4b42-7c78-4255-9839-0f9b81be7603")
-        Me.btnAttachements.Glyph = CType(resources.GetObject("btnAttachements.Glyph"), System.Drawing.Image)
-        Me.btnAttachements.Id = 65
-        Me.btnAttachements.Name = "btnAttachements"
-        '
-        'Nav_Bar
-        '
-        Me.Nav_Bar.BarName = "Nav_Bar"
-        Me.Nav_Bar.DockCol = 3
-        Me.Nav_Bar.DockRow = 0
-        Me.Nav_Bar.DockStyle = DevExpress.XtraBars.BarDockStyle.Top
-        Me.Nav_Bar.LinksPersistInfo.AddRange(New DevExpress.XtraBars.LinkPersistInfo() {New DevExpress.XtraBars.LinkPersistInfo(Me.btnFirst), New DevExpress.XtraBars.LinkPersistInfo(Me.btnPrevious), New DevExpress.XtraBars.LinkPersistInfo(Me.btnNext), New DevExpress.XtraBars.LinkPersistInfo(Me.btnLast)})
-        Me.Nav_Bar.Offset = 172
-        resources.ApplyResources(Me.Nav_Bar, "Nav_Bar")
-        Me.Nav_Bar.Visible = False
-        '
-        'btnFirst
-        '
-        resources.ApplyResources(Me.btnFirst, "btnFirst")
-        Me.btnFirst.CategoryGuid = New System.Guid("d55c49d9-25b9-4030-98b4-b0b1e7d65b90")
-        Me.btnFirst.Glyph = CType(resources.GetObject("btnFirst.Glyph"), System.Drawing.Image)
-        Me.btnFirst.Id = 66
-        Me.btnFirst.Name = "btnFirst"
-        '
-        'btnPrevious
-        '
-        resources.ApplyResources(Me.btnPrevious, "btnPrevious")
-        Me.btnPrevious.CategoryGuid = New System.Guid("d55c49d9-25b9-4030-98b4-b0b1e7d65b90")
-        Me.btnPrevious.Glyph = CType(resources.GetObject("btnPrevious.Glyph"), System.Drawing.Image)
-        Me.btnPrevious.Id = 67
-        Me.btnPrevious.Name = "btnPrevious"
-        '
-        'btnNext
-        '
-        resources.ApplyResources(Me.btnNext, "btnNext")
-        Me.btnNext.CategoryGuid = New System.Guid("d55c49d9-25b9-4030-98b4-b0b1e7d65b90")
-        Me.btnNext.Glyph = CType(resources.GetObject("btnNext.Glyph"), System.Drawing.Image)
-        Me.btnNext.Id = 68
-        Me.btnNext.Name = "btnNext"
-        '
-        'btnLast
-        '
-        resources.ApplyResources(Me.btnLast, "btnLast")
-        Me.btnLast.CategoryGuid = New System.Guid("d55c49d9-25b9-4030-98b4-b0b1e7d65b90")
-        Me.btnLast.Glyph = CType(resources.GetObject("btnLast.Glyph"), System.Drawing.Image)
-        Me.btnLast.Id = 69
-        Me.btnLast.Name = "btnLast"
-        '
-        'btnUndo
-        '
-        resources.ApplyResources(Me.btnUndo, "btnUndo")
-        Me.btnUndo.Glyph = CType(resources.GetObject("btnUndo.Glyph"), System.Drawing.Image)
-        Me.btnUndo.Id = 70
-        Me.btnUndo.Name = "btnUndo"
-        Me.btnUndo.Visibility = DevExpress.XtraBars.BarItemVisibility.Never
-        '
-        'btnExportXML
-        '
-        Me.btnExportXML.Border = DevExpress.XtraEditors.Controls.BorderStyles.Simple
-        resources.ApplyResources(Me.btnExportXML, "btnExportXML")
-        Me.btnExportXML.Id = 71
-        Me.btnExportXML.Name = "btnExportXML"
-        '
-        'btnImportXML
-        '
-        Me.btnImportXML.Border = DevExpress.XtraEditors.Controls.BorderStyles.Simple
-        resources.ApplyResources(Me.btnImportXML, "btnImportXML")
-        Me.btnImportXML.Id = 72
-        Me.btnImportXML.Name = "btnImportXML"
+        'Grid1
+        '
+        resources.ApplyResources(Me.Grid1, "Grid1")
+        Me.Grid1.EmbeddedNavigator.Name = ""
+        Me.Grid1.FormsUseDefaultLookAndFeel = False
+        Me.Grid1.MainView = Me.GridView1
+        Me.Grid1.Name = "Grid1"
+        Me.HelpProvider1.SetShowHelp(Me.Grid1, CType(resources.GetObject("Grid1.ShowHelp"), Boolean))
+        Me.Grid1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
+        '
+        'GridView1
+        '
+        Me.GridView1.GridControl = Me.Grid1
+        Me.GridView1.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways
+        resources.ApplyResources(Me.GridView1, "GridView1")
+        Me.GridView1.Name = "GridView1"
+        Me.GridView1.OptionsBehavior.AllowIncrementalSearch = True
+        Me.GridView1.OptionsBehavior.Editable = False
+        Me.GridView1.OptionsView.ShowBands = False
+        Me.GridView1.OptionsView.ShowFooter = True
         '
         'lblYear
         '
@@ -2072,38 +1271,48 @@ Public Class frmActivationCode
         Me.btnNewDiscount.Name = "btnNewDiscount"
         Me.HelpProvider1.SetShowHelp(Me.btnNewDiscount, CType(resources.GetObject("btnNewDiscount.ShowHelp"), Boolean))
         '
+        'BarManager2
+        '
+        Me.BarManager2.Categories.AddRange(New DevExpress.XtraBars.BarManagerCategory() {CType(resources.GetObject("BarManager2.Categories"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager2.Categories1"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager2.Categories2"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager2.Categories3"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager2.Categories4"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager2.Categories5"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager2.Categories6"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager2.Categories7"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager2.Categories8"), DevExpress.XtraBars.BarManagerCategory)})
+        Me.BarManager2.Form = Me
+        Me.BarManager2.MaxItemId = 73
+        Me.BarManager2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbViewListRepos, Me.txtQuickSearchRepos, Me.cmbReportListRepos, Me.cmbFilterListRepos, Me.cmbDefaultListRepos})
+        '
         'frmActivationCode
         '
         resources.ApplyResources(Me, "$this")
+        Me.BarManager1 = Me.BarManager2
+        Me.Controls.Add(Me.barDockControlLeft)
+        Me.Controls.Add(Me.barDockControlRight)
+        Me.Controls.Add(Me.barDockControlBottom)
+        Me.Controls.Add(Me.barDockControlTop)
         Me.HelpButton = False
         Me.HelpProvider1.SetHelpKeyword(Me, resources.GetString("$this.HelpKeyword"))
         Me.HelpProvider1.SetHelpNavigator(Me, CType(resources.GetObject("$this.HelpNavigator"), System.Windows.Forms.HelpNavigator))
         Me.HelpProvider1.SetHelpString(Me, resources.GetString("$this.HelpString"))
         Me.Name = "frmActivationCode"
         Me.HelpProvider1.SetShowHelp(Me, CType(resources.GetObject("$this.ShowHelp"), Boolean))
-        'Me.Controls.SetChildIndex(Me.barDockControlTop, 0)
-        'Me.Controls.SetChildIndex(Me.barDockControlBottom, 0)
-        'Me.Controls.SetChildIndex(Me.barDockControlRight, 0)
-        'Me.Controls.SetChildIndex(Me.barDockControlLeft, 0)
+        Me.Controls.SetChildIndex(Me.barDockControlTop, 0)
+        Me.Controls.SetChildIndex(Me.barDockControlBottom, 0)
+        Me.Controls.SetChildIndex(Me.barDockControlRight, 0)
+        Me.Controls.SetChildIndex(Me.barDockControlLeft, 0)
         Me.Controls.SetChildIndex(Me.StatusBar1, 0)
         Me.Controls.SetChildIndex(Me.Panel1, 0)
         Me.Panel1.ResumeLayout(False)
-        CType(Me.Grid1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TabControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabControl1.ResumeLayout(False)
         Me.TabParameters.ResumeLayout(False)
         Me.TabParameters.PerformLayout()
-        Me.TabResult.ResumeLayout(False)
         Me.TabAnalyse.ResumeLayout(False)
         Me.TabChart.ResumeLayout(False)
         CType(Me.objDS, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.BarManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbViewListRepos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtQuickSearchRepos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbReportListRepos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbFilterListRepos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbDefaultListRepos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Grid1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtComment.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbGroup.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DS, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2161,6 +1370,7 @@ Public Class frmActivationCode
         CType(Me.txtCreationDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtCreationDate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbNextAboType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BarManager2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
