@@ -883,4 +883,34 @@ Public Class FrmProductsVOD
         End If
 
     End Sub
+
+    Private Sub btnSaveAllChanges_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSaveAllChanges.Click
+        Dim dt As DataTable
+        dt = GridVod.DataSource.GetChanges()
+
+        If dt Is Nothing Then
+            Return
+        End If
+        For Each dr As DataRow In dt.Rows
+            Dim sql As String
+            sql = DvdPostData.ClsVod.GetUpdateVod(dr("id"), _
+                                        dr("imdb_id"), _
+                                        dr("filename"), _
+                                        dr("available_from"), _
+                                        dr("expire_at"), _
+                                        dr("available"), _
+                                        dr("language_id"), _
+                                        IIf(dr("subtitle_id") Is System.DBNull.Value, -1, dr("subtitle_id")), _
+                                        dr("studio_id"), _
+                                        IIf(dr("status") Is System.DBNull.Value, -1, dr("status")), _
+                                        dr("quality"), _
+                                        dr("source"), _
+                                        dr("vod_support_id"), _
+                                        dr("credits"))
+            DvdPostData.clsConnection.ExecuteNonQuery(sql)
+
+        Next
+        GridVod.DataSource.AcceptChanges()
+
+    End Sub
 End Class

@@ -113,6 +113,7 @@ Partial Class FrmProductsVOD
         Me.txtTitleSearch = New DevExpress.XtraEditors.TextEdit
         Me.lblPartTitle = New DevExpress.XtraEditors.LabelControl
         Me.XTabResult = New DevExpress.XtraTab.XtraTabPage
+        Me.btnSaveAllChanges = New DevExpress.XtraEditors.SimpleButton
         Me.GridVod = New DevExpress.XtraGrid.GridControl
         Me.GridViewSearch = New DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView
         Me.GridBand1 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand
@@ -123,6 +124,7 @@ Partial Class FrmProductsVOD
         Me.colStudio = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.cmbStudio = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.colStatus = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+        Me.cmbgridStatus = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox
         Me.colImdb_id = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.collanguage_id = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.cmbLanguages = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
@@ -132,6 +134,8 @@ Partial Class FrmProductsVOD
         Me.colExpireAt = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.colAvailable = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.chkcolAvailable = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
+        Me.GridBand3 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand
+        Me.GridBand4 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand
         Me.colCredit = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.XTabView = New DevExpress.XtraTab.XtraTabPage
         Me.btnDeleteVOD = New DevExpress.XtraEditors.SimpleButton
@@ -251,6 +255,7 @@ Partial Class FrmProductsVOD
         CType(Me.GridViewSearch, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositorycmbSupportVod, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbStudio, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbgridStatus, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbLanguages, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkcolAvailable, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XTabView.SuspendLayout()
@@ -310,6 +315,10 @@ Partial Class FrmProductsVOD
         'BarManager1
         '
         Me.BarManager1.Categories.AddRange(New DevExpress.XtraBars.BarManagerCategory() {New DevExpress.XtraBars.BarManagerCategory("Main", New System.Guid("434484d9-7ac5-47e5-9412-313a111b7240")), New DevExpress.XtraBars.BarManagerCategory("Miscelaneous", New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")), New DevExpress.XtraBars.BarManagerCategory("Views", New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")), New DevExpress.XtraBars.BarManagerCategory("Filters", New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")), New DevExpress.XtraBars.BarManagerCategory("Reporting", New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")), New DevExpress.XtraBars.BarManagerCategory("Default Values", New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")), New DevExpress.XtraBars.BarManagerCategory("Quick Search", New System.Guid("2d735e09-7c7c-4ed4-b3ca-996e094a2026")), New DevExpress.XtraBars.BarManagerCategory("Misc_Maintenance", New System.Guid("d45f4b42-7c78-4255-9839-0f9b81be7603")), New DevExpress.XtraBars.BarManagerCategory("Navigation", New System.Guid("d55c49d9-25b9-4030-98b4-b0b1e7d65b90"))})
+        Me.BarManager1.DockControls.Add(Me.barDockControlTop)
+        Me.BarManager1.DockControls.Add(Me.barDockControlBottom)
+        Me.BarManager1.DockControls.Add(Me.barDockControlLeft)
+        Me.BarManager1.DockControls.Add(Me.barDockControlRight)
         Me.BarManager1.Form = Me
         Me.BarManager1.MaxItemId = 73
         Me.BarManager1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbViewListRepos, Me.txtQuickSearchRepos, Me.cmbReportListRepos, Me.cmbFilterListRepos, Me.cmbDefaultListRepos})
@@ -1016,27 +1025,35 @@ Partial Class FrmProductsVOD
         '
         'XTabResult
         '
+        Me.XTabResult.Controls.Add(Me.btnSaveAllChanges)
         Me.XTabResult.Controls.Add(Me.GridVod)
         Me.XTabResult.Name = "XTabResult"
-        Me.XTabResult.Size = New System.Drawing.Size(1047, 634)
+        Me.XTabResult.Size = New System.Drawing.Size(1011, 634)
         Me.XTabResult.Text = "Result"
+        '
+        'btnSaveAllChanges
+        '
+        Me.btnSaveAllChanges.Location = New System.Drawing.Point(9, 3)
+        Me.btnSaveAllChanges.Name = "btnSaveAllChanges"
+        Me.btnSaveAllChanges.Size = New System.Drawing.Size(97, 23)
+        Me.btnSaveAllChanges.TabIndex = 19
+        Me.btnSaveAllChanges.Text = "Save All Changes"
         '
         'GridVod
         '
-        Me.GridVod.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GridVod.EmbeddedNavigator.Name = ""
         Me.GridVod.FormsUseDefaultLookAndFeel = False
-        Me.GridVod.Location = New System.Drawing.Point(0, 0)
+        Me.GridVod.Location = New System.Drawing.Point(0, 32)
         Me.GridVod.MainView = Me.GridViewSearch
         Me.GridVod.Name = "GridVod"
-        Me.GridVod.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbLanguages, Me.chkcolAvailable, Me.cmbStudio, Me.RepositorycmbSupportVod})
-        Me.GridVod.Size = New System.Drawing.Size(1047, 634)
+        Me.GridVod.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbLanguages, Me.chkcolAvailable, Me.cmbStudio, Me.RepositorycmbSupportVod, Me.cmbgridStatus})
+        Me.GridVod.Size = New System.Drawing.Size(1011, 602)
         Me.GridVod.TabIndex = 4
         Me.GridVod.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewSearch})
         '
         'GridViewSearch
         '
-        Me.GridViewSearch.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand1})
+        Me.GridViewSearch.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand1, Me.GridBand3, Me.GridBand4})
         Me.GridViewSearch.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.colImdb_id, Me.collanguage_id, Me.colproducts_name, Me.ColAvailable_from, Me.colExpireAt, Me.colLanguage_subtitle, Me.colAvailable, Me.colStudio, Me.colStatus, Me.colSource, Me.colQuality, Me.colSupportVod, Me.colCredit})
         Me.GridViewSearch.CustomizationFormBounds = New System.Drawing.Rectangle(799, 449, 225, 209)
         Me.GridViewSearch.GridControl = Me.GridVod
@@ -1120,10 +1137,17 @@ Partial Class FrmProductsVOD
         'colStatus
         '
         Me.colStatus.Caption = "status"
+        Me.colStatus.ColumnEdit = Me.cmbgridStatus
         Me.colStatus.FieldName = "status"
         Me.colStatus.Name = "colStatus"
-        Me.colStatus.OptionsColumn.AllowEdit = False
         Me.colStatus.Visible = True
+        '
+        'cmbgridStatus
+        '
+        Me.cmbgridStatus.AutoHeight = False
+        Me.cmbgridStatus.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbgridStatus.Items.AddRange(New Object() {"ripped", "local_test_fail", "to_upload", "uploaded", "online_test_ok", "filename_incorrect", "imdb_not_found", "duplicate", "deleted"})
+        Me.cmbgridStatus.Name = "cmbgridStatus"
         '
         'colImdb_id
         '
@@ -1207,6 +1231,16 @@ Partial Class FrmProductsVOD
         Me.chkcolAvailable.Name = "chkcolAvailable"
         Me.chkcolAvailable.ValueChecked = CType(1, Byte)
         Me.chkcolAvailable.ValueUnchecked = CType(0, Byte)
+        '
+        'GridBand3
+        '
+        Me.GridBand3.Caption = "gridBand1"
+        Me.GridBand3.Name = "GridBand3"
+        '
+        'GridBand4
+        '
+        Me.GridBand4.Caption = "gridBand2"
+        Me.GridBand4.Name = "GridBand4"
         '
         'colCredit
         '
@@ -1567,7 +1601,7 @@ Partial Class FrmProductsVOD
         Me.XTabProcess.Controls.Add(Me.btnSource)
         Me.XTabProcess.Controls.Add(Me.lblPathSourceTitle)
         Me.XTabProcess.Name = "XTabProcess"
-        Me.XTabProcess.Size = New System.Drawing.Size(1047, 634)
+        Me.XTabProcess.Size = New System.Drawing.Size(1011, 634)
         Me.XTabProcess.Text = "Processus vod"
         '
         'lblDestinationPathFile
@@ -1639,7 +1673,7 @@ Partial Class FrmProductsVOD
         Me.XTabViewVod.Controls.Add(Me.GridVodWatch)
         Me.XTabViewVod.Controls.Add(Me.WebSiteDvdPost)
         Me.XTabViewVod.Name = "XTabViewVod"
-        Me.XTabViewVod.Size = New System.Drawing.Size(1047, 634)
+        Me.XTabViewVod.Size = New System.Drawing.Size(1011, 634)
         Me.XTabViewVod.Text = "view vod"
         '
         'GridVodWatch
@@ -1813,7 +1847,7 @@ Partial Class FrmProductsVOD
         'WebSiteDvdPost
         '
         Me.WebSiteDvdPost.Dock = System.Windows.Forms.DockStyle.Right
-        Me.WebSiteDvdPost.Location = New System.Drawing.Point(432, 0)
+        Me.WebSiteDvdPost.Location = New System.Drawing.Point(396, 0)
         Me.WebSiteDvdPost.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebSiteDvdPost.Name = "WebSiteDvdPost"
         Me.WebSiteDvdPost.Size = New System.Drawing.Size(615, 634)
@@ -1832,7 +1866,7 @@ Partial Class FrmProductsVOD
         Me.XTabFtp.Controls.Add(Me.BtnCompare)
         Me.XTabFtp.Controls.Add(Me.lblFTP)
         Me.XTabFtp.Name = "XTabFtp"
-        Me.XTabFtp.Size = New System.Drawing.Size(1047, 634)
+        Me.XTabFtp.Size = New System.Drawing.Size(1011, 634)
         Me.XTabFtp.Text = "Compare Ftp"
         '
         'lblDbFtp
@@ -1975,7 +2009,7 @@ Partial Class FrmProductsVOD
         Me.XtabAutomateTranscode.Controls.Add(Me.lblTxtFile)
         Me.XtabAutomateTranscode.Margin = New System.Windows.Forms.Padding(2)
         Me.XtabAutomateTranscode.Name = "XtabAutomateTranscode"
-        Me.XtabAutomateTranscode.Size = New System.Drawing.Size(1047, 634)
+        Me.XtabAutomateTranscode.Size = New System.Drawing.Size(1011, 634)
         Me.XtabAutomateTranscode.Text = "Automate Transcode"
         Me.XtabAutomateTranscode.Tooltip = "Deletes data from last load"
         '
@@ -2199,6 +2233,7 @@ Partial Class FrmProductsVOD
         CType(Me.GridViewSearch, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositorycmbSupportVod, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbStudio, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbgridStatus, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbLanguages, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkcolAvailable, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XTabView.ResumeLayout(False)
@@ -2463,5 +2498,9 @@ Partial Class FrmProductsVOD
     Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents cmbgridStatus As DevExpress.XtraEditors.Repository.RepositoryItemComboBox
+    Friend WithEvents GridBand3 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
+    Friend WithEvents GridBand4 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
+    Friend WithEvents btnSaveAllChanges As DevExpress.XtraEditors.SimpleButton
 
 End Class
