@@ -41,7 +41,6 @@ Public Class FrmProductsVOD
         chkAvailable.Checked = False
 
 
-
     End Sub
     Private Sub loadData(ByVal row As DataRow)
 
@@ -191,7 +190,7 @@ Public Class FrmProductsVOD
     End Sub
     Private Sub loadStudio()
         Dim sql As String
-        Dim dt As DataTable
+        Dim dt, dt1 As DataTable
         sql = DvdPostData.ClsVod.GetStudio()
         dt = DvdPostData.clsConnection.FillDataSet(sql)
 
@@ -416,6 +415,21 @@ Public Class FrmProductsVOD
         txtSourcePath.EditValue = FolderChoose.SelectedPath
         LoadLanguageProcess()
         ' Add any initialization after the InitializeComponent() call.
+        Dim sql As String
+        Dim dt As DataTable
+        sql = DvdPostData.ClsVod.GetEnumMysqlStatus()
+        dt = DvdPostData.clsConnection.FillDataSet(sql)
+
+        Dim statuses As String = dt.Rows()(0)(1)
+        statuses = statuses.Replace("'", "")
+        statuses = statuses.Replace("enum(", "")
+        statuses = statuses.Replace(")", "")
+        Dim arrst As String() = statuses.Split(",")
+        cmbgridStatus.Items.AddRange(arrst)
+        'studio
+
+
+
 
     End Sub
     Private Sub loadDatatUploaded()
@@ -889,6 +903,8 @@ Public Class FrmProductsVOD
         dt = GridVod.DataSource.GetChanges()
 
         If dt Is Nothing Then
+            Return
+        ElseIf MsgBoxResult.Cancel = MsgBox(dt.Rows.Count & " movies are updated and will be saved, please confim ! ", MsgBoxStyle.OkCancel) Then
             Return
         End If
         For Each dr As DataRow In dt.Rows
