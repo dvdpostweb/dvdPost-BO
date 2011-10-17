@@ -904,6 +904,7 @@ Public Class FrmProductsVOD
         Dim dt As DataTable
         dt = GridVod.DataSource.GetChanges()
 
+
         If dt Is Nothing Then
             Return
         ElseIf MsgBoxResult.Cancel = MsgBox(dt.Rows.Count & " movies are updated and will be saved, please confim ! ", MsgBoxStyle.OkCancel) Then

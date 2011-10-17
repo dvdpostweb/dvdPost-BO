@@ -219,6 +219,7 @@ Public Class ClsVod
             strQuality = "'" & quality & "'"
         End If
 
+
         sql = "update streaming_products sp " & _
               " set filename = '" & filename & "'" & _
               ", available_from = '" & DVDPostTools.ClsDate.formatDateDB(available_from) & "'" & _
