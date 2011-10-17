@@ -918,10 +918,10 @@ Public Class FrmProductsVOD
                                         dr("expire_at"), _
                                         dr("available"), _
                                         dr("language_id"), _
-                                        IIf(dr("subtitle_id") Is System.DBNull.Value, -1, dr("subtitle_id")), _
+                                        IIf(dr("subtitle_id") Is System.DBNull.Value, 0, dr("subtitle_id")), _
                                         dr("studio_id"), _
-                                        IIf(dr("status") Is System.DBNull.Value, -1, dr("status")), _
-                                        dr("quality"), _
+                                        IIf(dr("status") Is System.DBNull.Value, "", dr("status")), _
+                                        IIf(dr("quality") Is System.DBNull.Value, "", dr("quality")), _
                                         dr("source"), _
                                         dr("vod_support_id"), _
                                         dr("credits"))

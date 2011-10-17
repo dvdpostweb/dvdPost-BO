@@ -194,7 +194,13 @@ Public Class ClsVod
         Dim strLanguageSubtitle As String
         Dim strlanguage As String
         Dim strQuality As String
+        Dim strStatus As String
 
+        If status = "" Then
+            strStatus = "null"
+        Else
+            strStatus = status
+        End If
         If language_id = 0 Then
             strlanguage = "null"
         Else
