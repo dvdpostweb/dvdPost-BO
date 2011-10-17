@@ -254,7 +254,7 @@ Public Class clsStatLogisticAboProcess
     End Function
     Public Shared Function getSelectProductsNoDvdFound(ByVal dateFrom As String, ByVal dateTo As String, ByVal type_dvd As DvdPostData.clsProductDvd.Type_DVD) As String
         Dim sql As String
-        sql = " select products_id,products_title,products_availability,count(*) cpt_cust from" & _
+        sql = " select products_id,products_title,products_model,products_availability,count(*) cpt_cust,(select count(*) from products_dvd pd where pd.products_id = p.products_id and pd.products_dvd_status in (1,21,23,24,25)) cpt_dvd from" & _
                 "( " & _
                 "   select w.customers_id,w.product_id from" & _
                 "   wishlist w" & _
