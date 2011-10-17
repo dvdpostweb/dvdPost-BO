@@ -717,7 +717,7 @@ Public Class ClsCustomers
 
 
 
-        'calculate price, from nextdiscount code
+        'calculate price, from next discount code, set next product type in customers table. price is in drCustomer("products_price")
         UpdateNextProduct(drDiscount, customers_id, drCustomer)
 
         'always is classic,just sometime is not
