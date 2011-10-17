@@ -404,6 +404,7 @@ Public Class FrmProductsVOD
 
         ' This call is required by the Windows Form Designer.
         InitializeComponent()
+
         Dim menuStrip As New DVDPostBuziness.contextMenu()
         GridVod.ContextMenuStrip = menuStrip
         loadLanguage()
@@ -411,6 +412,7 @@ Public Class FrmProductsVOD
         loadStatus()
         loadquality()
         loadSource()
+
         loadSupportVod()
         txtSourcePath.EditValue = FolderChoose.SelectedPath
         LoadLanguageProcess()
