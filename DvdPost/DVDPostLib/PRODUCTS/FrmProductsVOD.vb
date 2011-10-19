@@ -281,6 +281,7 @@ Public Class FrmProductsVOD
         Dim sql As String
         Dim key As String = "id"
         Dim value As String = "code"
+        Dim lngdsc As String = "lngdsc"
 
         sql = DvdPostData.ClsVod.GetAllLanguage()
         _dtLanguageSound = DvdPostData.clsConnection.FillDataSet(sql)
@@ -297,13 +298,19 @@ Public Class FrmProductsVOD
 
 
         cmbLanguageSound.Properties.ValueMember = key
-        cmbLanguageSound.Properties.DisplayMember = value
+        cmbLanguageSound.Properties.DisplayMember = lngdsc
         cmbLanguageSound.Properties.DataSource = _dtLanguageSound
 
         _dtLanguageSubtitle = DVDPostBuziness.ClsCombo.addRowEmpty(_dtLanguageSubtitle)
         cmbLanguageSubtitle.Properties.ValueMember = key
-        cmbLanguageSubtitle.Properties.DisplayMember = value
+        cmbLanguageSubtitle.Properties.DisplayMember = lngdsc
         cmbLanguageSubtitle.Properties.DataSource = _dtLanguageSubtitle
+
+        cmbLanguagesSubtitleEdit.ValueMember = key
+        cmbLanguagesSubtitleEdit.DisplayMember = value
+        cmbLanguagesSubtitleEdit.DataSource = _dtLanguageSubtitle
+
+
     End Sub
 
     'Private Sub loadInfoVod(ByVal streaming_products_id As Integer)
