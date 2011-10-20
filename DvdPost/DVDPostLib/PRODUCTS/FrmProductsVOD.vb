@@ -190,7 +190,7 @@ Public Class FrmProductsVOD
     End Sub
     Private Sub loadStudio()
         Dim sql As String
-        Dim dt, dt1 As DataTable
+        Dim dt As DataTable
         sql = DvdPostData.ClsVod.GetStudio()
         dt = DvdPostData.clsConnection.FillDataSet(sql)
 
@@ -280,6 +280,7 @@ Public Class FrmProductsVOD
     Private Sub loadLanguage()
         Dim sql As String
         Dim key As String = "id"
+        Dim keySubtitle As String = "subtitle_id"
         Dim value As String = "code"
         Dim lngdsc As String = "lngdsc"
 
@@ -302,13 +303,19 @@ Public Class FrmProductsVOD
         cmbLanguageSound.Properties.DataSource = _dtLanguageSound
 
         _dtLanguageSubtitle = DVDPostBuziness.ClsCombo.addRowEmpty(_dtLanguageSubtitle)
-        cmbLanguageSubtitle.Properties.ValueMember = key
+        cmbLanguageSubtitle.Properties.ValueMember = keySubtitle
         cmbLanguageSubtitle.Properties.DisplayMember = lngdsc
         cmbLanguageSubtitle.Properties.DataSource = _dtLanguageSubtitle
 
-        cmbLanguagesSubtitleEdit.ValueMember = key
+        cmbLanguagesSubtitleEdit.ValueMember = keySubtitle
         cmbLanguagesSubtitleEdit.DisplayMember = value
         cmbLanguagesSubtitleEdit.DataSource = _dtLanguageSubtitle
+
+        RepositoryLanguageSubtitleGrid.ValueMember = keySubtitle
+        RepositoryLanguageSubtitleGrid.DisplayMember = value
+        RepositoryLanguageSubtitleGrid.DataSource = _dtLanguageSubtitle
+
+
 
 
     End Sub

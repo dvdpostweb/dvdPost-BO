@@ -124,12 +124,13 @@ Partial Class FrmProductsVOD
         Me.colQuality = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.colSource = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.colStudio = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
-        Me.cmbLanguagesSubtitleEdit = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+        Me.cmbStudio = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.colStatus = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.cmbgridStatus = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox
         Me.collanguage_id = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.cmbLanguages = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.colLanguage_subtitle = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+        Me.cmbLanguagesSubtitleEdit = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.ColAvailable_from = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.dpDateStart = New DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
         Me.colExpireAt = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
@@ -139,7 +140,6 @@ Partial Class FrmProductsVOD
         Me.GridBand3 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand
         Me.GridBand4 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand
         Me.colCredit = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
-        Me.cmbStudio = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.RepositoryItemLookUpEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.XTabView = New DevExpress.XtraTab.XtraTabPage
         Me.btnDeleteVOD = New DevExpress.XtraEditors.SimpleButton
@@ -198,6 +198,7 @@ Partial Class FrmProductsVOD
         Me.colLangAudioUploaded = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.RepositorycmbLanguage = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.colLangSubtitleUploaded = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+        Me.RepositoryLanguageSubtitleGrid = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.colDateExpiredUploaded = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.colAvailableUploaded = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.RepositorychkAvailable = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
@@ -258,15 +259,15 @@ Partial Class FrmProductsVOD
         CType(Me.GridVod, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewSearch, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositorycmbSupportVod, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmbLanguagesSubtitleEdit, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbStudio, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbgridStatus, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbLanguages, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbLanguagesSubtitleEdit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dpDateStart, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dpDateStart.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtpDateExpired, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtpDateExpired.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkcolAvailable, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmbStudio, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XTabView.SuspendLayout()
         CType(Me.spedCredit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -295,6 +296,7 @@ Partial Class FrmProductsVOD
         CType(Me.RepositoryBtnWatchMovie, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryCmbStudio, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositorycmbLanguage, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryLanguageSubtitleGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositorychkAvailable, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XTabFtp.SuspendLayout()
         CType(Me.txtSourceFtp.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -325,6 +327,10 @@ Partial Class FrmProductsVOD
         'BarManager1
         '
         Me.BarManager1.Categories.AddRange(New DevExpress.XtraBars.BarManagerCategory() {New DevExpress.XtraBars.BarManagerCategory("Main", New System.Guid("434484d9-7ac5-47e5-9412-313a111b7240")), New DevExpress.XtraBars.BarManagerCategory("Miscelaneous", New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")), New DevExpress.XtraBars.BarManagerCategory("Views", New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")), New DevExpress.XtraBars.BarManagerCategory("Filters", New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")), New DevExpress.XtraBars.BarManagerCategory("Reporting", New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")), New DevExpress.XtraBars.BarManagerCategory("Default Values", New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")), New DevExpress.XtraBars.BarManagerCategory("Quick Search", New System.Guid("2d735e09-7c7c-4ed4-b3ca-996e094a2026")), New DevExpress.XtraBars.BarManagerCategory("Misc_Maintenance", New System.Guid("d45f4b42-7c78-4255-9839-0f9b81be7603")), New DevExpress.XtraBars.BarManagerCategory("Navigation", New System.Guid("d55c49d9-25b9-4030-98b4-b0b1e7d65b90"))})
+        Me.BarManager1.DockControls.Add(Me.barDockControlTop)
+        Me.BarManager1.DockControls.Add(Me.barDockControlBottom)
+        Me.BarManager1.DockControls.Add(Me.barDockControlLeft)
+        Me.BarManager1.DockControls.Add(Me.barDockControlRight)
         Me.BarManager1.Form = Me
         Me.BarManager1.MaxItemId = 73
         Me.BarManager1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbViewListRepos, Me.txtQuickSearchRepos, Me.cmbReportListRepos, Me.cmbFilterListRepos, Me.cmbDefaultListRepos})
@@ -1095,7 +1101,7 @@ Partial Class FrmProductsVOD
         Me.GridBand1.Columns.Add(Me.colAvailable)
         Me.GridBand1.MinWidth = 20
         Me.GridBand1.Name = "GridBand1"
-        Me.GridBand1.Width = 880
+        Me.GridBand1.Width = 879
         '
         'colSupportVod
         '
@@ -1105,7 +1111,7 @@ Partial Class FrmProductsVOD
         Me.colSupportVod.Name = "colSupportVod"
         Me.colSupportVod.OptionsColumn.AllowEdit = False
         Me.colSupportVod.Visible = True
-        Me.colSupportVod.Width = 48
+        Me.colSupportVod.Width = 47
         '
         'RepositorycmbSupportVod
         '
@@ -1121,7 +1127,7 @@ Partial Class FrmProductsVOD
         Me.colImdb_id.Name = "colImdb_id"
         Me.colImdb_id.OptionsColumn.AllowEdit = False
         Me.colImdb_id.Visible = True
-        Me.colImdb_id.Width = 55
+        Me.colImdb_id.Width = 54
         '
         'colproducts_name
         '
@@ -1130,7 +1136,7 @@ Partial Class FrmProductsVOD
         Me.colproducts_name.Name = "colproducts_name"
         Me.colproducts_name.OptionsColumn.AllowEdit = False
         Me.colproducts_name.Visible = True
-        Me.colproducts_name.Width = 136
+        Me.colproducts_name.Width = 135
         '
         'colQuality
         '
@@ -1139,7 +1145,7 @@ Partial Class FrmProductsVOD
         Me.colQuality.Name = "colQuality"
         Me.colQuality.OptionsColumn.AllowEdit = False
         Me.colQuality.Visible = True
-        Me.colQuality.Width = 47
+        Me.colQuality.Width = 46
         '
         'colSource
         '
@@ -1148,22 +1154,26 @@ Partial Class FrmProductsVOD
         Me.colSource.Name = "colSource"
         Me.colSource.OptionsColumn.AllowEdit = False
         Me.colSource.Visible = True
-        Me.colSource.Width = 52
+        Me.colSource.Width = 51
         '
         'colStudio
         '
         Me.colStudio.Caption = "studio"
-        Me.colStudio.ColumnEdit = Me.cmbLanguagesSubtitleEdit
+        Me.colStudio.ColumnEdit = Me.cmbStudio
         Me.colStudio.FieldName = "studio_id"
         Me.colStudio.Name = "colStudio"
         Me.colStudio.Visible = True
-        Me.colStudio.Width = 69
+        Me.colStudio.Width = 68
         '
-        'cmbLanguagesSubtitleEdit
+        'cmbStudio
         '
-        Me.cmbLanguagesSubtitleEdit.AutoHeight = False
-        Me.cmbLanguagesSubtitleEdit.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cmbLanguagesSubtitleEdit.Name = "cmbLanguagesSubtitleEdit"
+        Me.cmbStudio.AutoHeight = False
+        Me.cmbStudio.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbStudio.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("studio_id", "id", 20, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("studio_name", "name", 20, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None)})
+        Me.cmbStudio.DisplayMember = "studio_name"
+        Me.cmbStudio.Name = "cmbStudio"
+        Me.cmbStudio.NullText = ""
+        Me.cmbStudio.ValueMember = "studio_id"
         '
         'colStatus
         '
@@ -1172,7 +1182,7 @@ Partial Class FrmProductsVOD
         Me.colStatus.FieldName = "status"
         Me.colStatus.Name = "colStatus"
         Me.colStatus.Visible = True
-        Me.colStatus.Width = 73
+        Me.colStatus.Width = 72
         '
         'cmbgridStatus
         '
@@ -1188,7 +1198,7 @@ Partial Class FrmProductsVOD
         Me.collanguage_id.Name = "collanguage_id"
         Me.collanguage_id.OptionsColumn.AllowEdit = False
         Me.collanguage_id.Visible = True
-        Me.collanguage_id.Width = 88
+        Me.collanguage_id.Width = 87
         '
         'cmbLanguages
         '
@@ -1208,7 +1218,16 @@ Partial Class FrmProductsVOD
         Me.colLanguage_subtitle.Name = "colLanguage_subtitle"
         Me.colLanguage_subtitle.OptionsColumn.AllowEdit = False
         Me.colLanguage_subtitle.Visible = True
-        Me.colLanguage_subtitle.Width = 86
+        Me.colLanguage_subtitle.Width = 99
+        '
+        'cmbLanguagesSubtitleEdit
+        '
+        Me.cmbLanguagesSubtitleEdit.AutoHeight = False
+        Me.cmbLanguagesSubtitleEdit.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbLanguagesSubtitleEdit.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("studio_id", "id", 20, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("code", "language", 20, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None)})
+        Me.cmbLanguagesSubtitleEdit.DisplayMember = "code"
+        Me.cmbLanguagesSubtitleEdit.Name = "cmbLanguagesSubtitleEdit"
+        Me.cmbLanguagesSubtitleEdit.NullText = ""
         '
         'ColAvailable_from
         '
@@ -1217,7 +1236,7 @@ Partial Class FrmProductsVOD
         Me.ColAvailable_from.FieldName = "available_from"
         Me.ColAvailable_from.Name = "ColAvailable_from"
         Me.ColAvailable_from.Visible = True
-        Me.ColAvailable_from.Width = 80
+        Me.ColAvailable_from.Width = 79
         '
         'dpDateStart
         '
@@ -1233,7 +1252,7 @@ Partial Class FrmProductsVOD
         Me.colExpireAt.FieldName = "expire_at"
         Me.colExpireAt.Name = "colExpireAt"
         Me.colExpireAt.Visible = True
-        Me.colExpireAt.Width = 73
+        Me.colExpireAt.Width = 72
         '
         'dtpDateExpired
         '
@@ -1249,7 +1268,7 @@ Partial Class FrmProductsVOD
         Me.colAvailable.FieldName = "available"
         Me.colAvailable.Name = "colAvailable"
         Me.colAvailable.Visible = True
-        Me.colAvailable.Width = 73
+        Me.colAvailable.Width = 69
         '
         'chkcolAvailable
         '
@@ -1262,13 +1281,13 @@ Partial Class FrmProductsVOD
         '
         Me.GridBand3.Caption = "gridBand1"
         Me.GridBand3.Name = "GridBand3"
-        Me.GridBand3.Width = 47
+        Me.GridBand3.Width = 46
         '
         'GridBand4
         '
         Me.GridBand4.Caption = "gridBand2"
         Me.GridBand4.Name = "GridBand4"
-        Me.GridBand4.Width = 53
+        Me.GridBand4.Width = 54
         '
         'colCredit
         '
@@ -1276,16 +1295,6 @@ Partial Class FrmProductsVOD
         Me.colCredit.FieldName = "credit"
         Me.colCredit.Name = "colCredit"
         Me.colCredit.OptionsColumn.AllowEdit = False
-        '
-        'cmbStudio
-        '
-        Me.cmbStudio.AutoHeight = False
-        Me.cmbStudio.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cmbStudio.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("studio_id", "id", 20, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("studio_name", "name", 20, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None)})
-        Me.cmbStudio.DisplayMember = "studio_name"
-        Me.cmbStudio.Name = "cmbStudio"
-        Me.cmbStudio.NullText = ""
-        Me.cmbStudio.ValueMember = "studio_id"
         '
         'RepositoryItemLookUpEdit2
         '
@@ -1494,10 +1503,10 @@ Partial Class FrmProductsVOD
         Me.cmbLanguageSubtitle.Location = New System.Drawing.Point(113, 179)
         Me.cmbLanguageSubtitle.Name = "cmbLanguageSubtitle"
         Me.cmbLanguageSubtitle.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cmbLanguageSubtitle.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "id", 63, DevExpress.Utils.FormatType.Numeric, "", True, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("lngdsc", "Language", 64, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
-        Me.cmbLanguageSubtitle.Properties.DisplayMember = "status_desc"
+        Me.cmbLanguageSubtitle.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("subtitle_id", "id", 63, DevExpress.Utils.FormatType.Numeric, "", True, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("lngdsc", "Language", 64, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
+        Me.cmbLanguageSubtitle.Properties.DisplayMember = "lngdsc"
         Me.cmbLanguageSubtitle.Properties.NullText = ""
-        Me.cmbLanguageSubtitle.Properties.ValueMember = "status_id"
+        Me.cmbLanguageSubtitle.Properties.ValueMember = "subtitle_id"
         Me.cmbLanguageSubtitle.Size = New System.Drawing.Size(112, 20)
         Me.cmbLanguageSubtitle.TabIndex = 70
         '
@@ -1728,7 +1737,7 @@ Partial Class FrmProductsVOD
         Me.GridVodWatch.Location = New System.Drawing.Point(0, 0)
         Me.GridVodWatch.MainView = Me.gridViewVodWatch
         Me.GridVodWatch.Name = "GridVodWatch"
-        Me.GridVodWatch.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositorycmbLanguage, Me.RepositorychkAvailable, Me.RepositoryCmbStudio, Me.RepositoryBtnWatchMovie})
+        Me.GridVodWatch.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositorycmbLanguage, Me.RepositorychkAvailable, Me.RepositoryCmbStudio, Me.RepositoryBtnWatchMovie, Me.RepositoryLanguageSubtitleGrid})
         Me.GridVodWatch.Size = New System.Drawing.Size(514, 634)
         Me.GridVodWatch.TabIndex = 5
         Me.GridVodWatch.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridViewVodWatch})
@@ -1761,7 +1770,7 @@ Partial Class FrmProductsVOD
         Me.GridBand2.Columns.Add(Me.colAvailableUploaded)
         Me.GridBand2.MinWidth = 20
         Me.GridBand2.Name = "GridBand2"
-        Me.GridBand2.Width = 590
+        Me.GridBand2.Width = 582
         '
         'colBtnWatchFilm
         '
@@ -1770,7 +1779,7 @@ Partial Class FrmProductsVOD
         Me.colBtnWatchFilm.FieldName = "colBtnWatchFilm"
         Me.colBtnWatchFilm.Name = "colBtnWatchFilm"
         Me.colBtnWatchFilm.Visible = True
-        Me.colBtnWatchFilm.Width = 81
+        Me.colBtnWatchFilm.Width = 67
         '
         'RepositoryBtnWatchMovie
         '
@@ -1839,7 +1848,7 @@ Partial Class FrmProductsVOD
         Me.colLangAudioUploaded.Name = "colLangAudioUploaded"
         Me.colLangAudioUploaded.OptionsColumn.AllowEdit = False
         Me.colLangAudioUploaded.Visible = True
-        Me.colLangAudioUploaded.Width = 62
+        Me.colLangAudioUploaded.Width = 51
         '
         'RepositorycmbLanguage
         '
@@ -1854,12 +1863,21 @@ Partial Class FrmProductsVOD
         'colLangSubtitleUploaded
         '
         Me.colLangSubtitleUploaded.Caption = "Subtitle"
-        Me.colLangSubtitleUploaded.ColumnEdit = Me.RepositorycmbLanguage
+        Me.colLangSubtitleUploaded.ColumnEdit = Me.RepositoryLanguageSubtitleGrid
         Me.colLangSubtitleUploaded.FieldName = "subtitle_id"
         Me.colLangSubtitleUploaded.Name = "colLangSubtitleUploaded"
         Me.colLangSubtitleUploaded.OptionsColumn.AllowEdit = False
         Me.colLangSubtitleUploaded.Visible = True
-        Me.colLangSubtitleUploaded.Width = 42
+        Me.colLangSubtitleUploaded.Width = 59
+        '
+        'RepositoryLanguageSubtitleGrid
+        '
+        Me.RepositoryLanguageSubtitleGrid.AutoHeight = False
+        Me.RepositoryLanguageSubtitleGrid.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryLanguageSubtitleGrid.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "Name29", 20, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("code", "Name30", 20, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None)})
+        Me.RepositoryLanguageSubtitleGrid.DisplayMember = "code"
+        Me.RepositoryLanguageSubtitleGrid.Name = "RepositoryLanguageSubtitleGrid"
+        Me.RepositoryLanguageSubtitleGrid.NullText = ""
         '
         'colDateExpiredUploaded
         '
@@ -2276,15 +2294,15 @@ Partial Class FrmProductsVOD
         CType(Me.GridVod, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewSearch, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositorycmbSupportVod, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmbLanguagesSubtitleEdit, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbStudio, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbgridStatus, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbLanguages, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbLanguagesSubtitleEdit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dpDateStart.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dpDateStart, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtpDateExpired.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtpDateExpired, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkcolAvailable, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmbStudio, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XTabView.ResumeLayout(False)
         Me.XTabView.PerformLayout()
@@ -2315,6 +2333,7 @@ Partial Class FrmProductsVOD
         CType(Me.RepositoryBtnWatchMovie, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryCmbStudio, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositorycmbLanguage, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryLanguageSubtitleGrid, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositorychkAvailable, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XTabFtp.ResumeLayout(False)
         Me.XTabFtp.PerformLayout()
@@ -2556,5 +2575,6 @@ Partial Class FrmProductsVOD
     Friend WithEvents dtpDateExpired As DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
     Friend WithEvents cmbLanguagesSubtitleEdit As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents RepositoryItemLookUpEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents RepositoryLanguageSubtitleGrid As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
 
 End Class

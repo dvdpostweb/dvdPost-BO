@@ -165,7 +165,7 @@ Public Class ClsVod
 
     Public Shared Function GetAllSubtitle() As String
         Dim sql As String
-        sql = "select undertitles_id id,short_alpha code, undertitles_description lngdsc FROM products_undertitles where language_id = 1"
+        sql = "select undertitles_id subtitle_id,short_alpha code, undertitles_description lngdsc FROM products_undertitles where language_id = 1"
         Return sql
     End Function
 
