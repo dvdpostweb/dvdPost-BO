@@ -743,6 +743,20 @@ Public Class FrmProductsVOD
 
     End Function
 
+
+    Private Function SubtitleGetId(ByVal key As String, ByVal dt As DataTable) As Object
+
+        If key = "non" Then Return 0
+        Dim dr() As DataRow = dt.Select("code ='" & key & "'")
+
+        If dr.Length <> 1 Then
+            Return Nothing
+        Else
+            Return dr(0)("subtitle_id")
+        End If
+
+    End Function
+
     Private Sub CheckParseFileName(ByVal name As String, ByRef result() As String)
         ' rules path NameFile@Imdbid_DTypeOfVod_ALanguage_SSubtitle_BitRate.Extension   FATAL@1473357_Dpc_Afre_Snon_3000k.f4v
 
@@ -818,7 +832,7 @@ Public Class FrmProductsVOD
 
 
                 result(DvdPostData.ClsVod.ListField.LANGUAGE) = GetId(result(DvdPostData.ClsVod.ListField.LANGUAGE), _dtLanguageSound)
-                result(DvdPostData.ClsVod.ListField.SUBTITLE) = GetId(result(DvdPostData.ClsVod.ListField.SUBTITLE), _dtLanguageSubtitle)
+                result(DvdPostData.ClsVod.ListField.SUBTITLE) = SubtitleGetId(result(DvdPostData.ClsVod.ListField.SUBTITLE), _dtLanguageSubtitle)
                 result(DvdPostData.ClsVod.ListField.VOD_SUPPORT) = GetId(result(DvdPostData.ClsVod.ListField.VOD_SUPPORT), _dtSupport)
 
                 If result(DvdPostData.ClsVod.ListField.LANGUAGE) Is Nothing _
@@ -833,10 +847,10 @@ Public Class FrmProductsVOD
 
                 If dr Is Nothing Then
                     result(DvdPostData.ClsVod.ListField.EXPIRE_AT) = Date.MinValue
-                    result(DvdPostData.ClsVod.ListField.STUDIO) = "null"
+                    result(DvdPostData.ClsVod.ListField.STUDIO) = ""
                 Else
                     result(DvdPostData.ClsVod.ListField.EXPIRE_AT) = dr("expire_at")
-                    result(DvdPostData.ClsVod.ListField.STUDIO) = dr("studio_id")
+                    result(DvdPostData.ClsVod.ListField.STUDIO) = dr("studio_id").ToString()
                 End If
 
                 result(DvdPostData.ClsVod.ListField.AVAILABLE_FROM) = Now()

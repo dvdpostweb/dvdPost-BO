@@ -327,10 +327,6 @@ Partial Class FrmProductsVOD
         'BarManager1
         '
         Me.BarManager1.Categories.AddRange(New DevExpress.XtraBars.BarManagerCategory() {New DevExpress.XtraBars.BarManagerCategory("Main", New System.Guid("434484d9-7ac5-47e5-9412-313a111b7240")), New DevExpress.XtraBars.BarManagerCategory("Miscelaneous", New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")), New DevExpress.XtraBars.BarManagerCategory("Views", New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")), New DevExpress.XtraBars.BarManagerCategory("Filters", New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")), New DevExpress.XtraBars.BarManagerCategory("Reporting", New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")), New DevExpress.XtraBars.BarManagerCategory("Default Values", New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")), New DevExpress.XtraBars.BarManagerCategory("Quick Search", New System.Guid("2d735e09-7c7c-4ed4-b3ca-996e094a2026")), New DevExpress.XtraBars.BarManagerCategory("Misc_Maintenance", New System.Guid("d45f4b42-7c78-4255-9839-0f9b81be7603")), New DevExpress.XtraBars.BarManagerCategory("Navigation", New System.Guid("d55c49d9-25b9-4030-98b4-b0b1e7d65b90"))})
-        Me.BarManager1.DockControls.Add(Me.barDockControlTop)
-        Me.BarManager1.DockControls.Add(Me.barDockControlBottom)
-        Me.BarManager1.DockControls.Add(Me.barDockControlLeft)
-        Me.BarManager1.DockControls.Add(Me.barDockControlRight)
         Me.BarManager1.Form = Me
         Me.BarManager1.MaxItemId = 73
         Me.BarManager1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbViewListRepos, Me.txtQuickSearchRepos, Me.cmbReportListRepos, Me.cmbFilterListRepos, Me.cmbDefaultListRepos})
@@ -2078,7 +2074,7 @@ Partial Class FrmProductsVOD
         'lblError
         '
         Me.lblError.AutoSize = True
-        Me.lblError.Location = New System.Drawing.Point(203, 256)
+        Me.lblError.Location = New System.Drawing.Point(203, 327)
         Me.lblError.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblError.Name = "lblError"
         Me.lblError.Size = New System.Drawing.Size(29, 13)
@@ -2088,7 +2084,7 @@ Partial Class FrmProductsVOD
         'lblOk
         '
         Me.lblOk.AutoSize = True
-        Me.lblOk.Location = New System.Drawing.Point(206, 102)
+        Me.lblOk.Location = New System.Drawing.Point(203, 58)
         Me.lblOk.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblOk.Name = "lblOk"
         Me.lblOk.Size = New System.Drawing.Size(49, 13)
@@ -2098,10 +2094,10 @@ Partial Class FrmProductsVOD
         'lstError
         '
         Me.lstError.FormattingEnabled = True
-        Me.lstError.Location = New System.Drawing.Point(290, 217)
+        Me.lstError.Location = New System.Drawing.Point(290, 327)
         Me.lstError.Margin = New System.Windows.Forms.Padding(2)
         Me.lstError.Name = "lstError"
-        Me.lstError.Size = New System.Drawing.Size(287, 134)
+        Me.lstError.Size = New System.Drawing.Size(457, 225)
         Me.lstError.TabIndex = 11
         '
         'LstResult
@@ -2110,7 +2106,7 @@ Partial Class FrmProductsVOD
         Me.LstResult.Location = New System.Drawing.Point(290, 58)
         Me.LstResult.Margin = New System.Windows.Forms.Padding(2)
         Me.LstResult.Name = "LstResult"
-        Me.LstResult.Size = New System.Drawing.Size(287, 134)
+        Me.LstResult.Size = New System.Drawing.Size(457, 238)
         Me.LstResult.TabIndex = 10
         '
         'btnGenerateVod
