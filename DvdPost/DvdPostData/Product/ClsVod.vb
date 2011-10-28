@@ -195,11 +195,52 @@ Public Class ClsVod
         Dim strlanguage As String
         Dim strQuality As String
         Dim strStatus As String
+        Dim strStudio As String
+        Dim strimbd_id As String
+        Dim strSupport As String
+        Dim stravailable_from As String
+        Dim strexpire_at As String
+        Dim strfilename As String
+
+        If filename = "" Then
+            strfilename = "null"
+        Else
+            strfilename = "'" & filename & "'"
+        End If
+        If available_from = DateTime.MinValue Then
+            stravailable_from = "null"
+        Else
+            stravailable_from = "'" & DVDPostTools.ClsDate.formatDateDB(available_from) & "'"
+        End If
+
+        If expire_at = DateTime.MinValue Then
+            strexpire_at = "null"
+        Else
+            strexpire_at = "'" & DVDPostTools.ClsDate.formatDateDB(expire_at) & "'"
+        End If
+
+        If support = 0 Then
+            strSupport = "null"
+        Else
+            strSupport = support
+        End If
+
+        If imdb_id = 0 Then
+            strimbd_id = "null"
+        Else
+            strimbd_id = imdb_id
+        End If
+
+        If studio_id = 0 Then
+            strStudio = "null"
+        Else
+            strStudio = studio_id
+        End If
 
         If status = "" Then
             strStatus = "null"
         Else
-            strStatus = status
+            strStatus = "'" & status & "'"
         End If
         If language_id = 0 Then
             strlanguage = "null"
@@ -221,20 +262,20 @@ Public Class ClsVod
 
 
         sql = "update streaming_products sp " & _
-              " set filename = '" & filename & "'" & _
-              ", available_from = '" & DVDPostTools.ClsDate.formatDateDB(available_from) & "'" & _
-              ", expire_at = '" & DVDPostTools.ClsDate.formatDateDB(expire_at) & "'" & _
+              " set filename = " & strfilename & "" & _
+              ", available_from = " & stravailable_from & "" & _
+              ", expire_at = " & strexpire_at & "" & _
               ", available = " & available & _
               ", language_id = " & strlanguage & _
               ", subtitle_id = " & strLanguageSubtitle & _
               ", updated_at = now()" & _
-              ", studio_id = " & studio_id & _
-              ", status = '" & status & "'" & _
+              ", studio_id = " & strStudio & _
+              ", status = " & strStatus & "" & _
               ", quality = " & strQuality & _
               ", source = '" & source & "'" & _
-              ", imdb_id = " & imdb_id & _
+              ", imdb_id = " & strimbd_id & _
               ", credits = " & credit & _
-              ", vod_support_id = " & support & _
+              ", vod_support_id = " & strSupport & _
               " where id = " & streaming_products_id
 
         Return sql

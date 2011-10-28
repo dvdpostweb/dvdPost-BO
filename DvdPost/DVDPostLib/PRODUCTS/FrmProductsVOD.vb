@@ -45,21 +45,46 @@ Public Class FrmProductsVOD
     Private Sub loadData(ByVal row As DataRow)
 
         txtId.EditValue = row("id")
-        TxtFilename.EditValue = row("filename")
+        If row("filename") Is DBNull.Value Then
+            TxtFilename.EditValue = ""
+        Else
+            TxtFilename.EditValue = row("filename")
+        End If
+
         txtImdbView.EditValue = row("imdb_id")
 
-        cmbDateExpired.EditValue = row("expire_at")
-        cmbDateStart.EditValue = row("available_from")
-        cmbLanguageSound.EditValue = row("language_id")
+        If row("expire_at") Is DBNull.Value Then
+            cmbDateExpired.EditValue = DateTime.MinValue
+        Else
+            cmbDateExpired.EditValue = row("expire_at")
+        End If
+
+        If row("available_from") Is DBNull.Value Then
+            cmbDateStart.EditValue = DateTime.MinValue
+        Else
+            cmbDateStart.EditValue = row("available_from")
+        End If
+
+        If (row("language_id") Is DBNull.Value) Then
+            cmbLanguageSound.EditValue = 0
+        Else
+            cmbLanguageSound.EditValue = row("language_id")
+        End If
+
         If row("subtitle_id") Is DBNull.Value Then
             cmbLanguageSubtitle.EditValue = 0
         Else
 
             cmbLanguageSubtitle.EditValue = row("subtitle_id")
         End If
+        If row("studio_id") Is DBNull.Value Then
+            cmbStudioEdit.EditValue = 0
+        Else
+            cmbStudioEdit.EditValue = CInt(row("studio_id"))
+        End If
 
         chkAvailable.Checked = row("available")
-        cmbStudioEdit.EditValue = CInt(row("studio_id"))
+
         cmbStatus.EditValue = row("status")
         If row("quality") Is DBNull.Value Then
             cmbQuality.EditValue = ""
@@ -871,7 +896,7 @@ Public Class FrmProductsVOD
                             result(DvdPostData.ClsVod.ListField.SUBTITLE), _
                             result(DvdPostData.ClsVod.ListField.STUDIO), _
                             result(DvdPostData.ClsVod.ListField.STATUS), _
-                            Nothing, _
+                            String.Empty, _
                             result(DvdPostData.ClsVod.ListField.SOURCE), _
                             result(DvdPostData.ClsVod.ListField.VOD_SUPPORT), _
                             Integer.Parse(result(DvdPostData.ClsVod.ListField.CREDIT)))
@@ -941,19 +966,19 @@ Public Class FrmProductsVOD
         For Each dr As DataRow In dt.Rows
             Dim sql As String
             sql = DvdPostData.ClsVod.GetUpdateVod(dr("id"), _
-                                        dr("imdb_id"), _
-                                        dr("filename"), _
-                                        dr("available_from"), _
-                                        dr("expire_at"), _
+                                        IIf(dr("imdb_id") Is System.DBNull.Value, 0, dr("imdb_id")), _
+                                        IIf(dr("filename") Is System.DBNull.Value, "", dr("filename")), _
+                                        IIf(dr("available_from") Is System.DBNull.Value, DateTime.MinValue, dr("available_from")), _
+                                        IIf(dr("expire_at") Is System.DBNull.Value, DateTime.MinValue, dr("expire_at")), _
                                         dr("available"), _
-                                        dr("language_id"), _
+                                        IIf(dr("language_id") Is System.DBNull.Value, 0, dr("language_id")), _
                                         IIf(dr("subtitle_id") Is System.DBNull.Value, 0, dr("subtitle_id")), _
-                                        dr("studio_id"), _
+                                        IIf(dr("studio_id") Is System.DBNull.Value, 0, dr("studio_id")), _
                                         IIf(dr("status") Is System.DBNull.Value, "", dr("status")), _
                                         IIf(dr("quality") Is System.DBNull.Value, "", dr("quality")), _
                                         dr("source"), _
-                                        dr("vod_support_id"), _
-                                        dr("credits"))
+                                        IIf(dr("vod_support_id") Is System.DBNull.Value, 0, dr("vod_support_id")), _
+                                        IIf(dr("credits") Is System.DBNull.Value, 0, dr("credits")))
             DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
         Next

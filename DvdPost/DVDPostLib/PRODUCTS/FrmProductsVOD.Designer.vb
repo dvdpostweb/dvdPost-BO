@@ -120,6 +120,7 @@ Partial Class FrmProductsVOD
         Me.colSupportVod = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.RepositorycmbSupportVod = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.colImdb_id = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+        Me.spnedtCredit = New DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit
         Me.colproducts_name = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.colQuality = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.colSource = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
@@ -138,8 +139,8 @@ Partial Class FrmProductsVOD
         Me.colAvailable = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.chkcolAvailable = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
         Me.GridBand3 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand
-        Me.GridBand4 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand
         Me.colCredit = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+        Me.GridBand4 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand
         Me.RepositoryItemLookUpEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.XTabView = New DevExpress.XtraTab.XtraTabPage
         Me.btnDeleteVOD = New DevExpress.XtraEditors.SimpleButton
@@ -259,6 +260,7 @@ Partial Class FrmProductsVOD
         CType(Me.GridVod, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewSearch, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositorycmbSupportVod, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.spnedtCredit, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbStudio, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbgridStatus, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbLanguages, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -327,6 +329,10 @@ Partial Class FrmProductsVOD
         'BarManager1
         '
         Me.BarManager1.Categories.AddRange(New DevExpress.XtraBars.BarManagerCategory() {New DevExpress.XtraBars.BarManagerCategory("Main", New System.Guid("434484d9-7ac5-47e5-9412-313a111b7240")), New DevExpress.XtraBars.BarManagerCategory("Miscelaneous", New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")), New DevExpress.XtraBars.BarManagerCategory("Views", New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")), New DevExpress.XtraBars.BarManagerCategory("Filters", New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")), New DevExpress.XtraBars.BarManagerCategory("Reporting", New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")), New DevExpress.XtraBars.BarManagerCategory("Default Values", New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")), New DevExpress.XtraBars.BarManagerCategory("Quick Search", New System.Guid("2d735e09-7c7c-4ed4-b3ca-996e094a2026")), New DevExpress.XtraBars.BarManagerCategory("Misc_Maintenance", New System.Guid("d45f4b42-7c78-4255-9839-0f9b81be7603")), New DevExpress.XtraBars.BarManagerCategory("Navigation", New System.Guid("d55c49d9-25b9-4030-98b4-b0b1e7d65b90"))})
+        Me.BarManager1.DockControls.Add(Me.barDockControlTop)
+        Me.BarManager1.DockControls.Add(Me.barDockControlBottom)
+        Me.BarManager1.DockControls.Add(Me.barDockControlLeft)
+        Me.BarManager1.DockControls.Add(Me.barDockControlRight)
         Me.BarManager1.Form = Me
         Me.BarManager1.MaxItemId = 73
         Me.BarManager1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbViewListRepos, Me.txtQuickSearchRepos, Me.cmbReportListRepos, Me.cmbFilterListRepos, Me.cmbDefaultListRepos})
@@ -1057,7 +1063,7 @@ Partial Class FrmProductsVOD
         Me.GridVod.Location = New System.Drawing.Point(9, 32)
         Me.GridVod.MainView = Me.GridViewSearch
         Me.GridVod.Name = "GridVod"
-        Me.GridVod.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbLanguages, Me.chkcolAvailable, Me.cmbStudio, Me.RepositorycmbSupportVod, Me.cmbgridStatus, Me.dpDateStart, Me.dtpDateExpired, Me.cmbLanguagesSubtitleEdit, Me.RepositoryItemLookUpEdit2})
+        Me.GridVod.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbLanguages, Me.chkcolAvailable, Me.cmbStudio, Me.RepositorycmbSupportVod, Me.cmbgridStatus, Me.dpDateStart, Me.dtpDateExpired, Me.cmbLanguagesSubtitleEdit, Me.RepositoryItemLookUpEdit2, Me.spnedtCredit})
         Me.GridVod.Size = New System.Drawing.Size(1000, 602)
         Me.GridVod.TabIndex = 4
         Me.GridVod.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewSearch})
@@ -1097,7 +1103,7 @@ Partial Class FrmProductsVOD
         Me.GridBand1.Columns.Add(Me.colAvailable)
         Me.GridBand1.MinWidth = 20
         Me.GridBand1.Name = "GridBand1"
-        Me.GridBand1.Width = 879
+        Me.GridBand1.Width = 853
         '
         'colSupportVod
         '
@@ -1107,7 +1113,7 @@ Partial Class FrmProductsVOD
         Me.colSupportVod.Name = "colSupportVod"
         Me.colSupportVod.OptionsColumn.AllowEdit = False
         Me.colSupportVod.Visible = True
-        Me.colSupportVod.Width = 47
+        Me.colSupportVod.Width = 45
         '
         'RepositorycmbSupportVod
         '
@@ -1119,11 +1125,20 @@ Partial Class FrmProductsVOD
         'colImdb_id
         '
         Me.colImdb_id.Caption = "imdb id"
+        Me.colImdb_id.ColumnEdit = Me.spnedtCredit
         Me.colImdb_id.FieldName = "imdb_id"
         Me.colImdb_id.Name = "colImdb_id"
         Me.colImdb_id.OptionsColumn.AllowEdit = False
         Me.colImdb_id.Visible = True
-        Me.colImdb_id.Width = 54
+        Me.colImdb_id.Width = 47
+        '
+        'spnedtCredit
+        '
+        Me.spnedtCredit.AutoHeight = False
+        Me.spnedtCredit.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+        Me.spnedtCredit.MaxValue = New Decimal(New Integer() {3, 0, 0, 0})
+        Me.spnedtCredit.MinValue = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.spnedtCredit.Name = "spnedtCredit"
         '
         'colproducts_name
         '
@@ -1132,7 +1147,7 @@ Partial Class FrmProductsVOD
         Me.colproducts_name.Name = "colproducts_name"
         Me.colproducts_name.OptionsColumn.AllowEdit = False
         Me.colproducts_name.Visible = True
-        Me.colproducts_name.Width = 135
+        Me.colproducts_name.Width = 131
         '
         'colQuality
         '
@@ -1141,7 +1156,7 @@ Partial Class FrmProductsVOD
         Me.colQuality.Name = "colQuality"
         Me.colQuality.OptionsColumn.AllowEdit = False
         Me.colQuality.Visible = True
-        Me.colQuality.Width = 46
+        Me.colQuality.Width = 44
         '
         'colSource
         '
@@ -1150,7 +1165,7 @@ Partial Class FrmProductsVOD
         Me.colSource.Name = "colSource"
         Me.colSource.OptionsColumn.AllowEdit = False
         Me.colSource.Visible = True
-        Me.colSource.Width = 51
+        Me.colSource.Width = 49
         '
         'colStudio
         '
@@ -1159,7 +1174,7 @@ Partial Class FrmProductsVOD
         Me.colStudio.FieldName = "studio_id"
         Me.colStudio.Name = "colStudio"
         Me.colStudio.Visible = True
-        Me.colStudio.Width = 68
+        Me.colStudio.Width = 67
         '
         'cmbStudio
         '
@@ -1178,7 +1193,7 @@ Partial Class FrmProductsVOD
         Me.colStatus.FieldName = "status"
         Me.colStatus.Name = "colStatus"
         Me.colStatus.Visible = True
-        Me.colStatus.Width = 72
+        Me.colStatus.Width = 69
         '
         'cmbgridStatus
         '
@@ -1194,7 +1209,7 @@ Partial Class FrmProductsVOD
         Me.collanguage_id.Name = "collanguage_id"
         Me.collanguage_id.OptionsColumn.AllowEdit = False
         Me.collanguage_id.Visible = True
-        Me.collanguage_id.Width = 87
+        Me.collanguage_id.Width = 89
         '
         'cmbLanguages
         '
@@ -1214,7 +1229,7 @@ Partial Class FrmProductsVOD
         Me.colLanguage_subtitle.Name = "colLanguage_subtitle"
         Me.colLanguage_subtitle.OptionsColumn.AllowEdit = False
         Me.colLanguage_subtitle.Visible = True
-        Me.colLanguage_subtitle.Width = 99
+        Me.colLanguage_subtitle.Width = 96
         '
         'cmbLanguagesSubtitleEdit
         '
@@ -1232,7 +1247,7 @@ Partial Class FrmProductsVOD
         Me.ColAvailable_from.FieldName = "available_from"
         Me.ColAvailable_from.Name = "ColAvailable_from"
         Me.ColAvailable_from.Visible = True
-        Me.ColAvailable_from.Width = 79
+        Me.ColAvailable_from.Width = 67
         '
         'dpDateStart
         '
@@ -1248,7 +1263,7 @@ Partial Class FrmProductsVOD
         Me.colExpireAt.FieldName = "expire_at"
         Me.colExpireAt.Name = "colExpireAt"
         Me.colExpireAt.Visible = True
-        Me.colExpireAt.Width = 72
+        Me.colExpireAt.Width = 82
         '
         'dtpDateExpired
         '
@@ -1264,7 +1279,7 @@ Partial Class FrmProductsVOD
         Me.colAvailable.FieldName = "available"
         Me.colAvailable.Name = "colAvailable"
         Me.colAvailable.Visible = True
-        Me.colAvailable.Width = 69
+        Me.colAvailable.Width = 67
         '
         'chkcolAvailable
         '
@@ -1276,21 +1291,26 @@ Partial Class FrmProductsVOD
         'GridBand3
         '
         Me.GridBand3.Caption = "gridBand1"
+        Me.GridBand3.Columns.Add(Me.colCredit)
+        Me.GridBand3.MinWidth = 20
         Me.GridBand3.Name = "GridBand3"
-        Me.GridBand3.Width = 46
-        '
-        'GridBand4
-        '
-        Me.GridBand4.Caption = "gridBand2"
-        Me.GridBand4.Name = "GridBand4"
-        Me.GridBand4.Width = 54
+        Me.GridBand3.Width = 72
         '
         'colCredit
         '
         Me.colCredit.Caption = "credit"
-        Me.colCredit.FieldName = "credit"
+        Me.colCredit.ColumnEdit = Me.spnedtCredit
+        Me.colCredit.FieldName = "credits"
         Me.colCredit.Name = "colCredit"
-        Me.colCredit.OptionsColumn.AllowEdit = False
+        Me.colCredit.Visible = True
+        Me.colCredit.Width = 72
+        '
+        'GridBand4
+        '
+        Me.GridBand4.Caption = "gridBand2"
+        Me.GridBand4.MinWidth = 20
+        Me.GridBand4.Name = "GridBand4"
+        Me.GridBand4.Width = 54
         '
         'RepositoryItemLookUpEdit2
         '
@@ -2290,6 +2310,7 @@ Partial Class FrmProductsVOD
         CType(Me.GridVod, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewSearch, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositorycmbSupportVod, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.spnedtCredit, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbStudio, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbgridStatus, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbLanguages, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2572,5 +2593,6 @@ Partial Class FrmProductsVOD
     Friend WithEvents cmbLanguagesSubtitleEdit As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents RepositoryItemLookUpEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents RepositoryLanguageSubtitleGrid As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents spnedtCredit As DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit
 
 End Class
