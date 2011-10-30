@@ -5388,6 +5388,7 @@ Public Class frmDVD_Maint
             'Validate Fields and assign any Necessary ID
             MainData.ValidateRecordFields(CType(Me.BindingContext(objDS, TableName).Current, DataRowView))
             'Attempt to update the datasource.
+            Me.objDS.products(0).products_last_modified = DateTime.Now
             Me.UpdateDataSet()
             SetState(BrowseState)
             PopMenuNew.Enabled = True
