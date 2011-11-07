@@ -325,6 +325,7 @@ Public Class ClsVod
         Dim strQuality As String
         Dim strlanguage As String
         Dim strStudio As String
+        Dim strExpireAt As String
 
         If language_id <= 0 Then
             strlanguage = "null"
@@ -350,8 +351,14 @@ Public Class ClsVod
             strStudio = "'" & studio_id & "'"
         End If
 
+        If expire_at = DateTime.MinValue Then
+            strExpireAt = "null"
+        Else
+            strExpireAt = "'" & DVDPostTools.ClsDate.formatDateDB(expire_at) & "'"
+        End If
+
         sql = "insert into streaming_products values (null," & imdb_id & ",'" & filename & "','" & DVDPostTools.ClsDate.formatDateDB(available_from) & _
-              "','" & DVDPostTools.ClsDate.formatDateDB(expire_at) & "'," & available & "," & strlanguage & "," & strLanguageSubtitle & ",now(),now()," & strStudio & ",'" & status & "'," & strQuality & ",'" & source & "'," & support & "," & credit & ")"
+              "'," & strExpireAt & "," & available & "," & strlanguage & "," & strLanguageSubtitle & ",now(),now()," & strStudio & ",'" & status & "'," & strQuality & ",'" & source & "'," & support & "," & credit & ")"
         Return sql
     End Function
 

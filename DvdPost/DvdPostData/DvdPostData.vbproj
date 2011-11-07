@@ -162,6 +162,7 @@
     <Compile Include="Site\clsThemeTop.vb" />
     <Compile Include="Site\clsTranslate.vb" />
     <Compile Include="Stat\Product\clsStatProduct.vb" />
+    <Compile Include="Stat\VOD\clsStatVOD.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
