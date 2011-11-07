@@ -716,7 +716,6 @@ Public Class FrmProductsVOD
 
         sql = DvdPostData.ClsVod.getSelectVod(result(DvdPostData.ClsVod.ListField.IMDB_ID), result(DvdPostData.ClsVod.ListField.LANGUAGE), result(DvdPostData.ClsVod.ListField.SUBTITLE), result(DvdPostData.ClsVod.ListField.SOURCE), result(DvdPostData.ClsVod.ListField.VOD_SUPPORT))
         dt = DvdPostData.clsConnection.FillDataSet(sql)
-
         Return dt.Rows.Count > 0
     End Function
 
@@ -851,10 +850,11 @@ Public Class FrmProductsVOD
 
 
         For Each name As String In struct
+
             FillEmptyValue(result)
             CheckParseFileName(name, result)
-            If result IsNot Nothing Then
 
+            If result IsNot Nothing Then
 
                 result(DvdPostData.ClsVod.ListField.LANGUAGE) = GetId(result(DvdPostData.ClsVod.ListField.LANGUAGE), _dtLanguageSound)
                 result(DvdPostData.ClsVod.ListField.SUBTITLE) = SubtitleGetId(result(DvdPostData.ClsVod.ListField.SUBTITLE), _dtLanguageSubtitle)
@@ -863,10 +863,9 @@ Public Class FrmProductsVOD
                 If result(DvdPostData.ClsVod.ListField.LANGUAGE) Is Nothing _
                    Or result(DvdPostData.ClsVod.ListField.SUBTITLE) Is Nothing _
                    Or result(DvdPostData.ClsVod.ListField.VOD_SUPPORT) Is Nothing Then
-                    lstError.Items.Add(name)
                     Continue For
-
                 End If
+
 
                 dr = GetInfoVod(result)
 
@@ -874,8 +873,15 @@ Public Class FrmProductsVOD
                     result(DvdPostData.ClsVod.ListField.EXPIRE_AT) = Date.MinValue
                     result(DvdPostData.ClsVod.ListField.STUDIO) = ""
                 Else
-                    result(DvdPostData.ClsVod.ListField.EXPIRE_AT) = dr("expire_at")
+
+                    If dr("expire_at") IsNot DBNull.Value Then
+                        result(DvdPostData.ClsVod.ListField.EXPIRE_AT) = dr("expire_at")
+                    Else
+                        result(DvdPostData.ClsVod.ListField.EXPIRE_AT) = DateTime.MinValue
+                    End If
+
                     result(DvdPostData.ClsVod.ListField.STUDIO) = dr("studio_id").ToString()
+
                 End If
 
                 result(DvdPostData.ClsVod.ListField.AVAILABLE_FROM) = Now()
@@ -903,14 +909,12 @@ Public Class FrmProductsVOD
 
                     DvdPostData.clsConnection.ExecuteNonQuery(sql)
                     LstResult.Items.Add(name)
-
                 End If
 
             Else
                 lstError.Items.Add(name)
             End If
         Next
-
 
     End Sub
 
