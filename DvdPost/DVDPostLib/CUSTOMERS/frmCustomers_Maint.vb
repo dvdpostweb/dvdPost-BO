@@ -2047,8 +2047,8 @@ Me.SuspendLayout
 '
 'StatusBar1
 '
-Me.StatusBar1.Location = New System.Drawing.Point(0, 870)
-Me.StatusBar1.Size = New System.Drawing.Size(1262, 12)
+Me.StatusBar1.Location = New System.Drawing.Point(0, 872)
+Me.StatusBar1.Size = New System.Drawing.Size(1262, 10)
 '
 'coldvd_finally_arrived_mail3
 '
@@ -2130,7 +2130,7 @@ coldvd_to_send.Width = 117
 '
 Me.tabAboProcessOld.Controls.Add(Me.GridAboprocessOld)
 Me.tabAboProcessOld.Name = "tabAboProcessOld"
-Me.tabAboProcessOld.Size = New System.Drawing.Size(1505, 905)
+Me.tabAboProcessOld.Size = New System.Drawing.Size(1043, 681)
 Me.tabAboProcessOld.Text = "aboProcess Old"
 '
 'GridAboprocessOld
@@ -2141,7 +2141,7 @@ Me.GridAboprocessOld.FormsUseDefaultLookAndFeel = false
 Me.GridAboprocessOld.Location = New System.Drawing.Point(0, 0)
 Me.GridAboprocessOld.MainView = Me.GridViewAboprocessOld
 Me.GridAboprocessOld.Name = "GridAboprocessOld"
-Me.GridAboprocessOld.Size = New System.Drawing.Size(1505, 905)
+Me.GridAboprocessOld.Size = New System.Drawing.Size(1043, 681)
 Me.GridAboprocessOld.TabIndex = 0
 Me.GridAboprocessOld.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewAboprocessOld})
 '
@@ -2391,19 +2391,19 @@ Me.date_start.VisibleIndex = 0
 'txtNextCredit
 '
 Me.txtNextCredit.Enabled = false
-Me.txtNextCredit.Location = New System.Drawing.Point(836, 16)
+Me.txtNextCredit.Location = New System.Drawing.Point(697, 14)
 Me.txtNextCredit.Name = "txtNextCredit"
 Me.txtNextCredit.Properties.ReadOnly = true
-Me.txtNextCredit.Size = New System.Drawing.Size(95, 22)
+Me.txtNextCredit.Size = New System.Drawing.Size(79, 20)
 Me.txtNextCredit.TabIndex = 21
 '
 'txtNextPrice
 '
 Me.txtNextPrice.Enabled = false
-Me.txtNextPrice.Location = New System.Drawing.Point(1025, 16)
+Me.txtNextPrice.Location = New System.Drawing.Point(854, 14)
 Me.txtNextPrice.Name = "txtNextPrice"
 Me.txtNextPrice.Properties.ReadOnly = true
-Me.txtNextPrice.Size = New System.Drawing.Size(95, 22)
+Me.txtNextPrice.Size = New System.Drawing.Size(79, 20)
 Me.txtNextPrice.TabIndex = 23
 '
 'objDS
@@ -2448,11 +2448,11 @@ Me.sponsor.Width = 888
 '
 Me.GridSon.EmbeddedNavigator.Name = ""
 Me.GridSon.FormsUseDefaultLookAndFeel = false
-Me.GridSon.Location = New System.Drawing.Point(0, 42)
+Me.GridSon.Location = New System.Drawing.Point(0, 36)
 Me.GridSon.MainView = Me.GridViewSon
 Me.GridSon.Name = "GridSon"
 Me.GridSon.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryISponsorCustomers_id})
-Me.GridSon.Size = New System.Drawing.Size(732, 264)
+Me.GridSon.Size = New System.Drawing.Size(610, 229)
 Me.GridSon.TabIndex = 0
 Me.GridSon.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewSon, Me.GridViewGodson})
 '
@@ -3037,25 +3037,25 @@ Me.tabMailHistory.AutoScroll = true
 Me.tabMailHistory.Controls.Add(Me.browser)
 Me.tabMailHistory.Controls.Add(Me.grpContEmail)
 Me.tabMailHistory.Name = "tabMailHistory"
-Me.tabMailHistory.Size = New System.Drawing.Size(1505, 905)
+Me.tabMailHistory.Size = New System.Drawing.Size(1043, 681)
 Me.tabMailHistory.Text = "mail history"
 '
 'browser
 '
-Me.browser.Location = New System.Drawing.Point(8, 447)
+Me.browser.Location = New System.Drawing.Point(7, 387)
 Me.browser.MinimumSize = New System.Drawing.Size(20, 20)
 Me.browser.Name = "browser"
-Me.browser.Size = New System.Drawing.Size(1395, 519)
+Me.browser.Size = New System.Drawing.Size(1162, 450)
 Me.browser.TabIndex = 18
 '
 'grpContEmail
 '
 Me.grpContEmail.EmbeddedNavigator.Name = ""
 Me.grpContEmail.FormsUseDefaultLookAndFeel = false
-Me.grpContEmail.Location = New System.Drawing.Point(4, 38)
+Me.grpContEmail.Location = New System.Drawing.Point(3, 33)
 Me.grpContEmail.MainView = Me.GridViewMail
 Me.grpContEmail.Name = "grpContEmail"
-Me.grpContEmail.Size = New System.Drawing.Size(1399, 404)
+Me.grpContEmail.Size = New System.Drawing.Size(1166, 350)
 Me.grpContEmail.TabIndex = 16
 Me.grpContEmail.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewMail})
 '
@@ -3149,7 +3149,7 @@ Me.GridCustServ.FormsUseDefaultLookAndFeel = false
 Me.GridCustServ.Location = New System.Drawing.Point(0, 0)
 Me.GridCustServ.MainView = Me.gridViewCustServ
 Me.GridCustServ.Name = "GridCustServ"
-Me.GridCustServ.Size = New System.Drawing.Size(806, 905)
+Me.GridCustServ.Size = New System.Drawing.Size(672, 681)
 Me.GridCustServ.TabIndex = 1
 Me.GridCustServ.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridViewCustServ})
 '
@@ -3277,26 +3277,26 @@ Me.tabDroselia.Controls.Add(Me.txtDroselia)
 Me.tabDroselia.Controls.Add(Me.GridDroselia)
 Me.tabDroselia.Controls.Add(Me.butGenCode)
 Me.tabDroselia.Name = "tabDroselia"
-Me.tabDroselia.Size = New System.Drawing.Size(1505, 905)
+Me.tabDroselia.Size = New System.Drawing.Size(1043, 681)
 Me.tabDroselia.Text = "Droselia"
 '
 'LabelControl38
 '
-Me.LabelControl38.Location = New System.Drawing.Point(4, 20)
+Me.LabelControl38.Location = New System.Drawing.Point(3, 17)
 Me.LabelControl38.Name = "LabelControl38"
-Me.LabelControl38.Size = New System.Drawing.Size(160, 16)
+Me.LabelControl38.Size = New System.Drawing.Size(135, 13)
 Me.LabelControl38.TabIndex = 22
 Me.LabelControl38.Text = "number of code to generate"
 '
 'txtDroselia
 '
 Me.txtDroselia.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-Me.txtDroselia.Location = New System.Drawing.Point(174, 16)
+Me.txtDroselia.Location = New System.Drawing.Point(145, 14)
 Me.txtDroselia.Name = "txtDroselia"
 Me.txtDroselia.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
 Me.txtDroselia.Properties.MaxLength = 1000
 Me.txtDroselia.Properties.MaxValue = New Decimal(New Integer() {99999, 0, 0, 0})
-Me.txtDroselia.Size = New System.Drawing.Size(78, 22)
+Me.txtDroselia.Size = New System.Drawing.Size(65, 20)
 Me.txtDroselia.TabIndex = 21
 '
 'GridDroselia
@@ -3306,10 +3306,10 @@ Me.GridDroselia.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or Syste
             Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
 Me.GridDroselia.EmbeddedNavigator.Name = ""
 Me.GridDroselia.FormsUseDefaultLookAndFeel = false
-Me.GridDroselia.Location = New System.Drawing.Point(0, 67)
+Me.GridDroselia.Location = New System.Drawing.Point(0, 58)
 Me.GridDroselia.MainView = Me.GridViewDroselia
 Me.GridDroselia.Name = "GridDroselia"
-Me.GridDroselia.Size = New System.Drawing.Size(1502, 842)
+Me.GridDroselia.Size = New System.Drawing.Size(1042, 623)
 Me.GridDroselia.TabIndex = 16
 Me.GridDroselia.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewDroselia})
 '
@@ -3386,9 +3386,9 @@ Me.droselia_url_link.VisibleIndex = 4
 '
 'butGenCode
 '
-Me.butGenCode.Location = New System.Drawing.Point(266, 15)
+Me.butGenCode.Location = New System.Drawing.Point(222, 13)
 Me.butGenCode.Name = "butGenCode"
-Me.butGenCode.Size = New System.Drawing.Size(111, 27)
+Me.butGenCode.Size = New System.Drawing.Size(92, 23)
 Me.butGenCode.TabIndex = 11
 Me.butGenCode.Text = "Generate code"
 '
@@ -3396,7 +3396,7 @@ Me.butGenCode.Text = "Generate code"
 '
 Me.tabPaymentMovements.Controls.Add(Me.GCBankAccountMovement)
 Me.tabPaymentMovements.Name = "tabPaymentMovements"
-Me.tabPaymentMovements.Size = New System.Drawing.Size(1505, 905)
+Me.tabPaymentMovements.Size = New System.Drawing.Size(1043, 681)
 Me.tabPaymentMovements.Text = "Payment Movements"
 '
 'GCBankAccountMovement
@@ -3406,7 +3406,7 @@ Me.GCBankAccountMovement.Controls.Add(Me.GridBankAccountMovements)
 Me.GCBankAccountMovement.Dock = System.Windows.Forms.DockStyle.Fill
 Me.GCBankAccountMovement.Location = New System.Drawing.Point(0, 0)
 Me.GCBankAccountMovement.Name = "GCBankAccountMovement"
-Me.GCBankAccountMovement.Size = New System.Drawing.Size(1505, 905)
+Me.GCBankAccountMovement.Size = New System.Drawing.Size(1043, 681)
 Me.GCBankAccountMovement.TabIndex = 1
 Me.GCBankAccountMovement.Text = "Bank Account movements"
 '
@@ -3415,11 +3415,11 @@ Me.GCBankAccountMovement.Text = "Bank Account movements"
 Me.GridBankAccountMovements.Dock = System.Windows.Forms.DockStyle.Fill
 Me.GridBankAccountMovements.EmbeddedNavigator.Name = ""
 Me.GridBankAccountMovements.FormsUseDefaultLookAndFeel = false
-Me.GridBankAccountMovements.Location = New System.Drawing.Point(2, 22)
+Me.GridBankAccountMovements.Location = New System.Drawing.Point(2, 20)
 Me.GridBankAccountMovements.MainView = Me.GridViewBankAccountMovements
 Me.GridBankAccountMovements.Name = "GridBankAccountMovements"
 Me.GridBankAccountMovements.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryCmbMatching})
-Me.GridBankAccountMovements.Size = New System.Drawing.Size(1501, 881)
+Me.GridBankAccountMovements.Size = New System.Drawing.Size(1039, 659)
 Me.GridBankAccountMovements.TabIndex = 5
 Me.GridBankAccountMovements.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewBankAccountMovements})
 '
@@ -3608,7 +3608,7 @@ Me.GridOrders.Location = New System.Drawing.Point(0, 0)
 Me.GridOrders.MainView = Me.GridViewOrders
 Me.GridOrders.Name = "GridOrders"
 Me.GridOrders.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryIbtnCheckOrder})
-Me.GridOrders.Size = New System.Drawing.Size(1115, 881)
+Me.GridOrders.Size = New System.Drawing.Size(1008, 659)
 Me.GridOrders.TabIndex = 1
 Me.GridOrders.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewOrders})
 '
@@ -3790,7 +3790,7 @@ Me.GridABO.FormsUseDefaultLookAndFeel = false
 Me.GridABO.Location = New System.Drawing.Point(0, 0)
 Me.GridABO.MainView = Me.GridViewABO
 Me.GridABO.Name = "GridABO"
-Me.GridABO.Size = New System.Drawing.Size(1505, 905)
+Me.GridABO.Size = New System.Drawing.Size(1043, 681)
 Me.GridABO.TabIndex = 0
 Me.GridABO.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewABO})
 '
@@ -3958,18 +3958,18 @@ Me.tabPayment.Controls.Add(Me.LabelControl49)
 Me.tabPayment.Controls.Add(Me.cmbPayMethod)
 Me.tabPayment.Controls.Add(Me.LabelControl50)
 Me.tabPayment.Name = "tabPayment"
-Me.tabPayment.Size = New System.Drawing.Size(1505, 905)
+Me.tabPayment.Size = New System.Drawing.Size(1043, 681)
 Me.tabPayment.Text = "Invoices"
 '
 'GridPayment
 '
 Me.GridPayment.EmbeddedNavigator.Name = ""
 Me.GridPayment.FormsUseDefaultLookAndFeel = false
-Me.GridPayment.Location = New System.Drawing.Point(4, 269)
+Me.GridPayment.Location = New System.Drawing.Point(3, 233)
 Me.GridPayment.MainView = Me.GridViewPayment
 Me.GridPayment.Name = "GridPayment"
 Me.GridPayment.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit5})
-Me.GridPayment.Size = New System.Drawing.Size(1380, 518)
+Me.GridPayment.Size = New System.Drawing.Size(1150, 449)
 Me.GridPayment.TabIndex = 61
 Me.GridPayment.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewPayment})
 '
@@ -4032,38 +4032,38 @@ Me.colPayment_status.Width = 105
 '
 'BtnPaid
 '
-Me.BtnPaid.Location = New System.Drawing.Point(607, 231)
+Me.BtnPaid.Location = New System.Drawing.Point(506, 200)
 Me.BtnPaid.Name = "BtnPaid"
-Me.BtnPaid.Size = New System.Drawing.Size(163, 26)
+Me.BtnPaid.Size = New System.Drawing.Size(136, 23)
 Me.BtnPaid.TabIndex = 64
 Me.BtnPaid.Text = "Paid Payment"
 '
 'btnLoadPayment
 '
-Me.btnLoadPayment.Location = New System.Drawing.Point(181, 231)
+Me.btnLoadPayment.Location = New System.Drawing.Point(151, 200)
 Me.btnLoadPayment.Name = "btnLoadPayment"
-Me.btnLoadPayment.Size = New System.Drawing.Size(173, 26)
+Me.btnLoadPayment.Size = New System.Drawing.Size(144, 23)
 Me.btnLoadPayment.TabIndex = 63
 Me.btnLoadPayment.Text = "Load"
 '
 'checkOpenPayment
 '
-Me.checkOpenPayment.Location = New System.Drawing.Point(41, 235)
+Me.checkOpenPayment.Location = New System.Drawing.Point(34, 204)
 Me.checkOpenPayment.Name = "checkOpenPayment"
 Me.checkOpenPayment.Properties.Caption = "Open Payment"
 Me.checkOpenPayment.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
 Me.checkOpenPayment.Properties.ValueChecked = 1
 Me.checkOpenPayment.Properties.ValueUnchecked = 0
-Me.checkOpenPayment.Size = New System.Drawing.Size(127, 21)
+Me.checkOpenPayment.Size = New System.Drawing.Size(106, 19)
 Me.checkOpenPayment.TabIndex = 62
 '
 'GroupOgone
 '
 Me.GroupOgone.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
 Me.GroupOgone.Controls.Add(Me.PanelOgone)
-Me.GroupOgone.Location = New System.Drawing.Point(509, 47)
+Me.GroupOgone.Location = New System.Drawing.Point(424, 41)
 Me.GroupOgone.Name = "GroupOgone"
-Me.GroupOgone.Size = New System.Drawing.Size(552, 162)
+Me.GroupOgone.Size = New System.Drawing.Size(460, 140)
 Me.GroupOgone.TabIndex = 57
 Me.GroupOgone.Text = "OGONE"
 '
@@ -4080,9 +4080,9 @@ Me.PanelOgone.Controls.Add(Me.txt_cc_card_no2)
 Me.PanelOgone.Controls.Add(Me.LabelControl57)
 Me.PanelOgone.Controls.Add(Me.txt_cc_owner2)
 Me.PanelOgone.Controls.Add(Me.LabelControl58)
-Me.PanelOgone.Location = New System.Drawing.Point(6, 27)
+Me.PanelOgone.Location = New System.Drawing.Point(5, 23)
 Me.PanelOgone.Name = "PanelOgone"
-Me.PanelOgone.Size = New System.Drawing.Size(538, 128)
+Me.PanelOgone.Size = New System.Drawing.Size(448, 111)
 Me.PanelOgone.TabIndex = 0
 '
 'txt_cc_expiration_date2
@@ -4090,9 +4090,9 @@ Me.PanelOgone.TabIndex = 0
 Me.txt_cc_expiration_date2.AllowDrop = true
 Me.txt_cc_expiration_date2.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.ogone_exp_date", true))
 Me.txt_cc_expiration_date2.Enabled = false
-Me.txt_cc_expiration_date2.Location = New System.Drawing.Point(170, 96)
+Me.txt_cc_expiration_date2.Location = New System.Drawing.Point(142, 83)
 Me.txt_cc_expiration_date2.Name = "txt_cc_expiration_date2"
-Me.txt_cc_expiration_date2.Size = New System.Drawing.Size(197, 22)
+Me.txt_cc_expiration_date2.Size = New System.Drawing.Size(164, 20)
 Me.txt_cc_expiration_date2.TabIndex = 59
 '
 'cmb_cc_expiration_status2
@@ -4100,7 +4100,7 @@ Me.txt_cc_expiration_date2.TabIndex = 59
 Me.cmb_cc_expiration_status2.AllowDrop = true
 Me.cmb_cc_expiration_status2.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.ogone_cc_expiration_status", true))
 Me.cmb_cc_expiration_status2.Enabled = false
-Me.cmb_cc_expiration_status2.Location = New System.Drawing.Point(374, 96)
+Me.cmb_cc_expiration_status2.Location = New System.Drawing.Point(312, 83)
 Me.cmb_cc_expiration_status2.Name = "cmb_cc_expiration_status2"
 Me.cmb_cc_expiration_status2.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.cmb_cc_expiration_status2.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("cc_expiration_status_name", "Name", 33, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)})
@@ -4108,14 +4108,14 @@ Me.cmb_cc_expiration_status2.Properties.DataSource = Me.objDS.cc_expiration_stat
 Me.cmb_cc_expiration_status2.Properties.DisplayMember = "cc_expiration_status_name"
 Me.cmb_cc_expiration_status2.Properties.NullText = ""
 Me.cmb_cc_expiration_status2.Properties.ValueMember = "cc_expiration_status_id"
-Me.cmb_cc_expiration_status2.Size = New System.Drawing.Size(153, 22)
+Me.cmb_cc_expiration_status2.Size = New System.Drawing.Size(127, 20)
 Me.cmb_cc_expiration_status2.TabIndex = 58
 '
 'LabelControl55
 '
-Me.LabelControl55.Location = New System.Drawing.Point(11, 99)
+Me.LabelControl55.Location = New System.Drawing.Point(9, 86)
 Me.LabelControl55.Name = "LabelControl55"
-Me.LabelControl55.Size = New System.Drawing.Size(135, 16)
+Me.LabelControl55.Size = New System.Drawing.Size(115, 13)
 Me.LabelControl55.TabIndex = 57
 Me.LabelControl55.Text = "Expiration Date / Status"
 '
@@ -4123,16 +4123,16 @@ Me.LabelControl55.Text = "Expiration Date / Status"
 '
 Me.txt_cc_card_type2.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.ogone_card_type", true))
 Me.txt_cc_card_type2.Enabled = false
-Me.txt_cc_card_type2.Location = New System.Drawing.Point(170, 6)
+Me.txt_cc_card_type2.Location = New System.Drawing.Point(142, 5)
 Me.txt_cc_card_type2.Name = "txt_cc_card_type2"
-Me.txt_cc_card_type2.Size = New System.Drawing.Size(197, 22)
+Me.txt_cc_card_type2.Size = New System.Drawing.Size(164, 20)
 Me.txt_cc_card_type2.TabIndex = 55
 '
 'LabelControl56
 '
-Me.LabelControl56.Location = New System.Drawing.Point(11, 9)
+Me.LabelControl56.Location = New System.Drawing.Point(9, 8)
 Me.LabelControl56.Name = "LabelControl56"
-Me.LabelControl56.Size = New System.Drawing.Size(59, 16)
+Me.LabelControl56.Size = New System.Drawing.Size(50, 13)
 Me.LabelControl56.TabIndex = 54
 Me.LabelControl56.Text = "Card Type"
 '
@@ -4141,16 +4141,16 @@ Me.LabelControl56.Text = "Card Type"
 Me.txt_cc_card_no2.AllowDrop = true
 Me.txt_cc_card_no2.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.ogone_card_no", true))
 Me.txt_cc_card_no2.Enabled = false
-Me.txt_cc_card_no2.Location = New System.Drawing.Point(170, 66)
+Me.txt_cc_card_no2.Location = New System.Drawing.Point(142, 57)
 Me.txt_cc_card_no2.Name = "txt_cc_card_no2"
-Me.txt_cc_card_no2.Size = New System.Drawing.Size(197, 22)
+Me.txt_cc_card_no2.Size = New System.Drawing.Size(164, 20)
 Me.txt_cc_card_no2.TabIndex = 53
 '
 'LabelControl57
 '
-Me.LabelControl57.Location = New System.Drawing.Point(11, 69)
+Me.LabelControl57.Location = New System.Drawing.Point(9, 60)
 Me.LabelControl57.Name = "LabelControl57"
-Me.LabelControl57.Size = New System.Drawing.Size(46, 16)
+Me.LabelControl57.Size = New System.Drawing.Size(39, 13)
 Me.LabelControl57.TabIndex = 52
 Me.LabelControl57.Text = "Card No"
 '
@@ -4159,24 +4159,24 @@ Me.LabelControl57.Text = "Card No"
 Me.txt_cc_owner2.AllowDrop = true
 Me.txt_cc_owner2.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.ogone_owner", true))
 Me.txt_cc_owner2.Enabled = false
-Me.txt_cc_owner2.Location = New System.Drawing.Point(170, 36)
+Me.txt_cc_owner2.Location = New System.Drawing.Point(142, 31)
 Me.txt_cc_owner2.Name = "txt_cc_owner2"
-Me.txt_cc_owner2.Size = New System.Drawing.Size(197, 22)
+Me.txt_cc_owner2.Size = New System.Drawing.Size(164, 20)
 Me.txt_cc_owner2.TabIndex = 51
 '
 'LabelControl58
 '
-Me.LabelControl58.Location = New System.Drawing.Point(11, 39)
+Me.LabelControl58.Location = New System.Drawing.Point(9, 34)
 Me.LabelControl58.Name = "LabelControl58"
-Me.LabelControl58.Size = New System.Drawing.Size(38, 16)
+Me.LabelControl58.Size = New System.Drawing.Size(32, 13)
 Me.LabelControl58.TabIndex = 50
 Me.LabelControl58.Text = "Owner"
 '
 'BtnCancelPayment
 '
-Me.BtnCancelPayment.Location = New System.Drawing.Point(409, 231)
+Me.BtnCancelPayment.Location = New System.Drawing.Point(341, 200)
 Me.BtnCancelPayment.Name = "BtnCancelPayment"
-Me.BtnCancelPayment.Size = New System.Drawing.Size(163, 26)
+Me.BtnCancelPayment.Size = New System.Drawing.Size(136, 23)
 Me.BtnCancelPayment.TabIndex = 54
 Me.BtnCancelPayment.Text = "Cancel Payment"
 '
@@ -4184,9 +4184,9 @@ Me.BtnCancelPayment.Text = "Cancel Payment"
 '
 Me.GroupDomiciliation.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
 Me.GroupDomiciliation.Controls.Add(Me.panelDomiciliation)
-Me.GroupDomiciliation.Location = New System.Drawing.Point(23, 47)
+Me.GroupDomiciliation.Location = New System.Drawing.Point(19, 41)
 Me.GroupDomiciliation.Name = "GroupDomiciliation"
-Me.GroupDomiciliation.Size = New System.Drawing.Size(449, 168)
+Me.GroupDomiciliation.Size = New System.Drawing.Size(374, 145)
 Me.GroupDomiciliation.TabIndex = 56
 Me.GroupDomiciliation.Text = "Domiciliation"
 '
@@ -4202,9 +4202,9 @@ Me.panelDomiciliation.Controls.Add(Me.txtDomDebiterName)
 Me.panelDomiciliation.Controls.Add(Me.LabelControl53)
 Me.panelDomiciliation.Controls.Add(Me.cmbDomStatus)
 Me.panelDomiciliation.Controls.Add(Me.LabelControl54)
-Me.panelDomiciliation.Location = New System.Drawing.Point(4, 27)
+Me.panelDomiciliation.Location = New System.Drawing.Point(3, 23)
 Me.panelDomiciliation.Name = "panelDomiciliation"
-Me.panelDomiciliation.Size = New System.Drawing.Size(439, 128)
+Me.panelDomiciliation.Size = New System.Drawing.Size(366, 111)
 Me.panelDomiciliation.TabIndex = 0
 '
 'txtDomAcctNumber
@@ -4212,16 +4212,16 @@ Me.panelDomiciliation.TabIndex = 0
 Me.txtDomAcctNumber.AllowDrop = true
 Me.txtDomAcctNumber.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.domiciliation_account_number", true))
 Me.txtDomAcctNumber.Enabled = false
-Me.txtDomAcctNumber.Location = New System.Drawing.Point(155, 96)
+Me.txtDomAcctNumber.Location = New System.Drawing.Point(129, 83)
 Me.txtDomAcctNumber.Name = "txtDomAcctNumber"
-Me.txtDomAcctNumber.Size = New System.Drawing.Size(269, 22)
+Me.txtDomAcctNumber.Size = New System.Drawing.Size(224, 20)
 Me.txtDomAcctNumber.TabIndex = 53
 '
 'LabelControl51
 '
-Me.LabelControl51.Location = New System.Drawing.Point(18, 99)
+Me.LabelControl51.Location = New System.Drawing.Point(15, 86)
 Me.LabelControl51.Name = "LabelControl51"
-Me.LabelControl51.Size = New System.Drawing.Size(124, 16)
+Me.LabelControl51.Size = New System.Drawing.Size(103, 13)
 Me.LabelControl51.TabIndex = 52
 Me.LabelControl51.Text = "Dom Account Number"
 '
@@ -4229,16 +4229,16 @@ Me.LabelControl51.Text = "Dom Account Number"
 '
 Me.txtDomNumber.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.domiciliation_number", true))
 Me.txtDomNumber.Enabled = false
-Me.txtDomNumber.Location = New System.Drawing.Point(155, 66)
+Me.txtDomNumber.Location = New System.Drawing.Point(129, 57)
 Me.txtDomNumber.Name = "txtDomNumber"
-Me.txtDomNumber.Size = New System.Drawing.Size(269, 22)
+Me.txtDomNumber.Size = New System.Drawing.Size(224, 20)
 Me.txtDomNumber.TabIndex = 51
 '
 'LabelControl52
 '
-Me.LabelControl52.Location = New System.Drawing.Point(18, 69)
+Me.LabelControl52.Location = New System.Drawing.Point(15, 60)
 Me.LabelControl52.Name = "LabelControl52"
-Me.LabelControl52.Size = New System.Drawing.Size(75, 16)
+Me.LabelControl52.Size = New System.Drawing.Size(61, 13)
 Me.LabelControl52.TabIndex = 50
 Me.LabelControl52.Text = "Dom Number"
 '
@@ -4247,16 +4247,16 @@ Me.LabelControl52.Text = "Dom Number"
 Me.txtDomDebiterName.AllowDrop = true
 Me.txtDomDebiterName.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.domiciliation_debiter_name", true))
 Me.txtDomDebiterName.Enabled = false
-Me.txtDomDebiterName.Location = New System.Drawing.Point(155, 36)
+Me.txtDomDebiterName.Location = New System.Drawing.Point(129, 31)
 Me.txtDomDebiterName.Name = "txtDomDebiterName"
-Me.txtDomDebiterName.Size = New System.Drawing.Size(269, 22)
+Me.txtDomDebiterName.Size = New System.Drawing.Size(224, 20)
 Me.txtDomDebiterName.TabIndex = 49
 '
 'LabelControl53
 '
-Me.LabelControl53.Location = New System.Drawing.Point(18, 39)
+Me.LabelControl53.Location = New System.Drawing.Point(15, 34)
 Me.LabelControl53.Name = "LabelControl53"
-Me.LabelControl53.Size = New System.Drawing.Size(78, 16)
+Me.LabelControl53.Size = New System.Drawing.Size(65, 13)
 Me.LabelControl53.TabIndex = 48
 Me.LabelControl53.Text = "Debiter Name"
 '
@@ -4265,7 +4265,7 @@ Me.LabelControl53.Text = "Debiter Name"
 Me.cmbDomStatus.AllowDrop = true
 Me.cmbDomStatus.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.domiciliation_status", true))
 Me.cmbDomStatus.Enabled = false
-Me.cmbDomStatus.Location = New System.Drawing.Point(155, 6)
+Me.cmbDomStatus.Location = New System.Drawing.Point(129, 5)
 Me.cmbDomStatus.Name = "cmbDomStatus"
 Me.cmbDomStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.cmbDomStatus.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("domiciliation_status_name", "Name", 33, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)})
@@ -4273,32 +4273,32 @@ Me.cmbDomStatus.Properties.DataSource = Me.objDS.domiciliation_status
 Me.cmbDomStatus.Properties.DisplayMember = "domiciliation_status_name"
 Me.cmbDomStatus.Properties.NullText = ""
 Me.cmbDomStatus.Properties.ValueMember = "domiciliation_status_id"
-Me.cmbDomStatus.Size = New System.Drawing.Size(269, 22)
+Me.cmbDomStatus.Size = New System.Drawing.Size(224, 20)
 Me.cmbDomStatus.TabIndex = 47
 '
 'LabelControl54
 '
-Me.LabelControl54.Location = New System.Drawing.Point(18, 9)
+Me.LabelControl54.Location = New System.Drawing.Point(15, 8)
 Me.LabelControl54.Name = "LabelControl54"
-Me.LabelControl54.Size = New System.Drawing.Size(112, 16)
+Me.LabelControl54.Size = New System.Drawing.Size(92, 13)
 Me.LabelControl54.TabIndex = 46
 Me.LabelControl54.Text = "Domiciliation Status"
 '
 'CalcEdit1
 '
 Me.CalcEdit1.Enabled = false
-Me.CalcEdit1.Location = New System.Drawing.Point(762, 17)
+Me.CalcEdit1.Location = New System.Drawing.Point(635, 15)
 Me.CalcEdit1.Name = "CalcEdit1"
 Me.CalcEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-Me.CalcEdit1.Size = New System.Drawing.Size(120, 22)
+Me.CalcEdit1.Size = New System.Drawing.Size(100, 20)
 Me.CalcEdit1.TabIndex = 55
 Me.CalcEdit1.Visible = false
 '
 'LabelControl48
 '
-Me.LabelControl48.Location = New System.Drawing.Point(676, 21)
+Me.LabelControl48.Location = New System.Drawing.Point(563, 18)
 Me.LabelControl48.Name = "LabelControl48"
-Me.LabelControl48.Size = New System.Drawing.Size(78, 16)
+Me.LabelControl48.Size = New System.Drawing.Size(66, 13)
 Me.LabelControl48.TabIndex = 54
 Me.LabelControl48.Text = "Open Amount"
 Me.LabelControl48.Visible = false
@@ -4306,18 +4306,18 @@ Me.LabelControl48.Visible = false
 'CalcEdit
 '
 Me.CalcEdit.Enabled = false
-Me.CalcEdit.Location = New System.Drawing.Point(505, 17)
+Me.CalcEdit.Location = New System.Drawing.Point(421, 15)
 Me.CalcEdit.Name = "CalcEdit"
 Me.CalcEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-Me.CalcEdit.Size = New System.Drawing.Size(120, 22)
+Me.CalcEdit.Size = New System.Drawing.Size(100, 20)
 Me.CalcEdit.TabIndex = 53
 Me.CalcEdit.Visible = false
 '
 'LabelControl49
 '
-Me.LabelControl49.Location = New System.Drawing.Point(476, 21)
+Me.LabelControl49.Location = New System.Drawing.Point(397, 18)
 Me.LabelControl49.Name = "LabelControl49"
-Me.LabelControl49.Size = New System.Drawing.Size(16, 16)
+Me.LabelControl49.Size = New System.Drawing.Size(14, 13)
 Me.LabelControl49.TabIndex = 52
 Me.LabelControl49.Text = "CA"
 Me.LabelControl49.Visible = false
@@ -4327,7 +4327,7 @@ Me.LabelControl49.Visible = false
 Me.cmbPayMethod.AllowDrop = true
 Me.cmbPayMethod.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_abo_payment_method", true))
 Me.cmbPayMethod.Enabled = false
-Me.cmbPayMethod.Location = New System.Drawing.Point(154, 17)
+Me.cmbPayMethod.Location = New System.Drawing.Point(128, 15)
 Me.cmbPayMethod.Name = "cmbPayMethod"
 Me.cmbPayMethod.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.cmbPayMethod.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("customers_abo_payment_method_name", "Name", 33, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)})
@@ -4335,14 +4335,14 @@ Me.cmbPayMethod.Properties.DataSource = Me.objDS.customers_abo_payment_method
 Me.cmbPayMethod.Properties.DisplayMember = "customers_abo_payment_method_name"
 Me.cmbPayMethod.Properties.NullText = ""
 Me.cmbPayMethod.Properties.ValueMember = "customers_abo_payment_method_id"
-Me.cmbPayMethod.Size = New System.Drawing.Size(268, 22)
+Me.cmbPayMethod.Size = New System.Drawing.Size(224, 20)
 Me.cmbPayMethod.TabIndex = 51
 '
 'LabelControl50
 '
-Me.LabelControl50.Location = New System.Drawing.Point(23, 21)
+Me.LabelControl50.Location = New System.Drawing.Point(19, 18)
 Me.LabelControl50.Name = "LabelControl50"
-Me.LabelControl50.Size = New System.Drawing.Size(95, 16)
+Me.LabelControl50.Size = New System.Drawing.Size(81, 13)
 Me.LabelControl50.TabIndex = 50
 Me.LabelControl50.Text = "Payment Method"
 '
@@ -4407,11 +4407,11 @@ Me.colqty_in_stock1.Name = "colqty_in_stock1"
 Me.GridWishList.Dock = System.Windows.Forms.DockStyle.Fill
 Me.GridWishList.EmbeddedNavigator.Name = ""
 Me.GridWishList.FormsUseDefaultLookAndFeel = false
-Me.GridWishList.Location = New System.Drawing.Point(2, 153)
+Me.GridWishList.Location = New System.Drawing.Point(2, 133)
 Me.GridWishList.MainView = Me.GridViewWishList
 Me.GridWishList.Name = "GridWishList"
 Me.GridWishList.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.btnSendIt, Me.checkAvailibility})
-Me.GridWishList.Size = New System.Drawing.Size(727, 750)
+Me.GridWishList.Size = New System.Drawing.Size(605, 546)
 Me.GridWishList.TabIndex = 0
 Me.GridWishList.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewWishList})
 '
@@ -4619,7 +4619,7 @@ Me.tabCustServ.Controls.Add(Me.GridCustServ)
 Me.tabCustServ.Name = "tabCustServ"
 Me.tabCustServ.PageEnabled = false
 Me.tabCustServ.PageVisible = false
-Me.tabCustServ.Size = New System.Drawing.Size(1505, 905)
+Me.tabCustServ.Size = New System.Drawing.Size(1043, 681)
 Me.tabCustServ.Text = "Cust Serv"
 '
 'PanelControl7
@@ -4628,9 +4628,9 @@ Me.PanelControl7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
 Me.PanelControl7.Controls.Add(Me.PanelControl8)
 Me.PanelControl7.Controls.Add(Me.GCCustServ)
 Me.PanelControl7.Dock = System.Windows.Forms.DockStyle.Fill
-Me.PanelControl7.Location = New System.Drawing.Point(812, 0)
+Me.PanelControl7.Location = New System.Drawing.Point(678, 0)
 Me.PanelControl7.Name = "PanelControl7"
-Me.PanelControl7.Size = New System.Drawing.Size(693, 905)
+Me.PanelControl7.Size = New System.Drawing.Size(365, 681)
 Me.PanelControl7.TabIndex = 3
 '
 'PanelControl8
@@ -4638,9 +4638,9 @@ Me.PanelControl7.TabIndex = 3
 Me.PanelControl8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
 Me.PanelControl8.Controls.Add(Me.LayoutCustServ)
 Me.PanelControl8.Dock = System.Windows.Forms.DockStyle.Fill
-Me.PanelControl8.Location = New System.Drawing.Point(2, 75)
+Me.PanelControl8.Location = New System.Drawing.Point(2, 65)
 Me.PanelControl8.Name = "PanelControl8"
-Me.PanelControl8.Size = New System.Drawing.Size(689, 828)
+Me.PanelControl8.Size = New System.Drawing.Size(361, 614)
 Me.PanelControl8.TabIndex = 1
 '
 'LayoutCustServ
@@ -4657,74 +4657,74 @@ Me.LayoutCustServ.Dock = System.Windows.Forms.DockStyle.Fill
 Me.LayoutCustServ.Location = New System.Drawing.Point(2, 2)
 Me.LayoutCustServ.Name = "LayoutCustServ"
 Me.LayoutCustServ.Root = Me.LayoutControlGroup1
-Me.LayoutCustServ.Size = New System.Drawing.Size(685, 824)
+Me.LayoutCustServ.Size = New System.Drawing.Size(357, 610)
 Me.LayoutCustServ.TabIndex = 0
 Me.LayoutCustServ.Text = "DataLayoutControl1"
 '
 'txtCustServ_Response_Message
 '
-Me.txtCustServ_Response_Message.Location = New System.Drawing.Point(124, 516)
+Me.txtCustServ_Response_Message.Location = New System.Drawing.Point(107, 405)
 Me.txtCustServ_Response_Message.Name = "txtCustServ_Response_Message"
-Me.txtCustServ_Response_Message.Size = New System.Drawing.Size(552, 299)
+Me.txtCustServ_Response_Message.Size = New System.Drawing.Size(366, 196)
 Me.txtCustServ_Response_Message.StyleController = Me.LayoutCustServ
 Me.txtCustServ_Response_Message.TabIndex = 14
 '
 'txtCustServ_DVD_ID
 '
 Me.txtCustServ_DVD_ID.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "custserv.dvd_id", true))
-Me.txtCustServ_DVD_ID.Location = New System.Drawing.Point(574, 424)
+Me.txtCustServ_DVD_ID.Location = New System.Drawing.Point(423, 319)
 Me.txtCustServ_DVD_ID.Name = "txtCustServ_DVD_ID"
 Me.txtCustServ_DVD_ID.Properties.ReadOnly = true
-Me.txtCustServ_DVD_ID.Size = New System.Drawing.Size(102, 22)
+Me.txtCustServ_DVD_ID.Size = New System.Drawing.Size(50, 20)
 Me.txtCustServ_DVD_ID.StyleController = Me.LayoutCustServ
 Me.txtCustServ_DVD_ID.TabIndex = 11
 '
 'txtCustServ_Products_id
 '
 Me.txtCustServ_Products_id.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "custserv.products_id", true))
-Me.txtCustServ_Products_id.Location = New System.Drawing.Point(349, 424)
+Me.txtCustServ_Products_id.Location = New System.Drawing.Point(265, 319)
 Me.txtCustServ_Products_id.Name = "txtCustServ_Products_id"
 Me.txtCustServ_Products_id.Properties.ReadOnly = true
-Me.txtCustServ_Products_id.Size = New System.Drawing.Size(100, 22)
+Me.txtCustServ_Products_id.Size = New System.Drawing.Size(50, 20)
 Me.txtCustServ_Products_id.StyleController = Me.LayoutCustServ
 Me.txtCustServ_Products_id.TabIndex = 10
 '
 'txtCustServ_OrderID
 '
 Me.txtCustServ_OrderID.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "custserv.orders_id", true))
-Me.txtCustServ_OrderID.Location = New System.Drawing.Point(124, 424)
+Me.txtCustServ_OrderID.Location = New System.Drawing.Point(107, 319)
 Me.txtCustServ_OrderID.Name = "txtCustServ_OrderID"
 Me.txtCustServ_OrderID.Properties.ReadOnly = true
-Me.txtCustServ_OrderID.Size = New System.Drawing.Size(100, 22)
+Me.txtCustServ_OrderID.Size = New System.Drawing.Size(50, 20)
 Me.txtCustServ_OrderID.StyleController = Me.LayoutCustServ
 Me.txtCustServ_OrderID.TabIndex = 9
 '
 'txtCustServ_CustDate
 '
 Me.txtCustServ_CustDate.EditValue = Nothing
-Me.txtCustServ_CustDate.Location = New System.Drawing.Point(124, 30)
+Me.txtCustServ_CustDate.Location = New System.Drawing.Point(107, 28)
 Me.txtCustServ_CustDate.Name = "txtCustServ_CustDate"
 Me.txtCustServ_CustDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.txtCustServ_CustDate.Properties.ReadOnly = true
 Me.txtCustServ_CustDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-Me.txtCustServ_CustDate.Size = New System.Drawing.Size(552, 22)
+Me.txtCustServ_CustDate.Size = New System.Drawing.Size(366, 20)
 Me.txtCustServ_CustDate.StyleController = Me.LayoutCustServ
 Me.txtCustServ_CustDate.TabIndex = 8
 '
 'MemoEdit1
 '
-Me.MemoEdit1.Location = New System.Drawing.Point(124, 63)
+Me.MemoEdit1.Location = New System.Drawing.Point(107, 59)
 Me.MemoEdit1.Name = "MemoEdit1"
 Me.MemoEdit1.Properties.ReadOnly = true
-Me.MemoEdit1.Size = New System.Drawing.Size(552, 324)
+Me.MemoEdit1.Size = New System.Drawing.Size(366, 225)
 Me.MemoEdit1.StyleController = Me.LayoutCustServ
 Me.MemoEdit1.TabIndex = 7
 '
 'txtCustServ_Subject
 '
-Me.txtCustServ_Subject.Location = New System.Drawing.Point(121, 460)
+Me.txtCustServ_Subject.Location = New System.Drawing.Point(104, 353)
 Me.txtCustServ_Subject.Name = "txtCustServ_Subject"
-Me.txtCustServ_Subject.Size = New System.Drawing.Size(558, 22)
+Me.txtCustServ_Subject.Size = New System.Drawing.Size(372, 20)
 Me.txtCustServ_Subject.StyleController = Me.LayoutCustServ
 Me.txtCustServ_Subject.TabIndex = 6
 '
@@ -4734,7 +4734,7 @@ Me.LayoutControlGroup1.CustomizationFormText = "LayoutControlGroup1"
 Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LCGMisc, Me.LayoutControlGroup3, Me.LCGResponse, Me.LayoutControlItem3})
 Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
 Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-Me.LayoutControlGroup1.Size = New System.Drawing.Size(685, 824)
+Me.LayoutControlGroup1.Size = New System.Drawing.Size(482, 610)
 Me.LayoutControlGroup1.Spacing = New DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0)
 Me.LayoutControlGroup1.Text = "LayoutControlGroup1"
 Me.LayoutControlGroup1.TextVisible = false
@@ -4743,21 +4743,21 @@ Me.LayoutControlGroup1.TextVisible = false
 '
 Me.LCGMisc.CustomizationFormText = "Misc"
 Me.LCGMisc.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem7, Me.LayoutControlItem6, Me.LayoutControlItem8})
-Me.LCGMisc.Location = New System.Drawing.Point(0, 394)
+Me.LCGMisc.Location = New System.Drawing.Point(0, 291)
 Me.LCGMisc.Name = "LCGMisc"
-Me.LCGMisc.Size = New System.Drawing.Size(683, 59)
+Me.LCGMisc.Size = New System.Drawing.Size(480, 55)
 Me.LCGMisc.Text = "Misc"
 '
 'LayoutControlItem7
 '
 Me.LayoutControlItem7.Control = Me.txtCustServ_Products_id
 Me.LayoutControlItem7.CustomizationFormText = "Products ID"
-Me.LayoutControlItem7.Location = New System.Drawing.Point(225, 0)
+Me.LayoutControlItem7.Location = New System.Drawing.Point(158, 0)
 Me.LayoutControlItem7.Name = "LayoutControlItem7"
-Me.LayoutControlItem7.Size = New System.Drawing.Size(225, 33)
+Me.LayoutControlItem7.Size = New System.Drawing.Size(158, 31)
 Me.LayoutControlItem7.Text = "Products ID"
 Me.LayoutControlItem7.TextLocation = DevExpress.Utils.Locations.Left
-Me.LayoutControlItem7.TextSize = New System.Drawing.Size(109, 20)
+Me.LayoutControlItem7.TextSize = New System.Drawing.Size(92, 20)
 '
 'LayoutControlItem6
 '
@@ -4765,21 +4765,21 @@ Me.LayoutControlItem6.Control = Me.txtCustServ_OrderID
 Me.LayoutControlItem6.CustomizationFormText = "Order ID"
 Me.LayoutControlItem6.Location = New System.Drawing.Point(0, 0)
 Me.LayoutControlItem6.Name = "LayoutControlItem6"
-Me.LayoutControlItem6.Size = New System.Drawing.Size(225, 33)
+Me.LayoutControlItem6.Size = New System.Drawing.Size(158, 31)
 Me.LayoutControlItem6.Text = "Order ID"
 Me.LayoutControlItem6.TextLocation = DevExpress.Utils.Locations.Left
-Me.LayoutControlItem6.TextSize = New System.Drawing.Size(109, 20)
+Me.LayoutControlItem6.TextSize = New System.Drawing.Size(92, 20)
 '
 'LayoutControlItem8
 '
 Me.LayoutControlItem8.Control = Me.txtCustServ_DVD_ID
 Me.LayoutControlItem8.CustomizationFormText = "DVD ID"
-Me.LayoutControlItem8.Location = New System.Drawing.Point(450, 0)
+Me.LayoutControlItem8.Location = New System.Drawing.Point(316, 0)
 Me.LayoutControlItem8.Name = "LayoutControlItem8"
-Me.LayoutControlItem8.Size = New System.Drawing.Size(227, 33)
+Me.LayoutControlItem8.Size = New System.Drawing.Size(158, 31)
 Me.LayoutControlItem8.Text = "DVD ID"
 Me.LayoutControlItem8.TextLocation = DevExpress.Utils.Locations.Left
-Me.LayoutControlItem8.TextSize = New System.Drawing.Size(109, 20)
+Me.LayoutControlItem8.TextSize = New System.Drawing.Size(92, 20)
 '
 'LayoutControlGroup3
 '
@@ -4787,7 +4787,7 @@ Me.LayoutControlGroup3.CustomizationFormText = "Call / E-Mail Info"
 Me.LayoutControlGroup3.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem5, Me.LayoutControlItem4})
 Me.LayoutControlGroup3.Location = New System.Drawing.Point(0, 0)
 Me.LayoutControlGroup3.Name = "LayoutControlGroup3"
-Me.LayoutControlGroup3.Size = New System.Drawing.Size(683, 394)
+Me.LayoutControlGroup3.Size = New System.Drawing.Size(480, 291)
 Me.LayoutControlGroup3.Text = "Call / E-Mail Info"
 '
 'LayoutControlItem5
@@ -4796,29 +4796,29 @@ Me.LayoutControlItem5.Control = Me.txtCustServ_CustDate
 Me.LayoutControlItem5.CustomizationFormText = "Date"
 Me.LayoutControlItem5.Location = New System.Drawing.Point(0, 0)
 Me.LayoutControlItem5.Name = "LayoutControlItem5"
-Me.LayoutControlItem5.Size = New System.Drawing.Size(677, 33)
+Me.LayoutControlItem5.Size = New System.Drawing.Size(474, 31)
 Me.LayoutControlItem5.Text = "Date"
 Me.LayoutControlItem5.TextLocation = DevExpress.Utils.Locations.Left
-Me.LayoutControlItem5.TextSize = New System.Drawing.Size(109, 20)
+Me.LayoutControlItem5.TextSize = New System.Drawing.Size(92, 20)
 '
 'LayoutControlItem4
 '
 Me.LayoutControlItem4.Control = Me.MemoEdit1
 Me.LayoutControlItem4.CustomizationFormText = "Message"
-Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 33)
+Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 31)
 Me.LayoutControlItem4.Name = "LayoutControlItem4"
-Me.LayoutControlItem4.Size = New System.Drawing.Size(677, 335)
+Me.LayoutControlItem4.Size = New System.Drawing.Size(474, 236)
 Me.LayoutControlItem4.Text = "Message"
 Me.LayoutControlItem4.TextLocation = DevExpress.Utils.Locations.Left
-Me.LayoutControlItem4.TextSize = New System.Drawing.Size(109, 20)
+Me.LayoutControlItem4.TextSize = New System.Drawing.Size(92, 20)
 '
 'LCGResponse
 '
 Me.LCGResponse.CustomizationFormText = "Response"
 Me.LCGResponse.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem11})
-Me.LCGResponse.Location = New System.Drawing.Point(0, 486)
+Me.LCGResponse.Location = New System.Drawing.Point(0, 377)
 Me.LCGResponse.Name = "LCGResponse"
-Me.LCGResponse.Size = New System.Drawing.Size(683, 336)
+Me.LCGResponse.Size = New System.Drawing.Size(480, 231)
 Me.LCGResponse.Text = "Response"
 '
 'LayoutControlItem11
@@ -4827,21 +4827,21 @@ Me.LayoutControlItem11.Control = Me.txtCustServ_Response_Message
 Me.LayoutControlItem11.CustomizationFormText = "Response Message"
 Me.LayoutControlItem11.Location = New System.Drawing.Point(0, 0)
 Me.LayoutControlItem11.Name = "LayoutControlItem11"
-Me.LayoutControlItem11.Size = New System.Drawing.Size(677, 310)
+Me.LayoutControlItem11.Size = New System.Drawing.Size(474, 207)
 Me.LayoutControlItem11.Text = "Response Message"
 Me.LayoutControlItem11.TextLocation = DevExpress.Utils.Locations.Left
-Me.LayoutControlItem11.TextSize = New System.Drawing.Size(109, 20)
+Me.LayoutControlItem11.TextSize = New System.Drawing.Size(92, 20)
 '
 'LayoutControlItem3
 '
 Me.LayoutControlItem3.Control = Me.txtCustServ_Subject
 Me.LayoutControlItem3.CustomizationFormText = "Subject"
-Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 453)
+Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 346)
 Me.LayoutControlItem3.Name = "LayoutControlItem3"
-Me.LayoutControlItem3.Size = New System.Drawing.Size(683, 33)
+Me.LayoutControlItem3.Size = New System.Drawing.Size(480, 31)
 Me.LayoutControlItem3.Text = "Subject"
 Me.LayoutControlItem3.TextLocation = DevExpress.Utils.Locations.Left
-Me.LayoutControlItem3.TextSize = New System.Drawing.Size(109, 20)
+Me.LayoutControlItem3.TextSize = New System.Drawing.Size(92, 20)
 '
 'GCCustServ
 '
@@ -4851,35 +4851,35 @@ Me.GCCustServ.Controls.Add(Me.btnSaveCustServ)
 Me.GCCustServ.Dock = System.Windows.Forms.DockStyle.Top
 Me.GCCustServ.Location = New System.Drawing.Point(2, 2)
 Me.GCCustServ.Name = "GCCustServ"
-Me.GCCustServ.Size = New System.Drawing.Size(689, 73)
+Me.GCCustServ.Size = New System.Drawing.Size(361, 63)
 Me.GCCustServ.TabIndex = 0
 Me.GCCustServ.Text = "Call / Action Detail"
 '
 'chkCustServSendMail
 '
 Me.chkCustServSendMail.EditValue = 1
-Me.chkCustServSendMail.Location = New System.Drawing.Point(119, 35)
+Me.chkCustServSendMail.Location = New System.Drawing.Point(99, 30)
 Me.chkCustServSendMail.Name = "chkCustServSendMail"
 Me.chkCustServSendMail.Properties.Caption = "Send Email"
 Me.chkCustServSendMail.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
 Me.chkCustServSendMail.Properties.ValueChecked = 1
 Me.chkCustServSendMail.Properties.ValueUnchecked = 0
-Me.chkCustServSendMail.Size = New System.Drawing.Size(115, 21)
+Me.chkCustServSendMail.Size = New System.Drawing.Size(96, 19)
 Me.chkCustServSendMail.TabIndex = 31
 '
 'btnSaveCustServ
 '
-Me.btnSaveCustServ.Location = New System.Drawing.Point(5, 31)
+Me.btnSaveCustServ.Location = New System.Drawing.Point(4, 27)
 Me.btnSaveCustServ.Name = "btnSaveCustServ"
-Me.btnSaveCustServ.Size = New System.Drawing.Size(90, 27)
+Me.btnSaveCustServ.Size = New System.Drawing.Size(75, 23)
 Me.btnSaveCustServ.TabIndex = 9
 Me.btnSaveCustServ.Text = "Save"
 '
 'SPlitCCustserv
 '
-Me.SPlitCCustserv.Location = New System.Drawing.Point(806, 0)
+Me.SPlitCCustserv.Location = New System.Drawing.Point(672, 0)
 Me.SPlitCCustserv.Name = "SPlitCCustserv"
-Me.SPlitCCustserv.Size = New System.Drawing.Size(6, 905)
+Me.SPlitCCustserv.Size = New System.Drawing.Size(6, 681)
 Me.SPlitCCustserv.TabIndex = 2
 Me.SPlitCCustserv.TabStop = false
 '
@@ -4888,11 +4888,11 @@ Me.SPlitCCustserv.TabStop = false
 Me.GridWishListAssigned.Dock = System.Windows.Forms.DockStyle.Fill
 Me.GridWishListAssigned.EmbeddedNavigator.Name = ""
 Me.GridWishListAssigned.FormsUseDefaultLookAndFeel = false
-Me.GridWishListAssigned.Location = New System.Drawing.Point(2, 22)
+Me.GridWishListAssigned.Location = New System.Drawing.Point(2, 20)
 Me.GridWishListAssigned.MainView = Me.GridViewWishListAssigned
 Me.GridWishListAssigned.Name = "GridWishListAssigned"
 Me.GridWishListAssigned.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryIbtnAddDVD})
-Me.GridWishListAssigned.Size = New System.Drawing.Size(764, 881)
+Me.GridWishListAssigned.Size = New System.Drawing.Size(424, 659)
 Me.GridWishListAssigned.TabIndex = 2
 Me.GridWishListAssigned.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewWishListAssigned})
 '
@@ -5352,7 +5352,7 @@ Me.tabOrdersHistor.Appearance.Header.Font = New System.Drawing.Font("Tahoma", 9.
 Me.tabOrdersHistor.Appearance.Header.Options.UseFont = true
 Me.tabOrdersHistor.Controls.Add(Me.SplitContainerOrders)
 Me.tabOrdersHistor.Name = "tabOrdersHistor"
-Me.tabOrdersHistor.Size = New System.Drawing.Size(1505, 905)
+Me.tabOrdersHistor.Size = New System.Drawing.Size(1043, 681)
 Me.tabOrdersHistor.Text = "Orders History"
 '
 'SplitContainerOrders
@@ -5367,7 +5367,7 @@ Me.SplitContainerOrders.Panel1.Text = "Orders"
 Me.SplitContainerOrders.Panel2.Controls.Add(Me.GridOrdersStatusHistory)
 Me.SplitContainerOrders.Panel2.ShowCaption = true
 Me.SplitContainerOrders.Panel2.Text = "Order Status History"
-Me.SplitContainerOrders.Size = New System.Drawing.Size(1505, 905)
+Me.SplitContainerOrders.Size = New System.Drawing.Size(1043, 681)
 Me.SplitContainerOrders.SplitterPosition = 1119
 Me.SplitContainerOrders.TabIndex = 3
 Me.SplitContainerOrders.Text = "SplitContainerControl1"
@@ -5380,7 +5380,7 @@ Me.GridOrdersStatusHistory.FormsUseDefaultLookAndFeel = false
 Me.GridOrdersStatusHistory.Location = New System.Drawing.Point(0, 0)
 Me.GridOrdersStatusHistory.MainView = Me.GridViewOrdersHistory
 Me.GridOrdersStatusHistory.Name = "GridOrdersStatusHistory"
-Me.GridOrdersStatusHistory.Size = New System.Drawing.Size(376, 881)
+Me.GridOrdersStatusHistory.Size = New System.Drawing.Size(21, 659)
 Me.GridOrdersStatusHistory.TabIndex = 2
 Me.GridOrdersStatusHistory.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewOrdersHistory})
 '
@@ -5440,11 +5440,11 @@ Me.old_status.Width = 119
 Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
 Me.GridControl1.EmbeddedNavigator.Name = ""
 Me.GridControl1.FormsUseDefaultLookAndFeel = false
-Me.GridControl1.Location = New System.Drawing.Point(0, 203)
+Me.GridControl1.Location = New System.Drawing.Point(0, 176)
 Me.GridControl1.MainView = Me.GridViewSearch
 Me.GridControl1.Name = "GridControl1"
 Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {GridchkAbo, GridchkBlackList, Me.RepositoryICustomersCustomers_id})
-Me.GridControl1.Size = New System.Drawing.Size(1505, 702)
+Me.GridControl1.Size = New System.Drawing.Size(1043, 505)
 Me.GridControl1.TabIndex = 1
 Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewSearch})
 '
@@ -5599,7 +5599,7 @@ Me.tabAboHistory.Appearance.Header.Font = New System.Drawing.Font("Tahoma", 9.75
 Me.tabAboHistory.Appearance.Header.Options.UseFont = true
 Me.tabAboHistory.Controls.Add(Me.GridABO)
 Me.tabAboHistory.Name = "tabAboHistory"
-Me.tabAboHistory.Size = New System.Drawing.Size(1505, 905)
+Me.tabAboHistory.Size = New System.Drawing.Size(1043, 681)
 Me.tabAboHistory.Text = "ABO History"
 '
 'tabWishList
@@ -5610,7 +5610,7 @@ Me.tabWishList.Controls.Add(Me.GCWishlistAssigned)
 Me.tabWishList.Controls.Add(Me.SplitterControl1)
 Me.tabWishList.Controls.Add(Me.PanelControl11)
 Me.tabWishList.Name = "tabWishList"
-Me.tabWishList.Size = New System.Drawing.Size(1505, 905)
+Me.tabWishList.Size = New System.Drawing.Size(1043, 681)
 Me.tabWishList.Text = "WishList"
 '
 'GCWishlistAssigned
@@ -5618,17 +5618,17 @@ Me.tabWishList.Text = "WishList"
 Me.GCWishlistAssigned.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
 Me.GCWishlistAssigned.Controls.Add(Me.GridWishListAssigned)
 Me.GCWishlistAssigned.Dock = System.Windows.Forms.DockStyle.Fill
-Me.GCWishlistAssigned.Location = New System.Drawing.Point(737, 0)
+Me.GCWishlistAssigned.Location = New System.Drawing.Point(615, 0)
 Me.GCWishlistAssigned.Name = "GCWishlistAssigned"
-Me.GCWishlistAssigned.Size = New System.Drawing.Size(768, 905)
+Me.GCWishlistAssigned.Size = New System.Drawing.Size(428, 681)
 Me.GCWishlistAssigned.TabIndex = 3
 Me.GCWishlistAssigned.Text = "DVD Already Assigned"
 '
 'SplitterControl1
 '
-Me.SplitterControl1.Location = New System.Drawing.Point(731, 0)
+Me.SplitterControl1.Location = New System.Drawing.Point(609, 0)
 Me.SplitterControl1.Name = "SplitterControl1"
-Me.SplitterControl1.Size = New System.Drawing.Size(6, 905)
+Me.SplitterControl1.Size = New System.Drawing.Size(6, 681)
 Me.SplitterControl1.TabIndex = 1
 Me.SplitterControl1.TabStop = false
 '
@@ -5640,7 +5640,7 @@ Me.PanelControl11.Controls.Add(Me.PanelDetailWishlist)
 Me.PanelControl11.Dock = System.Windows.Forms.DockStyle.Left
 Me.PanelControl11.Location = New System.Drawing.Point(0, 0)
 Me.PanelControl11.Name = "PanelControl11"
-Me.PanelControl11.Size = New System.Drawing.Size(731, 905)
+Me.PanelControl11.Size = New System.Drawing.Size(609, 681)
 Me.PanelControl11.TabIndex = 4
 '
 'PanelDetailWishlist
@@ -5652,14 +5652,14 @@ Me.PanelDetailWishlist.Controls.Add(Me.gridInfoNorm)
 Me.PanelDetailWishlist.Dock = System.Windows.Forms.DockStyle.Top
 Me.PanelDetailWishlist.Location = New System.Drawing.Point(2, 2)
 Me.PanelDetailWishlist.Name = "PanelDetailWishlist"
-Me.PanelDetailWishlist.Size = New System.Drawing.Size(727, 151)
+Me.PanelDetailWishlist.Size = New System.Drawing.Size(605, 131)
 Me.PanelDetailWishlist.TabIndex = 1
 '
 'splitNormAdult
 '
-Me.splitNormAdult.Location = New System.Drawing.Point(367, 2)
+Me.splitNormAdult.Location = New System.Drawing.Point(306, 2)
 Me.splitNormAdult.Name = "splitNormAdult"
-Me.splitNormAdult.Size = New System.Drawing.Size(6, 147)
+Me.splitNormAdult.Size = New System.Drawing.Size(6, 127)
 Me.splitNormAdult.TabIndex = 2
 Me.splitNormAdult.TabStop = false
 '
@@ -5668,10 +5668,10 @@ Me.splitNormAdult.TabStop = false
 Me.gridInfoAdult.Dock = System.Windows.Forms.DockStyle.Fill
 Me.gridInfoAdult.EmbeddedNavigator.Name = ""
 Me.gridInfoAdult.FormsUseDefaultLookAndFeel = false
-Me.gridInfoAdult.Location = New System.Drawing.Point(367, 2)
+Me.gridInfoAdult.Location = New System.Drawing.Point(306, 2)
 Me.gridInfoAdult.MainView = Me.GridViewInfoAdult
 Me.gridInfoAdult.Name = "gridInfoAdult"
-Me.gridInfoAdult.Size = New System.Drawing.Size(358, 147)
+Me.gridInfoAdult.Size = New System.Drawing.Size(297, 127)
 Me.gridInfoAdult.TabIndex = 1
 Me.gridInfoAdult.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewInfoAdult})
 '
@@ -5690,7 +5690,7 @@ Me.gridInfoNorm.FormsUseDefaultLookAndFeel = false
 Me.gridInfoNorm.Location = New System.Drawing.Point(2, 2)
 Me.gridInfoNorm.MainView = Me.GridViewInfoNorm
 Me.gridInfoNorm.Name = "gridInfoNorm"
-Me.gridInfoNorm.Size = New System.Drawing.Size(365, 147)
+Me.gridInfoNorm.Size = New System.Drawing.Size(304, 127)
 Me.gridInfoNorm.TabIndex = 0
 Me.gridInfoNorm.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewInfoNorm})
 '
@@ -5731,100 +5731,100 @@ Me.tabMain.Controls.Add(Me.btnStopAtReconduction)
 Me.tabMain.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.tabMain.Name = "tabMain"
 Me.tabMain.ShowCloseButton = DevExpress.Utils.DefaultBoolean.[True]
-Me.tabMain.Size = New System.Drawing.Size(1253, 779)
+Me.tabMain.Size = New System.Drawing.Size(1253, 791)
 Me.tabMain.Text = "General Info"
 '
 'chksleep
 '
 Me.chksleep.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.sleep", true))
-Me.chksleep.Location = New System.Drawing.Point(224, 21)
+Me.chksleep.Location = New System.Drawing.Point(187, 18)
 Me.chksleep.Name = "chksleep"
 Me.chksleep.Properties.Caption = "Sleep"
-Me.chksleep.Size = New System.Drawing.Size(92, 21)
+Me.chksleep.Size = New System.Drawing.Size(76, 19)
 Me.chksleep.TabIndex = 32
 '
 'btnCreditHistoryReplay
 '
-Me.btnCreditHistoryReplay.Location = New System.Drawing.Point(563, 0)
+Me.btnCreditHistoryReplay.Location = New System.Drawing.Point(469, 0)
 Me.btnCreditHistoryReplay.Name = "btnCreditHistoryReplay"
-Me.btnCreditHistoryReplay.Size = New System.Drawing.Size(129, 23)
+Me.btnCreditHistoryReplay.Size = New System.Drawing.Size(108, 20)
 Me.btnCreditHistoryReplay.TabIndex = 31
 Me.btnCreditHistoryReplay.Text = "replay credit history"
 Me.btnCreditHistoryReplay.Visible = false
 '
 'ChkCreditCombined
 '
-Me.ChkCreditCombined.Location = New System.Drawing.Point(491, 20)
+Me.ChkCreditCombined.Location = New System.Drawing.Point(409, 17)
 Me.ChkCreditCombined.Name = "ChkCreditCombined"
 Me.ChkCreditCombined.Properties.Caption = "Credit Combined"
 Me.ChkCreditCombined.Properties.ReadOnly = true
-Me.ChkCreditCombined.Size = New System.Drawing.Size(132, 21)
+Me.ChkCreditCombined.Size = New System.Drawing.Size(110, 19)
 Me.ChkCreditCombined.TabIndex = 30
 Me.ToolTip1.SetToolTip(Me.ChkCreditCombined, "accumulation de credit lors de la reconduction suivante")
 '
 'chkFt
 '
-Me.chkFt.Location = New System.Drawing.Point(353, 20)
+Me.chkFt.Location = New System.Drawing.Point(294, 17)
 Me.chkFt.Name = "chkFt"
 Me.chkFt.Properties.Caption = "Free Trial"
 Me.chkFt.Properties.ReadOnly = true
-Me.chkFt.Size = New System.Drawing.Size(91, 21)
+Me.chkFt.Size = New System.Drawing.Size(76, 19)
 Me.chkFt.TabIndex = 29
 '
 'lblCpt_reconduction
 '
-Me.lblCpt_reconduction.Location = New System.Drawing.Point(161, 23)
+Me.lblCpt_reconduction.Location = New System.Drawing.Point(134, 20)
 Me.lblCpt_reconduction.Name = "lblCpt_reconduction"
-Me.lblCpt_reconduction.Size = New System.Drawing.Size(7, 16)
+Me.lblCpt_reconduction.Size = New System.Drawing.Size(6, 13)
 Me.lblCpt_reconduction.TabIndex = 28
 Me.lblCpt_reconduction.Text = "0"
 '
 'lblNbReconduction
 '
-Me.lblNbReconduction.Location = New System.Drawing.Point(19, 23)
+Me.lblNbReconduction.Location = New System.Drawing.Point(16, 20)
 Me.lblNbReconduction.Name = "lblNbReconduction"
-Me.lblNbReconduction.Size = New System.Drawing.Size(131, 16)
+Me.lblNbReconduction.Size = New System.Drawing.Size(109, 13)
 Me.lblNbReconduction.TabIndex = 27
 Me.lblNbReconduction.Text = "Nombre reconduction :"
 '
 'lblNextPrice
 '
-Me.lblNextPrice.Location = New System.Drawing.Point(952, 20)
+Me.lblNextPrice.Location = New System.Drawing.Point(793, 17)
 Me.lblNextPrice.Name = "lblNextPrice"
-Me.lblNextPrice.Size = New System.Drawing.Size(57, 16)
+Me.lblNextPrice.Size = New System.Drawing.Size(49, 13)
 Me.lblNextPrice.TabIndex = 24
 Me.lblNextPrice.Text = "Next Price"
 '
 'lblNextCredit
 '
-Me.lblNextCredit.Location = New System.Drawing.Point(758, 20)
+Me.lblNextCredit.Location = New System.Drawing.Point(632, 17)
 Me.lblNextCredit.Name = "lblNextCredit"
-Me.lblNextCredit.Size = New System.Drawing.Size(63, 16)
+Me.lblNextCredit.Size = New System.Drawing.Size(55, 13)
 Me.lblNextCredit.TabIndex = 22
 Me.lblNextCredit.Text = "Next Credit"
 '
 'btnForcedReconduction
 '
-Me.btnForcedReconduction.Location = New System.Drawing.Point(1188, 46)
+Me.btnForcedReconduction.Location = New System.Drawing.Point(990, 40)
 Me.btnForcedReconduction.Name = "btnForcedReconduction"
-Me.btnForcedReconduction.Size = New System.Drawing.Size(173, 27)
+Me.btnForcedReconduction.Size = New System.Drawing.Size(144, 23)
 Me.btnForcedReconduction.TabIndex = 13
 Me.btnForcedReconduction.Text = "Reconduction"
 '
 'btnActivateDomiciliation
 '
-Me.btnActivateDomiciliation.Location = New System.Drawing.Point(1188, 283)
+Me.btnActivateDomiciliation.Location = New System.Drawing.Point(990, 245)
 Me.btnActivateDomiciliation.Name = "btnActivateDomiciliation"
-Me.btnActivateDomiciliation.Size = New System.Drawing.Size(173, 26)
+Me.btnActivateDomiciliation.Size = New System.Drawing.Size(144, 23)
 Me.btnActivateDomiciliation.TabIndex = 12
 Me.btnActivateDomiciliation.Text = "&Activate by Domiciliation"
 Me.btnActivateDomiciliation.Visible = false
 '
 'btnReceivedDomiciliation
 '
-Me.btnReceivedDomiciliation.Location = New System.Drawing.Point(1187, 338)
+Me.btnReceivedDomiciliation.Location = New System.Drawing.Point(989, 293)
 Me.btnReceivedDomiciliation.Name = "btnReceivedDomiciliation"
-Me.btnReceivedDomiciliation.Size = New System.Drawing.Size(173, 27)
+Me.btnReceivedDomiciliation.Size = New System.Drawing.Size(144, 23)
 Me.btnReceivedDomiciliation.TabIndex = 11
 Me.btnReceivedDomiciliation.Text = "&Received domiciliation"
 Me.ToolTip1.SetToolTip(Me.btnReceivedDomiciliation, "received dom 70")
@@ -5839,50 +5839,50 @@ Me.GCACtPhone.Controls.Add(Me.cmbPhoneActivDelete)
 Me.GCACtPhone.Controls.Add(Me.LabelReason)
 Me.GCACtPhone.Controls.Add(Me.DateCallPhoneActivation)
 Me.GCACtPhone.Controls.Add(Me.LabelCallMeDate)
-Me.GCACtPhone.Location = New System.Drawing.Point(758, 511)
+Me.GCACtPhone.Location = New System.Drawing.Point(632, 443)
 Me.GCACtPhone.Name = "GCACtPhone"
-Me.GCACtPhone.Size = New System.Drawing.Size(394, 274)
+Me.GCACtPhone.Size = New System.Drawing.Size(328, 237)
 Me.GCACtPhone.TabIndex = 10
 Me.GCACtPhone.Text = "Phone activation Info"
 '
 'MemoOtherReason
 '
 Me.MemoOtherReason.Enabled = false
-Me.MemoOtherReason.Location = New System.Drawing.Point(30, 151)
+Me.MemoOtherReason.Location = New System.Drawing.Point(25, 131)
 Me.MemoOtherReason.Name = "MemoOtherReason"
-Me.MemoOtherReason.Size = New System.Drawing.Size(278, 91)
+Me.MemoOtherReason.Size = New System.Drawing.Size(232, 79)
 Me.MemoOtherReason.StyleController = Me.LayoutCustServ
 Me.MemoOtherReason.TabIndex = 43
 '
 'Label2
 '
 Me.Label2.AutoSize = true
-Me.Label2.Location = New System.Drawing.Point(26, 134)
+Me.Label2.Location = New System.Drawing.Point(22, 116)
 Me.Label2.Name = "Label2"
-Me.Label2.Size = New System.Drawing.Size(67, 17)
+Me.Label2.Size = New System.Drawing.Size(51, 13)
 Me.Label2.TabIndex = 42
 Me.Label2.Text = "Comment"
 '
 'cmbPhoneActivDelete
 '
 Me.cmbPhoneActivDelete.Enabled = false
-Me.cmbPhoneActivDelete.Location = New System.Drawing.Point(163, 81)
+Me.cmbPhoneActivDelete.Location = New System.Drawing.Point(136, 70)
 Me.cmbPhoneActivDelete.Name = "cmbPhoneActivDelete"
 Me.cmbPhoneActivDelete.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.cmbPhoneActivDelete.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("reason", "reason", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("stop_phone_id", "stop_phone_id", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None)})
 Me.cmbPhoneActivDelete.Properties.DisplayMember = "reason"
 Me.cmbPhoneActivDelete.Properties.NullText = ""
 Me.cmbPhoneActivDelete.Properties.ValueMember = "stop_phone_id"
-Me.cmbPhoneActivDelete.Size = New System.Drawing.Size(145, 22)
+Me.cmbPhoneActivDelete.Size = New System.Drawing.Size(121, 20)
 Me.cmbPhoneActivDelete.TabIndex = 40
 Me.cmbPhoneActivDelete.Visible = false
 '
 'LabelReason
 '
 Me.LabelReason.AutoSize = true
-Me.LabelReason.Location = New System.Drawing.Point(26, 84)
+Me.LabelReason.Location = New System.Drawing.Point(22, 73)
 Me.LabelReason.Name = "LabelReason"
-Me.LabelReason.Size = New System.Drawing.Size(132, 17)
+Me.LabelReason.Size = New System.Drawing.Size(99, 13)
 Me.LabelReason.TabIndex = 23
 Me.LabelReason.Text = "Reason from delete"
 Me.LabelReason.Visible = false
@@ -5892,42 +5892,42 @@ Me.LabelReason.Visible = false
 Me.DateCallPhoneActivation.CausesValidation = false
 Me.DateCallPhoneActivation.EditValue = Nothing
 Me.DateCallPhoneActivation.Enabled = false
-Me.DateCallPhoneActivation.Location = New System.Drawing.Point(163, 48)
+Me.DateCallPhoneActivation.Location = New System.Drawing.Point(136, 42)
 Me.DateCallPhoneActivation.Name = "DateCallPhoneActivation"
 Me.DateCallPhoneActivation.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.DateCallPhoneActivation.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-Me.DateCallPhoneActivation.Size = New System.Drawing.Size(145, 22)
+Me.DateCallPhoneActivation.Size = New System.Drawing.Size(121, 20)
 Me.DateCallPhoneActivation.TabIndex = 18
 '
 'LabelCallMeDate
 '
-Me.LabelCallMeDate.Location = New System.Drawing.Point(30, 52)
+Me.LabelCallMeDate.Location = New System.Drawing.Point(25, 45)
 Me.LabelCallMeDate.Name = "LabelCallMeDate"
-Me.LabelCallMeDate.Size = New System.Drawing.Size(70, 16)
+Me.LabelCallMeDate.Size = New System.Drawing.Size(57, 13)
 Me.LabelCallMeDate.TabIndex = 13
 Me.LabelCallMeDate.Text = "call me date"
 '
 'btnDelPhoAct
 '
-Me.btnDelPhoAct.Location = New System.Drawing.Point(1188, 465)
+Me.btnDelPhoAct.Location = New System.Drawing.Point(990, 403)
 Me.btnDelPhoAct.Name = "btnDelPhoAct"
-Me.btnDelPhoAct.Size = New System.Drawing.Size(173, 27)
+Me.btnDelPhoAct.Size = New System.Drawing.Size(144, 23)
 Me.btnDelPhoAct.TabIndex = 20
 Me.btnDelPhoAct.Text = "Delete Phone activation"
 '
 'btnActPhone
 '
-Me.btnActPhone.Location = New System.Drawing.Point(1188, 227)
+Me.btnActPhone.Location = New System.Drawing.Point(990, 197)
 Me.btnActPhone.Name = "btnActPhone"
-Me.btnActPhone.Size = New System.Drawing.Size(173, 27)
+Me.btnActPhone.Size = New System.Drawing.Size(144, 23)
 Me.btnActPhone.TabIndex = 9
 Me.btnActPhone.Text = "&Activate by phone"
 '
 'btnReActivate
 '
-Me.btnReActivate.Location = New System.Drawing.Point(1188, 97)
+Me.btnReActivate.Location = New System.Drawing.Point(990, 84)
 Me.btnReActivate.Name = "btnReActivate"
-Me.btnReActivate.Size = New System.Drawing.Size(173, 26)
+Me.btnReActivate.Size = New System.Drawing.Size(144, 23)
 Me.btnReActivate.TabIndex = 6
 Me.btnReActivate.Text = "Re-Activate"
 '
@@ -5967,9 +5967,9 @@ Me.GCAboInfo.Controls.Add(Me.txtAbo_ValidityTo)
 Me.GCAboInfo.Controls.Add(Me.cmbABO)
 Me.GCAboInfo.Controls.Add(Me.lblNextAbo)
 Me.GCAboInfo.Controls.Add(Me.lblAbo)
-Me.GCAboInfo.Location = New System.Drawing.Point(758, 46)
+Me.GCAboInfo.Location = New System.Drawing.Point(632, 40)
 Me.GCAboInfo.Name = "GCAboInfo"
-Me.GCAboInfo.Size = New System.Drawing.Size(404, 448)
+Me.GCAboInfo.Size = New System.Drawing.Size(336, 388)
 Me.GCAboInfo.TabIndex = 5
 Me.GCAboInfo.Text = "ABO Info"
 '
@@ -5977,7 +5977,7 @@ Me.GCAboInfo.Text = "ABO Info"
 '
 Me.cmbDiscountActivation.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.activation_discount_code_id", true))
 Me.cmbDiscountActivation.Enabled = false
-Me.cmbDiscountActivation.Location = New System.Drawing.Point(192, 306)
+Me.cmbDiscountActivation.Location = New System.Drawing.Point(160, 265)
 Me.cmbDiscountActivation.Name = "cmbDiscountActivation"
 Me.cmbDiscountActivation.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)})
 Me.cmbDiscountActivation.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("discount_code_id", "discount_code_id", 102, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("discount_code", "discount_code", 75, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)})
@@ -5985,7 +5985,7 @@ Me.cmbDiscountActivation.Properties.DataSource = Me.objDS.discount_code
 Me.cmbDiscountActivation.Properties.DisplayMember = "code"
 Me.cmbDiscountActivation.Properties.NullText = ""
 Me.cmbDiscountActivation.Properties.ValueMember = "code_id"
-Me.cmbDiscountActivation.Size = New System.Drawing.Size(104, 22)
+Me.cmbDiscountActivation.Size = New System.Drawing.Size(87, 20)
 Me.cmbDiscountActivation.TabIndex = 60
 '
 'cmbDiscType
@@ -5993,19 +5993,19 @@ Me.cmbDiscountActivation.TabIndex = 60
 Me.cmbDiscType.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.activation_discount_code_type", true))
 Me.cmbDiscType.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.objDS, "customers.activation_discount_code_type", true))
 Me.cmbDiscType.Enabled = false
-Me.cmbDiscType.Location = New System.Drawing.Point(298, 306)
+Me.cmbDiscType.Location = New System.Drawing.Point(248, 265)
 Me.cmbDiscType.Name = "cmbDiscType"
 Me.cmbDiscType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.cmbDiscType.Properties.Items.AddRange(New Object() {"A", "D"})
 Me.cmbDiscType.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
-Me.cmbDiscType.Size = New System.Drawing.Size(96, 22)
+Me.cmbDiscType.Size = New System.Drawing.Size(80, 20)
 Me.cmbDiscType.TabIndex = 59
 '
 'lblDateEndHoliday
 '
-Me.lblDateEndHoliday.Location = New System.Drawing.Point(10, 172)
+Me.lblDateEndHoliday.Location = New System.Drawing.Point(8, 149)
 Me.lblDateEndHoliday.Name = "lblDateEndHoliday"
-Me.lblDateEndHoliday.Size = New System.Drawing.Size(132, 16)
+Me.lblDateEndHoliday.Size = New System.Drawing.Size(113, 13)
 Me.lblDateEndHoliday.TabIndex = 51
 Me.lblDateEndHoliday.Text = "closing date of vacancy"
 '
@@ -6013,24 +6013,24 @@ Me.lblDateEndHoliday.Text = "closing date of vacancy"
 '
 Me.DateEndOfHoliday.EditValue = Nothing
 Me.DateEndOfHoliday.Enabled = false
-Me.DateEndOfHoliday.Location = New System.Drawing.Point(192, 168)
+Me.DateEndOfHoliday.Location = New System.Drawing.Point(160, 146)
 Me.DateEndOfHoliday.Name = "DateEndOfHoliday"
 Me.DateEndOfHoliday.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.DateEndOfHoliday.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-Me.DateEndOfHoliday.Size = New System.Drawing.Size(182, 22)
+Me.DateEndOfHoliday.Size = New System.Drawing.Size(152, 20)
 Me.DateEndOfHoliday.TabIndex = 50
 '
 'cmbSuspended
 '
 Me.cmbSuspended.Enabled = false
-Me.cmbSuspended.Location = New System.Drawing.Point(192, 142)
+Me.cmbSuspended.Location = New System.Drawing.Point(160, 123)
 Me.cmbSuspended.Name = "cmbSuspended"
 Me.cmbSuspended.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.cmbSuspended.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Value", "Value", 75, DevExpress.Utils.FormatType.Numeric, "", false, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DisplayMember", "DisplayMember", 82, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)})
 Me.cmbSuspended.Properties.DisplayMember = "DisplayMember"
 Me.cmbSuspended.Properties.NullText = ""
 Me.cmbSuspended.Properties.ValueMember = "Value"
-Me.cmbSuspended.Size = New System.Drawing.Size(182, 22)
+Me.cmbSuspended.Size = New System.Drawing.Size(152, 20)
 Me.cmbSuspended.TabIndex = 48
 '
 'lblAboSumP
@@ -6038,26 +6038,26 @@ Me.cmbSuspended.TabIndex = 48
 Me.lblAboSumP.AutoSize = true
 Me.lblAboSumP.BackColor = System.Drawing.Color.FromArgb(CType(CType(192,Byte),Integer), CType(CType(0,Byte),Integer), CType(CType(0,Byte),Integer))
 Me.lblAboSumP.ForeColor = System.Drawing.Color.WhiteSmoke
-Me.lblAboSumP.Location = New System.Drawing.Point(6, 33)
+Me.lblAboSumP.Location = New System.Drawing.Point(5, 29)
 Me.lblAboSumP.Name = "lblAboSumP"
-Me.lblAboSumP.Size = New System.Drawing.Size(185, 17)
+Me.lblAboSumP.Size = New System.Drawing.Size(139, 13)
 Me.lblAboSumP.TabIndex = 47
 Me.lblAboSumP.Text = "ABO 12 mois SummerPower"
 '
 'lblSuspended
 '
-Me.lblSuspended.Location = New System.Drawing.Point(10, 147)
+Me.lblSuspended.Location = New System.Drawing.Point(8, 127)
 Me.lblSuspended.Name = "lblSuspended"
-Me.lblSuspended.Size = New System.Drawing.Size(63, 16)
+Me.lblSuspended.Size = New System.Drawing.Size(53, 13)
 Me.lblSuspended.TabIndex = 45
 Me.lblSuspended.Text = "Suspended"
 '
 'btnGoto30
 '
 Me.btnGoto30.Enabled = false
-Me.btnGoto30.Location = New System.Drawing.Point(298, 389)
+Me.btnGoto30.Location = New System.Drawing.Point(248, 337)
 Me.btnGoto30.Name = "btnGoto30"
-Me.btnGoto30.Size = New System.Drawing.Size(76, 26)
+Me.btnGoto30.Size = New System.Drawing.Size(64, 23)
 Me.btnGoto30.TabIndex = 44
 Me.btnGoto30.Text = "Goto 30"
 Me.btnGoto30.Visible = false
@@ -6066,16 +6066,16 @@ Me.btnGoto30.Visible = false
 '
 Me.txtRegistrationStep.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_registration_step", true))
 Me.txtRegistrationStep.Enabled = false
-Me.txtRegistrationStep.Location = New System.Drawing.Point(192, 389)
+Me.txtRegistrationStep.Location = New System.Drawing.Point(160, 337)
 Me.txtRegistrationStep.Name = "txtRegistrationStep"
-Me.txtRegistrationStep.Size = New System.Drawing.Size(96, 22)
+Me.txtRegistrationStep.Size = New System.Drawing.Size(80, 20)
 Me.txtRegistrationStep.TabIndex = 43
 '
 'lblRegistrationStep
 '
-Me.lblRegistrationStep.Location = New System.Drawing.Point(10, 398)
+Me.lblRegistrationStep.Location = New System.Drawing.Point(8, 345)
 Me.lblRegistrationStep.Name = "lblRegistrationStep"
-Me.lblRegistrationStep.Size = New System.Drawing.Size(98, 16)
+Me.lblRegistrationStep.Size = New System.Drawing.Size(83, 13)
 Me.lblRegistrationStep.TabIndex = 42
 Me.lblRegistrationStep.Text = "Registration Step"
 '
@@ -6084,17 +6084,17 @@ Me.lblRegistrationStep.Text = "Registration Step"
 Me.txtDVDAdultAtHome.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_abo_dvd_home_adult", true))
 Me.txtDVDAdultAtHome.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
 Me.txtDVDAdultAtHome.Enabled = false
-Me.txtDVDAdultAtHome.Location = New System.Drawing.Point(307, 278)
+Me.txtDVDAdultAtHome.Location = New System.Drawing.Point(256, 241)
 Me.txtDVDAdultAtHome.Name = "txtDVDAdultAtHome"
 Me.txtDVDAdultAtHome.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-Me.txtDVDAdultAtHome.Size = New System.Drawing.Size(85, 22)
+Me.txtDVDAdultAtHome.Size = New System.Drawing.Size(71, 20)
 Me.txtDVDAdultAtHome.TabIndex = 41
 '
 'lblDiscountrecurring
 '
-Me.lblDiscountrecurring.Location = New System.Drawing.Point(10, 343)
+Me.lblDiscountrecurring.Location = New System.Drawing.Point(8, 297)
 Me.lblDiscountrecurring.Name = "lblDiscountrecurring"
-Me.lblDiscountrecurring.Size = New System.Drawing.Size(107, 16)
+Me.lblDiscountrecurring.Size = New System.Drawing.Size(90, 13)
 Me.lblDiscountrecurring.TabIndex = 40
 Me.lblDiscountrecurring.Text = "Discount Recurring"
 '
@@ -6104,30 +6104,30 @@ Me.txtDiscRecurring.AllowDrop = true
 Me.txtDiscRecurring.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_abo_discount_recurring_to_date", true))
 Me.txtDiscRecurring.EditValue = Nothing
 Me.txtDiscRecurring.Enabled = false
-Me.txtDiscRecurring.Location = New System.Drawing.Point(192, 333)
+Me.txtDiscRecurring.Location = New System.Drawing.Point(160, 289)
 Me.txtDiscRecurring.Name = "txtDiscRecurring"
 Me.txtDiscRecurring.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
 Me.txtDiscRecurring.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.txtDiscRecurring.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-Me.txtDiscRecurring.Size = New System.Drawing.Size(182, 22)
+Me.txtDiscRecurring.Size = New System.Drawing.Size(152, 20)
 Me.txtDiscRecurring.TabIndex = 39
 '
 'chkAutoStop
 '
 Me.chkAutoStop.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_abo_auto_stop_next_reconduction", true))
 Me.chkAutoStop.Enabled = false
-Me.chkAutoStop.Location = New System.Drawing.Point(144, 426)
+Me.chkAutoStop.Location = New System.Drawing.Point(120, 369)
 Me.chkAutoStop.Name = "chkAutoStop"
 Me.chkAutoStop.Properties.Caption = "Auto-Stop"
 Me.chkAutoStop.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
-Me.chkAutoStop.Size = New System.Drawing.Size(115, 21)
+Me.chkAutoStop.Size = New System.Drawing.Size(96, 19)
 Me.chkAutoStop.TabIndex = 38
 '
 'cmbNextDiscCode
 '
 Me.cmbNextDiscCode.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_next_discount_code", true))
 Me.cmbNextDiscCode.Enabled = false
-Me.cmbNextDiscCode.Location = New System.Drawing.Point(192, 361)
+Me.cmbNextDiscCode.Location = New System.Drawing.Point(160, 313)
 Me.cmbNextDiscCode.Name = "cmbNextDiscCode"
 Me.cmbNextDiscCode.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Delete)})
 Me.cmbNextDiscCode.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("discount_code_id", "discount_code_id", 102, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("discount_code", "discount_code", 75, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)})
@@ -6135,22 +6135,22 @@ Me.cmbNextDiscCode.Properties.DataSource = Me.objDS.discount_code
 Me.cmbNextDiscCode.Properties.DisplayMember = "code"
 Me.cmbNextDiscCode.Properties.NullText = ""
 Me.cmbNextDiscCode.Properties.ValueMember = "code_id"
-Me.cmbNextDiscCode.Size = New System.Drawing.Size(182, 22)
+Me.cmbNextDiscCode.Size = New System.Drawing.Size(152, 20)
 Me.cmbNextDiscCode.TabIndex = 36
 '
 'lblNextDiscount
 '
-Me.lblNextDiscount.Location = New System.Drawing.Point(10, 370)
+Me.lblNextDiscount.Location = New System.Drawing.Point(8, 321)
 Me.lblNextDiscount.Name = "lblNextDiscount"
-Me.lblNextDiscount.Size = New System.Drawing.Size(89, 16)
+Me.lblNextDiscount.Size = New System.Drawing.Size(77, 13)
 Me.lblNextDiscount.TabIndex = 33
 Me.lblNextDiscount.Text = "Next Disc. Code"
 '
 'lblActivation
 '
-Me.lblActivation.Location = New System.Drawing.Point(10, 315)
+Me.lblActivation.Location = New System.Drawing.Point(8, 273)
 Me.lblActivation.Name = "lblActivation"
-Me.lblActivation.Size = New System.Drawing.Size(128, 16)
+Me.lblActivation.Size = New System.Drawing.Size(109, 13)
 Me.lblActivation.TabIndex = 31
 Me.lblActivation.Text = "Activation / Disc. Code"
 '
@@ -6158,18 +6158,18 @@ Me.lblActivation.Text = "Activation / Disc. Code"
 '
 Me.chkMultiShipment.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_abo_multishipment", true))
 Me.chkMultiShipment.Enabled = false
-Me.chkMultiShipment.Location = New System.Drawing.Point(10, 426)
+Me.chkMultiShipment.Location = New System.Drawing.Point(8, 369)
 Me.chkMultiShipment.Name = "chkMultiShipment"
 Me.chkMultiShipment.Properties.Caption = "Multi-Shipment"
 Me.chkMultiShipment.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
-Me.chkMultiShipment.Size = New System.Drawing.Size(115, 21)
+Me.chkMultiShipment.Size = New System.Drawing.Size(96, 19)
 Me.chkMultiShipment.TabIndex = 30
 '
 'cmbNextABO
 '
 Me.cmbNextABO.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_next_abo_type", true))
 Me.cmbNextABO.Enabled = false
-Me.cmbNextABO.Location = New System.Drawing.Point(192, 80)
+Me.cmbNextABO.Location = New System.Drawing.Point(160, 69)
 Me.cmbNextABO.Name = "cmbNextABO"
 Me.cmbNextABO.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.cmbNextABO.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("products_id", "products_id", 75, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("products_model", "products_model", 82, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("products_title", "products_title", 72, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)})
@@ -6177,7 +6177,7 @@ Me.cmbNextABO.Properties.DataSource = Me.objDS.products_abo
 Me.cmbNextABO.Properties.DisplayMember = "products_title"
 Me.cmbNextABO.Properties.NullText = ""
 Me.cmbNextABO.Properties.ValueMember = "products_id"
-Me.cmbNextABO.Size = New System.Drawing.Size(182, 22)
+Me.cmbNextABO.Size = New System.Drawing.Size(152, 20)
 Me.cmbNextABO.TabIndex = 29
 '
 'txtDVDNormAtHome
@@ -6185,10 +6185,10 @@ Me.cmbNextABO.TabIndex = 29
 Me.txtDVDNormAtHome.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_abo_dvd_home_norm", true))
 Me.txtDVDNormAtHome.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
 Me.txtDVDNormAtHome.Enabled = false
-Me.txtDVDNormAtHome.Location = New System.Drawing.Point(307, 250)
+Me.txtDVDNormAtHome.Location = New System.Drawing.Point(256, 217)
 Me.txtDVDNormAtHome.Name = "txtDVDNormAtHome"
 Me.txtDVDNormAtHome.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-Me.txtDVDNormAtHome.Size = New System.Drawing.Size(85, 22)
+Me.txtDVDNormAtHome.Size = New System.Drawing.Size(71, 20)
 Me.txtDVDNormAtHome.TabIndex = 27
 '
 'txtDVDAdult
@@ -6196,10 +6196,10 @@ Me.txtDVDNormAtHome.TabIndex = 27
 Me.txtDVDAdult.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_abo_dvd_adult", true))
 Me.txtDVDAdult.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
 Me.txtDVDAdult.Enabled = false
-Me.txtDVDAdult.Location = New System.Drawing.Point(192, 278)
+Me.txtDVDAdult.Location = New System.Drawing.Point(160, 241)
 Me.txtDVDAdult.Name = "txtDVDAdult"
 Me.txtDVDAdult.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-Me.txtDVDAdult.Size = New System.Drawing.Size(86, 22)
+Me.txtDVDAdult.Size = New System.Drawing.Size(72, 20)
 Me.txtDVDAdult.TabIndex = 26
 '
 'txtDVDNorm
@@ -6207,41 +6207,41 @@ Me.txtDVDAdult.TabIndex = 26
 Me.txtDVDNorm.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_abo_dvd_norm", true))
 Me.txtDVDNorm.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
 Me.txtDVDNorm.Enabled = false
-Me.txtDVDNorm.Location = New System.Drawing.Point(192, 250)
+Me.txtDVDNorm.Location = New System.Drawing.Point(160, 217)
 Me.txtDVDNorm.Name = "txtDVDNorm"
 Me.txtDVDNorm.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-Me.txtDVDNorm.Size = New System.Drawing.Size(86, 22)
+Me.txtDVDNorm.Size = New System.Drawing.Size(72, 20)
 Me.txtDVDNorm.TabIndex = 25
 '
 'lblAdult
 '
-Me.lblAdult.Location = New System.Drawing.Point(10, 287)
+Me.lblAdult.Location = New System.Drawing.Point(8, 249)
 Me.lblAdult.Name = "lblAdult"
-Me.lblAdult.Size = New System.Drawing.Size(38, 16)
+Me.lblAdult.Size = New System.Drawing.Size(32, 13)
 Me.lblAdult.TabIndex = 24
 Me.lblAdult.Text = "ADULT"
 '
 'lblNorm
 '
-Me.lblNorm.Location = New System.Drawing.Point(10, 260)
+Me.lblNorm.Location = New System.Drawing.Point(8, 225)
 Me.lblNorm.Name = "lblNorm"
-Me.lblNorm.Size = New System.Drawing.Size(35, 16)
+Me.lblNorm.Size = New System.Drawing.Size(30, 13)
 Me.lblNorm.TabIndex = 23
 Me.lblNorm.Text = "NORM"
 '
 'lblHome
 '
-Me.lblHome.Location = New System.Drawing.Point(317, 232)
+Me.lblHome.Location = New System.Drawing.Point(264, 201)
 Me.lblHome.Name = "lblHome"
-Me.lblHome.Size = New System.Drawing.Size(45, 16)
+Me.lblHome.Size = New System.Drawing.Size(37, 13)
 Me.lblHome.TabIndex = 22
 Me.lblHome.Text = "@Home"
 '
 'lblAsked
 '
-Me.lblAsked.Location = New System.Drawing.Point(192, 232)
+Me.lblAsked.Location = New System.Drawing.Point(160, 201)
 Me.lblAsked.Name = "lblAsked"
-Me.lblAsked.Size = New System.Drawing.Size(34, 16)
+Me.lblAsked.Size = New System.Drawing.Size(29, 13)
 Me.lblAsked.TabIndex = 21
 Me.lblAsked.Text = "Asked"
 '
@@ -6250,7 +6250,7 @@ Me.lblAsked.Text = "Asked"
 Me.txtABOCredit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_abo_dvd_credit", true))
 Me.txtABOCredit.EditValue = New Decimal(New Integer() {1, 0, 0, 0})
 Me.txtABOCredit.Enabled = false
-Me.txtABOCredit.Location = New System.Drawing.Point(192, 204)
+Me.txtABOCredit.Location = New System.Drawing.Point(160, 177)
 Me.txtABOCredit.Name = "txtABOCredit"
 Me.txtABOCredit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
 Me.txtABOCredit.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
@@ -6258,22 +6258,22 @@ Me.txtABOCredit.Properties.MaxLength = 1000
 Me.txtABOCredit.Properties.MaxValue = New Decimal(New Integer() {1000, 0, 0, 0})
 Me.txtABOCredit.Properties.MinValue = New Decimal(New Integer() {1, 0, 0, -2147483648})
 Me.txtABOCredit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
-Me.txtABOCredit.Size = New System.Drawing.Size(182, 22)
+Me.txtABOCredit.Size = New System.Drawing.Size(152, 20)
 Me.txtABOCredit.TabIndex = 20
 '
 'lblCredits
 '
-Me.lblCredits.Location = New System.Drawing.Point(10, 213)
+Me.lblCredits.Location = New System.Drawing.Point(8, 185)
 Me.lblCredits.Name = "lblCredits"
-Me.lblCredits.Size = New System.Drawing.Size(40, 16)
+Me.lblCredits.Size = New System.Drawing.Size(34, 13)
 Me.lblCredits.TabIndex = 19
 Me.lblCredits.Text = "Credits"
 '
 'lblValidity
 '
-Me.lblValidity.Location = New System.Drawing.Point(10, 117)
+Me.lblValidity.Location = New System.Drawing.Point(8, 101)
 Me.lblValidity.Name = "lblValidity"
-Me.lblValidity.Size = New System.Drawing.Size(41, 16)
+Me.lblValidity.Size = New System.Drawing.Size(34, 13)
 Me.lblValidity.TabIndex = 18
 Me.lblValidity.Text = "Validity"
 '
@@ -6282,18 +6282,18 @@ Me.lblValidity.Text = "Validity"
 Me.txtAbo_ValidityTo.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_abo_validityto", true))
 Me.txtAbo_ValidityTo.EditValue = Nothing
 Me.txtAbo_ValidityTo.Enabled = false
-Me.txtAbo_ValidityTo.Location = New System.Drawing.Point(192, 107)
+Me.txtAbo_ValidityTo.Location = New System.Drawing.Point(160, 93)
 Me.txtAbo_ValidityTo.Name = "txtAbo_ValidityTo"
 Me.txtAbo_ValidityTo.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.txtAbo_ValidityTo.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-Me.txtAbo_ValidityTo.Size = New System.Drawing.Size(182, 22)
+Me.txtAbo_ValidityTo.Size = New System.Drawing.Size(152, 20)
 Me.txtAbo_ValidityTo.TabIndex = 17
 '
 'cmbABO
 '
 Me.cmbABO.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_abo_type", true))
 Me.cmbABO.Enabled = false
-Me.cmbABO.Location = New System.Drawing.Point(192, 52)
+Me.cmbABO.Location = New System.Drawing.Point(160, 45)
 Me.cmbABO.Name = "cmbABO"
 Me.cmbABO.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.cmbABO.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("products_id", "products_id", 75, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("products_model", "products_model", 82, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("products_title", "products_title", 72, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)})
@@ -6301,22 +6301,22 @@ Me.cmbABO.Properties.DataSource = Me.objDS.products_abo
 Me.cmbABO.Properties.DisplayMember = "products_title"
 Me.cmbABO.Properties.NullText = ""
 Me.cmbABO.Properties.ValueMember = "products_id"
-Me.cmbABO.Size = New System.Drawing.Size(182, 22)
+Me.cmbABO.Size = New System.Drawing.Size(152, 20)
 Me.cmbABO.TabIndex = 15
 '
 'lblNextAbo
 '
-Me.lblNextAbo.Location = New System.Drawing.Point(10, 89)
+Me.lblNextAbo.Location = New System.Drawing.Point(8, 77)
 Me.lblNextAbo.Name = "lblNextAbo"
-Me.lblNextAbo.Size = New System.Drawing.Size(53, 16)
+Me.lblNextAbo.Size = New System.Drawing.Size(47, 13)
 Me.lblNextAbo.TabIndex = 14
 Me.lblNextAbo.Text = "Next ABO"
 '
 'lblAbo
 '
-Me.lblAbo.Location = New System.Drawing.Point(10, 61)
+Me.lblAbo.Location = New System.Drawing.Point(8, 53)
 Me.lblAbo.Name = "lblAbo"
-Me.lblAbo.Size = New System.Drawing.Size(24, 16)
+Me.lblAbo.Size = New System.Drawing.Size(21, 13)
 Me.lblAbo.TabIndex = 12
 Me.lblAbo.Text = "ABO"
 '
@@ -6334,9 +6334,9 @@ Me.GCadresse.Controls.Add(Me.txtDeliveryCity)
 Me.GCadresse.Controls.Add(Me.txtDeliveryPostCode)
 Me.GCadresse.Controls.Add(Me.txtDeliveryAddr)
 Me.GCadresse.Controls.Add(Me.LabelControl9)
-Me.GCadresse.Location = New System.Drawing.Point(19, 545)
+Me.GCadresse.Location = New System.Drawing.Point(16, 472)
 Me.GCadresse.Name = "GCadresse"
-Me.GCadresse.Size = New System.Drawing.Size(719, 349)
+Me.GCadresse.Size = New System.Drawing.Size(600, 304)
 Me.GCadresse.TabIndex = 1
 Me.GCadresse.Text = "Default Delivery Address"
 '
@@ -6344,10 +6344,10 @@ Me.GCadresse.Text = "Default Delivery Address"
 '
 Me.txtDate_added_Current.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "address_book_default.date_added", true))
 Me.txtDate_added_Current.Enabled = false
-Me.txtDate_added_Current.Location = New System.Drawing.Point(5, 98)
+Me.txtDate_added_Current.Location = New System.Drawing.Point(4, 85)
 Me.txtDate_added_Current.Name = "txtDate_added_Current"
 Me.txtDate_added_Current.Properties.ReadOnly = true
-Me.txtDate_added_Current.Size = New System.Drawing.Size(161, 22)
+Me.txtDate_added_Current.Size = New System.Drawing.Size(134, 20)
 Me.txtDate_added_Current.TabIndex = 21
 '
 'GridAddress
@@ -6355,10 +6355,10 @@ Me.txtDate_added_Current.TabIndex = 21
 Me.GridAddress.AllowDrop = true
 Me.GridAddress.EmbeddedNavigator.Name = ""
 Me.GridAddress.FormsUseDefaultLookAndFeel = false
-Me.GridAddress.Location = New System.Drawing.Point(18, 153)
+Me.GridAddress.Location = New System.Drawing.Point(15, 133)
 Me.GridAddress.MainView = Me.GridViewAddress
 Me.GridAddress.Name = "GridAddress"
-Me.GridAddress.Size = New System.Drawing.Size(692, 169)
+Me.GridAddress.Size = New System.Drawing.Size(577, 146)
 Me.GridAddress.TabIndex = 20
 Me.GridAddress.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewAddress})
 '
@@ -6467,25 +6467,25 @@ Me.cdate_added.Width = 96
 '
 Me.txtDeliveryFirstName.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "address_book_default.entry_firstname", true))
 Me.txtDeliveryFirstName.Enabled = false
-Me.txtDeliveryFirstName.Location = New System.Drawing.Point(461, 32)
+Me.txtDeliveryFirstName.Location = New System.Drawing.Point(384, 28)
 Me.txtDeliveryFirstName.Name = "txtDeliveryFirstName"
-Me.txtDeliveryFirstName.Size = New System.Drawing.Size(249, 22)
+Me.txtDeliveryFirstName.Size = New System.Drawing.Size(208, 20)
 Me.txtDeliveryFirstName.TabIndex = 17
 '
 'txtDeliveryLastName
 '
 Me.txtDeliveryLastName.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "address_book_default.entry_lastname", true))
 Me.txtDeliveryLastName.Enabled = false
-Me.txtDeliveryLastName.Location = New System.Drawing.Point(182, 32)
+Me.txtDeliveryLastName.Location = New System.Drawing.Point(152, 28)
 Me.txtDeliveryLastName.Name = "txtDeliveryLastName"
-Me.txtDeliveryLastName.Size = New System.Drawing.Size(269, 22)
+Me.txtDeliveryLastName.Size = New System.Drawing.Size(224, 20)
 Me.txtDeliveryLastName.TabIndex = 16
 '
 'LabelControl10
 '
-Me.LabelControl10.Location = New System.Drawing.Point(19, 42)
+Me.LabelControl10.Location = New System.Drawing.Point(16, 36)
 Me.LabelControl10.Name = "LabelControl10"
-Me.LabelControl10.Size = New System.Drawing.Size(33, 16)
+Me.LabelControl10.Size = New System.Drawing.Size(27, 13)
 Me.LabelControl10.TabIndex = 15
 Me.LabelControl10.Text = "Name"
 '
@@ -6493,7 +6493,7 @@ Me.LabelControl10.Text = "Name"
 '
 Me.cmbDeliverycountry.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "address_book_default.entry_country_id", true))
 Me.cmbDeliverycountry.Enabled = false
-Me.cmbDeliverycountry.Location = New System.Drawing.Point(184, 115)
+Me.cmbDeliverycountry.Location = New System.Drawing.Point(153, 100)
 Me.cmbDeliverycountry.Name = "cmbDeliverycountry"
 Me.cmbDeliverycountry.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.cmbDeliverycountry.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("countries_id", "countries_id", 77, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("countries_name", "countries_name", 82, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)})
@@ -6501,41 +6501,41 @@ Me.cmbDeliverycountry.Properties.DataSource = Me.objDS.country
 Me.cmbDeliverycountry.Properties.DisplayMember = "countries_name"
 Me.cmbDeliverycountry.Properties.NullText = ""
 Me.cmbDeliverycountry.Properties.ValueMember = "countries_id"
-Me.cmbDeliverycountry.Size = New System.Drawing.Size(528, 22)
+Me.cmbDeliverycountry.Size = New System.Drawing.Size(440, 20)
 Me.cmbDeliverycountry.TabIndex = 14
 '
 'txtDeliveryCity
 '
 Me.txtDeliveryCity.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "address_book_default.entry_city", true))
 Me.txtDeliveryCity.Enabled = false
-Me.txtDeliveryCity.Location = New System.Drawing.Point(336, 88)
+Me.txtDeliveryCity.Location = New System.Drawing.Point(280, 76)
 Me.txtDeliveryCity.Name = "txtDeliveryCity"
-Me.txtDeliveryCity.Size = New System.Drawing.Size(374, 22)
+Me.txtDeliveryCity.Size = New System.Drawing.Size(312, 20)
 Me.txtDeliveryCity.TabIndex = 13
 '
 'txtDeliveryPostCode
 '
 Me.txtDeliveryPostCode.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "address_book_default.entry_postcode", true))
 Me.txtDeliveryPostCode.Enabled = false
-Me.txtDeliveryPostCode.Location = New System.Drawing.Point(182, 88)
+Me.txtDeliveryPostCode.Location = New System.Drawing.Point(152, 76)
 Me.txtDeliveryPostCode.Name = "txtDeliveryPostCode"
-Me.txtDeliveryPostCode.Size = New System.Drawing.Size(144, 22)
+Me.txtDeliveryPostCode.Size = New System.Drawing.Size(120, 20)
 Me.txtDeliveryPostCode.TabIndex = 12
 '
 'txtDeliveryAddr
 '
 Me.txtDeliveryAddr.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "address_book_default.entry_street_address", true))
 Me.txtDeliveryAddr.Enabled = false
-Me.txtDeliveryAddr.Location = New System.Drawing.Point(182, 60)
+Me.txtDeliveryAddr.Location = New System.Drawing.Point(152, 52)
 Me.txtDeliveryAddr.Name = "txtDeliveryAddr"
-Me.txtDeliveryAddr.Size = New System.Drawing.Size(528, 22)
+Me.txtDeliveryAddr.Size = New System.Drawing.Size(440, 20)
 Me.txtDeliveryAddr.TabIndex = 10
 '
 'LabelControl9
 '
-Me.LabelControl9.Location = New System.Drawing.Point(19, 69)
+Me.LabelControl9.Location = New System.Drawing.Point(16, 60)
 Me.LabelControl9.Name = "LabelControl9"
-Me.LabelControl9.Size = New System.Drawing.Size(46, 16)
+Me.LabelControl9.Size = New System.Drawing.Size(39, 13)
 Me.LabelControl9.TabIndex = 8
 Me.LabelControl9.Text = "Address"
 '
@@ -6583,9 +6583,9 @@ Me.GCcustomersInfo.Controls.Add(Me.txtLastName)
 Me.GCcustomersInfo.Controls.Add(Me.LabelControl7)
 Me.GCcustomersInfo.Controls.Add(Me.txtCustomers_id)
 Me.GCcustomersInfo.Controls.Add(Me.LabelControl8)
-Me.GCcustomersInfo.Location = New System.Drawing.Point(19, 46)
+Me.GCcustomersInfo.Location = New System.Drawing.Point(16, 40)
 Me.GCcustomersInfo.Name = "GCcustomersInfo"
-Me.GCcustomersInfo.Size = New System.Drawing.Size(720, 477)
+Me.GCcustomersInfo.Size = New System.Drawing.Size(600, 413)
 Me.GCcustomersInfo.TabIndex = 0
 Me.GCcustomersInfo.Text = "Global Info"
 '
@@ -6593,31 +6593,31 @@ Me.GCcustomersInfo.Text = "Global Info"
 '
 Me.chkCreditReceivedBySite.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customer_attributes.credits_already_recieved", true))
 Me.chkCreditReceivedBySite.Enabled = false
-Me.chkCreditReceivedBySite.Location = New System.Drawing.Point(413, 395)
+Me.chkCreditReceivedBySite.Location = New System.Drawing.Point(344, 342)
 Me.chkCreditReceivedBySite.Name = "chkCreditReceivedBySite"
 Me.chkCreditReceivedBySite.Properties.Caption = "Credit Received By Site"
 Me.chkCreditReceivedBySite.RightToLeft = System.Windows.Forms.RightToLeft.No
-Me.chkCreditReceivedBySite.Size = New System.Drawing.Size(171, 21)
+Me.chkCreditReceivedBySite.Size = New System.Drawing.Size(143, 19)
 Me.chkCreditReceivedBySite.TabIndex = 61
 '
 'chkOnly_VOD
 '
 Me.chkOnly_VOD.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customer_attributes.only_vod", true))
 Me.chkOnly_VOD.Enabled = false
-Me.chkOnly_VOD.Location = New System.Drawing.Point(413, 443)
+Me.chkOnly_VOD.Location = New System.Drawing.Point(344, 384)
 Me.chkOnly_VOD.Name = "chkOnly_VOD"
 Me.chkOnly_VOD.Properties.Caption = "Only VOD"
 Me.chkOnly_VOD.RightToLeft = System.Windows.Forms.RightToLeft.No
-Me.chkOnly_VOD.Size = New System.Drawing.Size(153, 21)
+Me.chkOnly_VOD.Size = New System.Drawing.Size(128, 19)
 Me.chkOnly_VOD.TabIndex = 60
 '
 'txtLast_logon
 '
 Me.txtLast_logon.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customer_attributes.last_login_at", true))
 Me.txtLast_logon.Enabled = false
-Me.txtLast_logon.Location = New System.Drawing.Point(173, 335)
+Me.txtLast_logon.Location = New System.Drawing.Point(144, 290)
 Me.txtLast_logon.Name = "txtLast_logon"
-Me.txtLast_logon.Size = New System.Drawing.Size(182, 22)
+Me.txtLast_logon.Size = New System.Drawing.Size(152, 20)
 Me.txtLast_logon.TabIndex = 59
 '
 'txtPtSponsorShip
@@ -6625,19 +6625,19 @@ Me.txtLast_logon.TabIndex = 59
 Me.txtPtSponsorShip.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.mgm_points", true))
 Me.txtPtSponsorShip.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
 Me.txtPtSponsorShip.Enabled = false
-Me.txtPtSponsorShip.Location = New System.Drawing.Point(526, 329)
+Me.txtPtSponsorShip.Location = New System.Drawing.Point(438, 285)
 Me.txtPtSponsorShip.Name = "txtPtSponsorShip"
 Me.txtPtSponsorShip.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
 Me.txtPtSponsorShip.Properties.MaxLength = 100000
 Me.txtPtSponsorShip.Properties.MaxValue = New Decimal(New Integer() {9999999, 0, 0, 0})
-Me.txtPtSponsorShip.Size = New System.Drawing.Size(182, 22)
+Me.txtPtSponsorShip.Size = New System.Drawing.Size(152, 20)
 Me.txtPtSponsorShip.TabIndex = 26
 '
 'lblComment
 '
-Me.lblComment.Location = New System.Drawing.Point(19, 270)
+Me.lblComment.Location = New System.Drawing.Point(16, 234)
 Me.lblComment.Name = "lblComment"
-Me.lblComment.Size = New System.Drawing.Size(55, 16)
+Me.lblComment.Size = New System.Drawing.Size(45, 13)
 Me.lblComment.TabIndex = 58
 Me.lblComment.Text = "Comment"
 '
@@ -6645,54 +6645,54 @@ Me.lblComment.Text = "Comment"
 '
 Me.chkRedListed.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.red_listed", true))
 Me.chkRedListed.Enabled = false
-Me.chkRedListed.Location = New System.Drawing.Point(271, 396)
+Me.chkRedListed.Location = New System.Drawing.Point(226, 343)
 Me.chkRedListed.Name = "chkRedListed"
 Me.chkRedListed.Properties.Caption = "Red Listed"
-Me.chkRedListed.Size = New System.Drawing.Size(112, 21)
+Me.chkRedListed.Size = New System.Drawing.Size(93, 19)
 Me.chkRedListed.TabIndex = 54
 '
 'txtComment
 '
 Me.txtComment.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.comment", true))
 Me.txtComment.Enabled = false
-Me.txtComment.Location = New System.Drawing.Point(173, 267)
+Me.txtComment.Location = New System.Drawing.Point(144, 231)
 Me.txtComment.Name = "txtComment"
-Me.txtComment.Size = New System.Drawing.Size(528, 22)
+Me.txtComment.Size = New System.Drawing.Size(440, 20)
 Me.txtComment.TabIndex = 57
 '
 'chkBlackListed
 '
 Me.chkBlackListed.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.black_listed", true))
 Me.chkBlackListed.Enabled = false
-Me.chkBlackListed.Location = New System.Drawing.Point(271, 443)
+Me.chkBlackListed.Location = New System.Drawing.Point(226, 384)
 Me.chkBlackListed.Name = "chkBlackListed"
 Me.chkBlackListed.Properties.Caption = "Black Listed"
-Me.chkBlackListed.Size = New System.Drawing.Size(118, 21)
+Me.chkBlackListed.Size = New System.Drawing.Size(98, 19)
 Me.chkBlackListed.TabIndex = 53
 '
 'txtYearsOld
 '
 Me.txtYearsOld.Enabled = false
-Me.txtYearsOld.Location = New System.Drawing.Point(355, 207)
+Me.txtYearsOld.Location = New System.Drawing.Point(296, 179)
 Me.txtYearsOld.Name = "txtYearsOld"
-Me.txtYearsOld.Size = New System.Drawing.Size(34, 22)
+Me.txtYearsOld.Size = New System.Drawing.Size(28, 20)
 Me.txtYearsOld.TabIndex = 56
 '
 'chkNewsLetterPartner
 '
 Me.chkNewsLetterPartner.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_newsletterpartner", true))
 Me.chkNewsLetterPartner.Enabled = false
-Me.chkNewsLetterPartner.Location = New System.Drawing.Point(82, 443)
+Me.chkNewsLetterPartner.Location = New System.Drawing.Point(68, 384)
 Me.chkNewsLetterPartner.Name = "chkNewsLetterPartner"
 Me.chkNewsLetterPartner.Properties.Caption = "NewsLetter Partner"
-Me.chkNewsLetterPartner.Size = New System.Drawing.Size(182, 21)
+Me.chkNewsLetterPartner.Size = New System.Drawing.Size(152, 19)
 Me.chkNewsLetterPartner.TabIndex = 52
 '
 'lblGender
 '
-Me.lblGender.Location = New System.Drawing.Point(19, 240)
+Me.lblGender.Location = New System.Drawing.Point(16, 208)
 Me.lblGender.Name = "lblGender"
-Me.lblGender.Size = New System.Drawing.Size(41, 16)
+Me.lblGender.Size = New System.Drawing.Size(35, 13)
 Me.lblGender.TabIndex = 55
 Me.lblGender.Text = "Gender"
 '
@@ -6700,35 +6700,35 @@ Me.lblGender.Text = "Gender"
 '
 Me.chkNewsLetter.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_newsletter", true))
 Me.chkNewsLetter.Enabled = false
-Me.chkNewsLetter.Location = New System.Drawing.Point(82, 396)
+Me.chkNewsLetter.Location = New System.Drawing.Point(68, 343)
 Me.chkNewsLetter.Name = "chkNewsLetter"
 Me.chkNewsLetter.Properties.Caption = "NewsLetter"
 Me.chkNewsLetter.RightToLeft = System.Windows.Forms.RightToLeft.No
-Me.chkNewsLetter.Size = New System.Drawing.Size(153, 21)
+Me.chkNewsLetter.Size = New System.Drawing.Size(128, 19)
 Me.chkNewsLetter.TabIndex = 51
 '
 'txtGender
 '
 Me.txtGender.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_gender", true))
 Me.txtGender.Enabled = false
-Me.txtGender.Location = New System.Drawing.Point(173, 237)
+Me.txtGender.Location = New System.Drawing.Point(144, 205)
 Me.txtGender.Name = "txtGender"
-Me.txtGender.Size = New System.Drawing.Size(33, 22)
+Me.txtGender.Size = New System.Drawing.Size(28, 20)
 Me.txtGender.TabIndex = 54
 '
 'LabelControl31
 '
-Me.LabelControl31.Location = New System.Drawing.Point(396, 332)
+Me.LabelControl31.Location = New System.Drawing.Point(330, 288)
 Me.LabelControl31.Name = "LabelControl31"
-Me.LabelControl31.Size = New System.Drawing.Size(95, 16)
+Me.LabelControl31.Size = New System.Drawing.Size(80, 13)
 Me.LabelControl31.TabIndex = 49
 Me.LabelControl31.Text = "Points Parainage"
 '
 'lblyearsOld
 '
-Me.lblyearsOld.Location = New System.Drawing.Point(396, 210)
+Me.lblyearsOld.Location = New System.Drawing.Point(330, 182)
 Me.lblyearsOld.Name = "lblyearsOld"
-Me.lblyearsOld.Size = New System.Drawing.Size(52, 16)
+Me.lblyearsOld.Size = New System.Drawing.Size(44, 13)
 Me.lblyearsOld.TabIndex = 53
 Me.lblyearsOld.Text = "years old"
 '
@@ -6736,9 +6736,9 @@ Me.lblyearsOld.Text = "years old"
 '
 Me.txtWishListKind.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.wishlist_kind", true))
 Me.txtWishListKind.Enabled = false
-Me.txtWishListKind.Location = New System.Drawing.Point(526, 300)
+Me.txtWishListKind.Location = New System.Drawing.Point(438, 260)
 Me.txtWishListKind.Name = "txtWishListKind"
-Me.txtWishListKind.Size = New System.Drawing.Size(182, 22)
+Me.txtWishListKind.Size = New System.Drawing.Size(152, 20)
 Me.txtWishListKind.TabIndex = 48
 '
 'lblSetPassWord
@@ -6746,17 +6746,17 @@ Me.txtWishListKind.TabIndex = 48
 Me.lblSetPassWord.Appearance.ForeColor = System.Drawing.Color.DarkRed
 Me.lblSetPassWord.Appearance.Options.UseForeColor = true
 Me.lblSetPassWord.Cursor = System.Windows.Forms.Cursors.Hand
-Me.lblSetPassWord.Location = New System.Drawing.Point(239, 33)
+Me.lblSetPassWord.Location = New System.Drawing.Point(199, 29)
 Me.lblSetPassWord.Name = "lblSetPassWord"
-Me.lblSetPassWord.Size = New System.Drawing.Size(121, 16)
+Me.lblSetPassWord.Size = New System.Drawing.Size(100, 13)
 Me.lblSetPassWord.TabIndex = 51
 Me.lblSetPassWord.Text = " Set a new password"
 '
 'LabelControl30
 '
-Me.LabelControl30.Location = New System.Drawing.Point(396, 303)
+Me.LabelControl30.Location = New System.Drawing.Point(330, 263)
 Me.LabelControl30.Name = "LabelControl30"
-Me.LabelControl30.Size = New System.Drawing.Size(75, 16)
+Me.LabelControl30.Size = New System.Drawing.Size(62, 13)
 Me.LabelControl30.TabIndex = 47
 Me.LabelControl30.Text = "WishList Kind"
 '
@@ -6765,9 +6765,9 @@ Me.LabelControl30.Text = "WishList Kind"
 Me.lblLogas.Appearance.ForeColor = System.Drawing.Color.DarkRed
 Me.lblLogas.Appearance.Options.UseForeColor = true
 Me.lblLogas.Cursor = System.Windows.Forms.Cursors.Hand
-Me.lblLogas.Location = New System.Drawing.Point(173, 33)
+Me.lblLogas.Location = New System.Drawing.Point(144, 29)
 Me.lblLogas.Name = "lblLogas"
-Me.lblLogas.Size = New System.Drawing.Size(33, 16)
+Me.lblLogas.Size = New System.Drawing.Size(28, 13)
 Me.lblLogas.TabIndex = 50
 Me.lblLogas.Text = "Logas"
 '
@@ -6775,24 +6775,24 @@ Me.lblLogas.Text = "Logas"
 '
 Me.txtNbrOfLogons.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customer_attributes.number_of_logins", true))
 Me.txtNbrOfLogons.Enabled = false
-Me.txtNbrOfLogons.Location = New System.Drawing.Point(173, 363)
+Me.txtNbrOfLogons.Location = New System.Drawing.Point(144, 315)
 Me.txtNbrOfLogons.Name = "txtNbrOfLogons"
-Me.txtNbrOfLogons.Size = New System.Drawing.Size(182, 22)
+Me.txtNbrOfLogons.Size = New System.Drawing.Size(152, 20)
 Me.txtNbrOfLogons.TabIndex = 46
 '
 'LabelControl36
 '
-Me.LabelControl36.Location = New System.Drawing.Point(19, 155)
+Me.LabelControl36.Location = New System.Drawing.Point(16, 134)
 Me.LabelControl36.Name = "LabelControl36"
-Me.LabelControl36.Size = New System.Drawing.Size(35, 16)
+Me.LabelControl36.Size = New System.Drawing.Size(28, 13)
 Me.LabelControl36.TabIndex = 49
 Me.LabelControl36.Text = "E-Mail"
 '
 'LabelControl29
 '
-Me.LabelControl29.Location = New System.Drawing.Point(17, 365)
+Me.LabelControl29.Location = New System.Drawing.Point(14, 316)
 Me.LabelControl29.Name = "LabelControl29"
-Me.LabelControl29.Size = New System.Drawing.Size(79, 16)
+Me.LabelControl29.Size = New System.Drawing.Size(67, 13)
 Me.LabelControl29.TabIndex = 45
 Me.LabelControl29.Text = "Nbr of Logons"
 '
@@ -6800,7 +6800,7 @@ Me.LabelControl29.Text = "Nbr of Logons"
 '
 Me.cmbEntity.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.EntityID", true))
 Me.cmbEntity.Enabled = false
-Me.cmbEntity.Location = New System.Drawing.Point(173, 87)
+Me.cmbEntity.Location = New System.Drawing.Point(144, 75)
 Me.cmbEntity.Name = "cmbEntity"
 Me.cmbEntity.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.cmbEntity.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Name", "Name", 33, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)})
@@ -6808,30 +6808,30 @@ Me.cmbEntity.Properties.DataSource = Me.objDS.generalentity
 Me.cmbEntity.Properties.DisplayMember = "Name"
 Me.cmbEntity.Properties.NullText = ""
 Me.cmbEntity.Properties.ValueMember = "EntityID"
-Me.cmbEntity.Size = New System.Drawing.Size(269, 22)
+Me.cmbEntity.Size = New System.Drawing.Size(224, 20)
 Me.cmbEntity.TabIndex = 44
 '
 'LabelControl28
 '
-Me.LabelControl28.Location = New System.Drawing.Point(17, 337)
+Me.LabelControl28.Location = New System.Drawing.Point(14, 292)
 Me.LabelControl28.Name = "LabelControl28"
-Me.LabelControl28.Size = New System.Drawing.Size(61, 16)
+Me.LabelControl28.Size = New System.Drawing.Size(52, 13)
 Me.LabelControl28.TabIndex = 44
 Me.LabelControl28.Text = "Last Logon"
 '
 'LabelControl34
 '
-Me.LabelControl34.Location = New System.Drawing.Point(18, 90)
+Me.LabelControl34.Location = New System.Drawing.Point(15, 78)
 Me.LabelControl34.Name = "LabelControl34"
-Me.LabelControl34.Size = New System.Drawing.Size(31, 16)
+Me.LabelControl34.Size = New System.Drawing.Size(28, 13)
 Me.LabelControl34.TabIndex = 43
 Me.LabelControl34.Text = "Entity"
 '
 'LabelControl26
 '
-Me.LabelControl26.Location = New System.Drawing.Point(336, 59)
+Me.LabelControl26.Location = New System.Drawing.Point(280, 51)
 Me.LabelControl26.Name = "LabelControl26"
-Me.LabelControl26.Size = New System.Drawing.Size(45, 16)
+Me.LabelControl26.Size = New System.Drawing.Size(39, 13)
 Me.LabelControl26.TabIndex = 42
 Me.LabelControl26.Text = "Created"
 '
@@ -6839,7 +6839,7 @@ Me.LabelControl26.Text = "Created"
 '
 Me.cmbLanguage.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_language", true))
 Me.cmbLanguage.Enabled = false
-Me.cmbLanguage.Location = New System.Drawing.Point(173, 300)
+Me.cmbLanguage.Location = New System.Drawing.Point(144, 260)
 Me.cmbLanguage.Name = "cmbLanguage"
 Me.cmbLanguage.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.cmbLanguage.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("name", "name", 32, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)})
@@ -6847,7 +6847,7 @@ Me.cmbLanguage.Properties.DataSource = Me.objDS.languages
 Me.cmbLanguage.Properties.DisplayMember = "name"
 Me.cmbLanguage.Properties.NullText = ""
 Me.cmbLanguage.Properties.ValueMember = "languages_id"
-Me.cmbLanguage.Size = New System.Drawing.Size(182, 22)
+Me.cmbLanguage.Size = New System.Drawing.Size(152, 20)
 Me.cmbLanguage.TabIndex = 17
 '
 'txtDateCreated
@@ -6855,19 +6855,19 @@ Me.cmbLanguage.TabIndex = 17
 Me.txtDateCreated.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_info_date_account_created", true))
 Me.txtDateCreated.EditValue = Nothing
 Me.txtDateCreated.Enabled = false
-Me.txtDateCreated.Location = New System.Drawing.Point(451, 59)
+Me.txtDateCreated.Location = New System.Drawing.Point(376, 51)
 Me.txtDateCreated.Name = "txtDateCreated"
 Me.txtDateCreated.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
 Me.txtDateCreated.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.txtDateCreated.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-Me.txtDateCreated.Size = New System.Drawing.Size(173, 22)
+Me.txtDateCreated.Size = New System.Drawing.Size(144, 20)
 Me.txtDateCreated.TabIndex = 41
 '
 'LabelControl27
 '
-Me.LabelControl27.Location = New System.Drawing.Point(17, 309)
+Me.LabelControl27.Location = New System.Drawing.Point(14, 268)
 Me.LabelControl27.Name = "LabelControl27"
-Me.LabelControl27.Size = New System.Drawing.Size(55, 16)
+Me.LabelControl27.Size = New System.Drawing.Size(47, 13)
 Me.LabelControl27.TabIndex = 16
 Me.LabelControl27.Text = "Language"
 '
@@ -6875,35 +6875,35 @@ Me.LabelControl27.Text = "Language"
 '
 Me.txtTel.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_telephone", true))
 Me.txtTel.Enabled = false
-Me.txtTel.Location = New System.Drawing.Point(173, 179)
+Me.txtTel.Location = New System.Drawing.Point(144, 155)
 Me.txtTel.Name = "txtTel"
-Me.txtTel.Size = New System.Drawing.Size(269, 22)
+Me.txtTel.Size = New System.Drawing.Size(224, 20)
 Me.txtTel.TabIndex = 20
 '
 'txtEMail
 '
 Me.txtEMail.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_email_address", true))
 Me.txtEMail.Enabled = false
-Me.txtEMail.Location = New System.Drawing.Point(173, 151)
+Me.txtEMail.Location = New System.Drawing.Point(144, 131)
 Me.txtEMail.Name = "txtEMail"
 Me.txtEMail.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
-Me.txtEMail.Size = New System.Drawing.Size(528, 22)
+Me.txtEMail.Size = New System.Drawing.Size(440, 20)
 Me.txtEMail.TabIndex = 19
 '
 'txtTelEvening
 '
 Me.txtTelEvening.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_telephone_evening", true))
 Me.txtTelEvening.Enabled = false
-Me.txtTelEvening.Location = New System.Drawing.Point(451, 179)
+Me.txtTelEvening.Location = New System.Drawing.Point(376, 155)
 Me.txtTelEvening.Name = "txtTelEvening"
-Me.txtTelEvening.Size = New System.Drawing.Size(250, 22)
+Me.txtTelEvening.Size = New System.Drawing.Size(208, 20)
 Me.txtTelEvening.TabIndex = 18
 '
 'LabelControl21
 '
-Me.LabelControl21.Location = New System.Drawing.Point(19, 181)
+Me.LabelControl21.Location = New System.Drawing.Point(16, 157)
 Me.LabelControl21.Name = "LabelControl21"
-Me.LabelControl21.Size = New System.Drawing.Size(100, 16)
+Me.LabelControl21.Size = New System.Drawing.Size(84, 13)
 Me.LabelControl21.TabIndex = 16
 Me.LabelControl21.Text = "Tel Day / Evening"
 '
@@ -6911,7 +6911,7 @@ Me.LabelControl21.Text = "Tel Day / Evening"
 '
 Me.txtABO.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_abo", true))
 Me.txtABO.Enabled = false
-Me.txtABO.Location = New System.Drawing.Point(634, 59)
+Me.txtABO.Location = New System.Drawing.Point(528, 51)
 Me.txtABO.Name = "txtABO"
 Me.txtABO.Properties.Appearance.BackColor = System.Drawing.Color.Red
 Me.txtABO.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 10!, System.Drawing.FontStyle.Bold)
@@ -6921,14 +6921,14 @@ Me.txtABO.Properties.Caption = "ABO"
 Me.txtABO.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
 Me.txtABO.Properties.ValueChecked = 1
 Me.txtABO.Properties.ValueUnchecked = 0
-Me.txtABO.Size = New System.Drawing.Size(67, 26)
+Me.txtABO.Size = New System.Drawing.Size(56, 21)
 Me.txtABO.TabIndex = 15
 '
 'LabelControl11
 '
-Me.LabelControl11.Location = New System.Drawing.Point(19, 210)
+Me.LabelControl11.Location = New System.Drawing.Point(16, 182)
 Me.LabelControl11.Name = "LabelControl11"
-Me.LabelControl11.Size = New System.Drawing.Size(71, 16)
+Me.LabelControl11.Size = New System.Drawing.Size(61, 13)
 Me.LabelControl11.TabIndex = 11
 Me.LabelControl11.Text = "Date of Birth"
 '
@@ -6937,36 +6937,36 @@ Me.LabelControl11.Text = "Date of Birth"
 Me.DateBirthday.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_dob", true))
 Me.DateBirthday.EditValue = Nothing
 Me.DateBirthday.Enabled = false
-Me.DateBirthday.Location = New System.Drawing.Point(173, 207)
+Me.DateBirthday.Location = New System.Drawing.Point(144, 179)
 Me.DateBirthday.Name = "DateBirthday"
 Me.DateBirthday.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.DateBirthday.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-Me.DateBirthday.Size = New System.Drawing.Size(153, 22)
+Me.DateBirthday.Size = New System.Drawing.Size(128, 20)
 Me.DateBirthday.TabIndex = 10
 '
 'txtFirstName
 '
 Me.txtFirstName.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_firstname", true))
 Me.txtFirstName.Enabled = false
-Me.txtFirstName.Location = New System.Drawing.Point(451, 123)
+Me.txtFirstName.Location = New System.Drawing.Point(376, 107)
 Me.txtFirstName.Name = "txtFirstName"
-Me.txtFirstName.Size = New System.Drawing.Size(250, 22)
+Me.txtFirstName.Size = New System.Drawing.Size(208, 20)
 Me.txtFirstName.TabIndex = 9
 '
 'txtLastName
 '
 Me.txtLastName.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_lastname", true))
 Me.txtLastName.Enabled = false
-Me.txtLastName.Location = New System.Drawing.Point(173, 123)
+Me.txtLastName.Location = New System.Drawing.Point(144, 107)
 Me.txtLastName.Name = "txtLastName"
-Me.txtLastName.Size = New System.Drawing.Size(269, 22)
+Me.txtLastName.Size = New System.Drawing.Size(224, 20)
 Me.txtLastName.TabIndex = 7
 '
 'LabelControl7
 '
-Me.LabelControl7.Location = New System.Drawing.Point(19, 127)
+Me.LabelControl7.Location = New System.Drawing.Point(16, 110)
 Me.LabelControl7.Name = "LabelControl7"
-Me.LabelControl7.Size = New System.Drawing.Size(33, 16)
+Me.LabelControl7.Size = New System.Drawing.Size(27, 13)
 Me.LabelControl7.TabIndex = 6
 Me.LabelControl7.Text = "Name"
 '
@@ -6974,33 +6974,33 @@ Me.LabelControl7.Text = "Name"
 '
 Me.txtCustomers_id.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_id", true))
 Me.txtCustomers_id.Enabled = false
-Me.txtCustomers_id.Location = New System.Drawing.Point(173, 59)
+Me.txtCustomers_id.Location = New System.Drawing.Point(144, 51)
 Me.txtCustomers_id.Name = "txtCustomers_id"
 Me.txtCustomers_id.Properties.ReadOnly = true
-Me.txtCustomers_id.Size = New System.Drawing.Size(153, 22)
+Me.txtCustomers_id.Size = New System.Drawing.Size(128, 20)
 Me.txtCustomers_id.TabIndex = 5
 '
 'LabelControl8
 '
-Me.LabelControl8.Location = New System.Drawing.Point(19, 62)
+Me.LabelControl8.Location = New System.Drawing.Point(16, 54)
 Me.LabelControl8.Name = "LabelControl8"
-Me.LabelControl8.Size = New System.Drawing.Size(71, 16)
+Me.LabelControl8.Size = New System.Drawing.Size(60, 13)
 Me.LabelControl8.TabIndex = 4
 Me.LabelControl8.Text = "Customer ID"
 '
 'btnStopNow
 '
-Me.btnStopNow.Location = New System.Drawing.Point(1187, 417)
+Me.btnStopNow.Location = New System.Drawing.Point(989, 361)
 Me.btnStopNow.Name = "btnStopNow"
-Me.btnStopNow.Size = New System.Drawing.Size(173, 26)
+Me.btnStopNow.Size = New System.Drawing.Size(144, 23)
 Me.btnStopNow.TabIndex = 2
 Me.btnStopNow.Text = "Stop NOW"
 '
 'btnStopAtReconduction
 '
-Me.btnStopAtReconduction.Location = New System.Drawing.Point(1187, 150)
+Me.btnStopAtReconduction.Location = New System.Drawing.Point(989, 130)
 Me.btnStopAtReconduction.Name = "btnStopAtReconduction"
-Me.btnStopAtReconduction.Size = New System.Drawing.Size(173, 27)
+Me.btnStopAtReconduction.Size = New System.Drawing.Size(144, 23)
 Me.btnStopAtReconduction.TabIndex = 3
 Me.btnStopAtReconduction.Text = "Stop @ Reconduction"
 '
@@ -7012,7 +7012,7 @@ Me.tabSearch.Controls.Add(Me.GridControl1)
 Me.tabSearch.Controls.Add(Me.PanelControl1)
 Me.tabSearch.Name = "tabSearch"
 Me.tabSearch.ShowCloseButton = DevExpress.Utils.DefaultBoolean.[False]
-Me.tabSearch.Size = New System.Drawing.Size(1505, 905)
+Me.tabSearch.Size = New System.Drawing.Size(1043, 681)
 Me.tabSearch.Text = "Search"
 '
 'PanelControl1
@@ -7044,185 +7044,185 @@ Me.PanelControl1.Controls.Add(Me.LabelControl1)
 Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Top
 Me.PanelControl1.Location = New System.Drawing.Point(0, 0)
 Me.PanelControl1.Name = "PanelControl1"
-Me.PanelControl1.Size = New System.Drawing.Size(1505, 203)
+Me.PanelControl1.Size = New System.Drawing.Size(1043, 176)
 Me.PanelControl1.TabIndex = 0
 '
 'btnReplayAllCreditHistory
 '
-Me.btnReplayAllCreditHistory.Location = New System.Drawing.Point(974, 99)
+Me.btnReplayAllCreditHistory.Location = New System.Drawing.Point(812, 86)
 Me.btnReplayAllCreditHistory.Name = "btnReplayAllCreditHistory"
-Me.btnReplayAllCreditHistory.Size = New System.Drawing.Size(166, 45)
+Me.btnReplayAllCreditHistory.Size = New System.Drawing.Size(138, 39)
 Me.btnReplayAllCreditHistory.TabIndex = 60
 Me.btnReplayAllCreditHistory.Text = "replay all credit history"
 Me.btnReplayAllCreditHistory.Visible = false
 '
 'BtnEmailError
 '
-Me.BtnEmailError.Location = New System.Drawing.Point(612, 137)
+Me.BtnEmailError.Location = New System.Drawing.Point(510, 119)
 Me.BtnEmailError.Name = "BtnEmailError"
-Me.BtnEmailError.Size = New System.Drawing.Size(166, 27)
+Me.BtnEmailError.Size = New System.Drawing.Size(138, 23)
 Me.BtnEmailError.TabIndex = 59
 Me.BtnEmailError.Text = "Email Error"
 '
 'btnRedlisted
 '
-Me.btnRedlisted.Location = New System.Drawing.Point(788, 55)
+Me.btnRedlisted.Location = New System.Drawing.Point(657, 48)
 Me.btnRedlisted.Name = "btnRedlisted"
-Me.btnRedlisted.Size = New System.Drawing.Size(166, 27)
+Me.btnRedlisted.Size = New System.Drawing.Size(138, 23)
 Me.btnRedlisted.TabIndex = 58
 Me.btnRedlisted.Text = "Customers Redlisted"
 '
 'btnBlackListed
 '
-Me.btnBlackListed.Location = New System.Drawing.Point(612, 55)
+Me.btnBlackListed.Location = New System.Drawing.Point(510, 48)
 Me.btnBlackListed.Name = "btnBlackListed"
-Me.btnBlackListed.Size = New System.Drawing.Size(169, 27)
+Me.btnBlackListed.Size = New System.Drawing.Size(141, 23)
 Me.btnBlackListed.TabIndex = 57
 Me.btnBlackListed.Text = "Customers Blacklisted"
 '
 'BtnSponsorCard
 '
-Me.BtnSponsorCard.Location = New System.Drawing.Point(974, 55)
+Me.BtnSponsorCard.Location = New System.Drawing.Point(812, 48)
 Me.BtnSponsorCard.Name = "BtnSponsorCard"
-Me.BtnSponsorCard.Size = New System.Drawing.Size(166, 27)
+Me.BtnSponsorCard.Size = New System.Drawing.Size(138, 23)
 Me.BtnSponsorCard.TabIndex = 56
 Me.BtnSponsorCard.Text = "Sponsor card"
 '
 'btnViewGift
 '
-Me.btnViewGift.Location = New System.Drawing.Point(788, 137)
+Me.btnViewGift.Location = New System.Drawing.Point(657, 119)
 Me.btnViewGift.Name = "btnViewGift"
-Me.btnViewGift.Size = New System.Drawing.Size(166, 27)
+Me.btnViewGift.Size = New System.Drawing.Size(138, 23)
 Me.btnViewGift.TabIndex = 55
 Me.btnViewGift.Text = "View Customers With Gift"
 '
 'btnViewCustserv
 '
-Me.btnViewCustserv.Location = New System.Drawing.Point(788, 99)
+Me.btnViewCustserv.Location = New System.Drawing.Point(657, 86)
 Me.btnViewCustserv.Name = "btnViewCustserv"
-Me.btnViewCustserv.Size = New System.Drawing.Size(166, 27)
+Me.btnViewCustserv.Size = New System.Drawing.Size(138, 23)
 Me.btnViewCustserv.TabIndex = 54
 Me.btnViewCustserv.Text = "View CustServ"
 Me.btnViewCustserv.Visible = false
 '
 'TxtCustomers_NumComm
 '
-Me.TxtCustomers_NumComm.Location = New System.Drawing.Point(163, 126)
+Me.TxtCustomers_NumComm.Location = New System.Drawing.Point(136, 109)
 Me.TxtCustomers_NumComm.Name = "TxtCustomers_NumComm"
-Me.TxtCustomers_NumComm.Size = New System.Drawing.Size(165, 22)
+Me.TxtCustomers_NumComm.Size = New System.Drawing.Size(137, 20)
 Me.TxtCustomers_NumComm.TabIndex = 53
 '
 'lblNumComm
 '
-Me.lblNumComm.Location = New System.Drawing.Point(41, 128)
+Me.lblNumComm.Location = New System.Drawing.Point(34, 111)
 Me.lblNumComm.Name = "lblNumComm"
-Me.lblNumComm.Size = New System.Drawing.Size(118, 16)
+Me.lblNumComm.Size = New System.Drawing.Size(96, 13)
 Me.lblNumComm.TabIndex = 52
 Me.lblNumComm.Text = "Communication Num"
 '
 'txtcustomers_domiciliation_number_search
 '
-Me.txtcustomers_domiciliation_number_search.Location = New System.Drawing.Point(163, 160)
+Me.txtcustomers_domiciliation_number_search.Location = New System.Drawing.Point(136, 139)
 Me.txtcustomers_domiciliation_number_search.Name = "txtcustomers_domiciliation_number_search"
-Me.txtcustomers_domiciliation_number_search.Size = New System.Drawing.Size(165, 22)
+Me.txtcustomers_domiciliation_number_search.Size = New System.Drawing.Size(137, 20)
 Me.txtcustomers_domiciliation_number_search.TabIndex = 51
 '
 'LabelControl4
 '
-Me.LabelControl4.Location = New System.Drawing.Point(41, 164)
+Me.LabelControl4.Location = New System.Drawing.Point(34, 142)
 Me.LabelControl4.Name = "LabelControl4"
-Me.LabelControl4.Size = New System.Drawing.Size(102, 16)
+Me.LabelControl4.Size = New System.Drawing.Size(82, 13)
 Me.LabelControl4.TabIndex = 50
 Me.LabelControl4.Text = "Domiciliation Num"
 '
 'btnPhoneActivation
 '
-Me.btnPhoneActivation.Location = New System.Drawing.Point(612, 99)
+Me.btnPhoneActivation.Location = New System.Drawing.Point(510, 86)
 Me.btnPhoneActivation.Name = "btnPhoneActivation"
-Me.btnPhoneActivation.Size = New System.Drawing.Size(169, 27)
+Me.btnPhoneActivation.Size = New System.Drawing.Size(141, 23)
 Me.btnPhoneActivation.TabIndex = 49
 Me.btnPhoneActivation.Text = "&View Phone Activation"
 '
 'LabelControl35
 '
-Me.LabelControl35.Location = New System.Drawing.Point(29, 82)
+Me.LabelControl35.Location = New System.Drawing.Point(24, 71)
 Me.LabelControl35.Name = "LabelControl35"
-Me.LabelControl35.Size = New System.Drawing.Size(35, 16)
+Me.LabelControl35.Size = New System.Drawing.Size(28, 13)
 Me.LabelControl35.TabIndex = 48
 Me.LabelControl35.Text = "E-Mail"
 '
 'LabelControl6
 '
-Me.LabelControl6.Location = New System.Drawing.Point(313, 58)
+Me.LabelControl6.Location = New System.Drawing.Point(261, 50)
 Me.LabelControl6.Name = "LabelControl6"
-Me.LabelControl6.Size = New System.Drawing.Size(53, 16)
+Me.LabelControl6.Size = New System.Drawing.Size(46, 13)
 Me.LabelControl6.TabIndex = 47
 Me.LabelControl6.Text = "PostCode"
 '
 'LabelControl5
 '
-Me.LabelControl5.Location = New System.Drawing.Point(313, 27)
+Me.LabelControl5.Location = New System.Drawing.Point(261, 23)
 Me.LabelControl5.Name = "LabelControl5"
-Me.LabelControl5.Size = New System.Drawing.Size(35, 16)
+Me.LabelControl5.Size = New System.Drawing.Size(30, 13)
 Me.LabelControl5.TabIndex = 46
 Me.LabelControl5.Text = "Street"
 '
 'txtcustomers_postcode_search
 '
-Me.txtcustomers_postcode_search.Location = New System.Drawing.Point(376, 54)
+Me.txtcustomers_postcode_search.Location = New System.Drawing.Point(313, 47)
 Me.txtcustomers_postcode_search.Name = "txtcustomers_postcode_search"
-Me.txtcustomers_postcode_search.Size = New System.Drawing.Size(187, 22)
+Me.txtcustomers_postcode_search.Size = New System.Drawing.Size(156, 20)
 Me.txtcustomers_postcode_search.TabIndex = 12
 '
 'btnSearch
 '
-Me.btnSearch.Location = New System.Drawing.Point(376, 136)
+Me.btnSearch.Location = New System.Drawing.Point(313, 118)
 Me.btnSearch.Name = "btnSearch"
-Me.btnSearch.Size = New System.Drawing.Size(164, 43)
+Me.btnSearch.Size = New System.Drawing.Size(137, 37)
 Me.btnSearch.TabIndex = 10
 Me.btnSearch.Text = "&Search"
 '
 'txtcustomers_address_street_search
 '
-Me.txtcustomers_address_street_search.Location = New System.Drawing.Point(376, 24)
+Me.txtcustomers_address_street_search.Location = New System.Drawing.Point(313, 21)
 Me.txtcustomers_address_street_search.Name = "txtcustomers_address_street_search"
-Me.txtcustomers_address_street_search.Size = New System.Drawing.Size(187, 22)
+Me.txtcustomers_address_street_search.Size = New System.Drawing.Size(156, 20)
 Me.txtcustomers_address_street_search.TabIndex = 9
 '
 'txtcustomers_email_address_search
 '
-Me.txtcustomers_email_address_search.Location = New System.Drawing.Point(108, 78)
+Me.txtcustomers_email_address_search.Location = New System.Drawing.Point(90, 68)
 Me.txtcustomers_email_address_search.Name = "txtcustomers_email_address_search"
-Me.txtcustomers_email_address_search.Size = New System.Drawing.Size(187, 22)
+Me.txtcustomers_email_address_search.Size = New System.Drawing.Size(156, 20)
 Me.txtcustomers_email_address_search.TabIndex = 5
 '
 'txtcustomers_name_search
 '
-Me.txtcustomers_name_search.Location = New System.Drawing.Point(108, 50)
+Me.txtcustomers_name_search.Location = New System.Drawing.Point(90, 43)
 Me.txtcustomers_name_search.Name = "txtcustomers_name_search"
-Me.txtcustomers_name_search.Size = New System.Drawing.Size(187, 22)
+Me.txtcustomers_name_search.Size = New System.Drawing.Size(156, 20)
 Me.txtcustomers_name_search.TabIndex = 3
 '
 'LabelControl2
 '
-Me.LabelControl2.Location = New System.Drawing.Point(29, 55)
+Me.LabelControl2.Location = New System.Drawing.Point(24, 48)
 Me.LabelControl2.Name = "LabelControl2"
-Me.LabelControl2.Size = New System.Drawing.Size(33, 16)
+Me.LabelControl2.Size = New System.Drawing.Size(27, 13)
 Me.LabelControl2.TabIndex = 2
 Me.LabelControl2.Text = "Name"
 '
 'txtcustomers_id_search
 '
-Me.txtcustomers_id_search.Location = New System.Drawing.Point(108, 22)
+Me.txtcustomers_id_search.Location = New System.Drawing.Point(90, 19)
 Me.txtcustomers_id_search.Name = "txtcustomers_id_search"
-Me.txtcustomers_id_search.Size = New System.Drawing.Size(187, 22)
+Me.txtcustomers_id_search.Size = New System.Drawing.Size(156, 20)
 Me.txtcustomers_id_search.TabIndex = 1
 '
 'LabelControl1
 '
-Me.LabelControl1.Location = New System.Drawing.Point(29, 25)
+Me.LabelControl1.Location = New System.Drawing.Point(24, 22)
 Me.LabelControl1.Name = "LabelControl1"
-Me.LabelControl1.Size = New System.Drawing.Size(71, 16)
+Me.LabelControl1.Size = New System.Drawing.Size(60, 13)
 Me.LabelControl1.TabIndex = 0
 Me.LabelControl1.Text = "Customer ID"
 '
@@ -7230,11 +7230,11 @@ Me.LabelControl1.Text = "Customer ID"
 '
 Me.XTabCustomers.Dock = System.Windows.Forms.DockStyle.Fill
 Me.XTabCustomers.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-Me.XTabCustomers.Location = New System.Drawing.Point(0, 66)
+Me.XTabCustomers.Location = New System.Drawing.Point(0, 57)
 Me.XTabCustomers.Name = "XTabCustomers"
 Me.XTabCustomers.SelectedTabPage = Me.tabMain
 Me.XTabCustomers.ShowTabHeader = DevExpress.Utils.DefaultBoolean.[True]
-Me.XTabCustomers.Size = New System.Drawing.Size(1262, 816)
+Me.XTabCustomers.Size = New System.Drawing.Size(1262, 825)
 Me.XTabCustomers.TabIndex = 35
 Me.XTabCustomers.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.tabSearch, Me.tabMain, Me.tabComment, Me.tabCalls, Me.tabWishList, Me.tabAboHistory, Me.tabOrdersHistor, Me.tabMessagerie, Me.tabCustServ, Me.tabPayment, Me.tabMailHistory, Me.tabSponsorShip, Me.tabPaymentMovements, Me.tabDroselia, Me.tabAboprocess, Me.tabAboProcessOld, Me.tabPurchase, Me.tabCreditHist, Me.tabCompensation, Me.tabProductsRating, Me.tabSuspendedHistory, Me.tabVodView, Me.tabCritiques, Me.tabConfig})
 '
@@ -7249,15 +7249,15 @@ Me.tabComment.Controls.Add(Me.MemoInsertComment)
 Me.tabComment.Controls.Add(Me.btnAddCustomersComment)
 Me.tabComment.Name = "tabComment"
 Me.tabComment.ShowCloseButton = DevExpress.Utils.DefaultBoolean.[True]
-Me.tabComment.Size = New System.Drawing.Size(1505, 905)
+Me.tabComment.Size = New System.Drawing.Size(1043, 681)
 Me.tabComment.Text = "Comment"
 '
 'MemoCustomersComment
 '
-Me.MemoCustomersComment.Location = New System.Drawing.Point(68, 57)
+Me.MemoCustomersComment.Location = New System.Drawing.Point(57, 49)
 Me.MemoCustomersComment.Name = "MemoCustomersComment"
 Me.MemoCustomersComment.Properties.ReadOnly = true
-Me.MemoCustomersComment.Size = New System.Drawing.Size(466, 98)
+Me.MemoCustomersComment.Size = New System.Drawing.Size(388, 85)
 Me.MemoCustomersComment.StyleController = Me.LayoutCustServ
 Me.MemoCustomersComment.TabIndex = 15
 '
@@ -7265,10 +7265,10 @@ Me.MemoCustomersComment.TabIndex = 15
 '
 Me.GridCustComment.EmbeddedNavigator.Name = ""
 Me.GridCustComment.FormsUseDefaultLookAndFeel = false
-Me.GridCustComment.Location = New System.Drawing.Point(68, 227)
+Me.GridCustComment.Location = New System.Drawing.Point(57, 197)
 Me.GridCustComment.MainView = Me.GridViewCustComment
 Me.GridCustComment.Name = "GridCustComment"
-Me.GridCustComment.Size = New System.Drawing.Size(939, 460)
+Me.GridCustComment.Size = New System.Drawing.Size(782, 398)
 Me.GridCustComment.TabIndex = 0
 Me.GridCustComment.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewCustComment})
 '
@@ -7313,17 +7313,17 @@ Me.fullName.VisibleIndex = 2
 '
 'MemoInsertComment
 '
-Me.MemoInsertComment.Location = New System.Drawing.Point(541, 57)
+Me.MemoInsertComment.Location = New System.Drawing.Point(451, 49)
 Me.MemoInsertComment.Name = "MemoInsertComment"
-Me.MemoInsertComment.Size = New System.Drawing.Size(466, 98)
+Me.MemoInsertComment.Size = New System.Drawing.Size(388, 85)
 Me.MemoInsertComment.StyleController = Me.LayoutCustServ
 Me.MemoInsertComment.TabIndex = 16
 '
 'btnAddCustomersComment
 '
-Me.btnAddCustomersComment.Location = New System.Drawing.Point(832, 162)
+Me.btnAddCustomersComment.Location = New System.Drawing.Point(693, 140)
 Me.btnAddCustomersComment.Name = "btnAddCustomersComment"
-Me.btnAddCustomersComment.Size = New System.Drawing.Size(175, 26)
+Me.btnAddCustomersComment.Size = New System.Drawing.Size(146, 23)
 Me.btnAddCustomersComment.TabIndex = 14
 Me.btnAddCustomersComment.Text = "Add Customers Comment"
 '
@@ -7333,18 +7333,18 @@ Me.tabCalls.Appearance.Header.Font = New System.Drawing.Font("Tahoma", 9.75!, Sy
 Me.tabCalls.Appearance.Header.Options.UseFont = true
 Me.tabCalls.Controls.Add(Me.UcCallsHistory1)
 Me.tabCalls.Name = "tabCalls"
-Me.tabCalls.Size = New System.Drawing.Size(1505, 905)
+Me.tabCalls.Size = New System.Drawing.Size(1043, 681)
 Me.tabCalls.Text = "calls"
 '
 'UcCallsHistory1
 '
 Me.UcCallsHistory1.customers_id = 0
 Me.UcCallsHistory1.FT = false
-Me.UcCallsHistory1.Location = New System.Drawing.Point(8, 3)
-Me.UcCallsHistory1.Margin = New System.Windows.Forms.Padding(2)
+Me.UcCallsHistory1.Location = New System.Drawing.Point(7, 3)
+Me.UcCallsHistory1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
 Me.UcCallsHistory1.Name = "UcCallsHistory1"
 Me.UcCallsHistory1.Reconductions = 0
-Me.UcCallsHistory1.Size = New System.Drawing.Size(1245, 594)
+Me.UcCallsHistory1.Size = New System.Drawing.Size(1037, 514)
 Me.UcCallsHistory1.TabIndex = 0
 '
 'tabMessagerie
@@ -7353,7 +7353,7 @@ Me.tabMessagerie.Appearance.Header.Font = New System.Drawing.Font("Tahoma", 9.75
 Me.tabMessagerie.Appearance.Header.Options.UseFont = true
 Me.tabMessagerie.Controls.Add(Me.UcMessagerieCustomer)
 Me.tabMessagerie.Name = "tabMessagerie"
-Me.tabMessagerie.Size = New System.Drawing.Size(1505, 905)
+Me.tabMessagerie.Size = New System.Drawing.Size(1043, 681)
 Me.tabMessagerie.Text = "Messagerie"
 '
 'UcMessagerieCustomer
@@ -7362,9 +7362,9 @@ Me.UcMessagerieCustomer.Customers_id = 0
 Me.UcMessagerieCustomer.Dock = System.Windows.Forms.DockStyle.Fill
 Me.UcMessagerieCustomer.language_id = 0
 Me.UcMessagerieCustomer.Location = New System.Drawing.Point(0, 0)
-Me.UcMessagerieCustomer.Margin = New System.Windows.Forms.Padding(2)
+Me.UcMessagerieCustomer.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
 Me.UcMessagerieCustomer.Name = "UcMessagerieCustomer"
-Me.UcMessagerieCustomer.Size = New System.Drawing.Size(1505, 905)
+Me.UcMessagerieCustomer.Size = New System.Drawing.Size(1043, 681)
 Me.UcMessagerieCustomer.TabIndex = 0
 '
 'tabSponsorShip
@@ -7378,16 +7378,16 @@ Me.tabSponsorShip.Controls.Add(Me.grpCustomersPoint)
 Me.tabSponsorShip.Controls.Add(Me.GCGift)
 Me.tabSponsorShip.Controls.Add(Me.GCSponsorShip)
 Me.tabSponsorShip.Name = "tabSponsorShip"
-Me.tabSponsorShip.Size = New System.Drawing.Size(1505, 905)
+Me.tabSponsorShip.Size = New System.Drawing.Size(1043, 681)
 Me.tabSponsorShip.Text = "Sponsorship"
 '
 'GCCodeLinked
 '
 Me.GCCodeLinked.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
 Me.GCCodeLinked.Controls.Add(Me.GridCodeLinked)
-Me.GCCodeLinked.Location = New System.Drawing.Point(1026, 22)
+Me.GCCodeLinked.Location = New System.Drawing.Point(855, 19)
 Me.GCCodeLinked.Name = "GCCodeLinked"
-Me.GCCodeLinked.Size = New System.Drawing.Size(391, 437)
+Me.GCCodeLinked.Size = New System.Drawing.Size(326, 379)
 Me.GCCodeLinked.TabIndex = 16
 Me.GCCodeLinked.Text = "Association Code"
 '
@@ -7395,10 +7395,10 @@ Me.GCCodeLinked.Text = "Association Code"
 '
 Me.GridCodeLinked.EmbeddedNavigator.Name = ""
 Me.GridCodeLinked.FormsUseDefaultLookAndFeel = false
-Me.GridCodeLinked.Location = New System.Drawing.Point(11, 27)
+Me.GridCodeLinked.Location = New System.Drawing.Point(9, 23)
 Me.GridCodeLinked.MainView = Me.GridViewCodeLinked
 Me.GridCodeLinked.Name = "GridCodeLinked"
-Me.GridCodeLinked.Size = New System.Drawing.Size(374, 405)
+Me.GridCodeLinked.Size = New System.Drawing.Size(312, 351)
 Me.GridCodeLinked.TabIndex = 16
 Me.GridCodeLinked.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewCodeLinked})
 '
@@ -7423,108 +7423,108 @@ Me.GCSponsonCard.Controls.Add(Me.lblCard2)
 Me.GCSponsonCard.Controls.Add(Me.txtCard2)
 Me.GCSponsonCard.Controls.Add(Me.lblCard1)
 Me.GCSponsonCard.Controls.Add(Me.txtCard1)
-Me.GCSponsonCard.Location = New System.Drawing.Point(769, 22)
+Me.GCSponsonCard.Location = New System.Drawing.Point(641, 19)
 Me.GCSponsonCard.Name = "GCSponsonCard"
-Me.GCSponsonCard.Size = New System.Drawing.Size(250, 437)
+Me.GCSponsonCard.Size = New System.Drawing.Size(208, 379)
 Me.GCSponsonCard.TabIndex = 15
 Me.GCSponsonCard.Text = "Sponsor Card"
 '
 'BtnSaveSponsorCard
 '
-Me.BtnSaveSponsorCard.Location = New System.Drawing.Point(60, 298)
+Me.BtnSaveSponsorCard.Location = New System.Drawing.Point(50, 258)
 Me.BtnSaveSponsorCard.Name = "BtnSaveSponsorCard"
-Me.BtnSaveSponsorCard.Size = New System.Drawing.Size(116, 26)
+Me.BtnSaveSponsorCard.Size = New System.Drawing.Size(97, 23)
 Me.BtnSaveSponsorCard.TabIndex = 12
 Me.BtnSaveSponsorCard.Text = "Save"
 '
 'lblCard5
 '
-Me.lblCard5.Location = New System.Drawing.Point(6, 247)
+Me.lblCard5.Location = New System.Drawing.Point(5, 214)
 Me.lblCard5.Name = "lblCard5"
-Me.lblCard5.Size = New System.Drawing.Size(38, 16)
+Me.lblCard5.Size = New System.Drawing.Size(32, 13)
 Me.lblCard5.TabIndex = 11
 Me.lblCard5.Text = "Card 5"
 '
 'txtCard5
 '
-Me.txtCard5.Location = New System.Drawing.Point(74, 243)
+Me.txtCard5.Location = New System.Drawing.Point(62, 211)
 Me.txtCard5.Name = "txtCard5"
 Me.txtCard5.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[False]
-Me.txtCard5.Size = New System.Drawing.Size(171, 22)
+Me.txtCard5.Size = New System.Drawing.Size(142, 20)
 Me.txtCard5.TabIndex = 4
 '
 'lblCard4
 '
-Me.lblCard4.Location = New System.Drawing.Point(6, 193)
+Me.lblCard4.Location = New System.Drawing.Point(5, 167)
 Me.lblCard4.Name = "lblCard4"
-Me.lblCard4.Size = New System.Drawing.Size(38, 16)
+Me.lblCard4.Size = New System.Drawing.Size(32, 13)
 Me.lblCard4.TabIndex = 9
 Me.lblCard4.Text = "Card 4"
 '
 'txtCard4
 '
-Me.txtCard4.Location = New System.Drawing.Point(74, 189)
+Me.txtCard4.Location = New System.Drawing.Point(62, 164)
 Me.txtCard4.Name = "txtCard4"
 Me.txtCard4.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[False]
-Me.txtCard4.Size = New System.Drawing.Size(171, 22)
+Me.txtCard4.Size = New System.Drawing.Size(142, 20)
 Me.txtCard4.TabIndex = 3
 '
 'lblCard3
 '
-Me.lblCard3.Location = New System.Drawing.Point(6, 134)
+Me.lblCard3.Location = New System.Drawing.Point(5, 116)
 Me.lblCard3.Name = "lblCard3"
-Me.lblCard3.Size = New System.Drawing.Size(38, 16)
+Me.lblCard3.Size = New System.Drawing.Size(32, 13)
 Me.lblCard3.TabIndex = 7
 Me.lblCard3.Text = "Card 3"
 '
 'txtCard3
 '
-Me.txtCard3.Location = New System.Drawing.Point(74, 130)
+Me.txtCard3.Location = New System.Drawing.Point(62, 113)
 Me.txtCard3.Name = "txtCard3"
 Me.txtCard3.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[False]
-Me.txtCard3.Size = New System.Drawing.Size(171, 22)
+Me.txtCard3.Size = New System.Drawing.Size(142, 20)
 Me.txtCard3.TabIndex = 2
 '
 'lblCard2
 '
-Me.lblCard2.Location = New System.Drawing.Point(6, 87)
+Me.lblCard2.Location = New System.Drawing.Point(5, 75)
 Me.lblCard2.Name = "lblCard2"
-Me.lblCard2.Size = New System.Drawing.Size(38, 16)
+Me.lblCard2.Size = New System.Drawing.Size(32, 13)
 Me.lblCard2.TabIndex = 5
 Me.lblCard2.Text = "Card 2"
 '
 'txtCard2
 '
-Me.txtCard2.Location = New System.Drawing.Point(74, 83)
+Me.txtCard2.Location = New System.Drawing.Point(62, 72)
 Me.txtCard2.Name = "txtCard2"
 Me.txtCard2.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[False]
-Me.txtCard2.Size = New System.Drawing.Size(171, 22)
+Me.txtCard2.Size = New System.Drawing.Size(142, 20)
 Me.txtCard2.TabIndex = 1
 '
 'lblCard1
 '
-Me.lblCard1.Location = New System.Drawing.Point(6, 42)
+Me.lblCard1.Location = New System.Drawing.Point(5, 36)
 Me.lblCard1.Name = "lblCard1"
-Me.lblCard1.Size = New System.Drawing.Size(38, 16)
+Me.lblCard1.Size = New System.Drawing.Size(32, 13)
 Me.lblCard1.TabIndex = 3
 Me.lblCard1.Text = "Card 1"
 '
 'txtCard1
 '
 Me.txtCard1.EnterMoveNextControl = true
-Me.txtCard1.Location = New System.Drawing.Point(74, 38)
+Me.txtCard1.Location = New System.Drawing.Point(62, 33)
 Me.txtCard1.Name = "txtCard1"
 Me.txtCard1.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[False]
-Me.txtCard1.Size = New System.Drawing.Size(171, 22)
+Me.txtCard1.Size = New System.Drawing.Size(142, 20)
 Me.txtCard1.TabIndex = 0
 '
 'grpCustomersPoint
 '
 Me.grpCustomersPoint.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
 Me.grpCustomersPoint.Controls.Add(Me.GridCustPointHistory)
-Me.grpCustomersPoint.Location = New System.Drawing.Point(11, 771)
+Me.grpCustomersPoint.Location = New System.Drawing.Point(9, 668)
 Me.grpCustomersPoint.Name = "grpCustomersPoint"
-Me.grpCustomersPoint.Size = New System.Drawing.Size(1410, 244)
+Me.grpCustomersPoint.Size = New System.Drawing.Size(1175, 212)
 Me.grpCustomersPoint.TabIndex = 14
 Me.grpCustomersPoint.Text = "Point History"
 '
@@ -7532,10 +7532,10 @@ Me.grpCustomersPoint.Text = "Point History"
 '
 Me.GridCustPointHistory.EmbeddedNavigator.Name = ""
 Me.GridCustPointHistory.FormsUseDefaultLookAndFeel = false
-Me.GridCustPointHistory.Location = New System.Drawing.Point(20, 51)
+Me.GridCustPointHistory.Location = New System.Drawing.Point(17, 44)
 Me.GridCustPointHistory.MainView = Me.GridViewCustPointHistory
 Me.GridCustPointHistory.Name = "GridCustPointHistory"
-Me.GridCustPointHistory.Size = New System.Drawing.Size(1356, 183)
+Me.GridCustPointHistory.Size = New System.Drawing.Size(1130, 159)
 Me.GridCustPointHistory.TabIndex = 0
 Me.GridCustPointHistory.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewCustPointHistory})
 '
@@ -7595,9 +7595,9 @@ Me.customers_points_history_sub_action_name.VisibleIndex = 3
 '
 Me.GCGift.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
 Me.GCGift.Controls.Add(Me.GridGift)
-Me.GCGift.Location = New System.Drawing.Point(11, 472)
+Me.GCGift.Location = New System.Drawing.Point(9, 409)
 Me.GCGift.Name = "GCGift"
-Me.GCGift.Size = New System.Drawing.Size(1410, 292)
+Me.GCGift.Size = New System.Drawing.Size(1175, 253)
 Me.GCGift.TabIndex = 13
 Me.GCGift.Text = "Gift"
 '
@@ -7605,10 +7605,10 @@ Me.GCGift.Text = "Gift"
 '
 Me.GridGift.EmbeddedNavigator.Name = ""
 Me.GridGift.FormsUseDefaultLookAndFeel = false
-Me.GridGift.Location = New System.Drawing.Point(20, 51)
+Me.GridGift.Location = New System.Drawing.Point(17, 44)
 Me.GridGift.MainView = Me.GridViewGift
 Me.GridGift.Name = "GridGift"
-Me.GridGift.Size = New System.Drawing.Size(1356, 225)
+Me.GridGift.Size = New System.Drawing.Size(1130, 195)
 Me.GridGift.TabIndex = 0
 Me.GridGift.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewGift})
 '
@@ -7729,25 +7729,25 @@ Me.GCSponsorShip.Controls.Add(Me.LabelControl33)
 Me.GCSponsorShip.Controls.Add(Me.LabelControl25)
 Me.GCSponsorShip.Controls.Add(Me.GridGodFather)
 Me.GCSponsorShip.Controls.Add(Me.GridSon)
-Me.GCSponsorShip.Location = New System.Drawing.Point(11, 22)
+Me.GCSponsorShip.Location = New System.Drawing.Point(9, 19)
 Me.GCSponsorShip.Name = "GCSponsorShip"
-Me.GCSponsorShip.Size = New System.Drawing.Size(751, 443)
+Me.GCSponsorShip.Size = New System.Drawing.Size(626, 384)
 Me.GCSponsorShip.TabIndex = 12
 Me.GCSponsorShip.Text = "Sponsorship"
 '
 'LabelControl33
 '
-Me.LabelControl33.Location = New System.Drawing.Point(6, 309)
+Me.LabelControl33.Location = New System.Drawing.Point(5, 268)
 Me.LabelControl33.Name = "LabelControl33"
-Me.LabelControl33.Size = New System.Drawing.Size(59, 16)
+Me.LabelControl33.Size = New System.Drawing.Size(51, 13)
 Me.LabelControl33.TabIndex = 18
 Me.LabelControl33.Text = "GodFather"
 '
 'LabelControl25
 '
-Me.LabelControl25.Location = New System.Drawing.Point(6, 27)
+Me.LabelControl25.Location = New System.Drawing.Point(5, 23)
 Me.LabelControl25.Name = "LabelControl25"
-Me.LabelControl25.Size = New System.Drawing.Size(28, 16)
+Me.LabelControl25.Size = New System.Drawing.Size(23, 13)
 Me.LabelControl25.TabIndex = 17
 Me.LabelControl25.Text = "Sons"
 '
@@ -7755,11 +7755,11 @@ Me.LabelControl25.Text = "Sons"
 '
 Me.GridGodFather.EmbeddedNavigator.Name = ""
 Me.GridGodFather.FormsUseDefaultLookAndFeel = false
-Me.GridGodFather.Location = New System.Drawing.Point(6, 322)
+Me.GridGodFather.Location = New System.Drawing.Point(5, 279)
 Me.GridGodFather.MainView = Me.GridviewGodFather
 Me.GridGodFather.Name = "GridGodFather"
 Me.GridGodFather.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryISponsorGodCustomers_id})
-Me.GridGodFather.Size = New System.Drawing.Size(732, 121)
+Me.GridGodFather.Size = New System.Drawing.Size(610, 105)
 Me.GridGodFather.TabIndex = 12
 Me.GridGodFather.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridviewGodFather})
 '
@@ -7833,7 +7833,7 @@ Me.col2customers_firstname.Width = 277
 '
 Me.tabAboprocess.Controls.Add(Me.gridAboprocess)
 Me.tabAboprocess.Name = "tabAboprocess"
-Me.tabAboprocess.Size = New System.Drawing.Size(1505, 905)
+Me.tabAboprocess.Size = New System.Drawing.Size(1043, 681)
 Me.tabAboprocess.Text = "aboprocess"
 '
 'gridAboprocess
@@ -7844,7 +7844,7 @@ Me.gridAboprocess.FormsUseDefaultLookAndFeel = false
 Me.gridAboprocess.Location = New System.Drawing.Point(0, 0)
 Me.gridAboprocess.MainView = Me.GridViewAboprocess
 Me.gridAboprocess.Name = "gridAboprocess"
-Me.gridAboprocess.Size = New System.Drawing.Size(1505, 905)
+Me.gridAboprocess.Size = New System.Drawing.Size(1043, 681)
 Me.gridAboprocess.TabIndex = 1
 Me.gridAboprocess.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewAboprocess})
 '
@@ -8022,7 +8022,7 @@ Me.colWishlist.Width = 83
 Me.tabPurchase.AutoScroll = true
 Me.tabPurchase.Controls.Add(Me.GridShoppingOrders)
 Me.tabPurchase.Name = "tabPurchase"
-Me.tabPurchase.Size = New System.Drawing.Size(1505, 905)
+Me.tabPurchase.Size = New System.Drawing.Size(1043, 681)
 Me.tabPurchase.Text = "Purchase"
 '
 'GridShoppingOrders
@@ -8032,7 +8032,7 @@ Me.GridShoppingOrders.FormsUseDefaultLookAndFeel = false
 Me.GridShoppingOrders.Location = New System.Drawing.Point(0, 3)
 Me.GridShoppingOrders.MainView = Me.GridViewShoppingOrders
 Me.GridShoppingOrders.Name = "GridShoppingOrders"
-Me.GridShoppingOrders.Size = New System.Drawing.Size(1680, 1055)
+Me.GridShoppingOrders.Size = New System.Drawing.Size(1400, 914)
 Me.GridShoppingOrders.TabIndex = 0
 Me.GridShoppingOrders.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewShoppingOrders})
 '
@@ -8237,7 +8237,7 @@ Me.shopping_discount_value.Width = 662
 '
 Me.tabCreditHist.Controls.Add(Me.GridCreditHistory)
 Me.tabCreditHist.Name = "tabCreditHist"
-Me.tabCreditHist.Size = New System.Drawing.Size(1505, 905)
+Me.tabCreditHist.Size = New System.Drawing.Size(1043, 681)
 Me.tabCreditHist.Text = "Credit history"
 '
 'GridCreditHistory
@@ -8248,7 +8248,7 @@ Me.GridCreditHistory.FormsUseDefaultLookAndFeel = false
 Me.GridCreditHistory.Location = New System.Drawing.Point(0, 0)
 Me.GridCreditHistory.MainView = Me.GridViewCreditHistory
 Me.GridCreditHistory.Name = "GridCreditHistory"
-Me.GridCreditHistory.Size = New System.Drawing.Size(1505, 905)
+Me.GridCreditHistory.Size = New System.Drawing.Size(1043, 681)
 Me.GridCreditHistory.TabIndex = 1
 Me.GridCreditHistory.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewCreditHistory})
 '
@@ -8370,7 +8370,7 @@ Me.tabCompensation.Controls.Add(Me.GridCompensation)
 Me.tabCompensation.Name = "tabCompensation"
 Me.tabCompensation.PageEnabled = false
 Me.tabCompensation.PageVisible = false
-Me.tabCompensation.Size = New System.Drawing.Size(1505, 905)
+Me.tabCompensation.Size = New System.Drawing.Size(1043, 681)
 Me.tabCompensation.Text = "Compensation"
 '
 'GridCompensation
@@ -8381,7 +8381,7 @@ Me.GridCompensation.FormsUseDefaultLookAndFeel = false
 Me.GridCompensation.Location = New System.Drawing.Point(0, 0)
 Me.GridCompensation.MainView = Me.GridViewCompensation
 Me.GridCompensation.Name = "GridCompensation"
-Me.GridCompensation.Size = New System.Drawing.Size(1505, 905)
+Me.GridCompensation.Size = New System.Drawing.Size(1043, 681)
 Me.GridCompensation.TabIndex = 0
 Me.GridCompensation.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewCompensation})
 '
@@ -8483,7 +8483,7 @@ Me.colCompProducts_name.Width = 300
 '
 Me.tabProductsRating.Controls.Add(Me.GridProductsRating)
 Me.tabProductsRating.Name = "tabProductsRating"
-Me.tabProductsRating.Size = New System.Drawing.Size(1505, 905)
+Me.tabProductsRating.Size = New System.Drawing.Size(1043, 681)
 Me.tabProductsRating.Text = "Products rating"
 '
 'GridProductsRating
@@ -8494,7 +8494,7 @@ Me.GridProductsRating.FormsUseDefaultLookAndFeel = false
 Me.GridProductsRating.Location = New System.Drawing.Point(0, 0)
 Me.GridProductsRating.MainView = Me.GridViewProductsRating
 Me.GridProductsRating.Name = "GridProductsRating"
-Me.GridProductsRating.Size = New System.Drawing.Size(1505, 905)
+Me.GridProductsRating.Size = New System.Drawing.Size(1043, 681)
 Me.GridProductsRating.TabIndex = 2
 Me.GridProductsRating.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewProductsRating})
 '
@@ -8571,7 +8571,7 @@ Me.colRatingProducts_name.Width = 249
 '
 Me.tabSuspendedHistory.Controls.Add(Me.GridSuspendedHistory)
 Me.tabSuspendedHistory.Name = "tabSuspendedHistory"
-Me.tabSuspendedHistory.Size = New System.Drawing.Size(1505, 905)
+Me.tabSuspendedHistory.Size = New System.Drawing.Size(1043, 681)
 Me.tabSuspendedHistory.Text = "Suspended History"
 '
 'GridSuspendedHistory
@@ -8582,7 +8582,7 @@ Me.GridSuspendedHistory.FormsUseDefaultLookAndFeel = false
 Me.GridSuspendedHistory.Location = New System.Drawing.Point(0, 0)
 Me.GridSuspendedHistory.MainView = Me.GridViewSuspendedHistory
 Me.GridSuspendedHistory.Name = "GridSuspendedHistory"
-Me.GridSuspendedHistory.Size = New System.Drawing.Size(1505, 905)
+Me.GridSuspendedHistory.Size = New System.Drawing.Size(1043, 681)
 Me.GridSuspendedHistory.TabIndex = 1
 Me.GridSuspendedHistory.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewSuspendedHistory})
 '
@@ -8639,7 +8639,7 @@ Me.abosuspended_history_type.Width = 161
 '
 Me.tabVodView.Controls.Add(Me.GridViewVod)
 Me.tabVodView.Name = "tabVodView"
-Me.tabVodView.Size = New System.Drawing.Size(1505, 905)
+Me.tabVodView.Size = New System.Drawing.Size(1043, 681)
 Me.tabVodView.Text = "Vod Viewed"
 '
 'GridViewVod
@@ -8650,7 +8650,7 @@ Me.GridViewVod.FormsUseDefaultLookAndFeel = false
 Me.GridViewVod.Location = New System.Drawing.Point(0, 0)
 Me.GridViewVod.MainView = Me.GridView1
 Me.GridViewVod.Name = "GridViewVod"
-Me.GridViewVod.Size = New System.Drawing.Size(1505, 905)
+Me.GridViewVod.Size = New System.Drawing.Size(1043, 681)
 Me.GridViewVod.TabIndex = 2
 Me.GridViewVod.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
 '
@@ -8749,16 +8749,16 @@ Me.tabCritiques.Controls.Add(Me.lblValueRatingAverage)
 Me.tabCritiques.Controls.Add(Me.lblRatingAverage)
 Me.tabCritiques.Controls.Add(Me.GridCritiques)
 Me.tabCritiques.Name = "tabCritiques"
-Me.tabCritiques.Size = New System.Drawing.Size(1505, 905)
+Me.tabCritiques.Size = New System.Drawing.Size(1043, 681)
 Me.tabCritiques.Text = "Critiques"
 '
 'lblValueRating
 '
 Me.lblValueRating.Appearance.Font = New System.Drawing.Font("Tahoma", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.lblValueRating.Appearance.Options.UseFont = true
-Me.lblValueRating.Location = New System.Drawing.Point(167, 69)
+Me.lblValueRating.Location = New System.Drawing.Point(139, 60)
 Me.lblValueRating.Name = "lblValueRating"
-Me.lblValueRating.Size = New System.Drawing.Size(13, 28)
+Me.lblValueRating.Size = New System.Drawing.Size(10, 22)
 Me.lblValueRating.TabIndex = 10
 Me.lblValueRating.Text = "0"
 '
@@ -8766,9 +8766,9 @@ Me.lblValueRating.Text = "0"
 '
 Me.lblRating.Appearance.Font = New System.Drawing.Font("Tahoma", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.lblRating.Appearance.Options.UseFont = true
-Me.lblRating.Location = New System.Drawing.Point(8, 75)
+Me.lblRating.Location = New System.Drawing.Point(7, 65)
 Me.lblRating.Name = "lblRating"
-Me.lblRating.Size = New System.Drawing.Size(65, 21)
+Me.lblRating.Size = New System.Drawing.Size(53, 17)
 Me.lblRating.TabIndex = 9
 Me.lblRating.Text = "# Rating"
 '
@@ -8776,9 +8776,9 @@ Me.lblRating.Text = "# Rating"
 '
 Me.lblValueAverageRatingDvdPost.Appearance.Font = New System.Drawing.Font("Tahoma", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.lblValueAverageRatingDvdPost.Appearance.Options.UseFont = true
-Me.lblValueAverageRatingDvdPost.Location = New System.Drawing.Point(346, 16)
+Me.lblValueAverageRatingDvdPost.Location = New System.Drawing.Point(288, 14)
 Me.lblValueAverageRatingDvdPost.Name = "lblValueAverageRatingDvdPost"
-Me.lblValueAverageRatingDvdPost.Size = New System.Drawing.Size(13, 28)
+Me.lblValueAverageRatingDvdPost.Size = New System.Drawing.Size(10, 22)
 Me.lblValueAverageRatingDvdPost.TabIndex = 8
 Me.lblValueAverageRatingDvdPost.Text = "0"
 '
@@ -8786,9 +8786,9 @@ Me.lblValueAverageRatingDvdPost.Text = "0"
 '
 Me.lblAverageRatingDvdPost.Appearance.Font = New System.Drawing.Font("Tahoma", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.lblAverageRatingDvdPost.Appearance.Options.UseFont = true
-Me.lblAverageRatingDvdPost.Location = New System.Drawing.Point(226, 21)
+Me.lblAverageRatingDvdPost.Location = New System.Drawing.Point(188, 18)
 Me.lblAverageRatingDvdPost.Name = "lblAverageRatingDvdPost"
-Me.lblAverageRatingDvdPost.Size = New System.Drawing.Size(114, 21)
+Me.lblAverageRatingDvdPost.Size = New System.Drawing.Size(96, 17)
 Me.lblAverageRatingDvdPost.TabIndex = 7
 Me.lblAverageRatingDvdPost.Text = "Rating DvdPost"
 '
@@ -8796,9 +8796,9 @@ Me.lblAverageRatingDvdPost.Text = "Rating DvdPost"
 '
 Me.lblValueNbCritiquePositive.Appearance.Font = New System.Drawing.Font("Tahoma", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.lblValueNbCritiquePositive.Appearance.Options.UseFont = true
-Me.lblValueNbCritiquePositive.Location = New System.Drawing.Point(167, 14)
+Me.lblValueNbCritiquePositive.Location = New System.Drawing.Point(139, 12)
 Me.lblValueNbCritiquePositive.Name = "lblValueNbCritiquePositive"
-Me.lblValueNbCritiquePositive.Size = New System.Drawing.Size(13, 28)
+Me.lblValueNbCritiquePositive.Size = New System.Drawing.Size(10, 22)
 Me.lblValueNbCritiquePositive.TabIndex = 6
 Me.lblValueNbCritiquePositive.Text = "0"
 '
@@ -8806,9 +8806,9 @@ Me.lblValueNbCritiquePositive.Text = "0"
 '
 Me.lblNbCritiquePositive.Appearance.Font = New System.Drawing.Font("Tahoma", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.lblNbCritiquePositive.Appearance.Options.UseFont = true
-Me.lblNbCritiquePositive.Location = New System.Drawing.Point(8, 20)
+Me.lblNbCritiquePositive.Location = New System.Drawing.Point(7, 17)
 Me.lblNbCritiquePositive.Name = "lblNbCritiquePositive"
-Me.lblNbCritiquePositive.Size = New System.Drawing.Size(152, 21)
+Me.lblNbCritiquePositive.Size = New System.Drawing.Size(122, 17)
 Me.lblNbCritiquePositive.TabIndex = 5
 Me.lblNbCritiquePositive.Text = "# Critiques positives"
 '
@@ -8816,9 +8816,9 @@ Me.lblNbCritiquePositive.Text = "# Critiques positives"
 '
 Me.lblValueNbCrtitiques.Appearance.Font = New System.Drawing.Font("Tahoma", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.lblValueNbCrtitiques.Appearance.Options.UseFont = true
-Me.lblValueNbCrtitiques.Location = New System.Drawing.Point(167, 42)
+Me.lblValueNbCrtitiques.Location = New System.Drawing.Point(139, 36)
 Me.lblValueNbCrtitiques.Name = "lblValueNbCrtitiques"
-Me.lblValueNbCrtitiques.Size = New System.Drawing.Size(13, 28)
+Me.lblValueNbCrtitiques.Size = New System.Drawing.Size(10, 22)
 Me.lblValueNbCrtitiques.TabIndex = 4
 Me.lblValueNbCrtitiques.Text = "0"
 '
@@ -8826,9 +8826,9 @@ Me.lblValueNbCrtitiques.Text = "0"
 '
 Me.lblNbCrtitiques.Appearance.Font = New System.Drawing.Font("Tahoma", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.lblNbCrtitiques.Appearance.Options.UseFont = true
-Me.lblNbCrtitiques.Location = New System.Drawing.Point(8, 47)
+Me.lblNbCrtitiques.Location = New System.Drawing.Point(7, 41)
 Me.lblNbCrtitiques.Name = "lblNbCrtitiques"
-Me.lblNbCrtitiques.Size = New System.Drawing.Size(82, 21)
+Me.lblNbCrtitiques.Size = New System.Drawing.Size(66, 17)
 Me.lblNbCrtitiques.TabIndex = 3
 Me.lblNbCrtitiques.Text = "# Critiques"
 '
@@ -8837,9 +8837,9 @@ Me.lblNbCrtitiques.Text = "# Critiques"
 Me.lblValueRatingAverage.Appearance.Font = New System.Drawing.Font("Tahoma", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.lblValueRatingAverage.Appearance.Options.UseFont = true
 Me.lblValueRatingAverage.Cursor = System.Windows.Forms.Cursors.Default
-Me.lblValueRatingAverage.Location = New System.Drawing.Point(512, 14)
+Me.lblValueRatingAverage.Location = New System.Drawing.Point(427, 12)
 Me.lblValueRatingAverage.Name = "lblValueRatingAverage"
-Me.lblValueRatingAverage.Size = New System.Drawing.Size(13, 28)
+Me.lblValueRatingAverage.Size = New System.Drawing.Size(10, 22)
 Me.lblValueRatingAverage.TabIndex = 2
 Me.lblValueRatingAverage.Text = "0"
 '
@@ -8847,9 +8847,9 @@ Me.lblValueRatingAverage.Text = "0"
 '
 Me.lblRatingAverage.Appearance.Font = New System.Drawing.Font("Tahoma", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.lblRatingAverage.Appearance.Options.UseFont = true
-Me.lblRatingAverage.Location = New System.Drawing.Point(391, 20)
+Me.lblRatingAverage.Location = New System.Drawing.Point(326, 17)
 Me.lblRatingAverage.Name = "lblRatingAverage"
-Me.lblRatingAverage.Size = New System.Drawing.Size(101, 21)
+Me.lblRatingAverage.Size = New System.Drawing.Size(84, 17)
 Me.lblRatingAverage.TabIndex = 1
 Me.lblRatingAverage.Text = "Rating Moyen"
 '
@@ -8857,10 +8857,10 @@ Me.lblRatingAverage.Text = "Rating Moyen"
 '
 Me.GridCritiques.EmbeddedNavigator.Name = ""
 Me.GridCritiques.FormsUseDefaultLookAndFeel = false
-Me.GridCritiques.Location = New System.Drawing.Point(8, 117)
+Me.GridCritiques.Location = New System.Drawing.Point(7, 101)
 Me.GridCritiques.MainView = Me.GridViewCritiques
 Me.GridCritiques.Name = "GridCritiques"
-Me.GridCritiques.Size = New System.Drawing.Size(1025, 467)
+Me.GridCritiques.Size = New System.Drawing.Size(854, 405)
 Me.GridCritiques.TabIndex = 0
 Me.GridCritiques.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewCritiques})
 '
@@ -8875,14 +8875,14 @@ Me.GridViewCritiques.OptionsView.ShowFooter = true
 Me.tabConfig.Controls.Add(Me.btnRefreshTab)
 Me.tabConfig.Controls.Add(Me.ChkListConfig)
 Me.tabConfig.Name = "tabConfig"
-Me.tabConfig.Size = New System.Drawing.Size(1505, 905)
+Me.tabConfig.Size = New System.Drawing.Size(1043, 681)
 Me.tabConfig.Text = "Config"
 '
 'btnRefreshTab
 '
-Me.btnRefreshTab.Location = New System.Drawing.Point(763, 39)
+Me.btnRefreshTab.Location = New System.Drawing.Point(636, 34)
 Me.btnRefreshTab.Name = "btnRefreshTab"
-Me.btnRefreshTab.Size = New System.Drawing.Size(190, 48)
+Me.btnRefreshTab.Size = New System.Drawing.Size(158, 41)
 Me.btnRefreshTab.TabIndex = 1
 Me.btnRefreshTab.Text = "refresh tab"
 '
@@ -8893,10 +8893,10 @@ Me.ChkListConfig.Appearance.Options.UseFont = true
 Me.ChkListConfig.CheckOnClick = true
 Me.ChkListConfig.Items.AddRange(New DevExpress.XtraEditors.Controls.CheckedListBoxItem() {New DevExpress.XtraEditors.Controls.CheckedListBoxItem("comment", System.Windows.Forms.CheckState.Checked), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("calls", System.Windows.Forms.CheckState.Checked), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("wishlist", System.Windows.Forms.CheckState.Checked), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("abo history", System.Windows.Forms.CheckState.Checked), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("orders history", System.Windows.Forms.CheckState.Checked), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("messagerie", System.Windows.Forms.CheckState.Checked), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("invoices", System.Windows.Forms.CheckState.Checked), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("payment movements"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("droselia"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("aboprocess"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("aboprocess old"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("mail history"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("purchase"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("credit history"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("sponsorship"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("products rating"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("suspended history"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("vod viewed"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("critiques")})
 Me.ChkListConfig.LeftCoord = 0
-Me.ChkListConfig.Location = New System.Drawing.Point(40, 50)
+Me.ChkListConfig.Location = New System.Drawing.Point(33, 43)
 Me.ChkListConfig.MultiColumn = true
 Me.ChkListConfig.Name = "ChkListConfig"
-Me.ChkListConfig.Size = New System.Drawing.Size(654, 128)
+Me.ChkListConfig.Size = New System.Drawing.Size(545, 111)
 Me.ChkListConfig.TabIndex = 0
 '
 'LabelControl39
@@ -10013,7 +10013,7 @@ Me.GridView3.Name = "GridView3"
 '
 'frmCustomers_Maint
 '
-Me.AutoScaleBaseSize = New System.Drawing.Size(6, 15)
+Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
 Me.AutoScroll = true
 Me.ClientSize = New System.Drawing.Size(1262, 882)
 Me.Controls.Add(Me.XTabCustomers)

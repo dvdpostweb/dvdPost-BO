@@ -21,8 +21,8 @@ Public Class clsAddressBook
     Public Shared Function UpdateAddressBook(ByVal customers_id As Integer, ByVal newid As Integer, ByVal firstname As String, ByVal lastname As String, ByVal address As String, ByVal codepostal As String, ByVal city As String, ByVal country_id As Integer) As String
         Dim sql As String
         address = address.Replace("'", "''")
-        sql = "update address_book set entry_firstname = '" & firstname & "',entry_lastname = '" & lastname & "',entry_street_address = '" & address & "'" & _
-        ",entry_postcode = '" & codepostal & "',entry_city = '" & city & "',entry_country_id = " & country_id & _
+        sql = "update address_book set entry_firstname = '" & firstname.Replace("'", "''") & "',entry_lastname = '" & lastname.Replace("'", "''") & "',entry_street_address = '" & address & "'" & _
+        ",entry_postcode = '" & codepostal & "',entry_city = '" & city.Replace("'", "''") & "',entry_country_id = " & country_id & _
         " where customers_id = " & customers_id & " and address_book_id = " & newid
 
         Return sql
