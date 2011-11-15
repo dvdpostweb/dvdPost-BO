@@ -245,13 +245,14 @@ Public Class ClsStatPayment
     Public Shared Function GetViewVodHistorique(ByVal dateFrom As String, ByVal dateTo As String) As String
         Dim sql As String
 
-        sql = " select s.studio_name,customer_id,c.customers_abo_type,c.customers_lastname,c.customers_firstname,t.imdb_id,p.products_title,t.created_at,p.products_date_available,sp.available_from,sp.expire_at,pabo.products_price,pa.qty_credit,pa.qty_at_home,d.directors_name " & _
-              " from tokens t join (select imdb_id,products_directors_id,products_date_available,products_title from products group by imdb_id) p on t.imdb_id = p.imdb_id " & _
+        sql = " select s.studio_name vodstudio, ps.studio_name as productstudio, customer_id,c.customers_abo_type,c.customers_lastname,c.customers_firstname,t.imdb_id,p.products_title,t.created_at,p.products_date_available,sp.available_from,sp.expire_at,pabo.products_price,pa.qty_credit,pa.qty_at_home,d.directors_name " & _
+              " from tokens t join (select imdb_id,products_directors_id,products_date_available,products_title, products_studio from products group by imdb_id) p on t.imdb_id = p.imdb_id " & _
               " join (select imdb_id,available_from,expire_at,studio_id from streaming_products group by imdb_id) sp on p.imdb_id = sp.imdb_id " & _
               " join customers c on t.customer_id = c.customers_id " & _
               " join products pabo on pabo.products_id = c.customers_abo_type " & _
               " join products_abo pa on pabo.products_id = pa.products_id " & _
               " left join studio s on s.studio_id = sp.studio_id " & _
+              " left join studio ps on ps.studio_id = p.products_studio " & _
               " left join directors d on d.directors_id = p.products_directors_id " & _
               " where date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
               " order by customer_id "
