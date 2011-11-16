@@ -453,7 +453,7 @@ Public Class clsProduct_DVD
     End Sub
     Public Sub SaveCategories()
         '  dvdpostdata.clsconnection.UpdateDataTableInDB(DataSet1.Tables("products_to_categories"), "select * from products_to_categories ")
-        DvdPostData.clsConnection.UpdateDataTableInDB(DataSet1.Tables("products_to_categories"), "select * from products_to_categories where products_id = " & ProductsID)
+        DvdPostData.clsConnection.UpdateDataTableInDB(DataSet1.Tables("products_to_categories"), "select products_id, categories_id from products_to_categories where products_id = " & ProductsID)
     End Sub
 
     Public Sub LoadThemes()
