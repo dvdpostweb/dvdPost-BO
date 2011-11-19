@@ -50,6 +50,7 @@ Public Class clsMail
         MAIL_PAYMENT_INVALID_OGONE = 584 '438
         MAIL_PAYMENT_INVALID_OGONE_OLD = 438
         ' Mail_ENDPERIODESSAI = 249 ' not used
+        MAIL_VOD_CONFIRMATION = 571
         MAIL_DVDABOSTOP = 573
         MAIL_DVDABOSTOPBACKLOG = 575
         MAIL_REPLY_MESSAGERIE = 578
@@ -85,8 +86,8 @@ Public Class clsMail
                 Return MailCategory.MOnCompte
             Case Mail.MAIL_DVDABOSTOP, Mail.MAIL_DVDABOSTOPBACKLOG, Mail.MAIL_STOP
                 Return MailCategory.STOABO
-            Case Mail.MAIL_IN, Mail.MAIL_OUT
-                Return MailCategory.Envoi
+            Case Mail.MAIL_IN, Mail.MAIL_OUT, Mail.MAIL_VOD_CONFIRMATION
+                Return MailCategory.ENVOI
             Case Mail.MAIL_PAYMENT_INVALID_OGONE, Mail.MAIL_RECOVERY, Mail.MAIL2_RECOVERY
                 Return MailCategory.Paiement
             Case Mail.MAIL_SON_ACTIVATION, Mail.MAIL_SON_PAID
@@ -681,7 +682,7 @@ Public Class clsMail
         ReplaceIN_OUT(rowcustomers, RowMail, strMessage, lstvariable)
         ReplaceINDISPONIBLE(rowcustomers, RowMail, strMessage, lstvariable)
         'replaceProductPicture(rowcustomers, strMessage)
-        Return CreateMail(rowcustomers("customers_email_address"), strMessage, strSubject, eMailTest, emailFrom, emailName)
+        Return CreateMail(rowcustomers("customers_email_address"), strMessage, "Sending", eMailTest, emailFrom, emailName)
 
     End Function
 
