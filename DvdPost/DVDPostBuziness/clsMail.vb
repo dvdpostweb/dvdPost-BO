@@ -836,7 +836,7 @@ Public Class clsMail
             Case Mail.MAIL_OUT
                 Return "out"
 
-            Case Mail.MAIL_VOD
+            Case Mail.MAIL_VOD, Mail.MAIL_VOD_CONFIRMATION
                 Return "vod"
             Case Else
                 Return ""
