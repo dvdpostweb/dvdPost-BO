@@ -44,10 +44,12 @@ Public Class AboProcessData
 
 
         SQLCustomers = "SELECT distinct if(cd.customers_id is null,0,1) as isCompensation, c.customers_id, customers_abo, customers_abo_type, customers_abo_dvd_norm, customers_abo_dvd_adult, " & _
-                      " customers_abo_dvd_home_norm, customers_abo_dvd_home_adult, customers_abo_dvd_credit, customers_abo_rank, " & _
+                      " customers_abo_dvd_home_norm, customers_abo_dvd_home_adult, customers_abo_dvd_credit, customers_abo_dvd_remain, customers_abo_rank, " & _
                       " customers_abo_multishipment, if(pa.qty_credit = 0, 0, 1) as use_credit, throttling, customers_abo_suspended, " & _
                       " 0 as InNeed, 0 as Served, 0 as NotServed, 0 as NotEnoughtCredit, 0 as NoDVDFound, 0 as TooManyAtHome, " & _
-                      " 0 as NormToSend, 0 as AdultToSend, 0 as NormAssigned, 0 as AdultAssigned, 0 as NormCompensation, 0 AdultCompensation ,if(cr.customer_id is null or cr.time_average > 7 ,0,1) quick, if(cr.customer_id is null ,99,cr.time_average) time_average,c.sleep " & _
+                      " 0 as NormToSend, 0 as AdultToSend, 0 as NormAssigned, 0 as AdultAssigned, 0 as NormCompensation, 0 AdultCompensation , " & _
+                      " if(cr.customer_id is null or cr.time_average > 7 ,0,1) quick, if(cr.customer_id is null ,99,cr.time_average) time_average, c.sleep, " & _
+                      " (SELECT if(pa.qty_dvd_max >= 0, 1, 0)) as npp_logic " & _
                       " from customers c " & _
                       " left join products_abo pa on pa.products_id = customers_abo_type " & _
                       " left join (select distinct customers_id from compensation cmp where compensation_date_setback IS NULL and cmp.products_id is not null) cd on c.customers_id = cd.customers_id " & _

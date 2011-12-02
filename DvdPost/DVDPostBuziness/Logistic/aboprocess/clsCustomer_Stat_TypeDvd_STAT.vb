@@ -29,6 +29,7 @@ Public Class clsCustomer_Stat_TypeDvd_STAT
 
     Public position As Integer
     Public credit As Integer
+    Public remaindvd As Integer
     Public rank As Integer
     Public IllimitedCredit As Boolean
     Public reason As TypeReason

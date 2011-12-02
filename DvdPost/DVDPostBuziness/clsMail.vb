@@ -8,7 +8,7 @@ Public Class clsMail
     Private Shared _dtParams As DataTable
     Private Shared _drSite As DataRow
     Public Const MAIL_FROM As String = "dvdpost@dvdpost.be"
-    Public Const MAIL_TEST As String = "dvb@dvdpost.be"
+    Public Const MAIL_TEST As String = "im@dvdpost.be"
     Public Const MAIL_NAME As String = "DVDPost"
     Private Const CountryLux As Integer = 150
     Private Const CountryNL As Integer = 124
@@ -682,7 +682,7 @@ Public Class clsMail
         ReplaceIN_OUT(rowcustomers, RowMail, strMessage, lstvariable)
         ReplaceINDISPONIBLE(rowcustomers, RowMail, strMessage, lstvariable)
         'replaceProductPicture(rowcustomers, strMessage)
-        Return CreateMail(rowcustomers("customers_email_address"), strMessage, "Sending", eMailTest, emailFrom, emailName)
+        Return CreateMail(rowcustomers("customers_email_address"), strMessage, strSubject, eMailTest, emailFrom, emailName)
 
     End Function
 

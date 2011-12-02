@@ -112,19 +112,19 @@ Public Class frmABOProcessPerStep_type
         '
         'btnLoadInfo
         '
-        Me.btnLoadInfo.Location = New System.Drawing.Point(192, 67)
+        Me.btnLoadInfo.Location = New System.Drawing.Point(160, 58)
         Me.btnLoadInfo.Name = "btnLoadInfo"
-        Me.btnLoadInfo.Size = New System.Drawing.Size(202, 43)
+        Me.btnLoadInfo.Size = New System.Drawing.Size(168, 37)
         Me.btnLoadInfo.TabIndex = 25
         Me.btnLoadInfo.Text = "LOAD"
         '
         'XtraTabControl1
         '
         Me.XtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.XtraTabControl1.Location = New System.Drawing.Point(0, 35)
+        Me.XtraTabControl1.Location = New System.Drawing.Point(0, 30)
         Me.XtraTabControl1.Name = "XtraTabControl1"
         Me.XtraTabControl1.SelectedTabPage = Me.XtraTabPage1
-        Me.XtraTabControl1.Size = New System.Drawing.Size(1221, 403)
+        Me.XtraTabControl1.Size = New System.Drawing.Size(1221, 408)
         Me.XtraTabControl1.TabIndex = 36
         Me.XtraTabControl1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XtraTabPage1, Me.XtraTabPage2})
         Me.XtraTabControl1.Text = "TabControlABO"
@@ -139,24 +139,24 @@ Public Class frmABOProcessPerStep_type
         Me.XtraTabPage1.Controls.Add(Me.btnStartABO2)
         Me.XtraTabPage1.Controls.Add(Me.btnLoadInfo)
         Me.XtraTabPage1.Name = "XtraTabPage1"
-        Me.XtraTabPage1.Size = New System.Drawing.Size(1212, 369)
+        Me.XtraTabPage1.Size = New System.Drawing.Size(1212, 377)
         Me.XtraTabPage1.Text = "Parameters / Process"
         '
         'progressBar
         '
-        Me.progressBar.Location = New System.Drawing.Point(176, 116)
+        Me.progressBar.Location = New System.Drawing.Point(147, 101)
         Me.progressBar.Name = "progressBar"
-        Me.progressBar.Size = New System.Drawing.Size(825, 21)
+        Me.progressBar.Size = New System.Drawing.Size(687, 18)
         Me.progressBar.TabIndex = 78
         '
         'GridAboprocess
         '
         Me.GridAboprocess.EmbeddedNavigator.Name = ""
         Me.GridAboprocess.FormsUseDefaultLookAndFeel = False
-        Me.GridAboprocess.Location = New System.Drawing.Point(9, 154)
+        Me.GridAboprocess.Location = New System.Drawing.Point(7, 133)
         Me.GridAboprocess.MainView = Me.GridViewAboprocess
         Me.GridAboprocess.Name = "GridAboprocess"
-        Me.GridAboprocess.Size = New System.Drawing.Size(1131, 200)
+        Me.GridAboprocess.Size = New System.Drawing.Size(943, 174)
         Me.GridAboprocess.TabIndex = 77
         Me.GridAboprocess.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewAboprocess})
         '
@@ -169,37 +169,37 @@ Public Class frmABOProcessPerStep_type
         '
         'chkActiveTheme
         '
-        Me.chkActiveTheme.Location = New System.Drawing.Point(692, 41)
+        Me.chkActiveTheme.Location = New System.Drawing.Point(577, 36)
         Me.chkActiveTheme.Name = "chkActiveTheme"
         Me.chkActiveTheme.Properties.Caption = "UNLOCK"
-        Me.chkActiveTheme.Size = New System.Drawing.Size(90, 21)
+        Me.chkActiveTheme.Size = New System.Drawing.Size(75, 19)
         Me.chkActiveTheme.TabIndex = 76
         '
         'lblProduct_list
         '
-        Me.lblProduct_list.Location = New System.Drawing.Point(643, 71)
+        Me.lblProduct_list.Location = New System.Drawing.Point(536, 62)
         Me.lblProduct_list.Name = "lblProduct_list"
-        Me.lblProduct_list.Size = New System.Drawing.Size(36, 16)
+        Me.lblProduct_list.Size = New System.Drawing.Size(30, 13)
         Me.lblProduct_list.TabIndex = 75
         Me.lblProduct_list.Text = "theme"
         '
         'cmbTheme_event
         '
         Me.cmbTheme_event.Enabled = False
-        Me.cmbTheme_event.Location = New System.Drawing.Point(694, 68)
+        Me.cmbTheme_event.Location = New System.Drawing.Point(578, 59)
         Me.cmbTheme_event.Name = "cmbTheme_event"
         Me.cmbTheme_event.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbTheme_event.Properties.DisplayMember = "name"
         Me.cmbTheme_event.Properties.NullText = ""
         Me.cmbTheme_event.Properties.ValueMember = "id"
-        Me.cmbTheme_event.Size = New System.Drawing.Size(181, 22)
+        Me.cmbTheme_event.Size = New System.Drawing.Size(151, 20)
         Me.cmbTheme_event.TabIndex = 74
         '
         'btnStartABO2
         '
-        Me.btnStartABO2.Location = New System.Drawing.Point(427, 67)
+        Me.btnStartABO2.Location = New System.Drawing.Point(356, 58)
         Me.btnStartABO2.Name = "btnStartABO2"
-        Me.btnStartABO2.Size = New System.Drawing.Size(201, 43)
+        Me.btnStartABO2.Size = New System.Drawing.Size(167, 37)
         SuperToolTip1.Items.Add(ToolTipItem1)
         Me.btnStartABO2.SuperTip = SuperToolTip1
         Me.btnStartABO2.TabIndex = 43
@@ -209,7 +209,7 @@ Public Class frmABOProcessPerStep_type
         '
         Me.XtraTabPage2.Controls.Add(Me.GridCustResult)
         Me.XtraTabPage2.Name = "XtraTabPage2"
-        Me.XtraTabPage2.Size = New System.Drawing.Size(1212, 369)
+        Me.XtraTabPage2.Size = New System.Drawing.Size(1212, 377)
         Me.XtraTabPage2.Text = "Customers Result"
         '
         'GridCustResult
@@ -220,7 +220,7 @@ Public Class frmABOProcessPerStep_type
         Me.GridCustResult.Location = New System.Drawing.Point(0, 0)
         Me.GridCustResult.MainView = Me.GridViewCust
         Me.GridCustResult.Name = "GridCustResult"
-        Me.GridCustResult.Size = New System.Drawing.Size(1212, 369)
+        Me.GridCustResult.Size = New System.Drawing.Size(1212, 377)
         Me.GridCustResult.TabIndex = 0
         Me.GridCustResult.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewCust, Me.GridView1})
         '
@@ -253,7 +253,7 @@ Public Class frmABOProcessPerStep_type
         '
         'frmABOProcessPerStep_type
         '
-        Me.AutoScaleBaseSize = New System.Drawing.Size(6, 15)
+        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
         Me.ClientSize = New System.Drawing.Size(1221, 438)
         Me.Controls.Add(Me.XtraTabControl1)
         Me.Name = "frmABOProcessPerStep_type"
@@ -422,6 +422,8 @@ Public Class frmABOProcessPerStep_type
                 Else
                     If Not customer.statSend.IllimitedCredit Then
                         customer.statSend.credit -= 1
+                        'If customer.statSend Then
+                        customer.statSend.remaindvd -= 1 ' ovo je npp
                     End If
                 End If
                 customer.nb_send += 1
@@ -657,7 +659,7 @@ Public Class frmABOProcessPerStep_type
 
 
     Private Sub limitMaxCredit(ByRef ToSend As Integer, _
-                               ByVal credit As Integer)
+                               ByVal credit As Integer, ByVal dvdremain As Integer)
 
 
         ' credit < au nombre de dvd a envoye 
@@ -668,6 +670,14 @@ Public Class frmABOProcessPerStep_type
                 ToSend = credit
             End If
         End If
+        If (ToSend > dvdremain) Then
+            Dim ok As Boolean = False
+            Dim index As Integer = 0
+            If (Not ok) Then
+                ToSend = dvdremain
+            End If
+        End If
+
 
     End Sub
 
@@ -704,7 +714,7 @@ Public Class frmABOProcessPerStep_type
         ' quand on calcul par rapport aux credit il ne faut pas tenir compte des compensations (car gratuites)
         ToSend -= stat.statSend.dvd_compensation
         If Not stat.statSend.IllimitedCredit Then
-            limitMaxCredit(ToSend, stat.statSend.credit)
+            limitMaxCredit(ToSend, stat.statSend.credit, stat.statSend.remaindvd)
         End If
         stat.nb_request_max_credit = stat.nb_request_max
         stat.nb_request_max_credit += stat.statSend.dvd_compensation
@@ -763,7 +773,10 @@ Public Class frmABOProcessPerStep_type
                 customerstatcurrent = customerCurrent.GetStat(type_dvd)
                 customerstatcurrent.statSend.rank = custRow("customers_abo_rank")
                 customerstatcurrent.statSend.credit = custRow("customers_abo_dvd_credit")
+                customerstatcurrent.statSend.remaindvd = custRow("customers_abo_dvd_remain")
 
+
+                ' nbrOfDvdThatCouldBeAtHome - nbrOfDvdCurrentlyAtHome
                 CalcMaxDvd(customerCurrent, custRow)
                 processCustom = CalcHowManyToAssign(customerstatcurrent, custRow, type_dvd)
 
@@ -786,6 +799,7 @@ Public Class frmABOProcessPerStep_type
                     dt_DVDWishlistFound = Nothing
                     dt_DVDWishlistFound = searchDvdInWishlist(custRow, customerstatcurrent, type_dvd)
 
+                    ' ovde mozda treba proveriti i dvdmax?
                     CalcDvdToSend(customerCurrent, type_dvd)
                     statCurrent.CptDVDask += customerstatcurrent.nb_request_max_credit
 
@@ -901,6 +915,8 @@ Public Class frmABOProcessPerStep_type
         customer.SaveStat(aboprocess_id, type_dvd)
         Dim dr As DataRow = DS.Tables("customers").Select("customers_id = " & customer.customers_id)(0)
         dr("customers_abo_dvd_credit") = Customerstat.statSend.credit
+        dr("customers_abo_dvd_remain") = Customerstat.statSend.remaindvd
+
         _AboStat.deleteCustomers(index, type_dvd)
 
     End Sub
@@ -1115,7 +1131,7 @@ Public Class frmABOProcessPerStep_type
                     firstSerie_ProductsID = wl_viewFirstSerie(0)("product_id")
 
                     _ProductRow = GetProductAvailable(firstSerie_ProductsID)
-                    If _ProductRow IsNot Nothing Then 'A Product Row is found.
+                    If _ProductRow IsNot Nothing Then 'A Product Row is found.  
 
                         Dim lstdr As DataRow() = DS.Tables("customers_" & DVDPostTools.clsEnum.getNameStrEnum(type_dvd)).Select("imdb_id_serie = " & _ProductRow("imdb_id_serie"))
                         If lstdr.Length > 0 Then
@@ -1208,6 +1224,7 @@ Public Class frmABOProcessPerStep_type
         Return DVDPostBuziness.ClsCustomers.isIllimitedaboByCustomers(CustRow("customers_id")) Or (CustRow("customers_abo_dvd_norm") + CustRow("customers_abo_dvd_adult")) Mod 2 <> 0
     End Function
 
+    'ovde bi mogao da se proveri i customers_abo_dvd_remain
     Private Function IsCreditEnough(ByRef vCustRow As DataRowView, ByVal type_dvd As DvdPostData.clsProductDvd.Type_DVD, ByRef customerStat As DVDPostBuziness.clsCustomer_Stat_TypeDVD) As Boolean
         Dim strcredit As String = "customers_abo_dvd_credit"
         Dim credit As Boolean = (vCustRow("Use_credit") = 1 And vCustRow(strcredit) > 0) Or (vCustRow("Use_credit") = 0)
@@ -1226,11 +1243,18 @@ Public Class frmABOProcessPerStep_type
     Private Function UpdateCreditCustomer(ByRef vCustRow As DataRowView, ByVal vToSend As Integer) As Integer
         Dim cptSend As Integer
         Dim strcredit As String = "customers_abo_dvd_credit"
+        Dim strdvdremain As String = "customers_abo_dvd_remain"
+        Dim strnpp_logic As String = "npp_logic"
 
         If (vCustRow("Use_credit") = 0) Then
             cptSend = vToSend
         Else
-            cptSend = Math.Min(vToSend, vCustRow(strcredit))
+            If (vCustRow(strnpp_logic) = 1) Then
+                cptSend = Math.Min(vToSend, Math.Min(vCustRow(strdvdremain), vCustRow(strcredit)))
+            Else
+                cptSend = Math.Min(vToSend, vCustRow(strcredit))
+            End If
+
         End If
 
         Return cptSend
@@ -1310,7 +1334,11 @@ Public Class frmABOProcessPerStep_type
             ) Then
             customerStat.statSend.reason = DvdPostData.Customer_stat.TypeReason.NO_MANAGED
             _AboStat.GetStat(type_dvd).CptCustomerNoManaged += 1
+        ElseIf (customerStat.statSend.remaindvd = 0 And vCustRow("npp_logic") = 1) Then
+            customerStat.statSend.reason = DvdPostData.Customer_stat.TypeReason.DVD_MAX
+            _AboStat.GetStat(type_dvd).CptCustomerDVDMax += 1
         Else
+            'calculate how many dvd to send by taking minimum of (dvd could be at home - dvd at home, credit and maxdvd)
             DVDToSend = UpdateCreditCustomer(vCustRow, customerStat.maxDvdSend)
             DVDCompensation = GetCompensation(vCustRow("customers_id"), customerStat.typeDvd)
             customerStat.statSend.dvd_compensation = DVDCompensation

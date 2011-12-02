@@ -401,12 +401,14 @@ Public Class clsOdersStatusHistory
 
     Public Shared Function getUpdateCreditLostMoreMonth() As String
         Dim sql As String
-        sql = " select * from " & _
+        sql = " select xx.* from " & _
               " ( select (day(now()) - day(date_purchased)) D ,o.* " & _
               " from orders o " & _
               " where orders_status = 2 and date(date_purchased) < date(now()) " & _
               " ) xx " & _
-              " where D = 0 "
+              " join customers c on xx.customers_id = c.customers_id " & _
+              " join products_abo pa on c.customers_next_abo_type = pa.products_id " & _
+              " where D = 0 and pa.qty_dvd_max < 0"
 
         Return sql
     End Function

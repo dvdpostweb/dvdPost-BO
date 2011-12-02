@@ -1236,13 +1236,14 @@ Public Class clsProduct_DVD
         'Update DVD Rent This Month (before, update happened only if abo_type=2)
         Dim setRentThisMonth As String = ""
         If Not isCompensation And Not isIllimitedAbo Then
-            setRentThisMonth = ", customers_abo_dvd_credit= if(customers_abo_dvd_credit > 0,customers_abo_dvd_credit - 1,0) "
+            setRentThisMonth = ", customers_abo_dvd_credit = if(customers_abo_dvd_credit > 0,customers_abo_dvd_credit - 1,0) " & _
+                               " , customers_abo_dvd_remain = if(customers_abo_dvd_remain > 0,customers_abo_dvd_remain - 1,0) "
 
             'insert  credit use in table credit_history (must be insert behind update dvd credit 
             Dim sqlCreditHist As String = DvdPostData.clsCreditHistory.GetInsertCreditHistory(-1, customers_id, creditAction, False, orders_id)
             DvdPostData.clsConnection.ExecuteNonQuery(sqlCreditHist)
         End If
-      
+
 
         sql = "update customers c set " & DVDAtHomeColumnName & "=(" & DVDAtHomeColumnName & "+1) " & setRentThisMonth & _
              " where customers_id=" & customers_id

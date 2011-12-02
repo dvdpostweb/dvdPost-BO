@@ -11,6 +11,7 @@ Public Class Customer_stat
         MSGERROR = 7
         PARTIAL_SERVED = 8
         NO_MANAGED = 9
+        DVD_MAX = 10
     End Enum
 
     Private _customers_id As Integer

@@ -32,7 +32,7 @@ Public Class clsAboprocessStatTypeDVD
         DVDSENDCOMP
         CPTERROR
         CUSTOMERNOMANAGED
-
+        DVDMAX
     End Enum
 
     Public EndTime As DateTime
@@ -119,6 +119,15 @@ Public Class clsAboprocessStatTypeDVD
         End Get
         Set(ByVal value As Integer)
             SetValue(TypeStat.CUSTOMERNOMANAGED, value)
+        End Set
+    End Property
+
+    Public Property CptCustomerDVDMax() As Integer
+        Get
+            Return GetValue(TypeStat.DVDMAX)
+        End Get
+        Set(ByVal value As Integer)
+            SetValue(TypeStat.DVDMAX, value)
         End Set
     End Property
 

@@ -163,6 +163,20 @@ Public Class clsCreditHistory
 
         Return sql
     End Function
+    Public Shared Function GetInsertNPPCreditHistory(ByVal quantity As Integer, ByVal max_dvd As Integer, ByVal customers_id As Integer, ByVal action As ActionId, ByVal combined As Boolean, Optional ByVal orders_id As Integer = Nothing, Optional ByVal oldCredit As Integer = Nothing) As String
+        Dim sql As String
+
+        sql = "insert into credit_history (customers_id , credit_action_id , user_modified,credit_paid , quantity_paid ,  quantity_free , max_dvd, credit_free , orders_id )" & _
+              " values (" & customers_id & " , " & action & " , " & clsSession.user_id & "," & GetCreditPaidOrFree(customers_id, quantity, action, orders_id, combined)
+
+        If orders_id <> Nothing Then
+            sql = sql + " , " & orders_id & ")"
+        Else
+            sql = sql + " , null )"
+        End If
+
+        Return sql
+    End Function
     Public Shared Function GetLastCreditHistory(ByVal customers_id As Integer) As String
         Dim sql As String
 

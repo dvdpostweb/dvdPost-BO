@@ -818,6 +818,16 @@ Public Class ClsCustomers
 
     End Function
 
+    Private Function GetNPPCredit(ByVal abo_id As Integer) As DataTable
+        Dim sql As String
+        Dim dtCredit As DataTable
+        sql = DvdPostData.ClsCustomersData.GetSelectNPPCredit(abo_id)
+        dtCredit = DvdPostData.clsConnection.FillDataSet(sql)
+
+        Return dtCredit
+
+    End Function
+
     Private Sub ManageUpdateCredit(ByVal drCustomer As DataRow, ByVal price As String, Optional ByVal Forcedcredit As Integer = 0)
 
         Dim dt As DataTable
@@ -834,31 +844,54 @@ Public Class ClsCustomers
     End Sub
 
     Private Sub UpdateCredit(ByVal drCustomer As DataRow, ByVal price As String, Optional ByVal Forcedcredit As Integer = 0)
+        Try
+            If drCustomer("npp_logic") = 0 Then
+                Dim sql As String
+                Dim credit As Integer
+                Dim creditAction As DvdPostData.clsCreditHistory.ActionId
 
-        Dim sql As String
-        Dim credit As Integer
-        Dim creditAction As DvdPostData.clsCreditHistory.ActionId
-        If Forcedcredit = 0 Then
-            credit = GetCredit(getCustomersTypeAbo(drCustomer))
-        Else
-            credit = Forcedcredit
-        End If
+                If Forcedcredit = 0 Then
+                    credit = GetCredit(getCustomersTypeAbo(drCustomer))
+                Else
+                    credit = Forcedcredit
+                End If
 
-        If price = 0 Then
-            creditAction = clsCreditHistory.ActionId.FREERECONDUCTION
-        Else
-            creditAction = clsCreditHistory.ActionId.RECONDUCTION
-        End If
+                If price = 0 Then
+                    creditAction = clsCreditHistory.ActionId.FREERECONDUCTION
+                Else
+                    creditAction = clsCreditHistory.ActionId.RECONDUCTION
+                End If
 
-        InsertCreditHistory(GetCustomersId(drCustomer), creditAction, credit, drCustomer("combined") = 1)
-        If drCustomer("combined") = 1 Then
-            sql = DvdPostData.ClsCustomersData.GetUpdateCredit(GetCustomersId(drCustomer), credit)
+                InsertCreditHistory(GetCustomersId(drCustomer), creditAction, credit, drCustomer("combined") = 1)
+                If drCustomer("combined") = 1 Then
+                    sql = DvdPostData.ClsCustomersData.GetUpdateCredit(GetCustomersId(drCustomer), credit)
 
-        Else
-            sql = DvdPostData.ClsCustomersData.GetUpdateCreditNoCombined(GetCustomersId(drCustomer), credit)
+                Else
+                    sql = DvdPostData.ClsCustomersData.GetUpdateCreditNoCombined(GetCustomersId(drCustomer), credit)
 
-        End If
-        DvdPostData.clsConnection.ExecuteNonQuery(sql)
+                End If
+                DvdPostData.clsConnection.ExecuteNonQuery(sql)
+            Else
+                Dim sql As String
+                Dim dtCredit As DataTable
+                Dim creditAction As DvdPostData.clsCreditHistory.ActionId
+
+                dtCredit = GetNPPCredit(getCustomersTypeAbo(drCustomer))
+
+                If price = 0 Then
+                    creditAction = clsCreditHistory.ActionId.FREERECONDUCTION
+                Else
+                    creditAction = clsCreditHistory.ActionId.RECONDUCTION
+                End If
+
+                InsertCreditHistory(GetCustomersId(drCustomer), creditAction, dtCredit.Rows(0)("qty_credit"), drCustomer("combined") = 1)
+
+                sql = DvdPostData.ClsCustomersData.GetUpdateNPPCredit(GetCustomersId(drCustomer), dtCredit.Rows(0)("qty_credit"), dtCredit.Rows(0)("qty_dvd_max"))
+                DvdPostData.clsConnection.ExecuteNonQuery(sql)
+            End If
+        Catch ex As Exception
+            Dim i As Int16 = 0
+        End Try
 
 
     End Sub
@@ -867,6 +900,15 @@ Public Class ClsCustomers
         Dim sql As String = ""
         Try
             sql = DvdPostData.clsCreditHistory.GetInsertCreditHistory(qtyCredit, customersId, creditAction, combined)
+            DvdPostData.clsConnection.ExecuteNonQuery(sql)
+        Catch ex As Exception
+            clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Reconduction, ex.Message & " sql error |" & sql & "|", customersId)
+        End Try
+    End Sub
+    Private Sub InsertNPPCreditHistory(ByVal customersId As Integer, ByVal creditAction As DvdPostData.clsCreditHistory.ActionId, ByVal qtyCredit As Integer, ByVal qtyDvdMax As Integer, Optional ByVal combined As Boolean = True)
+        Dim sql As String = ""
+        Try
+            sql = DvdPostData.clsCreditHistory.GetInsertNPPCreditHistory(qtyCredit, qtyDvdMax, customersId, creditAction, combined)
             DvdPostData.clsConnection.ExecuteNonQuery(sql)
         Catch ex As Exception
             clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Reconduction, ex.Message & " sql error |" & sql & "|", customersId)

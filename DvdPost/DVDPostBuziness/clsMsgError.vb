@@ -33,7 +33,7 @@ Imports System
 
 Public Class clsMsgError
 
-    Const MAILTO As String = "dvb@dvdpost.be"
+    Const MAILTO As String = "im@dvdpost.be"
     Const Subject As String = "ERROR DVDPost Bo : "
     Const Author As String = " User : "
     Const PATHLOG As String = "Path_LOG"

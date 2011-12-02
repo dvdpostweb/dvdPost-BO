@@ -202,7 +202,7 @@ Public Class ClsCustomersData
     Public Shared Function GetAboType() As String
         Dim sql As String
 
-        sql = " select p.products_id,p.products_title,p.products_price,products_status,pa.qty_at_home,qty_credit " & _
+        sql = " select p.products_id,p.products_title,p.products_price,products_status,pa.qty_at_home,qty_credit,qty_dvd_max " & _
                 " from products p " & _
                 " join products_abo pa on p.products_id = pa.products_id " & _
                 " where products_type = 'ABO'"
@@ -600,7 +600,8 @@ Public Class ClsCustomersData
         sql = sql & " c.ogone_exp_date,"
         sql = sql & " p.products_price,"
         sql = sql & " '-1' amount,"
-        sql = sql & " ca.combined "
+        sql = sql & " ca.combined, "
+        sql = sql & "( SELECT if(pa.qty_dvd_max >= 0, 1, 0) FROM products_abo pa WHERE pa.products_id = c.customers_next_abo_type ) as npp_logic" ' npp
         sql = sql & " FROM customers c join products p on c.customers_next_abo_type = p.products_id "
         sql = sql & " join customer_attributes ca on c.customers_id = ca.customer_id "
         sql = sql & " WHERE date(customers_abo_validityto) <= '" & strmysqldate & "'"
@@ -665,6 +666,19 @@ Public Class ClsCustomersData
     Public Shared Function GetSelectCredit(ByVal type_abo As Integer) As String
         Dim sql As String
         sql = "select qty_credit FROM products_abo where products_id = " & type_abo
+        Return sql
+    End Function
+    Public Shared Function GetSelectNPPCredit(ByVal type_abo As Integer) As String
+        Dim sql As String
+        sql = "select qty_credit, qty_dvd_max FROM products_abo where products_id = " & type_abo
+        Return sql
+    End Function
+    Public Shared Function GetSelectNPPCreditByCustomer(ByVal customers_id As String) As String
+        Dim sql As String
+        If customers_id = "" Then
+            customers_id = "0"
+        End If
+        sql = "select count(*) FROM customers c join products_abo pa on c.customers_abo_type = pa.products_id where pa.qty_dvd_max >= 0 and customers_id = " & customers_id
         Return sql
     End Function
     Public Shared Function GetSelectAboSummerWinterPOwer(ByVal customers_id As Integer) As String
@@ -969,6 +983,11 @@ Public Class ClsCustomersData
         Return sql
     End Function
 
+    Public Shared Function GetUpdateNPPCredit(ByVal customers_id As Integer, ByVal credit As Integer, ByVal dvd_max As Integer) As String
+        Dim sql As String
+        sql = "update customers set customers_abo_dvd_credit = " & credit & ", customers_abo_dvd_remain = " & dvd_max & "  where customers_id = " & customers_id
+        Return sql
+    End Function
     Public Shared Function GetUpdateCreditsAlreadyRecieved(ByVal customer_id As Integer) As String
 
         Dim sql As String
