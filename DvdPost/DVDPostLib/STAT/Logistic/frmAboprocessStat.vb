@@ -50,6 +50,7 @@ Public Class frmAboprocessStat
     Friend WithEvents btnWlRankServed As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnCustNotServed As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnwhoisnotserved As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnWishListByPriorityByProduct As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAboprocessStat))
@@ -75,6 +76,7 @@ Public Class frmAboprocessStat
         Me.PivotGridControl1 = New DevExpress.XtraPivotGrid.PivotGridControl
         Me.btnLongtimeDvd = New DevExpress.XtraEditors.SimpleButton
         Me.btnLongtimeProduct = New DevExpress.XtraEditors.SimpleButton
+        Me.btnWishListByPriorityByProduct = New DevExpress.XtraEditors.SimpleButton
         Me.Panel1.SuspendLayout()
         CType(Me.TabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -123,6 +125,7 @@ Public Class frmAboprocessStat
         '
         'TabParameters
         '
+        Me.TabParameters.Controls.Add(Me.btnWishListByPriorityByProduct)
         Me.TabParameters.Controls.Add(Me.btnLongtimeProduct)
         Me.TabParameters.Controls.Add(Me.btnLongtimeDvd)
         Me.TabParameters.Controls.Add(Me.GroupControl1)
@@ -289,6 +292,12 @@ Public Class frmAboprocessStat
         resources.ApplyResources(Me.btnLongtimeProduct, "btnLongtimeProduct")
         Me.btnLongtimeProduct.Name = "btnLongtimeProduct"
         Me.HelpProvider1.SetShowHelp(Me.btnLongtimeProduct, CType(resources.GetObject("btnLongtimeProduct.ShowHelp"), Boolean))
+        '
+        'btnWishListByPriorityByProduct
+        '
+        resources.ApplyResources(Me.btnWishListByPriorityByProduct, "btnWishListByPriorityByProduct")
+        Me.btnWishListByPriorityByProduct.Name = "btnWishListByPriorityByProduct"
+        Me.HelpProvider1.SetShowHelp(Me.btnWishListByPriorityByProduct, CType(resources.GetObject("btnWishListByPriorityByProduct.ShowHelp"), Boolean))
         '
         'frmAboprocessStat
         '
@@ -473,6 +482,13 @@ Public Class frmAboprocessStat
     Private Sub btnwhoisnotserved_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnwhoisnotserved.Click
         Dim sql As String
         sql = DvdPostData.clsStatLogisticAboProcess.getSelectCustomerNothingServed(txtFromDate.EditValue, txtToDate.EditValue, type_dvd)
+        'DvdPostData.clsConnection.timeoutMIN = 10
+        loadData(sql)
+    End Sub
+
+    Private Sub SimpleButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnWishListByPriorityByProduct.Click
+        Dim sql As String
+        sql = DvdPostData.clsStatLogisticAboProcess.getSelectCountWishlistByPriorityByProduct(txtFromDate.EditValue, txtToDate.EditValue)
         'DvdPostData.clsConnection.timeoutMIN = 10
         loadData(sql)
     End Sub

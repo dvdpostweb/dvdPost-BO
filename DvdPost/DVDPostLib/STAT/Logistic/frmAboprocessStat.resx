@@ -118,14 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="HelpProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>414, 17</value>
+    <value>363, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="StatusBar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 570</value>
-  </data>
-  <data name="StatusBar1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1104, 28</value>
+    <value>0, 574</value>
   </data>
   <data name="&gt;&gt;StatusBar1.Name" xml:space="preserve">
     <value>StatusBar1</value>
@@ -140,10 +137,10 @@
     <value>1</value>
   </data>
   <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 35</value>
+    <value>0, 30</value>
   </data>
   <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1104, 535</value>
+    <value>1104, 544</value>
   </data>
   <data name="&gt;&gt;Panel1.Name" xml:space="preserve">
     <value>Panel1</value>
@@ -158,13 +155,13 @@
     <value>0</value>
   </data>
   <metadata name="RightMouseMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>563, 17</value>
+    <value>492, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleBaseSize" type="System.Drawing.Size, System.Drawing">
-    <value>6, 15</value>
+    <value>5, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1104, 598</value>
@@ -300,13 +297,13 @@
     <value>BizzLib.frmGeneral_Browse, BizzLib, Version=1.0.3210.18722, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1104, 535</value>
+    <value>1104, 544</value>
   </data>
   <data name="ChartControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>580, 28</value>
+    <value>483, 24</value>
   </data>
   <data name="ChartControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>360, 230</value>
+    <value>300, 200</value>
   </data>
   <data name="ChartControl1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -324,10 +321,10 @@
     <value>0</value>
   </data>
   <data name="PivotGridControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>34, 28</value>
+    <value>28, 24</value>
   </data>
   <data name="PivotGridControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 230</value>
+    <value>400, 200</value>
   </data>
   <data name="PivotGridControl1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -345,7 +342,7 @@
     <value>1</value>
   </data>
   <data name="XtraTabPage1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1316, 588</value>
+    <value>1095, 513</value>
   </data>
   <data name="XtraTabPage1.Text" xml:space="preserve">
     <value>XtraTabPage1</value>
@@ -375,7 +372,7 @@
     <value>0</value>
   </data>
   <data name="TabChart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1095, 540</value>
+    <value>1095, 513</value>
   </data>
   <data name="&gt;&gt;TabChart.Name" xml:space="preserve">
     <value>TabChart</value>
@@ -390,7 +387,7 @@
     <value>3</value>
   </data>
   <data name="TabAnalyse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1095, 540</value>
+    <value>1095, 513</value>
   </data>
   <data name="&gt;&gt;TabAnalyse.Name" xml:space="preserve">
     <value>TabAnalyse</value>
@@ -405,7 +402,7 @@
     <value>2</value>
   </data>
   <data name="TabResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1095, 501</value>
+    <value>1095, 513</value>
   </data>
   <data name="&gt;&gt;TabResult.Name" xml:space="preserve">
     <value>TabResult</value>
@@ -419,14 +416,44 @@
   <data name="&gt;&gt;TabResult.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="btnWishListByPriorityByProduct.Location" type="System.Drawing.Point, System.Drawing">
+    <value>560, 226</value>
+  </data>
+  <data name="btnWishListByPriorityByProduct.ShowHelp" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnWishListByPriorityByProduct.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 32</value>
+  </data>
+  <data name="btnWishListByPriorityByProduct.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="btnWishListByPriorityByProduct.Text" xml:space="preserve">
+    <value>count of wishlists  by priority by product</value>
+  </data>
+  <data name="btnWishListByPriorityByProduct.ToolTip" xml:space="preserve">
+    <value>longtime product not sent</value>
+  </data>
+  <data name="&gt;&gt;btnWishListByPriorityByProduct.Name" xml:space="preserve">
+    <value>btnWishListByPriorityByProduct</value>
+  </data>
+  <data name="&gt;&gt;btnWishListByPriorityByProduct.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;btnWishListByPriorityByProduct.Parent" xml:space="preserve">
+    <value>TabParameters</value>
+  </data>
+  <data name="&gt;&gt;btnWishListByPriorityByProduct.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnLongtimeProduct.Location" type="System.Drawing.Point, System.Drawing">
-    <value>466, 261</value>
+    <value>388, 226</value>
   </data>
   <data name="btnLongtimeProduct.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="btnLongtimeProduct.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 37</value>
+    <value>142, 32</value>
   </data>
   <data name="btnLongtimeProduct.TabIndex" type="System.Int32, mscorlib">
     <value>52</value>
@@ -447,16 +474,16 @@
     <value>TabParameters</value>
   </data>
   <data name="&gt;&gt;btnLongtimeProduct.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnLongtimeDvd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>258, 261</value>
+    <value>215, 226</value>
   </data>
   <data name="btnLongtimeDvd.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="btnLongtimeDvd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 37</value>
+    <value>142, 32</value>
   </data>
   <data name="btnLongtimeDvd.TabIndex" type="System.Int32, mscorlib">
     <value>51</value>
@@ -477,20 +504,20 @@
     <value>TabParameters</value>
   </data>
   <data name="&gt;&gt;btnLongtimeDvd.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="GroupControl1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowOnly</value>
   </data>
   <data name="btnwhoisnotserved.Location" type="System.Drawing.Point, System.Drawing">
-    <value>917, 112</value>
+    <value>764, 97</value>
   </data>
   <data name="btnwhoisnotserved.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="btnwhoisnotserved.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 37</value>
+    <value>142, 32</value>
   </data>
   <data name="btnwhoisnotserved.TabIndex" type="System.Int32, mscorlib">
     <value>53</value>
@@ -514,13 +541,13 @@
     <value>0</value>
   </data>
   <data name="btnProductNoDVDFound.Location" type="System.Drawing.Point, System.Drawing">
-    <value>326, 172</value>
+    <value>272, 149</value>
   </data>
   <data name="btnProductNoDVDFound.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="btnProductNoDVDFound.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 37</value>
+    <value>141, 32</value>
   </data>
   <data name="btnProductNoDVDFound.TabIndex" type="System.Int32, mscorlib">
     <value>53</value>
@@ -544,13 +571,13 @@
     <value>1</value>
   </data>
   <data name="btnCustNotServed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>732, 112</value>
+    <value>610, 97</value>
   </data>
   <data name="btnCustNotServed.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="btnCustNotServed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 37</value>
+    <value>142, 32</value>
   </data>
   <data name="btnCustNotServed.TabIndex" type="System.Int32, mscorlib">
     <value>52</value>
@@ -574,13 +601,13 @@
     <value>2</value>
   </data>
   <data name="btnWlRankServed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>967, 37</value>
+    <value>806, 32</value>
   </data>
   <data name="btnWlRankServed.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="btnWlRankServed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>263, 37</value>
+    <value>219, 32</value>
   </data>
   <data name="btnWlRankServed.TabIndex" type="System.Int32, mscorlib">
     <value>51</value>
@@ -604,13 +631,13 @@
     <value>3</value>
   </data>
   <data name="btnWlRankNoServed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>697, 37</value>
+    <value>581, 32</value>
   </data>
   <data name="btnWlRankNoServed.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="btnWlRankNoServed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>263, 37</value>
+    <value>219, 32</value>
   </data>
   <data name="btnWlRankNoServed.TabIndex" type="System.Int32, mscorlib">
     <value>50</value>
@@ -634,13 +661,13 @@
     <value>4</value>
   </data>
   <data name="BtnDvdSent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>533, 112</value>
+    <value>444, 97</value>
   </data>
   <data name="BtnDvdSent.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="BtnDvdSent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 37</value>
+    <value>142, 32</value>
   </data>
   <data name="BtnDvdSent.TabIndex" type="System.Int32, mscorlib">
     <value>45</value>
@@ -664,13 +691,13 @@
     <value>5</value>
   </data>
   <data name="BtnWishListSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>520, 37</value>
+    <value>433, 32</value>
   </data>
   <data name="BtnWishListSize.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="BtnWishListSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 37</value>
+    <value>142, 32</value>
   </data>
   <data name="BtnWishListSize.TabIndex" type="System.Int32, mscorlib">
     <value>44</value>
@@ -694,13 +721,13 @@
     <value>6</value>
   </data>
   <data name="BtnAverageRotationTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>325, 112</value>
+    <value>271, 97</value>
   </data>
   <data name="BtnAverageRotationTime.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="BtnAverageRotationTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 37</value>
+    <value>142, 32</value>
   </data>
   <data name="BtnAverageRotationTime.TabIndex" type="System.Int32, mscorlib">
     <value>43</value>
@@ -724,13 +751,13 @@
     <value>7</value>
   </data>
   <data name="BtnViewClientServed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>325, 37</value>
+    <value>271, 32</value>
   </data>
   <data name="BtnViewClientServed.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="BtnViewClientServed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 37</value>
+    <value>142, 32</value>
   </data>
   <data name="BtnViewClientServed.TabIndex" type="System.Int32, mscorlib">
     <value>42</value>
@@ -754,13 +781,13 @@
     <value>8</value>
   </data>
   <data name="LabelControl2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 74</value>
+    <value>48, 64</value>
   </data>
   <data name="LabelControl2.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="LabelControl2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 16</value>
+    <value>38, 13</value>
   </data>
   <data name="LabelControl2.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -781,13 +808,13 @@
     <value>9</value>
   </data>
   <data name="LabelControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 37</value>
+    <value>48, 32</value>
   </data>
   <data name="LabelControl1.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="LabelControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 16</value>
+    <value>50, 13</value>
   </data>
   <data name="LabelControl1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -808,7 +835,7 @@
     <value>10</value>
   </data>
   <data name="txtToDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 74</value>
+    <value>144, 64</value>
   </data>
   <assembly alias="DevExpress.Utils.v8.1" name="DevExpress.Utils.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
   <data name="txtToDate.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v8.1">
@@ -818,7 +845,7 @@
     <value>False</value>
   </data>
   <data name="txtToDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
+    <value>100, 20</value>
   </data>
   <data name="txtToDate.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -836,7 +863,7 @@
     <value>11</value>
   </data>
   <data name="txtFromDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 37</value>
+    <value>144, 32</value>
   </data>
   <data name="txtFromDate.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v8.1">
     <value>Combo</value>
@@ -845,7 +872,7 @@
     <value>False</value>
   </data>
   <data name="txtFromDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
+    <value>100, 20</value>
   </data>
   <data name="txtFromDate.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -863,13 +890,13 @@
     <value>12</value>
   </data>
   <data name="GroupControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 18</value>
+    <value>24, 16</value>
   </data>
   <data name="GroupControl1.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="GroupControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1230, 225</value>
+    <value>1025, 195</value>
   </data>
   <data name="GroupControl1.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -887,10 +914,10 @@
     <value>TabParameters</value>
   </data>
   <data name="&gt;&gt;GroupControl1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="TabParameters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1095, 501</value>
+    <value>1095, 513</value>
   </data>
   <data name="&gt;&gt;TabParameters.Name" xml:space="preserve">
     <value>TabParameters</value>
@@ -905,10 +932,10 @@
     <value>0</value>
   </data>
   <metadata name="SaveFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>254, 17</value>
+    <value>226, 17</value>
   </metadata>
   <data name="UcPivotGrid1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1095, 540</value>
+    <value>1095, 513</value>
   </data>
   <data name="&gt;&gt;UcPivotGrid1.Name" xml:space="preserve">
     <value>UcPivotGrid1</value>
@@ -923,7 +950,7 @@
     <value>0</value>
   </data>
   <data name="UcChart1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1095, 540</value>
+    <value>1095, 513</value>
   </data>
   <data name="&gt;&gt;UcChart1.Name" xml:space="preserve">
     <value>UcChart1</value>

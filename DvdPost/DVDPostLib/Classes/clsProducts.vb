@@ -407,7 +407,14 @@ Public Class clsProduct_DVD
         DataSet1.Tables("products_to_actors").Columns("products_id").DefaultValue = ProductsID
     End Sub
     Public Sub SaveActors()
+        Dim refresh As Boolean = False
+        If Not DataSet1.Tables("products_to_actors").GetChanges() Is Nothing Then
+            refresh = True
+        End If
         DvdPostData.clsConnection.UpdateDataTableInDB(DataSet1.Tables("products_to_actors"), "select * from products_to_actors ")
+        If refresh Then
+            LoadActors()
+        End If
     End Sub
 
     Public Sub LoadLanguages()
@@ -425,7 +432,14 @@ Public Class clsProduct_DVD
         DataSet1.Tables("products_to_undertitles").Columns("products_id").DefaultValue = ProductsID
     End Sub
     Public Sub SaveUndertitles()
+        Dim refresh As Boolean = False
+        If Not DataSet1.Tables("products_to_undertitles").GetChanges() Is Nothing Then
+            refresh = True
+        End If
         DvdPostData.clsConnection.UpdateDataTableInDB(DataSet1.Tables("products_to_undertitles"), "select * from products_to_undertitles ")
+        If refresh Then
+            LoadUndertitles()
+        End If
     End Sub
 
     Public Sub LoadSoundtracks()
@@ -434,7 +448,14 @@ Public Class clsProduct_DVD
         DataSet1.Tables("products_to_soundtracks").Columns("products_id").DefaultValue = ProductsID
     End Sub
     Public Sub SaveSoundtracks()
+        Dim refresh As Boolean = False
+        If Not DataSet1.Tables("products_to_soundtracks").GetChanges() Is Nothing Then
+            refresh = True
+        End If
         DvdPostData.clsConnection.UpdateDataTableInDB(DataSet1.Tables("products_to_soundtracks"), "select * from products_to_soundtracks ")
+        If refresh Then
+            LoadSoundtracks()
+        End If
     End Sub
 
     Public Sub LoadTrailers()
@@ -443,7 +464,15 @@ Public Class clsProduct_DVD
         DataSet1.Tables("products_trailers").Columns("products_id").DefaultValue = ProductsID
     End Sub
     Public Sub SaveTrailers()
-        DvdPostData.clsConnection.UpdateDataTableInDB(DataSet1.Tables("products_trailers"), "select * from products_trailers ")
+        Dim refresh As Boolean = False
+        If Not DataSet1.Tables("products_trailers").GetChanges() Is Nothing Then
+            refresh = True
+        End If
+        DvdPostData.clsConnection.UpdateDataTableInDB(DataSet1.Tables("products_trailers"), "select trailers_id, products_id, trailer, language_id, broadcast from products_trailers ")
+        If refresh Then
+            LoadTrailers()
+        End If
+
     End Sub
 
     Public Sub LoadCategories()
@@ -453,7 +482,14 @@ Public Class clsProduct_DVD
     End Sub
     Public Sub SaveCategories()
         '  dvdpostdata.clsconnection.UpdateDataTableInDB(DataSet1.Tables("products_to_categories"), "select * from products_to_categories ")
+        Dim refresh As Boolean = False
+        If Not DataSet1.Tables("products_to_categories").GetChanges() Is Nothing Then
+            refresh = True
+        End If
         DvdPostData.clsConnection.UpdateDataTableInDB(DataSet1.Tables("products_to_categories"), "select products_id, categories_id from products_to_categories where products_id = " & ProductsID)
+        If refresh Then
+            LoadCategories()
+        End If
     End Sub
 
     Public Sub LoadThemes()
@@ -462,7 +498,14 @@ Public Class clsProduct_DVD
         DataSet1.Tables("products_to_themes").Columns("products_id").DefaultValue = ProductsID
     End Sub
     Public Sub SaveThemes()
+        Dim refresh As Boolean = False
+        If Not DataSet1.Tables("products_to_themes").GetChanges() Is Nothing Then
+            refresh = True
+        End If
         DvdPostData.clsConnection.UpdateDataTableInDB(DataSet1.Tables("products_to_themes"), "select * from products_to_themes where products_id = " & ProductsID)
+        If refresh Then
+            LoadThemes()
+        End If
     End Sub
 
     Public Sub LoadDescriptionFR()
@@ -476,7 +519,14 @@ Public Class clsProduct_DVD
         End If
     End Sub
     Public Sub SaveDescriptionFR()
+        Dim refresh As Boolean = False
+        If Not DataSet1.Tables("products_description_fr").GetChanges() Is Nothing Then
+            refresh = True
+        End If
         DvdPostData.clsConnection.UpdateDataTableInDB(DataSet1.Tables("products_description_fr"), "select * from products_description ")
+        If refresh Then
+            LoadDescriptionFR()
+        End If
     End Sub
 
     Public Sub LoadDescriptionNL()
@@ -491,7 +541,14 @@ Public Class clsProduct_DVD
 
     End Sub
     Public Sub SaveDescriptionNL()
+        Dim refresh As Boolean = False
+        If Not DataSet1.Tables("products_description_nl").GetChanges() Is Nothing Then
+            refresh = True
+        End If
         DvdPostData.clsConnection.UpdateDataTableInDB(DataSet1.Tables("products_description_nl"), "select * from products_description ")
+        If refresh Then
+            LoadDescriptionNL()
+        End If
     End Sub
 
     Public Sub LoadDescriptionEN()
@@ -505,7 +562,14 @@ Public Class clsProduct_DVD
         End If
     End Sub
     Public Sub SaveDescriptionEN()
+        Dim refresh As Boolean = False
+        If Not DataSet1.Tables("products_description_en").GetChanges() Is Nothing Then
+            refresh = True
+        End If
         DvdPostData.clsConnection.UpdateDataTableInDB(DataSet1.Tables("products_description_en"), "select * from products_description ")
+        If refresh Then
+            LoadDescriptionEN()
+        End If
     End Sub
     Public Function AddNewDVD(ByVal vNbrOfDVDToAdd As Integer) As Integer
         Dim intmaxproducts_dvdid As Integer = 0

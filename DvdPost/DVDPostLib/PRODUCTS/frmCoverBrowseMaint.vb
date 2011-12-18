@@ -212,14 +212,18 @@ Public Class frmCoverBrowseMaint
         Else
             _SQLTxt = _SQLTxt & " AND pc.products_id = " & txtProductID.EditValue
         End If
-
-        DvdPostData.clsConnection.FillDataSet(objDS.Tables(TableName), _SQLTxt)
-        Dim _FilterTxt As String = BKFilter.FilterGenerateSQL(CurrentFilterID)
-        Dim _View As New DataView(objDS.Tables(TableName), _FilterTxt, "", DataViewRowState.CurrentRows)
-        Grid1.DataSource = _View 'objDS.Tables(TableName).DefaultView
-        If txtBoxID.EditValue <> "" Then objDS.Tables(TableName).Columns("cover_box_id").DefaultValue = txtBoxID.EditValue
-        If txtProductID.EditValue <> "" Then objDS.Tables(TableName).Columns("products_id").DefaultValue = txtProductID.EditValue
-        TabControl1.SelectedTabPage = TabResult
+        Try
+            DvdPostData.clsConnection.FillDataSet(objDS.Tables(TableName), _SQLTxt)
+            Dim _FilterTxt As String = BKFilter.FilterGenerateSQL(CurrentFilterID)
+            Dim _View As New DataView(objDS.Tables(TableName), _FilterTxt, "", DataViewRowState.CurrentRows)
+            Grid1.DataSource = _View 'objDS.Tables(TableName).DefaultView
+            If txtBoxID.EditValue <> "" Then objDS.Tables(TableName).Columns("cover_box_id").DefaultValue = txtBoxID.EditValue
+            If txtProductID.EditValue <> "" Then objDS.Tables(TableName).Columns("products_id").DefaultValue = txtProductID.EditValue
+            TabControl1.SelectedTabPage = TabResult
+        Catch ex As Exception
+            DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Stock, ex)
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
     End Sub
     Public Overrides Sub UpdateDataSet()
         If CanSave Then
@@ -244,7 +248,7 @@ Public Class frmCoverBrowseMaint
                 Catch eUpdate As System.Exception
                     'Add your error handling code here.
                     DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Stock, eUpdate)
-                    Throw eUpdate
+                    System.Windows.Forms.MessageBox.Show(eUpdate.Message)
                 End Try
                 'Add your code to check the returned dataset for any errors that may have been
                 'pushed into the row object's error.

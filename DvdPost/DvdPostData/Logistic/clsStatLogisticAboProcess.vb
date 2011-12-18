@@ -214,6 +214,11 @@ Public Class clsStatLogisticAboProcess
         Return sql
     End Function
 
+    Public Shared Function getSelectCountWishlistByPriorityByProduct(ByVal dateFrom As String, ByVal dateTo As String) As String
+        Dim sql As String
+        Return "CALL spWishListReport()"
+        'sql = " select * from wish_list_report order by cnt_summary desc  "
+    End Function
     Public Shared Function getSelectCustomerNothingServed(ByVal dateFrom As String, ByVal dateTo As String, ByVal type_dvd As DvdPostData.clsProductDvd.Type_DVD) As String
         Dim sql As String
 
