@@ -93,6 +93,9 @@ Public Class clsMsgError
         Dim msgerror As String
 
         msgerror = ex.Message & " " & ex.StackTrace
+        If Not ex.InnerException Is Nothing Then
+            msgerror = msgerror & " InnerException: " & ex.InnerException.Message
+        End If
         Return InsertLogMsg(Type, msgerror, customers_id)
     End Function
 

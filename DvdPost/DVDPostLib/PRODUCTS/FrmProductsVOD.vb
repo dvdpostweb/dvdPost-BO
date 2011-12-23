@@ -924,6 +924,7 @@ Public Class FrmProductsVOD
         If gridViewVodWatch.FocusedRowHandle > -1 Then
             imdb_id = gridViewVodWatch.GetDataRow(gridViewVodWatch.FocusedRowHandle)("imdb_id")
             Dim url As String = Configuration.ConfigurationManager.AppSettings(KEYWEBSITE)
+
             WebSiteDvdPost.Url = New Uri(url & imdb_id)
             loadInfoVodWatch()
         Else
@@ -988,5 +989,11 @@ Public Class FrmProductsVOD
         Next
         GridVod.DataSource.AcceptChanges()
 
+    End Sub
+
+    Private Sub XTabControlVod_Resize(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles XTabControlVod.Resize
+        Dim center As Integer = GridVodWatch.Width + (XTabControlVod.Width - GridVodWatch.Width) / 2
+        'WebSiteDvdPost.Left = GridVodWatch.Left + GridVodWatch.Width - 203
+        'WebSiteDvdPost.Width = (XTabControlVod.Width - GridVodWatch.Width) + 203
     End Sub
 End Class

@@ -424,6 +424,7 @@ Public Class frmDVD_Maint
     Friend WithEvents lblImdbId_serie As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txtSearchImdbId_serie As DevExpress.XtraEditors.TextEdit
     Friend WithEvents cmbInOut As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents chkVodNext As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents LabelControl48 As DevExpress.XtraEditors.LabelControl
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Dim FilterCondition1 As DevExpress.XtraTreeList.FilterCondition = New DevExpress.XtraTreeList.FilterCondition
@@ -491,6 +492,7 @@ Public Class frmDVD_Maint
         Me.cmbSerie = New DevExpress.XtraEditors.LookUpEdit
         Me.lblSeries = New DevExpress.XtraEditors.LabelControl
         Me.grpMain = New DevExpress.XtraEditors.GroupControl
+        Me.chkVodNext = New DevExpress.XtraEditors.CheckEdit
         Me.cmbProducts_product_type = New DevExpress.XtraEditors.LookUpEdit
         Me.LabelControl52 = New DevExpress.XtraEditors.LabelControl
         Me.txtIMDB_ID = New DevExpress.XtraEditors.TextEdit
@@ -854,6 +856,7 @@ Public Class frmDVD_Maint
         CType(Me.cmbSerie.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grpMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpMain.SuspendLayout()
+        CType(Me.chkVodNext.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbProducts_product_type.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtIMDB_ID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTitle.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1325,7 +1328,7 @@ Public Class frmDVD_Maint
         Me.tabMain.Controls.Add(Me.grpSeries)
         Me.tabMain.Controls.Add(Me.grpMain)
         Me.tabMain.Name = "tabMain"
-        Me.tabMain.Size = New System.Drawing.Size(871, 533)
+        Me.tabMain.Size = New System.Drawing.Size(1047, 629)
         Me.tabMain.Text = "General Info"
         '
         'GroupControl2
@@ -1356,7 +1359,7 @@ Public Class frmDVD_Maint
         Me.PanelControl3.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelControl3.Location = New System.Drawing.Point(0, 0)
         Me.PanelControl3.Name = "PanelControl3"
-        Me.PanelControl3.Size = New System.Drawing.Size(871, 32)
+        Me.PanelControl3.Size = New System.Drawing.Size(1047, 32)
         Me.PanelControl3.TabIndex = 4
         '
         'btnDeleteFromliste
@@ -1666,6 +1669,7 @@ Public Class frmDVD_Maint
         'grpMain
         '
         Me.grpMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
+        Me.grpMain.Controls.Add(Me.chkVodNext)
         Me.grpMain.Controls.Add(Me.cmbProducts_product_type)
         Me.grpMain.Controls.Add(Me.LabelControl52)
         Me.grpMain.Controls.Add(Me.txtIMDB_ID)
@@ -1778,7 +1782,7 @@ Public Class frmDVD_Maint
         Me.chkInTheBagsNext.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "products.in_the_bags_next", True))
         Me.chkInTheBagsNext.EditValue = 0
         Me.chkInTheBagsNext.Enabled = False
-        Me.chkInTheBagsNext.Location = New System.Drawing.Point(232, 407)
+        Me.chkInTheBagsNext.Location = New System.Drawing.Point(203, 407)
         Me.chkInTheBagsNext.Name = "chkInTheBagsNext"
         Me.chkInTheBagsNext.Properties.Caption = "In The Bags Next"
         Me.chkInTheBagsNext.Properties.ValueChecked = 1
@@ -1792,21 +1796,34 @@ Public Class frmDVD_Maint
         Me.chkInTheBags.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "products.in_the_bags", True))
         Me.chkInTheBags.EditValue = 0
         Me.chkInTheBags.Enabled = False
-        Me.chkInTheBags.Location = New System.Drawing.Point(104, 407)
+        Me.chkInTheBags.Location = New System.Drawing.Point(101, 407)
         Me.chkInTheBags.Name = "chkInTheBags"
         Me.chkInTheBags.Properties.Caption = "In The Bags"
         Me.chkInTheBags.Properties.ValueChecked = 1
         Me.chkInTheBags.Properties.ValueUnchecked = 0
-        Me.chkInTheBags.Size = New System.Drawing.Size(112, 19)
+        Me.chkInTheBags.Size = New System.Drawing.Size(93, 19)
         Me.chkInTheBags.TabIndex = 47
         Me.chkInTheBags.Visible = False
+        '
+        'chkVodNext
+        '
+        Me.chkVodNext.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "products.vod_next", True))
+        Me.chkVodNext.EditValue = 0
+        Me.chkVodNext.Enabled = False
+        Me.chkVodNext.Location = New System.Drawing.Point(326, 391)
+        Me.chkVodNext.Name = "chkVodNext"
+        Me.chkVodNext.Properties.Caption = "Soon in VOD"
+        Me.chkVodNext.Properties.ValueChecked = 1
+        Me.chkVodNext.Properties.ValueUnchecked = 0
+        Me.chkVodNext.Size = New System.Drawing.Size(93, 19)
+        Me.chkVodNext.TabIndex = 54
         '
         'chkInCinemaNow
         '
         Me.chkInCinemaNow.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "products.in_cinema_now", True))
         Me.chkInCinemaNow.EditValue = 0
         Me.chkInCinemaNow.Enabled = False
-        Me.chkInCinemaNow.Location = New System.Drawing.Point(232, 391)
+        Me.chkInCinemaNow.Location = New System.Drawing.Point(203, 391)
         Me.chkInCinemaNow.Name = "chkInCinemaNow"
         Me.chkInCinemaNow.Properties.Caption = "In Cinema Now"
         Me.chkInCinemaNow.Properties.ValueChecked = 1
@@ -1819,12 +1836,12 @@ Public Class frmDVD_Maint
         Me.chkProduct_Next.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "products.products_next", True))
         Me.chkProduct_Next.EditValue = 0
         Me.chkProduct_Next.Enabled = False
-        Me.chkProduct_Next.Location = New System.Drawing.Point(104, 391)
+        Me.chkProduct_Next.Location = New System.Drawing.Point(101, 391)
         Me.chkProduct_Next.Name = "chkProduct_Next"
         Me.chkProduct_Next.Properties.Caption = "Product Next"
         Me.chkProduct_Next.Properties.ValueChecked = 1
         Me.chkProduct_Next.Properties.ValueUnchecked = 0
-        Me.chkProduct_Next.Size = New System.Drawing.Size(112, 19)
+        Me.chkProduct_Next.Size = New System.Drawing.Size(93, 19)
         Me.chkProduct_Next.TabIndex = 45
         '
         'txtOtherProductID
@@ -1850,7 +1867,7 @@ Public Class frmDVD_Maint
         Me.chkGommetteNL.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "products.products_undertitle_nl", True))
         Me.chkGommetteNL.EditValue = 0
         Me.chkGommetteNL.Enabled = False
-        Me.chkGommetteNL.Location = New System.Drawing.Point(232, 431)
+        Me.chkGommetteNL.Location = New System.Drawing.Point(203, 425)
         Me.chkGommetteNL.Name = "chkGommetteNL"
         Me.chkGommetteNL.Properties.Caption = "Gommette NL"
         Me.chkGommetteNL.Properties.ValueChecked = 1
@@ -1864,12 +1881,12 @@ Public Class frmDVD_Maint
         Me.chkGommetteFR.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "products.products_language_fr", True))
         Me.chkGommetteFR.EditValue = 0
         Me.chkGommetteFR.Enabled = False
-        Me.chkGommetteFR.Location = New System.Drawing.Point(104, 431)
+        Me.chkGommetteFR.Location = New System.Drawing.Point(101, 425)
         Me.chkGommetteFR.Name = "chkGommetteFR"
         Me.chkGommetteFR.Properties.Caption = "Gommette FR"
         Me.chkGommetteFR.Properties.ValueChecked = 1
         Me.chkGommetteFR.Properties.ValueUnchecked = 0
-        Me.chkGommetteFR.Size = New System.Drawing.Size(112, 19)
+        Me.chkGommetteFR.Size = New System.Drawing.Size(93, 19)
         Me.chkGommetteFR.TabIndex = 41
         Me.chkGommetteFR.Visible = False
         '
@@ -2267,7 +2284,7 @@ Public Class frmDVD_Maint
         Me.tabFR.Controls.Add(Me.txtNameFR)
         Me.tabFR.Controls.Add(Me.LabelControl14)
         Me.tabFR.Name = "tabFR"
-        Me.tabFR.Size = New System.Drawing.Size(871, 533)
+        Me.tabFR.Size = New System.Drawing.Size(1047, 629)
         Me.tabFR.Text = "FR"
         '
         'txtAwardFR
@@ -2377,7 +2394,7 @@ Public Class frmDVD_Maint
         Me.tabNL.Controls.Add(Me.txtNameNL)
         Me.tabNL.Controls.Add(Me.LabelControl23)
         Me.tabNL.Name = "tabNL"
-        Me.tabNL.Size = New System.Drawing.Size(871, 533)
+        Me.tabNL.Size = New System.Drawing.Size(1047, 629)
         Me.tabNL.Text = "NL"
         '
         'txtAwardNL
@@ -2487,7 +2504,7 @@ Public Class frmDVD_Maint
         Me.tabEN.Controls.Add(Me.txtNameEN)
         Me.tabEN.Controls.Add(Me.LabelControl28)
         Me.tabEN.Name = "tabEN"
-        Me.tabEN.Size = New System.Drawing.Size(871, 533)
+        Me.tabEN.Size = New System.Drawing.Size(1047, 629)
         Me.tabEN.Text = "EN"
         '
         'txtAwardEN
@@ -2589,7 +2606,7 @@ Public Class frmDVD_Maint
         Me.tabTheme.Controls.Add(Me.SplitterControl2)
         Me.tabTheme.Controls.Add(Me.PanelControl6)
         Me.tabTheme.Name = "tabTheme"
-        Me.tabTheme.Size = New System.Drawing.Size(871, 533)
+        Me.tabTheme.Size = New System.Drawing.Size(1047, 629)
         Me.tabTheme.Text = "Themes and Categories"
         '
         'PanelControl7
@@ -2600,7 +2617,7 @@ Public Class frmDVD_Maint
         Me.PanelControl7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControl7.Location = New System.Drawing.Point(550, 0)
         Me.PanelControl7.Name = "PanelControl7"
-        Me.PanelControl7.Size = New System.Drawing.Size(321, 533)
+        Me.PanelControl7.Size = New System.Drawing.Size(497, 629)
         Me.PanelControl7.TabIndex = 12
         '
         'TreeListThemes
@@ -2692,7 +2709,7 @@ Public Class frmDVD_Maint
         Me.TreeListThemes.OptionsView.ShowVertLines = False
         Me.TreeListThemes.ParentFieldName = "parent_id"
         Me.TreeListThemes.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.chkThemeSelected})
-        Me.TreeListThemes.Size = New System.Drawing.Size(317, 481)
+        Me.TreeListThemes.Size = New System.Drawing.Size(493, 577)
         Me.TreeListThemes.TabIndex = 9
         '
         'colthemes_id
@@ -2752,9 +2769,9 @@ Public Class frmDVD_Maint
         Me.PanelControl12.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
         Me.PanelControl12.Controls.Add(Me.btnThemes)
         Me.PanelControl12.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl12.Location = New System.Drawing.Point(2, 483)
+        Me.PanelControl12.Location = New System.Drawing.Point(2, 579)
         Me.PanelControl12.Name = "PanelControl12"
-        Me.PanelControl12.Size = New System.Drawing.Size(317, 48)
+        Me.PanelControl12.Size = New System.Drawing.Size(493, 48)
         Me.PanelControl12.TabIndex = 10
         '
         'btnThemes
@@ -2769,7 +2786,7 @@ Public Class frmDVD_Maint
         '
         Me.SplitterControl2.Location = New System.Drawing.Point(544, 0)
         Me.SplitterControl2.Name = "SplitterControl2"
-        Me.SplitterControl2.Size = New System.Drawing.Size(6, 533)
+        Me.SplitterControl2.Size = New System.Drawing.Size(6, 629)
         Me.SplitterControl2.TabIndex = 11
         Me.SplitterControl2.TabStop = False
         '
@@ -2781,7 +2798,7 @@ Public Class frmDVD_Maint
         Me.PanelControl6.Dock = System.Windows.Forms.DockStyle.Left
         Me.PanelControl6.Location = New System.Drawing.Point(0, 0)
         Me.PanelControl6.Name = "PanelControl6"
-        Me.PanelControl6.Size = New System.Drawing.Size(544, 533)
+        Me.PanelControl6.Size = New System.Drawing.Size(544, 629)
         Me.PanelControl6.TabIndex = 10
         '
         'TreeListCategories
@@ -2879,7 +2896,7 @@ Public Class frmDVD_Maint
         Me.TreeListCategories.OptionsView.ShowVertLines = False
         Me.TreeListCategories.ParentFieldName = "parent_id"
         Me.TreeListCategories.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.chkSelectCategory})
-        Me.TreeListCategories.Size = New System.Drawing.Size(540, 481)
+        Me.TreeListCategories.Size = New System.Drawing.Size(540, 577)
         Me.TreeListCategories.TabIndex = 7
         '
         'colcategories_id
@@ -2918,7 +2935,7 @@ Public Class frmDVD_Maint
         Me.PanelControl11.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
         Me.PanelControl11.Controls.Add(Me.btnCategories)
         Me.PanelControl11.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl11.Location = New System.Drawing.Point(2, 483)
+        Me.PanelControl11.Location = New System.Drawing.Point(2, 579)
         Me.PanelControl11.Name = "PanelControl11"
         Me.PanelControl11.Size = New System.Drawing.Size(540, 48)
         Me.PanelControl11.TabIndex = 8
@@ -2937,7 +2954,7 @@ Public Class frmDVD_Maint
         Me.tabLanguages.Controls.Add(Me.SplitterControl1)
         Me.tabLanguages.Controls.Add(Me.grpLanguage)
         Me.tabLanguages.Name = "tabLanguages"
-        Me.tabLanguages.Size = New System.Drawing.Size(871, 533)
+        Me.tabLanguages.Size = New System.Drawing.Size(1047, 629)
         Me.tabLanguages.Text = "Languages"
         '
         'grpSubTitles
@@ -2948,7 +2965,7 @@ Public Class frmDVD_Maint
         Me.grpSubTitles.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grpSubTitles.Location = New System.Drawing.Point(502, 0)
         Me.grpSubTitles.Name = "grpSubTitles"
-        Me.grpSubTitles.Size = New System.Drawing.Size(369, 533)
+        Me.grpSubTitles.Size = New System.Drawing.Size(545, 629)
         Me.grpSubTitles.TabIndex = 2
         Me.grpSubTitles.Text = "SubTitles"
         '
@@ -2970,7 +2987,7 @@ Public Class frmDVD_Maint
         Me.GridUndertitles.MainView = Me.GridViewUndertitles
         Me.GridUndertitles.Name = "GridUndertitles"
         Me.GridUndertitles.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbUndertitles})
-        Me.GridUndertitles.Size = New System.Drawing.Size(365, 471)
+        Me.GridUndertitles.Size = New System.Drawing.Size(541, 567)
         Me.GridUndertitles.TabIndex = 4
         Me.GridUndertitles.UseEmbeddedNavigator = True
         Me.GridUndertitles.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewUndertitles})
@@ -3026,9 +3043,9 @@ Public Class frmDVD_Maint
         Me.PanelControl5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
         Me.PanelControl5.Controls.Add(Me.btnSubTitles)
         Me.PanelControl5.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl5.Location = New System.Drawing.Point(2, 491)
+        Me.PanelControl5.Location = New System.Drawing.Point(2, 587)
         Me.PanelControl5.Name = "PanelControl5"
-        Me.PanelControl5.Size = New System.Drawing.Size(365, 40)
+        Me.PanelControl5.Size = New System.Drawing.Size(541, 40)
         Me.PanelControl5.TabIndex = 5
         '
         'btnSubTitles
@@ -3046,7 +3063,7 @@ Public Class frmDVD_Maint
         Me.SplitterControl1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.SplitterControl1.Location = New System.Drawing.Point(496, 0)
         Me.SplitterControl1.Name = "SplitterControl1"
-        Me.SplitterControl1.Size = New System.Drawing.Size(6, 533)
+        Me.SplitterControl1.Size = New System.Drawing.Size(6, 629)
         Me.SplitterControl1.TabIndex = 1
         Me.SplitterControl1.TabStop = False
         '
@@ -3058,7 +3075,7 @@ Public Class frmDVD_Maint
         Me.grpLanguage.Dock = System.Windows.Forms.DockStyle.Left
         Me.grpLanguage.Location = New System.Drawing.Point(0, 0)
         Me.grpLanguage.Name = "grpLanguage"
-        Me.grpLanguage.Size = New System.Drawing.Size(496, 533)
+        Me.grpLanguage.Size = New System.Drawing.Size(496, 629)
         Me.grpLanguage.TabIndex = 0
         Me.grpLanguage.Text = "Language"
         '
@@ -3080,7 +3097,7 @@ Public Class frmDVD_Maint
         Me.GridLanguages.MainView = Me.GridViewLanguages
         Me.GridLanguages.Name = "GridLanguages"
         Me.GridLanguages.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbLanguages1})
-        Me.GridLanguages.Size = New System.Drawing.Size(492, 471)
+        Me.GridLanguages.Size = New System.Drawing.Size(492, 567)
         Me.GridLanguages.TabIndex = 4
         Me.GridLanguages.UseEmbeddedNavigator = True
         Me.GridLanguages.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewLanguages})
@@ -3136,7 +3153,7 @@ Public Class frmDVD_Maint
         Me.PanelControl4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
         Me.PanelControl4.Controls.Add(Me.btnLang)
         Me.PanelControl4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl4.Location = New System.Drawing.Point(2, 491)
+        Me.PanelControl4.Location = New System.Drawing.Point(2, 587)
         Me.PanelControl4.Name = "PanelControl4"
         Me.PanelControl4.Size = New System.Drawing.Size(492, 40)
         Me.PanelControl4.TabIndex = 5
@@ -3155,7 +3172,7 @@ Public Class frmDVD_Maint
         Me.tabTrailers.Controls.Add(Me.SplitterControl3)
         Me.tabTrailers.Controls.Add(Me.grpTrailers)
         Me.tabTrailers.Name = "tabTrailers"
-        Me.tabTrailers.Size = New System.Drawing.Size(871, 533)
+        Me.tabTrailers.Size = New System.Drawing.Size(1047, 629)
         Me.tabTrailers.Text = "Trailers / Sound Tracks"
         '
         'grpSoundTracks
@@ -3166,7 +3183,7 @@ Public Class frmDVD_Maint
         Me.grpSoundTracks.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grpSoundTracks.Location = New System.Drawing.Point(590, 0)
         Me.grpSoundTracks.Name = "grpSoundTracks"
-        Me.grpSoundTracks.Size = New System.Drawing.Size(281, 533)
+        Me.grpSoundTracks.Size = New System.Drawing.Size(457, 629)
         Me.grpSoundTracks.TabIndex = 3
         Me.grpSoundTracks.Text = "SoundTracks"
         '
@@ -3188,7 +3205,7 @@ Public Class frmDVD_Maint
         Me.GridSoundtracks.MainView = Me.GridViewSoundTracks
         Me.GridSoundtracks.Name = "GridSoundtracks"
         Me.GridSoundtracks.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbSoundTracks})
-        Me.GridSoundtracks.Size = New System.Drawing.Size(277, 471)
+        Me.GridSoundtracks.Size = New System.Drawing.Size(453, 567)
         Me.GridSoundtracks.TabIndex = 4
         Me.GridSoundtracks.UseEmbeddedNavigator = True
         Me.GridSoundtracks.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewSoundTracks})
@@ -3245,9 +3262,9 @@ Public Class frmDVD_Maint
         Me.PanelControl9.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
         Me.PanelControl9.Controls.Add(Me.btnSoundTracks)
         Me.PanelControl9.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl9.Location = New System.Drawing.Point(2, 491)
+        Me.PanelControl9.Location = New System.Drawing.Point(2, 587)
         Me.PanelControl9.Name = "PanelControl9"
-        Me.PanelControl9.Size = New System.Drawing.Size(277, 40)
+        Me.PanelControl9.Size = New System.Drawing.Size(453, 40)
         Me.PanelControl9.TabIndex = 5
         '
         'btnSoundTracks
@@ -3265,7 +3282,7 @@ Public Class frmDVD_Maint
         Me.SplitterControl3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.SplitterControl3.Location = New System.Drawing.Point(584, 0)
         Me.SplitterControl3.Name = "SplitterControl3"
-        Me.SplitterControl3.Size = New System.Drawing.Size(6, 533)
+        Me.SplitterControl3.Size = New System.Drawing.Size(6, 629)
         Me.SplitterControl3.TabIndex = 2
         Me.SplitterControl3.TabStop = False
         '
@@ -3277,7 +3294,7 @@ Public Class frmDVD_Maint
         Me.grpTrailers.Dock = System.Windows.Forms.DockStyle.Left
         Me.grpTrailers.Location = New System.Drawing.Point(0, 0)
         Me.grpTrailers.Name = "grpTrailers"
-        Me.grpTrailers.Size = New System.Drawing.Size(584, 533)
+        Me.grpTrailers.Size = New System.Drawing.Size(584, 629)
         Me.grpTrailers.TabIndex = 1
         Me.grpTrailers.Text = "Trailers"
         '
@@ -3299,7 +3316,7 @@ Public Class frmDVD_Maint
         Me.GridTrailers.MainView = Me.GridViewTrailers
         Me.GridTrailers.Name = "GridTrailers"
         Me.GridTrailers.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbLangTrailer, Me.cmbTrailers_Broadcast})
-        Me.GridTrailers.Size = New System.Drawing.Size(580, 471)
+        Me.GridTrailers.Size = New System.Drawing.Size(580, 567)
         Me.GridTrailers.TabIndex = 4
         Me.GridTrailers.UseEmbeddedNavigator = True
         Me.GridTrailers.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewTrailers})
@@ -3392,7 +3409,7 @@ Public Class frmDVD_Maint
         '
         Me.PanelControl8.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
         Me.PanelControl8.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PanelControl8.Location = New System.Drawing.Point(2, 491)
+        Me.PanelControl8.Location = New System.Drawing.Point(2, 587)
         Me.PanelControl8.Name = "PanelControl8"
         Me.PanelControl8.Size = New System.Drawing.Size(580, 40)
         Me.PanelControl8.TabIndex = 5
@@ -3402,7 +3419,7 @@ Public Class frmDVD_Maint
         Me.tabFeeSharing.Controls.Add(Me.GroupControl6)
         Me.tabFeeSharing.Controls.Add(Me.GroupControl7)
         Me.tabFeeSharing.Name = "tabFeeSharing"
-        Me.tabFeeSharing.Size = New System.Drawing.Size(871, 533)
+        Me.tabFeeSharing.Size = New System.Drawing.Size(1047, 629)
         Me.tabFeeSharing.Text = "FeeSharing / Sale / Purchase"
         '
         'GroupControl6
@@ -3687,7 +3704,7 @@ Public Class frmDVD_Maint
         Me.tabDVDs.Controls.Add(Me.GroupControl1)
         Me.tabDVDs.Controls.Add(Me.PanelControl13)
         Me.tabDVDs.Name = "tabDVDs"
-        Me.tabDVDs.Size = New System.Drawing.Size(871, 533)
+        Me.tabDVDs.Size = New System.Drawing.Size(1047, 629)
         Me.tabDVDs.Text = "DVDs"
         '
         'PanelControl14
@@ -3697,7 +3714,7 @@ Public Class frmDVD_Maint
         Me.PanelControl14.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControl14.Location = New System.Drawing.Point(398, 40)
         Me.PanelControl14.Name = "PanelControl14"
-        Me.PanelControl14.Size = New System.Drawing.Size(473, 493)
+        Me.PanelControl14.Size = New System.Drawing.Size(649, 589)
         Me.PanelControl14.TabIndex = 3
         '
         'PanelControl15
@@ -3709,7 +3726,7 @@ Public Class frmDVD_Maint
         Me.PanelControl15.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControl15.Location = New System.Drawing.Point(2, 2)
         Me.PanelControl15.Name = "PanelControl15"
-        Me.PanelControl15.Size = New System.Drawing.Size(469, 489)
+        Me.PanelControl15.Size = New System.Drawing.Size(645, 585)
         Me.PanelControl15.TabIndex = 2
         '
         'PanelControl16
@@ -3721,7 +3738,7 @@ Public Class frmDVD_Maint
         Me.PanelControl16.Dock = System.Windows.Forms.DockStyle.Fill
         Me.PanelControl16.Location = New System.Drawing.Point(262, 2)
         Me.PanelControl16.Name = "PanelControl16"
-        Me.PanelControl16.Size = New System.Drawing.Size(205, 485)
+        Me.PanelControl16.Size = New System.Drawing.Size(381, 581)
         Me.PanelControl16.TabIndex = 3
         '
         'GroupControl3
@@ -3731,7 +3748,7 @@ Public Class frmDVD_Maint
         Me.GroupControl3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupControl3.Location = New System.Drawing.Point(2, 374)
         Me.GroupControl3.Name = "GroupControl3"
-        Me.GroupControl3.Size = New System.Drawing.Size(201, 109)
+        Me.GroupControl3.Size = New System.Drawing.Size(377, 205)
         Me.GroupControl3.TabIndex = 4
         Me.GroupControl3.Text = "Orders Status History"
         '
@@ -3745,7 +3762,7 @@ Public Class frmDVD_Maint
         Me.GridOrdersStatusHistory.MainView = Me.GridViewOrdersStatusHistory
         Me.GridOrdersStatusHistory.Name = "GridOrdersStatusHistory"
         Me.GridOrdersStatusHistory.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbOrdersStatus1})
-        Me.GridOrdersStatusHistory.Size = New System.Drawing.Size(197, 87)
+        Me.GridOrdersStatusHistory.Size = New System.Drawing.Size(373, 183)
         Me.GridOrdersStatusHistory.TabIndex = 2
         Me.GridOrdersStatusHistory.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewOrdersStatusHistory})
         '
@@ -3837,7 +3854,7 @@ Public Class frmDVD_Maint
         Me.SplitterControl5.Dock = System.Windows.Forms.DockStyle.Top
         Me.SplitterControl5.Location = New System.Drawing.Point(2, 368)
         Me.SplitterControl5.Name = "SplitterControl5"
-        Me.SplitterControl5.Size = New System.Drawing.Size(201, 6)
+        Me.SplitterControl5.Size = New System.Drawing.Size(377, 6)
         Me.SplitterControl5.TabIndex = 3
         Me.SplitterControl5.TabStop = False
         '
@@ -3849,7 +3866,7 @@ Public Class frmDVD_Maint
         Me.GroupControl5.Dock = System.Windows.Forms.DockStyle.Top
         Me.GroupControl5.Location = New System.Drawing.Point(2, 2)
         Me.GroupControl5.Name = "GroupControl5"
-        Me.GroupControl5.Size = New System.Drawing.Size(201, 366)
+        Me.GroupControl5.Size = New System.Drawing.Size(377, 366)
         Me.GroupControl5.TabIndex = 2
         Me.GroupControl5.Text = "Orders History"
         '
@@ -3863,7 +3880,7 @@ Public Class frmDVD_Maint
         Me.GridOrders_History.MainView = Me.GridVIewOrders_History
         Me.GridOrders_History.Name = "GridOrders_History"
         Me.GridOrders_History.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbOrders_Products_Status, Me.RepositoryIbtnChangeStatus})
-        Me.GridOrders_History.Size = New System.Drawing.Size(197, 344)
+        Me.GridOrders_History.Size = New System.Drawing.Size(373, 344)
         Me.GridOrders_History.TabIndex = 1
         Me.GridOrders_History.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridVIewOrders_History})
         '
@@ -3995,7 +4012,7 @@ Public Class frmDVD_Maint
         Me.SplitterControl6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.SplitterControl6.Location = New System.Drawing.Point(256, 2)
         Me.SplitterControl6.Name = "SplitterControl6"
-        Me.SplitterControl6.Size = New System.Drawing.Size(6, 485)
+        Me.SplitterControl6.Size = New System.Drawing.Size(6, 581)
         Me.SplitterControl6.TabIndex = 1
         Me.SplitterControl6.TabStop = False
         '
@@ -4006,7 +4023,7 @@ Public Class frmDVD_Maint
         Me.GroupControl4.Dock = System.Windows.Forms.DockStyle.Left
         Me.GroupControl4.Location = New System.Drawing.Point(2, 2)
         Me.GroupControl4.Name = "GroupControl4"
-        Me.GroupControl4.Size = New System.Drawing.Size(254, 485)
+        Me.GroupControl4.Size = New System.Drawing.Size(254, 581)
         Me.GroupControl4.TabIndex = 0
         Me.GroupControl4.Text = "DVD Status History"
         '
@@ -4020,7 +4037,7 @@ Public Class frmDVD_Maint
         Me.GridDVDStatusHistory.MainView = Me.AdvBandedGridView1
         Me.GridDVDStatusHistory.Name = "GridDVDStatusHistory"
         Me.GridDVDStatusHistory.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbProductsDVDStatus})
-        Me.GridDVDStatusHistory.Size = New System.Drawing.Size(250, 463)
+        Me.GridDVDStatusHistory.Size = New System.Drawing.Size(250, 559)
         Me.GridDVDStatusHistory.TabIndex = 2
         Me.GridDVDStatusHistory.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.AdvBandedGridView1})
         '
@@ -4107,7 +4124,7 @@ Public Class frmDVD_Maint
         Me.SplitterControl4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.SplitterControl4.Location = New System.Drawing.Point(392, 40)
         Me.SplitterControl4.Name = "SplitterControl4"
-        Me.SplitterControl4.Size = New System.Drawing.Size(6, 493)
+        Me.SplitterControl4.Size = New System.Drawing.Size(6, 589)
         Me.SplitterControl4.TabIndex = 2
         Me.SplitterControl4.TabStop = False
         '
@@ -4118,7 +4135,7 @@ Public Class frmDVD_Maint
         Me.GroupControl1.Dock = System.Windows.Forms.DockStyle.Left
         Me.GroupControl1.Location = New System.Drawing.Point(0, 40)
         Me.GroupControl1.Name = "GroupControl1"
-        Me.GroupControl1.Size = New System.Drawing.Size(392, 493)
+        Me.GroupControl1.Size = New System.Drawing.Size(392, 589)
         Me.GroupControl1.TabIndex = 1
         Me.GroupControl1.Text = "DVDs"
         '
@@ -4132,7 +4149,7 @@ Public Class frmDVD_Maint
         Me.GridProducts_DVD.MainView = Me.GridViewProducts_DVD
         Me.GridProducts_DVD.Name = "GridProducts_DVD"
         Me.GridProducts_DVD.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbProducts_DVD_Status, Me.cmbInOut})
-        Me.GridProducts_DVD.Size = New System.Drawing.Size(388, 471)
+        Me.GridProducts_DVD.Size = New System.Drawing.Size(388, 567)
         Me.GridProducts_DVD.TabIndex = 0
         Me.GridProducts_DVD.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewProducts_DVD})
         '
@@ -4259,7 +4276,7 @@ Public Class frmDVD_Maint
         Me.PanelControl13.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelControl13.Location = New System.Drawing.Point(0, 0)
         Me.PanelControl13.Name = "PanelControl13"
-        Me.PanelControl13.Size = New System.Drawing.Size(871, 40)
+        Me.PanelControl13.Size = New System.Drawing.Size(1047, 40)
         Me.PanelControl13.TabIndex = 0
         '
         'ButDelPrDvdId
@@ -4298,7 +4315,7 @@ Public Class frmDVD_Maint
         Me.tabGames.Controls.Add(Me.txtGame_NbrOfPlayers)
         Me.tabGames.Controls.Add(Me.LabelControl53)
         Me.tabGames.Name = "tabGames"
-        Me.tabGames.Size = New System.Drawing.Size(871, 533)
+        Me.tabGames.Size = New System.Drawing.Size(1047, 629)
         Me.tabGames.Text = "Games"
         '
         'chkGameOnline
@@ -4378,7 +4395,7 @@ Public Class frmDVD_Maint
         Me.tabTransfers.Controls.Add(Me.txtCustLang1)
         Me.tabTransfers.Controls.Add(Me.LabelControl49)
         Me.tabTransfers.Name = "tabTransfers"
-        Me.tabTransfers.Size = New System.Drawing.Size(871, 533)
+        Me.tabTransfers.Size = New System.Drawing.Size(1047, 629)
         Me.tabTransfers.Text = "WishListTransfers"
         '
         'LabelControl50
@@ -4459,7 +4476,7 @@ Public Class frmDVD_Maint
         '
         Me.tabPrevision.Controls.Add(Me.GridPrevision)
         Me.tabPrevision.Name = "tabPrevision"
-        Me.tabPrevision.Size = New System.Drawing.Size(871, 533)
+        Me.tabPrevision.Size = New System.Drawing.Size(1047, 629)
         Me.tabPrevision.Text = "Prevision"
         '
         'GridPrevision
@@ -4470,7 +4487,7 @@ Public Class frmDVD_Maint
         Me.GridPrevision.Location = New System.Drawing.Point(0, 0)
         Me.GridPrevision.MainView = Me.GridViewPrevision
         Me.GridPrevision.Name = "GridPrevision"
-        Me.GridPrevision.Size = New System.Drawing.Size(871, 533)
+        Me.GridPrevision.Size = New System.Drawing.Size(1047, 629)
         Me.GridPrevision.TabIndex = 0
         Me.GridPrevision.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewPrevision})
         '
@@ -4490,7 +4507,7 @@ Public Class frmDVD_Maint
         '
         Me.tabWishlistCustomers.Controls.Add(Me.GridWishlistCustomers)
         Me.tabWishlistCustomers.Name = "tabWishlistCustomers"
-        Me.tabWishlistCustomers.Size = New System.Drawing.Size(871, 533)
+        Me.tabWishlistCustomers.Size = New System.Drawing.Size(1047, 629)
         Me.tabWishlistCustomers.Text = "WishlistCustomers"
         '
         'GridWishlistCustomers
@@ -4501,7 +4518,7 @@ Public Class frmDVD_Maint
         Me.GridWishlistCustomers.Location = New System.Drawing.Point(0, 0)
         Me.GridWishlistCustomers.MainView = Me.gridViewWishlistCustomers
         Me.GridWishlistCustomers.Name = "GridWishlistCustomers"
-        Me.GridWishlistCustomers.Size = New System.Drawing.Size(871, 533)
+        Me.GridWishlistCustomers.Size = New System.Drawing.Size(1047, 629)
         Me.GridWishlistCustomers.TabIndex = 1
         Me.GridWishlistCustomers.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridViewWishlistCustomers})
         '
@@ -4540,7 +4557,7 @@ Public Class frmDVD_Maint
         Me.tabVod.Controls.Add(Me.btnEditVod)
         Me.tabVod.Name = "tabVod"
         Me.tabVod.PageVisible = False
-        Me.tabVod.Size = New System.Drawing.Size(871, 533)
+        Me.tabVod.Size = New System.Drawing.Size(1047, 629)
         Me.tabVod.Text = "Vod"
         '
         'txtId
@@ -4710,7 +4727,7 @@ Public Class frmDVD_Maint
         Me.tabCritiques.Controls.Add(Me.lblRatingAverage)
         Me.tabCritiques.Controls.Add(Me.GridCritiques)
         Me.tabCritiques.Name = "tabCritiques"
-        Me.tabCritiques.Size = New System.Drawing.Size(871, 533)
+        Me.tabCritiques.Size = New System.Drawing.Size(1047, 629)
         Me.tabCritiques.Text = "Critiques"
         '
         'lblValueNBRating
@@ -5025,6 +5042,7 @@ Public Class frmDVD_Maint
         CType(Me.grpMain, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grpMain.ResumeLayout(False)
         Me.grpMain.PerformLayout()
+        CType(Me.chkVodNext.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbProducts_product_type.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtIMDB_ID.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTitle.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -5970,6 +5988,7 @@ Public Class frmDVD_Maint
         chkInTheBags.Enabled = Enabling
         chkInTheBagsNext.Enabled = Enabling
         chkProduct_Next.Enabled = Enabling
+        chkVodNext.Enabled = Enabling
         'Categories
         TreeListCategories.OptionsBehavior.Editable = Enabling
         TreeListThemes.OptionsBehavior.Editable = Enabling

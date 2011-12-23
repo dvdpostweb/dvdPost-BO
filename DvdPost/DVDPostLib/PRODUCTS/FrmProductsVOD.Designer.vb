@@ -939,7 +939,7 @@ Partial Class FrmProductsVOD
         Me.XTabControlVod.Location = New System.Drawing.Point(0, 30)
         Me.XTabControlVod.Name = "XTabControlVod"
         Me.XTabControlVod.SelectedTabPage = Me.XTabSearch
-        Me.XTabControlVod.Size = New System.Drawing.Size(1018, 665)
+        Me.XTabControlVod.Size = New System.Drawing.Size(1020, 665)
         Me.XTabControlVod.TabIndex = 4
         Me.XTabControlVod.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTabSearch, Me.XTabResult, Me.XTabView, Me.XTabProcess, Me.XTabViewVod, Me.XTabFtp, Me.XtabAutomateTranscode, Me.xTabVODOnlyMovie})
         Me.XTabControlVod.Text = "VOD"
@@ -957,7 +957,7 @@ Partial Class FrmProductsVOD
         Me.XTabSearch.Controls.Add(Me.txtTitleSearch)
         Me.XTabSearch.Controls.Add(Me.lblPartTitle)
         Me.XTabSearch.Name = "XTabSearch"
-        Me.XTabSearch.Size = New System.Drawing.Size(1009, 634)
+        Me.XTabSearch.Size = New System.Drawing.Size(1011, 634)
         Me.XTabSearch.Text = "Search"
         '
         'btnRipped
@@ -1042,7 +1042,7 @@ Partial Class FrmProductsVOD
         Me.XTabResult.Controls.Add(Me.btnSaveAllChanges)
         Me.XTabResult.Controls.Add(Me.GridVod)
         Me.XTabResult.Name = "XTabResult"
-        Me.XTabResult.Size = New System.Drawing.Size(1009, 634)
+        Me.XTabResult.Size = New System.Drawing.Size(1011, 634)
         Me.XTabResult.Text = "Result"
         '
         'btnSaveAllChanges
@@ -1353,7 +1353,7 @@ Partial Class FrmProductsVOD
         Me.XTabView.Controls.Add(Me.btnSaveVod)
         Me.XTabView.Controls.Add(Me.btnEditVod)
         Me.XTabView.Name = "XTabView"
-        Me.XTabView.Size = New System.Drawing.Size(1009, 634)
+        Me.XTabView.Size = New System.Drawing.Size(1011, 634)
         Me.XTabView.Text = "View"
         '
         'btnDeleteVOD
@@ -1670,7 +1670,7 @@ Partial Class FrmProductsVOD
         Me.XTabProcess.Controls.Add(Me.btnSource)
         Me.XTabProcess.Controls.Add(Me.lblPathSourceTitle)
         Me.XTabProcess.Name = "XTabProcess"
-        Me.XTabProcess.Size = New System.Drawing.Size(1009, 634)
+        Me.XTabProcess.Size = New System.Drawing.Size(1011, 634)
         Me.XTabProcess.Text = "Processus vod"
         '
         'lblDestinationPathFile
@@ -1742,7 +1742,7 @@ Partial Class FrmProductsVOD
         Me.XTabViewVod.Controls.Add(Me.GridVodWatch)
         Me.XTabViewVod.Controls.Add(Me.WebSiteDvdPost)
         Me.XTabViewVod.Name = "XTabViewVod"
-        Me.XTabViewVod.Size = New System.Drawing.Size(1009, 634)
+        Me.XTabViewVod.Size = New System.Drawing.Size(1011, 634)
         Me.XTabViewVod.Text = "view vod"
         '
         'GridVodWatch
@@ -1754,7 +1754,7 @@ Partial Class FrmProductsVOD
         Me.GridVodWatch.MainView = Me.gridViewVodWatch
         Me.GridVodWatch.Name = "GridVodWatch"
         Me.GridVodWatch.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositorycmbLanguage, Me.RepositorychkAvailable, Me.RepositoryCmbStudio, Me.RepositoryBtnWatchMovie, Me.RepositoryLanguageSubtitleGrid})
-        Me.GridVodWatch.Size = New System.Drawing.Size(514, 634)
+        Me.GridVodWatch.Size = New System.Drawing.Size(438, 634)
         Me.GridVodWatch.TabIndex = 5
         Me.GridVodWatch.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridViewVodWatch})
         '
@@ -1924,12 +1924,14 @@ Partial Class FrmProductsVOD
         '
         'WebSiteDvdPost
         '
-        Me.WebSiteDvdPost.Dock = System.Windows.Forms.DockStyle.Right
-        Me.WebSiteDvdPost.Location = New System.Drawing.Point(394, 0)
+        Me.WebSiteDvdPost.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+                    Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.WebSiteDvdPost.Location = New System.Drawing.Point(203, 1)
         Me.WebSiteDvdPost.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebSiteDvdPost.Name = "WebSiteDvdPost"
-        Me.WebSiteDvdPost.Size = New System.Drawing.Size(615, 634)
-        Me.WebSiteDvdPost.TabIndex = 6
+        Me.WebSiteDvdPost.Size = New System.Drawing.Size(1003, 630)
+        Me.WebSiteDvdPost.TabIndex = 7
         '
         'XTabFtp
         '
@@ -1944,7 +1946,7 @@ Partial Class FrmProductsVOD
         Me.XTabFtp.Controls.Add(Me.BtnCompare)
         Me.XTabFtp.Controls.Add(Me.lblFTP)
         Me.XTabFtp.Name = "XTabFtp"
-        Me.XTabFtp.Size = New System.Drawing.Size(1009, 634)
+        Me.XTabFtp.Size = New System.Drawing.Size(1011, 634)
         Me.XTabFtp.Text = "Compare Ftp"
         '
         'lblDbFtp
@@ -2087,7 +2089,7 @@ Partial Class FrmProductsVOD
         Me.XtabAutomateTranscode.Controls.Add(Me.lblTxtFile)
         Me.XtabAutomateTranscode.Margin = New System.Windows.Forms.Padding(2)
         Me.XtabAutomateTranscode.Name = "XtabAutomateTranscode"
-        Me.XtabAutomateTranscode.Size = New System.Drawing.Size(1009, 634)
+        Me.XtabAutomateTranscode.Size = New System.Drawing.Size(1011, 634)
         Me.XtabAutomateTranscode.Text = "Automate Transcode"
         Me.XtabAutomateTranscode.Tooltip = "Deletes data from last load"
         '
@@ -2166,7 +2168,7 @@ Partial Class FrmProductsVOD
         Me.xTabVODOnlyMovie.Controls.Add(Me.grdOnlyVODMovie)
         Me.xTabVODOnlyMovie.Controls.Add(Me.btnAllNoMovieInfo)
         Me.xTabVODOnlyMovie.Name = "xTabVODOnlyMovie"
-        Me.xTabVODOnlyMovie.Size = New System.Drawing.Size(1009, 634)
+        Me.xTabVODOnlyMovie.Size = New System.Drawing.Size(1011, 634)
         Me.xTabVODOnlyMovie.Text = "VOD Without Info"
         '
         'grdOnlyVODMovie
@@ -2280,7 +2282,7 @@ Partial Class FrmProductsVOD
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1018, 695)
+        Me.ClientSize = New System.Drawing.Size(1020, 695)
         Me.Controls.Add(Me.XTabControlVod)
         Me.Controls.Add(Me.barDockControlLeft)
         Me.Controls.Add(Me.barDockControlRight)
@@ -2441,7 +2443,6 @@ Partial Class FrmProductsVOD
     Friend WithEvents txtDestinationPath As DevExpress.XtraEditors.TextEdit
     Friend WithEvents btnDestination As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents XTabViewVod As DevExpress.XtraTab.XtraTabPage
-    Friend WithEvents WebSiteDvdPost As System.Windows.Forms.WebBrowser
     Friend WithEvents GridVodWatch As DevExpress.XtraGrid.GridControl
     Friend WithEvents gridViewVodWatch As DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView
     Friend WithEvents GridBand2 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
@@ -2594,5 +2595,6 @@ Partial Class FrmProductsVOD
     Friend WithEvents RepositoryItemLookUpEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents RepositoryLanguageSubtitleGrid As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents spnedtCredit As DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit
+    Friend WithEvents WebSiteDvdPost As System.Windows.Forms.WebBrowser
 
 End Class
