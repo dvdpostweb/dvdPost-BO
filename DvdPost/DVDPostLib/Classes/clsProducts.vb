@@ -23,6 +23,7 @@ Public Class clsProduct_BarCode
     Private Const POS_CHECKSUM As Integer = 12
     Private Const LN_CHECKSUM As Integer = 1
 
+    'something changet to upload
 
     ReadOnly Property ProductID() As Integer
         Get
