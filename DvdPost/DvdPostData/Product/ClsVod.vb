@@ -375,6 +375,16 @@ Public Class ClsVod
 "               from (select status,available,count(*) cpt from streaming_products group by status,available) xx"
         Return sql
     End Function
+
+    Public Shared Function UpdateVodCreditsAfterStartingPeriod() As String
+        Dim sql As String
+        sql = " update streaming_products sp join studio s on sp.studio_id = s.studio_id " & _
+              " set sp.credits = s.cost, sp.updated_at = sysdate() " & _
+              " where available_from < DATE_ADD(sysdate(), INTERVAL - 3 MONTH) " & _
+              " and s.cost_for_new <> s.cost and sp.credits <> s.cost "
+
+        Return sql
+    End Function
     Public Shared Function GetEnumMysqlQuality() As String
         Dim sql As String
         sql = "SHOW COLUMNS FROM streaming_products LIKE 'quality' "

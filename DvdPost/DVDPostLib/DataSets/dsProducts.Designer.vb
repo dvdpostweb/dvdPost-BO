@@ -3202,7 +3202,7 @@ Partial Public Class dsProducts
             Me.columnquantity_to_sale.AllowDBNull = false
             Me.columnproducts_sale_price.AllowDBNull = false
             Me.columnimdb_id_serie.DefaultValue = CType(0,Long)
-            Me.columnvod_next.AllowDBNull = false
+            Me.columnvod_next.DefaultValue = CType(0,Integer)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -21695,7 +21695,11 @@ Partial Public Class dsProducts
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Property vod_next() As Integer
             Get
-                Return CType(Me(Me.tableproducts.vod_nextColumn),Integer)
+                Try 
+                    Return CType(Me(Me.tableproducts.vod_nextColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'vod_next' in table 'products' is DBNull.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableproducts.vod_nextColumn) = value
@@ -22020,6 +22024,16 @@ Partial Public Class dsProducts
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub Setimdb_id_serieNull()
             Me(Me.tableproducts.imdb_id_serieColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isvod_nextNull() As Boolean
+            Return Me.IsNull(Me.tableproducts.vod_nextColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setvod_nextNull()
+            Me(Me.tableproducts.vod_nextColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

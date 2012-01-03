@@ -884,7 +884,7 @@ Public Class ClsCustomers
                     creditAction = clsCreditHistory.ActionId.RECONDUCTION
                 End If
 
-                InsertCreditHistory(GetCustomersId(drCustomer), creditAction, dtCredit.Rows(0)("qty_credit"), drCustomer("combined") = 1)
+                InsertCreditHistory(GetCustomersId(drCustomer), creditAction, dtCredit.Rows(0)("qty_credit"), False)
 
                 sql = DvdPostData.ClsCustomersData.GetUpdateNPPCredit(GetCustomersId(drCustomer), dtCredit.Rows(0)("qty_credit"), dtCredit.Rows(0)("qty_dvd_max"))
                 DvdPostData.clsConnection.ExecuteNonQuery(sql)

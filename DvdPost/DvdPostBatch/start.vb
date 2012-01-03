@@ -91,6 +91,7 @@ Module start
                 'calculate vod statistic
                 DVDPostBuziness.ClsVod.InsertStatVod()
                 clscust.UpdateDvd_at_Home()
+                DVDPostBuziness.ClsVod.UpdateVodCreditsAfterStartPeriod()
 
             Else
                 Console.WriteLine("Error Argument")

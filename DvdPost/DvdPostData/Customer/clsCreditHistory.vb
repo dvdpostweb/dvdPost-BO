@@ -321,8 +321,15 @@ Public Class clsCreditHistory
                     insertField = strpaid
                 End If
             Case ActionId.MANUAL_CREDIT
-
-                insertField = strFree
+                If quantity_credit > 0 Then
+                    insertField = strFree
+                Else
+                    If SumCreditQuantFree > 0 Then
+                        insertField = strFree
+                    Else
+                        insertField = strpaid
+                    End If
+                End If
 
             Case ActionId.ABOPROCESS, ActionId.MANUAL_ASSIGN, ActionId.LONGTIME_DVD
                 If SumCreditQuantFree > 0 Then
