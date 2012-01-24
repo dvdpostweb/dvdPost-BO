@@ -146,10 +146,24 @@ Public Class frmActivationCode
     Friend WithEvents Grid1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView
     Friend WithEvents BarManager2 As DevExpress.XtraBars.BarManager
+    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents txtDVDRemain As DevExpress.XtraEditors.SpinEdit
+    Friend WithEvents lblDvdRemain As DevExpress.XtraEditors.LabelControl
     Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
     Friend WithEvents txtComment As DevExpress.XtraEditors.TextEdit
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
@@ -275,6 +289,8 @@ Public Class frmActivationCode
         Me.barDockControlBottom = New DevExpress.XtraBars.BarDockControl
         Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl
+        Me.txtDVDRemain = New DevExpress.XtraEditors.SpinEdit
+        Me.lblDvdRemain = New DevExpress.XtraEditors.LabelControl
         Me.Panel1.SuspendLayout()
         CType(Me.TabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -343,6 +359,7 @@ Public Class frmActivationCode
         CType(Me.txtCreationDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbNextAboType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BarManager2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtDVDRemain.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'StatusBar1
@@ -368,6 +385,8 @@ Public Class frmActivationCode
         '
         'TabParameters
         '
+        Me.TabParameters.Controls.Add(Me.txtDVDRemain)
+        Me.TabParameters.Controls.Add(Me.lblDvdRemain)
         Me.TabParameters.Controls.Add(Me.btnCancel)
         Me.TabParameters.Controls.Add(Me.btnSaveDiscount)
         Me.TabParameters.Controls.Add(Me.btnEditActivation)
@@ -1278,6 +1297,21 @@ Public Class frmActivationCode
         Me.BarManager2.MaxItemId = 73
         Me.BarManager2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbViewListRepos, Me.txtQuickSearchRepos, Me.cmbReportListRepos, Me.cmbFilterListRepos, Me.cmbDefaultListRepos})
         '
+        'txtDVDRemain
+        '
+        resources.ApplyResources(Me.txtDVDRemain, "txtDVDRemain")
+        Me.txtDVDRemain.Name = "txtDVDRemain"
+        Me.txtDVDRemain.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+        Me.txtDVDRemain.Properties.MaxLength = 1000000
+        Me.txtDVDRemain.Properties.MaxValue = New Decimal(New Integer() {9999999, 0, 0, 0})
+        Me.HelpProvider1.SetShowHelp(Me.txtDVDRemain, CType(resources.GetObject("txtDVDRemain.ShowHelp"), Boolean))
+        '
+        'lblDvdRemain
+        '
+        resources.ApplyResources(Me.lblDvdRemain, "lblDvdRemain")
+        Me.lblDvdRemain.Name = "lblDvdRemain"
+        Me.HelpProvider1.SetShowHelp(Me.lblDvdRemain, CType(resources.GetObject("lblDvdRemain.ShowHelp"), Boolean))
+        '
         'frmActivationCode
         '
         resources.ApplyResources(Me, "$this")
@@ -1371,6 +1405,7 @@ Public Class frmActivationCode
         CType(Me.txtCreationDate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbNextAboType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BarManager2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtDVDRemain.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1402,6 +1437,7 @@ Public Class frmActivationCode
     Dim _activationDate As String
     Dim _commentActivation As String
     Dim _aboDvdCredit As Integer
+    Dim _aboDVDRemain As Integer
     Dim _nextDiscount As Integer
     Dim _NextaboType As String
     Dim _credit0autoReconduct As Integer
@@ -1655,7 +1691,7 @@ Public Class frmActivationCode
                                                                             _activationCodeValidtoDate, _activationProductsId, _
                                                                             _validityType, _validityValue, _
                                                                             _activationWaranty, _commentActivation, _
-                                                                            _aboDvdCredit, _nextDiscount, _
+                                                                            _aboDvdCredit, _aboDVDRemain, _nextDiscount, _
                                                                             _aboAutoStopNextReconduction, _bannerActivation, _
                                                                             _activationTextFr, _activationTextNl, _
                                                                             _activationTextEn, _freeUpgradeAllowed, _
@@ -1834,6 +1870,7 @@ Public Class frmActivationCode
         cmbValidType.EditValue = blank
         txtValidValue.EditValue = blank
         txtDVDCredit.EditValue = blank
+        txtDVDRemain.EditValue = blank
         cmbNextDiscount.EditValue = 0
         txtFooter.EditValue = blank
         txtComment.EditValue = blank
@@ -1867,6 +1904,7 @@ Public Class frmActivationCode
         cmbValidType.EditValue = clsMarketing.clsActivationCode.GetValidityType(dr)
         txtValidValue.EditValue = clsMarketing.clsActivationCode.GetValidityValue(dr)
         txtDVDCredit.EditValue = clsMarketing.clsActivationCode.GetAboDvdCredit(dr)
+        txtDVDRemain.EditValue = clsMarketing.clsActivationCode.GetAboDvdRemain(dr)
         cmbNextDiscount.EditValue = clsMarketing.clsActivationCode.GetNextDiscount(dr)
         txtFooter.EditValue = clsMarketing.clsActivationCode.GetFooter(dr)
         txtComment.EditValue = clsMarketing.clsActivationCode.GetComment(dr)
@@ -1907,6 +1945,7 @@ Public Class frmActivationCode
         '_activationDate'
         _commentActivation = txtComment.EditValue
         _aboDvdCredit = txtDVDCredit.EditValue
+        _aboDVDRemain = txtDVDRemain.EditValue
         _nextDiscount = cmbNextDiscount.EditValue
         '_credit0autoReconduct 
         _aboAutoStopNextReconduction = chkAuto_Stop_at_Next_Reconduction.Checked
@@ -1995,7 +2034,7 @@ Public Class frmActivationCode
                                                                                  _activationCodeValidtoDate, _activationProductsId, _
                                                                                  _validityType, _validityValue, _
                                                                                  _activationWaranty, _commentActivation, _
-                                                                                 _aboDvdCredit, _nextDiscount, _
+                                                                                 _aboDvdCredit, _aboDVDRemain, _nextDiscount, _
                                                                                  _aboAutoStopNextReconduction, _bannerActivation, _
                                                                                  _activationTextFr, _activationTextNl, _
                                                                                  _activationTextEn, _freeUpgradeAllowed, _
@@ -2035,6 +2074,7 @@ Public Class frmActivationCode
         cmbValidType.Enabled = enable
         txtValidValue.Enabled = enable
         txtDVDCredit.Enabled = enable
+        txtDVDRemain.Enabled = enable
         cmbNextDiscount.Enabled = enable
         txtFooter.Enabled = enable
         txtComment.Enabled = enable

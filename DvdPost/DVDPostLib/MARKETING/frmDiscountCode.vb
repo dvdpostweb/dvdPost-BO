@@ -39,6 +39,7 @@ Public Class frmDiscountCode
     Dim _discountRecurringNbrOfMonth As Integer
     Dim _discountValidityTo As String
     Dim _aboDvdCredit As Integer
+    Dim _aboDvdRemain As Integer
     Dim _nextDiscount As Integer
     Dim _aboType As String
     Dim _NextaboType As String
@@ -206,6 +207,7 @@ Public Class frmDiscountCode
         txtNbrMonthReuse.Enabled = Enabling
         txtCommitment2.Enabled = Enabling
         txtCreditDVD2.Enabled = Enabling
+        txtRemainDVD.Enabled = Enabling
         txtDiscountValue2.Enabled = Enabling
         txtLimit2.Enabled = Enabling
         txtValidityTo_Value2.Enabled = Enabling
@@ -247,6 +249,7 @@ Public Class frmDiscountCode
         txtNbrRecuring2.EditValue = clsMarketing.clsDiscountCode.GetRecurringNbrOfMonth(dr) '("discount_recurring_nbr_of_month")
         txtValidityTo.EditValue = clsMarketing.clsDiscountCode.GetValidityTo(dr) 'dr("discount_validityto")
         txtCreditDVD2.EditValue = clsMarketing.clsDiscountCode.GetDvdCredit(dr) 'dr("abo_dvd_credit")
+        txtRemainDVD.EditValue = clsMarketing.clsDiscountCode.GetDvdRemaining(dr) ' dr("abo_dvd_remain") 
         txtNextDiscountCode.EditValue = clsMarketing.clsDiscountCode.GetNextDiscount(dr) 'dr("next_discount")
         cmbAboType.EditValue = clsMarketing.clsDiscountCode.GetAboType(dr) 'dr("listing_products_allowed")
         cmbNextAboType.EditValue = clsMarketing.clsDiscountCode.GetNextAboType(dr) 'dr("next_abo_type")
@@ -284,6 +287,7 @@ Public Class frmDiscountCode
         _discountRecurringNbrOfMonth = txtNbrRecuring2.EditValue
         _discountValidityTo = txtValidityTo.EditValue
         _aboDvdCredit = txtCreditDVD2.EditValue
+        _aboDvdRemain = txtRemainDVD.EditValue
         _nextDiscount = txtNextDiscountCode.EditValue
         _aboType = cmbAboType.EditValue
         _NextaboType = cmbNextAboType.EditValue
@@ -312,7 +316,7 @@ Public Class frmDiscountCode
                                                                    _discountValue, _discountLimit, _discountCommitment, _
                                                                    _discountStatus, _discountTextFr, _discountTextNl, _discountTextEn, _
                                                                    _discountAboValiditytoType, _discountAboValiditytoValue, _commentDiscount, _iscountNbrMonthBeforeReuse, _
-                                                                   _discountRecurringNbrOfMonth, _bypassDiscountuse, _discountValidityTo, _payable, _aboDvdCredit, _
+                                                                   _discountRecurringNbrOfMonth, _bypassDiscountuse, _discountValidityTo, _payable, _aboDvdCredit, _aboDvdRemain, _
                                                                    _nextDiscount, _credit0AutoReconduct, _landingPage, _landingPagePhp, _aboType, _
                                                                    _aboAutoStopNextReconduction, _gotoStep, _bannerDiscount, _footerDiscount, _FreeUpgradeAllowed, _groupId, _NextaboType)
             DvdPostData.clsConnection.CreateTransaction(True)
@@ -536,7 +540,7 @@ Public Class frmDiscountCode
                                                                    _discountValue, _discountLimit, _discountCommitment, _
                                                                    _discountStatus, _discountTextFr, _discountTextNl, _discountTextEn, _
                                                                    _discountAboValiditytoType, _discountAboValiditytoValue, _commentDiscount, _iscountNbrMonthBeforeReuse, _
-                                                                   _discountRecurringNbrOfMonth, _bypassDiscountuse, _discountValidityTo, _payable, _aboDvdCredit, _
+                                                                   _discountRecurringNbrOfMonth, _bypassDiscountuse, _discountValidityTo, _payable, _aboDvdCredit, _aboDvdRemain, _
                                                                    _nextDiscount, _credit0AutoReconduct, _landingPage, _landingPagePhp, _aboType, _
                                                                    _aboAutoStopNextReconduction, _gotoStep, _bannerDiscount, _footerDiscount, _FreeUpgradeAllowed, _groupId, _NextaboType)
         DvdPostData.clsConnection.CreateTransaction(True)

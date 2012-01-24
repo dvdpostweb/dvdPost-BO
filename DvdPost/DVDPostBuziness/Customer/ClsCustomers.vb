@@ -380,6 +380,14 @@ Public Class ClsCustomers
     Private Function GetPriceProduct(ByVal drCustomer As DataRow) As Decimal
         Return drCustomer("products_price")
     End Function
+    Private Function GetDiscountActivationDVDRemain(ByVal drDiscountActivation As DataRow) As Integer
+        If drDiscountActivation("abo_dvd_remain") Is DBNull.Value Then
+            Return 0
+        Else
+            Return drDiscountActivation("abo_dvd_remain")
+        End If
+
+    End Function
     Private Function GetDiscountActivationCredit(ByVal drDiscountActivation As DataRow) As Integer
         If drDiscountActivation("abo_dvd_credit") Is DBNull.Value Then
             Return 0
@@ -448,6 +456,7 @@ Public Class ClsCustomers
     Private Function ManageReduction(ByRef drCustomer As DataRow, _
                                      ByRef cptdroselia As Integer, _
                                     ByRef forcedcredit As Integer, _
+                                    ByRef forceddvdremain As Integer, _
                                      ByRef strDurationActivation As String, _
                                      Optional ByVal Classique As Boolean = True) As String
         Dim productPrice As Decimal
@@ -458,9 +467,9 @@ Public Class ClsCustomers
         'productPrice = GetPriceProduct(drCustomer) - not used any more
 
         If IsDiscount(drCustomer) Then
-            productPrice = ManagePriceDiscount(drCustomer, cptdroselia, forcedcredit, strDurationActivation, Classique)
+            productPrice = ManagePriceDiscount(drCustomer, cptdroselia, forcedcredit, forceddvdremain, strDurationActivation, Classique)
         ElseIf IsActivation(drCustomer) Then
-            productPrice = ManagePriceActivation(drCustomer, cptdroselia, forcedcredit, strDurationActivation, Classique)
+            productPrice = ManagePriceActivation(drCustomer, cptdroselia, forcedcredit, forceddvdremain, strDurationActivation, Classique)
         Else ' forced next discount code 
             drDiscount = ManagePriceNextDiscount(drCustomer, Nothing, strDurationActivation)
             If drDiscount Is Nothing Then
@@ -469,6 +478,7 @@ Public Class ClsCustomers
                 productPrice = GetPriceProduct(drCustomer)
             Else
                 forcedcredit = GetDiscountActivationCredit(drDiscount)
+                forceddvdremain = GetDiscountActivationDVDRemain(drDiscount)
                 cptdroselia = GetDroseliaValue(drDiscount)
                 productPrice = CalcAmountAbo(GetDiscountCodeType(drDiscount), GetPriceProduct(drCustomer), GetDiscountCodeValue(drDiscount))
             End If
@@ -702,6 +712,7 @@ Public Class ClsCustomers
     Private Function ManagePriceDiscount(ByRef drCustomer As DataRow, _
                                         ByRef droselia As Integer, _
                                         ByRef forcedcredit As Integer, _
+                                        ByRef forceddvdremain As Integer, _
                                         ByRef strDurationActivation As String, _
                                         Optional ByVal Classique As Boolean = True) As String
         Dim discount_id As Integer
@@ -737,10 +748,12 @@ Public Class ClsCustomers
 
         If drDiscount Is Nothing Then ' discount doesn't exists
             forcedcredit = 0
+            forceddvdremain = 0
             droselia = 0
             Return GetPriceProduct(drCustomer)
         Else ' if discount exists then calculate price with discount
             forcedcredit = GetDiscountActivationCredit(drDiscount)
+            forceddvdremain = GetDiscountActivationDVDRemain(drDiscount)
             droselia = GetDroseliaValue(drDiscount)
 
             'just info thatcustomer use discount
@@ -759,6 +772,7 @@ Public Class ClsCustomers
     Private Function ManagePriceActivation(ByRef drCustomer As DataRow, _
                                       ByRef droselia As Integer, _
                                       ByRef forcedcredit As Integer, _
+                                      ByRef forceddvdremain As Integer, _
                                       ByRef StrDurationActivation As String, _
                                       Optional ByVal Classique As Boolean = True) As String
         Dim activation_id As Integer
@@ -778,10 +792,12 @@ Public Class ClsCustomers
             drNextDiscount = ManagePriceNextDiscount(drCustomer, drActivation, StrDurationActivation)
             If drNextDiscount Is Nothing Then
                 forcedcredit = 0
+                forceddvdremain = 0
                 droselia = 0
                 Return GetPriceProduct(drCustomer)
             Else
                 forcedcredit = GetDiscountActivationCredit(drNextDiscount)
+                forceddvdremain = GetDiscountActivationDVDRemain(drNextDiscount)
                 droselia = GetDroseliaValue(drNextDiscount)
                 Return CalcAmountAbo(GetDiscountCodeType(drNextDiscount), GetPriceProduct(drCustomer), GetDiscountCodeValue(drNextDiscount))
 
@@ -790,12 +806,14 @@ Public Class ClsCustomers
 
             If drActivation Is Nothing Then
                 forcedcredit = 0
+                forceddvdremain = 0
                 droselia = 0
                 Return "0"
             Else
 
                 ClsWebServices.CallUrlSponsor(customers_id, activation_id)
                 forcedcredit = GetDiscountActivationCredit(drActivation)
+                forceddvdremain = GetDiscountActivationDVDRemain(drActivation)
                 StrDurationActivation = GetDurationActivation(GetActivationCodeType(drActivation), GetActivationCodeValue(drActivation))
                 droselia = GetDroseliaValue(drActivation)
                 Return "0"
@@ -828,13 +846,13 @@ Public Class ClsCustomers
 
     End Function
 
-    Private Sub ManageUpdateCredit(ByVal drCustomer As DataRow, ByVal price As String, Optional ByVal Forcedcredit As Integer = 0)
+    Private Sub ManageUpdateCredit(ByVal drCustomer As DataRow, ByVal price As String, Optional ByVal Forcedcredit As Integer = 0, Optional ByVal Forceddvdremain As Integer = 0)
 
         Dim dt As DataTable
         dt = GetInfoAttributesCustomer(GetCustomersId(drCustomer))
 
         If dt.Rows(0)("credits_already_recieved") = 0 Then
-            UpdateCredit(drCustomer, price, Forcedcredit)
+            UpdateCredit(drCustomer, price, Forcedcredit, Forceddvdremain)
         Else
             Dim sql As String
             sql = DvdPostData.ClsCustomersData.GetUpdateCreditsAlreadyRecieved(GetCustomersId(drCustomer))
@@ -843,7 +861,7 @@ Public Class ClsCustomers
 
     End Sub
 
-    Private Sub UpdateCredit(ByVal drCustomer As DataRow, ByVal price As String, Optional ByVal Forcedcredit As Integer = 0)
+    Private Sub UpdateCredit(ByVal drCustomer As DataRow, ByVal price As String, Optional ByVal Forcedcredit As Integer = 0, Optional ByVal Forceddvdremain As Integer = 0)
         Try
             If drCustomer("npp_logic") = 0 Then
                 Dim sql As String
@@ -876,7 +894,23 @@ Public Class ClsCustomers
                 Dim dtCredit As DataTable
                 Dim creditAction As DvdPostData.clsCreditHistory.ActionId
 
-                dtCredit = GetNPPCredit(getCustomersTypeAbo(drCustomer))
+                If Forcedcredit = 0 Then
+                    dtCredit = GetNPPCredit(getCustomersTypeAbo(drCustomer))
+                Else
+                    'credit = Forcedcredit
+                    dtCredit = New DataTable()
+                    dtCredit.Columns.Add("qty_credit", Type.GetType("System.Int32"))
+                    dtCredit.Columns.Add("qty_dvd_max", Type.GetType("System.Int32"))
+                    Dim dr As DataRow = dtCredit.NewRow()
+                    dr("qty_credit") = Forcedcredit
+                    If (Forceddvdremain = 0) Then
+                        Dim dtRemain As DataTable = GetNPPCredit(getCustomersTypeAbo(drCustomer))
+                        dr("qty_dvd_max") = dtRemain.Rows(0)("qty_dvd_max")
+                    Else
+                        dr("qty_dvd_max") = Forceddvdremain
+                    End If
+                    dtCredit.Rows.Add(dr)
+                End If
 
                 If price = 0 Then
                     creditAction = clsCreditHistory.ActionId.FREERECONDUCTION
@@ -926,12 +960,14 @@ Public Class ClsCustomers
     End Function
     Public Function GetInfoNextReconduction(ByVal customers_id As Integer, _
                                              ByRef creditNext As Integer, _
+                                             ByRef dvdremainNext As Integer, _
                                              ByRef nextPrice As String) As Boolean
 
         Dim sql As String
         Dim cptDroselia As Integer = 0
         Dim sqlDurationActivation As String = ""
         Dim Forcedcredit As Integer
+        Dim Forceddvdremain As Integer
 
         Dim dtCustomersReconduction As DataTable
 
@@ -945,11 +981,25 @@ Public Class ClsCustomers
                 DvdPostData.clsConnection.CancelBulkQuery()
                 Return False
             Else
-                nextPrice = ManageReduction(drCustomers, cptDroselia, Forcedcredit, sqlDurationActivation)
+                nextPrice = ManageReduction(drCustomers, cptDroselia, Forcedcredit, Forceddvdremain, sqlDurationActivation)
                 If Forcedcredit = 0 Then
-                    creditNext = GetCredit(getCustomersTypeAbo(drCustomers))
+                    If (DVDPostBuziness.ClsInventory.isNPP(customers_id)) Then
+                        Dim dt As DataTable = GetNPPCredit(getCustomersTypeAbo(drCustomers))
+                        creditNext = dt.Rows(0)(0)
+                        dvdremainNext = dt.Rows(0)(1)
+                    Else
+                        creditNext = GetCredit(getCustomersTypeAbo(drCustomers))
+                        dvdremainNext = 0
+                    End If
                 Else
                     creditNext = Forcedcredit
+                    If (DVDPostBuziness.ClsInventory.isNPP(customers_id)) Then
+                        Dim dtRemain As DataTable = GetNPPCredit(getCustomersTypeAbo(drCustomers))
+                        dvdremainNext = dtRemain.Rows(0)("qty_dvd_max")
+                    Else
+                        dvdremainNext = Forceddvdremain
+                    End If
+
                 End If
 
             End If
@@ -989,6 +1039,7 @@ Public Class ClsCustomers
         RaiseEvent initMapping_Event(dtCustomersReconduction.Rows.Count)
         dtResult = createTableResult(dtCustomersReconduction)
         Dim forcedcredit As Integer = 0
+        Dim forceddvdremain As Integer = 0
         Dim sqlDurationActivation As String
 
         If clsMsgError.MsgBox("Are you sur to process " & dtCustomersReconduction.Rows.Count & " Reconductions " & DVDPostTools.clsEnum.getNameStrEnum(pay_method) & " ? ", MsgBoxStyle.OkCancel) = MsgBoxResult.Ok Then
@@ -1005,7 +1056,7 @@ Public Class ClsCustomers
                     Else
 
                         'calculate the price
-                        price = ManageReduction(drCustomers, cptDroselia, forcedcredit, sqlDurationActivation, classique)
+                        price = ManageReduction(drCustomers, cptDroselia, forcedcredit, forceddvdremain, sqlDurationActivation, classique)
 
                         drCustomers("amount") = price
                         If Decimal.Parse(price) > 0 Then 'add row in memory structure in order to gerate invoce
@@ -1014,7 +1065,7 @@ Public Class ClsCustomers
 
                         End If
                         If classique Or (Decimal.Parse(price) = 0) Or forced Then
-                            ManageUpdateCredit(drCustomers, price, forcedcredit)
+                            ManageUpdateCredit(drCustomers, price, forcedcredit, forceddvdremain)
                             UpdateDateReconduction(drCustomers, sqlDurationActivation)
                             createReconductionAboHistory(drCustomers, price)
                             If classique Then

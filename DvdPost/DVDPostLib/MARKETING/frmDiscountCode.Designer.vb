@@ -151,6 +151,8 @@ Partial Class frmDiscountCode
         Me.LabelControl43 = New DevExpress.XtraEditors.LabelControl
         Me.txtShoppingDiscount = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl44 = New DevExpress.XtraEditors.LabelControl
+        Me.txtRemainDVD = New DevExpress.XtraEditors.SpinEdit
+        Me.lblRemainDVD = New DevExpress.XtraEditors.LabelControl
         CType(Me.PrintSystem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MainDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbViewListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -224,6 +226,7 @@ Partial Class frmDiscountCode
         CType(Me.dateShoppingDiscountValidityTo.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbShoppingDiscountType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtShoppingDiscount.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtRemainDVD.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'StatusBar1
@@ -707,6 +710,8 @@ Partial Class frmDiscountCode
         'PanelControl1
         '
         Me.PanelControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
+        Me.PanelControl1.Controls.Add(Me.txtRemainDVD)
+        Me.PanelControl1.Controls.Add(Me.lblRemainDVD)
         Me.PanelControl1.Controls.Add(Me.cmbNextAboType)
         Me.PanelControl1.Controls.Add(Me.LabelControl18)
         Me.PanelControl1.Controls.Add(Me.cmbAboType)
@@ -1588,6 +1593,26 @@ Partial Class frmDiscountCode
         Me.LabelControl44.TabIndex = 2
         Me.LabelControl44.Text = "Discount Code"
         '
+        'txtRemainDVD
+        '
+        Me.txtRemainDVD.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.txtRemainDVD.Enabled = False
+        Me.txtRemainDVD.Location = New System.Drawing.Point(113, 189)
+        Me.txtRemainDVD.Name = "txtRemainDVD"
+        Me.txtRemainDVD.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+        Me.txtRemainDVD.Properties.MaxValue = New Decimal(New Integer() {100, 0, 0, 0})
+        Me.HelpProvider1.SetShowHelp(Me.txtRemainDVD, True)
+        Me.txtRemainDVD.Size = New System.Drawing.Size(100, 20)
+        Me.txtRemainDVD.TabIndex = 84
+        '
+        'lblRemainDVD
+        '
+        Me.lblRemainDVD.Location = New System.Drawing.Point(13, 189)
+        Me.lblRemainDVD.Name = "lblRemainDVD"
+        Me.lblRemainDVD.Size = New System.Drawing.Size(58, 13)
+        Me.lblRemainDVD.TabIndex = 83
+        Me.lblRemainDVD.Text = "Remain DVD"
+        '
         'frmDiscountCode
         '
         Me.ClientSize = New System.Drawing.Size(1172, 708)
@@ -1674,6 +1699,7 @@ Partial Class frmDiscountCode
         CType(Me.dateShoppingDiscountValidityTo.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbShoppingDiscountType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtShoppingDiscount.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtRemainDVD.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1807,5 +1833,7 @@ Partial Class frmDiscountCode
     Friend WithEvents LabelControl18 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents btnNewDiscountCode As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnXls As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents txtRemainDVD As DevExpress.XtraEditors.SpinEdit
+    Friend WithEvents lblRemainDVD As DevExpress.XtraEditors.LabelControl
 
 End Class

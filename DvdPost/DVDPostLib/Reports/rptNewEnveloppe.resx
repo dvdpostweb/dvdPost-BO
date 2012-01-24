@@ -120,6 +120,9 @@
   <metadata name="Detail.Name" xml:space="preserve">
     <value>Detail</value>
   </metadata>
+  <metadata name="XrLabel6.Name" xml:space="preserve">
+    <value>XrLabel6</value>
+  </metadata>
   <metadata name="XrLabel5.Name" xml:space="preserve">
     <value>XrLabel5</value>
   </metadata>
@@ -171,10 +174,10 @@
   <metadata name="objDS.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="$this.GridSize" type="System.Drawing.Size, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>4, 4</value>
-  </metadata>
   <metadata name="$this.Name" xml:space="preserve">
     <value>rptNewEnveloppe</value>
+  </metadata>
+  <metadata name="$this.GridSize" type="System.Drawing.Size, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>4, 4</value>
   </metadata>
 </root>

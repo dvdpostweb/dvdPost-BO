@@ -225,7 +225,13 @@ Public Class clsMarketing
                 Return 0
             End If
         End Function
-
+        Public Shared Function GetDvdRemaining(ByVal dr As DataRow) As Integer
+            If Not IsDBNull(dr("abo_dvd_remain")) Then
+                Return dr("abo_dvd_remain")
+            Else
+                Return 0
+            End If
+        End Function
 
         Public Shared Function GetNextDiscount(ByVal dr As DataRow) As Integer
             If Not IsDBNull(dr("next_discount")) Then
@@ -461,6 +467,13 @@ Public Class clsMarketing
         Public Shared Function GetAboDvdCredit(ByVal dr As DataRow) As Integer
             If Not IsDBNull(dr("abo_dvd_credit")) Then
                 Return dr("abo_dvd_credit")
+            Else
+                Return 0
+            End If
+        End Function
+        Public Shared Function GetAboDvdRemain(ByVal dr As DataRow) As Integer
+            If Not IsDBNull(dr("abo_dvd_remain")) Then
+                Return dr("abo_dvd_remain")
             Else
                 Return 0
             End If

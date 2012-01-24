@@ -678,6 +678,7 @@ Public Class frmEMailCustomers
     Private Sub addInfoNextReconduction()
         Dim price As String
         Dim credit As Integer
+        Dim dvdremain As Integer
         Dim customers_id As Integer
         Dim clscust As New DVDPostBuziness.ClsCustomers
 
@@ -686,7 +687,7 @@ Public Class frmEMailCustomers
 
         For Each dr As DataRow In objDS.Tables(TableName).Rows
             customers_id = dr("customers_id")
-            clscust.GetInfoNextReconduction(customers_id, credit, price)
+            clscust.GetInfoNextReconduction(customers_id, credit, dvdremain, price)
 
             dr("next_abo_price") = price
             dr("next_abo_dvd_credit") = credit

@@ -55,6 +55,7 @@ Public Class rptNewEnveloppe
     Friend WithEvents XrLabel17 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel18 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel19 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel6 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel5 As DevExpress.XtraReports.UI.XRLabel
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand
@@ -74,12 +75,13 @@ Public Class rptNewEnveloppe
         Me.XrLabel2 = New DevExpress.XtraReports.UI.XRLabel
         Me.XrLabel1 = New DevExpress.XtraReports.UI.XRLabel
         Me.objDS = New DVDPostLib.dsEnvelopeLabels
+        Me.XrLabel6 = New DevExpress.XtraReports.UI.XRLabel
         CType(Me.objDS, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         '
         'Detail
         '
-        Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel5, Me.XrLabel19, Me.XrLabel18, Me.XrLabel17, Me.XrLabel16, Me.XrLabel15, Me.XrLabel14, Me.XrLabel13, Me.XrLabel10, Me.XrLabel9, Me.XrLabel8, Me.XrLabel4, Me.XrLabel3, Me.XrLabel2, Me.XrLabel1})
+        Me.Detail.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel6, Me.XrLabel5, Me.XrLabel19, Me.XrLabel18, Me.XrLabel17, Me.XrLabel16, Me.XrLabel15, Me.XrLabel14, Me.XrLabel13, Me.XrLabel10, Me.XrLabel9, Me.XrLabel8, Me.XrLabel4, Me.XrLabel3, Me.XrLabel2, Me.XrLabel1})
         Me.Detail.Dpi = 254.0!
         Me.Detail.Height = 2400
         Me.Detail.Name = "Detail"
@@ -94,7 +96,7 @@ Public Class rptNewEnveloppe
         Me.XrLabel5.Font = New System.Drawing.Font("Arial", 14.0!)
         Me.XrLabel5.Location = New System.Drawing.Point(1016, 2193)
         Me.XrLabel5.Name = "XrLabel5"
-        Me.XrLabel5.Padding = New DevExpress.XtraPrinting.PaddingInfo(4, 4, 0, 0, 254.0!)
+        Me.XrLabel5.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
         Me.XrLabel5.Size = New System.Drawing.Size(868, 64)
         Me.XrLabel5.StylePriority.UseFont = False
         Me.XrLabel5.Text = "XrLabel5"
@@ -107,7 +109,7 @@ Public Class rptNewEnveloppe
         Me.XrLabel19.Font = New System.Drawing.Font("Arial", 10.0!)
         Me.XrLabel19.Location = New System.Drawing.Point(1577, 1937)
         Me.XrLabel19.Name = "XrLabel19"
-        Me.XrLabel19.Padding = New DevExpress.XtraPrinting.PaddingInfo(4, 4, 0, 0, 254.0!)
+        Me.XrLabel19.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
         Me.XrLabel19.Size = New System.Drawing.Size(317, 63)
         Me.XrLabel19.StylePriority.UseFont = False
         Me.XrLabel19.Text = "XrLabel19"
@@ -119,7 +121,7 @@ Public Class rptNewEnveloppe
         Me.XrLabel18.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrLabel18.Location = New System.Drawing.Point(142, 1378)
         Me.XrLabel18.Name = "XrLabel18"
-        Me.XrLabel18.Padding = New DevExpress.XtraPrinting.PaddingInfo(4, 4, 0, 0, 254.0!)
+        Me.XrLabel18.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
         Me.XrLabel18.Size = New System.Drawing.Size(40, 78)
         Me.XrLabel18.StylePriority.UseFont = False
         Me.XrLabel18.Text = "Y"
@@ -131,7 +133,7 @@ Public Class rptNewEnveloppe
         Me.XrLabel17.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrLabel17.Location = New System.Drawing.Point(142, 1285)
         Me.XrLabel17.Name = "XrLabel17"
-        Me.XrLabel17.Padding = New DevExpress.XtraPrinting.PaddingInfo(4, 4, 0, 0, 254.0!)
+        Me.XrLabel17.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
         Me.XrLabel17.Size = New System.Drawing.Size(40, 80)
         Me.XrLabel17.StylePriority.UseFont = False
         Me.XrLabel17.Text = "X"
@@ -144,7 +146,7 @@ Public Class rptNewEnveloppe
         Me.XrLabel16.Font = New System.Drawing.Font("Arial", 10.0!)
         Me.XrLabel16.Location = New System.Drawing.Point(1577, 1814)
         Me.XrLabel16.Name = "XrLabel16"
-        Me.XrLabel16.Padding = New DevExpress.XtraPrinting.PaddingInfo(4, 4, 0, 0, 254.0!)
+        Me.XrLabel16.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
         Me.XrLabel16.Size = New System.Drawing.Size(317, 63)
         Me.XrLabel16.StylePriority.UseFont = False
         Me.XrLabel16.Text = "XrLabel16"
@@ -157,7 +159,7 @@ Public Class rptNewEnveloppe
         Me.XrLabel15.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrLabel15.Location = New System.Drawing.Point(709, 1378)
         Me.XrLabel15.Name = "XrLabel15"
-        Me.XrLabel15.Padding = New DevExpress.XtraPrinting.PaddingInfo(4, 4, 0, 0, 254.0!)
+        Me.XrLabel15.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
         Me.XrLabel15.Size = New System.Drawing.Size(212, 78)
         Me.XrLabel15.StylePriority.UseFont = False
         Me.XrLabel15.Text = "XrLabel15"
@@ -170,7 +172,7 @@ Public Class rptNewEnveloppe
         Me.XrLabel14.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrLabel14.Location = New System.Drawing.Point(413, 1378)
         Me.XrLabel14.Name = "XrLabel14"
-        Me.XrLabel14.Padding = New DevExpress.XtraPrinting.PaddingInfo(4, 4, 0, 0, 254.0!)
+        Me.XrLabel14.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
         Me.XrLabel14.Size = New System.Drawing.Size(286, 78)
         Me.XrLabel14.StylePriority.UseFont = False
         Me.XrLabel14.Text = "XrLabel14"
@@ -183,7 +185,7 @@ Public Class rptNewEnveloppe
         Me.XrLabel13.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrLabel13.Location = New System.Drawing.Point(201, 1378)
         Me.XrLabel13.Name = "XrLabel13"
-        Me.XrLabel13.Padding = New DevExpress.XtraPrinting.PaddingInfo(4, 4, 0, 0, 254.0!)
+        Me.XrLabel13.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
         Me.XrLabel13.Size = New System.Drawing.Size(180, 78)
         Me.XrLabel13.StylePriority.UseFont = False
         Me.XrLabel13.Text = "XrLabel13"
@@ -196,7 +198,7 @@ Public Class rptNewEnveloppe
         Me.XrLabel10.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrLabel10.Location = New System.Drawing.Point(709, 1285)
         Me.XrLabel10.Name = "XrLabel10"
-        Me.XrLabel10.Padding = New DevExpress.XtraPrinting.PaddingInfo(4, 4, 0, 0, 254.0!)
+        Me.XrLabel10.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
         Me.XrLabel10.Size = New System.Drawing.Size(212, 80)
         Me.XrLabel10.StylePriority.UseFont = False
         Me.XrLabel10.Text = "XrLabel10"
@@ -209,7 +211,7 @@ Public Class rptNewEnveloppe
         Me.XrLabel9.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrLabel9.Location = New System.Drawing.Point(413, 1285)
         Me.XrLabel9.Name = "XrLabel9"
-        Me.XrLabel9.Padding = New DevExpress.XtraPrinting.PaddingInfo(4, 4, 0, 0, 254.0!)
+        Me.XrLabel9.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
         Me.XrLabel9.Size = New System.Drawing.Size(286, 80)
         Me.XrLabel9.StylePriority.UseFont = False
         Me.XrLabel9.Text = "XrLabel9"
@@ -222,7 +224,7 @@ Public Class rptNewEnveloppe
         Me.XrLabel8.Font = New System.Drawing.Font("Arial", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XrLabel8.Location = New System.Drawing.Point(201, 1285)
         Me.XrLabel8.Name = "XrLabel8"
-        Me.XrLabel8.Padding = New DevExpress.XtraPrinting.PaddingInfo(4, 4, 0, 0, 254.0!)
+        Me.XrLabel8.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
         Me.XrLabel8.Size = New System.Drawing.Size(190, 80)
         Me.XrLabel8.StylePriority.UseFont = False
         Me.XrLabel8.Text = "XrLabel8"
@@ -235,7 +237,7 @@ Public Class rptNewEnveloppe
         Me.XrLabel4.Font = New System.Drawing.Font("Arial", 14.0!)
         Me.XrLabel4.Location = New System.Drawing.Point(1259, 2129)
         Me.XrLabel4.Name = "XrLabel4"
-        Me.XrLabel4.Padding = New DevExpress.XtraPrinting.PaddingInfo(4, 4, 0, 0, 254.0!)
+        Me.XrLabel4.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
         Me.XrLabel4.Size = New System.Drawing.Size(624, 64)
         Me.XrLabel4.StylePriority.UseFont = False
         Me.XrLabel4.Text = "XrLabel4"
@@ -248,7 +250,7 @@ Public Class rptNewEnveloppe
         Me.XrLabel3.Font = New System.Drawing.Font("Arial", 14.0!)
         Me.XrLabel3.Location = New System.Drawing.Point(1016, 2129)
         Me.XrLabel3.Name = "XrLabel3"
-        Me.XrLabel3.Padding = New DevExpress.XtraPrinting.PaddingInfo(4, 4, 0, 0, 254.0!)
+        Me.XrLabel3.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
         Me.XrLabel3.Size = New System.Drawing.Size(233, 64)
         Me.XrLabel3.StylePriority.UseFont = False
         Me.XrLabel3.Text = "XrLabel3"
@@ -261,7 +263,7 @@ Public Class rptNewEnveloppe
         Me.XrLabel2.Font = New System.Drawing.Font("Arial", 14.0!)
         Me.XrLabel2.Location = New System.Drawing.Point(1016, 2055)
         Me.XrLabel2.Name = "XrLabel2"
-        Me.XrLabel2.Padding = New DevExpress.XtraPrinting.PaddingInfo(4, 4, 0, 0, 254.0!)
+        Me.XrLabel2.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
         Me.XrLabel2.Size = New System.Drawing.Size(868, 61)
         Me.XrLabel2.StylePriority.UseFont = False
         Me.XrLabel2.Text = "XrLabel2"
@@ -274,7 +276,7 @@ Public Class rptNewEnveloppe
         Me.XrLabel1.Font = New System.Drawing.Font("Arial", 14.0!)
         Me.XrLabel1.Location = New System.Drawing.Point(1016, 1992)
         Me.XrLabel1.Name = "XrLabel1"
-        Me.XrLabel1.Padding = New DevExpress.XtraPrinting.PaddingInfo(4, 4, 0, 0, 254.0!)
+        Me.XrLabel1.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
         Me.XrLabel1.Size = New System.Drawing.Size(868, 50)
         Me.XrLabel1.StylePriority.UseFont = False
         Me.XrLabel1.Text = "XrLabel1"
@@ -285,6 +287,19 @@ Public Class rptNewEnveloppe
         Me.objDS.DataSetName = "dsEnvelopeLabels"
         Me.objDS.Locale = New System.Globalization.CultureInfo("en-US")
         Me.objDS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'XrLabel6
+        '
+        Me.XrLabel6.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "envelope_labels_multishipment_det.customers_id", "")})
+        Me.XrLabel6.Dpi = 254.0!
+        Me.XrLabel6.Font = New System.Drawing.Font("Arial", 14.0!)
+        Me.XrLabel6.Location = New System.Drawing.Point(1027, 1725)
+        Me.XrLabel6.Name = "XrLabel6"
+        Me.XrLabel6.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
+        Me.XrLabel6.Size = New System.Drawing.Size(392, 64)
+        Me.XrLabel6.StylePriority.UseFont = False
+        Me.XrLabel6.Text = "XrLabel6"
+        Me.XrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft
         '
         'rptNewEnveloppe
         '

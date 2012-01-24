@@ -645,7 +645,7 @@ Public Class ClsCustomersData
     Public Shared Function GetSelectDiscountCode(ByVal discount_code_id As Integer) As String
         Dim sql As String
 
-        sql = "select dc.discount_code,dc.abo_dvd_credit,dc.droselia,dc.next_discount,dc.discount_type type ,dc.discount_value value,dc.discount_validityto date ,dc.discount_abo_validityto_value,dc.discount_abo_validityto_type ,discount_recurring_nbr_of_month,next_abo_type " & _
+        sql = "select dc.discount_code,dc.abo_dvd_credit, dc.abo_dvd_remain, dc.droselia,dc.next_discount,dc.discount_type type ,dc.discount_value value,dc.discount_validityto date ,dc.discount_abo_validityto_value,dc.discount_abo_validityto_type ,discount_recurring_nbr_of_month,next_abo_type " & _
         " from discount_code dc where dc.discount_code_id = " & discount_code_id
         Return sql
     End Function
@@ -653,7 +653,7 @@ Public Class ClsCustomersData
     Public Shared Function GetSelectActivationCode(ByVal Activation_code_id As Integer) As String
         Dim sql As String
 
-        sql = "select a.activation_id code_id,a.activation_code code,a.activation_code,a.abo_dvd_credit,ac.droselia,a.next_discount,a.validity_type type ,a.validity_value value,a.activation_code_validto_date date,next_abo_type  " & _
+        sql = "select a.activation_id code_id,a.activation_code code,a.activation_code,a.abo_dvd_credit, a.abo_dvd_remain, ac.droselia,a.next_discount,a.validity_type type ,a.validity_value value,a.activation_code_validto_date date,next_abo_type  " & _
         " from activation_code a left join activation_campaign ac on a.campaign_id = ac.id " & _
         " where a.activation_id = " & Activation_code_id
         Return sql

@@ -169,9 +169,9 @@ Public Class frmProcessOUT
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(10, 37)
+        Me.LabelControl1.Location = New System.Drawing.Point(8, 32)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(59, 16)
+        Me.LabelControl1.Size = New System.Drawing.Size(51, 13)
         Me.LabelControl1.TabIndex = 5
         Me.LabelControl1.Text = "Product ID"
         '
@@ -181,11 +181,11 @@ Public Class frmProcessOUT
         Me.GridControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GridControl1.EmbeddedNavigator.Name = ""
         Me.GridControl1.FormsUseDefaultLookAndFeel = False
-        Me.GridControl1.Location = New System.Drawing.Point(6, 153)
+        Me.GridControl1.Location = New System.Drawing.Point(6, 132)
         Me.GridControl1.MainView = Me.GridView1
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbDVDStatus})
-        Me.GridControl1.Size = New System.Drawing.Size(1106, 237)
+        Me.GridControl1.Size = New System.Drawing.Size(1106, 258)
         Me.GridControl1.TabIndex = 20
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
         '
@@ -432,25 +432,25 @@ Public Class frmProcessOUT
         Me.PanelControl1.Controls.Add(Me.LabelControl2)
         Me.PanelControl1.Controls.Add(Me.LabelControl1)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelControl1.Location = New System.Drawing.Point(0, 35)
+        Me.PanelControl1.Location = New System.Drawing.Point(0, 30)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(1112, 118)
+        Me.PanelControl1.Size = New System.Drawing.Size(1112, 102)
         Me.PanelControl1.TabIndex = 30
         '
         'btnProcessXml
         '
-        Me.btnProcessXml.Location = New System.Drawing.Point(1035, 42)
+        Me.btnProcessXml.Location = New System.Drawing.Point(862, 36)
         Me.btnProcessXml.Name = "btnProcessXml"
-        Me.btnProcessXml.Size = New System.Drawing.Size(96, 27)
+        Me.btnProcessXml.Size = New System.Drawing.Size(80, 24)
         Me.btnProcessXml.TabIndex = 63
         Me.btnProcessXml.Text = "Process XML"
         Me.btnProcessXml.Visible = False
         '
         'LblGroupId
         '
-        Me.LblGroupId.Location = New System.Drawing.Point(1060, 80)
+        Me.LblGroupId.Location = New System.Drawing.Point(883, 69)
         Me.LblGroupId.Name = "LblGroupId"
-        Me.LblGroupId.Size = New System.Drawing.Size(50, 16)
+        Me.LblGroupId.Size = New System.Drawing.Size(43, 13)
         Me.LblGroupId.TabIndex = 62
         Me.LblGroupId.Text = "Group ID"
         '
@@ -458,7 +458,7 @@ Public Class frmProcessOUT
         '
         Me.txtGroupId.CausesValidation = False
         Me.txtGroupId.EditValue = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.txtGroupId.Location = New System.Drawing.Point(932, 70)
+        Me.txtGroupId.Location = New System.Drawing.Point(777, 61)
         Me.txtGroupId.Name = "txtGroupId"
         Me.txtGroupId.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtGroupId.Properties.Appearance.Options.UseFont = True
@@ -472,7 +472,7 @@ Public Class frmProcessOUT
         Me.txtGroupId.Properties.MaxValue = New Decimal(New Integer() {15, 0, 0, 0})
         Me.txtGroupId.Properties.MinValue = New Decimal(New Integer() {1, 0, 0, 0})
         Me.txtGroupId.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
-        Me.txtGroupId.Size = New System.Drawing.Size(120, 31)
+        Me.txtGroupId.Size = New System.Drawing.Size(100, 26)
         Me.txtGroupId.TabIndex = 61
         '
         'btnUnlock
@@ -482,59 +482,59 @@ Public Class frmProcessOUT
         Me.btnUnlock.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUnlock.Appearance.Options.UseBackColor = True
         Me.btnUnlock.Appearance.Options.UseFont = True
-        Me.btnUnlock.Location = New System.Drawing.Point(10, 9)
+        Me.btnUnlock.Location = New System.Drawing.Point(8, 8)
         Me.btnUnlock.Name = "btnUnlock"
-        Me.btnUnlock.Size = New System.Drawing.Size(90, 74)
+        Me.btnUnlock.Size = New System.Drawing.Size(75, 64)
         Me.btnUnlock.TabIndex = 50
         Me.btnUnlock.Text = "unlock"
         Me.btnUnlock.Visible = False
         '
         'chkForcedStatus
         '
-        Me.chkForcedStatus.Location = New System.Drawing.Point(1074, 14)
+        Me.chkForcedStatus.Location = New System.Drawing.Point(895, 12)
         Me.chkForcedStatus.Name = "chkForcedStatus"
         Me.chkForcedStatus.Properties.Caption = "Forced Status"
-        Me.chkForcedStatus.Size = New System.Drawing.Size(124, 21)
+        Me.chkForcedStatus.Size = New System.Drawing.Size(103, 19)
         Me.chkForcedStatus.TabIndex = 49
         '
         'btnPrintSelectedEnveloppesFLAT
         '
-        Me.btnPrintSelectedEnveloppesFLAT.Location = New System.Drawing.Point(797, 37)
+        Me.btnPrintSelectedEnveloppesFLAT.Location = New System.Drawing.Point(664, 32)
         Me.btnPrintSelectedEnveloppesFLAT.Name = "btnPrintSelectedEnveloppesFLAT"
-        Me.btnPrintSelectedEnveloppesFLAT.Size = New System.Drawing.Size(173, 26)
+        Me.btnPrintSelectedEnveloppesFLAT.Size = New System.Drawing.Size(144, 23)
         Me.btnPrintSelectedEnveloppesFLAT.TabIndex = 48
         Me.btnPrintSelectedEnveloppesFLAT.Text = "Print Selected "
         Me.btnPrintSelectedEnveloppesFLAT.Visible = False
         '
         'btnPrintAllEnvelopesFLAT
         '
-        Me.btnPrintAllEnvelopesFLAT.Location = New System.Drawing.Point(797, 9)
+        Me.btnPrintAllEnvelopesFLAT.Location = New System.Drawing.Point(664, 8)
         Me.btnPrintAllEnvelopesFLAT.Name = "btnPrintAllEnvelopesFLAT"
-        Me.btnPrintAllEnvelopesFLAT.Size = New System.Drawing.Size(173, 27)
+        Me.btnPrintAllEnvelopesFLAT.Size = New System.Drawing.Size(144, 23)
         Me.btnPrintAllEnvelopesFLAT.TabIndex = 47
         Me.btnPrintAllEnvelopesFLAT.Text = "Print "
         '
         'btnExport
         '
-        Me.btnExport.Location = New System.Drawing.Point(977, 9)
+        Me.btnExport.Location = New System.Drawing.Point(814, 8)
         Me.btnExport.Name = "btnExport"
-        Me.btnExport.Size = New System.Drawing.Size(62, 27)
+        Me.btnExport.Size = New System.Drawing.Size(52, 23)
         Me.btnExport.TabIndex = 46
         Me.btnExport.Text = "Save"
         '
         'btnImport
         '
-        Me.btnImport.Location = New System.Drawing.Point(977, 37)
+        Me.btnImport.Location = New System.Drawing.Point(814, 32)
         Me.btnImport.Name = "btnImport"
-        Me.btnImport.Size = New System.Drawing.Size(62, 26)
+        Me.btnImport.Size = New System.Drawing.Size(52, 23)
         Me.btnImport.TabIndex = 45
         Me.btnImport.Text = "Load"
         '
         'btnResetBarCode
         '
-        Me.btnResetBarCode.Location = New System.Drawing.Point(581, 9)
+        Me.btnResetBarCode.Location = New System.Drawing.Point(484, 8)
         Me.btnResetBarCode.Name = "btnResetBarCode"
-        Me.btnResetBarCode.Size = New System.Drawing.Size(74, 27)
+        Me.btnResetBarCode.Size = New System.Drawing.Size(62, 23)
         Me.btnResetBarCode.TabIndex = 44
         Me.btnResetBarCode.Text = "Reset Bar"
         Me.btnResetBarCode.Visible = False
@@ -542,51 +542,51 @@ Public Class frmProcessOUT
         'PictXY
         '
         Me.PictXY.BackColor = System.Drawing.Color.Transparent
-        Me.PictXY.Location = New System.Drawing.Point(19, 65)
+        Me.PictXY.Location = New System.Drawing.Point(16, 56)
         Me.PictXY.Name = "PictXY"
-        Me.PictXY.Size = New System.Drawing.Size(77, 46)
+        Me.PictXY.Size = New System.Drawing.Size(64, 40)
         Me.PictXY.TabIndex = 43
         Me.PictXY.TabStop = False
         '
         'btnOK1
         '
-        Me.btnOK1.Location = New System.Drawing.Point(478, 9)
+        Me.btnOK1.Location = New System.Drawing.Point(398, 8)
         Me.btnOK1.Name = "btnOK1"
-        Me.btnOK1.Size = New System.Drawing.Size(96, 27)
+        Me.btnOK1.Size = New System.Drawing.Size(80, 23)
         Me.btnOK1.TabIndex = 42
         Me.btnOK1.Text = "OK"
         '
         'btnFindBarCode
         '
-        Me.btnFindBarCode.Location = New System.Drawing.Point(478, 37)
+        Me.btnFindBarCode.Location = New System.Drawing.Point(398, 32)
         Me.btnFindBarCode.Name = "btnFindBarCode"
-        Me.btnFindBarCode.Size = New System.Drawing.Size(96, 26)
+        Me.btnFindBarCode.Size = New System.Drawing.Size(80, 23)
         Me.btnFindBarCode.TabIndex = 1
         Me.btnFindBarCode.Text = "Find Bar Code"
         '
         'btnPrintSelectedEnveloppes
         '
-        Me.btnPrintSelectedEnveloppes.Location = New System.Drawing.Point(662, 37)
+        Me.btnPrintSelectedEnveloppes.Location = New System.Drawing.Point(552, 32)
         Me.btnPrintSelectedEnveloppes.Name = "btnPrintSelectedEnveloppes"
-        Me.btnPrintSelectedEnveloppes.Size = New System.Drawing.Size(128, 26)
+        Me.btnPrintSelectedEnveloppes.Size = New System.Drawing.Size(106, 23)
         Me.btnPrintSelectedEnveloppes.TabIndex = 41
         Me.btnPrintSelectedEnveloppes.Text = "Print Selected Env."
         Me.btnPrintSelectedEnveloppes.Visible = False
         '
         'btnPrintAllEnvelopes
         '
-        Me.btnPrintAllEnvelopes.Location = New System.Drawing.Point(662, 9)
+        Me.btnPrintAllEnvelopes.Location = New System.Drawing.Point(552, 8)
         Me.btnPrintAllEnvelopes.Name = "btnPrintAllEnvelopes"
-        Me.btnPrintAllEnvelopes.Size = New System.Drawing.Size(128, 27)
+        Me.btnPrintAllEnvelopes.Size = New System.Drawing.Size(106, 23)
         Me.btnPrintAllEnvelopes.TabIndex = 40
         Me.btnPrintAllEnvelopes.Text = "Print ALL Env."
         Me.btnPrintAllEnvelopes.Visible = False
         '
         'btnClear
         '
-        Me.btnClear.Location = New System.Drawing.Point(581, 37)
+        Me.btnClear.Location = New System.Drawing.Point(484, 32)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(74, 26)
+        Me.btnClear.Size = New System.Drawing.Size(62, 23)
         Me.btnClear.TabIndex = 35
         Me.btnClear.Text = "Clear"
         Me.btnClear.Visible = False
@@ -594,61 +594,61 @@ Public Class frmProcessOUT
         'txtINFO
         '
         Me.txtINFO.EditValue = ""
-        Me.txtINFO.Location = New System.Drawing.Point(106, 74)
+        Me.txtINFO.Location = New System.Drawing.Point(88, 64)
         Me.txtINFO.Name = "txtINFO"
         Me.txtINFO.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
         Me.txtINFO.Properties.Appearance.ForeColor = System.Drawing.Color.Firebrick
         Me.txtINFO.Properties.Appearance.Options.UseFont = True
         Me.txtINFO.Properties.Appearance.Options.UseForeColor = True
-        Me.txtINFO.Size = New System.Drawing.Size(806, 27)
+        Me.txtINFO.Size = New System.Drawing.Size(672, 23)
         Me.txtINFO.TabIndex = 34
         '
         'txtDVD_ID
         '
         Me.txtDVD_ID.Enabled = False
-        Me.txtDVD_ID.Location = New System.Drawing.Point(355, 37)
+        Me.txtDVD_ID.Location = New System.Drawing.Point(296, 32)
         Me.txtDVD_ID.Name = "txtDVD_ID"
         Me.txtDVD_ID.Properties.ReadOnly = True
-        Me.txtDVD_ID.Size = New System.Drawing.Size(115, 22)
+        Me.txtDVD_ID.Size = New System.Drawing.Size(96, 20)
         Me.txtDVD_ID.TabIndex = 29
         '
         'LabelControl5
         '
-        Me.LabelControl5.Location = New System.Drawing.Point(259, 37)
+        Me.LabelControl5.Location = New System.Drawing.Point(216, 32)
         Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(40, 16)
+        Me.LabelControl5.Size = New System.Drawing.Size(34, 13)
         Me.LabelControl5.TabIndex = 28
         Me.LabelControl5.Text = "DVD ID"
         '
         'txtProducts_id
         '
         Me.txtProducts_id.Enabled = False
-        Me.txtProducts_id.Location = New System.Drawing.Point(106, 37)
+        Me.txtProducts_id.Location = New System.Drawing.Point(88, 32)
         Me.txtProducts_id.Name = "txtProducts_id"
         Me.txtProducts_id.Properties.ReadOnly = True
-        Me.txtProducts_id.Size = New System.Drawing.Size(115, 22)
+        Me.txtProducts_id.Size = New System.Drawing.Size(96, 20)
         Me.txtProducts_id.TabIndex = 24
         '
         'txtBarCode
         '
-        Me.txtBarCode.Location = New System.Drawing.Point(106, 9)
+        Me.txtBarCode.Location = New System.Drawing.Point(88, 8)
         Me.txtBarCode.Name = "txtBarCode"
-        Me.txtBarCode.Size = New System.Drawing.Size(364, 22)
+        Me.txtBarCode.Size = New System.Drawing.Size(304, 20)
         Me.txtBarCode.TabIndex = 0
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(10, 9)
+        Me.LabelControl2.Location = New System.Drawing.Point(8, 8)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(55, 16)
+        Me.LabelControl2.Size = New System.Drawing.Size(47, 13)
         Me.LabelControl2.TabIndex = 23
         Me.LabelControl2.Text = "BareCode"
         '
         'SplitterControl1
         '
-        Me.SplitterControl1.Location = New System.Drawing.Point(0, 153)
+        Me.SplitterControl1.Location = New System.Drawing.Point(0, 132)
         Me.SplitterControl1.Name = "SplitterControl1"
-        Me.SplitterControl1.Size = New System.Drawing.Size(6, 237)
+        Me.SplitterControl1.Size = New System.Drawing.Size(6, 258)
         Me.SplitterControl1.TabIndex = 31
         Me.SplitterControl1.TabStop = False
         '
@@ -670,7 +670,7 @@ Public Class frmProcessOUT
         'frmProcessOUT
         '
         Me.AcceptButton = Me.btnOK1
-        Me.AutoScaleBaseSize = New System.Drawing.Size(6, 15)
+        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
         Me.ClientSize = New System.Drawing.Size(1112, 390)
         Me.Controls.Add(Me.GridControl1)
         Me.Controls.Add(Me.SplitterControl1)

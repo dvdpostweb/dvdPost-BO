@@ -890,6 +890,8 @@ Public Class frmCustomers_Maint
     Friend WithEvents chkCreditReceivedBySite As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents txtRemainDVD As DevExpress.XtraEditors.SpinEdit
     Friend WithEvents lblRemainDVD As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents lblNextDVDRemain As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtNextDVDRemain As DevExpress.XtraEditors.TextEdit
     Friend WithEvents cmbDiscType As DevExpress.XtraEditors.ComboBoxEdit
 
 
@@ -1286,6 +1288,8 @@ Me.GridViewInfoAdult = New DevExpress.XtraGrid.Views.Grid.GridView
 Me.gridInfoNorm = New DevExpress.XtraGrid.GridControl
 Me.GridViewInfoNorm = New DevExpress.XtraGrid.Views.Grid.GridView
 Me.tabMain = New DevExpress.XtraTab.XtraTabPage
+Me.lblNextDVDRemain = New DevExpress.XtraEditors.LabelControl
+Me.txtNextDVDRemain = New DevExpress.XtraEditors.TextEdit
 Me.chksleep = New DevExpress.XtraEditors.CheckEdit
 Me.btnCreditHistoryReplay = New DevExpress.XtraEditors.SimpleButton
 Me.ChkCreditCombined = New DevExpress.XtraEditors.CheckEdit
@@ -1308,6 +1312,8 @@ Me.btnDelPhoAct = New DevExpress.XtraEditors.SimpleButton
 Me.btnActPhone = New DevExpress.XtraEditors.SimpleButton
 Me.btnReActivate = New DevExpress.XtraEditors.SimpleButton
 Me.GCAboInfo = New DevExpress.XtraEditors.GroupControl
+Me.txtRemainDVD = New DevExpress.XtraEditors.SpinEdit
+Me.lblRemainDVD = New DevExpress.XtraEditors.LabelControl
 Me.cmbDiscountActivation = New DevExpress.XtraEditors.LookUpEdit
 Me.cmbDiscType = New DevExpress.XtraEditors.ComboBoxEdit
 Me.lblDateEndHoliday = New DevExpress.XtraEditors.LabelControl
@@ -1703,8 +1709,6 @@ Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl
 Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl
 Me.GridControl3 = New DevExpress.XtraGrid.GridControl
 Me.GridView3 = New DevExpress.XtraGrid.Views.Grid.GridView
-Me.txtRemainDVD = New DevExpress.XtraEditors.SpinEdit
-Me.lblRemainDVD = New DevExpress.XtraEditors.LabelControl
 coldvd_finally_arrived_mail3 = New DevExpress.XtraGrid.Columns.GridColumn
 GridchkAbo = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
 GridchkBlackList = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
@@ -1838,6 +1842,7 @@ CType(Me.GridViewInfoAdult,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.gridInfoNorm,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.GridViewInfoNorm,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tabMain.SuspendLayout
+CType(Me.txtNextDVDRemain.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.chksleep.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.ChkCreditCombined.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.chkFt.Properties,System.ComponentModel.ISupportInitialize).BeginInit
@@ -1849,6 +1854,7 @@ CType(Me.DateCallPhoneActivation.Properties.VistaTimeProperties,System.Component
 CType(Me.DateCallPhoneActivation.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.GCAboInfo,System.ComponentModel.ISupportInitialize).BeginInit
 Me.GCAboInfo.SuspendLayout
+CType(Me.txtRemainDVD.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.cmbDiscountActivation.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.cmbDiscType.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.DateEndOfHoliday.Properties.VistaTimeProperties,System.ComponentModel.ISupportInitialize).BeginInit
@@ -2038,7 +2044,6 @@ CType(Me.TextEdit22.Properties,System.ComponentModel.ISupportInitialize).BeginIn
 CType(Me.TextEdit23.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.GridControl3,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.GridView3,System.ComponentModel.ISupportInitialize).BeginInit
-CType(Me.txtRemainDVD.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 Me.SuspendLayout
 '
 'PopMenuEdit
@@ -2396,7 +2401,7 @@ Me.date_start.VisibleIndex = 0
 'txtNextCredit
 '
 Me.txtNextCredit.Enabled = false
-Me.txtNextCredit.Location = New System.Drawing.Point(697, 14)
+Me.txtNextCredit.Location = New System.Drawing.Point(725, 14)
 Me.txtNextCredit.Name = "txtNextCredit"
 Me.txtNextCredit.Properties.ReadOnly = true
 Me.txtNextCredit.Size = New System.Drawing.Size(79, 20)
@@ -2405,7 +2410,7 @@ Me.txtNextCredit.TabIndex = 21
 'txtNextPrice
 '
 Me.txtNextPrice.Enabled = false
-Me.txtNextPrice.Location = New System.Drawing.Point(854, 14)
+Me.txtNextPrice.Location = New System.Drawing.Point(888, 14)
 Me.txtNextPrice.Name = "txtNextPrice"
 Me.txtNextPrice.Properties.ReadOnly = true
 Me.txtNextPrice.Size = New System.Drawing.Size(79, 20)
@@ -5711,6 +5716,7 @@ Me.GridViewInfoNorm.OptionsView.ShowGroupPanel = false
 Me.tabMain.Appearance.Header.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.tabMain.Appearance.Header.Options.UseFont = true
 Me.tabMain.AutoScroll = true
+Me.tabMain.Controls.Add(Me.lblNextDVDRemain)
 Me.tabMain.Controls.Add(Me.chksleep)
 Me.tabMain.Controls.Add(Me.btnCreditHistoryReplay)
 Me.tabMain.Controls.Add(Me.ChkCreditCombined)
@@ -5721,6 +5727,7 @@ Me.tabMain.Controls.Add(Me.lblNextPrice)
 Me.tabMain.Controls.Add(Me.lblNextCredit)
 Me.tabMain.Controls.Add(Me.txtNextPrice)
 Me.tabMain.Controls.Add(Me.txtNextCredit)
+Me.tabMain.Controls.Add(Me.txtNextDVDRemain)
 Me.tabMain.Controls.Add(Me.btnForcedReconduction)
 Me.tabMain.Controls.Add(Me.btnActivateDomiciliation)
 Me.tabMain.Controls.Add(Me.btnReceivedDomiciliation)
@@ -5738,6 +5745,23 @@ Me.tabMain.Name = "tabMain"
 Me.tabMain.ShowCloseButton = DevExpress.Utils.DefaultBoolean.[True]
 Me.tabMain.Size = New System.Drawing.Size(1253, 791)
 Me.tabMain.Text = "General Info"
+'
+'lblNextDVDRemain
+'
+Me.lblNextDVDRemain.Location = New System.Drawing.Point(632, 44)
+Me.lblNextDVDRemain.Name = "lblNextDVDRemain"
+Me.lblNextDVDRemain.Size = New System.Drawing.Size(84, 13)
+Me.lblNextDVDRemain.TabIndex = 34
+Me.lblNextDVDRemain.Text = "Next DVD Remain"
+'
+'txtNextDVDRemain
+'
+Me.txtNextDVDRemain.Enabled = false
+Me.txtNextDVDRemain.Location = New System.Drawing.Point(726, 41)
+Me.txtNextDVDRemain.Name = "txtNextDVDRemain"
+Me.txtNextDVDRemain.Properties.ReadOnly = true
+Me.txtNextDVDRemain.Size = New System.Drawing.Size(79, 20)
+Me.txtNextDVDRemain.TabIndex = 33
 '
 'chksleep
 '
@@ -5794,7 +5818,7 @@ Me.lblNbReconduction.Text = "Nombre reconduction :"
 '
 'lblNextPrice
 '
-Me.lblNextPrice.Location = New System.Drawing.Point(793, 17)
+Me.lblNextPrice.Location = New System.Drawing.Point(827, 17)
 Me.lblNextPrice.Name = "lblNextPrice"
 Me.lblNextPrice.Size = New System.Drawing.Size(49, 13)
 Me.lblNextPrice.TabIndex = 24
@@ -5844,7 +5868,7 @@ Me.GCACtPhone.Controls.Add(Me.cmbPhoneActivDelete)
 Me.GCACtPhone.Controls.Add(Me.LabelReason)
 Me.GCACtPhone.Controls.Add(Me.DateCallPhoneActivation)
 Me.GCACtPhone.Controls.Add(Me.LabelCallMeDate)
-Me.GCACtPhone.Location = New System.Drawing.Point(632, 503)
+Me.GCACtPhone.Location = New System.Drawing.Point(632, 533)
 Me.GCACtPhone.Name = "GCACtPhone"
 Me.GCACtPhone.Size = New System.Drawing.Size(328, 237)
 Me.GCACtPhone.TabIndex = 10
@@ -5974,11 +5998,35 @@ Me.GCAboInfo.Controls.Add(Me.txtAbo_ValidityTo)
 Me.GCAboInfo.Controls.Add(Me.cmbABO)
 Me.GCAboInfo.Controls.Add(Me.lblNextAbo)
 Me.GCAboInfo.Controls.Add(Me.lblAbo)
-Me.GCAboInfo.Location = New System.Drawing.Point(632, 40)
+Me.GCAboInfo.Location = New System.Drawing.Point(632, 67)
 Me.GCAboInfo.Name = "GCAboInfo"
 Me.GCAboInfo.Size = New System.Drawing.Size(336, 432)
 Me.GCAboInfo.TabIndex = 5
 Me.GCAboInfo.Text = "ABO Info"
+'
+'txtRemainDVD
+'
+Me.txtRemainDVD.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_abo_dvd_remain", true))
+Me.txtRemainDVD.EditValue = New Decimal(New Integer() {1, 0, 0, 0})
+Me.txtRemainDVD.Enabled = false
+Me.txtRemainDVD.Location = New System.Drawing.Point(160, 206)
+Me.txtRemainDVD.Name = "txtRemainDVD"
+Me.txtRemainDVD.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+Me.txtRemainDVD.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+Me.txtRemainDVD.Properties.MaxLength = 1000
+Me.txtRemainDVD.Properties.MaxValue = New Decimal(New Integer() {1000, 0, 0, 0})
+Me.txtRemainDVD.Properties.MinValue = New Decimal(New Integer() {1, 0, 0, -2147483648})
+Me.txtRemainDVD.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
+Me.txtRemainDVD.Size = New System.Drawing.Size(152, 20)
+Me.txtRemainDVD.TabIndex = 62
+'
+'lblRemainDVD
+'
+Me.lblRemainDVD.Location = New System.Drawing.Point(8, 214)
+Me.lblRemainDVD.Name = "lblRemainDVD"
+Me.lblRemainDVD.Size = New System.Drawing.Size(55, 13)
+Me.lblRemainDVD.TabIndex = 61
+Me.lblRemainDVD.Text = "RemainDVD"
 '
 'cmbDiscountActivation
 '
@@ -10018,30 +10066,6 @@ Me.GridControl3.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseV
 Me.GridView3.GridControl = Me.GridControl3
 Me.GridView3.Name = "GridView3"
 '
-'txtRemainDVD
-'
-Me.txtRemainDVD.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_abo_dvd_remain", true))
-Me.txtRemainDVD.EditValue = New Decimal(New Integer() {1, 0, 0, 0})
-Me.txtRemainDVD.Enabled = false
-Me.txtRemainDVD.Location = New System.Drawing.Point(160, 206)
-Me.txtRemainDVD.Name = "txtRemainDVD"
-Me.txtRemainDVD.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-Me.txtRemainDVD.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
-Me.txtRemainDVD.Properties.MaxLength = 1000
-Me.txtRemainDVD.Properties.MaxValue = New Decimal(New Integer() {1000, 0, 0, 0})
-Me.txtRemainDVD.Properties.MinValue = New Decimal(New Integer() {1, 0, 0, -2147483648})
-Me.txtRemainDVD.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
-Me.txtRemainDVD.Size = New System.Drawing.Size(152, 20)
-Me.txtRemainDVD.TabIndex = 62
-'
-'lblRemainDVD
-'
-Me.lblRemainDVD.Location = New System.Drawing.Point(8, 214)
-Me.lblRemainDVD.Name = "lblRemainDVD"
-Me.lblRemainDVD.Size = New System.Drawing.Size(55, 13)
-Me.lblRemainDVD.TabIndex = 61
-Me.lblRemainDVD.Text = "RemainDVD"
-'
 'frmCustomers_Maint
 '
 Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
@@ -10182,6 +10206,7 @@ CType(Me.gridInfoNorm,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.GridViewInfoNorm,System.ComponentModel.ISupportInitialize).EndInit
 Me.tabMain.ResumeLayout(false)
 Me.tabMain.PerformLayout
+CType(Me.txtNextDVDRemain.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.chksleep.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.ChkCreditCombined.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.chkFt.Properties,System.ComponentModel.ISupportInitialize).EndInit
@@ -10195,6 +10220,7 @@ CType(Me.DateCallPhoneActivation.Properties,System.ComponentModel.ISupportInitia
 CType(Me.GCAboInfo,System.ComponentModel.ISupportInitialize).EndInit
 Me.GCAboInfo.ResumeLayout(false)
 Me.GCAboInfo.PerformLayout
+CType(Me.txtRemainDVD.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.cmbDiscountActivation.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.cmbDiscType.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.DateEndOfHoliday.Properties.VistaTimeProperties,System.ComponentModel.ISupportInitialize).EndInit
@@ -10390,7 +10416,6 @@ CType(Me.TextEdit22.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.TextEdit23.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.GridControl3,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.GridView3,System.ComponentModel.ISupportInitialize).EndInit
-CType(Me.txtRemainDVD.Properties,System.ComponentModel.ISupportInitialize).EndInit
 Me.ResumeLayout(false)
 
 End Sub
@@ -11045,11 +11070,13 @@ End Sub
         'do visible txt summer power abo 12 mois
         Me.displayLblSummer(_CurrentCustomerID)
         Dim credit As Integer
+        Dim dvdremainNext As Integer
         Dim price As String = ""
         Dim clscustomers As New DVDPostBuziness.ClsCustomers
         'clscustomers.aboStopDebug()
-        clscustomers.GetInfoNextReconduction(_CurrentCustomerID, credit, price)
+        clscustomers.GetInfoNextReconduction(_CurrentCustomerID, credit, dvdremainNext, price)
         txtNextCredit.EditValue = credit
+        txtNextDVDRemain.EditValue = dvdremainNext
         txtNextPrice.EditValue = price
         'visble group control phone activation
         VisiblePhoneActivation(_CurrentCustomerID)
@@ -11200,6 +11227,7 @@ End Sub
         ChangeStateControl(txtDVDAdultAtHome, False)
         ChangeStateControl(txtRegistrationStep, False)
         ChangeStateControl(txtNextCredit, False)
+        ChangeStateControl(txtNextDVDRemain, False)
         ChangeStateControl(txtNextPrice, False)
         ChangeStateControl(txtDiscRecurring, False)
 

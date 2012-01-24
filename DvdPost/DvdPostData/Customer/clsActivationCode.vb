@@ -38,7 +38,7 @@ Public Class clsActivationCode
     Public Shared Function insertActivationCode(ByVal _ActivationCode As String, ByVal group As Integer, ByVal _ActivationGroupID As Integer, _
                                                 ByVal _ValidToStr As String, ByVal cmbProductsID As Integer, ByVal ValidType As Integer, _
                                                 ByVal ValidValue As Integer, ByVal chkWaranty As Integer, ByVal txtComment As String, _
-                                                ByVal DVDCredit As Integer, ByVal _NextDiscountCodeID As Integer, ByVal chkAuto_Stop_at_Next_Reconduction As Integer, _
+                                                ByVal DVDCredit As Integer, ByVal DVDRemain As Integer, ByVal _NextDiscountCodeID As Integer, ByVal chkAuto_Stop_at_Next_Reconduction As Integer, _
                                                 ByVal txtBanner As String, ByVal txtDescFR As String, ByVal txtDescNL As String, ByVal txtDescEN As String, _
                                                 ByVal chkFree_Upgrade_Allowed As Integer, ByVal txtFooter As String, ByVal txtCampaign As String, _
                                                 ByVal combinetActi As String) As String
@@ -60,7 +60,7 @@ Public Class clsActivationCode
         Dim sql As String
         sql = "INSERT INTO activation_code (activation_code,campaign_id, activation_group,activation_group_id , " & _
                                             "activation_code_creation_date, activation_code_validto_date , activation_products_id , " & _
-                                            "validity_type ,validity_value ,activation_waranty ,comment ,abo_dvd_credit , " & _
+                                            "validity_type ,validity_value ,activation_waranty ,comment ,abo_dvd_credit , abo_dvd_remain, " & _
                                             "next_discount , abo_auto_stop_next_reconduction , banner , activation_text_fr , " & _
                                             "activation_text_nl ,activation_text_en , free_upgrade_allowed ,footer ,campaign ,combined_action ) values " & _
                                             "  ('" & _ActivationCode & "'" & _
@@ -74,6 +74,7 @@ Public Class clsActivationCode
                       " , " & chkWaranty & _
                       " , '" & txtComment & "'" & _
                       " , " & DVDCredit & _
+                      " , " & DVDRemain & _
                       " , " & _NextDiscountCodeID & _
                       " , " & chkAuto_Stop_at_Next_Reconduction & _
                       " , '" & txtBanner & "' " & _
@@ -107,7 +108,7 @@ Public Class clsActivationCode
     Public Shared Function updateActivation(ByVal group As Integer, ByVal _activationGroupID As Integer, _
                                                 ByVal ValidToStr As String, ByVal productsID As Integer, ByVal ValidType As Integer, _
                                                 ByVal ValidValue As Integer, ByVal chkWaranty As Integer, ByVal Comment As String, _
-                                                ByVal DVDCredit As Integer, ByVal nextDiscountCodeId As Integer, ByVal chkAuto_Stop_at_Next_Reconduction As Integer, _
+                                                ByVal DVDCredit As Integer, ByVal DVDRemain As Integer, ByVal nextDiscountCodeId As Integer, ByVal chkAuto_Stop_at_Next_Reconduction As Integer, _
                                                 ByVal banner As String, ByVal txtDescFR As String, ByVal txtDescNL As String, ByVal txtDescEN As String, _
                                                 ByVal chkFree_Upgrade_Allowed As Integer, ByVal txtFooter As String, ByVal txtCampaign As String, _
                                                 ByVal combinetActi As String, ByVal activation_code_cretion_date As String, ByVal activation_code_condition As String, ByVal next_abotype As Integer) As String
@@ -133,6 +134,7 @@ Public Class clsActivationCode
               " , activation_waranty = " & chkWaranty & _
               " , comment = '" & Comment & "' " & _
               " , abo_dvd_credit = " & DVDCredit & _
+              " , abo_dvd_remain = " & DVDRemain & _
               " , next_discount = " & nextDiscountCodeId & _
               " , abo_auto_stop_next_reconduction = " & chkAuto_Stop_at_Next_Reconduction & _
               " , banner = '" & banner & "' " & _
@@ -222,7 +224,7 @@ Public Class clsActivationCode
 
     Public Shared Function GetActivtionCodeAllFields() As String
         Dim sql = "select (select count(*) from wishlist w where w.customers_id = ac.customers_id) size_w,activation_id, activation_code, activation_group, campaign_id, activation_group_id, activation_pack, activation_code_creation_date, activation_code_validto_date, activation_products_id," & _
-                  " validity_month, validity_type, validity_value, activation_waranty, customers_id,   activation_date  , comment, abo_dvd_credit, next_discount, credit0_auto_reconduct, " & _
+                  " validity_month, validity_type, validity_value, activation_waranty, customers_id,   activation_date  , comment, abo_dvd_credit, abo_dvd_remain, next_discount, credit0_auto_reconduct, " & _
                   "abo_auto_stop_next_reconduction, banner, activation_text_fr, activation_text_nl, activation_text_en, free_upgrade_allowed, footer, campaign, combined_action,next_abo_type " & _
                   " from activation_code ac  where 1 "
         Return sql
@@ -375,6 +377,7 @@ Public Class clsActivationCode
                                               ByVal discount_validityto As String, _
                                               ByVal payable As Integer, _
                                               ByVal abo_dvd_credit As Integer, _
+                                              ByVal abo_dvd_remain As Integer, _
                                               ByVal next_discount As Integer, _
                                               ByVal credit0_auto_reconduct As Integer, _
                                               ByVal landing_page As Integer, _
@@ -422,6 +425,7 @@ Public Class clsActivationCode
                                       " , discount_validityto = " & discount_validityto & "  " & _
                                       " , payable = " & payable & _
                                       " , abo_dvd_credit = " & abo_dvd_credit & _
+                                      " , abo_dvd_remain = " & abo_dvd_remain & _
                                       " , next_discount = " & next_discount & _
                                       " , credit0_auto_reconduct = " & credit0_auto_reconduct & _
                                       " , landing_page = " & landing_page & _
@@ -456,6 +460,7 @@ Public Class clsActivationCode
                                               ByVal discount_validityto As String, _
                                               ByVal payable As Integer, _
                                               ByVal abo_dvd_credit As Integer, _
+                                              ByVal abo_dvd_remain As Integer, _
                                               ByVal next_discount As Integer, _
                                               ByVal credit0_auto_reconduct As Integer, _
                                               ByVal landing_page As Integer, _
@@ -487,7 +492,7 @@ Public Class clsActivationCode
         sql = "insert into discount_code(discount_code, discount_type, discount_value, discount_limit," & _
                                         " discount_commitment, discount_status, discount_text_fr, discount_text_nl, discount_text_en, discount_abo_validityto_type," & _
                                         " discount_abo_validityto_value, comment, discount_nbr_month_before_reuse, discount_recurring_nbr_of_month, bypass_discountuse," & _
-                                        " discount_validityto, payable, abo_dvd_credit, next_discount, credit0_auto_reconduct, landing_page, landing_page_php, " & _
+                                        " discount_validityto, payable, abo_dvd_credit, abo_dvd_remain, next_discount, credit0_auto_reconduct, landing_page, landing_page_php, " & _
                                         " listing_products_allowed, abo_auto_stop_next_reconduction, goto_step, banner, Footer, free_upgrade_allowed, group_id , shopping_discount , droselia,next_abo_type )" & _
                                         " values  ( '" & discount_code & "' " & _
                                                    " , " & discount_type & _
@@ -507,6 +512,7 @@ Public Class clsActivationCode
                                       " , " & discount_validityto & _
                                       " , " & payable & _
                                       " , " & abo_dvd_credit & _
+                                      " , " & abo_dvd_remain & _
                                       " , " & next_discount & _
                                       " , " & credit0_auto_reconduct & _
                                       " , " & landing_page & _
