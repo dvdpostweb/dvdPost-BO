@@ -171,6 +171,9 @@ Public Class ClsCheckProcessLogistic
 
         If currentdvd_status = DvdPostData.clsProductDvd.DVDStatus.ENTRETIEN Then
             resetCounter(objProductDVD, check)
+        ElseIf currentdvd_status = DvdPostData.clsProductDvd.DVDStatus.VOD Then
+            btnSearch.Focus()
+            cptRefound += 1
         ElseIf currentdvd_status <> DvdPostData.clsProductDvd.DVDStatus.DVD_STATUS_OK _
             And currentdvd_status <> DvdPostData.clsProductDvd.DVDStatus.INVENTAIRE _
             And currentdvd_status <> DvdPostData.clsProductDvd.DVDStatus.PURCHASE Then
