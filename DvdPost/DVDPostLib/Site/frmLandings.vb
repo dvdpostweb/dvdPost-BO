@@ -123,6 +123,11 @@ Public Class frmLandings
         Me.ContextMenu1 = New DVDPostBuziness.contextMenu
         Me.XtraTabControlTheme = New DevExpress.XtraTab.XtraTabControl
         Me.tabDetail = New DevExpress.XtraTab.XtraTabPage
+        Me.lblImageiPad = New DevExpress.XtraEditors.LabelControl
+        Me.imgLandingiPad = New DevExpress.XtraEditors.PictureEdit
+        Me.lblImageiPhone = New DevExpress.XtraEditors.LabelControl
+        Me.imgLandingiPhone = New DevExpress.XtraEditors.PictureEdit
+        Me.lblImageWebSite = New DevExpress.XtraEditors.LabelControl
         Me.cmbLogin = New DevExpress.XtraEditors.LookUpEdit
         Me.txtExpiratedDate = New DevExpress.XtraEditors.DateEdit
         Me.imgLanding = New DevExpress.XtraEditors.PictureEdit
@@ -149,11 +154,6 @@ Public Class frmLandings
         Me.txtTitleEdit = New DevExpress.XtraEditors.TextEdit
         Me.lblTitleEdit = New DevExpress.XtraEditors.LabelControl
         Me.OFDPicture = New System.Windows.Forms.OpenFileDialog
-        Me.lblImageWebSite = New DevExpress.XtraEditors.LabelControl
-        Me.lblImageiPhone = New DevExpress.XtraEditors.LabelControl
-        Me.imgLandingiPhone = New DevExpress.XtraEditors.PictureEdit
-        Me.lblImageiPad = New DevExpress.XtraEditors.LabelControl
-        Me.imgLandingiPad = New DevExpress.XtraEditors.PictureEdit
         CType(Me.cmbViewListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtQuickSearchRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbReportListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -176,6 +176,8 @@ Public Class frmLandings
         CType(Me.XtraTabControlTheme, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabControlTheme.SuspendLayout()
         Me.tabDetail.SuspendLayout()
+        CType(Me.imgLandingiPad.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imgLandingiPhone.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbLogin.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtExpiratedDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtExpiratedDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -188,8 +190,6 @@ Public Class frmLandings
         CType(Me.cmbKindEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtLandingId_edit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTitleEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.imgLandingiPhone.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.imgLandingiPad.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tabSearch
@@ -382,6 +382,33 @@ Public Class frmLandings
         Me.tabDetail.Name = "tabDetail"
         resources.ApplyResources(Me.tabDetail, "tabDetail")
         '
+        'lblImageiPad
+        '
+        resources.ApplyResources(Me.lblImageiPad, "lblImageiPad")
+        Me.lblImageiPad.Name = "lblImageiPad"
+        '
+        'imgLandingiPad
+        '
+        resources.ApplyResources(Me.imgLandingiPad, "imgLandingiPad")
+        Me.imgLandingiPad.Name = "imgLandingiPad"
+        Me.imgLandingiPad.Properties.ShowMenu = False
+        '
+        'lblImageiPhone
+        '
+        resources.ApplyResources(Me.lblImageiPhone, "lblImageiPhone")
+        Me.lblImageiPhone.Name = "lblImageiPhone"
+        '
+        'imgLandingiPhone
+        '
+        resources.ApplyResources(Me.imgLandingiPhone, "imgLandingiPhone")
+        Me.imgLandingiPhone.Name = "imgLandingiPhone"
+        Me.imgLandingiPhone.Properties.ShowMenu = False
+        '
+        'lblImageWebSite
+        '
+        resources.ApplyResources(Me.lblImageWebSite, "lblImageWebSite")
+        Me.lblImageWebSite.Name = "lblImageWebSite"
+        '
         'cmbLogin
         '
         Me.cmbLogin.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.DsSite1, "landings.login", True))
@@ -547,33 +574,6 @@ Public Class frmLandings
         '
         resources.ApplyResources(Me.OFDPicture, "OFDPicture")
         '
-        'lblImageWebSite
-        '
-        resources.ApplyResources(Me.lblImageWebSite, "lblImageWebSite")
-        Me.lblImageWebSite.Name = "lblImageWebSite"
-        '
-        'lblImageiPhone
-        '
-        resources.ApplyResources(Me.lblImageiPhone, "lblImageiPhone")
-        Me.lblImageiPhone.Name = "lblImageiPhone"
-        '
-        'imgLandingiPhone
-        '
-        resources.ApplyResources(Me.imgLandingiPhone, "imgLandingiPhone")
-        Me.imgLandingiPhone.Name = "imgLandingiPhone"
-        Me.imgLandingiPhone.Properties.ShowMenu = False
-        '
-        'lblImageiPad
-        '
-        resources.ApplyResources(Me.lblImageiPad, "lblImageiPad")
-        Me.lblImageiPad.Name = "lblImageiPad"
-        '
-        'imgLandingiPad
-        '
-        resources.ApplyResources(Me.imgLandingiPad, "imgLandingiPad")
-        Me.imgLandingiPad.Name = "imgLandingiPad"
-        Me.imgLandingiPad.Properties.ShowMenu = False
-        '
         'frmLandings
         '
         resources.ApplyResources(Me, "$this")
@@ -604,6 +604,8 @@ Public Class frmLandings
         Me.XtraTabControlTheme.ResumeLayout(False)
         Me.tabDetail.ResumeLayout(False)
         Me.tabDetail.PerformLayout()
+        CType(Me.imgLandingiPad.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imgLandingiPhone.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbLogin.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtExpiratedDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtExpiratedDate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -616,8 +618,6 @@ Public Class frmLandings
         CType(Me.cmbKindEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtLandingId_edit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTitleEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.imgLandingiPhone.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.imgLandingiPad.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -852,6 +852,8 @@ Public Class frmLandings
         loadInfo()
         ChangeStep(StepForm.LOAD)
         RefreshPicture(imgLanding, TxtLandingId_edit.EditValue, DVDPostBuziness.clsPicture.TypePicture.landings)
+        RefreshPicture(imgLandingiPhone, TxtLandingId_edit.EditValue, DVDPostBuziness.clsPicture.TypePicture.landingsiphone)
+        RefreshPicture(imgLandingiPad, TxtLandingId_edit.EditValue, DVDPostBuziness.clsPicture.TypePicture.landingsipad)
     End Sub
 
     Private Sub loadInfo()
@@ -935,7 +937,7 @@ Public Class frmLandings
 
 
         If AddPicture(DVDPostBuziness.clsPicture.TypePicture.landings) Then
-            RefreshPicture(imgLanding, TxtLandingId.EditValue, DVDPostBuziness.clsPicture.TypePicture.landings)
+            RefreshPicture(imgLanding, TxtLandingId_edit.EditValue, DVDPostBuziness.clsPicture.TypePicture.landings)
         End If
     End Sub
     Private Sub RefreshPicture(ByVal img As DevExpress.XtraEditors.PictureEdit, ByVal landingId As Integer, ByVal tp_picture As DVDPostBuziness.clsPicture.TypePicture)
@@ -980,7 +982,7 @@ Public Class frmLandings
             If Not Directory.Exists(FilePictureDestination.DirectoryName) Then
                 Directory.CreateDirectory(FilePictureDestination.DirectoryName)
             End If
-
+            File.Decrypt(pathPictureSource)
             File.Copy(pathPictureSource, FilePictureDestination.FullName, True)
             Return True
 
@@ -1039,13 +1041,13 @@ Public Class frmLandings
 
     Private Sub imgLandingiPhone_DoubleClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles imgLandingiPhone.DoubleClick
         If AddPicture(DVDPostBuziness.clsPicture.TypePicture.landingsiphone) Then
-            RefreshPicture(imgLanding, TxtLandingId.EditValue, DVDPostBuziness.clsPicture.TypePicture.landingsiphone)
+            RefreshPicture(imgLandingiPhone, TxtLandingId_edit.EditValue, DVDPostBuziness.clsPicture.TypePicture.landingsiphone)
         End If
     End Sub
 
     Private Sub imgLandingiPad_DoubleClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles imgLandingiPad.DoubleClick
         If AddPicture(DVDPostBuziness.clsPicture.TypePicture.landingsipad) Then
-            RefreshPicture(imgLanding, TxtLandingId.EditValue, DVDPostBuziness.clsPicture.TypePicture.landingsipad)
+            RefreshPicture(imgLandingiPad, TxtLandingId_edit.EditValue, DVDPostBuziness.clsPicture.TypePicture.landingsipad)
         End If
     End Sub
 End Class

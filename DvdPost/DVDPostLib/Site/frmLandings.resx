@@ -117,41 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;GroupSearch.Name" xml:space="preserve">
-    <value>GroupSearch</value>
-  </data>
-  <data name="&gt;&gt;GroupSearch.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.GroupControl, DevExpress.Utils.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
-  </data>
-  <data name="&gt;&gt;GroupSearch.Parent" xml:space="preserve">
-    <value>tabSearch</value>
-  </data>
-  <data name="&gt;&gt;GroupSearch.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="tabSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1183, 805</value>
-  </data>
-  <data name="tabSearch.Text" xml:space="preserve">
-    <value>Search</value>
-  </data>
-  <data name="&gt;&gt;tabSearch.Name" xml:space="preserve">
-    <value>tabSearch</value>
-  </data>
-  <data name="&gt;&gt;tabSearch.Type" xml:space="preserve">
-    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
-  </data>
-  <data name="&gt;&gt;tabSearch.Parent" xml:space="preserve">
-    <value>XtraTabControlTheme</value>
-  </data>
-  <data name="&gt;&gt;tabSearch.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="GroupSearch.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowOnly</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnPublicBeta.Location" type="System.Drawing.Point, System.Drawing">
     <value>437, 212</value>
   </data>
@@ -469,35 +439,23 @@
   <data name="&gt;&gt;GroupSearch.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;GridLandings.Name" xml:space="preserve">
-    <value>GridLandings</value>
-  </data>
-  <data name="&gt;&gt;GridLandings.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.GridControl, DevExpress.XtraGrid.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
-  </data>
-  <data name="&gt;&gt;GridLandings.Parent" xml:space="preserve">
-    <value>tabResult</value>
-  </data>
-  <data name="&gt;&gt;GridLandings.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tabResult.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="tabSearch.Size" type="System.Drawing.Size, System.Drawing">
     <value>1183, 805</value>
   </data>
-  <data name="tabResult.Text" xml:space="preserve">
-    <value>Result</value>
+  <data name="tabSearch.Text" xml:space="preserve">
+    <value>Search</value>
   </data>
-  <data name="&gt;&gt;tabResult.Name" xml:space="preserve">
-    <value>tabResult</value>
+  <data name="&gt;&gt;tabSearch.Name" xml:space="preserve">
+    <value>tabSearch</value>
   </data>
-  <data name="&gt;&gt;tabResult.Type" xml:space="preserve">
+  <data name="&gt;&gt;tabSearch.Type" xml:space="preserve">
     <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
   </data>
-  <data name="&gt;&gt;tabResult.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tabSearch.Parent" xml:space="preserve">
     <value>XtraTabControlTheme</value>
   </data>
-  <data name="&gt;&gt;tabResult.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;tabSearch.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="GridLandings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -543,6 +501,24 @@
   </data>
   <data name="&gt;&gt;GridLandings.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="tabResult.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1183, 805</value>
+  </data>
+  <data name="tabResult.Text" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="&gt;&gt;tabResult.Name" xml:space="preserve">
+    <value>tabResult</value>
+  </data>
+  <data name="&gt;&gt;tabResult.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;tabResult.Parent" xml:space="preserve">
+    <value>XtraTabControlTheme</value>
+  </data>
+  <data name="&gt;&gt;tabResult.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <metadata name="DsSite1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>274, 17</value>
@@ -1533,7 +1509,7 @@
     <value>DsSite1</value>
   </data>
   <data name="&gt;&gt;DsSite1.Type" xml:space="preserve">
-    <value>DVDPostLib.DsSite, DVDPostLib, Version=2.0.4421.2, Culture=neutral, PublicKeyToken=null</value>
+    <value>DVDPostLib.DsSite, DVDPostLib, Version=2.0.4421.18, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;OFDPicture.Name" xml:space="preserve">
     <value>OFDPicture</value>
