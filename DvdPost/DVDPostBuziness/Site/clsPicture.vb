@@ -13,6 +13,8 @@ Public Class clsPicture
         surveys
         survey_detail
         home_page
+        landingsiphone
+        landingsipad
     End Enum
 
     Public Shared Function GetExtension(ByVal tp As TypePicture) As String

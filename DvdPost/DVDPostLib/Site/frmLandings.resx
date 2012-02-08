@@ -117,16 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;GroupSearch.Name" xml:space="preserve">
+    <value>GroupSearch</value>
+  </data>
+  <data name="&gt;&gt;GroupSearch.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.GroupControl, DevExpress.Utils.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;GroupSearch.Parent" xml:space="preserve">
+    <value>tabSearch</value>
+  </data>
+  <data name="&gt;&gt;GroupSearch.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="tabSearch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1183, 805</value>
+  </data>
+  <data name="tabSearch.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="&gt;&gt;tabSearch.Name" xml:space="preserve">
+    <value>tabSearch</value>
+  </data>
+  <data name="&gt;&gt;tabSearch.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;tabSearch.Parent" xml:space="preserve">
+    <value>XtraTabControlTheme</value>
+  </data>
+  <data name="&gt;&gt;tabSearch.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="GroupSearch.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowOnly</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnPublicBeta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>524, 245</value>
+    <value>437, 212</value>
   </data>
   <data name="btnPublicBeta.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 51</value>
+    <value>94, 45</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnPublicBeta.TabIndex" type="System.Int32, mscorlib">
@@ -148,10 +178,10 @@
     <value>0</value>
   </data>
   <data name="btnPublicProd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>395, 245</value>
+    <value>329, 212</value>
   </data>
   <data name="btnPublicProd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 51</value>
+    <value>94, 45</value>
   </data>
   <data name="btnPublicProd.TabIndex" type="System.Int32, mscorlib">
     <value>59</value>
@@ -172,10 +202,10 @@
     <value>1</value>
   </data>
   <data name="btnPrivateBeta.Location" type="System.Drawing.Point, System.Drawing">
-    <value>266, 245</value>
+    <value>222, 212</value>
   </data>
   <data name="btnPrivateBeta.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 51</value>
+    <value>94, 45</value>
   </data>
   <data name="btnPrivateBeta.TabIndex" type="System.Int32, mscorlib">
     <value>58</value>
@@ -196,10 +226,10 @@
     <value>2</value>
   </data>
   <data name="btnPrivateProd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>123, 245</value>
+    <value>102, 212</value>
   </data>
   <data name="btnPrivateProd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 51</value>
+    <value>95, 45</value>
   </data>
   <data name="btnPrivateProd.TabIndex" type="System.Int32, mscorlib">
     <value>57</value>
@@ -220,7 +250,7 @@
     <value>3</value>
   </data>
   <data name="cmbKind.Location" type="System.Drawing.Point, System.Drawing">
-    <value>186, 120</value>
+    <value>155, 104</value>
   </data>
   <assembly alias="DevExpress.Utils.v8.1" name="DevExpress.Utils.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
   <data name="cmbKind.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v8.1">
@@ -230,7 +260,7 @@
     <value />
   </data>
   <data name="cmbKind.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 22</value>
+    <value>94, 20</value>
   </data>
   <data name="cmbKind.TabIndex" type="System.Int32, mscorlib">
     <value>56</value>
@@ -248,10 +278,10 @@
     <value>4</value>
   </data>
   <data name="lblKind.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 126</value>
+    <value>5, 109</value>
   </data>
   <data name="lblKind.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 16</value>
+    <value>20, 13</value>
   </data>
   <data name="lblKind.TabIndex" type="System.Int32, mscorlib">
     <value>55</value>
@@ -275,10 +305,10 @@
     <value />
   </data>
   <data name="TxtLandingId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>186, 36</value>
+    <value>155, 31</value>
   </data>
   <data name="TxtLandingId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
+    <value>161, 20</value>
   </data>
   <data name="TxtLandingId.TabIndex" type="System.Int32, mscorlib">
     <value>52</value>
@@ -296,10 +326,10 @@
     <value>6</value>
   </data>
   <data name="btnNewTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>446, 39</value>
+    <value>372, 34</value>
   </data>
   <data name="btnNewTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 27</value>
+    <value>75, 23</value>
   </data>
   <data name="btnNewTheme.TabIndex" type="System.Int32, mscorlib">
     <value>53</value>
@@ -320,10 +350,10 @@
     <value>7</value>
   </data>
   <data name="lblEventThemeId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 39</value>
+    <value>5, 34</value>
   </data>
   <data name="lblEventThemeId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>12, 16</value>
+    <value>11, 13</value>
   </data>
   <data name="lblEventThemeId.TabIndex" type="System.Int32, mscorlib">
     <value>44</value>
@@ -344,10 +374,10 @@
     <value>8</value>
   </data>
   <data name="btnSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 245</value>
+    <value>5, 212</value>
   </data>
   <data name="btnSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 51</value>
+    <value>75, 45</value>
   </data>
   <data name="btnSearch.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
@@ -368,10 +398,10 @@
     <value>9</value>
   </data>
   <data name="lblTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 78</value>
+    <value>5, 68</value>
   </data>
   <data name="lblTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 16</value>
+    <value>18, 13</value>
   </data>
   <data name="lblTitle.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -395,10 +425,10 @@
     <value />
   </data>
   <data name="txtTitle.Location" type="System.Drawing.Point, System.Drawing">
-    <value>186, 75</value>
+    <value>155, 65</value>
   </data>
   <data name="txtTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>193, 22</value>
+    <value>161, 20</value>
   </data>
   <data name="txtTitle.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
@@ -416,10 +446,10 @@
     <value>11</value>
   </data>
   <data name="GroupSearch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 29</value>
+    <value>23, 25</value>
   </data>
   <data name="GroupSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>788, 301</value>
+    <value>657, 261</value>
   </data>
   <data name="GroupSearch.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -439,23 +469,35 @@
   <data name="&gt;&gt;GroupSearch.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tabSearch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1183, 797</value>
+  <data name="&gt;&gt;GridLandings.Name" xml:space="preserve">
+    <value>GridLandings</value>
   </data>
-  <data name="tabSearch.Text" xml:space="preserve">
-    <value>Search</value>
+  <data name="&gt;&gt;GridLandings.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.GridControl, DevExpress.XtraGrid.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
   </data>
-  <data name="&gt;&gt;tabSearch.Name" xml:space="preserve">
-    <value>tabSearch</value>
+  <data name="&gt;&gt;GridLandings.Parent" xml:space="preserve">
+    <value>tabResult</value>
   </data>
-  <data name="&gt;&gt;tabSearch.Type" xml:space="preserve">
+  <data name="&gt;&gt;GridLandings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabResult.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1183, 805</value>
+  </data>
+  <data name="tabResult.Text" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="&gt;&gt;tabResult.Name" xml:space="preserve">
+    <value>tabResult</value>
+  </data>
+  <data name="&gt;&gt;tabResult.Type" xml:space="preserve">
     <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
   </data>
-  <data name="&gt;&gt;tabSearch.Parent" xml:space="preserve">
+  <data name="&gt;&gt;tabResult.Parent" xml:space="preserve">
     <value>XtraTabControlTheme</value>
   </data>
-  <data name="&gt;&gt;tabSearch.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;tabResult.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="GridLandings.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -485,7 +527,7 @@
     <value />
   </data>
   <data name="GridLandings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1183, 797</value>
+    <value>1183, 805</value>
   </data>
   <data name="GridLandings.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -502,26 +544,8 @@
   <data name="&gt;&gt;GridLandings.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tabResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1183, 797</value>
-  </data>
-  <data name="tabResult.Text" xml:space="preserve">
-    <value>Result</value>
-  </data>
-  <data name="&gt;&gt;tabResult.Name" xml:space="preserve">
-    <value>tabResult</value>
-  </data>
-  <data name="&gt;&gt;tabResult.Type" xml:space="preserve">
-    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
-  </data>
-  <data name="&gt;&gt;tabResult.Parent" xml:space="preserve">
-    <value>XtraTabControlTheme</value>
-  </data>
-  <data name="&gt;&gt;tabResult.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <metadata name="DsSite1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>314, 17</value>
+    <value>274, 17</value>
   </metadata>
   <data name="chkSelected.Location" type="System.Drawing.Point, System.Drawing">
     <value>153, 142</value>
@@ -560,10 +584,10 @@
     <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
   </data>
   <metadata name="ContextMenu1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>161, 17</value>
+    <value>142, 17</value>
   </metadata>
   <data name="ContextMenu1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 28</value>
+    <value>101, 26</value>
   </data>
   <data name="&gt;&gt;ContextMenu1.Name" xml:space="preserve">
     <value>ContextMenu1</value>
@@ -575,16 +599,130 @@
     <value>Fill</value>
   </data>
   <data name="XtraTabControlTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 35</value>
+    <value>0, 30</value>
   </data>
   <data name="XtraTabControlTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1192, 831</value>
+    <value>1192, 836</value>
   </data>
   <data name="XtraTabControlTheme.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
+  <data name="lblImageiPad.Location" type="System.Drawing.Point, System.Drawing">
+    <value>498, 327</value>
+  </data>
+  <data name="lblImageiPad.Size" type="System.Drawing.Size, System.Drawing">
+    <value>39, 13</value>
+  </data>
+  <data name="lblImageiPad.TabIndex" type="System.Int32, mscorlib">
+    <value>161</value>
+  </data>
+  <data name="lblImageiPad.Text" xml:space="preserve">
+    <value>For iPad</value>
+  </data>
+  <data name="&gt;&gt;lblImageiPad.Name" xml:space="preserve">
+    <value>lblImageiPad</value>
+  </data>
+  <data name="&gt;&gt;lblImageiPad.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;lblImageiPad.Parent" xml:space="preserve">
+    <value>tabDetail</value>
+  </data>
+  <data name="&gt;&gt;lblImageiPad.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="imgLandingiPad.Location" type="System.Drawing.Point, System.Drawing">
+    <value>498, 357</value>
+  </data>
+  <data name="imgLandingiPad.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 120</value>
+  </data>
+  <data name="imgLandingiPad.TabIndex" type="System.Int32, mscorlib">
+    <value>160</value>
+  </data>
+  <data name="&gt;&gt;imgLandingiPad.Name" xml:space="preserve">
+    <value>imgLandingiPad</value>
+  </data>
+  <data name="&gt;&gt;imgLandingiPad.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.PictureEdit, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;imgLandingiPad.Parent" xml:space="preserve">
+    <value>tabDetail</value>
+  </data>
+  <data name="&gt;&gt;imgLandingiPad.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblImageiPhone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>273, 327</value>
+  </data>
+  <data name="lblImageiPhone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 13</value>
+  </data>
+  <data name="lblImageiPhone.TabIndex" type="System.Int32, mscorlib">
+    <value>159</value>
+  </data>
+  <data name="lblImageiPhone.Text" xml:space="preserve">
+    <value>For iPhone</value>
+  </data>
+  <data name="&gt;&gt;lblImageiPhone.Name" xml:space="preserve">
+    <value>lblImageiPhone</value>
+  </data>
+  <data name="&gt;&gt;lblImageiPhone.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;lblImageiPhone.Parent" xml:space="preserve">
+    <value>tabDetail</value>
+  </data>
+  <data name="&gt;&gt;lblImageiPhone.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="imgLandingiPhone.Location" type="System.Drawing.Point, System.Drawing">
+    <value>273, 357</value>
+  </data>
+  <data name="imgLandingiPhone.Size" type="System.Drawing.Size, System.Drawing">
+    <value>186, 120</value>
+  </data>
+  <data name="imgLandingiPhone.TabIndex" type="System.Int32, mscorlib">
+    <value>158</value>
+  </data>
+  <data name="&gt;&gt;imgLandingiPhone.Name" xml:space="preserve">
+    <value>imgLandingiPhone</value>
+  </data>
+  <data name="&gt;&gt;imgLandingiPhone.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.PictureEdit, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;imgLandingiPhone.Parent" xml:space="preserve">
+    <value>tabDetail</value>
+  </data>
+  <data name="&gt;&gt;imgLandingiPhone.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblImageWebSite.Location" type="System.Drawing.Point, System.Drawing">
+    <value>41, 327</value>
+  </data>
+  <data name="lblImageWebSite.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 13</value>
+  </data>
+  <data name="lblImageWebSite.TabIndex" type="System.Int32, mscorlib">
+    <value>157</value>
+  </data>
+  <data name="lblImageWebSite.Text" xml:space="preserve">
+    <value>For Web Site</value>
+  </data>
+  <data name="&gt;&gt;lblImageWebSite.Name" xml:space="preserve">
+    <value>lblImageWebSite</value>
+  </data>
+  <data name="&gt;&gt;lblImageWebSite.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;lblImageWebSite.Parent" xml:space="preserve">
+    <value>tabDetail</value>
+  </data>
+  <data name="&gt;&gt;lblImageWebSite.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="cmbLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>548, 204</value>
+    <value>457, 177</value>
   </data>
   <data name="cmbLogin.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v8.1">
     <value>Combo</value>
@@ -593,7 +731,7 @@
     <value />
   </data>
   <data name="cmbLogin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
+    <value>100, 20</value>
   </data>
   <data name="cmbLogin.TabIndex" type="System.Int32, mscorlib">
     <value>156</value>
@@ -608,16 +746,16 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;cmbLogin.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>5</value>
   </data>
   <data name="txtExpiratedDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>193, 294</value>
+    <value>161, 255</value>
   </data>
   <data name="txtExpiratedDate.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v8.1">
     <value>Combo</value>
   </data>
   <data name="txtExpiratedDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>145, 22</value>
+    <value>121, 20</value>
   </data>
   <data name="txtExpiratedDate.TabIndex" type="System.Int32, mscorlib">
     <value>155</value>
@@ -632,13 +770,13 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;txtExpiratedDate.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>6</value>
   </data>
   <data name="imgLanding.Location" type="System.Drawing.Point, System.Drawing">
-    <value>115, 377</value>
+    <value>41, 357</value>
   </data>
   <data name="imgLanding.Size" type="System.Drawing.Size, System.Drawing">
-    <value>223, 139</value>
+    <value>186, 120</value>
   </data>
   <data name="imgLanding.TabIndex" type="System.Int32, mscorlib">
     <value>154</value>
@@ -653,7 +791,7 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;imgLanding.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>7</value>
   </data>
   <data name="txtReference.EditValue" xml:space="preserve">
     <value />
@@ -662,10 +800,10 @@
     <value>False</value>
   </data>
   <data name="txtReference.Location" type="System.Drawing.Point, System.Drawing">
-    <value>548, 125</value>
+    <value>457, 108</value>
   </data>
   <data name="txtReference.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 22</value>
+    <value>185, 20</value>
   </data>
   <data name="txtReference.TabIndex" type="System.Int32, mscorlib">
     <value>153</value>
@@ -680,13 +818,13 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;txtReference.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>8</value>
   </data>
   <data name="lblReference.Location" type="System.Drawing.Point, System.Drawing">
-    <value>459, 132</value>
+    <value>382, 114</value>
   </data>
   <data name="lblReference.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 16</value>
+    <value>50, 13</value>
   </data>
   <data name="lblReference.TabIndex" type="System.Int32, mscorlib">
     <value>152</value>
@@ -704,16 +842,16 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;lblReference.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>9</value>
   </data>
   <data name="spnOrdered.EditValue" type="System.Decimal, mscorlib">
     <value>0</value>
   </data>
   <data name="spnOrdered.Location" type="System.Drawing.Point, System.Drawing">
-    <value>548, 251</value>
+    <value>457, 218</value>
   </data>
   <data name="spnOrdered.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 22</value>
+    <value>60, 20</value>
   </data>
   <data name="spnOrdered.TabIndex" type="System.Int32, mscorlib">
     <value>151</value>
@@ -728,13 +866,13 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;spnOrdered.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>10</value>
   </data>
   <data name="lblOrdered.Location" type="System.Drawing.Point, System.Drawing">
-    <value>459, 256</value>
+    <value>382, 222</value>
   </data>
   <data name="lblOrdered.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 16</value>
+    <value>38, 13</value>
   </data>
   <data name="lblOrdered.TabIndex" type="System.Int32, mscorlib">
     <value>150</value>
@@ -752,13 +890,13 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;lblOrdered.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>11</value>
   </data>
   <data name="lblLogin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>459, 206</value>
+    <value>382, 179</value>
   </data>
   <data name="lblLogin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 16</value>
+    <value>25, 13</value>
   </data>
   <data name="lblLogin.TabIndex" type="System.Int32, mscorlib">
     <value>148</value>
@@ -776,13 +914,13 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;lblLogin.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>12</value>
   </data>
   <data name="cmbActifEN.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="cmbActifEN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>193, 253</value>
+    <value>161, 219</value>
   </data>
   <data name="cmbActifEN.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -794,7 +932,7 @@
     <value />
   </data>
   <data name="cmbActifEN.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 22</value>
+    <value>120, 20</value>
   </data>
   <data name="cmbActifEN.TabIndex" type="System.Int32, mscorlib">
     <value>147</value>
@@ -809,16 +947,16 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;cmbActifEN.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>13</value>
   </data>
   <data name="lblActifEN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 256</value>
+    <value>41, 222</value>
   </data>
   <data name="lblActifEN.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
   <data name="lblActifEN.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 16</value>
+    <value>38, 13</value>
   </data>
   <data name="lblActifEN.TabIndex" type="System.Int32, mscorlib">
     <value>146</value>
@@ -836,13 +974,13 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;lblActifEN.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>14</value>
   </data>
   <data name="cmbActifNL.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="cmbActifNL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>193, 204</value>
+    <value>161, 177</value>
   </data>
   <data name="cmbActifNL.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -854,7 +992,7 @@
     <value />
   </data>
   <data name="cmbActifNL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 22</value>
+    <value>120, 20</value>
   </data>
   <data name="cmbActifNL.TabIndex" type="System.Int32, mscorlib">
     <value>145</value>
@@ -869,16 +1007,16 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;cmbActifNL.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>15</value>
   </data>
   <data name="lblActifNL.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 207</value>
+    <value>41, 179</value>
   </data>
   <data name="lblActifNL.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
   <data name="lblActifNL.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 16</value>
+    <value>37, 13</value>
   </data>
   <data name="lblActifNL.TabIndex" type="System.Int32, mscorlib">
     <value>144</value>
@@ -896,13 +1034,13 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;lblActifNL.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>16</value>
   </data>
   <data name="cmbActifFr.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="cmbActifFr.Location" type="System.Drawing.Point, System.Drawing">
-    <value>193, 164</value>
+    <value>161, 142</value>
   </data>
   <data name="cmbActifFr.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -914,7 +1052,7 @@
     <value />
   </data>
   <data name="cmbActifFr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 22</value>
+    <value>120, 20</value>
   </data>
   <data name="cmbActifFr.TabIndex" type="System.Int32, mscorlib">
     <value>143</value>
@@ -929,16 +1067,16 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;cmbActifFr.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>17</value>
   </data>
   <data name="lblActifFR.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 167</value>
+    <value>41, 145</value>
   </data>
   <data name="lblActifFR.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
   <data name="lblActifFR.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 16</value>
+    <value>38, 13</value>
   </data>
   <data name="lblActifFR.TabIndex" type="System.Int32, mscorlib">
     <value>142</value>
@@ -956,10 +1094,10 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;lblActifFR.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>18</value>
   </data>
   <data name="cmbKindEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>548, 81</value>
+    <value>457, 70</value>
   </data>
   <data name="cmbKindEdit.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v8.1">
     <value>Combo</value>
@@ -968,7 +1106,7 @@
     <value />
   </data>
   <data name="cmbKindEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 22</value>
+    <value>120, 20</value>
   </data>
   <data name="cmbKindEdit.TabIndex" type="System.Int32, mscorlib">
     <value>137</value>
@@ -983,13 +1121,13 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;cmbKindEdit.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>19</value>
   </data>
   <data name="lblKindEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>463, 84</value>
+    <value>386, 73</value>
   </data>
   <data name="lblKindEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 16</value>
+    <value>20, 13</value>
   </data>
   <data name="lblKindEdit.TabIndex" type="System.Int32, mscorlib">
     <value>136</value>
@@ -1007,13 +1145,13 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;lblKindEdit.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>20</value>
   </data>
   <data name="lblDateExpirated.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 297</value>
+    <value>41, 257</value>
   </data>
   <data name="lblDateExpirated.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 16</value>
+    <value>72, 13</value>
   </data>
   <data name="lblDateExpirated.TabIndex" type="System.Int32, mscorlib">
     <value>132</value>
@@ -1031,13 +1169,13 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;lblDateExpirated.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>21</value>
   </data>
   <data name="lblId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 87</value>
+    <value>41, 75</value>
   </data>
   <data name="lblId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>11, 16</value>
+    <value>10, 13</value>
   </data>
   <data name="lblId.TabIndex" type="System.Int32, mscorlib">
     <value>125</value>
@@ -1055,13 +1193,13 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;lblId.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>22</value>
   </data>
   <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>364, 20</value>
+    <value>303, 17</value>
   </data>
   <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 26</value>
+    <value>75, 23</value>
   </data>
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
     <value>118</value>
@@ -1079,13 +1217,13 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>23</value>
   </data>
   <data name="btnSaveTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>248, 20</value>
+    <value>207, 17</value>
   </data>
   <data name="btnSaveTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 26</value>
+    <value>75, 23</value>
   </data>
   <data name="btnSaveTheme.TabIndex" type="System.Int32, mscorlib">
     <value>117</value>
@@ -1103,13 +1241,13 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;btnSaveTheme.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>24</value>
   </data>
   <data name="btnEditTheme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 20</value>
+    <value>104, 17</value>
   </data>
   <data name="btnEditTheme.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 26</value>
+    <value>75, 23</value>
   </data>
   <data name="btnEditTheme.TabIndex" type="System.Int32, mscorlib">
     <value>123</value>
@@ -1127,13 +1265,13 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;btnEditTheme.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>25</value>
   </data>
   <data name="btnNewTheme_edit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 20</value>
+    <value>9, 17</value>
   </data>
   <data name="btnNewTheme_edit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 26</value>
+    <value>75, 23</value>
   </data>
   <data name="btnNewTheme_edit.TabIndex" type="System.Int32, mscorlib">
     <value>124</value>
@@ -1151,7 +1289,7 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;btnNewTheme_edit.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>26</value>
   </data>
   <data name="TxtLandingId_edit.EditValue" xml:space="preserve">
     <value />
@@ -1160,10 +1298,10 @@
     <value>False</value>
   </data>
   <data name="TxtLandingId_edit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>193, 84</value>
+    <value>161, 73</value>
   </data>
   <data name="TxtLandingId_edit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 22</value>
+    <value>65, 20</value>
   </data>
   <data name="TxtLandingId_edit.TabIndex" type="System.Int32, mscorlib">
     <value>115</value>
@@ -1178,7 +1316,7 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;TxtLandingId_edit.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>27</value>
   </data>
   <data name="txtTitleEdit.EditValue" xml:space="preserve">
     <value />
@@ -1187,10 +1325,10 @@
     <value>False</value>
   </data>
   <data name="txtTitleEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>193, 129</value>
+    <value>161, 112</value>
   </data>
   <data name="txtTitleEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>222, 22</value>
+    <value>185, 20</value>
   </data>
   <data name="txtTitleEdit.TabIndex" type="System.Int32, mscorlib">
     <value>114</value>
@@ -1205,13 +1343,13 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;txtTitleEdit.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>28</value>
   </data>
   <data name="lblTitleEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 133</value>
+    <value>41, 115</value>
   </data>
   <data name="lblTitleEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 16</value>
+    <value>20, 13</value>
   </data>
   <data name="lblTitleEdit.TabIndex" type="System.Int32, mscorlib">
     <value>113</value>
@@ -1229,10 +1367,10 @@
     <value>tabDetail</value>
   </data>
   <data name="&gt;&gt;lblTitleEdit.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>29</value>
   </data>
   <data name="tabDetail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1183, 797</value>
+    <value>1183, 805</value>
   </data>
   <data name="tabDetail.Text" xml:space="preserve">
     <value>detail</value>
@@ -1262,7 +1400,7 @@
     <value>0</value>
   </data>
   <metadata name="OFDPicture.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>417, 17</value>
+    <value>366, 17</value>
   </metadata>
   <data name="OFDPicture.Filter" xml:space="preserve">
     <value>JPEG|*.jpg</value>
@@ -1274,7 +1412,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleBaseSize" type="System.Drawing.Size, System.Drawing">
-    <value>6, 15</value>
+    <value>5, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1192, 866</value>
@@ -1395,7 +1533,7 @@
     <value>DsSite1</value>
   </data>
   <data name="&gt;&gt;DsSite1.Type" xml:space="preserve">
-    <value>DVDPostLib.DsSite, DataSets.DsSite.Designer.vb, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>DVDPostLib.DsSite, DVDPostLib, Version=2.0.4421.2, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;OFDPicture.Name" xml:space="preserve">
     <value>OFDPicture</value>

@@ -86,7 +86,7 @@ Module UpdateStart
             If Not ex.InnerException Is Nothing Then
                 s = ex.InnerException.Message
             End If
-            System.Windows.Forms.MessageBox.Show(ex.Message + " " + s, "Test1")
+            'System.Windows.Forms.MessageBox.Show(ex.Message + " " + s, "Test1")
 
             Return False
         End Try
