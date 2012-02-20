@@ -136,7 +136,7 @@ Public Class clsActivationCode
               " , abo_dvd_credit = " & DVDCredit & _
               " , abo_dvd_remain = " & DVDRemain & _
               " , next_discount = " & nextDiscountCodeId & _
-              " , abo_auto_stop_next_reconduction = " & chkAuto_Stop_at_Next_Reconduction & _
+              " , abo_auto_stop_next_reconduction = " & Math.Abs(chkAuto_Stop_at_Next_Reconduction) & _
               " , banner = '" & banner & "' " & _
               " , activation_text_fr = '" & txtDescFR & "' " & _
               " , activation_text_nl = '" & txtDescNL & "' " & _

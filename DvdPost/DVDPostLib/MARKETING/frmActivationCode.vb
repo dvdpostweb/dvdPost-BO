@@ -164,6 +164,10 @@ Public Class frmActivationCode
     'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
     'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
     'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
     Friend WithEvents txtComment As DevExpress.XtraEditors.TextEdit
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container

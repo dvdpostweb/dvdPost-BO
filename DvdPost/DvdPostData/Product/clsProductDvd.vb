@@ -150,6 +150,7 @@ Public Class clsProductDvd
         ",(select count(*) from wishlist ww join products p on ww.product_id = p.products_id where ww.customers_id = w.customers_id and p.products_next = 0 and p.products_series_id = 0) nb_dvdNorm " & _
         ",(select count(*) from wishlist ww join products p on ww.product_id = p.products_id where ww.customers_id = w.customers_id and p.products_next = 0 and p.products_series_id > 0) nb_dvdSeries " & _
         ",(select count(*) from wishlist ww join products p on ww.product_id = p.products_id where ww.customers_id = w.customers_id and p.products_next = 1) nb_dvdNext " & _
+        ",(select count(*) from vod_wishlists where customer_id = w.customers_id) nb_vodwishlist " & _
         ",(select count(*) from wishlist ww  join customers c on ww.customers_id = c.customers_id " & _
         "    where c.customers_abo = " & ClsCustomersData.abo.VALID & " and c.customers_abo_suspended <> " & ClsCustomersData.Suspended.RECONDUCTION & _
         "    and ww.product_id = " & products_id & " and ww.priority = 1) cutomers_high" & _

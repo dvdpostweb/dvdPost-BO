@@ -278,4 +278,18 @@ Public Class frmActorsBrowseMaint
         End Try
     End Sub
 
+    Overrides Sub SaveChanges(ByVal Sender As System.Object, ByVal e As System.EventArgs)
+        Try
+            MyBase.SaveChanges(Sender, e)
+        Catch ex As Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message & ". The duplicated entry won't be saved ! ")
+            Me.UndoChanges(Sender, e)
+        End Try
+        'MyBase.frm_Closing()
+        Me.Close()
+    End Sub
+
+    Overrides Sub frm_Closing(ByVal Sender As System.Object, ByVal e As System.ComponentModel.CancelEventArgs)
+        Me.Close()
+    End Sub
 End Class

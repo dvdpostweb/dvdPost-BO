@@ -982,7 +982,7 @@ Public Class frmLandings
             If Not Directory.Exists(FilePictureDestination.DirectoryName) Then
                 Directory.CreateDirectory(FilePictureDestination.DirectoryName)
             End If
-            File.Decrypt(pathPictureSource)
+            'File.Decrypt(pathPictureSource)
             File.Copy(pathPictureSource, FilePictureDestination.FullName, True)
             Return True
 

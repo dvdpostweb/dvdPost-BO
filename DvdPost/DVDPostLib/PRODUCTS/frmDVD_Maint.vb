@@ -5408,6 +5408,9 @@ Public Class frmDVD_Maint
             Me.UpdateDataSet()
             Me.objDS.products(0).products_last_modified = DateTime.Now
             Me.UpdateDataSet()
+            RefreshPictureFR()
+            RefreshPictureEN()
+            RefreshPictureNL()
             SetState(BrowseState)
             PopMenuNew.Enabled = True
             PopMenuEdit.Enabled = True
