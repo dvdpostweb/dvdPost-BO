@@ -6,6 +6,8 @@ Public Class ClsVod
         FILENAME
         AVAILABLE_FROM
         EXPIRE_AT
+        AVAILABLE_BACKCATALOGUE_FROM
+        EXPIRE_BACKKATALOGUE_AT
         AVAILABLE
         LANGUAGE
         SUBTITLE
@@ -189,7 +191,9 @@ Public Class ClsVod
                                         ByVal quality As String, _
                                         ByVal source As String, _
                                         ByVal support As Integer, _
-                                        ByVal credit As Integer) As String
+                                        ByVal credit As Integer, _
+                                        ByVal available_backcatalogue_from As Date, _
+                                        ByVal expire_backcatalogue_at As Date) As String
         Dim sql As String
         Dim strLanguageSubtitle As String
         Dim strlanguage As String
@@ -201,6 +205,8 @@ Public Class ClsVod
         Dim stravailable_from As String
         Dim strexpire_at As String
         Dim strfilename As String
+        Dim strBackcatalogue_from As String
+        Dim strBackcatalogue_expire As String
 
         If filename = "" Then
             strfilename = "null"
@@ -260,12 +266,26 @@ Public Class ClsVod
             strQuality = "'" & quality & "'"
         End If
 
+        If available_backcatalogue_from = Date.MinValue Then
+            strBackcatalogue_from = "null"
+        Else
+            strBackcatalogue_from = "'" & DVDPostTools.ClsDate.formatDateDB(available_backcatalogue_from) & "'"
+        End If
+
+        If expire_backcatalogue_at = Date.MinValue Then
+            strBackcatalogue_expire = "null"
+        Else
+            strBackcatalogue_expire = "'" & DVDPostTools.ClsDate.formatDateDB(expire_backcatalogue_at) & "'"
+        End If
+
 
         sql = "update streaming_products sp " & _
               " set filename = " & strfilename & "" & _
               ", available_from = " & stravailable_from & "" & _
               ", expire_at = " & strexpire_at & "" & _
               ", available = " & available & _
+              ", available_backcatalogue_from = " & strBackcatalogue_from & _
+              ", expire_backcatalogue_at = " & strBackcatalogue_expire & _
               ", language_id = " & strlanguage & _
               ", subtitle_id = " & strLanguageSubtitle & _
               ", updated_at = now()" & _
@@ -319,13 +339,17 @@ Public Class ClsVod
                                         ByVal quality As String, _
                                         ByVal source As String, _
                                         ByVal support As Integer, _
-                                        ByVal credit As Integer) As String
+                                        ByVal credit As Integer, _
+                                        ByVal available_backcatalogue_from As Date, _
+                                        ByVal expire_backcatalogue_at As Date) As String
         Dim sql As String
         Dim strLanguageSubtitle As String
         Dim strQuality As String
         Dim strlanguage As String
         Dim strStudio As String
         Dim strExpireAt As String
+        Dim strBackcatalogue_from As String
+        Dim strBackcatalogue_expire As String
 
         If language_id <= 0 Then
             strlanguage = "null"
@@ -357,8 +381,20 @@ Public Class ClsVod
             strExpireAt = "'" & DVDPostTools.ClsDate.formatDateDB(expire_at) & "'"
         End If
 
+        If available_backcatalogue_from = Date.MinValue Then
+            strBackcatalogue_from = "null"
+        Else
+            strBackcatalogue_from = "'" & DVDPostTools.ClsDate.formatDateDB(available_backcatalogue_from) & "'"
+        End If
+
+        If expire_backcatalogue_at = Date.MinValue Then
+            strBackcatalogue_expire = "null"
+        Else
+            strBackcatalogue_expire = "'" & DVDPostTools.ClsDate.formatDateDB(expire_backcatalogue_at) & "'"
+        End If
+
         sql = "insert into streaming_products values (null," & imdb_id & ",'" & filename & "','" & DVDPostTools.ClsDate.formatDateDB(available_from) & _
-              "'," & strExpireAt & "," & available & "," & strlanguage & "," & strLanguageSubtitle & ",now(),now()," & strStudio & ",'" & status & "'," & strQuality & ",'" & source & "'," & support & "," & credit & ")"
+              "'," & strExpireAt & ", " & strBackcatalogue_from & ", " & strBackcatalogue_expire & "," & available & "," & strlanguage & "," & strLanguageSubtitle & ",now(),now()," & strStudio & ",'" & status & "'," & strQuality & ",'" & source & "'," & support & "," & credit & ")"
         Return sql
     End Function
 
@@ -385,6 +421,14 @@ Public Class ClsVod
 
         Return sql
     End Function
+    Public Shared Function UpdateSoonVod() As String
+        Dim sql As String
+        sql = " update products p join streaming_products sp on p.imdb_id = sp.imdb_id " & _
+              " set p.vod_next = 0" & _
+              " where p.vod_next = 1 and sp.status = 'online_test_ok' and sp.available = 1 and  sp.available_from < sysdate() and ( sysdate() < sp.expire_at or sp.expire_at is null ) "
+        Return sql
+    End Function
+
     Public Shared Function GetEnumMysqlQuality() As String
         Dim sql As String
         sql = "SHOW COLUMNS FROM streaming_products LIKE 'quality' "

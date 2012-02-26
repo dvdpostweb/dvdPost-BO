@@ -16,4 +16,12 @@ Public Class ClsVod
         DvdPostData.clsConnection.ExecuteNonQuery(sql)
     End Sub
 
+    Public Shared Sub UpdateSoonVod()
+
+        Dim sql As String
+
+        sql = DvdPostData.ClsVod.UpdateSoonVod()
+        DvdPostData.clsConnection.ExecuteNonQuery(sql)
+    End Sub
+
 End Class

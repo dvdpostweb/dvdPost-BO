@@ -92,6 +92,7 @@ Module start
                 DVDPostBuziness.ClsVod.InsertStatVod()
                 clscust.UpdateDvd_at_Home()
                 DVDPostBuziness.ClsVod.UpdateVodCreditsAfterStartPeriod()
+                DVDPostBuziness.ClsVod.UpdateSoonVod()
 
             Else
                 Console.WriteLine("Error Argument")

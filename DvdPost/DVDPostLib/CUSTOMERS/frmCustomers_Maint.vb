@@ -11054,7 +11054,11 @@ End Sub
     Public Sub LoadCustomerInfo()
         _loadInfo = True
 
+        objDS.Tables("address_book_all").Clear()
+        objDS.Tables("customer_attributes").Clear()
         objDS.Tables("customers").Clear()
+
+
         MainData = New ClsCustomersInfo.clsCustomer(SessionInfo, objDS, _CurrentCustomerID)
         Dim lst_dr() As DataRow = objDS.Tables("User_dvdPost").Select("customers_id = " & _CurrentCustomerID)
         DvdPostData.clsSession.isDVDPostUser = lst_dr.Length > 0

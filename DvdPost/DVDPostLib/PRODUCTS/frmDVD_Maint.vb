@@ -425,11 +425,13 @@ Public Class frmDVD_Maint
     Friend WithEvents txtSearchImdbId_serie As DevExpress.XtraEditors.TextEdit
     Friend WithEvents cmbInOut As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents chkVodNext As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents lblSearchProductID As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtSearchProductID As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl48 As DevExpress.XtraEditors.LabelControl
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Dim FilterCondition1 As DevExpress.XtraTreeList.FilterCondition = New DevExpress.XtraTreeList.FilterCondition
+        Dim FilterCondition2 As DevExpress.XtraTreeList.FilterCondition = New DevExpress.XtraTreeList.FilterCondition
+        Dim StyleFormatCondition3 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
         Dim StyleFormatCondition1 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
-        Dim StyleFormatCondition2 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
         Me.colcategory_selected = New DevExpress.XtraTreeList.Columns.TreeListColumn
         Me.chkSelectCategory = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
         Me.XTabControlProduct = New DevExpress.XtraTab.XtraTabControl
@@ -445,6 +447,8 @@ Public Class frmDVD_Maint
         Me.colproducts_name = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.colproducts_model = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl
+        Me.lblSearchProductID = New DevExpress.XtraEditors.LabelControl
+        Me.txtSearchProductID = New DevExpress.XtraEditors.TextEdit
         Me.lblImdbId_serie = New DevExpress.XtraEditors.LabelControl
         Me.txtSearchImdbId_serie = New DevExpress.XtraEditors.TextEdit
         Me.btnFindBarCode = New DevExpress.XtraEditors.SimpleButton
@@ -825,6 +829,7 @@ Public Class frmDVD_Maint
         CType(Me.cmbLanguages, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
+        CType(Me.txtSearchProductID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtSearchImdbId_serie.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtINFO.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtBarCode.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1187,6 +1192,8 @@ Public Class frmDVD_Maint
         'PanelControl2
         '
         Me.PanelControl2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
+        Me.PanelControl2.Controls.Add(Me.lblSearchProductID)
+        Me.PanelControl2.Controls.Add(Me.txtSearchProductID)
         Me.PanelControl2.Controls.Add(Me.lblImdbId_serie)
         Me.PanelControl2.Controls.Add(Me.txtSearchImdbId_serie)
         Me.PanelControl2.Controls.Add(Me.btnFindBarCode)
@@ -1206,9 +1213,24 @@ Public Class frmDVD_Maint
         Me.PanelControl2.Size = New System.Drawing.Size(1047, 134)
         Me.PanelControl2.TabIndex = 2
         '
+        'lblSearchProductID
+        '
+        Me.lblSearchProductID.Location = New System.Drawing.Point(440, 42)
+        Me.lblSearchProductID.Name = "lblSearchProductID"
+        Me.lblSearchProductID.Size = New System.Drawing.Size(56, 13)
+        Me.lblSearchProductID.TabIndex = 71
+        Me.lblSearchProductID.Text = "products_id"
+        '
+        'txtSearchProductID
+        '
+        Me.txtSearchProductID.Location = New System.Drawing.Point(505, 39)
+        Me.txtSearchProductID.Name = "txtSearchProductID"
+        Me.txtSearchProductID.Size = New System.Drawing.Size(111, 20)
+        Me.txtSearchProductID.TabIndex = 70
+        '
         'lblImdbId_serie
         '
-        Me.lblImdbId_serie.Location = New System.Drawing.Point(288, 42)
+        Me.lblImdbId_serie.Location = New System.Drawing.Point(248, 42)
         Me.lblImdbId_serie.Name = "lblImdbId_serie"
         Me.lblImdbId_serie.Size = New System.Drawing.Size(65, 13)
         Me.lblImdbId_serie.TabIndex = 69
@@ -1216,7 +1238,7 @@ Public Class frmDVD_Maint
         '
         'txtSearchImdbId_serie
         '
-        Me.txtSearchImdbId_serie.Location = New System.Drawing.Point(372, 39)
+        Me.txtSearchImdbId_serie.Location = New System.Drawing.Point(321, 39)
         Me.txtSearchImdbId_serie.Name = "txtSearchImdbId_serie"
         Me.txtSearchImdbId_serie.Size = New System.Drawing.Size(111, 20)
         Me.txtSearchImdbId_serie.TabIndex = 68
@@ -1283,7 +1305,7 @@ Public Class frmDVD_Maint
         '
         'txtSearchImdb_id
         '
-        Me.txtSearchImdb_id.Location = New System.Drawing.Point(144, 36)
+        Me.txtSearchImdb_id.Location = New System.Drawing.Point(128, 36)
         Me.txtSearchImdb_id.Name = "txtSearchImdb_id"
         Me.txtSearchImdb_id.Size = New System.Drawing.Size(112, 20)
         Me.txtSearchImdb_id.TabIndex = 11
@@ -1298,7 +1320,7 @@ Public Class frmDVD_Maint
         '
         'btnSearch
         '
-        Me.btnSearch.Location = New System.Drawing.Point(632, 8)
+        Me.btnSearch.Location = New System.Drawing.Point(652, 39)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(75, 23)
         Me.btnSearch.TabIndex = 9
@@ -1306,7 +1328,7 @@ Public Class frmDVD_Maint
         '
         'txtTitleSearch
         '
-        Me.txtTitleSearch.Location = New System.Drawing.Point(144, 8)
+        Me.txtTitleSearch.Location = New System.Drawing.Point(129, 8)
         Me.txtTitleSearch.Name = "txtTitleSearch"
         Me.txtTitleSearch.Size = New System.Drawing.Size(472, 20)
         Me.txtTitleSearch.TabIndex = 8
@@ -1726,6 +1748,19 @@ Public Class frmDVD_Maint
         Me.grpMain.TabIndex = 0
         Me.grpMain.Text = "General Info"
         '
+        'chkVodNext
+        '
+        Me.chkVodNext.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "products.vod_next", True))
+        Me.chkVodNext.EditValue = 0
+        Me.chkVodNext.Enabled = False
+        Me.chkVodNext.Location = New System.Drawing.Point(326, 391)
+        Me.chkVodNext.Name = "chkVodNext"
+        Me.chkVodNext.Properties.Caption = "Soon in VOD"
+        Me.chkVodNext.Properties.ValueChecked = 1
+        Me.chkVodNext.Properties.ValueUnchecked = 0
+        Me.chkVodNext.Size = New System.Drawing.Size(93, 19)
+        Me.chkVodNext.TabIndex = 54
+        '
         'cmbProducts_product_type
         '
         Me.cmbProducts_product_type.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "products.products_product_type", True))
@@ -1804,19 +1839,6 @@ Public Class frmDVD_Maint
         Me.chkInTheBags.Size = New System.Drawing.Size(93, 19)
         Me.chkInTheBags.TabIndex = 47
         Me.chkInTheBags.Visible = False
-        '
-        'chkVodNext
-        '
-        Me.chkVodNext.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "products.vod_next", True))
-        Me.chkVodNext.EditValue = 0
-        Me.chkVodNext.Enabled = False
-        Me.chkVodNext.Location = New System.Drawing.Point(326, 391)
-        Me.chkVodNext.Name = "chkVodNext"
-        Me.chkVodNext.Properties.Caption = "Soon in VOD"
-        Me.chkVodNext.Properties.ValueChecked = 1
-        Me.chkVodNext.Properties.ValueUnchecked = 0
-        Me.chkVodNext.Size = New System.Drawing.Size(93, 19)
-        Me.chkVodNext.TabIndex = 54
         '
         'chkInCinemaNow
         '
@@ -2878,11 +2900,11 @@ Public Class frmDVD_Maint
         Me.TreeListCategories.CustomizationFormBounds = New System.Drawing.Rectangle(960, 402, 208, 170)
         Me.TreeListCategories.DataSource = Me.objDS.categories_fr_view1
         Me.TreeListCategories.Dock = System.Windows.Forms.DockStyle.Fill
-        FilterCondition1.Column = Me.colcategory_selected
-        FilterCondition1.Condition = DevExpress.XtraTreeList.FilterConditionEnum.Equals
-        FilterCondition1.Value1 = True
-        FilterCondition1.Visible = True
-        Me.TreeListCategories.FilterConditions.AddRange(New DevExpress.XtraTreeList.FilterCondition() {FilterCondition1})
+        FilterCondition2.Column = Me.colcategory_selected
+        FilterCondition2.Condition = DevExpress.XtraTreeList.FilterConditionEnum.Equals
+        FilterCondition2.Value1 = True
+        FilterCondition2.Visible = True
+        Me.TreeListCategories.FilterConditions.AddRange(New DevExpress.XtraTreeList.FilterCondition() {FilterCondition2})
         Me.TreeListCategories.KeyFieldName = "categories_id"
         Me.TreeListCategories.Location = New System.Drawing.Point(2, 2)
         Me.TreeListCategories.Name = "TreeListCategories"
@@ -4494,7 +4516,7 @@ Public Class frmDVD_Maint
         'GridViewPrevision
         '
         Me.GridViewPrevision.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBandPrevision})
-        Me.GridViewPrevision.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition1})
+        Me.GridViewPrevision.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition3})
         Me.GridViewPrevision.GridControl = Me.GridPrevision
         Me.GridViewPrevision.Name = "GridViewPrevision"
         Me.GridViewPrevision.OptionsView.ShowFooter = True
@@ -4525,7 +4547,7 @@ Public Class frmDVD_Maint
         'gridViewWishlistCustomers
         '
         Me.gridViewWishlistCustomers.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand11})
-        Me.gridViewWishlistCustomers.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition2})
+        Me.gridViewWishlistCustomers.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition1})
         Me.gridViewWishlistCustomers.GridControl = Me.GridWishlistCustomers
         Me.gridViewWishlistCustomers.Name = "gridViewWishlistCustomers"
         Me.gridViewWishlistCustomers.OptionsBehavior.Editable = False
@@ -5009,6 +5031,7 @@ Public Class frmDVD_Maint
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
         Me.PanelControl2.PerformLayout()
+        CType(Me.txtSearchProductID.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtSearchImdbId_serie.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtINFO.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtBarCode.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -6053,6 +6076,7 @@ Public Class frmDVD_Maint
         Dim searchTitle As String = String.Empty
         Dim searchImdb As String = String.Empty
         Dim searchImdb_id_serie As String = String.Empty
+        Dim searchProducts_id As String = String.Empty
 
         If Not txtTitleSearch.EditValue Is Nothing AndAlso txtTitleSearch.EditValue <> "" Then
             searchTitle = " and products_name like '%" & txtTitleSearch.Text.Trim & "%'"
@@ -6065,10 +6089,15 @@ Public Class frmDVD_Maint
         If Not txtSearchImdbId_serie.EditValue Is Nothing AndAlso txtSearchImdbId_serie.EditValue <> "" Then
             searchImdb_id_serie = " and imdb_id_serie = " & txtSearchImdbId_serie.Text.Trim
         End If
+
+        If Not txtSearchProductID.EditValue Is Nothing AndAlso txtSearchProductID.EditValue <> "" Then
+            searchProducts_id = " and P.products_id = " & txtSearchProductID.Text.Trim
+        End If
+
         _SQLTxt = "SELECT PD.products_id, PD.language_id, PD.products_name , P.products_model as products_model " & _
                   " FROM products_description PD " & _
                   " Left join products P on P.products_id = PD.products_id " & _
-                  " where 1 = 1" & searchTitle & searchImdb & searchImdb_id_serie & _
+                  " where 1 = 1" & searchTitle & searchImdb & searchImdb_id_serie & searchProducts_id & _
                   " group by P.products_id "
         ' objDS.products_description1.Clear()
         ' DvdPostData.clsConnection.FillDataSet(objDS.products_description1, _SQLTxt)
