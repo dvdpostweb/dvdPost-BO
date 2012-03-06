@@ -522,7 +522,11 @@ Public Class clsProduct_DVD
     Public Sub SaveDescriptionFR()
         Dim refresh As Boolean = False
         If Not DataSet1.Tables("products_description_fr").GetChanges() Is Nothing Then
+            For i As Integer = 0 To DataSet1.Tables("products_description_fr").Rows.Count - 1
+                DataSet1.Tables("products_description_fr").Rows(i)("products_description") = Replace(DataSet1.Tables("products_description_fr").Rows(i)("products_description").ToString(), "’", "'")
+            Next
             refresh = True
+
         End If
         DvdPostData.clsConnection.UpdateDataTableInDB(DataSet1.Tables("products_description_fr"), "select * from products_description ")
         If refresh Then
@@ -544,6 +548,9 @@ Public Class clsProduct_DVD
     Public Sub SaveDescriptionNL()
         Dim refresh As Boolean = False
         If Not DataSet1.Tables("products_description_nl").GetChanges() Is Nothing Then
+            For i As Integer = 0 To DataSet1.Tables("products_description_fr").Rows.Count - 1
+                DataSet1.Tables("products_description_nl").Rows(i)("products_description") = Replace(DataSet1.Tables("products_description_nl").Rows(i)("products_description").ToString(), "’", "'")
+            Next
             refresh = True
         End If
         DvdPostData.clsConnection.UpdateDataTableInDB(DataSet1.Tables("products_description_nl"), "select * from products_description ")
@@ -565,6 +572,9 @@ Public Class clsProduct_DVD
     Public Sub SaveDescriptionEN()
         Dim refresh As Boolean = False
         If Not DataSet1.Tables("products_description_en").GetChanges() Is Nothing Then
+            For i As Integer = 0 To DataSet1.Tables("products_description_en").Rows.Count - 1
+                DataSet1.Tables("products_description_en").Rows(i)("products_description") = Replace(DataSet1.Tables("products_description_en").Rows(i)("products_description").ToString(), "’", "'")
+            Next
             refresh = True
         End If
         DvdPostData.clsConnection.UpdateDataTableInDB(DataSet1.Tables("products_description_en"), "select * from products_description ")

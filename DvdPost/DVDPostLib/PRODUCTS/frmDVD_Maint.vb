@@ -427,11 +427,17 @@ Public Class frmDVD_Maint
     Friend WithEvents chkVodNext As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents lblSearchProductID As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txtSearchProductID As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents colWatchTrailer As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents ButtonWatchTrailer As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
+    Friend WithEvents lblProductsMedia As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtProducts_Media As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents lblDirectorSearch As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtDirectorSearch As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl48 As DevExpress.XtraEditors.LabelControl
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Dim FilterCondition2 As DevExpress.XtraTreeList.FilterCondition = New DevExpress.XtraTreeList.FilterCondition
-        Dim StyleFormatCondition3 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
+        Dim FilterCondition1 As DevExpress.XtraTreeList.FilterCondition = New DevExpress.XtraTreeList.FilterCondition
         Dim StyleFormatCondition1 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
+        Dim StyleFormatCondition2 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
         Me.colcategory_selected = New DevExpress.XtraTreeList.Columns.TreeListColumn
         Me.chkSelectCategory = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
         Me.XTabControlProduct = New DevExpress.XtraTab.XtraTabControl
@@ -447,6 +453,8 @@ Public Class frmDVD_Maint
         Me.colproducts_name = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.colproducts_model = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl
+        Me.lblProductsMedia = New DevExpress.XtraEditors.LabelControl
+        Me.txtProducts_Media = New DevExpress.XtraEditors.TextEdit
         Me.lblSearchProductID = New DevExpress.XtraEditors.LabelControl
         Me.txtSearchProductID = New DevExpress.XtraEditors.TextEdit
         Me.lblImdbId_serie = New DevExpress.XtraEditors.LabelControl
@@ -640,6 +648,8 @@ Public Class frmDVD_Maint
         Me.GridBand7 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand
         Me.coltrailers_id = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.colproducts_id4 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+        Me.colWatchTrailer = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+        Me.ButtonWatchTrailer = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
         Me.collanguage_id1 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.cmbLangTrailer = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.coltrailer = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
@@ -811,6 +821,8 @@ Public Class frmDVD_Maint
         Me.LabelControl35 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl58 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl59 = New DevExpress.XtraEditors.LabelControl
+        Me.lblDirectorSearch = New DevExpress.XtraEditors.LabelControl
+        Me.txtDirectorSearch = New DevExpress.XtraEditors.TextEdit
         CType(Me.PrintSystem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MainDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbViewListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -829,6 +841,7 @@ Public Class frmDVD_Maint
         CType(Me.cmbLanguages, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
+        CType(Me.txtProducts_Media.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtSearchProductID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtSearchImdbId_serie.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtINFO.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -952,6 +965,7 @@ Public Class frmDVD_Maint
         Me.grpTrailers.SuspendLayout()
         CType(Me.GridTrailers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewTrailers, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ButtonWatchTrailer, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbLangTrailer, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbTrailers_Broadcast, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl8, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1045,6 +1059,7 @@ Public Class frmDVD_Maint
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtDirectorSearch.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PopMenuNew
@@ -1192,6 +1207,10 @@ Public Class frmDVD_Maint
         'PanelControl2
         '
         Me.PanelControl2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
+        Me.PanelControl2.Controls.Add(Me.lblDirectorSearch)
+        Me.PanelControl2.Controls.Add(Me.txtDirectorSearch)
+        Me.PanelControl2.Controls.Add(Me.lblProductsMedia)
+        Me.PanelControl2.Controls.Add(Me.txtProducts_Media)
         Me.PanelControl2.Controls.Add(Me.lblSearchProductID)
         Me.PanelControl2.Controls.Add(Me.txtSearchProductID)
         Me.PanelControl2.Controls.Add(Me.lblImdbId_serie)
@@ -1213,9 +1232,24 @@ Public Class frmDVD_Maint
         Me.PanelControl2.Size = New System.Drawing.Size(1047, 134)
         Me.PanelControl2.TabIndex = 2
         '
+        'lblProductsMedia
+        '
+        Me.lblProductsMedia.Location = New System.Drawing.Point(594, 42)
+        Me.lblProductsMedia.Name = "lblProductsMedia"
+        Me.lblProductsMedia.Size = New System.Drawing.Size(73, 13)
+        Me.lblProductsMedia.TabIndex = 73
+        Me.lblProductsMedia.Text = "Products Media"
+        '
+        'txtProducts_Media
+        '
+        Me.txtProducts_Media.Location = New System.Drawing.Point(677, 39)
+        Me.txtProducts_Media.Name = "txtProducts_Media"
+        Me.txtProducts_Media.Size = New System.Drawing.Size(99, 20)
+        Me.txtProducts_Media.TabIndex = 72
+        '
         'lblSearchProductID
         '
-        Me.lblSearchProductID.Location = New System.Drawing.Point(440, 42)
+        Me.lblSearchProductID.Location = New System.Drawing.Point(425, 42)
         Me.lblSearchProductID.Name = "lblSearchProductID"
         Me.lblSearchProductID.Size = New System.Drawing.Size(56, 13)
         Me.lblSearchProductID.TabIndex = 71
@@ -1223,9 +1257,9 @@ Public Class frmDVD_Maint
         '
         'txtSearchProductID
         '
-        Me.txtSearchProductID.Location = New System.Drawing.Point(505, 39)
+        Me.txtSearchProductID.Location = New System.Drawing.Point(490, 39)
         Me.txtSearchProductID.Name = "txtSearchProductID"
-        Me.txtSearchProductID.Size = New System.Drawing.Size(111, 20)
+        Me.txtSearchProductID.Size = New System.Drawing.Size(99, 20)
         Me.txtSearchProductID.TabIndex = 70
         '
         'lblImdbId_serie
@@ -1240,7 +1274,7 @@ Public Class frmDVD_Maint
         '
         Me.txtSearchImdbId_serie.Location = New System.Drawing.Point(321, 39)
         Me.txtSearchImdbId_serie.Name = "txtSearchImdbId_serie"
-        Me.txtSearchImdbId_serie.Size = New System.Drawing.Size(111, 20)
+        Me.txtSearchImdbId_serie.Size = New System.Drawing.Size(99, 20)
         Me.txtSearchImdbId_serie.TabIndex = 68
         '
         'btnFindBarCode
@@ -1307,7 +1341,7 @@ Public Class frmDVD_Maint
         '
         Me.txtSearchImdb_id.Location = New System.Drawing.Point(128, 36)
         Me.txtSearchImdb_id.Name = "txtSearchImdb_id"
-        Me.txtSearchImdb_id.Size = New System.Drawing.Size(112, 20)
+        Me.txtSearchImdb_id.Size = New System.Drawing.Size(99, 20)
         Me.txtSearchImdb_id.TabIndex = 11
         '
         'lblImdb_id
@@ -1320,7 +1354,7 @@ Public Class frmDVD_Maint
         '
         'btnSearch
         '
-        Me.btnSearch.Location = New System.Drawing.Point(652, 39)
+        Me.btnSearch.Location = New System.Drawing.Point(966, 36)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(75, 23)
         Me.btnSearch.TabIndex = 9
@@ -2900,11 +2934,11 @@ Public Class frmDVD_Maint
         Me.TreeListCategories.CustomizationFormBounds = New System.Drawing.Rectangle(960, 402, 208, 170)
         Me.TreeListCategories.DataSource = Me.objDS.categories_fr_view1
         Me.TreeListCategories.Dock = System.Windows.Forms.DockStyle.Fill
-        FilterCondition2.Column = Me.colcategory_selected
-        FilterCondition2.Condition = DevExpress.XtraTreeList.FilterConditionEnum.Equals
-        FilterCondition2.Value1 = True
-        FilterCondition2.Visible = True
-        Me.TreeListCategories.FilterConditions.AddRange(New DevExpress.XtraTreeList.FilterCondition() {FilterCondition2})
+        FilterCondition1.Column = Me.colcategory_selected
+        FilterCondition1.Condition = DevExpress.XtraTreeList.FilterConditionEnum.Equals
+        FilterCondition1.Value1 = True
+        FilterCondition1.Visible = True
+        Me.TreeListCategories.FilterConditions.AddRange(New DevExpress.XtraTreeList.FilterCondition() {FilterCondition1})
         Me.TreeListCategories.KeyFieldName = "categories_id"
         Me.TreeListCategories.Location = New System.Drawing.Point(2, 2)
         Me.TreeListCategories.Name = "TreeListCategories"
@@ -3337,7 +3371,7 @@ Public Class frmDVD_Maint
         Me.GridTrailers.Location = New System.Drawing.Point(2, 20)
         Me.GridTrailers.MainView = Me.GridViewTrailers
         Me.GridTrailers.Name = "GridTrailers"
-        Me.GridTrailers.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbLangTrailer, Me.cmbTrailers_Broadcast})
+        Me.GridTrailers.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbLangTrailer, Me.cmbTrailers_Broadcast, Me.ButtonWatchTrailer})
         Me.GridTrailers.Size = New System.Drawing.Size(580, 567)
         Me.GridTrailers.TabIndex = 4
         Me.GridTrailers.UseEmbeddedNavigator = True
@@ -3346,7 +3380,7 @@ Public Class frmDVD_Maint
         'GridViewTrailers
         '
         Me.GridViewTrailers.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand7})
-        Me.GridViewTrailers.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.coltrailers_id, Me.colproducts_id4, Me.collanguage_id1, Me.coltrailer, Me.colbroadcast})
+        Me.GridViewTrailers.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.coltrailers_id, Me.colproducts_id4, Me.collanguage_id1, Me.coltrailer, Me.colbroadcast, Me.colWatchTrailer})
         Me.GridViewTrailers.CustomizationFormBounds = New System.Drawing.Rectangle(755, 333, 217, 222)
         Me.GridViewTrailers.GridControl = Me.GridTrailers
         Me.GridViewTrailers.Name = "GridViewTrailers"
@@ -3360,11 +3394,13 @@ Public Class frmDVD_Maint
         Me.GridBand7.Caption = "GridBand2"
         Me.GridBand7.Columns.Add(Me.coltrailers_id)
         Me.GridBand7.Columns.Add(Me.colproducts_id4)
+        Me.GridBand7.Columns.Add(Me.colWatchTrailer)
         Me.GridBand7.Columns.Add(Me.collanguage_id1)
         Me.GridBand7.Columns.Add(Me.coltrailer)
         Me.GridBand7.Columns.Add(Me.colbroadcast)
+        Me.GridBand7.MinWidth = 20
         Me.GridBand7.Name = "GridBand7"
-        Me.GridBand7.Width = 556
+        Me.GridBand7.Width = 605
         '
         'coltrailers_id
         '
@@ -3379,6 +3415,21 @@ Public Class frmDVD_Maint
         Me.colproducts_id4.FieldName = "products_id"
         Me.colproducts_id4.Name = "colproducts_id4"
         Me.colproducts_id4.Width = 132
+        '
+        'colWatchTrailer
+        '
+        Me.colWatchTrailer.Caption = "watch"
+        Me.colWatchTrailer.ColumnEdit = Me.ButtonWatchTrailer
+        Me.colWatchTrailer.Name = "colWatchTrailer"
+        Me.colWatchTrailer.Visible = True
+        Me.colWatchTrailer.Width = 49
+        '
+        'ButtonWatchTrailer
+        '
+        Me.ButtonWatchTrailer.AutoHeight = False
+        Me.ButtonWatchTrailer.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+        Me.ButtonWatchTrailer.Name = "ButtonWatchTrailer"
+        Me.ButtonWatchTrailer.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
         '
         'collanguage_id1
         '
@@ -4516,7 +4567,7 @@ Public Class frmDVD_Maint
         'GridViewPrevision
         '
         Me.GridViewPrevision.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBandPrevision})
-        Me.GridViewPrevision.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition3})
+        Me.GridViewPrevision.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition1})
         Me.GridViewPrevision.GridControl = Me.GridPrevision
         Me.GridViewPrevision.Name = "GridViewPrevision"
         Me.GridViewPrevision.OptionsView.ShowFooter = True
@@ -4547,7 +4598,7 @@ Public Class frmDVD_Maint
         'gridViewWishlistCustomers
         '
         Me.gridViewWishlistCustomers.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand11})
-        Me.gridViewWishlistCustomers.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition1})
+        Me.gridViewWishlistCustomers.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition2})
         Me.gridViewWishlistCustomers.GridControl = Me.GridWishlistCustomers
         Me.gridViewWishlistCustomers.Name = "gridViewWishlistCustomers"
         Me.gridViewWishlistCustomers.OptionsBehavior.Editable = False
@@ -5001,6 +5052,21 @@ Public Class frmDVD_Maint
         Me.LabelControl59.TabIndex = 1
         Me.LabelControl59.Text = "Rating Moyen"
         '
+        'lblDirectorSearch
+        '
+        Me.lblDirectorSearch.Location = New System.Drawing.Point(782, 43)
+        Me.lblDirectorSearch.Name = "lblDirectorSearch"
+        Me.lblDirectorSearch.Size = New System.Drawing.Size(38, 13)
+        Me.lblDirectorSearch.TabIndex = 75
+        Me.lblDirectorSearch.Text = "Director"
+        '
+        'txtDirectorSearch
+        '
+        Me.txtDirectorSearch.Location = New System.Drawing.Point(826, 39)
+        Me.txtDirectorSearch.Name = "txtDirectorSearch"
+        Me.txtDirectorSearch.Size = New System.Drawing.Size(134, 20)
+        Me.txtDirectorSearch.TabIndex = 74
+        '
         'frmDVD_Maint
         '
         Me.AcceptButton = Me.btnOK1
@@ -5031,6 +5097,7 @@ Public Class frmDVD_Maint
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
         Me.PanelControl2.PerformLayout()
+        CType(Me.txtProducts_Media.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtSearchProductID.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtSearchImdbId_serie.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtINFO.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -5159,6 +5226,7 @@ Public Class frmDVD_Maint
         Me.grpTrailers.ResumeLayout(False)
         CType(Me.GridTrailers, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewTrailers, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ButtonWatchTrailer, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbLangTrailer, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbTrailers_Broadcast, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl8, System.ComponentModel.ISupportInitialize).EndInit()
@@ -5259,6 +5327,7 @@ Public Class frmDVD_Maint
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtDirectorSearch.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -6077,6 +6146,8 @@ Public Class frmDVD_Maint
         Dim searchImdb As String = String.Empty
         Dim searchImdb_id_serie As String = String.Empty
         Dim searchProducts_id As String = String.Empty
+        Dim productsMedia As String = String.Empty
+        Dim director As String = String.Empty
 
         If Not txtTitleSearch.EditValue Is Nothing AndAlso txtTitleSearch.EditValue <> "" Then
             searchTitle = " and products_name like '%" & txtTitleSearch.Text.Trim & "%'"
@@ -6094,10 +6165,18 @@ Public Class frmDVD_Maint
             searchProducts_id = " and P.products_id = " & txtSearchProductID.Text.Trim
         End If
 
+        If Not txtProducts_Media.EditValue Is Nothing AndAlso txtProducts_Media.EditValue <> "" Then
+            productsMedia = " and P.products_media = '" & txtProducts_Media.Text.Trim & "'"
+        End If
+
+        If Not txtDirectorSearch.EditValue Is Nothing AndAlso txtDirectorSearch.EditValue <> "" Then
+            director = " and P.products_directors_id in (select directors_id from directors where directors_name like '%" & txtDirectorSearch.Text.Trim & "%' ) "
+        End If
+
         _SQLTxt = "SELECT PD.products_id, PD.language_id, PD.products_name , P.products_model as products_model " & _
                   " FROM products_description PD " & _
                   " Left join products P on P.products_id = PD.products_id " & _
-                  " where 1 = 1" & searchTitle & searchImdb & searchImdb_id_serie & searchProducts_id & _
+                  " where 1 = 1" & searchTitle & searchImdb & searchImdb_id_serie & searchProducts_id & productsMedia & director & _
                   " group by P.products_id "
         ' objDS.products_description1.Clear()
         ' DvdPostData.clsConnection.FillDataSet(objDS.products_description1, _SQLTxt)
@@ -6745,5 +6824,88 @@ Public Class frmDVD_Maint
 
             LoadOrdersData(CurrentDVDID)
         End If
+    End Sub
+
+    Private Sub ButtonWatchTrailer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonWatchTrailer.Click, GridTrailers.DoubleClick
+        Dim WebTrailer As System.Windows.Forms.WebBrowser = New System.Windows.Forms.WebBrowser()
+        Dim frmShowTrailer As System.Windows.Forms.Form = New System.Windows.Forms.Form()
+        Dim strDocumentText As String = String.Empty
+        Dim strTrailerRemoteID As String
+        Dim strBroadcast As String = String.Empty
+
+        If GridViewTrailers.FocusedRowHandle > -1 Then
+            strTrailerRemoteID = GridViewTrailers.GetDataRow(GridViewTrailers.FocusedRowHandle)("trailer")
+            strBroadcast = GridViewTrailers.GetDataRow(GridViewTrailers.FocusedRowHandle)("broadcast")
+        End If
+        If strBroadcast = "DAYLYMOTION" Then
+            strDocumentText = String.Format("<object width=""480"" height=""285""><param name=""movie"" value=""http://www.dailymotion.com/swf/video/{0}_space-symphony-maetel-bande-annonce_creation""></param><param name=""allowFullScreen"" value=""true""></param><param name=""allowScriptAccess"" value=""always""></param><embed type=""application/x-shockwave-flash"" src=""http://www.dailymotion.com/swf/video/{0}_space-symphony-maetel-bande-annonce_creation"" width=""480"" height=""285"" allowfullscreen=""true"" allowscriptaccess=""always""></embed></object>", strTrailerRemoteID)
+            frmShowTrailer.Width = 550
+            frmShowTrailer.Height = 330
+        ElseIf strBroadcast = "YOUTUBE" Then
+            strDocumentText = String.Format("<object width=""640"" height=""385""><param name=""movie"" value=""http://www.youtube.com/v/{0}&hl=en_US&fs=1?rel=0""></param><param name=""allowFullScreen"" value=""true""></param><param name=""allowscriptaccess"" value=""always""></param><embed src=""http://www.youtube.com/v/{0}&hl=en_US&;fs=1?rel=0"" type=""application/x-shockwave-flash"" allowscriptaccess=""always"" allowfullscreen=""true"" width=""640"" height=""385""></embed></object>", strTrailerRemoteID)
+            frmShowTrailer.Width = 700
+            frmShowTrailer.Height = 440
+        ElseIf strBroadcast = "CINEMOVIES" Then
+            strDocumentText = String.Format("<html><body><embed height=""458"" width=""610"" allowscriptaccess=""always"" allowfullscreen=""true"" flashvars=""{0}"" src=""http://www.cinemovies.fr/player/export/CineMovies2.swf""></embed></html></body>", strTrailerRemoteID)
+            '          strDocumentText = String.Format("<object id=""ply"" width=""610"" height=""458"" type=""application/x-shockwave-flash"" data=""http://www.cinemovies.fr/player/export/CineMovies2.swf""> " & _
+            '"" <param name=""wmode"" value=""transparent""> " & _
+            '"" <param name=""allowfullscreen"" value=""true""> " & _
+            '"" <param name=""allowscriptaccess"" value=""always""> " & _
+            '"" <param name=""flashvars"" value=""{0}""></object>", strTrailerRemoteID)
+            frmShowTrailer.Width = 700
+            frmShowTrailer.Height = 530
+        ElseIf strBroadcast = "ALLOCINE" Then
+            strDocumentText = String.Format("<object type=""application/x-shockwave-flash"" id=""V6_player"" data=""http://images.allocine.fr/commons/player/AcV3/AcPlayer_v3.0.swf"" width=""760px"" height=""464px"" style=""visibility: visible; display: block; "" > " & _
+                              " <param name=""menu"" value=""false""/> " & _
+                              " <param name=""wmode"" value=""window""/> " & _
+                              " <param name=""scale"" value=""noScale""/>" & _
+                              " <param name=""allowFullscreen"" value=""true""/> " & _
+                              " <param name=""allowScriptAccess"" value=""always""/> " & _
+                              " <param name=""bgcolor"" value=""#000000""/> " & _
+                              " <param name=""flashvars"" value=""{0}""/></object>", strTrailerRemoteID)
+            frmShowTrailer.Width = 770
+            frmShowTrailer.Height = 470
+        ElseIf strBroadcast = "AAMREVIEWS" Then
+            strDocumentText = String.Format("<object type=""application/x-shockwave-flash"" width=""450"" height=""300""wmode=""transparent"" data=""http://www.aamreviews.com/flvplayer.swf?file=http://www.aamreviews.com/flvideo/{0}&autostart=true&showfsbutton=true""> " & _
+                                           "   <param name=""movie"" value=""http://www.aamreviews.com/flvplayer.swf?file=http://www.aamreviews.com/flvideo/3372.flv&autostart=true&showfsbutton=true"" /> " & _
+                                           "  <param name=""wmode"" value=""transparent"" /> " & _
+                                           " <param name=""allowScriptAccess"" value=""sameDomain"" /> " & _
+                                           " <embed src=""http://www.aamreviews.com/flvplayer.swf?file=http://www.aamreviews.com/flvideo/<%= trailer.remote_id %>&autostart=true&showfsbutton=true"" loop=""False"" width=""330"" height=""220"" allowscriptaccess=""sameDomain"" type=""application/x-shockwave-flash"" pluginspage=""http://www.macromedia.com/go/getflashplayer"" /></embed></object>", strTrailerRemoteID)
+            frmShowTrailer.Width = 500
+            frmShowTrailer.Height = 350
+        ElseIf strBroadcast = "DORCELVISION" Then
+            strDocumentText = String.Format("<object codebase=""http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=,0,0,0"" id=""AnimationFlash"" width=""330"" height=""220"" classid=""clsid:d27cdb6e-ae6d-11cf-96b8-444553540000""> " & _
+                                             " <param name=""allowScriptAccess"" value=""always""/>  " & _
+                                             " <param name=""movie"" value=""{0}""/>  " & _
+                                             "  <param name=""swLiveConnect"" value=""TRUE""/> " & _
+                                             " <param name=""quality"" value=""high""/> " & _
+                                             "<param name=""bgcolor"" value=""""/> " & _
+                                             " <param name=""wmode"" value=""opaque""/> " & _
+                                             " <embed id=""AnimationFlash"" allowscriptaccess=""always"" width=""330"" height=""220"" src=""{0}"" swliveconnect=""TRUE"" quality=""high"" pluginspage=""http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"" bgcolor="""" wmode=""opaque"" type=""application/x-shockwave-flash""/></object>", strTrailerRemoteID)
+            frmShowTrailer.Width = 300
+            frmShowTrailer.Height = 400
+        ElseIf strBroadcast = "FILM1" Or strBroadcast = "COMMEAUCINEMA" Or strBroadcast = "CINENEWS.BE" Or strBroadcast = "TRUVEO" Then
+            strDocumentText = "<object width=""640"" height=""385"" type=""application/x-shockwave-flash"" data=""http://releases.flowplayer.org/swf/flowplayer-3.2.7.swf"" name=""player_api"" id=""player_api""><param value=""true"" name=""allowfullscreen""><param value=""always"" name=""allowscriptaccess""><param value=""high"" name=""quality""><param value=""#000000"" name=""bgcolor""><param value=""config={""plugins"":{""content"":{""url"":""flowplayer.content-3.2.0.swf"",""height"":220,""padding"":30,""backgroundColor"":""#112233"",""opacity"":0.0,""backgroundGradient"":[0.1,0.1,1],""html"":"""",""style"":{""p"":{""fontSize"":40}}},""controls"":{""url"":""flowplayer.controls-tube-3.2.5.swf""}},""playerId"":""player"",""clip"":{""url"":"
+            strDocumentText = strDocumentText & strTrailerRemoteID & ",""playlist"":[{""url"":" & strTrailerRemoteID & "}]} name=""flashvars""> </object>"
+
+            frmShowTrailer.Width = 700
+            frmShowTrailer.Height = 550
+        End If
+        
+        WebTrailer.DocumentText = strDocumentText
+        WebTrailer.Dock = DockStyle.Fill
+
+        frmShowTrailer.Controls.Add(WebTrailer)
+        Try
+            frmShowTrailer.ShowDialog(Me)
+        Catch ex As Exception
+
+        End Try
+
+WebTrailer.Stop()
+        WebTrailer.Dispose()
+        WebTrailer = Nothing
+        frmShowTrailer.Dispose()
+        frmShowTrailer = Nothing
     End Sub
 End Class
