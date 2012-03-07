@@ -90,6 +90,10 @@ Public Class frmSearchProduct
     Friend WithEvents txtToDate As DevExpress.XtraEditors.DateEdit
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txtFromDate As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents cmbDirector As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents lblDirector As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents cmbProductMedia As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents lblProductMedia As DevExpress.XtraEditors.LabelControl
     Friend WithEvents colAvailability As DevExpress.XtraGrid.Columns.GridColumn
 
 
@@ -153,6 +157,10 @@ Public Class frmSearchProduct
         Me.lblSelected = New DevExpress.XtraEditors.LabelControl
         Me.ContextMenu1 = New DVDPostBuziness.contextMenu
         Me.XtraTabControlTheme = New DevExpress.XtraTab.XtraTabControl
+        Me.cmbProductMedia = New DevExpress.XtraEditors.LookUpEdit
+        Me.lblProductMedia = New DevExpress.XtraEditors.LabelControl
+        Me.cmbDirector = New DevExpress.XtraEditors.LookUpEdit
+        Me.lblDirector = New DevExpress.XtraEditors.LabelControl
         CType(Me.cmbViewListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtQuickSearchRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbReportListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -190,6 +198,8 @@ Public Class frmSearchProduct
         CType(Me.chkSelected.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabControlTheme, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabControlTheme.SuspendLayout()
+        CType(Me.cmbProductMedia.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbDirector.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tabSearch
@@ -201,6 +211,10 @@ Public Class frmSearchProduct
         'GroupSearch
         '
         resources.ApplyResources(Me.GroupSearch, "GroupSearch")
+        Me.GroupSearch.Controls.Add(Me.cmbDirector)
+        Me.GroupSearch.Controls.Add(Me.lblDirector)
+        Me.GroupSearch.Controls.Add(Me.cmbProductMedia)
+        Me.GroupSearch.Controls.Add(Me.lblProductMedia)
         Me.GroupSearch.Controls.Add(Me.LabelControl2)
         Me.GroupSearch.Controls.Add(Me.txtToDate)
         Me.GroupSearch.Controls.Add(Me.LabelControl1)
@@ -423,7 +437,7 @@ Public Class frmSearchProduct
         'GridViewProducts
         '
         Me.GridViewProducts.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colId, Me.colName, Me.colStatus, Me.colAvailability, Me.colSerie, Me.colStudio, Me.colProductNext, Me.colRating, Me.colProductType, Me.colCptDvdOK, Me.colcpt_cust, Me.coldate})
-        Me.GridViewProducts.CustomizationFormBounds = New System.Drawing.Rectangle(2892, 593, 218, 205)
+        Me.GridViewProducts.CustomizationFormBounds = New System.Drawing.Rectangle(1382, 593, 218, 205)
         Me.GridViewProducts.GridControl = Me.GridProducts
         Me.GridViewProducts.Name = "GridViewProducts"
         Me.GridViewProducts.OptionsView.ShowFooter = True
@@ -590,6 +604,30 @@ Public Class frmSearchProduct
         Me.XtraTabControlTheme.SelectedTabPage = Me.tabResult
         Me.XtraTabControlTheme.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.tabSearch, Me.tabResult})
         '
+        'cmbProductMedia
+        '
+        resources.ApplyResources(Me.cmbProductMedia, "cmbProductMedia")
+        Me.cmbProductMedia.Name = "cmbProductMedia"
+        Me.cmbProductMedia.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(CType(resources.GetObject("cmbProductMedia.Properties.Buttons"), DevExpress.XtraEditors.Controls.ButtonPredefines))})
+        Me.cmbProductMedia.Properties.NullText = resources.GetString("cmbProductMedia.Properties.NullText")
+        '
+        'lblProductMedia
+        '
+        resources.ApplyResources(Me.lblProductMedia, "lblProductMedia")
+        Me.lblProductMedia.Name = "lblProductMedia"
+        '
+        'cmbDirector
+        '
+        resources.ApplyResources(Me.cmbDirector, "cmbDirector")
+        Me.cmbDirector.Name = "cmbDirector"
+        Me.cmbDirector.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(CType(resources.GetObject("cmbDirector.Properties.Buttons"), DevExpress.XtraEditors.Controls.ButtonPredefines))})
+        Me.cmbDirector.Properties.NullText = resources.GetString("cmbDirector.Properties.NullText")
+        '
+        'lblDirector
+        '
+        resources.ApplyResources(Me.lblDirector, "lblDirector")
+        Me.lblDirector.Name = "lblDirector"
+        '
         'frmSearchProduct
         '
         resources.ApplyResources(Me, "$this")
@@ -634,6 +672,8 @@ Public Class frmSearchProduct
         CType(Me.chkSelected.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XtraTabControlTheme, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabControlTheme.ResumeLayout(False)
+        CType(Me.cmbProductMedia.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbDirector.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -671,9 +711,11 @@ Public Class frmSearchProduct
         '        txtToDate.DateTime = Now().ToString(txtFromDate.Properties.EditFormat.FormatString)
 
         loadProductsType()
+        loadProductsMedia()
         loadRating()
         loadStatus()
         loadStudio()
+        loadDirector()
         loadAvailability()
         loadSerie()
         loadLanguage()
@@ -721,6 +763,25 @@ Public Class frmSearchProduct
         cmbProductType.EditValue = 0
 
     End Sub
+    Private Sub loadProductsMedia()
+        Dim dtProductMedia As DataTable
+
+        Dim sql As String
+        Dim key As String = "id"
+        Dim value As String = "name"
+
+        sql = DvdPostData.clsProductDvd.GetSelectMedia()
+        dtProductMedia = DvdPostData.clsConnection.FillDataSet(sql)
+        DVDPostBuziness.ClsCombo.addRowEmpty(dtProductMedia)
+
+
+        cmbProductMedia.Properties.ValueMember = key
+        cmbProductMedia.Properties.DisplayMember = value
+        cmbProductMedia.Properties.DataSource = dtProductMedia
+
+        cmbProductMedia.EditValue = 0
+
+    End Sub
     Private Sub loadSubtitle()
 
         Dim key As String = "id"
@@ -728,7 +789,7 @@ Public Class frmSearchProduct
         Dim dtSubtitle As DataTable
         Dim sql As String
         sql = DvdPostData.ClsVod.GetAllSubtitle()
-        dtSubtitle = DvdPostData.clsConnection.FillDataSet(Sql)
+        dtSubtitle = DvdPostData.clsConnection.FillDataSet(sql)
 
         cmbSubtitle.Properties.ValueMember = key
         cmbSubtitle.Properties.DisplayMember = value
@@ -756,7 +817,7 @@ Public Class frmSearchProduct
         RepositoryItemLookUpEditLanguage.DisplayMember = value
         RepositoryItemLookUpEditLanguage.DataSource = dtLanguage
 
-        
+
     End Sub
     Private Sub loadCategorie(ByVal products_type As String)
         Dim dtCategorie As DataTable
@@ -884,6 +945,27 @@ Public Class frmSearchProduct
         RepositoryItemLookUpEditStudio.DisplayMember = value
         RepositoryItemLookUpEditStudio.DataSource = dtStudio
     End Sub
+    Private Sub loadDirector()
+        Dim dtDirector As DataTable
+
+        Dim sql As String
+        Dim key As String = "id"
+        Dim value As String = "name"
+
+        sql = DvdPostData.clsProductDvd.GetSelectDirector()
+        dtDirector = DvdPostData.clsConnection.FillDataSet(sql)
+        DVDPostBuziness.ClsCombo.addRowEmpty(dtDirector)
+
+
+        cmbDirector.Properties.ValueMember = key
+        cmbDirector.Properties.DisplayMember = value
+        cmbDirector.Properties.DataSource = dtDirector
+
+        cmbDirector.EditValue = 0
+        RepositoryItemLookUpEditStudio.ValueMember = key
+        RepositoryItemLookUpEditStudio.DisplayMember = value
+        RepositoryItemLookUpEditStudio.DataSource = dtDirector
+    End Sub
     Private Sub loadActor(ByVal products_type As String)
         Dim dtActor As DataTable
 
@@ -923,8 +1005,10 @@ Public Class frmSearchProduct
                                                                    cmbLanguage.EditValue, _
                                                                    cmbSubtitle.EditValue, _
                                                                    cmbActor.EditValue, _
+                                                                   cmbDirector.EditValue, _
                                                                    cmbRating.Text, _
                                                                    cmbProductType.Text, _
+                                                                   cmbProductMedia.Text, _
                                                                    chkProductNext.CheckState, txtFromDate.EditValue, txtToDate.EditValue)
 
 

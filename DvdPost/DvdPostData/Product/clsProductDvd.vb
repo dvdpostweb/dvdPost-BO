@@ -288,6 +288,19 @@ Public Class clsProductDvd
         Return sql
 
     End Function
+    Private Shared Function SearchDirectorCondition(ByVal director_id As Integer) As String
+        Dim sql As String
+
+        If director_id = 0 Then
+            sql = ""
+        Else
+            sql = " and p.products_directors_id = " & director_id
+        End If
+
+        Return sql
+
+    End Function
+
     Private Shared Function SearchActorTable(ByVal actor_id As Integer) As String
         Dim sql As String
 
@@ -301,6 +314,22 @@ Public Class clsProductDvd
         Return sql
 
     End Function
+
+    Private Shared Function SearchDirectorTable(ByVal actor_id As Integer) As String
+        Dim sql As String
+
+        If actor_id = 0 Then
+            sql = ""
+        Else
+            sql = " join directors dir on p.products_directos_id = dir.directors_id "
+        End If
+
+
+        Return sql
+
+    End Function
+
+
 
     Private Shared Function SearchLangCondition(ByVal lang_id As Integer) As String
         Dim sql As String
@@ -438,6 +467,18 @@ Public Class clsProductDvd
         Return sql
 
     End Function
+    Private Shared Function SearchProductsMediaCondition(ByVal product_media As String) As String
+        Dim sql As String
+
+        If product_media = String.Empty Then
+            sql = ""
+        Else
+            sql = " and p.products_media = '" & product_media & "'"
+        End If
+
+        Return sql
+
+    End Function
 
     Private Shared Function SearchDateCreatedCondition(ByVal dateFrom As String, ByVal dateTo As String) As String
         Dim sql As String
@@ -468,8 +509,10 @@ Public Class clsProductDvd
                                              ByVal language_id As Integer, _
                                              ByVal subtitle_id As Integer, _
                                              ByVal actor_id As Integer, _
+                                             ByVal director_id As Integer, _
                                              ByVal rating As String, _
                                              ByVal product_type As String, _
+                                             ByVal product_media As String, _
                                              ByVal product_next As Object, _
                                              ByVal dateFrom As String, _
                                              ByVal dateTo As String) As String
@@ -483,12 +526,14 @@ Public Class clsProductDvd
                SearchCategorieTable(categorie_id) & _
                SearchThemeTable(theme_id) & _
                SearchActorTable(actor_id) & _
+               SearchDirectorTable(actor_id) & _
                SearchLangTable(language_id) & _
                SearchSubtitleTable(subtitle_id) & _
                " where p.products_type in ('" & DVDPostTools.clsEnum.getNameStrEnum(DvdPostData.clsProductDvd.Type_DVD.DVD_NORM) & "','" & DVDPostTools.clsEnum.getNameStrEnum(DvdPostData.clsProductDvd.Type_DVD.DVD_ADULT) & "')" & _
                SearchCategorieCondition(categorie_id) & _
                SearchThemeCondition(theme_id) & _
                SearchActorCondition(actor_id) & _
+               SearchDirectorCondition(director_id) & _
                SearchLangCondition(language_id) & _
                SearchSubtitleCondition(subtitle_id) & _
                SearchSerieCondition(serie_id) & _
@@ -535,6 +580,13 @@ Public Class clsProductDvd
         Return sql
     End Function
 
+    Public Shared Function GetSelectMedia() As String
+        Dim sql As String
+        sql = " SELECT CodeValue id, CodeDesc name from generalglobalcode where CodeType = 'Products_media'"
+        Return sql
+    End Function
+
+
     Public Shared Function GetSelectAvailability() As String
         Dim sql As String
         sql = " SELECT CodeValue id, CodeDesc name from generalglobalcode where CodeType = 'Products_Availability'"
@@ -557,6 +609,12 @@ Public Class clsProductDvd
     Public Shared Function GetSelectStudio() As String
         Dim sql As String
         sql = " SELECT studio_id id,studio_name name FROM studio order by studio_name "
+        Return sql
+    End Function
+
+    Public Shared Function GetSelectDirector() As String
+        Dim sql As String
+        sql = " SELECT directors_id id,directors_name name FROM directors order by directors_name "
         Return sql
     End Function
 

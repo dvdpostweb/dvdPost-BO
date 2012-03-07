@@ -548,7 +548,7 @@ Public Class clsProduct_DVD
     Public Sub SaveDescriptionNL()
         Dim refresh As Boolean = False
         If Not DataSet1.Tables("products_description_nl").GetChanges() Is Nothing Then
-            For i As Integer = 0 To DataSet1.Tables("products_description_fr").Rows.Count - 1
+            For i As Integer = 0 To DataSet1.Tables("products_description_nl").Rows.Count - 1
                 DataSet1.Tables("products_description_nl").Rows(i)("products_description") = Replace(DataSet1.Tables("products_description_nl").Rows(i)("products_description").ToString(), "’", "'")
             Next
             refresh = True

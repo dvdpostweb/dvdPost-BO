@@ -92,6 +92,11 @@ Public Class frmThemeTop
     Friend WithEvents colthemeEvent As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colStyle As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents chkHomepage As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents cmbChannelEdit As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents lblChannel As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents colChannel As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents cmbChannel As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents lblChannelSearch As DevExpress.XtraEditors.LabelControl
 
 
 
@@ -126,12 +131,15 @@ Public Class frmThemeTop
         Me.colthemeEvent = New DevExpress.XtraGrid.Columns.GridColumn
         Me.RepositoryItemLookUpEditThemeEvent = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.colStyle = New DevExpress.XtraGrid.Columns.GridColumn
+        Me.colChannel = New DevExpress.XtraGrid.Columns.GridColumn
         Me.DsSite1 = New DVDPostLib.DsSite
         Me.chkSelected = New DevExpress.XtraEditors.CheckEdit
         Me.lblSelected = New DevExpress.XtraEditors.LabelControl
         Me.ContextMenu1 = New DVDPostBuziness.contextMenu
         Me.XtraTabControlTheme = New DevExpress.XtraTab.XtraTabControl
         Me.tabDetail = New DevExpress.XtraTab.XtraTabPage
+        Me.cmbChannelEdit = New DevExpress.XtraEditors.LookUpEdit
+        Me.lblChannel = New DevExpress.XtraEditors.LabelControl
         Me.chkHomepage = New DevExpress.XtraEditors.CheckEdit
         Me.cmbStyle = New DevExpress.XtraEditors.LookUpEdit
         Me.lblStyle = New DevExpress.XtraEditors.LabelControl
@@ -158,6 +166,8 @@ Public Class frmThemeTop
         Me.TxtEventThemeId_edit = New DevExpress.XtraEditors.TextEdit
         Me.txtTitleEdit = New DevExpress.XtraEditors.TextEdit
         Me.lblTitleEdit = New DevExpress.XtraEditors.LabelControl
+        Me.cmbChannel = New DevExpress.XtraEditors.LookUpEdit
+        Me.lblChannelSearch = New DevExpress.XtraEditors.LabelControl
         CType(Me.cmbViewListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtQuickSearchRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbReportListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -181,6 +191,7 @@ Public Class frmThemeTop
         CType(Me.XtraTabControlTheme, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabControlTheme.SuspendLayout()
         Me.tabDetail.SuspendLayout()
+        CType(Me.cmbChannelEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkHomepage.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbStyle.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbLanguage.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -192,6 +203,7 @@ Public Class frmThemeTop
         CType(Me.TxtDescription.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtEventThemeId_edit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTitleEdit.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbChannel.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tabSearch
@@ -203,6 +215,8 @@ Public Class frmThemeTop
         'GroupSearch
         '
         resources.ApplyResources(Me.GroupSearch, "GroupSearch")
+        Me.GroupSearch.Controls.Add(Me.cmbChannel)
+        Me.GroupSearch.Controls.Add(Me.lblChannelSearch)
         Me.GroupSearch.Controls.Add(Me.cmbThemeEvent)
         Me.GroupSearch.Controls.Add(Me.lblThemeEvent)
         Me.GroupSearch.Controls.Add(Me.cmbKind)
@@ -289,7 +303,7 @@ Public Class frmThemeTop
         '
         'GridViewThemeTop
         '
-        Me.GridViewThemeTop.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colId, Me.colName, Me.colStatus, Me.colDateAdded, Me.colLastModified, Me.colKind, Me.colLanguage, Me.colthemeEvent, Me.colStyle})
+        Me.GridViewThemeTop.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colId, Me.colName, Me.colStatus, Me.colDateAdded, Me.colLastModified, Me.colKind, Me.colLanguage, Me.colthemeEvent, Me.colStyle, Me.colChannel})
         Me.GridViewThemeTop.GridControl = Me.GridThemeTop
         Me.GridViewThemeTop.Name = "GridViewThemeTop"
         Me.GridViewThemeTop.OptionsView.ShowFooter = True
@@ -373,6 +387,12 @@ Public Class frmThemeTop
         Me.colStyle.FieldName = "style"
         Me.colStyle.Name = "colStyle"
         '
+        'colChannel
+        '
+        resources.ApplyResources(Me.colChannel, "colChannel")
+        Me.colChannel.FieldName = "channel"
+        Me.colChannel.Name = "colChannel"
+        '
         'DsSite1
         '
         Me.DsSite1.DataSetName = "DsSite"
@@ -404,6 +424,8 @@ Public Class frmThemeTop
         '
         'tabDetail
         '
+        Me.tabDetail.Controls.Add(Me.cmbChannelEdit)
+        Me.tabDetail.Controls.Add(Me.lblChannel)
         Me.tabDetail.Controls.Add(Me.chkHomepage)
         Me.tabDetail.Controls.Add(Me.cmbStyle)
         Me.tabDetail.Controls.Add(Me.lblStyle)
@@ -432,6 +454,21 @@ Public Class frmThemeTop
         Me.tabDetail.Controls.Add(Me.lblTitleEdit)
         Me.tabDetail.Name = "tabDetail"
         resources.ApplyResources(Me.tabDetail, "tabDetail")
+        '
+        'cmbChannelEdit
+        '
+        Me.cmbChannelEdit.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.DsSite1, "product_lists.channel", True))
+        resources.ApplyResources(Me.cmbChannelEdit, "cmbChannelEdit")
+        Me.cmbChannelEdit.Name = "cmbChannelEdit"
+        Me.cmbChannelEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(CType(resources.GetObject("cmbChannelEdit.Properties.Buttons"), DevExpress.XtraEditors.Controls.ButtonPredefines))})
+        Me.cmbChannelEdit.Properties.DisplayMember = "status_desc"
+        Me.cmbChannelEdit.Properties.NullText = resources.GetString("cmbChannelEdit.Properties.NullText")
+        Me.cmbChannelEdit.Properties.ValueMember = "status_id"
+        '
+        'lblChannel
+        '
+        resources.ApplyResources(Me.lblChannel, "lblChannel")
+        Me.lblChannel.Name = "lblChannel"
         '
         'chkHomepage
         '
@@ -595,6 +632,18 @@ Public Class frmThemeTop
         resources.ApplyResources(Me.lblTitleEdit, "lblTitleEdit")
         Me.lblTitleEdit.Name = "lblTitleEdit"
         '
+        'cmbChannel
+        '
+        resources.ApplyResources(Me.cmbChannel, "cmbChannel")
+        Me.cmbChannel.Name = "cmbChannel"
+        Me.cmbChannel.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(CType(resources.GetObject("LookUpEdit1.Properties.Buttons"), DevExpress.XtraEditors.Controls.ButtonPredefines))})
+        Me.cmbChannel.Properties.NullText = resources.GetString("LookUpEdit1.Properties.NullText")
+        '
+        'lblChannelSearch
+        '
+        resources.ApplyResources(Me.lblChannelSearch, "lblChannelSearch")
+        Me.lblChannelSearch.Name = "lblChannelSearch"
+        '
         'frmThemeTop
         '
         resources.ApplyResources(Me, "$this")
@@ -626,6 +675,7 @@ Public Class frmThemeTop
         Me.XtraTabControlTheme.ResumeLayout(False)
         Me.tabDetail.ResumeLayout(False)
         Me.tabDetail.PerformLayout()
+        CType(Me.cmbChannelEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkHomepage.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbStyle.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbLanguage.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -637,6 +687,7 @@ Public Class frmThemeTop
         CType(Me.TxtDescription.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtEventThemeId_edit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTitleEdit.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbChannel.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -748,6 +799,7 @@ Public Class frmThemeTop
         loadKind()
         loadLanguage()
         loadStyle()
+        loadChannel()
         search()
         ChangeStep(StepForm.INIT)
 
@@ -833,6 +885,26 @@ Public Class frmThemeTop
 
     End Sub
 
+    Private Sub loadChannel()
+        Dim lstChannel As List(Of DVDPostBuziness.clsKeyComboEnum)
+        Dim lstChannelEdit As List(Of DVDPostBuziness.clsKeyComboEnum)
+        Dim sql As String
+
+        sql = DvdPostData.clsThemeTop.GetEnumMysqlChannel()
+        lstChannel = DVDPostBuziness.ClsCombo.GetListEnum(sql)
+
+        lstChannel.Add(New DVDPostBuziness.clsKeyComboEnum("", ""))
+        cmbChannel.Properties.ValueMember = "Value"
+        cmbChannel.Properties.DisplayMember = "DisplayMember"
+        cmbChannel.Properties.DataSource = lstChannel
+
+        lstChannelEdit = DVDPostBuziness.ClsCombo.GetListEnum(sql)
+        cmbChannelEdit.Properties.ValueMember = "Value"
+        cmbChannelEdit.Properties.DisplayMember = "DisplayMember"
+        cmbChannelEdit.Properties.DataSource = lstChannelEdit
+
+    End Sub
+
     Private Sub btnSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSearch.Click
         search()
 
@@ -847,15 +919,17 @@ Public Class frmThemeTop
         Dim title As Object
         Dim kind As Object
         Dim theme_event As Object
+        Dim channel As Object
 
 
         id = TxtEventThemeId.EditValue
         title = txtTitle.EditValue
         kind = cmbKind.EditValue
         theme_event = cmbThemeEvent.EditValue
+        channel = cmbChannel.EditValue
 
         DsSite1.product_lists.Clear()
-        _sql = DvdPostData.clsThemeTop.GetSearch(id, title, kind, theme_event)
+        _sql = DvdPostData.clsThemeTop.GetSearch(id, title, kind, theme_event, channel)
         DvdPostData.clsConnection.FillDataSet(DsSite1.product_lists, _sql, )
         GridThemeTop.DataSource = DsSite1.product_lists
 
@@ -874,6 +948,7 @@ Public Class frmThemeTop
         cmbThemeEventEdit.EditValue = blank
         cmbKindEdit.ItemIndex = 1
         cmbStyle.ItemIndex = 0
+        cmbChannelEdit.ItemIndex = 0
 
 
     End Sub
@@ -918,6 +993,7 @@ Public Class frmThemeTop
         cmbThemeEventEdit.Enabled = enable
         cmbKindEdit.Enabled = enable
         cmbStyle.Enabled = enable
+        cmbChannelEdit.Enabled = enable
 
 
         Return ok
