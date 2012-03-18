@@ -103,6 +103,10 @@ Public Class frmSearchProduct
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSearchProduct))
         Me.tabSearch = New DevExpress.XtraTab.XtraTabPage
         Me.GroupSearch = New DevExpress.XtraEditors.GroupControl
+        Me.cmbDirector = New DevExpress.XtraEditors.LookUpEdit
+        Me.lblDirector = New DevExpress.XtraEditors.LabelControl
+        Me.cmbProductMedia = New DevExpress.XtraEditors.LookUpEdit
+        Me.lblProductMedia = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
         Me.txtToDate = New DevExpress.XtraEditors.DateEdit
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl
@@ -157,10 +161,6 @@ Public Class frmSearchProduct
         Me.lblSelected = New DevExpress.XtraEditors.LabelControl
         Me.ContextMenu1 = New DVDPostBuziness.contextMenu
         Me.XtraTabControlTheme = New DevExpress.XtraTab.XtraTabControl
-        Me.cmbProductMedia = New DevExpress.XtraEditors.LookUpEdit
-        Me.lblProductMedia = New DevExpress.XtraEditors.LabelControl
-        Me.cmbDirector = New DevExpress.XtraEditors.LookUpEdit
-        Me.lblDirector = New DevExpress.XtraEditors.LabelControl
         CType(Me.cmbViewListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtQuickSearchRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbReportListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -169,6 +169,8 @@ Public Class frmSearchProduct
         Me.tabSearch.SuspendLayout()
         CType(Me.GroupSearch, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupSearch.SuspendLayout()
+        CType(Me.cmbDirector.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbProductMedia.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtToDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtToDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtFromDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -198,8 +200,6 @@ Public Class frmSearchProduct
         CType(Me.chkSelected.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabControlTheme, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabControlTheme.SuspendLayout()
-        CType(Me.cmbProductMedia.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmbDirector.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tabSearch
@@ -244,6 +244,30 @@ Public Class frmSearchProduct
         Me.GroupSearch.Controls.Add(Me.btnSearch)
         Me.GroupSearch.Controls.Add(Me.lblTheme)
         Me.GroupSearch.Name = "GroupSearch"
+        '
+        'cmbDirector
+        '
+        resources.ApplyResources(Me.cmbDirector, "cmbDirector")
+        Me.cmbDirector.Name = "cmbDirector"
+        Me.cmbDirector.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(CType(resources.GetObject("cmbDirector.Properties.Buttons"), DevExpress.XtraEditors.Controls.ButtonPredefines))})
+        Me.cmbDirector.Properties.NullText = resources.GetString("cmbDirector.Properties.NullText")
+        '
+        'lblDirector
+        '
+        resources.ApplyResources(Me.lblDirector, "lblDirector")
+        Me.lblDirector.Name = "lblDirector"
+        '
+        'cmbProductMedia
+        '
+        resources.ApplyResources(Me.cmbProductMedia, "cmbProductMedia")
+        Me.cmbProductMedia.Name = "cmbProductMedia"
+        Me.cmbProductMedia.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(CType(resources.GetObject("cmbProductMedia.Properties.Buttons"), DevExpress.XtraEditors.Controls.ButtonPredefines))})
+        Me.cmbProductMedia.Properties.NullText = resources.GetString("cmbProductMedia.Properties.NullText")
+        '
+        'lblProductMedia
+        '
+        resources.ApplyResources(Me.lblProductMedia, "lblProductMedia")
+        Me.lblProductMedia.Name = "lblProductMedia"
         '
         'LabelControl2
         '
@@ -604,30 +628,6 @@ Public Class frmSearchProduct
         Me.XtraTabControlTheme.SelectedTabPage = Me.tabResult
         Me.XtraTabControlTheme.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.tabSearch, Me.tabResult})
         '
-        'cmbProductMedia
-        '
-        resources.ApplyResources(Me.cmbProductMedia, "cmbProductMedia")
-        Me.cmbProductMedia.Name = "cmbProductMedia"
-        Me.cmbProductMedia.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(CType(resources.GetObject("cmbProductMedia.Properties.Buttons"), DevExpress.XtraEditors.Controls.ButtonPredefines))})
-        Me.cmbProductMedia.Properties.NullText = resources.GetString("cmbProductMedia.Properties.NullText")
-        '
-        'lblProductMedia
-        '
-        resources.ApplyResources(Me.lblProductMedia, "lblProductMedia")
-        Me.lblProductMedia.Name = "lblProductMedia"
-        '
-        'cmbDirector
-        '
-        resources.ApplyResources(Me.cmbDirector, "cmbDirector")
-        Me.cmbDirector.Name = "cmbDirector"
-        Me.cmbDirector.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(CType(resources.GetObject("cmbDirector.Properties.Buttons"), DevExpress.XtraEditors.Controls.ButtonPredefines))})
-        Me.cmbDirector.Properties.NullText = resources.GetString("cmbDirector.Properties.NullText")
-        '
-        'lblDirector
-        '
-        resources.ApplyResources(Me.lblDirector, "lblDirector")
-        Me.lblDirector.Name = "lblDirector"
-        '
         'frmSearchProduct
         '
         resources.ApplyResources(Me, "$this")
@@ -643,6 +643,8 @@ Public Class frmSearchProduct
         CType(Me.GroupSearch, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupSearch.ResumeLayout(False)
         Me.GroupSearch.PerformLayout()
+        CType(Me.cmbDirector.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbProductMedia.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtToDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtToDate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtFromDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -672,8 +674,6 @@ Public Class frmSearchProduct
         CType(Me.chkSelected.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XtraTabControlTheme, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabControlTheme.ResumeLayout(False)
-        CType(Me.cmbProductMedia.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmbDirector.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -962,9 +962,9 @@ Public Class frmSearchProduct
         cmbDirector.Properties.DataSource = dtDirector
 
         cmbDirector.EditValue = 0
-        RepositoryItemLookUpEditStudio.ValueMember = key
-        RepositoryItemLookUpEditStudio.DisplayMember = value
-        RepositoryItemLookUpEditStudio.DataSource = dtDirector
+        'RepositoryItemLookUpEditStudio.ValueMember = key
+        'RepositoryItemLookUpEditStudio.DisplayMember = value
+        'RepositoryItemLookUpEditStudio.DataSource = dtDirector
     End Sub
     Private Sub loadActor(ByVal products_type As String)
         Dim dtActor As DataTable

@@ -443,7 +443,7 @@
     <value>Product Next</value>
   </data>
   <data name="chkProductNext.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 19</value>
+    <value>108, 18</value>
   </data>
   <data name="chkProductNext.TabIndex" type="System.Int32, mscorlib">
     <value>71</value>
@@ -1181,7 +1181,7 @@
     <value />
   </data>
   <data name="GridProducts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1183, 805</value>
+    <value>1183, 806</value>
   </data>
   <data name="GridProducts.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1199,7 +1199,7 @@
     <value>0</value>
   </data>
   <data name="tabResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1183, 805</value>
+    <value>1183, 806</value>
   </data>
   <data name="tabResult.Text" xml:space="preserve">
     <value>Result</value>
@@ -1226,7 +1226,7 @@
     <value />
   </data>
   <data name="chkSelected.Size" type="System.Drawing.Size, System.Drawing">
-    <value>187, 21</value>
+    <value>187, 18</value>
   </data>
   <data name="chkSelected.TabIndex" type="System.Int32, mscorlib">
     <value>89</value>
@@ -1509,7 +1509,7 @@
     <value>DsSite1</value>
   </data>
   <data name="&gt;&gt;DsSite1.Type" xml:space="preserve">
-    <value>DVDPostLib.DsSite, DVDPostLib, Version=2.0.4449.7, Culture=neutral, PublicKeyToken=null</value>
+    <value>DVDPostLib.DsSite, DVDPostLib, Version=2.0.4459.3, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmSearchProduct</value>

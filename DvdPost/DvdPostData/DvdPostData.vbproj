@@ -156,6 +156,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Payment\ClsMatching.vb" />
+    <Compile Include="Stat\IPhoneIPad\clsIPhoneIPad.vb" />
     <Compile Include="Stat\payment\ClsStatPayment.vb" />
     <Compile Include="Payment\PaymentOfflineData.vb" />
     <Compile Include="clsSession.vb" />
