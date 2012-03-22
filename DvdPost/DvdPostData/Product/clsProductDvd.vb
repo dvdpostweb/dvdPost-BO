@@ -542,6 +542,7 @@ Public Class clsProductDvd
                SearchAvailabilityCondition(availability) & _
                SearchProductNextCondition(product_next) & _
                SearchRatingCondition(rating) & _
+               SearchProductsMediaCondition(product_media) & _
                SearchProductsTypeCondition(product_type) & _
                SearchDateCreatedCondition(dateFrom, dateTo)
 
