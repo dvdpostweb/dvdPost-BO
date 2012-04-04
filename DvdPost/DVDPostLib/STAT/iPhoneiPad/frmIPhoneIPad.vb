@@ -51,4 +51,11 @@ Public Class frmIPhoneIPad
 
         loadData(sql)
     End Sub
+
+    Private Sub btnMostWatched_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMostWatched.Click
+        Dim sql As String
+        sql = DvdPostData.clsIPhoneIPad.GetSelectMostWatchedMovies(txtFromDate.EditValue, txtToDate.EditValue)
+
+        loadData(sql)
+    End Sub
 End Class

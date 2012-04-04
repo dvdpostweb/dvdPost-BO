@@ -25,10 +25,11 @@ Partial Class frmIPhoneIPad
         Me.btnAppUsedByCustomers = New DevExpress.XtraEditors.SimpleButton
         Me.txtToDate = New DevExpress.XtraEditors.DateEdit
         Me.GCWithDate = New DevExpress.XtraEditors.GroupControl
+        Me.brnVODWatchedByCust = New DevExpress.XtraEditors.SimpleButton
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl
         Me.txtFromDate = New DevExpress.XtraEditors.DateEdit
-        Me.brnVODWatchedByCust = New DevExpress.XtraEditors.SimpleButton
+        Me.btnMostWatched = New DevExpress.XtraEditors.SimpleButton
         Me.Panel1.SuspendLayout()
         CType(Me.TabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -63,27 +64,22 @@ Partial Class frmIPhoneIPad
         'TabParameters
         '
         Me.TabParameters.Controls.Add(Me.GCWithDate)
-        Me.TabParameters.Size = New System.Drawing.Size(1095, 386)
-        '
-        'TabResult
-        '
-        Me.TabResult.Size = New System.Drawing.Size(1095, 386)
         '
         'TabAnalyse
         '
-        Me.TabAnalyse.Size = New System.Drawing.Size(1095, 386)
+        Me.TabAnalyse.Size = New System.Drawing.Size(1095, 385)
         '
         'UcPivotGrid1
         '
-        Me.UcPivotGrid1.Size = New System.Drawing.Size(1095, 386)
+        Me.UcPivotGrid1.Size = New System.Drawing.Size(1095, 385)
         '
         'UcChart1
         '
-        Me.UcChart1.Size = New System.Drawing.Size(1095, 386)
+        Me.UcChart1.Size = New System.Drawing.Size(1095, 385)
         '
         'TabChart
         '
-        Me.TabChart.Size = New System.Drawing.Size(1095, 386)
+        Me.TabChart.Size = New System.Drawing.Size(1095, 385)
         '
         'btnAppUsedByCustomers
         '
@@ -109,6 +105,7 @@ Partial Class frmIPhoneIPad
         'GCWithDate
         '
         Me.GCWithDate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
+        Me.GCWithDate.Controls.Add(Me.btnMostWatched)
         Me.GCWithDate.Controls.Add(Me.brnVODWatchedByCust)
         Me.GCWithDate.Controls.Add(Me.btnAppUsedByCustomers)
         Me.GCWithDate.Controls.Add(Me.LabelControl2)
@@ -120,6 +117,16 @@ Partial Class frmIPhoneIPad
         Me.GCWithDate.Size = New System.Drawing.Size(892, 168)
         Me.GCWithDate.TabIndex = 39
         Me.GCWithDate.Text = "Stat With Date"
+        '
+        'brnVODWatchedByCust
+        '
+        Me.brnVODWatchedByCust.Location = New System.Drawing.Point(227, 87)
+        Me.brnVODWatchedByCust.Name = "brnVODWatchedByCust"
+        Me.HelpProvider1.SetShowHelp(Me.brnVODWatchedByCust, False)
+        Me.brnVODWatchedByCust.Size = New System.Drawing.Size(183, 46)
+        Me.brnVODWatchedByCust.TabIndex = 39
+        Me.brnVODWatchedByCust.Text = "VOD watched by customers"
+        Me.brnVODWatchedByCust.ToolTip = "List of customers who used application"
         '
         'LabelControl2
         '
@@ -150,15 +157,15 @@ Partial Class frmIPhoneIPad
         Me.txtFromDate.Size = New System.Drawing.Size(100, 20)
         Me.txtFromDate.TabIndex = 3
         '
-        'brnVODWatchedByCust
+        'btnMostWatched
         '
-        Me.brnVODWatchedByCust.Location = New System.Drawing.Point(231, 87)
-        Me.brnVODWatchedByCust.Name = "brnVODWatchedByCust"
-        Me.HelpProvider1.SetShowHelp(Me.brnVODWatchedByCust, False)
-        Me.brnVODWatchedByCust.Size = New System.Drawing.Size(183, 46)
-        Me.brnVODWatchedByCust.TabIndex = 39
-        Me.brnVODWatchedByCust.Text = "VOD watched by customers"
-        Me.brnVODWatchedByCust.ToolTip = "List of customers who used application"
+        Me.btnMostWatched.Location = New System.Drawing.Point(442, 87)
+        Me.btnMostWatched.Name = "btnMostWatched"
+        Me.HelpProvider1.SetShowHelp(Me.btnMostWatched, False)
+        Me.btnMostWatched.Size = New System.Drawing.Size(183, 46)
+        Me.btnMostWatched.TabIndex = 40
+        Me.btnMostWatched.Text = "Most watched movies"
+        Me.btnMostWatched.ToolTip = "List of most watched movies"
         '
         'frmIPhoneIPad
         '
@@ -197,4 +204,5 @@ Partial Class frmIPhoneIPad
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txtFromDate As DevExpress.XtraEditors.DateEdit
     Friend WithEvents brnVODWatchedByCust As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnMostWatched As DevExpress.XtraEditors.SimpleButton
 End Class

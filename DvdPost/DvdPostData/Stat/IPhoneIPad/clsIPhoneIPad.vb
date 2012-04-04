@@ -20,4 +20,15 @@ Public Class clsIPhoneIPad
 
         Return sql
     End Function
+
+    Public Shared Function GetSelectMostWatchedMovies(ByVal dateFrom As String, ByVal dateTo As String) As String
+        Dim sql As String
+        sql = " select  x.imdb_id, (select products_title from dvdpost_be_prod.products where imdb_id_serie = x.imdb_id limit 1) MovieTitle, count(x.broj) WatchedNumber " & _
+                " from ( SELECT substring(parameters,1,instr(parameters,',')-1) imdb_id,  customers_id, count(distinct customers_id) broj " & _
+                " FROM dvdpost_mobile_api_ws.mobile_log where method = 'getVodTokenAndLngs 2' and customers_id <> 1068898 and " & _
+                " date(created_system) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and  date(created_system) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' " & _
+                " group by  parameters, customers_id order by 1 desc ) x group by x.imdb_id order by 3 desc"
+
+        Return sql
+    End Function
 End Class

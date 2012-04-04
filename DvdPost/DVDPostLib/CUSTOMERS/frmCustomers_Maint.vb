@@ -1289,7 +1289,6 @@ Me.gridInfoNorm = New DevExpress.XtraGrid.GridControl
 Me.GridViewInfoNorm = New DevExpress.XtraGrid.Views.Grid.GridView
 Me.tabMain = New DevExpress.XtraTab.XtraTabPage
 Me.lblNextDVDRemain = New DevExpress.XtraEditors.LabelControl
-Me.txtNextDVDRemain = New DevExpress.XtraEditors.TextEdit
 Me.chksleep = New DevExpress.XtraEditors.CheckEdit
 Me.btnCreditHistoryReplay = New DevExpress.XtraEditors.SimpleButton
 Me.ChkCreditCombined = New DevExpress.XtraEditors.CheckEdit
@@ -1298,6 +1297,7 @@ Me.lblCpt_reconduction = New DevExpress.XtraEditors.LabelControl
 Me.lblNbReconduction = New DevExpress.XtraEditors.LabelControl
 Me.lblNextPrice = New DevExpress.XtraEditors.LabelControl
 Me.lblNextCredit = New DevExpress.XtraEditors.LabelControl
+Me.txtNextDVDRemain = New DevExpress.XtraEditors.TextEdit
 Me.btnForcedReconduction = New DevExpress.XtraEditors.SimpleButton
 Me.btnActivateDomiciliation = New DevExpress.XtraEditors.SimpleButton
 Me.btnReceivedDomiciliation = New DevExpress.XtraEditors.SimpleButton
@@ -1842,10 +1842,10 @@ CType(Me.GridViewInfoAdult,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.gridInfoNorm,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.GridViewInfoNorm,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tabMain.SuspendLayout
-CType(Me.txtNextDVDRemain.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.chksleep.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.ChkCreditCombined.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.chkFt.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtNextDVDRemain.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.GCACtPhone,System.ComponentModel.ISupportInitialize).BeginInit
 Me.GCACtPhone.SuspendLayout
 CType(Me.MemoOtherReason.Properties,System.ComponentModel.ISupportInitialize).BeginInit
@@ -3294,7 +3294,7 @@ Me.tabDroselia.Text = "Droselia"
 '
 Me.LabelControl38.Location = New System.Drawing.Point(3, 17)
 Me.LabelControl38.Name = "LabelControl38"
-Me.LabelControl38.Size = New System.Drawing.Size(135, 13)
+Me.LabelControl38.Size = New System.Drawing.Size(0, 13)
 Me.LabelControl38.TabIndex = 22
 Me.LabelControl38.Text = "number of code to generate"
 '
@@ -4308,7 +4308,7 @@ Me.CalcEdit1.Visible = false
 '
 Me.LabelControl48.Location = New System.Drawing.Point(563, 18)
 Me.LabelControl48.Name = "LabelControl48"
-Me.LabelControl48.Size = New System.Drawing.Size(66, 13)
+Me.LabelControl48.Size = New System.Drawing.Size(0, 13)
 Me.LabelControl48.TabIndex = 54
 Me.LabelControl48.Text = "Open Amount"
 Me.LabelControl48.Visible = false
@@ -4327,7 +4327,7 @@ Me.CalcEdit.Visible = false
 '
 Me.LabelControl49.Location = New System.Drawing.Point(397, 18)
 Me.LabelControl49.Name = "LabelControl49"
-Me.LabelControl49.Size = New System.Drawing.Size(14, 13)
+Me.LabelControl49.Size = New System.Drawing.Size(0, 13)
 Me.LabelControl49.TabIndex = 52
 Me.LabelControl49.Text = "CA"
 Me.LabelControl49.Visible = false
@@ -4352,7 +4352,7 @@ Me.cmbPayMethod.TabIndex = 51
 '
 Me.LabelControl50.Location = New System.Drawing.Point(19, 18)
 Me.LabelControl50.Name = "LabelControl50"
-Me.LabelControl50.Size = New System.Drawing.Size(81, 13)
+Me.LabelControl50.Size = New System.Drawing.Size(0, 13)
 Me.LabelControl50.TabIndex = 50
 Me.LabelControl50.Text = "Payment Method"
 '
@@ -5754,15 +5754,6 @@ Me.lblNextDVDRemain.Size = New System.Drawing.Size(84, 13)
 Me.lblNextDVDRemain.TabIndex = 34
 Me.lblNextDVDRemain.Text = "Next DVD Remain"
 '
-'txtNextDVDRemain
-'
-Me.txtNextDVDRemain.Enabled = false
-Me.txtNextDVDRemain.Location = New System.Drawing.Point(726, 41)
-Me.txtNextDVDRemain.Name = "txtNextDVDRemain"
-Me.txtNextDVDRemain.Properties.ReadOnly = true
-Me.txtNextDVDRemain.Size = New System.Drawing.Size(79, 20)
-Me.txtNextDVDRemain.TabIndex = 33
-'
 'chksleep
 '
 Me.chksleep.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.sleep", true))
@@ -5831,6 +5822,15 @@ Me.lblNextCredit.Name = "lblNextCredit"
 Me.lblNextCredit.Size = New System.Drawing.Size(55, 13)
 Me.lblNextCredit.TabIndex = 22
 Me.lblNextCredit.Text = "Next Credit"
+'
+'txtNextDVDRemain
+'
+Me.txtNextDVDRemain.Enabled = false
+Me.txtNextDVDRemain.Location = New System.Drawing.Point(726, 41)
+Me.txtNextDVDRemain.Name = "txtNextDVDRemain"
+Me.txtNextDVDRemain.Properties.ReadOnly = true
+Me.txtNextDVDRemain.Size = New System.Drawing.Size(79, 20)
+Me.txtNextDVDRemain.TabIndex = 33
 '
 'btnForcedReconduction
 '
@@ -8813,7 +8813,7 @@ Me.lblValueRating.Appearance.Font = New System.Drawing.Font("Tahoma", 13.8!, Sys
 Me.lblValueRating.Appearance.Options.UseFont = true
 Me.lblValueRating.Location = New System.Drawing.Point(139, 60)
 Me.lblValueRating.Name = "lblValueRating"
-Me.lblValueRating.Size = New System.Drawing.Size(10, 22)
+Me.lblValueRating.Size = New System.Drawing.Size(0, 22)
 Me.lblValueRating.TabIndex = 10
 Me.lblValueRating.Text = "0"
 '
@@ -8823,7 +8823,7 @@ Me.lblRating.Appearance.Font = New System.Drawing.Font("Tahoma", 10.2!, System.D
 Me.lblRating.Appearance.Options.UseFont = true
 Me.lblRating.Location = New System.Drawing.Point(7, 65)
 Me.lblRating.Name = "lblRating"
-Me.lblRating.Size = New System.Drawing.Size(53, 17)
+Me.lblRating.Size = New System.Drawing.Size(0, 17)
 Me.lblRating.TabIndex = 9
 Me.lblRating.Text = "# Rating"
 '
@@ -8833,7 +8833,7 @@ Me.lblValueAverageRatingDvdPost.Appearance.Font = New System.Drawing.Font("Tahom
 Me.lblValueAverageRatingDvdPost.Appearance.Options.UseFont = true
 Me.lblValueAverageRatingDvdPost.Location = New System.Drawing.Point(288, 14)
 Me.lblValueAverageRatingDvdPost.Name = "lblValueAverageRatingDvdPost"
-Me.lblValueAverageRatingDvdPost.Size = New System.Drawing.Size(10, 22)
+Me.lblValueAverageRatingDvdPost.Size = New System.Drawing.Size(0, 22)
 Me.lblValueAverageRatingDvdPost.TabIndex = 8
 Me.lblValueAverageRatingDvdPost.Text = "0"
 '
@@ -8843,7 +8843,7 @@ Me.lblAverageRatingDvdPost.Appearance.Font = New System.Drawing.Font("Tahoma", 1
 Me.lblAverageRatingDvdPost.Appearance.Options.UseFont = true
 Me.lblAverageRatingDvdPost.Location = New System.Drawing.Point(188, 18)
 Me.lblAverageRatingDvdPost.Name = "lblAverageRatingDvdPost"
-Me.lblAverageRatingDvdPost.Size = New System.Drawing.Size(96, 17)
+Me.lblAverageRatingDvdPost.Size = New System.Drawing.Size(0, 17)
 Me.lblAverageRatingDvdPost.TabIndex = 7
 Me.lblAverageRatingDvdPost.Text = "Rating DvdPost"
 '
@@ -8853,7 +8853,7 @@ Me.lblValueNbCritiquePositive.Appearance.Font = New System.Drawing.Font("Tahoma"
 Me.lblValueNbCritiquePositive.Appearance.Options.UseFont = true
 Me.lblValueNbCritiquePositive.Location = New System.Drawing.Point(139, 12)
 Me.lblValueNbCritiquePositive.Name = "lblValueNbCritiquePositive"
-Me.lblValueNbCritiquePositive.Size = New System.Drawing.Size(10, 22)
+Me.lblValueNbCritiquePositive.Size = New System.Drawing.Size(0, 22)
 Me.lblValueNbCritiquePositive.TabIndex = 6
 Me.lblValueNbCritiquePositive.Text = "0"
 '
@@ -8863,7 +8863,7 @@ Me.lblNbCritiquePositive.Appearance.Font = New System.Drawing.Font("Tahoma", 10.
 Me.lblNbCritiquePositive.Appearance.Options.UseFont = true
 Me.lblNbCritiquePositive.Location = New System.Drawing.Point(7, 17)
 Me.lblNbCritiquePositive.Name = "lblNbCritiquePositive"
-Me.lblNbCritiquePositive.Size = New System.Drawing.Size(122, 17)
+Me.lblNbCritiquePositive.Size = New System.Drawing.Size(0, 17)
 Me.lblNbCritiquePositive.TabIndex = 5
 Me.lblNbCritiquePositive.Text = "# Critiques positives"
 '
@@ -8873,7 +8873,7 @@ Me.lblValueNbCrtitiques.Appearance.Font = New System.Drawing.Font("Tahoma", 13.8
 Me.lblValueNbCrtitiques.Appearance.Options.UseFont = true
 Me.lblValueNbCrtitiques.Location = New System.Drawing.Point(139, 36)
 Me.lblValueNbCrtitiques.Name = "lblValueNbCrtitiques"
-Me.lblValueNbCrtitiques.Size = New System.Drawing.Size(10, 22)
+Me.lblValueNbCrtitiques.Size = New System.Drawing.Size(0, 22)
 Me.lblValueNbCrtitiques.TabIndex = 4
 Me.lblValueNbCrtitiques.Text = "0"
 '
@@ -8883,7 +8883,7 @@ Me.lblNbCrtitiques.Appearance.Font = New System.Drawing.Font("Tahoma", 10.2!, Sy
 Me.lblNbCrtitiques.Appearance.Options.UseFont = true
 Me.lblNbCrtitiques.Location = New System.Drawing.Point(7, 41)
 Me.lblNbCrtitiques.Name = "lblNbCrtitiques"
-Me.lblNbCrtitiques.Size = New System.Drawing.Size(66, 17)
+Me.lblNbCrtitiques.Size = New System.Drawing.Size(0, 17)
 Me.lblNbCrtitiques.TabIndex = 3
 Me.lblNbCrtitiques.Text = "# Critiques"
 '
@@ -8894,7 +8894,7 @@ Me.lblValueRatingAverage.Appearance.Options.UseFont = true
 Me.lblValueRatingAverage.Cursor = System.Windows.Forms.Cursors.Default
 Me.lblValueRatingAverage.Location = New System.Drawing.Point(427, 12)
 Me.lblValueRatingAverage.Name = "lblValueRatingAverage"
-Me.lblValueRatingAverage.Size = New System.Drawing.Size(10, 22)
+Me.lblValueRatingAverage.Size = New System.Drawing.Size(0, 22)
 Me.lblValueRatingAverage.TabIndex = 2
 Me.lblValueRatingAverage.Text = "0"
 '
@@ -8904,7 +8904,7 @@ Me.lblRatingAverage.Appearance.Font = New System.Drawing.Font("Tahoma", 10.2!, S
 Me.lblRatingAverage.Appearance.Options.UseFont = true
 Me.lblRatingAverage.Location = New System.Drawing.Point(326, 17)
 Me.lblRatingAverage.Name = "lblRatingAverage"
-Me.lblRatingAverage.Size = New System.Drawing.Size(84, 17)
+Me.lblRatingAverage.Size = New System.Drawing.Size(0, 17)
 Me.lblRatingAverage.TabIndex = 1
 Me.lblRatingAverage.Text = "Rating Moyen"
 '
@@ -10206,10 +10206,10 @@ CType(Me.gridInfoNorm,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.GridViewInfoNorm,System.ComponentModel.ISupportInitialize).EndInit
 Me.tabMain.ResumeLayout(false)
 Me.tabMain.PerformLayout
-CType(Me.txtNextDVDRemain.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.chksleep.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.ChkCreditCombined.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.chkFt.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtNextDVDRemain.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.GCACtPhone,System.ComponentModel.ISupportInitialize).EndInit
 Me.GCACtPhone.ResumeLayout(false)
 Me.GCACtPhone.PerformLayout
@@ -11203,6 +11203,14 @@ End Sub
 
         ChangeStateControl(DateEndOfHoliday, Enabling)
 
+
+        ' Right buttons disabeld in Edit mode
+        ChangeStateControl(btnActPhone, Not Enabling)
+        ChangeStateControl(btnStopNow, Not Enabling)
+        ChangeStateControl(btnDelPhoAct, Not Enabling)
+        ChangeStateControl(btnForcedReconduction, Not Enabling)
+        ChangeStateControl(btnStopAtReconduction, Not Enabling)
+        ChangeStateControl(btnReActivate, Not Enabling)
 
         'phone activation
 
