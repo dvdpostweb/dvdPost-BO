@@ -433,11 +433,16 @@ Public Class frmDVD_Maint
     Friend WithEvents txtProducts_Media As DevExpress.XtraEditors.TextEdit
     Friend WithEvents lblDirectorSearch As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txtDirectorSearch As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents tabVodWishlist As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents GridVODWishlist As DevExpress.XtraGrid.GridControl
+    Friend WithEvents gridViewVODWishlist As DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView
+    Friend WithEvents GridBand12 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
     Friend WithEvents LabelControl48 As DevExpress.XtraEditors.LabelControl
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Dim FilterCondition1 As DevExpress.XtraTreeList.FilterCondition = New DevExpress.XtraTreeList.FilterCondition
         Dim StyleFormatCondition1 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
         Dim StyleFormatCondition2 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
+        Dim StyleFormatCondition3 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
         Me.colcategory_selected = New DevExpress.XtraTreeList.Columns.TreeListColumn
         Me.chkSelectCategory = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
         Me.XTabControlProduct = New DevExpress.XtraTab.XtraTabControl
@@ -453,6 +458,8 @@ Public Class frmDVD_Maint
         Me.colproducts_name = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.colproducts_model = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl
+        Me.lblDirectorSearch = New DevExpress.XtraEditors.LabelControl
+        Me.txtDirectorSearch = New DevExpress.XtraEditors.TextEdit
         Me.lblProductsMedia = New DevExpress.XtraEditors.LabelControl
         Me.txtProducts_Media = New DevExpress.XtraEditors.TextEdit
         Me.lblSearchProductID = New DevExpress.XtraEditors.LabelControl
@@ -805,6 +812,10 @@ Public Class frmDVD_Maint
         Me.lblRatingAverage = New DevExpress.XtraEditors.LabelControl
         Me.GridCritiques = New DevExpress.XtraGrid.GridControl
         Me.GridViewCritiques = New DevExpress.XtraGrid.Views.Grid.GridView
+        Me.tabVodWishlist = New DevExpress.XtraTab.XtraTabPage
+        Me.GridVODWishlist = New DevExpress.XtraGrid.GridControl
+        Me.gridViewVODWishlist = New DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView
+        Me.GridBand12 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand
         Me.BandedGridColumn6 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.PanelControl10 = New DevExpress.XtraEditors.PanelControl
         Me.TextEdit3 = New DevExpress.XtraEditors.TextEdit
@@ -821,8 +832,6 @@ Public Class frmDVD_Maint
         Me.LabelControl35 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl58 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl59 = New DevExpress.XtraEditors.LabelControl
-        Me.lblDirectorSearch = New DevExpress.XtraEditors.LabelControl
-        Me.txtDirectorSearch = New DevExpress.XtraEditors.TextEdit
         CType(Me.PrintSystem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MainDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbViewListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -841,6 +850,7 @@ Public Class frmDVD_Maint
         CType(Me.cmbLanguages, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl2.SuspendLayout()
+        CType(Me.txtDirectorSearch.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtProducts_Media.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtSearchProductID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtSearchImdbId_serie.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1052,6 +1062,9 @@ Public Class frmDVD_Maint
         Me.tabCritiques.SuspendLayout()
         CType(Me.GridCritiques, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewCritiques, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tabVodWishlist.SuspendLayout()
+        CType(Me.GridVODWishlist, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gridViewVODWishlist, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl10, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl10.SuspendLayout()
         CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1059,7 +1072,6 @@ Public Class frmDVD_Maint
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtDirectorSearch.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PopMenuNew
@@ -1102,7 +1114,7 @@ Public Class frmDVD_Maint
         Me.XTabControlProduct.SelectedTabPage = Me.tabSearch
         Me.XTabControlProduct.Size = New System.Drawing.Size(1056, 660)
         Me.XTabControlProduct.TabIndex = 35
-        Me.XTabControlProduct.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.tabSearch, Me.tabMain, Me.tabFR, Me.tabNL, Me.tabEN, Me.tabTheme, Me.tabLanguages, Me.tabTrailers, Me.tabFeeSharing, Me.tabDVDs, Me.tabGames, Me.tabTransfers, Me.tabPrevision, Me.tabWishlistCustomers, Me.tabVod, Me.tabCritiques})
+        Me.XTabControlProduct.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.tabSearch, Me.tabMain, Me.tabFR, Me.tabNL, Me.tabEN, Me.tabTheme, Me.tabLanguages, Me.tabTrailers, Me.tabFeeSharing, Me.tabDVDs, Me.tabGames, Me.tabTransfers, Me.tabPrevision, Me.tabWishlistCustomers, Me.tabVod, Me.tabCritiques, Me.tabVodWishlist})
         Me.XTabControlProduct.Text = "XtraTabControl1"
         '
         'tabSearch
@@ -1231,6 +1243,21 @@ Public Class frmDVD_Maint
         Me.PanelControl2.Name = "PanelControl2"
         Me.PanelControl2.Size = New System.Drawing.Size(1047, 134)
         Me.PanelControl2.TabIndex = 2
+        '
+        'lblDirectorSearch
+        '
+        Me.lblDirectorSearch.Location = New System.Drawing.Point(782, 43)
+        Me.lblDirectorSearch.Name = "lblDirectorSearch"
+        Me.lblDirectorSearch.Size = New System.Drawing.Size(38, 13)
+        Me.lblDirectorSearch.TabIndex = 75
+        Me.lblDirectorSearch.Text = "Director"
+        '
+        'txtDirectorSearch
+        '
+        Me.txtDirectorSearch.Location = New System.Drawing.Point(826, 39)
+        Me.txtDirectorSearch.Name = "txtDirectorSearch"
+        Me.txtDirectorSearch.Size = New System.Drawing.Size(134, 20)
+        Me.txtDirectorSearch.TabIndex = 74
         '
         'lblProductsMedia
         '
@@ -4900,6 +4927,38 @@ Public Class frmDVD_Maint
         Me.GridViewCritiques.Name = "GridViewCritiques"
         Me.GridViewCritiques.OptionsView.ShowFooter = True
         '
+        'tabVodWishlist
+        '
+        Me.tabVodWishlist.Controls.Add(Me.GridVODWishlist)
+        Me.tabVodWishlist.Name = "tabVodWishlist"
+        Me.tabVodWishlist.Size = New System.Drawing.Size(1047, 629)
+        Me.tabVodWishlist.Text = "VODWishlist"
+        '
+        'GridVODWishlist
+        '
+        Me.GridVODWishlist.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridVODWishlist.EmbeddedNavigator.Name = ""
+        Me.GridVODWishlist.FormsUseDefaultLookAndFeel = False
+        Me.GridVODWishlist.Location = New System.Drawing.Point(0, 0)
+        Me.GridVODWishlist.MainView = Me.gridViewVODWishlist
+        Me.GridVODWishlist.Name = "GridVODWishlist"
+        Me.GridVODWishlist.Size = New System.Drawing.Size(1047, 629)
+        Me.GridVODWishlist.TabIndex = 2
+        Me.GridVODWishlist.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridViewVODWishlist})
+        '
+        'gridViewVODWishlist
+        '
+        Me.gridViewVODWishlist.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand12})
+        Me.gridViewVODWishlist.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition3})
+        Me.gridViewVODWishlist.GridControl = Me.GridVODWishlist
+        Me.gridViewVODWishlist.Name = "gridViewVODWishlist"
+        Me.gridViewVODWishlist.OptionsBehavior.Editable = False
+        Me.gridViewVODWishlist.OptionsView.ShowFooter = True
+        '
+        'GridBand12
+        '
+        Me.GridBand12.Name = "GridBand12"
+        '
         'BandedGridColumn6
         '
         Me.BandedGridColumn6.Caption = "actors_id"
@@ -5052,21 +5111,6 @@ Public Class frmDVD_Maint
         Me.LabelControl59.TabIndex = 1
         Me.LabelControl59.Text = "Rating Moyen"
         '
-        'lblDirectorSearch
-        '
-        Me.lblDirectorSearch.Location = New System.Drawing.Point(782, 43)
-        Me.lblDirectorSearch.Name = "lblDirectorSearch"
-        Me.lblDirectorSearch.Size = New System.Drawing.Size(38, 13)
-        Me.lblDirectorSearch.TabIndex = 75
-        Me.lblDirectorSearch.Text = "Director"
-        '
-        'txtDirectorSearch
-        '
-        Me.txtDirectorSearch.Location = New System.Drawing.Point(826, 39)
-        Me.txtDirectorSearch.Name = "txtDirectorSearch"
-        Me.txtDirectorSearch.Size = New System.Drawing.Size(134, 20)
-        Me.txtDirectorSearch.TabIndex = 74
-        '
         'frmDVD_Maint
         '
         Me.AcceptButton = Me.btnOK1
@@ -5097,6 +5141,7 @@ Public Class frmDVD_Maint
         CType(Me.PanelControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl2.ResumeLayout(False)
         Me.PanelControl2.PerformLayout()
+        CType(Me.txtDirectorSearch.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtProducts_Media.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtSearchProductID.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtSearchImdbId_serie.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -5319,6 +5364,9 @@ Public Class frmDVD_Maint
         Me.tabCritiques.PerformLayout()
         CType(Me.GridCritiques, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewCritiques, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tabVodWishlist.ResumeLayout(False)
+        CType(Me.GridVODWishlist, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gridViewVODWishlist, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PanelControl10, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl10.ResumeLayout(False)
         Me.PanelControl10.PerformLayout()
@@ -5327,7 +5375,6 @@ Public Class frmDVD_Maint
         CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtDirectorSearch.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -5367,6 +5414,7 @@ Public Class frmDVD_Maint
         PREVISION
         VOD
         CRITIQUES
+        VODWISHLIST
 
 
     End Enum
@@ -5798,6 +5846,20 @@ Public Class frmDVD_Maint
             LstRefreshData(TypeOfTab.WISHLISTCUST) = False
         End If
     End Sub
+    Private Sub loadVodWishlist(ByVal product_id As Integer)
+        Dim sql As String
+        Dim dt As DataTable
+        If LstRefreshData(TypeOfTab.VODWISHLIST) Then
+            sql = DvdPostData.ClsVod.GetSelectVodWishlist(product_id)
+            dt = DvdPostData.clsConnection.FillDataSet(sql)
+            gridViewVODWishlist.Columns.Clear()
+            GridVODWishlist.DataSource = dt
+            gridViewVODWishlist.BestFitColumns()
+            clsDevExpress.AddHyperlinkDynamic(GridWishlistCustomers)
+            clsDevExpress.AddCountFooter(GridWishlistCustomers)
+            LstRefreshData(TypeOfTab.VODWISHLIST) = False
+        End If
+    End Sub
     Private Sub loadPrevision(ByVal product_id As Integer)
         Dim sql As String
         Dim dt As DataTable
@@ -5858,6 +5920,7 @@ Public Class frmDVD_Maint
         End If
         LstRefreshData(TypeOfTab.TRAILERS) = False
     End Sub
+    
     Private Sub loadLanguages()
         If LstRefreshData(TypeOfTab.LANGUAGES) Then
             MainData.LoadLanguages()
@@ -6608,7 +6671,8 @@ Public Class frmDVD_Maint
             loadCritique(CurrentProductID)
         ElseIf tabCurrent Is tabGames Then
         ElseIf tabCurrent Is tabTransfers Then
-
+        ElseIf tabCurrent Is tabVodWishlist Then
+            loadVodWishlist(CurrentProductID)
         End If
     End Sub
     Private Sub XTabControlProduct_SelectedPageChanged(ByVal sender As System.Object, ByVal e As DevExpress.XtraTab.TabPageChangedEventArgs) Handles XTabControlProduct.SelectedPageChanged

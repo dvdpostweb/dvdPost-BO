@@ -43,6 +43,21 @@ Public Class ClsVod
         Return sql
 
     End Function
+
+    Public Shared Function GetSelectVodWishlist(ByVal product_id As Integer)
+        Dim sql As String
+        sql = " SELECT vw.customer_id, vw.created_at FROM products p join vod_wishlists vw on p.imdb_id = vw.imdb_id " & _
+                " join streaming_products sp on sp.imdb_id = p.imdb_id " & _
+                " left join tokens t ON t.imdb_id = vw.imdb_id and t.updated_at < date_add(sysdate(), interval -2 DAY) " & _
+                " and t.customer_id = vw.customer_id " & _
+                " where p.products_id = " & product_id & _
+                " and sp.status = 'online_test_ok' and p.products_status != -1 " & _
+                " group by 1,2 " & _
+                " order by vw.created_at "
+        Return sql
+
+    End Function
+
     Public Shared Function getSelectMovieData(ByVal imdb_id As Long)
         Dim sql As String
 
@@ -348,6 +363,7 @@ Public Class ClsVod
         Dim strlanguage As String
         Dim strStudio As String
         Dim strExpireAt As String
+        Dim strAvailable_from As String
         Dim strBackcatalogue_from As String
         Dim strBackcatalogue_expire As String
 
@@ -375,6 +391,12 @@ Public Class ClsVod
             strStudio = "'" & studio_id & "'"
         End If
 
+        If available_from = DateTime.MinValue Then
+            strAvailable_from = "null"
+        Else
+            strAvailable_from = "'" & DVDPostTools.ClsDate.formatDateDB(available_from) & "'"
+        End If
+
         If expire_at = DateTime.MinValue Then
             strExpireAt = "null"
         Else
@@ -393,7 +415,7 @@ Public Class ClsVod
             strBackcatalogue_expire = "'" & DVDPostTools.ClsDate.formatDateDB(expire_backcatalogue_at) & "'"
         End If
 
-        sql = "insert into streaming_products values (null," & imdb_id & ",'" & filename & "','" & DVDPostTools.ClsDate.formatDateDB(available_from) & _
+        sql = "insert into streaming_products values (null," & imdb_id & ",'" & filename & "','" & strAvailable_from & _
               "'," & strExpireAt & ", " & strBackcatalogue_from & ", " & strBackcatalogue_expire & "," & available & "," & strlanguage & "," & strLanguageSubtitle & ",now(),now()," & strStudio & ",'" & status & "'," & strQuality & ",'" & source & "'," & support & "," & credit & ")"
         Return sql
     End Function

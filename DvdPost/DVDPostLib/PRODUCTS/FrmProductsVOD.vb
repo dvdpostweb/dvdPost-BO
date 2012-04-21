@@ -900,7 +900,7 @@ Public Class FrmProductsVOD
 
                 End If
 
-                result(DvdPostData.ClsVod.ListField.AVAILABLE_FROM) = Now()
+                result(DvdPostData.ClsVod.ListField.AVAILABLE_FROM) = DateTime.MinValue
                 result(DvdPostData.ClsVod.ListField.STATUS) = "uploaded"
                 result(DvdPostData.ClsVod.ListField.AVAILABLE) = "true"
                 result(DvdPostData.ClsVod.ListField.SOURCE) = "ALPHANETWORKS"
