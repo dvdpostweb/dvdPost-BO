@@ -174,6 +174,8 @@ Public Class ClsVod
         Return sql
     End Function
 
+
+
     Public Shared Function GetLanguage() As String
         Dim sql As String
         sql = "select languages_id id,code FROM languages"
@@ -415,8 +417,8 @@ Public Class ClsVod
             strBackcatalogue_expire = "'" & DVDPostTools.ClsDate.formatDateDB(expire_backcatalogue_at) & "'"
         End If
 
-        sql = "insert into streaming_products values (null," & imdb_id & ",'" & filename & "','" & strAvailable_from & _
-              "'," & strExpireAt & ", " & strBackcatalogue_from & ", " & strBackcatalogue_expire & "," & available & "," & strlanguage & "," & strLanguageSubtitle & ",now(),now()," & strStudio & ",'" & status & "'," & strQuality & ",'" & source & "'," & support & "," & credit & ")"
+        sql = "insert into streaming_products values (null," & imdb_id & ",'" & filename & "'," & strAvailable_from & _
+              "," & strExpireAt & ", " & strBackcatalogue_from & ", " & strBackcatalogue_expire & "," & available & "," & strlanguage & "," & strLanguageSubtitle & ",now(),now()," & strStudio & ",'" & status & "'," & strQuality & ",'" & source & "'," & support & "," & credit & ")"
         Return sql
     End Function
 

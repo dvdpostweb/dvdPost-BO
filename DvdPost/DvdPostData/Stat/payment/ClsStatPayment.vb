@@ -245,9 +245,9 @@ Public Class ClsStatPayment
     Public Shared Function GetViewVodHistorique(ByVal dateFrom As String, ByVal dateTo As String) As String
         Dim sql As String
 
-        sql = " select s.studio_name vodstudio, ps.studio_name as productstudio, customer_id,c.customers_abo_type,c.customers_lastname,c.customers_firstname, ( SELECT name FROM languages where languages_id = c.customers_language) as customers_language, t.imdb_id,p.products_title, p.products_type, t.created_at,p.products_date_available,sp.available_from,sp.expire_at,pabo.products_price,pa.qty_credit,pa.qty_at_home,d.directors_name " & _
+        sql = " select s.studio_name vodstudio, ps.studio_name as productstudio, customer_id,c.customers_abo_type,c.customers_lastname,c.customers_firstname, ( SELECT name FROM languages where languages_id = c.customers_language) as customers_language, t.imdb_id,p.products_title, p.products_type, t.created_at,p.products_date_available,sp.available_from,sp.expire_at, sp.available_backcatalogue_from, sp.expire_backcatalogue_at,  pabo.products_price,pa.qty_credit,pa.qty_at_home,d.directors_name " & _
               " from tokens t join (select imdb_id,products_directors_id,products_date_available,products_title, products_studio, products_type from products group by imdb_id) p on t.imdb_id = p.imdb_id " & _
-              " join (select s.imdb_id, s.available_from, s.expire_at,( select studio_id from streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id limit 1 ) as studio_id from streaming_products s group by s.imdb_id) sp on p.imdb_id = sp.imdb_id " & _
+              " join (select s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at,( select studio_id from streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id order by updated_at desc limit 1 ) as studio_id from streaming_products s group by s.imdb_id) sp on p.imdb_id = sp.imdb_id " & _
               " join customers c on t.customer_id = c.customers_id " & _
               " join products pabo on pabo.products_id = c.customers_abo_type " & _
               " join products_abo pa on pabo.products_id = pa.products_id " & _

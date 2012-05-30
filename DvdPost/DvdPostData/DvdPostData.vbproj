@@ -87,6 +87,7 @@
     <Compile Include="Customer\clsCallMeBrowse.vb" />
     <Compile Include="Customer\clsDiscountCode.vb" />
     <Compile Include="Customer\clsMessagerie.vb" />
+    <Compile Include="Payment\clsStudio.vb" />
     <Compile Include="Product\clsActors.vb" />
     <Compile Include="Product\clsDirectors.vb" />
     <Compile Include="Product\clsProducts.vb" />
