@@ -449,7 +449,8 @@ Public Class ClsVod
         Dim sql As String
         sql = " update products p join streaming_products sp on p.imdb_id = sp.imdb_id " & _
               " set p.vod_next = 0" & _
-              " where p.vod_next = 1 and sp.status = 'online_test_ok' and sp.available = 1 and  sp.available_from < sysdate() and ( sysdate() < sp.expire_at or sp.expire_at is null ) "
+              " where p.vod_next = 1 and sp.status = 'online_test_ok' and sp.available = 1 and " & _
+              " ( (sp.available_from < sysdate() and ( sysdate() < sp.expire_at or sp.expire_at is null ) ) or (sp.available_backcatalogue_from < sysdate() and sysdate() < sp.expire_backcatalogue_at) )"
         Return sql
     End Function
 

@@ -58,8 +58,9 @@ Public Class clsStudio
                                             ByVal fee_new_vod As String, ByVal fee_back_catalogue As String, ByVal minimum_new_vod As String, _
                                             ByVal minimum_back_catalogue As String, ByVal minimum_global As String, ByVal billing_reporting As Boolean, ByVal billing_report_type As String) As String
         Dim sql As String
+        Dim strStudioName = studio_name.Replace("'", "''")
 
-        sql = " update studio set studio_name = '" & studio_name & _
+        sql = " update studio set studio_name = '" & strStudioName & _
                 "', studio_type = '" & studio_type & _
                 "', cost_for_new = " & cost_for_new & _
                 ", cost = " & cost & _
@@ -69,8 +70,7 @@ Public Class clsStudio
                 ", minimum_back_catalogue = " & minimum_back_catalogue & _
                 ", minimum_global = " & minimum_global & _
                 ", billing_reporting = " & billing_reporting & _
-                ", billing_report_type = '" & billing_report_type & _
-                "' where studio_id = " & studio_id
+                ", billing_report_type = 'STANDARD' where studio_id = " & studio_id
 
         Return sql
     End Function
@@ -105,7 +105,7 @@ Public Class clsStudio
 " sp.expire_at," & _
 " sp.available_backcatalogue_from, " & _
 " sp.expire_backcatalogue_at, " & _
-" if(created_at between available_from and expire_at,'N',if(created_at between available_backcatalogue_from and expire_backcatalogue_at,'B','U')) as catalogue_type, " & _
+" if(created_at between available_from and expire_at,'N',if(created_at between available_backcatalogue_from and expire_backcatalogue_at,'B','B')) as catalogue_type, " & _
 " pabo.products_price, " & _
 " pa.qty_credit, " & _
 " pa.qty_at_home, " & _
@@ -119,7 +119,7 @@ Public Class clsStudio
 " from tokens t " & _
 " join (select imdb_id,products_directors_id,products_date_available,products_title, products_studio, products_type from products group by imdb_id) p on t.imdb_id = p.imdb_id " & _
 " join (select s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at,s.credits, " & _
-" ( select studio_id from streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id order by updated_at desc limit 1 ) as studio_id from streaming_products s group by s.imdb_id) sp on p.imdb_id = sp.imdb_id " & _
+" ( select studio_id from streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id order by updated_at desc limit 1 ) as studio_id from streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' group by s.imdb_id) sp on p.imdb_id = sp.imdb_id " & _
 " join customers c on t.customer_id = c.customers_id  join products pabo on pabo.products_id = c.customers_abo_type " & _
 " join products_abo pa on pabo.products_id = pa.products_id " & _
 " left join studio s on s.studio_id = sp.studio_id " & _
@@ -162,7 +162,7 @@ Public Class clsStudio
 "  sp.expire_at, " & _
 "  sp.available_backcatalogue_from, " & _
 "  sp.expire_backcatalogue_at, " & _
-"  if(created_at between available_from and expire_at,'N',if(created_at between available_backcatalogue_from and expire_backcatalogue_at,'B','U')) as catalogue_type, " & _
+"  if(created_at between available_from and expire_at,'N',if(created_at between available_backcatalogue_from and expire_backcatalogue_at,'B','B')) as catalogue_type, " & _
 "  pabo.products_price, " & _
 "  pa.qty_credit, " & _
 "  pa.qty_at_home, " & _
@@ -176,7 +176,7 @@ Public Class clsStudio
 "  from tokens t  " & _
 "  join (select imdb_id,products_directors_id,products_date_available,products_title, products_studio, products_type from products group by imdb_id) p on t.imdb_id = p.imdb_id " & _
  " join (select s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at,s.credits, " & _
- " ( select studio_id from streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id order by updated_at desc limit 1 ) as studio_id from streaming_products s group by s.imdb_id) sp on p.imdb_id = sp.imdb_id " & _
+ " ( select studio_id from streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id order by updated_at desc limit 1 ) as studio_id from streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' group by s.imdb_id) sp on p.imdb_id = sp.imdb_id " & _
  " join customers c on t.customer_id = c.customers_id  join products pabo on pabo.products_id = c.customers_abo_type " & _
  " join products_abo pa on pabo.products_id = pa.products_id " & _
  " left join studio s on s.studio_id = sp.studio_id " & _

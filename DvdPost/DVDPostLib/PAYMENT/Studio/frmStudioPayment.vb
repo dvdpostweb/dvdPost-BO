@@ -657,6 +657,8 @@ Public Class frmStudioPayment
         '
         resources.ApplyResources(Me.txt_fee_backcatalogue, "txt_fee_backcatalogue")
         Me.txt_fee_backcatalogue.Name = "txt_fee_backcatalogue"
+        Me.txt_fee_backcatalogue.Properties.Mask.EditMask = resources.GetString("txt_fee_backcatalogue.Properties.Mask.EditMask")
+        Me.txt_fee_backcatalogue.Properties.Mask.MaskType = CType(resources.GetObject("txt_fee_backcatalogue.Properties.Mask.MaskType"), DevExpress.XtraEditors.Mask.MaskType)
         '
         'lblFeeForNew
         '
@@ -667,6 +669,8 @@ Public Class frmStudioPayment
         '
         resources.ApplyResources(Me.txtFeeNew, "txtFeeNew")
         Me.txtFeeNew.Name = "txtFeeNew"
+        Me.txtFeeNew.Properties.Mask.EditMask = resources.GetString("txtFeeNew.Properties.Mask.EditMask")
+        Me.txtFeeNew.Properties.Mask.MaskType = CType(resources.GetObject("txtFeeNew.Properties.Mask.MaskType"), DevExpress.XtraEditors.Mask.MaskType)
         '
         'lblCredit
         '
@@ -1407,7 +1411,7 @@ Public Class frmStudioPayment
         GridStudioDetail.Views(0).PopulateColumns()
 
         GridStudioDetail.DataSource = dt
-        'TabAnalise.SelectedTabPage = XtraTabDetailedReport
+        XtraTabStudio.SelectedTabPage = TabStudioDetailReport
     End Sub
 
     Private Sub btnCreateSummaryReport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCreateSummaryReport.Click
