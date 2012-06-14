@@ -182,11 +182,14 @@ Public Class clsOffLinePayments
             For Each rCustomer As DataRow In dtCustomers.Rows
 
                 ok = clsMail.SendMail(rCustomer, mail_id)
-                If Not ok Then Return
+                If Not ok Then
+                    clsMsgError.MsgBox("mail to customers_id " & rCustomer("customers_id") & " not sent ")
+                End If
+                'Return
                 ForcedupdateStepStatus(stepCurrent, rCustomer("id"))
 
             Next
-            clsMsgError.MsgBox("mail sent OK = " & ok.ToString())
+            clsMsgError.MsgBox("sending mails for mail_id finished: OK = " & ok.ToString())
         End If
     End Sub
 

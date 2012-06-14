@@ -847,6 +847,12 @@ Partial Public Class StudioBillingReport
         
         Private columnamount_sum As Global.System.Data.DataColumn
         
+        Private columndate_created As Global.System.Data.DataColumn
+        
+        Private columnperiod_start As Global.System.Data.DataColumn
+        
+        Private columnperiod_end As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub New()
             MyBase.New
@@ -928,6 +934,27 @@ Partial Public Class StudioBillingReport
             End Get
         End Property
         
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property date_createdColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columndate_created
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property period_startColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnperiod_start
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property period_endColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnperiod_end
+            End Get
+        End Property
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -957,9 +984,9 @@ Partial Public Class StudioBillingReport
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Overloads Function Addsummary_reportRow(ByVal vodstudio As String, ByVal productstudio As String, ByVal products_title As String, ByVal number_titles As Integer, ByVal tvac_sum As Double, ByVal htvac_sum As Double, ByVal amount_sum As Double) As summary_reportRow
+        Public Overloads Function Addsummary_reportRow(ByVal vodstudio As String, ByVal productstudio As String, ByVal products_title As String, ByVal number_titles As Integer, ByVal tvac_sum As Double, ByVal htvac_sum As Double, ByVal amount_sum As Double, ByVal date_created As Date, ByVal period_start As Date, ByVal period_end As Date) As summary_reportRow
             Dim rowsummary_reportRow As summary_reportRow = CType(Me.NewRow,summary_reportRow)
-            Dim columnValuesArray() As Object = New Object() {vodstudio, productstudio, products_title, number_titles, tvac_sum, htvac_sum, amount_sum}
+            Dim columnValuesArray() As Object = New Object() {vodstudio, productstudio, products_title, number_titles, tvac_sum, htvac_sum, amount_sum, date_created, period_start, period_end}
             rowsummary_reportRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowsummary_reportRow)
             Return rowsummary_reportRow
@@ -991,6 +1018,9 @@ Partial Public Class StudioBillingReport
             Me.columntvac_sum = MyBase.Columns("tvac_sum")
             Me.columnhtvac_sum = MyBase.Columns("htvac_sum")
             Me.columnamount_sum = MyBase.Columns("amount_sum")
+            Me.columndate_created = MyBase.Columns("date_created")
+            Me.columnperiod_start = MyBase.Columns("period_start")
+            Me.columnperiod_end = MyBase.Columns("period_end")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -1009,6 +1039,12 @@ Partial Public Class StudioBillingReport
             MyBase.Columns.Add(Me.columnhtvac_sum)
             Me.columnamount_sum = New Global.System.Data.DataColumn("amount_sum", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnamount_sum)
+            Me.columndate_created = New Global.System.Data.DataColumn("date_created", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columndate_created)
+            Me.columnperiod_start = New Global.System.Data.DataColumn("period_start", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnperiod_start)
+            Me.columnperiod_end = New Global.System.Data.DataColumn("period_end", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnperiod_end)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -1838,6 +1874,48 @@ Partial Public Class StudioBillingReport
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property date_created() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tablesummary_report.date_createdColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'date_created' in table 'summary_report' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablesummary_report.date_createdColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property period_start() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tablesummary_report.period_startColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'period_start' in table 'summary_report' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablesummary_report.period_startColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property period_end() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tablesummary_report.period_endColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'period_end' in table 'summary_report' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablesummary_report.period_endColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function IsvodstudioNull() As Boolean
             Return Me.IsNull(Me.tablesummary_report.vodstudioColumn)
         End Function
@@ -1905,6 +1983,36 @@ Partial Public Class StudioBillingReport
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub Setamount_sumNull()
             Me(Me.tablesummary_report.amount_sumColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isdate_createdNull() As Boolean
+            Return Me.IsNull(Me.tablesummary_report.date_createdColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setdate_createdNull()
+            Me(Me.tablesummary_report.date_createdColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isperiod_startNull() As Boolean
+            Return Me.IsNull(Me.tablesummary_report.period_startColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setperiod_startNull()
+            Me(Me.tablesummary_report.period_startColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isperiod_endNull() As Boolean
+            Return Me.IsNull(Me.tablesummary_report.period_endColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setperiod_endNull()
+            Me(Me.tablesummary_report.period_endColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

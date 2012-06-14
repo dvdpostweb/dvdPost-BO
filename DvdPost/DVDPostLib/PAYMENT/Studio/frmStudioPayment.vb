@@ -657,8 +657,6 @@ Public Class frmStudioPayment
         '
         resources.ApplyResources(Me.txt_fee_backcatalogue, "txt_fee_backcatalogue")
         Me.txt_fee_backcatalogue.Name = "txt_fee_backcatalogue"
-        Me.txt_fee_backcatalogue.Properties.Mask.EditMask = resources.GetString("txt_fee_backcatalogue.Properties.Mask.EditMask")
-        Me.txt_fee_backcatalogue.Properties.Mask.MaskType = CType(resources.GetObject("txt_fee_backcatalogue.Properties.Mask.MaskType"), DevExpress.XtraEditors.Mask.MaskType)
         '
         'lblFeeForNew
         '
@@ -669,8 +667,7 @@ Public Class frmStudioPayment
         '
         resources.ApplyResources(Me.txtFeeNew, "txtFeeNew")
         Me.txtFeeNew.Name = "txtFeeNew"
-        Me.txtFeeNew.Properties.Mask.EditMask = resources.GetString("txtFeeNew.Properties.Mask.EditMask")
-        Me.txtFeeNew.Properties.Mask.MaskType = CType(resources.GetObject("txtFeeNew.Properties.Mask.MaskType"), DevExpress.XtraEditors.Mask.MaskType)
+        Me.txtFeeNew.Properties.Mask.IgnoreMaskBlank = CType(resources.GetObject("txtFeeNew.Properties.Mask.IgnoreMaskBlank"), Boolean)
         '
         'lblCredit
         '
@@ -1261,6 +1258,7 @@ Public Class frmStudioPayment
     End Sub
     Private Function Save() As Boolean
         Dim sql As String
+        sql = ""
         Try
             If txtId.EditValue Is Nothing Then
                 sql = DvdPostData.clsStudio.getInsertStudio(txtStudioName.EditValue, cmbStudioType.EditValue, spedCreditNew.EditValue, spedCredit.EditValue, txtFeeNew.EditValue, _
@@ -1274,6 +1272,7 @@ Public Class frmStudioPayment
             End If
             Return True
         Catch ex As Exception
+            MsgBox(sql, MsgBoxStyle.Information)
             DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Vod, ex)
             Return False
         End Try
@@ -1288,7 +1287,7 @@ Public Class frmStudioPayment
                 BtnViewAll_Click(Nothing, Nothing)
             End If
         Else
-            MsgBox("Error Save Vod (voir log)", MsgBoxStyle.Critical)
+            MsgBox("Error Save Studio (voir log)", MsgBoxStyle.Critical)
         End If
     End Sub
 

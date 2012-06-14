@@ -212,7 +212,7 @@ Public Class clsMail
             Catch ex As Exception
                 Dim msgerror As String
                 DvdPostData.clsConnection.CancelBulkQuery()
-                msgerror = "Error mail id : " & mail_id & " lang : " & customers_lang & " " & ex.Message
+                msgerror = "Error mail id : " & mail_id & " lang : " & customers_lang & " " & ex.Message & " email: " & rowcustomers("customers_email_address")
                 clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Email, msgerror)
                 Return False
                 'Throw ex

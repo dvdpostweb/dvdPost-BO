@@ -27,6 +27,9 @@ Partial Public Class rptStudioSummaryReport
         Dim XrSummary6 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary
         Dim XrSummary7 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary
         Dim XrSummary8 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary
+        Dim XrSummary9 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary
+        Dim XrSummary10 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary
+        Dim XrSummary11 As DevExpress.XtraReports.UI.XRSummary = New DevExpress.XtraReports.UI.XRSummary
         Me.Detail = New DevExpress.XtraReports.UI.DetailBand
         Me.XrLabel2 = New DevExpress.XtraReports.UI.XRLabel
         Me.XrLabel3 = New DevExpress.XtraReports.UI.XRLabel
@@ -46,6 +49,11 @@ Partial Public Class rptStudioSummaryReport
         Me.XrLabel7 = New DevExpress.XtraReports.UI.XRLabel
         Me.XrLabel8 = New DevExpress.XtraReports.UI.XRLabel
         Me.ReportHeader = New DevExpress.XtraReports.UI.ReportHeaderBand
+        Me.XrLabel25 = New DevExpress.XtraReports.UI.XRLabel
+        Me.XrLabel24 = New DevExpress.XtraReports.UI.XRLabel
+        Me.XrLabel23 = New DevExpress.XtraReports.UI.XRLabel
+        Me.XrLabel22 = New DevExpress.XtraReports.UI.XRLabel
+        Me.XrLabel17 = New DevExpress.XtraReports.UI.XRLabel
         Me.XrLabel13 = New DevExpress.XtraReports.UI.XRLabel
         Me.XrLabel12 = New DevExpress.XtraReports.UI.XRLabel
         Me.XrLabel11 = New DevExpress.XtraReports.UI.XRLabel
@@ -91,32 +99,38 @@ Partial Public Class rptStudioSummaryReport
         '
         'XrLabel4
         '
-        Me.XrLabel4.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "summary_report.tvac_sum", "")})
+        Me.XrLabel4.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "summary_report.tvac_sum", "{0:#.00}")})
         Me.XrLabel4.Location = New System.Drawing.Point(400, 0)
         Me.XrLabel4.Name = "XrLabel4"
         Me.XrLabel4.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel4.Size = New System.Drawing.Size(175, 17)
+        XrSummary1.FormatString = "{0:#.00}"
+        Me.XrLabel4.Summary = XrSummary1
         Me.XrLabel4.Text = "XrLabel4"
         '
         'XrLabel5
         '
-        Me.XrLabel5.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "summary_report.htvac_sum", "")})
+        Me.XrLabel5.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "summary_report.htvac_sum", "{0:#.00}")})
         Me.XrLabel5.Location = New System.Drawing.Point(575, 0)
         Me.XrLabel5.Name = "XrLabel5"
         Me.XrLabel5.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel5.Size = New System.Drawing.Size(125, 17)
         Me.XrLabel5.StylePriority.UseBorderColor = False
+        XrSummary2.FormatString = "{0:#.00}"
+        Me.XrLabel5.Summary = XrSummary2
         Me.XrLabel5.Text = "XrLabel5"
         '
         'XrLabel14
         '
         Me.XrLabel14.BorderColor = System.Drawing.SystemColors.ControlText
-        Me.XrLabel14.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "summary_report.amount_sum", "")})
+        Me.XrLabel14.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "summary_report.amount_sum", "{0:#.00}")})
         Me.XrLabel14.Location = New System.Drawing.Point(700, 0)
         Me.XrLabel14.Name = "XrLabel14"
         Me.XrLabel14.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel14.Size = New System.Drawing.Size(124, 17)
         Me.XrLabel14.StylePriority.UseBorderColor = False
+        XrSummary3.FormatString = "{0:#.00}"
+        Me.XrLabel14.Summary = XrSummary3
         Me.XrLabel14.Text = "XrLabel14"
         '
         'XrLabel1
@@ -131,8 +145,8 @@ Partial Public Class rptStudioSummaryReport
         Me.XrLabel1.Size = New System.Drawing.Size(816, 17)
         Me.XrLabel1.StylePriority.UseBackColor = False
         Me.XrLabel1.StylePriority.UseBorders = False
-        XrSummary1.FormatString = "{0}"
-        Me.XrLabel1.Summary = XrSummary1
+        XrSummary4.FormatString = "{0}"
+        Me.XrLabel1.Summary = XrSummary4
         Me.XrLabel1.Text = "XrLabel1"
         '
         'StudioBillingReport1
@@ -209,9 +223,9 @@ Partial Public Class rptStudioSummaryReport
         Me.XrLabel15.StylePriority.UseBorders = False
         Me.XrLabel15.StylePriority.UseBorderWidth = False
         Me.XrLabel15.StylePriority.UseFont = False
-        XrSummary2.FormatString = "{0}"
-        XrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Group
-        Me.XrLabel15.Summary = XrSummary2
+        XrSummary5.FormatString = " {0:#.00}"
+        XrSummary5.Running = DevExpress.XtraReports.UI.SummaryRunning.Group
+        Me.XrLabel15.Summary = XrSummary5
         Me.XrLabel15.Text = "XrLabel15"
         '
         'XrLabel6
@@ -227,8 +241,8 @@ Partial Public Class rptStudioSummaryReport
         Me.XrLabel6.StylePriority.UseBorders = False
         Me.XrLabel6.StylePriority.UseBorderWidth = False
         Me.XrLabel6.StylePriority.UseFont = False
-        XrSummary3.Running = DevExpress.XtraReports.UI.SummaryRunning.Group
-        Me.XrLabel6.Summary = XrSummary3
+        XrSummary6.Running = DevExpress.XtraReports.UI.SummaryRunning.Group
+        Me.XrLabel6.Summary = XrSummary6
         Me.XrLabel6.Text = "XrLabel6"
         '
         'lblStudioSummary
@@ -258,9 +272,10 @@ Partial Public Class rptStudioSummaryReport
         Me.XrLabel7.StylePriority.UseBorders = False
         Me.XrLabel7.StylePriority.UseBorderWidth = False
         Me.XrLabel7.StylePriority.UseFont = False
-        XrSummary4.Func = DevExpress.XtraReports.UI.SummaryFunc.DSum
-        XrSummary4.Running = DevExpress.XtraReports.UI.SummaryRunning.Group
-        Me.XrLabel7.Summary = XrSummary4
+        XrSummary7.FormatString = " {0:#.00}"
+        XrSummary7.Func = DevExpress.XtraReports.UI.SummaryFunc.DSum
+        XrSummary7.Running = DevExpress.XtraReports.UI.SummaryRunning.Group
+        Me.XrLabel7.Summary = XrSummary7
         Me.XrLabel7.Text = "XrLabel7"
         '
         'XrLabel8
@@ -276,24 +291,85 @@ Partial Public Class rptStudioSummaryReport
         Me.XrLabel8.StylePriority.UseBorders = False
         Me.XrLabel8.StylePriority.UseBorderWidth = False
         Me.XrLabel8.StylePriority.UseFont = False
-        XrSummary5.FormatString = "{0:#.00}"
-        XrSummary5.Func = DevExpress.XtraReports.UI.SummaryFunc.DSum
-        XrSummary5.Running = DevExpress.XtraReports.UI.SummaryRunning.Group
-        Me.XrLabel8.Summary = XrSummary5
+        XrSummary8.FormatString = "{0:#.00}"
+        XrSummary8.Running = DevExpress.XtraReports.UI.SummaryRunning.Group
+        Me.XrLabel8.Summary = XrSummary8
         Me.XrLabel8.Text = "XrLabel8"
         '
         'ReportHeader
         '
-        Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel13, Me.XrLabel12, Me.XrLabel11, Me.XrLabel10, Me.XrLabel9})
-        Me.ReportHeader.Height = 17
+        Me.ReportHeader.Controls.AddRange(New DevExpress.XtraReports.UI.XRControl() {Me.XrLabel25, Me.XrLabel24, Me.XrLabel23, Me.XrLabel22, Me.XrLabel17, Me.XrLabel13, Me.XrLabel12, Me.XrLabel11, Me.XrLabel10, Me.XrLabel9})
+        Me.ReportHeader.Height = 109
         Me.ReportHeader.Name = "ReportHeader"
+        '
+        'XrLabel25
+        '
+        Me.XrLabel25.CanGrow = False
+        Me.XrLabel25.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "summary_report.period_end", "{0:dd/MM/yyyy}")})
+        Me.XrLabel25.Location = New System.Drawing.Point(375, 58)
+        Me.XrLabel25.Name = "XrLabel25"
+        Me.XrLabel25.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel25.Size = New System.Drawing.Size(150, 33)
+        Me.XrLabel25.StylePriority.UseTextAlignment = False
+        Me.XrLabel25.Text = "XrLabel25"
+        Me.XrLabel25.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft
+        '
+        'XrLabel24
+        '
+        Me.XrLabel24.CanGrow = False
+        Me.XrLabel24.Font = New System.Drawing.Font("Times New Roman", 15.0!, System.Drawing.FontStyle.Bold)
+        Me.XrLabel24.Location = New System.Drawing.Point(342, 58)
+        Me.XrLabel24.Name = "XrLabel24"
+        Me.XrLabel24.Padding = New DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100.0!)
+        Me.XrLabel24.Size = New System.Drawing.Size(33, 33)
+        Me.XrLabel24.StylePriority.UseFont = False
+        Me.XrLabel24.StylePriority.UsePadding = False
+        Me.XrLabel24.StylePriority.UseTextAlignment = False
+        Me.XrLabel24.Text = "-"
+        Me.XrLabel24.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
+        Me.XrLabel24.WordWrap = False
+        '
+        'XrLabel23
+        '
+        Me.XrLabel23.CanGrow = False
+        Me.XrLabel23.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "summary_report.period_start", "{0:dd/MM/yyyy}")})
+        Me.XrLabel23.Location = New System.Drawing.Point(200, 58)
+        Me.XrLabel23.Name = "XrLabel23"
+        Me.XrLabel23.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel23.Size = New System.Drawing.Size(138, 33)
+        Me.XrLabel23.StylePriority.UseTextAlignment = False
+        Me.XrLabel23.Text = "XrLabel23"
+        Me.XrLabel23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight
+        '
+        'XrLabel22
+        '
+        Me.XrLabel22.CanGrow = False
+        Me.XrLabel22.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "summary_report.date_created", "{0:dd/MM/yyyy}")})
+        Me.XrLabel22.Location = New System.Drawing.Point(592, 8)
+        Me.XrLabel22.Name = "XrLabel22"
+        Me.XrLabel22.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel22.Size = New System.Drawing.Size(125, 25)
+        Me.XrLabel22.Text = "XrLabel22"
+        '
+        'XrLabel17
+        '
+        Me.XrLabel17.CanGrow = False
+        Me.XrLabel17.DataBindings.AddRange(New DevExpress.XtraReports.UI.XRBinding() {New DevExpress.XtraReports.UI.XRBinding("Text", Nothing, "summary_report.vodstudio", "{0}")})
+        Me.XrLabel17.Font = New System.Drawing.Font("Times New Roman", 13.0!, System.Drawing.FontStyle.Bold)
+        Me.XrLabel17.Location = New System.Drawing.Point(200, 17)
+        Me.XrLabel17.Name = "XrLabel17"
+        Me.XrLabel17.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
+        Me.XrLabel17.Size = New System.Drawing.Size(325, 33)
+        Me.XrLabel17.StylePriority.UseFont = False
+        Me.XrLabel17.Text = "XrLabel17"
+        Me.XrLabel17.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter
         '
         'XrLabel13
         '
         Me.XrLabel13.BackColor = System.Drawing.Color.LightSkyBlue
         Me.XrLabel13.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
         Me.XrLabel13.BorderWidth = 3
-        Me.XrLabel13.Location = New System.Drawing.Point(700, 0)
+        Me.XrLabel13.Location = New System.Drawing.Point(700, 92)
         Me.XrLabel13.Name = "XrLabel13"
         Me.XrLabel13.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel13.Size = New System.Drawing.Size(124, 17)
@@ -307,7 +383,7 @@ Partial Public Class rptStudioSummaryReport
         Me.XrLabel12.BackColor = System.Drawing.Color.LightSkyBlue
         Me.XrLabel12.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
         Me.XrLabel12.BorderWidth = 3
-        Me.XrLabel12.Location = New System.Drawing.Point(575, 0)
+        Me.XrLabel12.Location = New System.Drawing.Point(575, 92)
         Me.XrLabel12.Name = "XrLabel12"
         Me.XrLabel12.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel12.Size = New System.Drawing.Size(125, 17)
@@ -321,7 +397,7 @@ Partial Public Class rptStudioSummaryReport
         Me.XrLabel11.BackColor = System.Drawing.Color.LightSkyBlue
         Me.XrLabel11.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
         Me.XrLabel11.BorderWidth = 3
-        Me.XrLabel11.Location = New System.Drawing.Point(400, 0)
+        Me.XrLabel11.Location = New System.Drawing.Point(400, 92)
         Me.XrLabel11.Name = "XrLabel11"
         Me.XrLabel11.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel11.Size = New System.Drawing.Size(175, 17)
@@ -335,7 +411,7 @@ Partial Public Class rptStudioSummaryReport
         Me.XrLabel10.BackColor = System.Drawing.Color.LightSkyBlue
         Me.XrLabel10.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
         Me.XrLabel10.BorderWidth = 3
-        Me.XrLabel10.Location = New System.Drawing.Point(250, 0)
+        Me.XrLabel10.Location = New System.Drawing.Point(250, 92)
         Me.XrLabel10.Name = "XrLabel10"
         Me.XrLabel10.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel10.Size = New System.Drawing.Size(150, 17)
@@ -349,7 +425,7 @@ Partial Public Class rptStudioSummaryReport
         Me.XrLabel9.BackColor = System.Drawing.Color.LightSkyBlue
         Me.XrLabel9.Borders = DevExpress.XtraPrinting.BorderSide.Bottom
         Me.XrLabel9.BorderWidth = 3
-        Me.XrLabel9.Location = New System.Drawing.Point(8, 0)
+        Me.XrLabel9.Location = New System.Drawing.Point(8, 92)
         Me.XrLabel9.Name = "XrLabel9"
         Me.XrLabel9.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel9.Size = New System.Drawing.Size(242, 17)
@@ -380,9 +456,9 @@ Partial Public Class rptStudioSummaryReport
         Me.XrLabel20.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel20.Size = New System.Drawing.Size(124, 17)
         Me.XrLabel20.StylePriority.UseFont = False
-        XrSummary6.FormatString = "{0}"
-        XrSummary6.Running = DevExpress.XtraReports.UI.SummaryRunning.Group
-        Me.XrLabel20.Summary = XrSummary6
+        XrSummary9.FormatString = " {0:#.00}"
+        XrSummary9.Running = DevExpress.XtraReports.UI.SummaryRunning.Group
+        Me.XrLabel20.Summary = XrSummary9
         Me.XrLabel20.Text = "XrLabel15"
         '
         'XrLabel19
@@ -394,10 +470,9 @@ Partial Public Class rptStudioSummaryReport
         Me.XrLabel19.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel19.Size = New System.Drawing.Size(124, 17)
         Me.XrLabel19.StylePriority.UseFont = False
-        XrSummary7.FormatString = "{0:#.00}"
-        XrSummary7.Func = DevExpress.XtraReports.UI.SummaryFunc.DSum
-        XrSummary7.Running = DevExpress.XtraReports.UI.SummaryRunning.Group
-        Me.XrLabel19.Summary = XrSummary7
+        XrSummary10.FormatString = "{0:#.00}"
+        XrSummary10.Running = DevExpress.XtraReports.UI.SummaryRunning.Group
+        Me.XrLabel19.Summary = XrSummary10
         Me.XrLabel19.Text = "XrLabel8"
         '
         'XrLabel18
@@ -409,9 +484,9 @@ Partial Public Class rptStudioSummaryReport
         Me.XrLabel18.Padding = New DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100.0!)
         Me.XrLabel18.Size = New System.Drawing.Size(174, 17)
         Me.XrLabel18.StylePriority.UseFont = False
-        XrSummary8.Func = DevExpress.XtraReports.UI.SummaryFunc.DSum
-        XrSummary8.Running = DevExpress.XtraReports.UI.SummaryRunning.Group
-        Me.XrLabel18.Summary = XrSummary8
+        XrSummary11.FormatString = " {0:#.00}"
+        XrSummary11.Running = DevExpress.XtraReports.UI.SummaryRunning.Group
+        Me.XrLabel18.Summary = XrSummary11
         Me.XrLabel18.Text = "XrLabel18"
         '
         'XrLabel21
@@ -467,4 +542,9 @@ Partial Public Class rptStudioSummaryReport
     Friend WithEvents XrLabel19 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel18 As DevExpress.XtraReports.UI.XRLabel
     Friend WithEvents XrLabel21 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel22 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel17 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel25 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel24 As DevExpress.XtraReports.UI.XRLabel
+    Friend WithEvents XrLabel23 As DevExpress.XtraReports.UI.XRLabel
 End Class

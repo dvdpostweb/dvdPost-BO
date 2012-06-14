@@ -59,6 +59,11 @@ Public Class clsStudio
                                             ByVal minimum_back_catalogue As String, ByVal minimum_global As String, ByVal billing_reporting As Boolean, ByVal billing_report_type As String) As String
         Dim sql As String
         Dim strStudioName = studio_name.Replace("'", "''")
+        fee_new_vod = fee_new_vod.Replace(",", ".")
+        fee_back_catalogue = fee_back_catalogue.Replace(",", ".")
+        minimum_new_vod = minimum_new_vod.Replace(",", ".")
+        minimum_back_catalogue = minimum_back_catalogue.Replace(",", ".")
+        minimum_global = minimum_global.Replace(",", ".")
 
         sql = " update studio set studio_name = '" & strStudioName & _
                 "', studio_type = '" & studio_type & _
@@ -119,7 +124,7 @@ Public Class clsStudio
 " from tokens t " & _
 " join (select imdb_id,products_directors_id,products_date_available,products_title, products_studio, products_type from products group by imdb_id) p on t.imdb_id = p.imdb_id " & _
 " join (select s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at,s.credits, " & _
-" ( select studio_id from streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id order by updated_at desc limit 1 ) as studio_id from streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' group by s.imdb_id) sp on p.imdb_id = sp.imdb_id " & _
+" ( select studio_id from streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id order by updated_at desc limit 1 ) as studio_id from streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' group by s.imdb_id) sp on p.imdb_id = sp.imdb_id  and ( ( t.created_at between sp.available_from and expire_at ) or (t.created_at between sp.available_backcatalogue_from and expire_backcatalogue_at))" & _
 " join customers c on t.customer_id = c.customers_id  join products pabo on pabo.products_id = c.customers_abo_type " & _
 " join products_abo pa on pabo.products_id = pa.products_id " & _
 " left join studio s on s.studio_id = sp.studio_id " & _
@@ -143,7 +148,7 @@ Public Class clsStudio
 " if((x.price_of_movie_htva * x.fee_new_vod) < x.minimum_new_vod, x.minimum_new_vod, (x.price_of_movie_htva * x.fee_new_vod))" & _
 " when 'B' then " & _
 " if((x.price_of_movie_htva * x.fee_back_catalogue) < x.minimum_back_catalogue, x.minimum_back_catalogue, (x.price_of_movie_htva * x.fee_back_catalogue)) " & _
-" end ) amount_sum " & _
+" end ) amount_sum , date(sysdate()) date_created, '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' period_start , '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' period_end" & _
 " from " & _
 " ( " & _
 "  select " & _
@@ -176,7 +181,7 @@ Public Class clsStudio
 "  from tokens t  " & _
 "  join (select imdb_id,products_directors_id,products_date_available,products_title, products_studio, products_type from products group by imdb_id) p on t.imdb_id = p.imdb_id " & _
  " join (select s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at,s.credits, " & _
- " ( select studio_id from streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id order by updated_at desc limit 1 ) as studio_id from streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' group by s.imdb_id) sp on p.imdb_id = sp.imdb_id " & _
+ " ( select studio_id from streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id order by updated_at desc limit 1 ) as studio_id from streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' group by s.imdb_id) sp on p.imdb_id = sp.imdb_id  and ( ( t.created_at between sp.available_from and expire_at ) or (t.created_at between sp.available_backcatalogue_from and expire_backcatalogue_at))" & _
  " join customers c on t.customer_id = c.customers_id  join products pabo on pabo.products_id = c.customers_abo_type " & _
  " join products_abo pa on pabo.products_id = pa.products_id " & _
  " left join studio s on s.studio_id = sp.studio_id " & _
