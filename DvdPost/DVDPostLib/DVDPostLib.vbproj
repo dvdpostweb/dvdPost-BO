@@ -509,6 +509,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsFeeSharing.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSets\dsInvoices.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsInvoices.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\dsInvoices.vb">
+      <DependentUpon>dsInvoices.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\dsMarketting.Designer.vb">
       <DependentUpon>dsMarketting.vb</DependentUpon>
     </Compile>
@@ -567,6 +575,9 @@
       <DependentUpon>frmListingOUT.vb</DependentUpon>
     </Compile>
     <Compile Include="LOGISTIC\frmListingOUT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAYMENT\DVDBilling\frmInvoice.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PAYMENT\frmPaymentOffLineStep.Designer.vb">
@@ -948,6 +959,10 @@
     <EmbeddedResource Include="LOGISTIC\frmListingOUT.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmListingOUT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAYMENT\DVDBilling\frmInvoice.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmInvoice.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PAYMENT\frmPaymentOffLineStep.resx">
       <DependentUpon>frmPaymentOffLineStep.vb</DependentUpon>
@@ -1413,6 +1428,17 @@
     </None>
     <None Include="DataSets\dsFeeSharing.xsx">
       <DependentUpon>dsFeeSharing.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsInvoices.xsc">
+      <DependentUpon>dsInvoices.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\dsInvoices.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsInvoices.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSets\dsInvoices.xss">
+      <DependentUpon>dsInvoices.xsd</DependentUpon>
     </None>
     <None Include="DataSets\dsMarketting.xsc">
       <DependentUpon>dsMarketting.xsd</DependentUpon>

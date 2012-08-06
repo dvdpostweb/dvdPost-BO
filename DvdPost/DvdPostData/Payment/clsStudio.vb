@@ -112,11 +112,11 @@ Public Class clsStudio
 " sp.expire_backcatalogue_at, " & _
 " if(created_at between available_from and expire_at,'N',if(created_at between available_backcatalogue_from and expire_backcatalogue_at,'B','B')) as catalogue_type, " & _
 " pabo.products_price, " & _
-" pa.qty_credit, " & _
+" if(pa.qty_credit=0,11,pa.qty_credit) qty_credit, " & _
 " pa.qty_at_home, " & _
 " if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)) credits, " & _
-" (pabo.products_price /  pa.qty_credit) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1))) price_of_movie_tvac, " & _
-" (((pabo.products_price /  pa.qty_credit) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) / 1.21) price_of_movie_htva, " & _
+" (pabo.products_price /  if(pa.qty_credit=0,11,pa.qty_credit)) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1))) price_of_movie_tvac, " & _
+" (((pabo.products_price /  if(pa.qty_credit=0,11,pa.qty_credit)) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) / 1.21) price_of_movie_htva, " & _
 " s.minimum_new_vod, " & _
 " s.fee_new_vod, " & _
 " s.minimum_back_catalogue, " & _
@@ -169,11 +169,11 @@ Public Class clsStudio
 "  sp.expire_backcatalogue_at, " & _
 "  if(created_at between available_from and expire_at,'N',if(created_at between available_backcatalogue_from and expire_backcatalogue_at,'B','B')) as catalogue_type, " & _
 "  pabo.products_price, " & _
-"  pa.qty_credit, " & _
+"  if(pa.qty_credit=0,11,pa.qty_credit) qty_credit, " & _
 "  pa.qty_at_home, " & _
 "  if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)) credits, " & _
-" (pabo.products_price /  pa.qty_credit) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1))) price_of_movie_tvac, " & _
-" (((pabo.products_price /  pa.qty_credit) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) / 1.21) price_of_movie_htva, " & _
+" (pabo.products_price /  if(pa.qty_credit=0,11,pa.qty_credit)) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1))) price_of_movie_tvac, " & _
+" (((pabo.products_price /  if(pa.qty_credit=0,11,pa.qty_credit)) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) / 1.21) price_of_movie_htva, " & _
 " s.minimum_new_vod, " & _
 " s.fee_new_vod, " & _
 " s.minimum_back_catalogue, " & _

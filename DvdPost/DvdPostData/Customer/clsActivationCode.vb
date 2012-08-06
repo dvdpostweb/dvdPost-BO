@@ -431,7 +431,7 @@ Public Class clsActivationCode
                                       " , landing_page = " & landing_page & _
                                       " , landing_page_php = '" & landing_page_php & "'" & _
                                       " , listing_products_allowed = " & listing_products_allowed & _
-                                      " , abo_auto_stop_next_reconduction = " & abo_auto_stop_next_reconduction & _
+                                      " , abo_auto_stop_next_reconduction = " & Math.Abs(abo_auto_stop_next_reconduction) & _
                                       " , goto_step = " & goto_step & _
                                       " , banner = '" & banner & "'" & _
                                       " , Footer = '" & Footer & "'" & _
@@ -518,7 +518,7 @@ Public Class clsActivationCode
                                       " , " & landing_page & _
                                       " , '" & landing_page_php & "'" & _
                                       " , " & IIf(listing_products_allowed Is Nothing, "DEFAULT(listing_products_allowed) ", listing_products_allowed) & _
-                                      " , " & abo_auto_stop_next_reconduction & _
+                                      " , " & Math.Abs(abo_auto_stop_next_reconduction) & _
                                       " , " & goto_step & _
                                       " , '" & banner & "'" & _
                                       " , '" & Footer & "'" & _

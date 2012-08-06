@@ -60,7 +60,6 @@ Public Class frmStudioPayment
     Friend WithEvents colCreditNew As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
     Friend WithEvents GridBand4 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
     Friend WithEvents colCredit As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
-    Friend WithEvents colHasBilling As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
     Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents colBillingReportType As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
     Friend WithEvents cmbLanguages As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
@@ -118,6 +117,7 @@ Public Class frmStudioPayment
     Friend WithEvents TabStudioDetailReport As DevExpress.XtraTab.XtraTabPage
     Friend WithEvents GridStudioDetail As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents colHasBilling As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
     Friend WithEvents btnSearch As DevExpress.XtraEditors.SimpleButton
 
 
@@ -427,12 +427,13 @@ Public Class frmStudioPayment
         Me.colHasBilling.ColumnEdit = Me.RepositoryItemCheckEdit1
         Me.colHasBilling.FieldName = "billing_reporting"
         Me.colHasBilling.Name = "colHasBilling"
-        Me.colHasBilling.OptionsColumn.AllowEdit = False
         '
         'RepositoryItemCheckEdit1
         '
         resources.ApplyResources(Me.RepositoryItemCheckEdit1, "RepositoryItemCheckEdit1")
         Me.RepositoryItemCheckEdit1.Name = "RepositoryItemCheckEdit1"
+        Me.RepositoryItemCheckEdit1.ValueChecked = 1
+        Me.RepositoryItemCheckEdit1.ValueUnchecked = 0
         '
         'colBillingReportType
         '

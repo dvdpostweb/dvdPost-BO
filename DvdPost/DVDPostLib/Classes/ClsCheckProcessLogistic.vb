@@ -320,14 +320,16 @@ Public Class ClsCheckProcessLogistic
         End If
 
         If isAlert Then
+            DisableBarCode()
             txtInfo.Text = dt.Rows(0)("alert_comment") & " - Ne PAS mettre ce DVD dans la boite"
             MsgBox(txtInfo.Text, MsgBoxStyle.Critical)
             sql = DvdPostData.clsProductsAlert.UpdateCheckStatus(dt.Rows(0)("alert_id"), DvdPostData.clsProductsAlert.checkStatus.CHECKED)
             DvdPostData.clsConnection.ExecuteNonQuery(sql)
-            DisableBarCode()
+            'DisableBarCode()
             ' Order_Status = DvdPostData.clsOdersStatusHistory.OrderStatus.ORDERS_STATUS_CUSTSERV
 
         End If
 
     End Sub
+
 End Class

@@ -118,7 +118,6 @@ Public Class ClsCustomersInfo
                 mvarDefaultAddrData.Save()
                 Dim sql As String
                 sql = "SELECT * FROM customers where customers_id = " & mvarCurrentCustomerID
-
                 DvdPostData.clsConnection.UpdateDataTableInDB(DataSet1.Tables("customers"), sql)
 
                 sql = "SELECT * FROM customer_attributes where customer_id = " & mvarCurrentCustomerID
@@ -126,7 +125,7 @@ Public Class ClsCustomersInfo
             Catch ex As Exception
                 MsgBox("Error save customers", MsgBoxStyle.Critical)
                 DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.SignaletiqueCustomer, ex, mvarCurrentCustomerID.ToString())
-                ' Throw ex
+                Throw ex
             End Try
         End Sub
         Public Overloads Sub SaveOnlyCustomer()

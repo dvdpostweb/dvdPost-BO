@@ -10,10 +10,10 @@ Public Class ClsInventory
 
     End Function
 
-    Public Shared Function isNPP(ByVal products_id As String) As Boolean
+    Public Shared Function isNPP(ByVal customers_id As String) As Boolean
         Dim sql As String
         Dim dt As DataTable
-        sql = DvdPostData.ClsCustomersData.GetSelectNPPCreditByCustomer(products_id)
+        sql = DvdPostData.ClsCustomersData.GetSelectNPPCreditByCustomer(customers_id)
         dt = DvdPostData.clsConnection.FillDataSet(sql)
 
         Return dt.Rows(0)(0) > 0

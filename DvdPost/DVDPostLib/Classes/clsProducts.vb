@@ -1430,27 +1430,31 @@ Public Class clsProduct_DVD
             Dim sqlcredit As String = ""
             If Not isIllimitedAbo Then
                 DvdPostData.clsConnection.ExecuteNonQuery(DvdPostData.clsCreditHistory.GetInsertCreditHistory(1, vCustomerID, DvdPostData.clsCreditHistory.ActionId.DELETEORDER, False, vOrderID))
-                sqlcredit = ", customers_abo_dvd_credit = customers_abo_dvd_credit + 1 "
+                If DVDPostBuziness.ClsInventory.isNPP(vCustomerID) Then
+                    sqlcredit = ", customers_abo_dvd_credit = customers_abo_dvd_credit + 1, customers_abo_dvd_remain = customers_abo_dvd_remain + 1 "
+                Else
+                    sqlcredit = ", customers_abo_dvd_credit = customers_abo_dvd_credit + 1 "
+                End If
             End If
-            _SQLTxt = "UPDATE customers set " & colDVDatHome & " = " & colDVDatHome & " - 1 " & _
-                        sqlcredit & _
-                        " WHERE customers_id = " & vCustomerID
-            DvdPostData.clsConnection.ExecuteNonQuery(_SQLTxt)
+                _SQLTxt = "UPDATE customers set " & colDVDatHome & " = " & colDVDatHome & " - 1 " & _
+                            sqlcredit & _
+                            " WHERE customers_id = " & vCustomerID
+                DvdPostData.clsConnection.ExecuteNonQuery(_SQLTxt)
 
-            _SQLTxt = "Insert orders_canceled (orders_id,customers_id,products_id,products_dvd_id,last_modified,user_modified,box_id,pos,orders_type,orders_status) " & _
-                      " select " & vOrderID & "," & vCustomerID & "," & Products_dvd_row("products_id") & "," & _
-                      Products_dvd_row("products_dvdid") & ",now()," & DvdPostData.clsSession.user_id & "," & _
-                      Products_dvd_row("box_id") & "," & Products_dvd_row("pibox_id") & ",orders_type,orders_status " & _
-                      " from orders where orders_id = " & vOrderID & " and orders_type is not null"
-            DvdPostData.clsConnection.ExecuteNonQuery(_SQLTxt)
+                _SQLTxt = "Insert orders_canceled (orders_id,customers_id,products_id,products_dvd_id,last_modified,user_modified,box_id,pos,orders_type,orders_status) " & _
+                          " select " & vOrderID & "," & vCustomerID & "," & Products_dvd_row("products_id") & "," & _
+                          Products_dvd_row("products_dvdid") & ",now()," & DvdPostData.clsSession.user_id & "," & _
+                          Products_dvd_row("box_id") & "," & Products_dvd_row("pibox_id") & ",orders_type,orders_status " & _
+                          " from orders where orders_id = " & vOrderID & " and orders_type is not null"
+                DvdPostData.clsConnection.ExecuteNonQuery(_SQLTxt)
 
-            'Delete Order
-            _SQLTxt = "DELETE FROM orders_products where orders_id = " & vOrderID
-            DvdPostData.clsConnection.ExecuteNonQuery(_SQLTxt)
-            _SQLTxt = "DELETE FROM orders where orders_id = " & vOrderID
-            DvdPostData.clsConnection.ExecuteNonQuery(_SQLTxt)
-            DvdPostData.clsConnection.CommitTransaction(True)
-            Return True
+                'Delete Order
+                _SQLTxt = "DELETE FROM orders_products where orders_id = " & vOrderID
+                DvdPostData.clsConnection.ExecuteNonQuery(_SQLTxt)
+                _SQLTxt = "DELETE FROM orders where orders_id = " & vOrderID
+                DvdPostData.clsConnection.ExecuteNonQuery(_SQLTxt)
+                DvdPostData.clsConnection.CommitTransaction(True)
+                Return True
         Catch ex As Exception
             DvdPostData.clsConnection.CommitTransaction(False)
             ' DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Cancel, ex)
