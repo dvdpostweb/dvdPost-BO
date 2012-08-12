@@ -205,7 +205,6 @@ Public Class frmInvoice
         '
         Me.colDVDTotal.Caption = "DVD Total"
         Me.colDVDTotal.ColumnEdit = Me.RepositoryItemTextEdit3
-        Me.colDVDTotal.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.colDVDTotal.FieldName = "dvd_total"
         Me.colDVDTotal.Name = "colDVDTotal"
         Me.colDVDTotal.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.[False]
@@ -217,6 +216,7 @@ Public Class frmInvoice
         Me.RepositoryItemTextEdit3.AutoHeight = False
         Me.RepositoryItemTextEdit3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.RepositoryItemTextEdit3.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
+        Me.RepositoryItemTextEdit3.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
         Me.RepositoryItemTextEdit3.Name = "RepositoryItemTextEdit3"
         '
         'GridInvoiceItems
@@ -502,7 +502,7 @@ Public Class frmInvoice
         '
         'lblToDateSearch
         '
-        Me.lblToDateSearch.Location = New System.Drawing.Point(54, 172)
+        Me.lblToDateSearch.Location = New System.Drawing.Point(54, 217)
         Me.lblToDateSearch.Name = "lblToDateSearch"
         Me.lblToDateSearch.Size = New System.Drawing.Size(38, 13)
         Me.lblToDateSearch.TabIndex = 106
@@ -511,7 +511,7 @@ Public Class frmInvoice
         'dtToDateSearch
         '
         Me.dtToDateSearch.EditValue = Nothing
-        Me.dtToDateSearch.Location = New System.Drawing.Point(159, 165)
+        Me.dtToDateSearch.Location = New System.Drawing.Point(159, 210)
         Me.dtToDateSearch.Name = "dtToDateSearch"
         Me.dtToDateSearch.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dtToDateSearch.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
@@ -520,7 +520,7 @@ Public Class frmInvoice
         '
         'lblFromDateSearch
         '
-        Me.lblFromDateSearch.Location = New System.Drawing.Point(54, 125)
+        Me.lblFromDateSearch.Location = New System.Drawing.Point(54, 170)
         Me.lblFromDateSearch.Name = "lblFromDateSearch"
         Me.lblFromDateSearch.Size = New System.Drawing.Size(50, 13)
         Me.lblFromDateSearch.TabIndex = 104
@@ -529,7 +529,7 @@ Public Class frmInvoice
         'dtFromDateSearch
         '
         Me.dtFromDateSearch.EditValue = Nothing
-        Me.dtFromDateSearch.Location = New System.Drawing.Point(159, 122)
+        Me.dtFromDateSearch.Location = New System.Drawing.Point(159, 167)
         Me.dtFromDateSearch.Name = "dtFromDateSearch"
         Me.dtFromDateSearch.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.dtFromDateSearch.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
@@ -538,20 +538,18 @@ Public Class frmInvoice
         '
         'txtDVDTitleSearch
         '
-        Me.txtDVDTitleSearch.Location = New System.Drawing.Point(692, 120)
+        Me.txtDVDTitleSearch.Location = New System.Drawing.Point(159, 121)
         Me.txtDVDTitleSearch.Name = "txtDVDTitleSearch"
         Me.txtDVDTitleSearch.Size = New System.Drawing.Size(179, 20)
         Me.txtDVDTitleSearch.TabIndex = 93
-        Me.txtDVDTitleSearch.Visible = False
         '
         'lblDVDTitleSearch
         '
-        Me.lblDVDTitleSearch.Location = New System.Drawing.Point(587, 127)
+        Me.lblDVDTitleSearch.Location = New System.Drawing.Point(54, 128)
         Me.lblDVDTitleSearch.Name = "lblDVDTitleSearch"
         Me.lblDVDTitleSearch.Size = New System.Drawing.Size(43, 13)
         Me.lblDVDTitleSearch.TabIndex = 92
         Me.lblDVDTitleSearch.Text = "DVD Title"
-        Me.lblDVDTitleSearch.Visible = False
         '
         'txtSupplierNameSearch
         '
@@ -1156,7 +1154,11 @@ Public Class frmInvoice
         Dim sql As String
         Dim dt As DataTable = Nothing
 
-        sql = "select * from studio_invoices where "
+        If txtDVDTitleSearch.Text <> String.Empty Then
+            sql = "select si.* from studio_invoices si join studio_invoice_items sii on si.id = sii.invoice_id where "
+        Else
+            sql = "select * from studio_invoices where "
+        End If
         If txtSupplierNameSearch.Text <> String.Empty Then
             sql = sql & " supplier_name like '%" & txtSupplierNameSearch.EditValue & "%' "
         Else
@@ -1192,9 +1194,8 @@ Public Class frmInvoice
         Dim row As dsInvoices.invoice_itemsRow
         sql = ""
 
-        Dim invoice_id As Integer
+        Dim invoice_id As Integer = 0
         Try
-
 
             If txtId.Text Is Nothing Or txtId.Text = String.Empty Then
                 sql = DvdPostData.clsInvoice.getInsertInvoice(txtSupplierName.EditValue, DVDPostTools.ClsDate.formatDateDB(dtInvoiceDate.EditValue), txtSupplierInvoiceNumber.EditValue, txtDVDPostAccountingInvoiceNumber.EditValue, txtInvoiceTotal.EditValue)
@@ -1224,13 +1225,17 @@ Public Class frmInvoice
                 Next
 
             End If
-
-
-
             Return True
         Catch ex As Exception
+            sql = DvdPostData.clsInvoice.GetDeleteInvoiceItems(invoice_id)
+            DvdPostData.clsConnection.ExecuteNonQuery(sql)
+
+
+            sql = DvdPostData.clsInvoice.GetDeleteInvoice(invoice_id)
+            DvdPostData.clsConnection.ExecuteNonQuery(sql)
+
             MsgBox(ex.Message, MsgBoxStyle.Information)
-            DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Vod, ex)
+            DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.BO, ex)
             Return False
         End Try
     End Function

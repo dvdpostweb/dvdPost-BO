@@ -382,7 +382,7 @@ Public Class ClsCustomers
     End Function
     Private Function GetDiscountActivationDVDRemain(ByVal drDiscountActivation As DataRow) As Integer
         If drDiscountActivation("abo_dvd_remain") Is DBNull.Value Then
-            Return 0
+            Return -1
         Else
             Return drDiscountActivation("abo_dvd_remain")
         End If
@@ -748,7 +748,7 @@ Public Class ClsCustomers
 
         If drDiscount Is Nothing Then ' discount doesn't exists
             forcedcredit = 0
-            forceddvdremain = 0
+            forceddvdremain = -1
             droselia = 0
             Return GetPriceProduct(drCustomer)
         Else ' if discount exists then calculate price with discount
@@ -792,7 +792,7 @@ Public Class ClsCustomers
             drNextDiscount = ManagePriceNextDiscount(drCustomer, drActivation, StrDurationActivation)
             If drNextDiscount Is Nothing Then
                 forcedcredit = 0
-                forceddvdremain = 0
+                forceddvdremain = -1
                 droselia = 0
                 Return GetPriceProduct(drCustomer)
             Else
@@ -903,7 +903,7 @@ Public Class ClsCustomers
                     dtCredit.Columns.Add("qty_dvd_max", Type.GetType("System.Int32"))
                     Dim dr As DataRow = dtCredit.NewRow()
                     dr("qty_credit") = Forcedcredit
-                    If (Forceddvdremain = 0) Then
+                    If (Forceddvdremain = -1) Then
                         Dim dtRemain As DataTable = GetNPPCredit(getCustomersTypeAbo(drCustomer))
                         dr("qty_dvd_max") = dtRemain.Rows(0)("qty_dvd_max")
                     Else
@@ -1039,7 +1039,7 @@ Public Class ClsCustomers
         RaiseEvent initMapping_Event(dtCustomersReconduction.Rows.Count)
         dtResult = createTableResult(dtCustomersReconduction)
         Dim forcedcredit As Integer = 0
-        Dim forceddvdremain As Integer = 0
+        Dim forceddvdremain As Integer = -1
         Dim sqlDurationActivation As String
 
         If clsMsgError.MsgBox("Are you sur to process " & dtCustomersReconduction.Rows.Count & " Reconductions " & DVDPostTools.clsEnum.getNameStrEnum(pay_method) & " ? ", MsgBoxStyle.OkCancel) = MsgBoxResult.Ok Then
@@ -1607,6 +1607,8 @@ Public Class ClsCustomers
         Dim payment_method As Integer
 
         payment_method = GetCustomersPayment_method(customers_id)
+        Return ReconductionOgone(ClsCustomersData.Country.BELGIUM)
+
 
         Select Case payment_method
             Case DvdPostData.ClsCustomersData.Payment_Method.VIREMENT

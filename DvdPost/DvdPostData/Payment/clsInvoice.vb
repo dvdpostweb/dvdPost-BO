@@ -16,8 +16,10 @@ Public Class clsInvoice
         Return sql
     End Function
 
-    Public Shared Function getInsertInvoice(ByVal supplier_name As String, ByVal invoice_date As String, ByVal supplier_invoice_number As String, ByVal dvdpost_invoice_number As String, ByVal invoice_total As Decimal) As String
+    Public Shared Function getInsertInvoice(ByVal supplier_name As String, ByVal invoice_date As String, ByVal supplier_invoice_number As String, ByVal dvdpost_invoice_number As String, ByVal invoice_total As String) As String
         Dim sql As String
+
+        invoice_total = invoice_total.Replace(",", ".")
 
         sql = " insert into studio_invoices ( supplier_name, invoice_date, supplier_invoice_number, dvdpost_invoice_number, invoice_total) " & _
         "values('" & supplier_name & "', '" & invoice_date & "', '" & supplier_invoice_number & "', '" & dvdpost_invoice_number & "', " & invoice_total & ")"
@@ -25,15 +27,11 @@ Public Class clsInvoice
         Return sql
     End Function
 
-    Public Shared Function getSelectNewInvoiceID(ByVal supplier_name As String, ByVal invoice_date As String, ByVal supplier_invoice_number As String, ByVal dvdpost_invoice_number As String, ByVal invoice_total As Decimal) As String
+    Public Shared Function getInsertInvoiceItem(ByVal invoice_id As Decimal, ByVal dvd_title As String, ByVal dvd_quantity As Integer, ByVal dvd_unit_price As String, ByVal dvd_total As String) As String
         Dim sql As String
 
-        sql = " select id from studio_invoices where supplier_name = '" & supplier_name & "' and invoice_date = '" & invoice_date & "' and supplier_invoice_number = '" & supplier_invoice_number & "'  and dvdpost_invoice_number = '" & dvdpost_invoice_number & "' and invoice_total = " & invoice_total
-        Return sql
-    End Function
-
-    Public Shared Function getInsertInvoiceItem(ByVal invoice_id As Decimal, ByVal dvd_title As String, ByVal dvd_quantity As Integer, ByVal dvd_unit_price As Decimal, ByVal dvd_total As Decimal) As String
-        Dim sql As String
+        dvd_unit_price = dvd_unit_price.Replace(",", ".")
+        dvd_total = dvd_total.Replace(",", ".")
 
         sql = " insert into studio_invoice_items ( invoice_id, dvd_title,  dvd_quantity, dvd_unit_price, dvd_total ) " & _
         "values(" & invoice_id & ", '" & dvd_title & "', " & dvd_quantity & ", " & dvd_unit_price & ", " & dvd_total & ")"
@@ -42,8 +40,10 @@ Public Class clsInvoice
     End Function
 
     Public Shared Function getUpdateInvoice(ByVal ID As Integer, ByVal supplier_name As String, ByVal invoice_date As String, ByVal supplier_invoice_number As String, ByVal dvdpost_invoice_number As String, _
-                                           ByVal invoice_total As Decimal)
+                                           ByVal invoice_total As String)
         Dim sql As String = ""
+
+        invoice_total = invoice_total.Replace(",", ".")
 
         sql = " update studio_invoices set supplier_name = '" & supplier_name & _
                 "', invoice_date = '" & invoice_date & _
@@ -55,8 +55,11 @@ Public Class clsInvoice
     End Function
 
     Public Shared Function getUpdateInvoiceItem(ByVal id As Integer, ByVal invoice_id As Integer, ByVal dvd_title As String, ByVal dvd_quantity As Integer, _
-                                                   ByVal dvd_unit_price As Decimal, ByVal dvd_total As Decimal) As String
+                                                   ByVal dvd_unit_price As String, ByVal dvd_total As String) As String
         Dim sql As String = ""
+
+        dvd_unit_price = dvd_unit_price.Replace(",", ".")
+        dvd_total = dvd_total.Replace(",", ".")
 
         sql = " update studio_invoice_items set dvd_title = '" & dvd_title & _
                 "', dvd_quantity = " & dvd_quantity & _
@@ -82,6 +85,11 @@ Public Class clsInvoice
         Return sql
     End Function
 
+    Public Shared Function getSelectNewInvoiceID(ByVal supplier_name As String, ByVal invoice_date As String, ByVal supplier_invoice_number As String, ByVal dvdpost_invoice_number As String, ByVal invoice_total As String) As String
+        Dim sql As String
 
+        sql = " select id from studio_invoices where supplier_name = '" & supplier_name & "' and invoice_date = '" & invoice_date & "' and supplier_invoice_number = '" & supplier_invoice_number & "'  and dvdpost_invoice_number = '" & dvdpost_invoice_number & "' and invoice_total = " & invoice_total
+        Return sql
+    End Function
 
 End Class

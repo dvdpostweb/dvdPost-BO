@@ -196,4 +196,115 @@ Public Class clsStudio
         Return sql
 
     End Function
+
+    Public Shared Function GetSABAMDetailedReport(ByVal dateFrom As String, ByVal dateTo As String, ByVal studio_id As Integer) As String
+
+        Dim sql As String
+
+        sql = " select  x.vodstudio, x.productstudio, " & _
+ " x.products_title, x.customer_id, x.customers_abo_type, x.customers_lastname," & _
+ " x.customers_firstname, x.customers_language, x.imdb_id, x.products_type, x.created_at, x.products_date_available, x.available_from, " & _
+ " x.expire_at, x.available_backcatalogue_from, x.expire_backcatalogue_at, x.catalogue_type , x.products_price, x.qty_credit, " & _
+ " x.credits, x.price_of_movie_tvac, x.price_of_movie_htva, if( x.products_type = 'DVD_ADULT', '1.00%', '1.38%') 'sabam%', x.price_of_movie_htva * if( x.products_type = 'DVD_ADULT', 0.01, 0.0138) Fee Major " & _
+" from " & _
+" ( " & _
+" select " & _
+" s.studio_name vodstudio, " & _
+" ps.studio_name as productstudio, " & _
+" p.products_title, " & _
+" customer_id,c.customers_abo_type, " & _
+" c.customers_lastname, " & _
+" c.customers_firstname, " & _
+" ( SELECT name FROM languages where languages_id = c.customers_language) as customers_language, " & _
+" t.imdb_id, " & _
+" p.products_type, " & _
+" t.created_at, " & _
+" p.products_date_available, " & _
+" sp.available_from, " & _
+" sp.expire_at," & _
+" sp.available_backcatalogue_from, " & _
+" sp.expire_backcatalogue_at, " & _
+" if(created_at between available_from and expire_at,'N',if(created_at between available_backcatalogue_from and expire_backcatalogue_at,'B','B')) as catalogue_type, " & _
+" pabo.products_price, " & _
+" if(pa.qty_credit=0,11,pa.qty_credit) qty_credit, " & _
+" pa.qty_at_home, " & _
+" if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)) credits, " & _
+" (pabo.products_price /  if(pa.qty_credit=0,11,pa.qty_credit)) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1))) price_of_movie_tvac, " & _
+" (((pabo.products_price /  if(pa.qty_credit=0,11,pa.qty_credit)) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) / 1.21) price_of_movie_htva, " & _
+" s.minimum_new_vod, " & _
+" s.fee_new_vod, " & _
+" s.minimum_back_catalogue, " & _
+" s.fee_back_catalogue " & _
+" from tokens t " & _
+" join (select imdb_id,products_directors_id,products_date_available,products_title, products_studio, products_type from products group by imdb_id) p on t.imdb_id = p.imdb_id " & _
+" join (select s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at,s.credits, " & _
+" ( select studio_id from streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id order by updated_at desc limit 1 ) as studio_id from streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' group by s.imdb_id) sp on p.imdb_id = sp.imdb_id  and ( ( t.created_at between sp.available_from and expire_at ) or (t.created_at between sp.available_backcatalogue_from and expire_backcatalogue_at))" & _
+" join customers c on t.customer_id = c.customers_id  join products pabo on pabo.products_id = c.customers_abo_type " & _
+" join products_abo pa on pabo.products_id = pa.products_id " & _
+" left join studio s on s.studio_id = sp.studio_id " & _
+" left join studio ps on ps.studio_id = p.products_studio " & _
+" left join directors d on d.directors_id = p.products_directors_id " & _
+" where date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
+" and s.studio_id = " & studio_id & _
+" order by s.studio_name, ps.studio_name,  p.products_title " & _
+" ) x"
+
+        Return sql
+
+    End Function
+
+    Public Shared Function GetSABAMSummaryReport(ByVal dateFrom As String, ByVal dateTo As String, ByVal studio_id As Integer) As String
+
+        Dim sql As String
+
+        sql = "  select x.vodstudio, x.productstudio, x.products_title, count(x.imdb_id) 'Nombre de products_title', " & _
+        " sum(x.price_of_movie_htva) 'Somme de Price per film', " & _
+        " sum(x.price_of_movie_htva) * if( x.products_type = 'DVD_ADULT', 0.01, 0.0138) 'Somme de Fee Major' " & _
+" from " & _
+" ( " & _
+"  select " & _
+"  s.studio_name vodstudio, " & _
+"  ps.studio_name as productstudio, " & _
+"  p.products_title, " & _
+"  customer_id,c.customers_abo_type, " & _
+"  c.customers_lastname, " & _
+"  c.customers_firstname, " & _
+"  ( SELECT name FROM languages where languages_id = c.customers_language) as customers_language, " & _
+"  t.imdb_id, " & _
+"  p.products_type, " & _
+"  t.created_at, " & _
+"  p.products_date_available, " & _
+"  sp.available_from, " & _
+"  sp.expire_at, " & _
+"  sp.available_backcatalogue_from, " & _
+"  sp.expire_backcatalogue_at, " & _
+"  if(created_at between available_from and expire_at,'N',if(created_at between available_backcatalogue_from and expire_backcatalogue_at,'B','B')) as catalogue_type, " & _
+"  pabo.products_price, " & _
+"  if(pa.qty_credit=0,11,pa.qty_credit) qty_credit, " & _
+"  pa.qty_at_home, " & _
+"  if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)) credits, " & _
+" (pabo.products_price /  if(pa.qty_credit=0,11,pa.qty_credit)) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1))) price_of_movie_tvac, " & _
+" (((pabo.products_price /  if(pa.qty_credit=0,11,pa.qty_credit)) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) / 1.21) price_of_movie_htva, " & _
+" s.minimum_new_vod, " & _
+" s.fee_new_vod, " & _
+" s.minimum_back_catalogue, " & _
+" s.fee_back_catalogue " & _
+"  from tokens t  " & _
+"  join (select imdb_id,products_directors_id,products_date_available,products_title, products_studio, products_type from products group by imdb_id) p on t.imdb_id = p.imdb_id " & _
+ " join (select s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at,s.credits, " & _
+ " ( select studio_id from streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id order by updated_at desc limit 1 ) as studio_id from streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' group by s.imdb_id) sp on p.imdb_id = sp.imdb_id  and ( ( t.created_at between sp.available_from and expire_at ) or (t.created_at between sp.available_backcatalogue_from and expire_backcatalogue_at))" & _
+ " join customers c on t.customer_id = c.customers_id  join products pabo on pabo.products_id = c.customers_abo_type " & _
+ " join products_abo pa on pabo.products_id = pa.products_id " & _
+ " left join studio s on s.studio_id = sp.studio_id " & _
+ " left join studio ps on ps.studio_id = p.products_studio " & _
+ " left join directors d on d.directors_id = p.products_directors_id " & _
+" where date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
+" and s.studio_id = " & studio_id & _
+" order by s.studio_name, ps.studio_name,  p.products_title " & _
+" ) x " & _
+" group by 1,2,3 "
+
+        Return sql
+
+    End Function
 End Class

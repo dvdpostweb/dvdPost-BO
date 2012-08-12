@@ -21,6 +21,7 @@ Public Class clsMsgError
         WebService
         Logistic
         LOGIN
+        BO
     End Enum
 
     Public Shared Function InsertLogMsg(ByVal Type As processType, ByVal msgError As String, Optional ByVal customers_id As String = Nothing) As String

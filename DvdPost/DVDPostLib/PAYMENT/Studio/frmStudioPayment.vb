@@ -118,6 +118,14 @@ Public Class frmStudioPayment
     Friend WithEvents GridStudioDetail As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents colHasBilling As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents TabSABAMDetail As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents GridSABAMDetail As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents TabSABAMSummary As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents GridSABAMSummary As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView3 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents btnCreateSABAMDetail As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnCreateSABAMSummary As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnSearch As DevExpress.XtraEditors.SimpleButton
 
 
@@ -196,6 +204,8 @@ Public Class frmStudioPayment
         Me.lblLanguageSound = New DevExpress.XtraEditors.LabelControl
         Me.btnSaveStudio = New DevExpress.XtraEditors.SimpleButton
         Me.TabCreateReport = New DevExpress.XtraTab.XtraTabPage
+        Me.btnCreateSABAMDetail = New DevExpress.XtraEditors.SimpleButton
+        Me.btnCreateSABAMSummary = New DevExpress.XtraEditors.SimpleButton
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl
         Me.txtToDate = New DevExpress.XtraEditors.DateEdit
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl
@@ -209,6 +219,12 @@ Public Class frmStudioPayment
         Me.TabStudioDetailReport = New DevExpress.XtraTab.XtraTabPage
         Me.GridStudioDetail = New DevExpress.XtraGrid.GridControl
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView
+        Me.TabSABAMDetail = New DevExpress.XtraTab.XtraTabPage
+        Me.GridSABAMDetail = New DevExpress.XtraGrid.GridControl
+        Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView
+        Me.TabSABAMSummary = New DevExpress.XtraTab.XtraTabPage
+        Me.GridSABAMSummary = New DevExpress.XtraGrid.GridControl
+        Me.GridView3 = New DevExpress.XtraGrid.Views.Grid.GridView
         CType(Me.cmbViewListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtQuickSearchRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbReportListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -265,6 +281,12 @@ Public Class frmStudioPayment
         Me.TabStudioDetailReport.SuspendLayout()
         CType(Me.GridStudioDetail, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabSABAMDetail.SuspendLayout()
+        CType(Me.GridSABAMDetail, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabSABAMSummary.SuspendLayout()
+        CType(Me.GridSABAMSummary, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabSearch
@@ -555,7 +577,7 @@ Public Class frmStudioPayment
         resources.ApplyResources(Me.XtraTabStudio, "XtraTabStudio")
         Me.XtraTabStudio.Name = "XtraTabStudio"
         Me.XtraTabStudio.SelectedTabPage = Me.TabResult
-        Me.XtraTabStudio.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.TabSearch, Me.TabResult, Me.TabStudio, Me.TabCreateReport, Me.TabStudioDetailReport})
+        Me.XtraTabStudio.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.TabSearch, Me.TabResult, Me.TabStudio, Me.TabCreateReport, Me.TabStudioDetailReport, Me.TabSABAMDetail, Me.TabSABAMSummary})
         '
         'TabStudio
         '
@@ -746,6 +768,8 @@ Public Class frmStudioPayment
         '
         'TabCreateReport
         '
+        Me.TabCreateReport.Controls.Add(Me.btnCreateSABAMDetail)
+        Me.TabCreateReport.Controls.Add(Me.btnCreateSABAMSummary)
         Me.TabCreateReport.Controls.Add(Me.LabelControl1)
         Me.TabCreateReport.Controls.Add(Me.txtToDate)
         Me.TabCreateReport.Controls.Add(Me.LabelControl4)
@@ -758,6 +782,16 @@ Public Class frmStudioPayment
         Me.TabCreateReport.Controls.Add(Me.lblStudioBilling)
         Me.TabCreateReport.Name = "TabCreateReport"
         resources.ApplyResources(Me.TabCreateReport, "TabCreateReport")
+        '
+        'btnCreateSABAMDetail
+        '
+        resources.ApplyResources(Me.btnCreateSABAMDetail, "btnCreateSABAMDetail")
+        Me.btnCreateSABAMDetail.Name = "btnCreateSABAMDetail"
+        '
+        'btnCreateSABAMSummary
+        '
+        resources.ApplyResources(Me.btnCreateSABAMSummary, "btnCreateSABAMSummary")
+        Me.btnCreateSABAMSummary.Name = "btnCreateSABAMSummary"
         '
         'LabelControl1
         '
@@ -843,6 +877,46 @@ Public Class frmStudioPayment
         Me.GridView1.GridControl = Me.GridStudioDetail
         Me.GridView1.Name = "GridView1"
         '
+        'TabSABAMDetail
+        '
+        Me.TabSABAMDetail.Controls.Add(Me.GridSABAMDetail)
+        Me.TabSABAMDetail.Name = "TabSABAMDetail"
+        resources.ApplyResources(Me.TabSABAMDetail, "TabSABAMDetail")
+        '
+        'GridSABAMDetail
+        '
+        resources.ApplyResources(Me.GridSABAMDetail, "GridSABAMDetail")
+        Me.GridSABAMDetail.EmbeddedNavigator.Name = ""
+        Me.GridSABAMDetail.FormsUseDefaultLookAndFeel = False
+        Me.GridSABAMDetail.MainView = Me.GridView2
+        Me.GridSABAMDetail.Name = "GridSABAMDetail"
+        Me.GridSABAMDetail.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView2})
+        '
+        'GridView2
+        '
+        Me.GridView2.GridControl = Me.GridSABAMDetail
+        Me.GridView2.Name = "GridView2"
+        '
+        'TabSABAMSummary
+        '
+        Me.TabSABAMSummary.Controls.Add(Me.GridSABAMSummary)
+        Me.TabSABAMSummary.Name = "TabSABAMSummary"
+        resources.ApplyResources(Me.TabSABAMSummary, "TabSABAMSummary")
+        '
+        'GridSABAMSummary
+        '
+        resources.ApplyResources(Me.GridSABAMSummary, "GridSABAMSummary")
+        Me.GridSABAMSummary.EmbeddedNavigator.Name = ""
+        Me.GridSABAMSummary.FormsUseDefaultLookAndFeel = False
+        Me.GridSABAMSummary.MainView = Me.GridView3
+        Me.GridSABAMSummary.Name = "GridSABAMSummary"
+        Me.GridSABAMSummary.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView3})
+        '
+        'GridView3
+        '
+        Me.GridView3.GridControl = Me.GridSABAMSummary
+        Me.GridView3.Name = "GridView3"
+        '
         'frmStudioPayment
         '
         resources.ApplyResources(Me, "$this")
@@ -908,6 +982,12 @@ Public Class frmStudioPayment
         Me.TabStudioDetailReport.ResumeLayout(False)
         CType(Me.GridStudioDetail, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabSABAMDetail.ResumeLayout(False)
+        CType(Me.GridSABAMDetail, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabSABAMSummary.ResumeLayout(False)
+        CType(Me.GridSABAMSummary, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1427,6 +1507,32 @@ Public Class frmStudioPayment
 
     Private Sub chkHasBillingReport_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkHasBillingReport.CheckedChanged
         cmbBillingReportType.Enabled = chkHasBillingReport.Checked
+    End Sub
+
+    Private Sub btnCreateSABAMDetail_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCreateSABAMDetail.Click
+        Dim dt As DataTable
+        Dim sql As String
+        sql = DvdPostData.clsStudio.GetSABAMDetailedReport(txtFromDate.EditValue, txtToDate.EditValue, cmbStudioBilling.EditValue)
+        dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
+        ' dt = DvdPostData.clsConnection.FillDataSet(sql)
+        GridSABAMDetail.DataSource = Nothing
+        GridSABAMDetail.Views(0).PopulateColumns()
+
+        GridSABAMDetail.DataSource = dt
+        XtraTabStudio.SelectedTabPage = TabSABAMDetail
+    End Sub
+
+    Private Sub btnCreateSABAMSummary_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCreateSABAMSummary.Click
+        Dim dt As DataTable
+        Dim sql As String
+        sql = DvdPostData.clsStudio.GetSABAMSummaryReport(txtFromDate.EditValue, txtToDate.EditValue, cmbStudioBilling.EditValue)
+        dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
+        ' dt = DvdPostData.clsConnection.FillDataSet(sql)
+        GridSABAMSummary.DataSource = Nothing
+        GridSABAMSummary.Views(0).PopulateColumns()
+
+        GridSABAMSummary.DataSource = dt
+        XtraTabStudio.SelectedTabPage = TabSABAMSummary
     End Sub
 End Class
 

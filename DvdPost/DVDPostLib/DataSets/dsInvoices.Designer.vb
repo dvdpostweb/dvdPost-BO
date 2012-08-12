@@ -311,14 +311,6 @@ Partial Public Class dsInvoices
         
         Private columninvoice_total As Global.System.Data.DataColumn
         
-        Private columndvd_title As Global.System.Data.DataColumn
-        
-        Private columndvd_quantity As Global.System.Data.DataColumn
-        
-        Private columndvd_unit_price As Global.System.Data.DataColumn
-        
-        Private columndvd_total As Global.System.Data.DataColumn
-        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub New()
             MyBase.New
@@ -393,34 +385,6 @@ Partial Public Class dsInvoices
             End Get
         End Property
         
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public ReadOnly Property dvd_titleColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columndvd_title
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public ReadOnly Property dvd_quantityColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columndvd_quantity
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public ReadOnly Property dvd_unit_priceColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columndvd_unit_price
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public ReadOnly Property dvd_totalColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columndvd_total
-            End Get
-        End Property
-        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -450,9 +414,9 @@ Partial Public Class dsInvoices
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Overloads Function Addstudio_invoicesRow(ByVal invoice_id As Integer, ByVal supplier_name As String, ByVal invoice_date As Date, ByVal supplier_invoce_number As String, ByVal dvdpost_invoice_number As String, ByVal invoice_total As Decimal, ByVal dvd_title As String, ByVal dvd_quantity As Integer, ByVal dvd_unit_price As Decimal, ByVal dvd_total As Decimal) As studio_invoicesRow
+        Public Overloads Function Addstudio_invoicesRow(ByVal invoice_id As Integer, ByVal supplier_name As String, ByVal invoice_date As Date, ByVal supplier_invoce_number As String, ByVal dvdpost_invoice_number As String, ByVal invoice_total As Decimal) As studio_invoicesRow
             Dim rowstudio_invoicesRow As studio_invoicesRow = CType(Me.NewRow,studio_invoicesRow)
-            Dim columnValuesArray() As Object = New Object() {invoice_id, supplier_name, invoice_date, supplier_invoce_number, dvdpost_invoice_number, invoice_total, dvd_title, dvd_quantity, dvd_unit_price, dvd_total}
+            Dim columnValuesArray() As Object = New Object() {invoice_id, supplier_name, invoice_date, supplier_invoce_number, dvdpost_invoice_number, invoice_total}
             rowstudio_invoicesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowstudio_invoicesRow)
             Return rowstudio_invoicesRow
@@ -483,10 +447,6 @@ Partial Public Class dsInvoices
             Me.columnsupplier_invoce_number = MyBase.Columns("supplier_invoce_number")
             Me.columndvdpost_invoice_number = MyBase.Columns("dvdpost_invoice_number")
             Me.columninvoice_total = MyBase.Columns("invoice_total")
-            Me.columndvd_title = MyBase.Columns("dvd_title")
-            Me.columndvd_quantity = MyBase.Columns("dvd_quantity")
-            Me.columndvd_unit_price = MyBase.Columns("dvd_unit_price")
-            Me.columndvd_total = MyBase.Columns("dvd_total")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -503,14 +463,6 @@ Partial Public Class dsInvoices
             MyBase.Columns.Add(Me.columndvdpost_invoice_number)
             Me.columninvoice_total = New Global.System.Data.DataColumn("invoice_total", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columninvoice_total)
-            Me.columndvd_title = New Global.System.Data.DataColumn("dvd_title", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columndvd_title)
-            Me.columndvd_quantity = New Global.System.Data.DataColumn("dvd_quantity", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columndvd_quantity)
-            Me.columndvd_unit_price = New Global.System.Data.DataColumn("dvd_unit_price", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columndvd_unit_price)
-            Me.columndvd_total = New Global.System.Data.DataColumn("dvd_total", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columndvd_total)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -1027,62 +979,6 @@ Partial Public Class dsInvoices
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Property dvd_title() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tablestudio_invoices.dvd_titleColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'dvd_title' in table 'studio_invoices' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablestudio_invoices.dvd_titleColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Property dvd_quantity() As Integer
-            Get
-                Try 
-                    Return CType(Me(Me.tablestudio_invoices.dvd_quantityColumn),Integer)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'dvd_quantity' in table 'studio_invoices' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablestudio_invoices.dvd_quantityColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Property dvd_unit_price() As Decimal
-            Get
-                Try 
-                    Return CType(Me(Me.tablestudio_invoices.dvd_unit_priceColumn),Decimal)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'dvd_unit_price' in table 'studio_invoices' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablestudio_invoices.dvd_unit_priceColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Property dvd_total() As Decimal
-            Get
-                Try 
-                    Return CType(Me(Me.tablestudio_invoices.dvd_totalColumn),Decimal)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'dvd_total' in table 'studio_invoices' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tablestudio_invoices.dvd_totalColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function Isinvoice_idNull() As Boolean
             Return Me.IsNull(Me.tablestudio_invoices.invoice_idColumn)
         End Function
@@ -1140,46 +1036,6 @@ Partial Public Class dsInvoices
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub Setinvoice_totalNull()
             Me(Me.tablestudio_invoices.invoice_totalColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function Isdvd_titleNull() As Boolean
-            Return Me.IsNull(Me.tablestudio_invoices.dvd_titleColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Sub Setdvd_titleNull()
-            Me(Me.tablestudio_invoices.dvd_titleColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function Isdvd_quantityNull() As Boolean
-            Return Me.IsNull(Me.tablestudio_invoices.dvd_quantityColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Sub Setdvd_quantityNull()
-            Me(Me.tablestudio_invoices.dvd_quantityColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function Isdvd_unit_priceNull() As Boolean
-            Return Me.IsNull(Me.tablestudio_invoices.dvd_unit_priceColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Sub Setdvd_unit_priceNull()
-            Me(Me.tablestudio_invoices.dvd_unit_priceColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function Isdvd_totalNull() As Boolean
-            Return Me.IsNull(Me.tablestudio_invoices.dvd_totalColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Sub Setdvd_totalNull()
-            Me(Me.tablestudio_invoices.dvd_totalColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
