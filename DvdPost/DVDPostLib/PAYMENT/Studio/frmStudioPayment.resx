@@ -1105,30 +1105,6 @@
   <data name="&gt;&gt;TabStudio.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;btnCreateSABAMDetail.Name" xml:space="preserve">
-    <value>btnCreateSABAMDetail</value>
-  </data>
-  <data name="&gt;&gt;btnCreateSABAMDetail.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
-  </data>
-  <data name="&gt;&gt;btnCreateSABAMDetail.Parent" xml:space="preserve">
-    <value>TabCreateReport</value>
-  </data>
-  <data name="&gt;&gt;btnCreateSABAMDetail.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnCreateSABAMSummary.Name" xml:space="preserve">
-    <value>btnCreateSABAMSummary</value>
-  </data>
-  <data name="&gt;&gt;btnCreateSABAMSummary.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
-  </data>
-  <data name="&gt;&gt;btnCreateSABAMSummary.Parent" xml:space="preserve">
-    <value>TabCreateReport</value>
-  </data>
-  <data name="&gt;&gt;btnCreateSABAMSummary.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;LabelControl1.Name" xml:space="preserve">
     <value>LabelControl1</value>
   </data>
@@ -1139,7 +1115,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;LabelControl1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;txtToDate.Name" xml:space="preserve">
     <value>txtToDate</value>
@@ -1151,7 +1127,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;txtToDate.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;LabelControl4.Name" xml:space="preserve">
     <value>LabelControl4</value>
@@ -1163,7 +1139,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;LabelControl4.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;txtFromDate.Name" xml:space="preserve">
     <value>txtFromDate</value>
@@ -1175,7 +1151,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;txtFromDate.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;btnCreateDetailedReport.Name" xml:space="preserve">
     <value>btnCreateDetailedReport</value>
@@ -1187,7 +1163,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;btnCreateDetailedReport.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;btnCreateSummaryReport.Name" xml:space="preserve">
     <value>btnCreateSummaryReport</value>
@@ -1199,7 +1175,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;btnCreateSummaryReport.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;cmdBillingReportFormat.Name" xml:space="preserve">
     <value>cmdBillingReportFormat</value>
@@ -1211,7 +1187,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;cmdBillingReportFormat.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;lblBillingReportFormat.Name" xml:space="preserve">
     <value>lblBillingReportFormat</value>
@@ -1223,7 +1199,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;lblBillingReportFormat.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;cmbStudioBilling.Name" xml:space="preserve">
     <value>cmbStudioBilling</value>
@@ -1235,7 +1211,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;cmbStudioBilling.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;lblStudioBilling.Name" xml:space="preserve">
     <value>lblStudioBilling</value>
@@ -1247,13 +1223,13 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;lblStudioBilling.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>9</value>
   </data>
   <data name="TabCreateReport.Size" type="System.Drawing.Size, System.Drawing">
     <value>1183, 805</value>
   </data>
   <data name="TabCreateReport.Text" xml:space="preserve">
-    <value>Create Studio Report</value>
+    <value>Create Studio Reports</value>
   </data>
   <data name="&gt;&gt;TabCreateReport.Name" xml:space="preserve">
     <value>TabCreateReport</value>
@@ -1297,6 +1273,219 @@
   <data name="&gt;&gt;TabStudioDetailReport.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="cmbProductType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>197, 61</value>
+  </data>
+  <data name="cmbProductType.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v8.1">
+    <value>Combo</value>
+  </data>
+  <data name="cmbProductType.Properties.NullText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cmbProductType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 20</value>
+  </data>
+  <data name="cmbProductType.TabIndex" type="System.Int32, mscorlib">
+    <value>112</value>
+  </data>
+  <data name="&gt;&gt;cmbProductType.Name" xml:space="preserve">
+    <value>cmbProductType</value>
+  </data>
+  <data name="&gt;&gt;cmbProductType.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LookUpEdit, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;cmbProductType.Parent" xml:space="preserve">
+    <value>XtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;cmbProductType.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblProductType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>92, 65</value>
+  </data>
+  <data name="lblProductType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 13</value>
+  </data>
+  <data name="lblProductType.TabIndex" type="System.Int32, mscorlib">
+    <value>111</value>
+  </data>
+  <data name="lblProductType.Text" xml:space="preserve">
+    <value>Product Type</value>
+  </data>
+  <data name="&gt;&gt;lblProductType.Name" xml:space="preserve">
+    <value>lblProductType</value>
+  </data>
+  <data name="&gt;&gt;lblProductType.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;lblProductType.Parent" xml:space="preserve">
+    <value>XtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;lblProductType.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="LabelControl2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>92, 147</value>
+  </data>
+  <data name="LabelControl2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="LabelControl2.TabIndex" type="System.Int32, mscorlib">
+    <value>110</value>
+  </data>
+  <data name="LabelControl2.Text" xml:space="preserve">
+    <value>To Date</value>
+  </data>
+  <data name="&gt;&gt;LabelControl2.Name" xml:space="preserve">
+    <value>LabelControl2</value>
+  </data>
+  <data name="&gt;&gt;LabelControl2.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;LabelControl2.Parent" xml:space="preserve">
+    <value>XtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;LabelControl2.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="dtSABAMTo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>197, 144</value>
+  </data>
+  <data name="dtSABAMTo.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v8.1">
+    <value>Combo</value>
+  </data>
+  <data name="dtSABAMTo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 20</value>
+  </data>
+  <data name="dtSABAMTo.TabIndex" type="System.Int32, mscorlib">
+    <value>109</value>
+  </data>
+  <data name="&gt;&gt;dtSABAMTo.Name" xml:space="preserve">
+    <value>dtSABAMTo</value>
+  </data>
+  <data name="&gt;&gt;dtSABAMTo.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.DateEdit, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;dtSABAMTo.Parent" xml:space="preserve">
+    <value>XtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;dtSABAMTo.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="LabelControl3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>92, 110</value>
+  </data>
+  <data name="LabelControl3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 13</value>
+  </data>
+  <data name="LabelControl3.TabIndex" type="System.Int32, mscorlib">
+    <value>108</value>
+  </data>
+  <data name="LabelControl3.Text" xml:space="preserve">
+    <value>From Date</value>
+  </data>
+  <data name="&gt;&gt;LabelControl3.Name" xml:space="preserve">
+    <value>LabelControl3</value>
+  </data>
+  <data name="&gt;&gt;LabelControl3.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;LabelControl3.Parent" xml:space="preserve">
+    <value>XtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;LabelControl3.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="dtSABAMFrom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>197, 103</value>
+  </data>
+  <data name="dtSABAMFrom.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v8.1">
+    <value>Combo</value>
+  </data>
+  <data name="dtSABAMFrom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 20</value>
+  </data>
+  <data name="dtSABAMFrom.TabIndex" type="System.Int32, mscorlib">
+    <value>107</value>
+  </data>
+  <data name="&gt;&gt;dtSABAMFrom.Name" xml:space="preserve">
+    <value>dtSABAMFrom</value>
+  </data>
+  <data name="&gt;&gt;dtSABAMFrom.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.DateEdit, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;dtSABAMFrom.Parent" xml:space="preserve">
+    <value>XtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;dtSABAMFrom.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btnCreateSABAMDetail.Location" type="System.Drawing.Point, System.Drawing">
+    <value>92, 205</value>
+  </data>
+  <data name="btnCreateSABAMDetail.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 23</value>
+  </data>
+  <data name="btnCreateSABAMDetail.TabIndex" type="System.Int32, mscorlib">
+    <value>106</value>
+  </data>
+  <data name="btnCreateSABAMDetail.Text" xml:space="preserve">
+    <value>Create SABAM Detail</value>
+  </data>
+  <data name="&gt;&gt;btnCreateSABAMDetail.Name" xml:space="preserve">
+    <value>btnCreateSABAMDetail</value>
+  </data>
+  <data name="&gt;&gt;btnCreateSABAMDetail.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;btnCreateSABAMDetail.Parent" xml:space="preserve">
+    <value>XtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;btnCreateSABAMDetail.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnCreateSABAMSummary.Location" type="System.Drawing.Point, System.Drawing">
+    <value>264, 205</value>
+  </data>
+  <data name="btnCreateSABAMSummary.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 23</value>
+  </data>
+  <data name="btnCreateSABAMSummary.TabIndex" type="System.Int32, mscorlib">
+    <value>105</value>
+  </data>
+  <data name="btnCreateSABAMSummary.Text" xml:space="preserve">
+    <value>Create SABAM Summary</value>
+  </data>
+  <data name="&gt;&gt;btnCreateSABAMSummary.Name" xml:space="preserve">
+    <value>btnCreateSABAMSummary</value>
+  </data>
+  <data name="&gt;&gt;btnCreateSABAMSummary.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;btnCreateSABAMSummary.Parent" xml:space="preserve">
+    <value>XtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;btnCreateSABAMSummary.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="XtraTabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1183, 805</value>
+  </data>
+  <data name="XtraTabPage1.Text" xml:space="preserve">
+    <value>Create SABAM Reports</value>
+  </data>
+  <data name="&gt;&gt;XtraTabPage1.Name" xml:space="preserve">
+    <value>XtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;XtraTabPage1.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;XtraTabPage1.Parent" xml:space="preserve">
+    <value>XtraTabStudio</value>
+  </data>
+  <data name="&gt;&gt;XtraTabPage1.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="&gt;&gt;GridSABAMDetail.Name" xml:space="preserve">
     <value>GridSABAMDetail</value>
   </data>
@@ -1325,19 +1514,7 @@
     <value>XtraTabStudio</value>
   </data>
   <data name="&gt;&gt;TabSABAMDetail.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="GridSABAMSummary.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="GridSABAMSummary.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="GridSABAMSummary.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1183, 805</value>
-  </data>
-  <data name="GridSABAMSummary.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;GridSABAMSummary.Name" xml:space="preserve">
     <value>GridSABAMSummary</value>
@@ -1367,7 +1544,7 @@
     <value>XtraTabStudio</value>
   </data>
   <data name="&gt;&gt;TabSABAMSummary.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;XtraTabStudio.Name" xml:space="preserve">
     <value>XtraTabStudio</value>
@@ -2083,54 +2260,6 @@
   <data name="&gt;&gt;btnSaveStudio.ZOrder" xml:space="preserve">
     <value>27</value>
   </data>
-  <data name="btnCreateSABAMDetail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>161, 372</value>
-  </data>
-  <data name="btnCreateSABAMDetail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 23</value>
-  </data>
-  <data name="btnCreateSABAMDetail.TabIndex" type="System.Int32, mscorlib">
-    <value>104</value>
-  </data>
-  <data name="btnCreateSABAMDetail.Text" xml:space="preserve">
-    <value>Create SABAM Detail</value>
-  </data>
-  <data name="&gt;&gt;btnCreateSABAMDetail.Name" xml:space="preserve">
-    <value>btnCreateSABAMDetail</value>
-  </data>
-  <data name="&gt;&gt;btnCreateSABAMDetail.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
-  </data>
-  <data name="&gt;&gt;btnCreateSABAMDetail.Parent" xml:space="preserve">
-    <value>TabCreateReport</value>
-  </data>
-  <data name="&gt;&gt;btnCreateSABAMDetail.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnCreateSABAMSummary.Location" type="System.Drawing.Point, System.Drawing">
-    <value>333, 372</value>
-  </data>
-  <data name="btnCreateSABAMSummary.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 23</value>
-  </data>
-  <data name="btnCreateSABAMSummary.TabIndex" type="System.Int32, mscorlib">
-    <value>103</value>
-  </data>
-  <data name="btnCreateSABAMSummary.Text" xml:space="preserve">
-    <value>Create SABAM Summary</value>
-  </data>
-  <data name="&gt;&gt;btnCreateSABAMSummary.Name" xml:space="preserve">
-    <value>btnCreateSABAMSummary</value>
-  </data>
-  <data name="&gt;&gt;btnCreateSABAMSummary.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
-  </data>
-  <data name="&gt;&gt;btnCreateSABAMSummary.Parent" xml:space="preserve">
-    <value>TabCreateReport</value>
-  </data>
-  <data name="&gt;&gt;btnCreateSABAMSummary.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="LabelControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>56, 163</value>
   </data>
@@ -2153,7 +2282,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;LabelControl1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="txtToDate.Location" type="System.Drawing.Point, System.Drawing">
     <value>161, 156</value>
@@ -2177,7 +2306,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;txtToDate.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="LabelControl4.Location" type="System.Drawing.Point, System.Drawing">
     <value>56, 116</value>
@@ -2201,7 +2330,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;LabelControl4.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="txtFromDate.Location" type="System.Drawing.Point, System.Drawing">
     <value>161, 113</value>
@@ -2225,7 +2354,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;txtFromDate.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="btnCreateDetailedReport.Location" type="System.Drawing.Point, System.Drawing">
     <value>161, 323</value>
@@ -2249,7 +2378,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;btnCreateDetailedReport.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>4</value>
   </data>
   <data name="btnCreateSummaryReport.Location" type="System.Drawing.Point, System.Drawing">
     <value>333, 323</value>
@@ -2273,7 +2402,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;btnCreateSummaryReport.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>5</value>
   </data>
   <data name="cmdBillingReportFormat.EditValue" xml:space="preserve">
     <value>DVD_NORMAL</value>
@@ -2303,7 +2432,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;cmdBillingReportFormat.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>6</value>
   </data>
   <data name="lblBillingReportFormat.Location" type="System.Drawing.Point, System.Drawing">
     <value>56, 36</value>
@@ -2327,7 +2456,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;lblBillingReportFormat.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>7</value>
   </data>
   <data name="cmbStudioBilling.EditValue" xml:space="preserve">
     <value>DVD_NORMAL</value>
@@ -2357,7 +2486,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;cmbStudioBilling.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>8</value>
   </data>
   <data name="lblStudioBilling.Location" type="System.Drawing.Point, System.Drawing">
     <value>56, 75</value>
@@ -2381,7 +2510,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;lblStudioBilling.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>9</value>
   </data>
   <data name="GridStudioDetail.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -2431,6 +2560,30 @@
   <data name="&gt;&gt;GridSABAMDetail.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="GridSABAMSummary.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="GridSABAMSummary.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="GridSABAMSummary.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1183, 805</value>
+  </data>
+  <data name="GridSABAMSummary.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;GridSABAMSummary.Name" xml:space="preserve">
+    <value>GridSABAMSummary</value>
+  </data>
+  <data name="&gt;&gt;GridSABAMSummary.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.GridControl, DevExpress.XtraGrid.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;GridSABAMSummary.Parent" xml:space="preserve">
+    <value>TabSABAMSummary</value>
+  </data>
+  <data name="&gt;&gt;GridSABAMSummary.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>45</value>
   </metadata>
@@ -2475,7 +2628,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Activation Code</value>
+    <value>VOD Studio Bills, Fees, SABAM</value>
   </data>
   <data name="&gt;&gt;cmbViewListRepos.Name" xml:space="preserve">
     <value>cmbViewListRepos</value>
@@ -2679,7 +2832,7 @@
     <value>DsSite1</value>
   </data>
   <data name="&gt;&gt;DsSite1.Type" xml:space="preserve">
-    <value>DVDPostLib.DsSite, DVDPostLib, Version=2.0.4605.3, Culture=neutral, PublicKeyToken=null</value>
+    <value>DVDPostLib.DsSite, DVDPostLib, Version=2.0.4609.8, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;GridView1.Name" xml:space="preserve">
     <value>GridView1</value>
