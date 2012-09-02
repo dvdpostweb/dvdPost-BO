@@ -37,6 +37,7 @@ Partial Class frmStatCustomer
         Me.btnListCustomers = New DevExpress.XtraEditors.SimpleButton
         Me.btnWishlistCustomer = New DevExpress.XtraEditors.SimpleButton
         Me.btnProspect = New DevExpress.XtraEditors.SimpleButton
+        Me.btnEarlierReconduction = New DevExpress.XtraEditors.SimpleButton
         Me.Panel1.SuspendLayout()
         CType(Me.TabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -57,112 +58,89 @@ Partial Class frmStatCustomer
         Me.GCWithDate.SuspendLayout()
         Me.SuspendLayout()
         '
-        'StatusBar1
-        '
-        Me.StatusBar1.Location = New System.Drawing.Point(0, 548)
-        Me.StatusBar1.Margin = New System.Windows.Forms.Padding(4)
-        Me.StatusBar1.Size = New System.Drawing.Size(1472, 30)
-        '
         'Panel1
         '
-        Me.Panel1.Location = New System.Drawing.Point(0, 35)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Panel1.Size = New System.Drawing.Size(1472, 513)
+        Me.Panel1.Location = New System.Drawing.Point(0, 30)
+        Me.Panel1.Size = New System.Drawing.Size(1104, 416)
         '
         'TabControl1
         '
         Me.TabControl1.LookAndFeel.SkinName = "Lilian"
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabControl1.SelectedTabPage = Me.TabResult
-        Me.TabControl1.Size = New System.Drawing.Size(1472, 513)
+        Me.TabControl1.Size = New System.Drawing.Size(1104, 416)
         '
         'TabParameters
         '
+        Me.TabParameters.Controls.Add(Me.btnEarlierReconduction)
         Me.TabParameters.Controls.Add(Me.btnProspect)
         Me.TabParameters.Controls.Add(Me.btnWishlistCustomer)
         Me.TabParameters.Controls.Add(Me.btnListCustomers)
         Me.TabParameters.Controls.Add(Me.btnDVDNoDVDFound)
         Me.TabParameters.Controls.Add(Me.GCWithDate)
         Me.TabParameters.Controls.Add(Me.BtnFreeTrial)
-        Me.TabParameters.Margin = New System.Windows.Forms.Padding(4)
-        Me.TabParameters.Size = New System.Drawing.Size(1463, 479)
-        '
-        'TabResult
-        '
-        Me.TabResult.Margin = New System.Windows.Forms.Padding(4)
-        Me.TabResult.Size = New System.Drawing.Size(1463, 479)
         '
         'TabAnalyse
         '
-        Me.TabAnalyse.Margin = New System.Windows.Forms.Padding(4)
-        Me.TabAnalyse.Size = New System.Drawing.Size(1463, 479)
+        Me.TabAnalyse.Size = New System.Drawing.Size(1095, 385)
         '
         'UcPivotGrid1
         '
-        Me.UcPivotGrid1.Margin = New System.Windows.Forms.Padding(4)
-        Me.UcPivotGrid1.Size = New System.Drawing.Size(1463, 479)
+        Me.UcPivotGrid1.Size = New System.Drawing.Size(1095, 385)
         '
         'UcChart1
         '
-        Me.UcChart1.Margin = New System.Windows.Forms.Padding(4)
-        Me.UcChart1.Size = New System.Drawing.Size(1463, 479)
+        Me.UcChart1.Size = New System.Drawing.Size(1095, 385)
         '
         'TabChart
         '
-        Me.TabChart.Margin = New System.Windows.Forms.Padding(4)
-        Me.TabChart.Size = New System.Drawing.Size(1463, 479)
+        Me.TabChart.Size = New System.Drawing.Size(1095, 385)
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(36, 32)
-        Me.LabelControl1.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelControl1.Location = New System.Drawing.Point(27, 26)
         Me.LabelControl1.Name = "LabelControl1"
         Me.HelpProvider1.SetShowHelp(Me.LabelControl1, False)
-        Me.LabelControl1.Size = New System.Drawing.Size(60, 16)
+        Me.LabelControl1.Size = New System.Drawing.Size(0, 13)
         Me.LabelControl1.TabIndex = 4
         Me.LabelControl1.Text = "From Date"
         '
         'txtFromDate
         '
         Me.txtFromDate.EditValue = Nothing
-        Me.txtFromDate.Location = New System.Drawing.Point(128, 28)
-        Me.txtFromDate.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtFromDate.Location = New System.Drawing.Point(96, 23)
         Me.txtFromDate.Name = "txtFromDate"
         Me.txtFromDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.txtFromDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
         Me.HelpProvider1.SetShowHelp(Me.txtFromDate, False)
-        Me.txtFromDate.Size = New System.Drawing.Size(133, 22)
+        Me.txtFromDate.Size = New System.Drawing.Size(100, 20)
         Me.txtFromDate.TabIndex = 3
         '
         'txtToDate
         '
         Me.txtToDate.EditValue = Nothing
-        Me.txtToDate.Location = New System.Drawing.Point(128, 60)
-        Me.txtToDate.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtToDate.Location = New System.Drawing.Point(96, 49)
         Me.txtToDate.Name = "txtToDate"
         Me.txtToDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.txtToDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
         Me.HelpProvider1.SetShowHelp(Me.txtToDate, False)
-        Me.txtToDate.Size = New System.Drawing.Size(133, 22)
+        Me.txtToDate.Size = New System.Drawing.Size(100, 20)
         Me.txtToDate.TabIndex = 35
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(36, 64)
-        Me.LabelControl2.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelControl2.Location = New System.Drawing.Point(27, 52)
         Me.LabelControl2.Name = "LabelControl2"
         Me.HelpProvider1.SetShowHelp(Me.LabelControl2, False)
-        Me.LabelControl2.Size = New System.Drawing.Size(45, 16)
+        Me.LabelControl2.Size = New System.Drawing.Size(0, 13)
         Me.LabelControl2.TabIndex = 36
         Me.LabelControl2.Text = "To Date"
         '
         'BtnFreeTrial
         '
-        Me.BtnFreeTrial.Location = New System.Drawing.Point(31, 335)
-        Me.BtnFreeTrial.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnFreeTrial.Location = New System.Drawing.Point(23, 272)
         Me.BtnFreeTrial.Name = "BtnFreeTrial"
         Me.HelpProvider1.SetShowHelp(Me.BtnFreeTrial, False)
-        Me.BtnFreeTrial.Size = New System.Drawing.Size(244, 60)
+        Me.BtnFreeTrial.Size = New System.Drawing.Size(183, 49)
         Me.BtnFreeTrial.TabIndex = 37
         Me.BtnFreeTrial.Text = "View FreeTrial"
         Me.BtnFreeTrial.ToolTip = "View FreeTrial"
@@ -179,111 +157,109 @@ Partial Class frmStatCustomer
         Me.GCWithDate.Controls.Add(Me.txtToDate)
         Me.GCWithDate.Controls.Add(Me.LabelControl1)
         Me.GCWithDate.Controls.Add(Me.txtFromDate)
-        Me.GCWithDate.Location = New System.Drawing.Point(31, 30)
-        Me.GCWithDate.Margin = New System.Windows.Forms.Padding(4)
+        Me.GCWithDate.Location = New System.Drawing.Point(23, 24)
         Me.GCWithDate.Name = "GCWithDate"
-        Me.GCWithDate.Size = New System.Drawing.Size(579, 256)
+        Me.GCWithDate.Size = New System.Drawing.Size(434, 208)
         Me.GCWithDate.TabIndex = 38
         Me.GCWithDate.Text = "Stat With Date"
         '
         'btnCustomerStop
         '
-        Me.btnCustomerStop.Location = New System.Drawing.Point(287, 32)
-        Me.btnCustomerStop.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCustomerStop.Location = New System.Drawing.Point(215, 26)
         Me.btnCustomerStop.Name = "btnCustomerStop"
         Me.HelpProvider1.SetShowHelp(Me.btnCustomerStop, False)
-        Me.btnCustomerStop.Size = New System.Drawing.Size(244, 57)
+        Me.btnCustomerStop.Size = New System.Drawing.Size(183, 46)
         Me.btnCustomerStop.TabIndex = 43
         Me.btnCustomerStop.Text = "List Customers Stop"
         '
         'btnCredit
         '
-        Me.btnCredit.Location = New System.Drawing.Point(286, 183)
-        Me.btnCredit.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnCredit.Location = New System.Drawing.Point(214, 149)
         Me.btnCredit.Name = "btnCredit"
         Me.HelpProvider1.SetShowHelp(Me.btnCredit, False)
-        Me.btnCredit.Size = New System.Drawing.Size(244, 57)
+        Me.btnCredit.Size = New System.Drawing.Size(183, 46)
         Me.btnCredit.TabIndex = 41
         Me.btnCredit.Text = "Credits"
         '
         'btnFtAboStop
         '
-        Me.btnFtAboStop.Location = New System.Drawing.Point(17, 193)
-        Me.btnFtAboStop.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnFtAboStop.Location = New System.Drawing.Point(13, 157)
         Me.btnFtAboStop.Name = "btnFtAboStop"
         Me.HelpProvider1.SetShowHelp(Me.btnFtAboStop, False)
-        Me.btnFtAboStop.Size = New System.Drawing.Size(244, 57)
+        Me.btnFtAboStop.Size = New System.Drawing.Size(183, 46)
         Me.btnFtAboStop.TabIndex = 40
         Me.btnFtAboStop.Text = "FT AboStop"
         '
         'BtnWelcomeCall
         '
-        Me.BtnWelcomeCall.Location = New System.Drawing.Point(287, 107)
-        Me.BtnWelcomeCall.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnWelcomeCall.Location = New System.Drawing.Point(215, 87)
         Me.BtnWelcomeCall.Name = "BtnWelcomeCall"
         Me.HelpProvider1.SetShowHelp(Me.BtnWelcomeCall, False)
-        Me.BtnWelcomeCall.Size = New System.Drawing.Size(244, 57)
+        Me.BtnWelcomeCall.Size = New System.Drawing.Size(183, 46)
         Me.BtnWelcomeCall.TabIndex = 39
         Me.BtnWelcomeCall.Text = "Welcome Call"
         Me.BtnWelcomeCall.ToolTip = "welcome call"
         '
         'BtnStep31_33
         '
-        Me.BtnStep31_33.Location = New System.Drawing.Point(17, 107)
-        Me.BtnStep31_33.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnStep31_33.Location = New System.Drawing.Point(13, 87)
         Me.BtnStep31_33.Name = "BtnStep31_33"
         Me.HelpProvider1.SetShowHelp(Me.BtnStep31_33, False)
-        Me.BtnStep31_33.Size = New System.Drawing.Size(244, 57)
+        Me.BtnStep31_33.Size = New System.Drawing.Size(183, 46)
         Me.BtnStep31_33.TabIndex = 38
         Me.BtnStep31_33.Text = "Step 31-33"
         Me.BtnStep31_33.ToolTip = "View cancel Ogone"
         '
         'btnDVDNoDVDFound
         '
-        Me.btnDVDNoDVDFound.Location = New System.Drawing.Point(317, 335)
-        Me.btnDVDNoDVDFound.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnDVDNoDVDFound.Location = New System.Drawing.Point(238, 272)
         Me.btnDVDNoDVDFound.Name = "btnDVDNoDVDFound"
         Me.HelpProvider1.SetShowHelp(Me.btnDVDNoDVDFound, False)
-        Me.btnDVDNoDVDFound.Size = New System.Drawing.Size(244, 54)
+        Me.btnDVDNoDVDFound.Size = New System.Drawing.Size(183, 44)
         Me.btnDVDNoDVDFound.TabIndex = 39
         Me.btnDVDNoDVDFound.Text = "List DVD Customers NoDvdFound"
         '
         'btnListCustomers
         '
-        Me.btnListCustomers.Location = New System.Drawing.Point(586, 332)
-        Me.btnListCustomers.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnListCustomers.Location = New System.Drawing.Point(440, 270)
         Me.btnListCustomers.Name = "btnListCustomers"
         Me.HelpProvider1.SetShowHelp(Me.btnListCustomers, False)
-        Me.btnListCustomers.Size = New System.Drawing.Size(244, 57)
+        Me.btnListCustomers.Size = New System.Drawing.Size(183, 46)
         Me.btnListCustomers.TabIndex = 41
         Me.btnListCustomers.Text = "List Customers"
         '
         'btnWishlistCustomer
         '
-        Me.btnWishlistCustomer.Location = New System.Drawing.Point(31, 418)
-        Me.btnWishlistCustomer.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnWishlistCustomer.Location = New System.Drawing.Point(23, 340)
         Me.btnWishlistCustomer.Name = "btnWishlistCustomer"
         Me.HelpProvider1.SetShowHelp(Me.btnWishlistCustomer, False)
-        Me.btnWishlistCustomer.Size = New System.Drawing.Size(244, 57)
+        Me.btnWishlistCustomer.Size = New System.Drawing.Size(183, 46)
         Me.btnWishlistCustomer.TabIndex = 42
         Me.btnWishlistCustomer.Text = "Wishlist Customers"
         '
         'btnProspect
         '
-        Me.btnProspect.Location = New System.Drawing.Point(318, 418)
-        Me.btnProspect.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnProspect.Location = New System.Drawing.Point(238, 340)
         Me.btnProspect.Name = "btnProspect"
         Me.HelpProvider1.SetShowHelp(Me.btnProspect, False)
-        Me.btnProspect.Size = New System.Drawing.Size(244, 57)
+        Me.btnProspect.Size = New System.Drawing.Size(183, 46)
         Me.btnProspect.TabIndex = 43
         Me.btnProspect.Text = "Prospects"
         '
+        'btnEarlierReconduction
+        '
+        Me.btnEarlierReconduction.Location = New System.Drawing.Point(440, 340)
+        Me.btnEarlierReconduction.Name = "btnEarlierReconduction"
+        Me.HelpProvider1.SetShowHelp(Me.btnEarlierReconduction, False)
+        Me.btnEarlierReconduction.Size = New System.Drawing.Size(183, 46)
+        Me.btnEarlierReconduction.TabIndex = 44
+        Me.btnEarlierReconduction.Text = "Earlier reconduction"
+        '
         'frmStatCustomer
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1472, 578)
-        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.ClientSize = New System.Drawing.Size(1104, 470)
         Me.Name = "frmStatCustomer"
         Me.HelpProvider1.SetShowHelp(Me, False)
         Me.Text = "FrmStat"
@@ -324,4 +300,5 @@ Partial Class frmStatCustomer
     Friend WithEvents btnCredit As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnCustomerStop As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnProspect As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnEarlierReconduction As DevExpress.XtraEditors.SimpleButton
 End Class

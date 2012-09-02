@@ -103,6 +103,23 @@ Public Class ClsStatCustomer
 
         Return sql
     End Function
+
+    Public Shared Function GetSelectEarlierReconduction(ByVal dateFrom As String, ByVal dateTo As String) As String
+        Dim sql As String
+
+        sql = "SELECT month(credit_spent_date), c.customers_id, c.customers_firstname, c.customers_lastname, " & _
+                " c.customers_email_address, customers_telephone, " & _
+                " (select products_title from products p where p.products_id = c.customers_next_abo_type) abopackage, " & _
+                " c.customers_abo_validityto, " & _
+                " nb_days number_of_days_credit_spent_earlier FROM potential_upgrades p join customers c on p.customers_id = c.customers_id where " & _
+                " p.credit_spent_date>= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "'" & _
+                " and date(p.credit_spent_date) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
+                " group by 1,2 order by 1, nb_days "
+
+        Return sql
+
+    End Function
+
     Public Shared Function GetListDVDCustomersNoServed10Days(ByVal type_dvd As DvdPostData.clsProductDvd.Type_DVD) As String
         Dim sql As String
 

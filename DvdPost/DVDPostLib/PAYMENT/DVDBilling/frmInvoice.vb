@@ -1180,6 +1180,8 @@ Public Class frmInvoice
             sql = sql & " AND invoice_date < '" & DVDPostTools.ClsDate.formatDateDB(dtToDateSearch.EditValue) & "' "
         End If
 
+        sql = sql & " group by id"
+
         dt = DvdPostData.clsConnection.FillDataSet(sql)
         If Not dt Is Nothing Then
             GridInvoices.DataSource = dt

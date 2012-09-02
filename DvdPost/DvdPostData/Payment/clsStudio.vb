@@ -112,11 +112,11 @@ Public Class clsStudio
 " sp.expire_backcatalogue_at, " & _
 " if(created_at between available_from and expire_at,'N',if(created_at between available_backcatalogue_from and expire_backcatalogue_at,'B','B')) as catalogue_type, " & _
 " pabo.products_price, " & _
-" if(pa.qty_credit=0,11,pa.qty_credit) qty_credit, " & _
+" if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at)) qty_credit, " & _
 " pa.qty_at_home, " & _
 " if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)) credits, " & _
-" (pabo.products_price /  if(pa.qty_credit=0,11,pa.qty_credit)) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1))) price_of_movie_tvac, " & _
-" (((pabo.products_price /  if(pa.qty_credit=0,11,pa.qty_credit)) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) / 1.21) price_of_movie_htva, " & _
+" (pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1))) price_of_movie_tvac, " & _
+" (((pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) / 1.21) price_of_movie_htva, " & _
 " s.minimum_new_vod, " & _
 " s.fee_new_vod, " & _
 " s.minimum_back_catalogue, " & _
@@ -133,7 +133,7 @@ Public Class clsStudio
 " where date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
 " and s.studio_id = " & studio_id & _
 " order by s.studio_name, ps.studio_name,  p.products_title " & _
-" ) x"
+" ) x  where x.qty_credit <> 10000 "
 
         Return sql
 
@@ -169,11 +169,11 @@ Public Class clsStudio
 "  sp.expire_backcatalogue_at, " & _
 "  if(created_at between available_from and expire_at,'N',if(created_at between available_backcatalogue_from and expire_backcatalogue_at,'B','B')) as catalogue_type, " & _
 "  pabo.products_price, " & _
-"  if(pa.qty_credit=0,11,pa.qty_credit) qty_credit, " & _
+"  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at)) qty_credit, " & _
 "  pa.qty_at_home, " & _
 "  if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)) credits, " & _
-" (pabo.products_price /  if(pa.qty_credit=0,11,pa.qty_credit)) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1))) price_of_movie_tvac, " & _
-" (((pabo.products_price /  if(pa.qty_credit=0,11,pa.qty_credit)) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) / 1.21) price_of_movie_htva, " & _
+" (pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1))) price_of_movie_tvac, " & _
+" (((pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) / 1.21) price_of_movie_htva, " & _
 " s.minimum_new_vod, " & _
 " s.fee_new_vod, " & _
 " s.minimum_back_catalogue, " & _
@@ -190,7 +190,7 @@ Public Class clsStudio
 " where date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
 " and s.studio_id = " & studio_id & _
 " order by s.studio_name, ps.studio_name,  p.products_title " & _
-" ) x " & _
+" ) x  where x.qty_credit <> 10000 " & _
 " group by 1,2,3 "
 
         Return sql
@@ -206,7 +206,7 @@ Public Class clsStudio
  " (select d.directors_name from directors d where d.directors_id = x.products_directors_id) directors_name , x.imdb_id, x.products_title, x.products_type, x.created_at, x.products_date_available, x.available_from, " & _
  " x.expire_at, x.available_backcatalogue_from, x.expire_backcatalogue_at, x.catalogue_type , x.products_price, x.qty_credit, " & _
  " x.qty_at_home, x.price_of_movie_tvac 'Price per film', if( x.products_type = 'DVD_ADULT', '1.00%', '1.38%') 'SABAM%', " & _
- "x.price_of_movie_htva * if( x.products_type = 'DVD_ADULT', 0.01, 0.0138) 'Sabam Fee' " & _
+ "x.price_of_movie_htva * if( x.products_type = 'DVD_ADULT', 0.01, 0.01375) 'Sabam Fee' " & _
 " from " & _
 " ( " & _
 " select " & _
@@ -225,11 +225,11 @@ Public Class clsStudio
 " sp.expire_backcatalogue_at, " & _
 " if(created_at between available_from and expire_at,'N',if(created_at between available_backcatalogue_from and expire_backcatalogue_at,'B','B')) as catalogue_type, " & _
 " pabo.products_price, " & _
-" if(pa.qty_credit=0,11,pa.qty_credit) qty_credit, " & _
+" if(fn_customers_credit(customers_id, t.created_at) = 0,11, fn_customers_credit(customers_id, t.created_at)) qty_credit, " & _
 " pa.qty_at_home, " & _
 " if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)) credits, " & _
-" (pabo.products_price /  if(pa.qty_credit=0,11,pa.qty_credit)) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1))) price_of_movie_tvac, " & _
-" (((pabo.products_price /  if(pa.qty_credit=0,11,pa.qty_credit)) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) / 1.21) price_of_movie_htva, " & _
+" (pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11, fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1))) price_of_movie_tvac, " & _
+" (((pabo.products_price /  if( fn_customers_credit(customers_id, t.created_at)=0,11, fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) / 1.21) price_of_movie_htva, " & _
 " s.minimum_new_vod, " & _
 " s.fee_new_vod, " & _
 " s.minimum_back_catalogue, " & _
@@ -245,7 +245,7 @@ Public Class clsStudio
 " left join directors d on d.directors_id = p.products_directors_id " & _
 " where date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
 " order by s.studio_name, ps.studio_name,  p.products_title " & _
-" ) x"
+" ) x where x.qty_credit <> 10000 "
 
         Return sql
 
@@ -275,11 +275,11 @@ Public Class clsStudio
 "  sp.expire_backcatalogue_at, " & _
 "  if(created_at between available_from and expire_at,'N',if(created_at between available_backcatalogue_from and expire_backcatalogue_at,'B','B')) as catalogue_type, " & _
 "  pabo.products_price, " & _
-"  if(pa.qty_credit=0,11,pa.qty_credit) qty_credit, " & _
+"  if(fn_customers_credit(customers_id, t.created_at)=0,11, fn_customers_credit(customers_id, t.created_at)) qty_credit, " & _
 "  pa.qty_at_home, " & _
 "  if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)) credits, " & _
-" (pabo.products_price /  if(pa.qty_credit=0,11,pa.qty_credit)) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1))) price_of_movie_tvac, " & _
-" (((pabo.products_price /  if(pa.qty_credit=0,11,pa.qty_credit)) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) / 1.21) price_of_movie_htva, " & _
+" (pabo.products_price /  if( fn_customers_credit(customers_id, t.created_at)=0,11, fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1))) price_of_movie_tvac, " & _
+" (((pabo.products_price /  if( fn_customers_credit(customers_id, t.created_at)=0,11, fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) / 1.21) price_of_movie_htva, " & _
 " s.minimum_new_vod, " & _
 " s.fee_new_vod, " & _
 " s.minimum_back_catalogue, " & _
@@ -295,7 +295,7 @@ Public Class clsStudio
  " left join directors d on d.directors_id = p.products_directors_id " & _
 " where date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
 " order by s.studio_name, ps.studio_name,  p.products_title " & _
-" ) x " & _
+" ) x  where x.qty_credit <> 10000  " & _
 " group by 1,2 "
 
         Return sql

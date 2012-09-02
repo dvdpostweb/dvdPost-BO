@@ -585,7 +585,7 @@ Public Class frmReviewsMaint
             txtReviews_Read.EditValue = ReviewRow("reviews_read")
             txtReview_Check.EditValue = ReviewRow("reviews_check")
             txtReview_Corrected.EditValue = ReviewRow("reviews_corrected")
-            txtReview_Text.Text = ReviewRow("reviews_text")
+            txtReview_Text.Text = Replace(ReviewRow("reviews_text"), "’", "'")
             If ReviewRow("dvdpost_rating") Is DBNull.Value Then
                 cmbRating.Text = ""
             Else
@@ -628,7 +628,7 @@ Public Class frmReviewsMaint
         If String.Equals(ReviewRow("reviews_text"), txtReview_Text.Text, StringComparison.InvariantCultureIgnoreCase) = False Then
             ReviewRow("reviews_corrected") = 1
         End If
-        ReviewRow("reviews_text") = txtReview_Text.Text
+        ReviewRow("reviews_text") = Replace(txtReview_Text.Text, "’", "'")
         ReviewRow("last_modified") = Now.ToString("yyyy-MM-dd HH:mm:ss")
         If cmbRating.Text <> "" Then
             ReviewRow("dvdpost_rating") = cmbRating.Text
@@ -644,7 +644,7 @@ Public Class frmReviewsMaint
         If String.Equals(ReviewRow("reviews_text"), txtReview_Text.Text, StringComparison.InvariantCultureIgnoreCase) = False Then
             ReviewRow("reviews_corrected") = 1
         End If
-        ReviewRow("reviews_text") = txtReview_Text.Text
+        ReviewRow("reviews_text") = Replace(txtReview_Text.Text, "’", "'")
         ReviewRow("last_modified") = Now.ToString("yyyy-MM-dd HH:mm:ss")
         ReviewRow("dvdpost_rating") = cmbRating.Text
         DvdPostData.clsConnection.UpdateDataTableInDB(ReviewsTable, "SELECT * FROM reviews")

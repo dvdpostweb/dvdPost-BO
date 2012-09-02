@@ -107,4 +107,11 @@ Public Class frmStatCustomer
         'DvdPostData.clsConnection.timeoutMIN = 20
         loadData(sql)
     End Sub
+
+    Private Sub btnEarlierReconduction_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEarlierReconduction.Click
+        Dim sql As String
+        sql = DvdPostData.ClsStatCustomer.GetSelectEarlierReconduction(txtFromDate.EditValue, txtToDate.EditValue)
+        'DvdPostData.clsConnection.timeoutMIN = 20
+        loadData(sql)
+    End Sub
 End Class

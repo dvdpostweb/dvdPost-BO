@@ -82,10 +82,10 @@ Public Class frmContactMe_BrowseOld
         '
         resources.ApplyResources(Me.TabChart, "TabChart")
         '
-        'frmContactMe_Browse
+        'frmContactMe_BrowseOld
         '
         resources.ApplyResources(Me, "$this")
-        Me.Name = "frmContactMe_Browse"
+        Me.Name = "frmContactMe_BrowseOld"
         Me.HelpProvider1.SetShowHelp(Me, CType(resources.GetObject("$this.ShowHelp"), Boolean))
         Me.Panel1.ResumeLayout(False)
         CType(Me.TabControl1, System.ComponentModel.ISupportInitialize).EndInit()
