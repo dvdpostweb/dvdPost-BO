@@ -111,7 +111,7 @@ Public Class ClsStatCustomer
                 " c.customers_email_address, customers_telephone, " & _
                 " (select products_title from products p where p.products_id = c.customers_next_abo_type) abopackage, " & _
                 " c.customers_abo_validityto, " & _
-                " nb_days number_of_days_credit_spent_earlier FROM potential_upgrades p join customers c on p.customers_id = c.customers_id where " & _
+                " nb_days number_of_days_credit_spent_earlier, credit_spent_date, p.customers_abo_validityto earlier_validityto FROM potential_upgrades p join customers c on p.customers_id = c.customers_id where " & _
                 " p.credit_spent_date>= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "'" & _
                 " and date(p.credit_spent_date) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
                 " group by 1,2 order by 1, nb_days "

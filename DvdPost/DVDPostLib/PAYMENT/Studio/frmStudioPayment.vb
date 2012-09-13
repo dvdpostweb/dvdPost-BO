@@ -1379,6 +1379,11 @@ Public Class frmStudioPayment
         Dim dt As DataTable
         sql = DvdPostData.clsStudio.GetStudioBilling()
         dt = DvdPostData.clsConnection.FillDataSet(sql)
+        Dim dr As DataRow = dt.NewRow()
+        dr("studio_id") = -1
+        dr("studio_name") = "All studios"
+
+        dt.Rows.Add(dr)
 
         cmbStudioBilling.Properties.ValueMember = "studio_id"
         cmbStudioBilling.Properties.DisplayMember = "studio_name"

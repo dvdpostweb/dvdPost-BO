@@ -437,6 +437,11 @@ Public Class frmDVD_Maint
     Friend WithEvents GridVODWishlist As DevExpress.XtraGrid.GridControl
     Friend WithEvents gridViewVODWishlist As DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView
     Friend WithEvents GridBand12 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
+    Friend WithEvents grpVOD As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents TextEdit4 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl61 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtVODAudio As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl60 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl48 As DevExpress.XtraEditors.LabelControl
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Dim FilterCondition1 As DevExpress.XtraTreeList.FilterCondition = New DevExpress.XtraTreeList.FilterCondition
@@ -478,6 +483,11 @@ Public Class frmDVD_Maint
         Me.txtTitleSearch = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl
         Me.tabMain = New DevExpress.XtraTab.XtraTabPage
+        Me.grpVOD = New DevExpress.XtraEditors.GroupControl
+        Me.TextEdit4 = New DevExpress.XtraEditors.TextEdit
+        Me.LabelControl61 = New DevExpress.XtraEditors.LabelControl
+        Me.txtVODAudio = New DevExpress.XtraEditors.TextEdit
+        Me.LabelControl60 = New DevExpress.XtraEditors.LabelControl
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl
         Me.MemoEdit1 = New DevExpress.XtraEditors.MemoEdit
         Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl
@@ -859,6 +869,10 @@ Public Class frmDVD_Maint
         CType(Me.txtSearchImdb_id.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTitleSearch.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tabMain.SuspendLayout()
+        CType(Me.grpVOD, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.grpVOD.SuspendLayout()
+        CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtVODAudio.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupControl2.SuspendLayout()
         CType(Me.MemoEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1404,6 +1418,7 @@ Public Class frmDVD_Maint
         '
         'tabMain
         '
+        Me.tabMain.Controls.Add(Me.grpVOD)
         Me.tabMain.Controls.Add(Me.GroupControl2)
         Me.tabMain.Controls.Add(Me.PanelControl3)
         Me.tabMain.Controls.Add(Me.grpActors)
@@ -1413,6 +1428,55 @@ Public Class frmDVD_Maint
         Me.tabMain.Name = "tabMain"
         Me.tabMain.Size = New System.Drawing.Size(1047, 629)
         Me.tabMain.Text = "General Info"
+        '
+        'grpVOD
+        '
+        Me.grpVOD.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
+        Me.grpVOD.Controls.Add(Me.TextEdit4)
+        Me.grpVOD.Controls.Add(Me.LabelControl61)
+        Me.grpVOD.Controls.Add(Me.txtVODAudio)
+        Me.grpVOD.Controls.Add(Me.LabelControl60)
+        Me.grpVOD.Location = New System.Drawing.Point(733, 41)
+        Me.grpVOD.Name = "grpVOD"
+        Me.grpVOD.Size = New System.Drawing.Size(265, 90)
+        Me.grpVOD.TabIndex = 6
+        Me.grpVOD.Text = "VOD"
+        '
+        'TextEdit4
+        '
+        Me.TextEdit4.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "streaming_products.subtitle", True))
+        Me.TextEdit4.EditValue = ""
+        Me.TextEdit4.Enabled = False
+        Me.TextEdit4.Location = New System.Drawing.Point(63, 56)
+        Me.TextEdit4.Name = "TextEdit4"
+        Me.TextEdit4.Size = New System.Drawing.Size(197, 20)
+        Me.TextEdit4.TabIndex = 53
+        '
+        'LabelControl61
+        '
+        Me.LabelControl61.Location = New System.Drawing.Point(8, 60)
+        Me.LabelControl61.Name = "LabelControl61"
+        Me.LabelControl61.Size = New System.Drawing.Size(36, 13)
+        Me.LabelControl61.TabIndex = 52
+        Me.LabelControl61.Text = "Subtitle"
+        '
+        'txtVODAudio
+        '
+        Me.txtVODAudio.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "streaming_products.audio", True))
+        Me.txtVODAudio.EditValue = ""
+        Me.txtVODAudio.Enabled = False
+        Me.txtVODAudio.Location = New System.Drawing.Point(63, 32)
+        Me.txtVODAudio.Name = "txtVODAudio"
+        Me.txtVODAudio.Size = New System.Drawing.Size(197, 20)
+        Me.txtVODAudio.TabIndex = 51
+        '
+        'LabelControl60
+        '
+        Me.LabelControl60.Location = New System.Drawing.Point(8, 36)
+        Me.LabelControl60.Name = "LabelControl60"
+        Me.LabelControl60.Size = New System.Drawing.Size(27, 13)
+        Me.LabelControl60.TabIndex = 50
+        Me.LabelControl60.Text = "Audio"
         '
         'GroupControl2
         '
@@ -1482,7 +1546,7 @@ Public Class frmDVD_Maint
         Me.grpActors.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
         Me.grpActors.Controls.Add(Me.GridActors)
         Me.grpActors.Controls.Add(Me.PanelControl1)
-        Me.grpActors.Location = New System.Drawing.Point(728, 40)
+        Me.grpActors.Location = New System.Drawing.Point(728, 138)
         Me.grpActors.Name = "grpActors"
         Me.grpActors.Size = New System.Drawing.Size(272, 280)
         Me.grpActors.TabIndex = 3
@@ -5150,6 +5214,11 @@ Public Class frmDVD_Maint
         CType(Me.txtSearchImdb_id.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTitleSearch.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tabMain.ResumeLayout(False)
+        CType(Me.grpVOD, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.grpVOD.ResumeLayout(False)
+        Me.grpVOD.PerformLayout()
+        CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtVODAudio.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GroupControl2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupControl2.ResumeLayout(False)
         CType(Me.MemoEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -5832,6 +5901,13 @@ Public Class frmDVD_Maint
             LstRefreshData(TypeOfTab.CRITIQUES) = False
         End If
     End Sub
+    Private Sub loadVOD(ByVal product_id As Integer)
+        Dim sql As String
+        Dim dt As DataTable
+        sql = DvdPostData.clsProductDvd.GetSelectVod(product_id)
+        dt = DvdPostData.clsConnection.FillDataSet(sql)
+
+    End Sub
     Private Sub loadWishlistCustomers(ByVal product_id As Integer)
         Dim sql As String
         Dim dt As DataTable
@@ -6051,6 +6127,7 @@ Public Class frmDVD_Maint
         MainData.LoadTrailers()
         MainData.LoadSoundtracks()
         loadTheme()
+        MainData.LoadVod()
         'MainData.LoadLanguages()
         'MainData.LoadUndertitles()
         'MainData.LoadTrailers()

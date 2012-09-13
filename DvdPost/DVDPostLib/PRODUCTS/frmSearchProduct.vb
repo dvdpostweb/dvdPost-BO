@@ -94,6 +94,8 @@ Public Class frmSearchProduct
     Friend WithEvents lblDirector As DevExpress.XtraEditors.LabelControl
     Friend WithEvents cmbProductMedia As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents lblProductMedia As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents colCustHigh As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colVodExists As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colAvailability As DevExpress.XtraGrid.Columns.GridColumn
 
 
@@ -155,12 +157,14 @@ Public Class frmSearchProduct
         Me.colCptDvdOK = New DevExpress.XtraGrid.Columns.GridColumn
         Me.colcpt_cust = New DevExpress.XtraGrid.Columns.GridColumn
         Me.coldate = New DevExpress.XtraGrid.Columns.GridColumn
+        Me.colCustHigh = New DevExpress.XtraGrid.Columns.GridColumn
         Me.RepositoryItemLookUpEditLanguage = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.DsSite1 = New DVDPostLib.DsSite
         Me.chkSelected = New DevExpress.XtraEditors.CheckEdit
         Me.lblSelected = New DevExpress.XtraEditors.LabelControl
         Me.ContextMenu1 = New DVDPostBuziness.contextMenu
         Me.XtraTabControlTheme = New DevExpress.XtraTab.XtraTabControl
+        Me.colVodExists = New DevExpress.XtraGrid.Columns.GridColumn
         CType(Me.cmbViewListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtQuickSearchRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbReportListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -460,7 +464,7 @@ Public Class frmSearchProduct
         '
         'GridViewProducts
         '
-        Me.GridViewProducts.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colId, Me.colName, Me.colStatus, Me.colAvailability, Me.colSerie, Me.colStudio, Me.colProductNext, Me.colRating, Me.colProductType, Me.colCptDvdOK, Me.colcpt_cust, Me.coldate})
+        Me.GridViewProducts.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colId, Me.colName, Me.colStatus, Me.colAvailability, Me.colSerie, Me.colStudio, Me.colProductNext, Me.colRating, Me.colProductType, Me.colCptDvdOK, Me.colcpt_cust, Me.coldate, Me.colCustHigh, Me.colVodExists})
         Me.GridViewProducts.CustomizationFormBounds = New System.Drawing.Rectangle(1382, 593, 218, 205)
         Me.GridViewProducts.GridControl = Me.GridProducts
         Me.GridViewProducts.Name = "GridViewProducts"
@@ -593,6 +597,12 @@ Public Class frmSearchProduct
         Me.coldate.FieldName = "products_date_added"
         Me.coldate.Name = "coldate"
         '
+        'colCustHigh
+        '
+        resources.ApplyResources(Me.colCustHigh, "colCustHigh")
+        Me.colCustHigh.FieldName = "cutomers_high"
+        Me.colCustHigh.Name = "colCustHigh"
+        '
         'RepositoryItemLookUpEditLanguage
         '
         resources.ApplyResources(Me.RepositoryItemLookUpEditLanguage, "RepositoryItemLookUpEditLanguage")
@@ -627,6 +637,12 @@ Public Class frmSearchProduct
         Me.XtraTabControlTheme.Name = "XtraTabControlTheme"
         Me.XtraTabControlTheme.SelectedTabPage = Me.tabResult
         Me.XtraTabControlTheme.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.tabSearch, Me.tabResult})
+        '
+        'colVodExists
+        '
+        resources.ApplyResources(Me.colVodExists, "colVodExists")
+        Me.colVodExists.FieldName = "vod_exists"
+        Me.colVodExists.Name = "colVodExists"
         '
         'frmSearchProduct
         '

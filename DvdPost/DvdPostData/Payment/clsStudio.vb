@@ -83,6 +83,11 @@ Public Class clsStudio
     Public Shared Function GetStudioDetailedReport(ByVal dateFrom As String, ByVal dateTo As String, ByVal studio_id As Integer) As String
 
         Dim sql As String
+        Dim allstudio As String = String.Empty
+
+        If studio_id <> -1 Then
+            allstudio = allstudio & " and s.studio_id = " & studio_id
+        End If
 
         sql = " select  x.vodstudio, x.productstudio, x.products_title, x.customer_id, x.customers_abo_type, x.customers_lastname," & _
  " x.customers_firstname, x.customers_language, x.imdb_id, x.products_type, x.created_at, x.products_date_available, x.available_from, " & _
@@ -131,7 +136,7 @@ Public Class clsStudio
 " left join studio ps on ps.studio_id = p.products_studio " & _
 " left join directors d on d.directors_id = p.products_directors_id " & _
 " where date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
-" and s.studio_id = " & studio_id & _
+allstudio & _
 " order by s.studio_name, ps.studio_name,  p.products_title " & _
 " ) x  where x.qty_credit <> 10000 "
 
@@ -141,6 +146,12 @@ Public Class clsStudio
     Public Shared Function GetStudioSummaryReport(ByVal dateFrom As String, ByVal dateTo As String, ByVal studio_id As Integer) As String
 
         Dim sql As String
+
+        Dim allstudio As String = String.Empty
+
+        If studio_id <> -1 Then
+            allstudio = allstudio & " and s.studio_id = " & studio_id
+        End If
 
         sql = "  select x.vodstudio, x.productstudio, x.products_title, count(x.imdb_id) number_titles, sum(x.price_of_movie_tvac)  tvac_sum, " & _
         " sum(x.price_of_movie_htva) htvac_sum, " & _
@@ -188,7 +199,7 @@ Public Class clsStudio
  " left join studio ps on ps.studio_id = p.products_studio " & _
  " left join directors d on d.directors_id = p.products_directors_id " & _
 " where date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
-" and s.studio_id = " & studio_id & _
+allstudio & _
 " order by s.studio_name, ps.studio_name,  p.products_title " & _
 " ) x  where x.qty_credit <> 10000 " & _
 " group by 1,2,3 "

@@ -161,6 +161,18 @@ Public Class clsProductDvd
         Return sql
 
     End Function
+    Public Shared Function GetSelectVod(ByVal products_id As Integer) As String
+        Dim sql As String
+        sql = " select group_concat(pl.short_alpha, ',') languages, group_concat(pu.short_alpha) " & _
+        " from products p join streaming_products sp on p.imdb_id = sp.imdb_id " & _
+        " left join products_languages pl on sp1.language_id = pl.languages_id and pl.languagenav_id = 1 " & _
+        " left join products_undertitles pu on sp.subtitle_id = pu.undertitles_id and pu.language_id = 1 " & _
+        " where p.products_id = " & products_id
+
+        Return sql
+
+    End Function
+
     Public Shared Function GetSelectCountDVDByBox(ByVal box_id As Integer, ByVal inout As Integer) As String
         Dim sql As String
         sql = " select count(*) from products_dvd pd where pd.box_id = " & box_id & "  and pd.inout = " & inout
@@ -518,7 +530,12 @@ Public Class clsProductDvd
                                              ByVal dateTo As String) As String
 
         Dim sql As String
-        sql = "select p.*,pde.products_name,pdvd.cpt_dvd,w.cpt_cust from products p " & _
+        sql = "select p.*,pde.products_name,pdvd.cpt_dvd,w.cpt_cust " & _
+        ",(select count(*) from wishlist ww  join customers c on ww.customers_id = c.customers_id " & _
+        "    where c.customers_abo = " & ClsCustomersData.abo.VALID & " and c.customers_abo_suspended <> " & ClsCustomersData.Suspended.RECONDUCTION & _
+        "    and ww.product_id = p.products_id  and ww.priority = 1) cutomers_high" & _
+        ", ( select if(count(*)>0,1,0) from dvdpost_be_prod.streaming_products sp where p.imdb_id = sp.imdb_id and sp.source = 'ALPHANETWORKS' and sp.status = 'online_test_ok' and ((sp.expire_at > sysdate() and sp.available_from < sysdate()) or ( sp.available_backcatalogue_from < sysdate() and sp.expire_backcatalogue_at > sysdate() ) ) ) vod_exists " & _
+        " from products p " & _
               " join products_description pde on p.products_id = pde.products_id and pde.language_id = 1 " & _
               " left join (select products_id,count(*) cpt_dvd from products_dvd pd where pd.products_dvd_status = 1 group by products_id) pdvd on p.products_id = pdvd.products_id " & _
               " left join (select w.product_id,count(*) cpt_cust from wishlist w " & _

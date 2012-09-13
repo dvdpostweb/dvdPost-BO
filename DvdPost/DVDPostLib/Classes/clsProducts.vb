@@ -402,6 +402,15 @@ Public Class clsProduct_DVD
         DataSet1.Tables("products").Columns("products_id").DefaultValue = ProductsID
 
     End Sub
+    Public Sub LoadVod()
+        DataSet1.Tables("streaming_products").Clear()
+        DvdPostData.clsConnection.FillDataSet(DataSet1.Tables("streaming_products"), "select group_concat(distinct pl.short_alpha) audio, group_concat(distinct pu.short_alpha) subtitle" & _
+        " from products p join streaming_products sp on p.imdb_id = sp.imdb_id " & _
+        " left join products_languages pl on sp.language_id = pl.languages_id and pl.languagenav_id = 1 " & _
+        " left join products_undertitles pu on sp.subtitle_id = pu.undertitles_id and pu.language_id = 1 " & _
+        " where p.products_id = " & ProductsID)
+        'DataSet1.Tables("streaming_products").Columns("products_id").DefaultValue = ProductsID
+    End Sub
     Public Sub LoadActors()
         DataSet1.Tables("products_to_actors").Clear()
         DvdPostData.clsConnection.FillDataSet(DataSet1.Tables("products_to_actors"), "select * from products_to_actors where products_id = " & ProductsID)

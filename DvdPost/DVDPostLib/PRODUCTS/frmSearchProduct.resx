@@ -443,7 +443,7 @@
     <value>Product Next</value>
   </data>
   <data name="chkProductNext.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 18</value>
+    <value>108, 19</value>
   </data>
   <data name="chkProductNext.TabIndex" type="System.Int32, mscorlib">
     <value>71</value>
@@ -1019,7 +1019,7 @@
     <value>0</value>
   </data>
   <data name="colId.Width" type="System.Int32, mscorlib">
-    <value>89</value>
+    <value>81</value>
   </data>
   <data name="colName.Caption" xml:space="preserve">
     <value>Title</value>
@@ -1031,7 +1031,7 @@
     <value>1</value>
   </data>
   <data name="colName.Width" type="System.Int32, mscorlib">
-    <value>249</value>
+    <value>228</value>
   </data>
   <data name="colStatus.Caption" xml:space="preserve">
     <value>status</value>
@@ -1052,7 +1052,7 @@
     <value>2</value>
   </data>
   <data name="colStatus.Width" type="System.Int32, mscorlib">
-    <value>108</value>
+    <value>99</value>
   </data>
   <data name="colAvailability.Caption" xml:space="preserve">
     <value>availability</value>
@@ -1073,7 +1073,7 @@
     <value>3</value>
   </data>
   <data name="colAvailability.Width" type="System.Int32, mscorlib">
-    <value>129</value>
+    <value>94</value>
   </data>
   <data name="colSerie.Caption" xml:space="preserve">
     <value>serie</value>
@@ -1094,7 +1094,7 @@
     <value>4</value>
   </data>
   <data name="colSerie.Width" type="System.Int32, mscorlib">
-    <value>186</value>
+    <value>114</value>
   </data>
   <data name="colStudio.Caption" xml:space="preserve">
     <value>studio</value>
@@ -1115,7 +1115,7 @@
     <value>5</value>
   </data>
   <data name="colStudio.Width" type="System.Int32, mscorlib">
-    <value>81</value>
+    <value>86</value>
   </data>
   <data name="colProductNext.Caption" xml:space="preserve">
     <value>product next</value>
@@ -1136,7 +1136,7 @@
     <value>6</value>
   </data>
   <data name="colRating.Width" type="System.Int32, mscorlib">
-    <value>128</value>
+    <value>136</value>
   </data>
   <data name="colProductType.Caption" xml:space="preserve">
     <value>product type</value>
@@ -1148,7 +1148,7 @@
     <value>7</value>
   </data>
   <data name="colProductType.Width" type="System.Int32, mscorlib">
-    <value>144</value>
+    <value>103</value>
   </data>
   <data name="colCptDvdOK.Caption" xml:space="preserve">
     <value># dvd ok</value>
@@ -1159,6 +1159,9 @@
   <data name="colCptDvdOK.VisibleIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
+  <data name="colCptDvdOK.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
   <data name="colcpt_cust.Caption" xml:space="preserve">
     <value># cust wishlist</value>
   </data>
@@ -1168,8 +1171,29 @@
   <data name="colcpt_cust.VisibleIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
+  <data name="colcpt_cust.Width" type="System.Int32, mscorlib">
+    <value>121</value>
+  </data>
   <data name="coldate.Caption" xml:space="preserve">
     <value>created date</value>
+  </data>
+  <data name="colCustHigh.Caption" xml:space="preserve">
+    <value>cust high</value>
+  </data>
+  <data name="colCustHigh.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colCustHigh.VisibleIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="colVodExists.Caption" xml:space="preserve">
+    <value>vodexists</value>
+  </data>
+  <data name="colVodExists.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colVodExists.VisibleIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
   <data name="RepositoryItemLookUpEditLanguage.AutoHeight" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1181,7 +1205,7 @@
     <value />
   </data>
   <data name="GridProducts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1183, 806</value>
+    <value>1183, 805</value>
   </data>
   <data name="GridProducts.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -1199,7 +1223,7 @@
     <value>0</value>
   </data>
   <data name="tabResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1183, 806</value>
+    <value>1183, 805</value>
   </data>
   <data name="tabResult.Text" xml:space="preserve">
     <value>Result</value>
@@ -1499,6 +1523,12 @@
   <data name="&gt;&gt;coldate.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
   </data>
+  <data name="&gt;&gt;colCustHigh.Name" xml:space="preserve">
+    <value>colCustHigh</value>
+  </data>
+  <data name="&gt;&gt;colCustHigh.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
   <data name="&gt;&gt;RepositoryItemLookUpEditLanguage.Name" xml:space="preserve">
     <value>RepositoryItemLookUpEditLanguage</value>
   </data>
@@ -1509,7 +1539,13 @@
     <value>DsSite1</value>
   </data>
   <data name="&gt;&gt;DsSite1.Type" xml:space="preserve">
-    <value>DVDPostLib.DsSite, DVDPostLib, Version=2.0.4461.2, Culture=neutral, PublicKeyToken=null</value>
+    <value>DVDPostLib.DsSite, DVDPostLib, Version=2.0.4638.3, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;colVodExists.Name" xml:space="preserve">
+    <value>colVodExists</value>
+  </data>
+  <data name="&gt;&gt;colVodExists.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmSearchProduct</value>
