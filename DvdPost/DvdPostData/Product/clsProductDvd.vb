@@ -54,6 +54,7 @@ Public Class clsProductDvd
         DVD_STATUS_BADLABEL = 24
         PURCHASE = 25
         LOST_AFTER_INVENTORY = 26
+        PAID_BY_SUBSCRIPTION = 27
 
     End Enum
     Public Enum INOUT

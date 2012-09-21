@@ -1109,7 +1109,14 @@ Public Class frmStudioPayment
         SFDExportExcel.DefaultExt = "xls"
         SFDExportExcel.Filter = "Excel(*.xls)|*.xls"
         If SFDExportExcel.ShowDialog() = Windows.Forms.DialogResult.OK Then
-            GridStudioDetail.ExportToXls(SFDExportExcel.FileName)
+            If XtraTabStudio.SelectedTabPage.Name = TabSABAMDetail.Name Then
+                GridSABAMDetail.ExportToXls(SFDExportExcel.FileName)
+            ElseIf XtraTabStudio.SelectedTabPage.Name = TabSABAMSummary.Name Then
+                GridSABAMSummary.ExportToXls(SFDExportExcel.FileName)
+            Else
+                GridStudioDetail.ExportToXls(SFDExportExcel.FileName)
+            End If
+
         End If
     End Sub
 
