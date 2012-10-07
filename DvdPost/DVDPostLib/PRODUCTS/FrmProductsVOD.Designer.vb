@@ -147,6 +147,11 @@ Partial Class FrmProductsVOD
         Me.GridBand4 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand
         Me.RepositoryItemLookUpEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.XTabView = New DevExpress.XtraTab.XtraTabPage
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl
+        Me.chkIsPPV = New DevExpress.XtraEditors.CheckEdit
+        Me.txtPPVPrice = New DevExpress.XtraEditors.TextEdit
+        Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl
         Me.cmbDateLaterExpired = New DevExpress.XtraEditors.DateEdit
         Me.cmbDateLaterStart = New DevExpress.XtraEditors.DateEdit
         Me.lblDateLaterExpire = New DevExpress.XtraEditors.LabelControl
@@ -284,6 +289,9 @@ Partial Class FrmProductsVOD
         CType(Me.chkcolAvailable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XTabView.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.chkIsPPV.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtPPVPrice.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbDateLaterExpired.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbDateLaterExpired.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbDateLaterStart.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1091,7 +1099,7 @@ Partial Class FrmProductsVOD
         Me.GridViewSearch.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand1, Me.GridBand3, Me.GridBand4})
         Me.GridViewSearch.ColumnPanelRowHeight = 45
         Me.GridViewSearch.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.colImdb_id, Me.collanguage_id, Me.colproducts_name, Me.ColAvailable_from, Me.colExpireAt, Me.colAvailableBackCatalogueFrom, Me.colBackcatalogueExpireAt, Me.colLanguage_subtitle, Me.colAvailable, Me.colStudio, Me.colStatus, Me.colSource, Me.colQuality, Me.colSupportVod, Me.colCredit})
-        Me.GridViewSearch.CustomizationFormBounds = New System.Drawing.Rectangle(-444, 375, 225, 209)
+        Me.GridViewSearch.CustomizationFormBounds = New System.Drawing.Rectangle(0, 375, 225, 209)
         Me.GridViewSearch.DetailHeight = 50
         Me.GridViewSearch.GridControl = Me.GridVod
         Me.GridViewSearch.Name = "GridViewSearch"
@@ -1368,6 +1376,7 @@ Partial Class FrmProductsVOD
         '
         'XTabView
         '
+        Me.XTabView.Controls.Add(Me.GroupBox1)
         Me.XTabView.Controls.Add(Me.cmbDateLaterExpired)
         Me.XTabView.Controls.Add(Me.cmbDateLaterStart)
         Me.XTabView.Controls.Add(Me.lblDateLaterExpire)
@@ -1408,11 +1417,56 @@ Partial Class FrmProductsVOD
         Me.XTabView.Size = New System.Drawing.Size(1011, 634)
         Me.XTabView.Text = "View"
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.LabelControl4)
+        Me.GroupBox1.Controls.Add(Me.chkIsPPV)
+        Me.GroupBox1.Controls.Add(Me.txtPPVPrice)
+        Me.GroupBox1.Controls.Add(Me.LabelControl1)
+        Me.GroupBox1.Location = New System.Drawing.Point(521, 200)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(324, 165)
+        Me.GroupBox1.TabIndex = 91
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Pay per view - PPV"
+        '
+        'LabelControl4
+        '
+        Me.LabelControl4.Location = New System.Drawing.Point(21, 31)
+        Me.LabelControl4.Name = "LabelControl4"
+        Me.LabelControl4.Size = New System.Drawing.Size(278, 13)
+        Me.LabelControl4.TabIndex = 94
+        Me.LabelControl4.Text = "This price will be automaticaly set to all VODs of this movie"
+        '
+        'chkIsPPV
+        '
+        Me.chkIsPPV.Location = New System.Drawing.Point(19, 72)
+        Me.chkIsPPV.Name = "chkIsPPV"
+        Me.chkIsPPV.Properties.Caption = "Is PPV"
+        Me.chkIsPPV.Size = New System.Drawing.Size(108, 19)
+        Me.chkIsPPV.TabIndex = 93
+        '
+        'txtPPVPrice
+        '
+        Me.txtPPVPrice.Enabled = False
+        Me.txtPPVPrice.Location = New System.Drawing.Point(118, 109)
+        Me.txtPPVPrice.Name = "txtPPVPrice"
+        Me.txtPPVPrice.Size = New System.Drawing.Size(179, 20)
+        Me.txtPPVPrice.TabIndex = 68
+        '
+        'LabelControl1
+        '
+        Me.LabelControl1.Location = New System.Drawing.Point(23, 113)
+        Me.LabelControl1.Name = "LabelControl1"
+        Me.LabelControl1.Size = New System.Drawing.Size(44, 13)
+        Me.LabelControl1.TabIndex = 67
+        Me.LabelControl1.Text = "PPV price"
+        '
         'cmbDateLaterExpired
         '
         Me.cmbDateLaterExpired.EditValue = Nothing
         Me.cmbDateLaterExpired.Enabled = False
-        Me.cmbDateLaterExpired.Location = New System.Drawing.Point(123, 355)
+        Me.cmbDateLaterExpired.Location = New System.Drawing.Point(123, 358)
         Me.cmbDateLaterExpired.Name = "cmbDateLaterExpired"
         Me.cmbDateLaterExpired.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbDateLaterExpired.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
@@ -1423,7 +1477,7 @@ Partial Class FrmProductsVOD
         '
         Me.cmbDateLaterStart.EditValue = Nothing
         Me.cmbDateLaterStart.Enabled = False
-        Me.cmbDateLaterStart.Location = New System.Drawing.Point(123, 309)
+        Me.cmbDateLaterStart.Location = New System.Drawing.Point(123, 312)
         Me.cmbDateLaterStart.Name = "cmbDateLaterStart"
         Me.cmbDateLaterStart.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbDateLaterStart.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
@@ -1466,7 +1520,7 @@ Partial Class FrmProductsVOD
         'spedCredit
         '
         Me.spedCredit.EditValue = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.spedCredit.Location = New System.Drawing.Point(352, 355)
+        Me.spedCredit.Location = New System.Drawing.Point(352, 358)
         Me.spedCredit.Name = "spedCredit"
         Me.spedCredit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
         Me.spedCredit.Properties.MaxValue = New Decimal(New Integer() {3, 0, 0, 0})
@@ -1478,7 +1532,7 @@ Partial Class FrmProductsVOD
         '
         Me.cmbSupportVod.AllowDrop = True
         Me.cmbSupportVod.Enabled = False
-        Me.cmbSupportVod.Location = New System.Drawing.Point(352, 309)
+        Me.cmbSupportVod.Location = New System.Drawing.Point(352, 312)
         Me.cmbSupportVod.Name = "cmbSupportVod"
         Me.cmbSupportVod.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbSupportVod.Properties.DisplayMember = "status_desc"
@@ -1489,7 +1543,7 @@ Partial Class FrmProductsVOD
         '
         'lblSupport
         '
-        Me.lblSupport.Location = New System.Drawing.Point(257, 312)
+        Me.lblSupport.Location = New System.Drawing.Point(257, 316)
         Me.lblSupport.Name = "lblSupport"
         Me.lblSupport.Size = New System.Drawing.Size(37, 13)
         Me.lblSupport.TabIndex = 82
@@ -1499,7 +1553,7 @@ Partial Class FrmProductsVOD
         '
         Me.cmbSource.AllowDrop = True
         Me.cmbSource.Enabled = False
-        Me.cmbSource.Location = New System.Drawing.Point(351, 271)
+        Me.cmbSource.Location = New System.Drawing.Point(351, 270)
         Me.cmbSource.Name = "cmbSource"
         Me.cmbSource.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbSource.Properties.DisplayMember = "status_desc"
@@ -1510,7 +1564,7 @@ Partial Class FrmProductsVOD
         '
         'lblSource
         '
-        Me.lblSource.Location = New System.Drawing.Point(259, 275)
+        Me.lblSource.Location = New System.Drawing.Point(259, 274)
         Me.lblSource.Name = "lblSource"
         Me.lblSource.Size = New System.Drawing.Size(32, 13)
         Me.lblSource.TabIndex = 80
@@ -1520,7 +1574,7 @@ Partial Class FrmProductsVOD
         '
         Me.cmbQuality.AllowDrop = True
         Me.cmbQuality.Enabled = False
-        Me.cmbQuality.Location = New System.Drawing.Point(352, 235)
+        Me.cmbQuality.Location = New System.Drawing.Point(352, 224)
         Me.cmbQuality.Name = "cmbQuality"
         Me.cmbQuality.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbQuality.Properties.DisplayMember = "status_desc"
@@ -1531,7 +1585,7 @@ Partial Class FrmProductsVOD
         '
         'lblHigh
         '
-        Me.lblHigh.Location = New System.Drawing.Point(257, 238)
+        Me.lblHigh.Location = New System.Drawing.Point(257, 228)
         Me.lblHigh.Name = "lblHigh"
         Me.lblHigh.Size = New System.Drawing.Size(32, 13)
         Me.lblHigh.TabIndex = 78
@@ -1540,7 +1594,7 @@ Partial Class FrmProductsVOD
         'cmbStatus
         '
         Me.cmbStatus.Enabled = False
-        Me.cmbStatus.Location = New System.Drawing.Point(352, 191)
+        Me.cmbStatus.Location = New System.Drawing.Point(352, 178)
         Me.cmbStatus.Name = "cmbStatus"
         Me.cmbStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbStatus.Properties.DisplayMember = "status_desc"
@@ -1551,7 +1605,7 @@ Partial Class FrmProductsVOD
         '
         'lblStatus
         '
-        Me.lblStatus.Location = New System.Drawing.Point(257, 194)
+        Me.lblStatus.Location = New System.Drawing.Point(257, 182)
         Me.lblStatus.Name = "lblStatus"
         Me.lblStatus.Size = New System.Drawing.Size(30, 13)
         Me.lblStatus.TabIndex = 76
@@ -1606,7 +1660,7 @@ Partial Class FrmProductsVOD
         'cmbLanguageSubtitle
         '
         Me.cmbLanguageSubtitle.Enabled = False
-        Me.cmbLanguageSubtitle.Location = New System.Drawing.Point(123, 179)
+        Me.cmbLanguageSubtitle.Location = New System.Drawing.Point(123, 178)
         Me.cmbLanguageSubtitle.Name = "cmbLanguageSubtitle"
         Me.cmbLanguageSubtitle.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbLanguageSubtitle.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("subtitle_id", "id", 63, DevExpress.Utils.FormatType.Numeric, "", True, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("lngdsc", "Language", 64, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
@@ -1619,7 +1673,7 @@ Partial Class FrmProductsVOD
         'cmbLanguageSound
         '
         Me.cmbLanguageSound.Enabled = False
-        Me.cmbLanguageSound.Location = New System.Drawing.Point(123, 143)
+        Me.cmbLanguageSound.Location = New System.Drawing.Point(123, 142)
         Me.cmbLanguageSound.Name = "cmbLanguageSound"
         Me.cmbLanguageSound.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbLanguageSound.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "id", 63, DevExpress.Utils.FormatType.Numeric, "", True, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("lngdsc", "Language", 64, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
@@ -1633,7 +1687,7 @@ Partial Class FrmProductsVOD
         '
         Me.cmbDateExpired.EditValue = Nothing
         Me.cmbDateExpired.Enabled = False
-        Me.cmbDateExpired.Location = New System.Drawing.Point(123, 267)
+        Me.cmbDateExpired.Location = New System.Drawing.Point(123, 270)
         Me.cmbDateExpired.Name = "cmbDateExpired"
         Me.cmbDateExpired.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbDateExpired.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
@@ -1644,7 +1698,7 @@ Partial Class FrmProductsVOD
         '
         Me.cmbDateStart.EditValue = Nothing
         Me.cmbDateStart.Enabled = False
-        Me.cmbDateStart.Location = New System.Drawing.Point(123, 221)
+        Me.cmbDateStart.Location = New System.Drawing.Point(123, 224)
         Me.cmbDateStart.Name = "cmbDateStart"
         Me.cmbDateStart.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbDateStart.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
@@ -1661,7 +1715,7 @@ Partial Class FrmProductsVOD
         '
         'chkAvailable
         '
-        Me.chkAvailable.Location = New System.Drawing.Point(350, 149)
+        Me.chkAvailable.Location = New System.Drawing.Point(350, 143)
         Me.chkAvailable.Name = "chkAvailable"
         Me.chkAvailable.Properties.Caption = ""
         Me.chkAvailable.Size = New System.Drawing.Size(56, 19)
@@ -1669,7 +1723,7 @@ Partial Class FrmProductsVOD
         '
         'lblAvailable
         '
-        Me.lblAvailable.Location = New System.Drawing.Point(257, 152)
+        Me.lblAvailable.Location = New System.Drawing.Point(257, 146)
         Me.lblAvailable.Name = "lblAvailable"
         Me.lblAvailable.Size = New System.Drawing.Size(42, 13)
         Me.lblAvailable.TabIndex = 64
@@ -2419,6 +2473,10 @@ Partial Class FrmProductsVOD
         CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XTabView.ResumeLayout(False)
         Me.XTabView.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        CType(Me.chkIsPPV.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtPPVPrice.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbDateLaterExpired.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbDateLaterExpired.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbDateLaterStart.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2679,10 +2737,10 @@ Partial Class FrmProductsVOD
     Friend WithEvents imdb_id As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents filename As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents btnDeleteVOD As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
-    Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
-    Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
-    Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
     Friend WithEvents cmbgridStatus As DevExpress.XtraEditors.Repository.RepositoryItemComboBox
     Friend WithEvents GridBand3 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
     Friend WithEvents GridBand4 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
@@ -2702,5 +2760,18 @@ Partial Class FrmProductsVOD
     Friend WithEvents dpBackcatalogueStart As DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
     Friend WithEvents colBackcatalogueExpireAt As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
     Friend WithEvents dpBackcataloguExpired As DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
+    Friend WithEvents chkIsPPV As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents txtPPVPrice As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
+    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
 
 End Class

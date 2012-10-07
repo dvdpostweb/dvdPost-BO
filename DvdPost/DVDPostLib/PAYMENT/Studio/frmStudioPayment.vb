@@ -133,6 +133,13 @@ Public Class frmStudioPayment
     Friend WithEvents dtSABAMFrom As DevExpress.XtraEditors.DateEdit
     Friend WithEvents cmbProductType As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents lblProductType As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents btnCineartDetailNew As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnCineartDetailBackcatalogue As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnCineartSummaryNew As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnCineartSummaryBackcatalogue As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents XTabCineart As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents GridCineart As DevExpress.XtraGrid.GridControl
+    Friend WithEvents GridView5 As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents btnSearch As DevExpress.XtraEditors.SimpleButton
 
 
@@ -211,6 +218,10 @@ Public Class frmStudioPayment
         Me.lblLanguageSound = New DevExpress.XtraEditors.LabelControl
         Me.btnSaveStudio = New DevExpress.XtraEditors.SimpleButton
         Me.TabCreateReport = New DevExpress.XtraTab.XtraTabPage
+        Me.btnCineartSummaryNew = New DevExpress.XtraEditors.SimpleButton
+        Me.btnCineartSummaryBackcatalogue = New DevExpress.XtraEditors.SimpleButton
+        Me.btnCineartDetailNew = New DevExpress.XtraEditors.SimpleButton
+        Me.btnCineartDetailBackcatalogue = New DevExpress.XtraEditors.SimpleButton
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl
         Me.txtToDate = New DevExpress.XtraEditors.DateEdit
         Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl
@@ -225,6 +236,8 @@ Public Class frmStudioPayment
         Me.GridStudioDetail = New DevExpress.XtraGrid.GridControl
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView
         Me.XtraTabPage1 = New DevExpress.XtraTab.XtraTabPage
+        Me.cmbProductType = New DevExpress.XtraEditors.LookUpEdit
+        Me.lblProductType = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
         Me.dtSABAMTo = New DevExpress.XtraEditors.DateEdit
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl
@@ -237,8 +250,9 @@ Public Class frmStudioPayment
         Me.TabSABAMSummary = New DevExpress.XtraTab.XtraTabPage
         Me.GridSABAMSummary = New DevExpress.XtraGrid.GridControl
         Me.GridView3 = New DevExpress.XtraGrid.Views.Grid.GridView
-        Me.cmbProductType = New DevExpress.XtraEditors.LookUpEdit
-        Me.lblProductType = New DevExpress.XtraEditors.LabelControl
+        Me.XTabCineart = New DevExpress.XtraTab.XtraTabPage
+        Me.GridCineart = New DevExpress.XtraGrid.GridControl
+        Me.GridView5 = New DevExpress.XtraGrid.Views.Grid.GridView
         CType(Me.cmbViewListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtQuickSearchRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbReportListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -296,6 +310,7 @@ Public Class frmStudioPayment
         CType(Me.GridStudioDetail, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabPage1.SuspendLayout()
+        CType(Me.cmbProductType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtSABAMTo.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtSABAMTo.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dtSABAMFrom.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -306,7 +321,9 @@ Public Class frmStudioPayment
         Me.TabSABAMSummary.SuspendLayout()
         CType(Me.GridSABAMSummary, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmbProductType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.XTabCineart.SuspendLayout()
+        CType(Me.GridCineart, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabSearch
@@ -597,7 +614,7 @@ Public Class frmStudioPayment
         resources.ApplyResources(Me.XtraTabStudio, "XtraTabStudio")
         Me.XtraTabStudio.Name = "XtraTabStudio"
         Me.XtraTabStudio.SelectedTabPage = Me.TabResult
-        Me.XtraTabStudio.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.TabSearch, Me.TabResult, Me.TabStudio, Me.TabCreateReport, Me.TabStudioDetailReport, Me.XtraTabPage1, Me.TabSABAMDetail, Me.TabSABAMSummary})
+        Me.XtraTabStudio.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.TabSearch, Me.TabResult, Me.TabStudio, Me.TabCreateReport, Me.TabStudioDetailReport, Me.XtraTabPage1, Me.TabSABAMDetail, Me.TabSABAMSummary, Me.XTabCineart})
         '
         'TabStudio
         '
@@ -788,6 +805,10 @@ Public Class frmStudioPayment
         '
         'TabCreateReport
         '
+        Me.TabCreateReport.Controls.Add(Me.btnCineartSummaryNew)
+        Me.TabCreateReport.Controls.Add(Me.btnCineartSummaryBackcatalogue)
+        Me.TabCreateReport.Controls.Add(Me.btnCineartDetailNew)
+        Me.TabCreateReport.Controls.Add(Me.btnCineartDetailBackcatalogue)
         Me.TabCreateReport.Controls.Add(Me.LabelControl1)
         Me.TabCreateReport.Controls.Add(Me.txtToDate)
         Me.TabCreateReport.Controls.Add(Me.LabelControl4)
@@ -800,6 +821,26 @@ Public Class frmStudioPayment
         Me.TabCreateReport.Controls.Add(Me.lblStudioBilling)
         Me.TabCreateReport.Name = "TabCreateReport"
         resources.ApplyResources(Me.TabCreateReport, "TabCreateReport")
+        '
+        'btnCineartSummaryNew
+        '
+        resources.ApplyResources(Me.btnCineartSummaryNew, "btnCineartSummaryNew")
+        Me.btnCineartSummaryNew.Name = "btnCineartSummaryNew"
+        '
+        'btnCineartSummaryBackcatalogue
+        '
+        resources.ApplyResources(Me.btnCineartSummaryBackcatalogue, "btnCineartSummaryBackcatalogue")
+        Me.btnCineartSummaryBackcatalogue.Name = "btnCineartSummaryBackcatalogue"
+        '
+        'btnCineartDetailNew
+        '
+        resources.ApplyResources(Me.btnCineartDetailNew, "btnCineartDetailNew")
+        Me.btnCineartDetailNew.Name = "btnCineartDetailNew"
+        '
+        'btnCineartDetailBackcatalogue
+        '
+        resources.ApplyResources(Me.btnCineartDetailBackcatalogue, "btnCineartDetailBackcatalogue")
+        Me.btnCineartDetailBackcatalogue.Name = "btnCineartDetailBackcatalogue"
         '
         'LabelControl1
         '
@@ -842,9 +883,7 @@ Public Class frmStudioPayment
         resources.ApplyResources(Me.cmdBillingReportFormat, "cmdBillingReportFormat")
         Me.cmdBillingReportFormat.Name = "cmdBillingReportFormat"
         Me.cmdBillingReportFormat.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(CType(resources.GetObject("cmdBillingReportFormat.Properties.Buttons"), DevExpress.XtraEditors.Controls.ButtonPredefines))})
-        Me.cmdBillingReportFormat.Properties.DisplayMember = "status_desc"
         Me.cmdBillingReportFormat.Properties.NullText = resources.GetString("cmdBillingReportFormat.Properties.NullText")
-        Me.cmdBillingReportFormat.Properties.ValueMember = "status_id"
         '
         'lblBillingReportFormat
         '
@@ -897,6 +936,18 @@ Public Class frmStudioPayment
         Me.XtraTabPage1.Controls.Add(Me.btnCreateSABAMSummary)
         Me.XtraTabPage1.Name = "XtraTabPage1"
         resources.ApplyResources(Me.XtraTabPage1, "XtraTabPage1")
+        '
+        'cmbProductType
+        '
+        resources.ApplyResources(Me.cmbProductType, "cmbProductType")
+        Me.cmbProductType.Name = "cmbProductType"
+        Me.cmbProductType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(CType(resources.GetObject("cmbProductType.Properties.Buttons"), DevExpress.XtraEditors.Controls.ButtonPredefines))})
+        Me.cmbProductType.Properties.NullText = resources.GetString("cmbProductType.Properties.NullText")
+        '
+        'lblProductType
+        '
+        resources.ApplyResources(Me.lblProductType, "lblProductType")
+        Me.lblProductType.Name = "lblProductType"
         '
         'LabelControl2
         '
@@ -974,17 +1025,25 @@ Public Class frmStudioPayment
         Me.GridView3.GridControl = Me.GridSABAMSummary
         Me.GridView3.Name = "GridView3"
         '
-        'cmbProductType
+        'XTabCineart
         '
-        resources.ApplyResources(Me.cmbProductType, "cmbProductType")
-        Me.cmbProductType.Name = "cmbProductType"
-        Me.cmbProductType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(CType(resources.GetObject("cmbProductType.Properties.Buttons"), DevExpress.XtraEditors.Controls.ButtonPredefines))})
-        Me.cmbProductType.Properties.NullText = resources.GetString("cmbProductType.Properties.NullText")
+        Me.XTabCineart.Controls.Add(Me.GridCineart)
+        Me.XTabCineart.Name = "XTabCineart"
+        resources.ApplyResources(Me.XTabCineart, "XTabCineart")
         '
-        'lblProductType
+        'GridCineart
         '
-        resources.ApplyResources(Me.lblProductType, "lblProductType")
-        Me.lblProductType.Name = "lblProductType"
+        resources.ApplyResources(Me.GridCineart, "GridCineart")
+        Me.GridCineart.EmbeddedNavigator.Name = ""
+        Me.GridCineart.FormsUseDefaultLookAndFeel = False
+        Me.GridCineart.MainView = Me.GridView5
+        Me.GridCineart.Name = "GridCineart"
+        Me.GridCineart.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView5})
+        '
+        'GridView5
+        '
+        Me.GridView5.GridControl = Me.GridCineart
+        Me.GridView5.Name = "GridView5"
         '
         'frmStudioPayment
         '
@@ -1053,6 +1112,7 @@ Public Class frmStudioPayment
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabPage1.ResumeLayout(False)
         Me.XtraTabPage1.PerformLayout()
+        CType(Me.cmbProductType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtSABAMTo.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtSABAMTo.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dtSABAMFrom.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1063,7 +1123,9 @@ Public Class frmStudioPayment
         Me.TabSABAMSummary.ResumeLayout(False)
         CType(Me.GridSABAMSummary, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmbProductType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.XTabCineart.ResumeLayout(False)
+        CType(Me.GridCineart, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridView5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1077,6 +1139,10 @@ Public Class frmStudioPayment
     Dim CurrentCodeType As String
     Dim _enableField As Boolean
     Dim _sql As String
+
+    Private Enum STUDIO
+        CINEART = 26
+    End Enum
 
     Dim WithEvents _ExportExcel As DevExpress.XtraBars.BarButtonItem = MainBtns_btnExcel
     Dim WithEvents SFDExportExcel As New System.Windows.Forms.SaveFileDialog
@@ -1511,40 +1577,40 @@ Public Class frmStudioPayment
 
     End Sub
 
-    Private Sub btnSaveAllChanges_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        Dim dt As DataTable
-        dt = GridStudio.DataSource.GetChanges()
+    'Private Sub btnSaveAllChanges_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    '    Dim dt As DataTable
+    '    dt = GridStudio.DataSource.GetChanges()
 
 
-        If dt Is Nothing Then
-            Return
-        ElseIf MsgBoxResult.Cancel = MsgBox(dt.Rows.Count & " movies are updated and will be saved, please confim ! ", MsgBoxStyle.OkCancel) Then
-            Return
-        End If
-        For Each dr As DataRow In dt.Rows
-            Dim sql As String
-            sql = DvdPostData.ClsVod.GetUpdateVod(dr("id"), _
-                                        IIf(dr("imdb_id") Is System.DBNull.Value, 0, dr("imdb_id")), _
-                                        IIf(dr("filename") Is System.DBNull.Value, "", dr("filename")), _
-                                        IIf(dr("available_from") Is System.DBNull.Value, DateTime.MinValue, dr("available_from")), _
-                                        IIf(dr("expire_at") Is System.DBNull.Value, DateTime.MinValue, dr("expire_at")), _
-                                        dr("available"), _
-                                        IIf(dr("language_id") Is System.DBNull.Value, 0, dr("language_id")), _
-                                        IIf(dr("subtitle_id") Is System.DBNull.Value, 0, dr("subtitle_id")), _
-                                        IIf(dr("studio_id") Is System.DBNull.Value, 0, dr("studio_id")), _
-                                        IIf(dr("status") Is System.DBNull.Value, "", dr("status")), _
-                                        IIf(dr("quality") Is System.DBNull.Value, "", dr("quality")), _
-                                        dr("source"), _
-                                        IIf(dr("vod_support_id") Is System.DBNull.Value, 0, dr("vod_support_id")), _
-                                        IIf(dr("credits") Is System.DBNull.Value, 0, dr("credits")), _
-                                        IIf(dr("available_backcatalogue_from") Is System.DBNull.Value, DateTime.MinValue, dr("available_backcatalogue_from")), _
-                                        IIf(dr("expire_backcatalogue_at") Is System.DBNull.Value, DateTime.MinValue, dr("expire_backcatalogue_at")))
-            DvdPostData.clsConnection.ExecuteNonQuery(sql)
+    '    If dt Is Nothing Then
+    '        Return
+    '    ElseIf MsgBoxResult.Cancel = MsgBox(dt.Rows.Count & " movies are updated and will be saved, please confim ! ", MsgBoxStyle.OkCancel) Then
+    '        Return
+    '    End If
+    '    For Each dr As DataRow In dt.Rows
+    '        Dim sql As String
+    '        sql = DvdPostData.ClsVod.GetUpdateVod(dr("id"), _
+    '                                    IIf(dr("imdb_id") Is System.DBNull.Value, 0, dr("imdb_id")), _
+    '                                    IIf(dr("filename") Is System.DBNull.Value, "", dr("filename")), _
+    '                                    IIf(dr("available_from") Is System.DBNull.Value, DateTime.MinValue, dr("available_from")), _
+    '                                    IIf(dr("expire_at") Is System.DBNull.Value, DateTime.MinValue, dr("expire_at")), _
+    '                                    dr("available"), _
+    '                                    IIf(dr("language_id") Is System.DBNull.Value, 0, dr("language_id")), _
+    '                                    IIf(dr("subtitle_id") Is System.DBNull.Value, 0, dr("subtitle_id")), _
+    '                                    IIf(dr("studio_id") Is System.DBNull.Value, 0, dr("studio_id")), _
+    '                                    IIf(dr("status") Is System.DBNull.Value, "", dr("status")), _
+    '                                    IIf(dr("quality") Is System.DBNull.Value, "", dr("quality")), _
+    '                                    dr("source"), _
+    '                                    IIf(dr("vod_support_id") Is System.DBNull.Value, 0, dr("vod_support_id")), _
+    '                                    IIf(dr("credits") Is System.DBNull.Value, 0, dr("credits")), _
+    '                                    IIf(dr("available_backcatalogue_from") Is System.DBNull.Value, DateTime.MinValue, dr("available_backcatalogue_from")), _
+    '                                    IIf(dr("expire_backcatalogue_at") Is System.DBNull.Value, DateTime.MinValue, dr("expire_backcatalogue_at")))
+    '        DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
-        Next
-        GridStudio.DataSource.AcceptChanges()
+    '    Next
+    '    GridStudio.DataSource.AcceptChanges()
 
-    End Sub
+    'End Sub
 
     Private Sub loadInfoStudio()
 
@@ -1592,7 +1658,9 @@ Public Class frmStudioPayment
     Private Sub btnCreateDetailedReport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCreateDetailedReport.Click
         Dim dt As DataTable
         Dim sql As String
+
         sql = DvdPostData.clsStudio.GetStudioDetailedReport(txtFromDate.EditValue, txtToDate.EditValue, cmbStudioBilling.EditValue)
+
         dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
         ' dt = DvdPostData.clsConnection.FillDataSet(sql)
         GridStudioDetail.DataSource = Nothing
@@ -1605,7 +1673,9 @@ Public Class frmStudioPayment
     Private Sub btnCreateSummaryReport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCreateSummaryReport.Click
         Dim dt As DataTable
         Dim sql As String
+
         sql = DvdPostData.clsStudio.GetStudioSummaryReport(txtFromDate.EditValue, txtToDate.EditValue, cmbStudioBilling.EditValue)
+
         dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
         Dim rpt As New rptStudioSummaryReport
 
@@ -1643,6 +1713,69 @@ Public Class frmStudioPayment
         XtraTabStudio.SelectedTabPage = TabSABAMSummary
     End Sub
 
+    Private Sub btnCineartDetailNew_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCineartDetailNew.Click
+        Dim dt As DataTable
+        Dim sql As String
+
+        sql = DvdPostData.clsStudio.GetCineartDetailedReportNew(txtFromDate.EditValue, txtToDate.EditValue, STUDIO.CINEART)
+
+        dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
+
+        GridCineart.DataSource = Nothing
+        GridCineart.Views(0).PopulateColumns()
+
+        GridCineart.DataSource = dt
+        XTabCineart.Text = "Cineart detailed new"
+        XtraTabStudio.SelectedTabPage = XTabCineart
+    End Sub
+
+    Private Sub btnCineartDetailBackcatalogue_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCineartDetailBackcatalogue.Click
+        Dim dt As DataTable
+        Dim sql As String
+
+        sql = DvdPostData.clsStudio.GetCineartDetailedReportBackcatalogue(txtFromDate.EditValue, txtToDate.EditValue, STUDIO.CINEART)
+
+        dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
+
+        GridCineart.DataSource = Nothing
+        GridCineart.Views(0).PopulateColumns()
+
+        GridCineart.DataSource = dt
+        XTabCineart.Text = "Cineart detailed backcatalogue"
+        XtraTabStudio.SelectedTabPage = XTabCineart
+    End Sub
+
+    Private Sub btnCineartSummaryNew_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCineartSummaryNew.Click
+        Dim dt As DataTable
+        Dim sql As String
+
+        sql = DvdPostData.clsStudio.GetCineartSummaryReportNew(txtFromDate.EditValue, txtToDate.EditValue, STUDIO.CINEART)
+
+        dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
+
+        GridCineart.DataSource = Nothing
+        GridCineart.Views(0).PopulateColumns()
+
+        GridCineart.DataSource = dt
+        XTabCineart.Text = "Cineart summary new"
+        XtraTabStudio.SelectedTabPage = XTabCineart
+    End Sub
+
+    Private Sub btnCineartSummaryBackcatalogue_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCineartSummaryBackcatalogue.Click
+        Dim dt As DataTable
+        Dim sql As String
+
+        sql = DvdPostData.clsStudio.GetCineartSummaryReportBackcatalogue(txtFromDate.EditValue, txtToDate.EditValue, STUDIO.CINEART)
+
+        dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
+
+        GridCineart.DataSource = Nothing
+        GridCineart.Views(0).PopulateColumns()
+
+        GridCineart.DataSource = dt
+        XTabCineart.Text = "Cineart summary backcatalogue"
+        XtraTabStudio.SelectedTabPage = XTabCineart
+    End Sub
 End Class
 
 

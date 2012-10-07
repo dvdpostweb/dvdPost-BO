@@ -1149,7 +1149,13 @@ Public Class frmDVDStatus_Maintenance
         Dim _DS As New dsProducts
         _objProductDVD = New clsProduct_DVD(SessionInfo, _DS, v_products_id, v_dvd_id)
 
-        If _objProductDVD.INOUT <> DvdPostData.clsProductDvd.INOUT.IN Then
+        If v_newstatus = DvdPostData.clsProductDvd.DVDStatus.LOST_AND_CHARGED Then
+            _objProductDVD.ChangeStateProductsDVD(v_newstatus, _
+                                                         "DVD Status Maint. changeDVDSTATUS", _
+                                                         DvdPostData.ClsProducts_dvd_state.state.DVD_STATUS_MAINTENANCE, _objProductDVD.INOUT)
+            Return
+        End If
+        If (_objProductDVD.INOUT <> DvdPostData.clsProductDvd.INOUT.IN And v_newstatus <> DvdPostData.clsProductDvd.DVDStatus.PAID_BY_SUBSCRIPTION) Then
             MsgBox("Warning You must Process IN  !!", MsgBoxStyle.Critical)
             Return
         End If

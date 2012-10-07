@@ -14,7 +14,7 @@ Public Class clsCallMeBrowse
     Public Shared Function getselectCallMeBrowse() As String
         Dim sql As String
 
-        sql = " select id,pr.customer_id customers_id , pr.name, c.customers_firstname, c.customers_lastname,c.customers_language,pr.phone," & _
+        sql = " select id,pr.customer_id customers_id , pr.name, c.customers_firstname, pr.language_id call_langauge, c.customers_lastname,c.customers_language,pr.phone," & _
               " hour,day, reason,pr.comment,open " & _
               " FROM phone_custserv pr " & _
               " LEFT JOIN customers c on c.customers_id = pr.customer_id where open = 0"

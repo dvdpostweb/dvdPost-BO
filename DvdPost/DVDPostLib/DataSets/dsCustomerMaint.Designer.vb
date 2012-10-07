@@ -4529,6 +4529,8 @@ Partial Public Class dsCustomerMaint
         
         Private columnsleep As Global.System.Data.DataColumn
         
+        Private columnppv_ready As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub New()
             MyBase.New
@@ -5240,6 +5242,13 @@ Partial Public Class dsCustomerMaint
             End Get
         End Property
         
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property ppv_readyColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnppv_ready
+            End Get
+        End Property
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -5365,9 +5374,10 @@ Partial Public Class dsCustomerMaint
                     ByVal refresh_token As String,  _
                     ByVal refresh_token_expires_at As Date,  _
                     ByVal access_token_expires_at As Date,  _
-                    ByVal sleep As Boolean) As customersRow
+                    ByVal sleep As Boolean,  _
+                    ByVal ppv_ready As Boolean) As customersRow
             Dim rowcustomersRow As customersRow = CType(Me.NewRow,customersRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, EntityID, group_id, customers_gender, customers_firstname, customers_lastname, customers_dob, customers_email_address, customers_default_address_id, customers_telephone, customers_telephone_evening, customers_fax, customers_password, customers_newsletter, customers_newsletterpartner, customers_privilege, customers_privilege_balance, customers_garantie, sponsoring_code, sponsored_code, customers_abo, customers_abo_suspended, customers_abo_type, customers_next_abo_type, flagminiat1995, customers_abo_method, customers_abo_dvd_norm, customers_abo_dvd_adult, customers_abo_dvd_home_norm, customers_abo_dvd_home_adult, throttling, customers_abo_validityto, customers_abo_rank, customers_abo_start_rentthismonth, customers_abo_dvd_credit, customers_abo_dvd_remain, customers_abo_multishipment, customers_abo_discount_recurring_to_date, abotested, customers_abo_status, customers_abo_payment_method, domiciliation_status, domiciliation_debiter_name, domiciliation_number, domiciliation_account_number, adult_pwd, ogone_card_type, ogone_card_no, ogone_exp_date, ogone_owner, ogone_cc_expiration_status, offline_payment_status, comment, vip, black_listed, red_listed, sm_eligible, customers_enquiry_id, date_first_delivery, mail_wl_adult_not_sufficient, mail_wl_norm_not_sufficient, mgm_points, wishlist_kind, activation_discount_code_id, activation_discount_code_type, customers_next_discount_code, customers_registration_step, customers_abo_auto_stop_next_reconduction, customers_info_date_of_last_logon, customers_info_number_of_logons, customers_info_date_account_created, customers_info_date_account_last_modified, global_product_notifications, customers_language, site, partners_id, belgiqueloisirs_id, dvdpost_known_by, selected_for_email, is_email_valid, last_suspension_date, customers_locked__for_reconduction, abo_not_served_reason, rating_users, rating_count, marketing_ok, encrypted_password, password_salt, reset_password_token, remember_token, remember_created_at, authentication_token, verification_code, refresh_token, refresh_token_expires_at, access_token_expires_at, sleep}
+            Dim columnValuesArray() As Object = New Object() {Nothing, EntityID, group_id, customers_gender, customers_firstname, customers_lastname, customers_dob, customers_email_address, customers_default_address_id, customers_telephone, customers_telephone_evening, customers_fax, customers_password, customers_newsletter, customers_newsletterpartner, customers_privilege, customers_privilege_balance, customers_garantie, sponsoring_code, sponsored_code, customers_abo, customers_abo_suspended, customers_abo_type, customers_next_abo_type, flagminiat1995, customers_abo_method, customers_abo_dvd_norm, customers_abo_dvd_adult, customers_abo_dvd_home_norm, customers_abo_dvd_home_adult, throttling, customers_abo_validityto, customers_abo_rank, customers_abo_start_rentthismonth, customers_abo_dvd_credit, customers_abo_dvd_remain, customers_abo_multishipment, customers_abo_discount_recurring_to_date, abotested, customers_abo_status, customers_abo_payment_method, domiciliation_status, domiciliation_debiter_name, domiciliation_number, domiciliation_account_number, adult_pwd, ogone_card_type, ogone_card_no, ogone_exp_date, ogone_owner, ogone_cc_expiration_status, offline_payment_status, comment, vip, black_listed, red_listed, sm_eligible, customers_enquiry_id, date_first_delivery, mail_wl_adult_not_sufficient, mail_wl_norm_not_sufficient, mgm_points, wishlist_kind, activation_discount_code_id, activation_discount_code_type, customers_next_discount_code, customers_registration_step, customers_abo_auto_stop_next_reconduction, customers_info_date_of_last_logon, customers_info_number_of_logons, customers_info_date_account_created, customers_info_date_account_last_modified, global_product_notifications, customers_language, site, partners_id, belgiqueloisirs_id, dvdpost_known_by, selected_for_email, is_email_valid, last_suspension_date, customers_locked__for_reconduction, abo_not_served_reason, rating_users, rating_count, marketing_ok, encrypted_password, password_salt, reset_password_token, remember_token, remember_created_at, authentication_token, verification_code, refresh_token, refresh_token_expires_at, access_token_expires_at, sleep, ppv_ready}
             rowcustomersRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowcustomersRow)
             Return rowcustomersRow
@@ -5494,6 +5504,7 @@ Partial Public Class dsCustomerMaint
             Me.columnrefresh_token_expires_at = MyBase.Columns("refresh_token_expires_at")
             Me.columnaccess_token_expires_at = MyBase.Columns("access_token_expires_at")
             Me.columnsleep = MyBase.Columns("sleep")
+            Me.columnppv_ready = MyBase.Columns("ppv_ready")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -5692,6 +5703,8 @@ Partial Public Class dsCustomerMaint
             MyBase.Columns.Add(Me.columnaccess_token_expires_at)
             Me.columnsleep = New Global.System.Data.DataColumn("sleep", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnsleep)
+            Me.columnppv_ready = New Global.System.Data.DataColumn("ppv_ready", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnppv_ready)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint4", New Global.System.Data.DataColumn() {Me.columncustomers_id}, true))
             Me.columncustomers_id.AutoIncrement = true
             Me.columncustomers_id.AllowDBNull = false
@@ -9944,6 +9957,20 @@ Partial Public Class dsCustomerMaint
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property ppv_ready() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tablecustomers.ppv_readyColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ppv_ready' in table 'customers' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablecustomers.ppv_readyColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function Iscustomers_dobNull() As Boolean
             Return Me.IsNull(Me.tablecustomers.customers_dobColumn)
         End Function
@@ -10361,6 +10388,16 @@ Partial Public Class dsCustomerMaint
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub SetsleepNull()
             Me(Me.tablecustomers.sleepColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isppv_readyNull() As Boolean
+            Return Me.IsNull(Me.tablecustomers.ppv_readyColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setppv_readyNull()
+            Me(Me.tablecustomers.ppv_readyColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

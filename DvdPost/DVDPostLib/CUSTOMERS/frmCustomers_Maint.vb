@@ -892,6 +892,7 @@ Public Class frmCustomers_Maint
     Friend WithEvents lblRemainDVD As DevExpress.XtraEditors.LabelControl
     Friend WithEvents lblNextDVDRemain As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txtNextDVDRemain As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents chkPPVReady As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents cmbDiscType As DevExpress.XtraEditors.ComboBoxEdit
 
 
@@ -1367,6 +1368,7 @@ Me.txtDeliveryPostCode = New DevExpress.XtraEditors.TextEdit
 Me.txtDeliveryAddr = New DevExpress.XtraEditors.TextEdit
 Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl
 Me.GCcustomersInfo = New DevExpress.XtraEditors.GroupControl
+Me.chkPPVReady = New DevExpress.XtraEditors.CheckEdit
 Me.chkCreditReceivedBySite = New DevExpress.XtraEditors.CheckEdit
 Me.chkOnly_VOD = New DevExpress.XtraEditors.CheckEdit
 Me.txtLast_logon = New DevExpress.XtraEditors.TextEdit
@@ -1888,6 +1890,7 @@ CType(Me.txtDeliveryPostCode.Properties,System.ComponentModel.ISupportInitialize
 CType(Me.txtDeliveryAddr.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.GCcustomersInfo,System.ComponentModel.ISupportInitialize).BeginInit
 Me.GCcustomersInfo.SuspendLayout
+CType(Me.chkPPVReady.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.chkCreditReceivedBySite.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.chkOnly_VOD.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.txtLast_logon.Properties,System.ComponentModel.ISupportInitialize).BeginInit
@@ -6597,6 +6600,7 @@ Me.LabelControl9.Text = "Address"
 'GCcustomersInfo
 '
 Me.GCcustomersInfo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
+Me.GCcustomersInfo.Controls.Add(Me.chkPPVReady)
 Me.GCcustomersInfo.Controls.Add(Me.chkCreditReceivedBySite)
 Me.GCcustomersInfo.Controls.Add(Me.chkOnly_VOD)
 Me.GCcustomersInfo.Controls.Add(Me.txtLast_logon)
@@ -6644,11 +6648,22 @@ Me.GCcustomersInfo.Size = New System.Drawing.Size(600, 413)
 Me.GCcustomersInfo.TabIndex = 0
 Me.GCcustomersInfo.Text = "Global Info"
 '
+'chkPPVReady
+'
+Me.chkPPVReady.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.ppv_ready", true))
+Me.chkPPVReady.Enabled = false
+Me.chkPPVReady.Location = New System.Drawing.Point(456, 384)
+Me.chkPPVReady.Name = "chkPPVReady"
+Me.chkPPVReady.Properties.Caption = "PPV ready"
+Me.chkPPVReady.RightToLeft = System.Windows.Forms.RightToLeft.No
+Me.chkPPVReady.Size = New System.Drawing.Size(128, 19)
+Me.chkPPVReady.TabIndex = 62
+'
 'chkCreditReceivedBySite
 '
 Me.chkCreditReceivedBySite.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customer_attributes.credits_already_recieved", true))
 Me.chkCreditReceivedBySite.Enabled = false
-Me.chkCreditReceivedBySite.Location = New System.Drawing.Point(344, 342)
+Me.chkCreditReceivedBySite.Location = New System.Drawing.Point(307, 342)
 Me.chkCreditReceivedBySite.Name = "chkCreditReceivedBySite"
 Me.chkCreditReceivedBySite.Properties.Caption = "Credit Received By Site"
 Me.chkCreditReceivedBySite.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -6659,7 +6674,7 @@ Me.chkCreditReceivedBySite.TabIndex = 61
 '
 Me.chkOnly_VOD.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customer_attributes.only_vod", true))
 Me.chkOnly_VOD.Enabled = false
-Me.chkOnly_VOD.Location = New System.Drawing.Point(344, 384)
+Me.chkOnly_VOD.Location = New System.Drawing.Point(307, 384)
 Me.chkOnly_VOD.Name = "chkOnly_VOD"
 Me.chkOnly_VOD.Properties.Caption = "Only VOD"
 Me.chkOnly_VOD.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -6700,7 +6715,7 @@ Me.lblComment.Text = "Comment"
 '
 Me.chkRedListed.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.red_listed", true))
 Me.chkRedListed.Enabled = false
-Me.chkRedListed.Location = New System.Drawing.Point(226, 343)
+Me.chkRedListed.Location = New System.Drawing.Point(189, 343)
 Me.chkRedListed.Name = "chkRedListed"
 Me.chkRedListed.Properties.Caption = "Red Listed"
 Me.chkRedListed.Size = New System.Drawing.Size(93, 19)
@@ -6719,7 +6734,7 @@ Me.txtComment.TabIndex = 57
 '
 Me.chkBlackListed.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.black_listed", true))
 Me.chkBlackListed.Enabled = false
-Me.chkBlackListed.Location = New System.Drawing.Point(226, 384)
+Me.chkBlackListed.Location = New System.Drawing.Point(189, 384)
 Me.chkBlackListed.Name = "chkBlackListed"
 Me.chkBlackListed.Properties.Caption = "Black Listed"
 Me.chkBlackListed.Size = New System.Drawing.Size(98, 19)
@@ -6737,7 +6752,7 @@ Me.txtYearsOld.TabIndex = 56
 '
 Me.chkNewsLetterPartner.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_newsletterpartner", true))
 Me.chkNewsLetterPartner.Enabled = false
-Me.chkNewsLetterPartner.Location = New System.Drawing.Point(68, 384)
+Me.chkNewsLetterPartner.Location = New System.Drawing.Point(31, 384)
 Me.chkNewsLetterPartner.Name = "chkNewsLetterPartner"
 Me.chkNewsLetterPartner.Properties.Caption = "NewsLetter Partner"
 Me.chkNewsLetterPartner.Size = New System.Drawing.Size(152, 19)
@@ -6755,7 +6770,7 @@ Me.lblGender.Text = "Gender"
 '
 Me.chkNewsLetter.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_newsletter", true))
 Me.chkNewsLetter.Enabled = false
-Me.chkNewsLetter.Location = New System.Drawing.Point(68, 343)
+Me.chkNewsLetter.Location = New System.Drawing.Point(31, 343)
 Me.chkNewsLetter.Name = "chkNewsLetter"
 Me.chkNewsLetter.Properties.Caption = "NewsLetter"
 Me.chkNewsLetter.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -10256,6 +10271,7 @@ CType(Me.txtDeliveryAddr.Properties,System.ComponentModel.ISupportInitialize).En
 CType(Me.GCcustomersInfo,System.ComponentModel.ISupportInitialize).EndInit
 Me.GCcustomersInfo.ResumeLayout(false)
 Me.GCcustomersInfo.PerformLayout
+CType(Me.chkPPVReady.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.chkCreditReceivedBySite.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.chkOnly_VOD.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.txtLast_logon.Properties,System.ComponentModel.ISupportInitialize).EndInit
@@ -11222,6 +11238,7 @@ End Sub
         ChangeStateControl(txtCustServ_Response_Message, Enabling)
 
         ChangeStatecheckBox(chkOnly_VOD, Enabling)
+        ChangeStatecheckBox(chkPPVReady, Enabling)
         ChangeStatecheckBox(chkCreditReceivedBySite, False)
 
 
