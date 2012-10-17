@@ -139,6 +139,7 @@
     <Compile Include="Payment\clsDom70_128.vb" />
     <Compile Include="Payment\ClsDom80_128.vb" />
     <Compile Include="Payment\clsPayment.vb" />
+    <Compile Include="Payment\clsPPV.vb" />
     <Compile Include="Payment\coda1.vb" />
     <Compile Include="Product\clsOrders.vb" />
     <Compile Include="Product\clsReviews.vb" />

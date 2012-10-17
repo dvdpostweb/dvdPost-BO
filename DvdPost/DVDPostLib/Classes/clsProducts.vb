@@ -396,6 +396,19 @@ Public Class clsProduct_DVD
         SaveDescriptionNL()
         SaveDescriptionEN()
     End Sub
+    Public Sub SaveAll(ByVal imdb_id As Integer)
+        Me.Save()
+        SaveActors()
+        SaveLanguages()
+        SaveUndertitles()
+        SaveSoundtracks()
+        SaveCategories(imdb_id)
+        SaveThemes(imdb_id)
+        SaveTrailers()
+        SaveDescriptionFR()
+        SaveDescriptionNL()
+        SaveDescriptionEN()
+    End Sub
     Public Sub LoadProductsDetail()
         DataSet1.Tables("products").Clear()
         DvdPostData.clsConnection.FillDataSet(DataSet1.Tables("products"), "select * from products where products_id = " & ProductsID)
@@ -502,6 +515,24 @@ Public Class clsProduct_DVD
         End If
     End Sub
 
+    Public Sub SaveCategories(ByVal imdb_id As Integer)
+        '  dvdpostdata.clsconnection.UpdateDataTableInDB(DataSet1.Tables("products_to_categories"), "select * from products_to_categories ")
+        Dim refresh As Boolean = False
+        If Not DataSet1.Tables("products_to_categories").GetChanges() Is Nothing Then
+            refresh = True
+        End If
+        
+
+        DvdPostData.clsConnection.UpdateDataTableInDB(DataSet1.Tables("products_to_categories"), "select products_id, categories_id from products_to_categories where products_id = " & ProductsID)
+        DvdPostData.clsConnection.ExecuteNonQuery("delete from products_to_categories where products_id <> " & ProductsID & " and products_id in (select products_id from products where imdb_id = " & imdb_id & ")")
+        DvdPostData.clsConnection.ExecuteNonQuery("insert into products_to_categories select p.products_id, c.categories_id, sysdate() from (Select categories_id from products_to_categories where products_id = 3088) c," & _
+                                                    "( select products_id from products where imdb_id = " & imdb_id & " and products_id <> " & ProductsID & " ) p ")
+
+        If refresh Then
+            LoadCategories()
+            End If
+    End Sub
+
     Public Sub LoadThemes()
         DataSet1.Tables("products_to_themes").Clear()
         DvdPostData.clsConnection.FillDataSet(DataSet1.Tables("products_to_themes"), "select * from products_to_themes where products_id = " & ProductsID)
@@ -513,6 +544,20 @@ Public Class clsProduct_DVD
             refresh = True
         End If
         DvdPostData.clsConnection.UpdateDataTableInDB(DataSet1.Tables("products_to_themes"), "select * from products_to_themes where products_id = " & ProductsID)
+        If refresh Then
+            LoadThemes()
+        End If
+    End Sub
+
+    Public Sub SaveThemes(ByVal imdb_id As Integer)
+        Dim refresh As Boolean = False
+        If Not DataSet1.Tables("products_to_themes").GetChanges() Is Nothing Then
+            refresh = True
+        End If
+        DvdPostData.clsConnection.UpdateDataTableInDB(DataSet1.Tables("products_to_themes"), "select * from products_to_themes where products_id = " & ProductsID)
+        DvdPostData.clsConnection.ExecuteNonQuery("delete from products_to_themes where products_id <> " & ProductsID & " and products_id in (select products_id from products where imdb_id = " & imdb_id & ")")
+        DvdPostData.clsConnection.ExecuteNonQuery("insert into products_to_themes select p.products_id, c.categories_id, sysdate() from (Select categories_id from products_to_themes where products_id = 3088) c," & _
+                                                    "( select products_id from products where imdb_id = " & imdb_id & " and products_id <> " & ProductsID & " ) p ")
         If refresh Then
             LoadThemes()
         End If

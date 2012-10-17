@@ -93,6 +93,10 @@ Module start
                 clscust.UpdateDvd_at_Home()
                 DVDPostBuziness.ClsVod.UpdateVodCreditsAfterStartPeriod()
                 DVDPostBuziness.ClsVod.UpdateSoonVod()
+                'PPV
+                If (Configuration.ConfigurationManager.AppSettings("do_ppv") = "true") Then
+
+                End If
 
             Else
                 Console.WriteLine("Error Argument")

@@ -141,6 +141,10 @@ Public Class frmThemeEvent
     Friend WithEvents GpHome_Page As DevExpress.XtraEditors.GroupControl
     Friend WithEvents txt_home_page_color As DevExpress.XtraEditors.TextEdit
     Friend WithEvents lbl_HP_Color As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl2 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtLastModified As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtCreatedAt As DevExpress.XtraEditors.TextEdit
 
 
 
@@ -167,6 +171,10 @@ Public Class frmThemeEvent
         Me.ContextMenu1 = New DVDPostBuziness.contextMenu
         Me.XtraTabControlTheme = New DevExpress.XtraTab.XtraTabControl
         Me.tabDetail = New DevExpress.XtraTab.XtraTabPage
+        Me.txtLastModified = New DevExpress.XtraEditors.TextEdit
+        Me.txtCreatedAt = New DevExpress.XtraEditors.TextEdit
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl
+        Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
         Me.GpHome_Page = New DevExpress.XtraEditors.GroupControl
         Me.txt_home_page_color = New DevExpress.XtraEditors.TextEdit
         Me.lbl_HP_Color = New DevExpress.XtraEditors.LabelControl
@@ -277,6 +285,8 @@ Public Class frmThemeEvent
         CType(Me.XtraTabControlTheme, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabControlTheme.SuspendLayout()
         Me.tabDetail.SuspendLayout()
+        CType(Me.txtLastModified.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtCreatedAt.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GpHome_Page, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GpHome_Page.SuspendLayout()
         CType(Me.txt_home_page_color.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -482,6 +492,10 @@ Public Class frmThemeEvent
         '
         'tabDetail
         '
+        Me.tabDetail.Controls.Add(Me.txtLastModified)
+        Me.tabDetail.Controls.Add(Me.txtCreatedAt)
+        Me.tabDetail.Controls.Add(Me.LabelControl3)
+        Me.tabDetail.Controls.Add(Me.LabelControl2)
         Me.tabDetail.Controls.Add(Me.GpHome_Page)
         Me.tabDetail.Controls.Add(Me.cmbSelectedType)
         Me.tabDetail.Controls.Add(Me.cmbType)
@@ -501,6 +515,32 @@ Public Class frmThemeEvent
         Me.tabDetail.DataBindings.Add(New System.Windows.Forms.Binding("Tag", Me.DsSite1, "themes_events.kind", True))
         Me.tabDetail.Name = "tabDetail"
         resources.ApplyResources(Me.tabDetail, "tabDetail")
+        '
+        'txtLastModified
+        '
+        Me.txtLastModified.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.DsSite1, "themes_events.last_modified", True))
+        Me.txtLastModified.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DsSite1, "themes_events.last_modified", True))
+        resources.ApplyResources(Me.txtLastModified, "txtLastModified")
+        Me.txtLastModified.Name = "txtLastModified"
+        Me.txtLastModified.Properties.ReadOnly = True
+        '
+        'txtCreatedAt
+        '
+        Me.txtCreatedAt.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.DsSite1, "themes_events.created_at", True))
+        Me.txtCreatedAt.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.DsSite1, "themes_events.created_at", True))
+        resources.ApplyResources(Me.txtCreatedAt, "txtCreatedAt")
+        Me.txtCreatedAt.Name = "txtCreatedAt"
+        Me.txtCreatedAt.Properties.ReadOnly = True
+        '
+        'LabelControl3
+        '
+        resources.ApplyResources(Me.LabelControl3, "LabelControl3")
+        Me.LabelControl3.Name = "LabelControl3"
+        '
+        'LabelControl2
+        '
+        resources.ApplyResources(Me.LabelControl2, "LabelControl2")
+        Me.LabelControl2.Name = "LabelControl2"
         '
         'GpHome_Page
         '
@@ -1167,6 +1207,8 @@ Public Class frmThemeEvent
         Me.XtraTabControlTheme.ResumeLayout(False)
         Me.tabDetail.ResumeLayout(False)
         Me.tabDetail.PerformLayout()
+        CType(Me.txtLastModified.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtCreatedAt.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GpHome_Page, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GpHome_Page.ResumeLayout(False)
         Me.GpHome_Page.PerformLayout()
@@ -1534,11 +1576,14 @@ Public Class frmThemeEvent
     Private Sub btnNewTheme_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNewTheme.Click, btnNewTheme_edit.Click
 
         insertData()
+        txtCreatedAt.EditValue = DateTime.Now
+        txtCreatedAt.Text = DateTime.Now
         ChangeStep(StepForm.[NEW])
     End Sub
 
     Private Sub btnSaveTheme_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSaveTheme.Click
-
+        txtLastModified.EditValue = DateTime.Now
+        txtLastModified.Text = DateTime.Now
         Me.BindingContext(DsSite1, DsSite1.themes_events.TableName).EndCurrentEdit()
         DvdPostData.clsConnection.UpdateDataTableInDB(DsSite1.themes_events, _sql)
         ChangeStep(StepForm.SAVE)
@@ -1546,6 +1591,7 @@ Public Class frmThemeEvent
 
     Private Sub btnCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancel.Click
         Me.BindingContext(DsSite1, DsSite1.themes_events.TableName).CancelCurrentEdit()
+        DsSite1.themes_events.RejectChanges()
         ChangeStep(StepForm.CANCEL)
 
     End Sub

@@ -1,5 +1,3 @@
-﻿
-
-Partial Public Class DsSite
+﻿Partial Public Class DsSite
 
 End Class

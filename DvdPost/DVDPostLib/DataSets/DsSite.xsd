@@ -170,6 +170,8 @@
               <xs:element name="title_page" msprop:Generator_UserColumnName="title_page" msprop:Generator_ColumnVarNameInTable="columntitle_page" msprop:Generator_ColumnPropNameInRow="title_page" msprop:Generator_ColumnPropNameInTable="title_pageColumn" type="xs:boolean" minOccurs="0" />
               <xs:element name="kind" msprop:Generator_UserColumnName="kind" msprop:Generator_ColumnPropNameInRow="kind" msprop:Generator_ColumnVarNameInTable="columnkind" msprop:Generator_ColumnPropNameInTable="kindColumn" type="xs:string" minOccurs="0" />
               <xs:element name="color_hp" msprop:Generator_UserColumnName="color_hp" msprop:Generator_ColumnPropNameInRow="color_hp" msprop:Generator_ColumnVarNameInTable="columncolor_hp" msprop:Generator_ColumnPropNameInTable="color_hpColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="created_at" msprop:Generator_UserColumnName="created_at" msprop:Generator_ColumnPropNameInRow="created_at" msprop:Generator_ColumnVarNameInTable="columncreated_at" msprop:Generator_ColumnPropNameInTable="created_atColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="last_modified" msprop:Generator_UserColumnName="last_modified" msprop:Generator_ColumnPropNameInRow="last_modified" msprop:Generator_ColumnVarNameInTable="columnlast_modified" msprop:Generator_ColumnPropNameInTable="last_modifiedColumn" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

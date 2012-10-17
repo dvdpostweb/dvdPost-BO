@@ -1179,13 +1179,14 @@ Public Class frmStudioPayment
                 GridSABAMDetail.ExportToXls(SFDExportExcel.FileName)
             ElseIf XtraTabStudio.SelectedTabPage.Name = TabSABAMSummary.Name Then
                 GridSABAMSummary.ExportToXls(SFDExportExcel.FileName)
-            Else
+            ElseIf (XtraTabStudio.SelectedTabPage.Name = TabStudioDetailReport.Name) Then
                 GridStudioDetail.ExportToXls(SFDExportExcel.FileName)
+            Else
+                GridCineart.ExportToXls(SFDExportExcel.FileName)
             End If
 
         End If
     End Sub
-
 
     Enum StepForm
         EDIT
@@ -1202,7 +1203,9 @@ Public Class frmStudioPayment
         DETAIL
         ALL
     End Enum
+
     Private _typesearch As typeSearch
+
     Private Sub initForm()
         Dim blank As String = String.Empty
 
@@ -1222,7 +1225,6 @@ Public Class frmStudioPayment
         cmbBillingReportType.EditValue = blank
 
     End Sub
-
 
     Private Sub loadData(ByVal row As DataRow)
 
@@ -1309,6 +1311,7 @@ Public Class frmStudioPayment
         cmbBillingReportType.Enabled = enable And chkHasBillingReport.Checked
 
     End Sub
+
     Private Sub ChangeStep(ByVal stepCurrent As StepForm)
         Select Case stepCurrent
             Case StepForm.CANCEL
@@ -1434,6 +1437,7 @@ Public Class frmStudioPayment
         cmbStudioType.Properties.DisplayMember = "DisplayMember"
         cmbStudioType.Properties.DataSource = lstStudioType
     End Sub
+
     Private Sub loadStudioSearch()
 
         Dim sql As String
@@ -1492,6 +1496,7 @@ Public Class frmStudioPayment
 
 
     End Sub
+
     Private Function Save() As Boolean
         Dim sql As String
         sql = ""
@@ -1555,12 +1560,6 @@ Public Class frmStudioPayment
         End If
     End Sub
 
-    'Private Sub XTabControlVod_SelectedPageChanged(ByVal sender As Object, ByVal e As DevExpress.XtraTab.TabPageChangedEventArgs) Handles TabAnalise.SelectedPageChanged
-    '    'If TabAnalise.SelectedTabPage Is XTabViewVod Then
-    '    '    loadDatatUploaded()
-    '    'End If
-    'End Sub
-
     Private Sub btnDeleteStudio_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDeleteStudio.Click
         Dim sql As String
 
@@ -1576,41 +1575,6 @@ Public Class frmStudioPayment
         End If
 
     End Sub
-
-    'Private Sub btnSaveAllChanges_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-    '    Dim dt As DataTable
-    '    dt = GridStudio.DataSource.GetChanges()
-
-
-    '    If dt Is Nothing Then
-    '        Return
-    '    ElseIf MsgBoxResult.Cancel = MsgBox(dt.Rows.Count & " movies are updated and will be saved, please confim ! ", MsgBoxStyle.OkCancel) Then
-    '        Return
-    '    End If
-    '    For Each dr As DataRow In dt.Rows
-    '        Dim sql As String
-    '        sql = DvdPostData.ClsVod.GetUpdateVod(dr("id"), _
-    '                                    IIf(dr("imdb_id") Is System.DBNull.Value, 0, dr("imdb_id")), _
-    '                                    IIf(dr("filename") Is System.DBNull.Value, "", dr("filename")), _
-    '                                    IIf(dr("available_from") Is System.DBNull.Value, DateTime.MinValue, dr("available_from")), _
-    '                                    IIf(dr("expire_at") Is System.DBNull.Value, DateTime.MinValue, dr("expire_at")), _
-    '                                    dr("available"), _
-    '                                    IIf(dr("language_id") Is System.DBNull.Value, 0, dr("language_id")), _
-    '                                    IIf(dr("subtitle_id") Is System.DBNull.Value, 0, dr("subtitle_id")), _
-    '                                    IIf(dr("studio_id") Is System.DBNull.Value, 0, dr("studio_id")), _
-    '                                    IIf(dr("status") Is System.DBNull.Value, "", dr("status")), _
-    '                                    IIf(dr("quality") Is System.DBNull.Value, "", dr("quality")), _
-    '                                    dr("source"), _
-    '                                    IIf(dr("vod_support_id") Is System.DBNull.Value, 0, dr("vod_support_id")), _
-    '                                    IIf(dr("credits") Is System.DBNull.Value, 0, dr("credits")), _
-    '                                    IIf(dr("available_backcatalogue_from") Is System.DBNull.Value, DateTime.MinValue, dr("available_backcatalogue_from")), _
-    '                                    IIf(dr("expire_backcatalogue_at") Is System.DBNull.Value, DateTime.MinValue, dr("expire_backcatalogue_at")))
-    '        DvdPostData.clsConnection.ExecuteNonQuery(sql)
-
-    '    Next
-    '    GridStudio.DataSource.AcceptChanges()
-
-    'End Sub
 
     Private Sub loadInfoStudio()
 

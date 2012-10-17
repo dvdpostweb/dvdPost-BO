@@ -1025,7 +1025,7 @@ Public Class FrmProductsVOD
                                         IIf(dr("available_backcatalogue_from") Is System.DBNull.Value, DateTime.MinValue, dr("available_backcatalogue_from")), _
                                         IIf(dr("expire_backcatalogue_at") Is System.DBNull.Value, DateTime.MinValue, dr("expire_backcatalogue_at")), _
                                         IIf(dr("is_ppv") Is System.DBNull.Value, "false", dr("is_ppv")), _
-                                        dr("ppv_price"))
+                                        IIf(dr("ppv_price") Is System.DBNull.Value, "", dr("ppv_price")))
             DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
         Next

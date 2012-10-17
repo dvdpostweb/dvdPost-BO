@@ -444,10 +444,10 @@ Public Class frmDVD_Maint
     Friend WithEvents LabelControl60 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl48 As DevExpress.XtraEditors.LabelControl
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Dim FilterCondition1 As DevExpress.XtraTreeList.FilterCondition = New DevExpress.XtraTreeList.FilterCondition
-        Dim StyleFormatCondition1 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
-        Dim StyleFormatCondition2 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
+        Dim FilterCondition3 As DevExpress.XtraTreeList.FilterCondition = New DevExpress.XtraTreeList.FilterCondition
         Dim StyleFormatCondition3 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
+        Dim StyleFormatCondition4 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
+        Dim StyleFormatCondition1 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
         Me.colcategory_selected = New DevExpress.XtraTreeList.Columns.TreeListColumn
         Me.chkSelectCategory = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
         Me.XTabControlProduct = New DevExpress.XtraTab.XtraTabControl
@@ -3025,11 +3025,11 @@ Public Class frmDVD_Maint
         Me.TreeListCategories.CustomizationFormBounds = New System.Drawing.Rectangle(960, 402, 208, 170)
         Me.TreeListCategories.DataSource = Me.objDS.categories_fr_view1
         Me.TreeListCategories.Dock = System.Windows.Forms.DockStyle.Fill
-        FilterCondition1.Column = Me.colcategory_selected
-        FilterCondition1.Condition = DevExpress.XtraTreeList.FilterConditionEnum.Equals
-        FilterCondition1.Value1 = True
-        FilterCondition1.Visible = True
-        Me.TreeListCategories.FilterConditions.AddRange(New DevExpress.XtraTreeList.FilterCondition() {FilterCondition1})
+        FilterCondition3.Column = Me.colcategory_selected
+        FilterCondition3.Condition = DevExpress.XtraTreeList.FilterConditionEnum.Equals
+        FilterCondition3.Value1 = True
+        FilterCondition3.Visible = True
+        Me.TreeListCategories.FilterConditions.AddRange(New DevExpress.XtraTreeList.FilterCondition() {FilterCondition3})
         Me.TreeListCategories.KeyFieldName = "categories_id"
         Me.TreeListCategories.Location = New System.Drawing.Point(2, 2)
         Me.TreeListCategories.Name = "TreeListCategories"
@@ -4658,7 +4658,7 @@ Public Class frmDVD_Maint
         'GridViewPrevision
         '
         Me.GridViewPrevision.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBandPrevision})
-        Me.GridViewPrevision.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition1})
+        Me.GridViewPrevision.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition3})
         Me.GridViewPrevision.GridControl = Me.GridPrevision
         Me.GridViewPrevision.Name = "GridViewPrevision"
         Me.GridViewPrevision.OptionsView.ShowFooter = True
@@ -4689,7 +4689,7 @@ Public Class frmDVD_Maint
         'gridViewWishlistCustomers
         '
         Me.gridViewWishlistCustomers.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand11})
-        Me.gridViewWishlistCustomers.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition2})
+        Me.gridViewWishlistCustomers.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition4})
         Me.gridViewWishlistCustomers.GridControl = Me.GridWishlistCustomers
         Me.gridViewWishlistCustomers.Name = "gridViewWishlistCustomers"
         Me.gridViewWishlistCustomers.OptionsBehavior.Editable = False
@@ -5013,7 +5013,7 @@ Public Class frmDVD_Maint
         'gridViewVODWishlist
         '
         Me.gridViewVODWishlist.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand12})
-        Me.gridViewVODWishlist.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition3})
+        Me.gridViewVODWishlist.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition1})
         Me.gridViewVODWishlist.GridControl = Me.GridVODWishlist
         Me.gridViewVODWishlist.Name = "gridViewVODWishlist"
         Me.gridViewVODWishlist.OptionsBehavior.Editable = False
@@ -5668,7 +5668,7 @@ Public Class frmDVD_Maint
             Next
             'Changing GommetteInfo
             UpdateGommetteInfo()
-            MainData.SaveAll()
+            MainData.SaveAll(txtIMDB_ID.Text)
 
             If XTabControlProduct.SelectedTabPage Is tabFeeSharing Then
                 SaveMoviemax()
@@ -7048,5 +7048,25 @@ WebTrailer.Stop()
         WebTrailer = Nothing
         frmShowTrailer.Dispose()
         frmShowTrailer = Nothing
+    End Sub
+
+    Private Sub txtImageFR_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtImageFR.Leave
+        ValidateImagePath(sender)
+    End Sub
+
+    Private Sub ValidateImagePath(ByVal sender As System.Object)
+        If CType(sender, DevExpress.XtraEditors.TextEdit).Text.Contains(" ") Then
+            MessageBox.Show("Image name can not contain spaces !")
+            CType(sender, DevExpress.XtraEditors.TextEdit).Focus()
+        End If
+
+    End Sub
+
+    Private Sub txtImageNL_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtImageNL.Leave
+        ValidateImagePath(sender)
+    End Sub
+
+    Private Sub txtImageEN_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtImageEN.Leave
+        ValidateImagePath(sender)
     End Sub
 End Class

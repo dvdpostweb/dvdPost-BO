@@ -303,7 +303,7 @@ Public Class ClsVod
         End If
 
         If is_ppv = "" Then
-            str_is_ppv = "0"
+            str_is_ppv = "null"
         Else
             str_is_ppv = "'" & IIf(is_ppv, 1, 0) & "'"
         End If
