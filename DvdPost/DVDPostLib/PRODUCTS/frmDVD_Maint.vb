@@ -442,12 +442,20 @@ Public Class frmDVD_Maint
     Friend WithEvents LabelControl61 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txtVODAudio As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl60 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents grpPictures As DevExpress.XtraEditors.GroupControl
+    Friend WithEvents Splitter1 As System.Windows.Forms.Splitter
+    Friend WithEvents imgIMDBID_2 As DevExpress.XtraEditors.PictureEdit
+    Friend WithEvents imgIMDBID_1 As DevExpress.XtraEditors.PictureEdit
+    Friend WithEvents imgIMDBID_6 As DevExpress.XtraEditors.PictureEdit
+    Friend WithEvents imgIMDBID_5 As DevExpress.XtraEditors.PictureEdit
+    Friend WithEvents imgIMDBID_4 As DevExpress.XtraEditors.PictureEdit
+    Friend WithEvents imgIMDBID_3 As DevExpress.XtraEditors.PictureEdit
     Friend WithEvents LabelControl48 As DevExpress.XtraEditors.LabelControl
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Dim FilterCondition3 As DevExpress.XtraTreeList.FilterCondition = New DevExpress.XtraTreeList.FilterCondition
-        Dim StyleFormatCondition3 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
-        Dim StyleFormatCondition4 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
+        Dim FilterCondition1 As DevExpress.XtraTreeList.FilterCondition = New DevExpress.XtraTreeList.FilterCondition
         Dim StyleFormatCondition1 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
+        Dim StyleFormatCondition2 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
+        Dim StyleFormatCondition3 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
         Me.colcategory_selected = New DevExpress.XtraTreeList.Columns.TreeListColumn
         Me.chkSelectCategory = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
         Me.XTabControlProduct = New DevExpress.XtraTab.XtraTabControl
@@ -649,6 +657,14 @@ Public Class frmDVD_Maint
         Me.PanelControl4 = New DevExpress.XtraEditors.PanelControl
         Me.btnLang = New DevExpress.XtraEditors.SimpleButton
         Me.tabTrailers = New DevExpress.XtraTab.XtraTabPage
+        Me.Splitter1 = New System.Windows.Forms.Splitter
+        Me.grpPictures = New DevExpress.XtraEditors.GroupControl
+        Me.imgIMDBID_6 = New DevExpress.XtraEditors.PictureEdit
+        Me.imgIMDBID_5 = New DevExpress.XtraEditors.PictureEdit
+        Me.imgIMDBID_4 = New DevExpress.XtraEditors.PictureEdit
+        Me.imgIMDBID_3 = New DevExpress.XtraEditors.PictureEdit
+        Me.imgIMDBID_2 = New DevExpress.XtraEditors.PictureEdit
+        Me.imgIMDBID_1 = New DevExpress.XtraEditors.PictureEdit
         Me.grpSoundTracks = New DevExpress.XtraEditors.GroupControl
         Me.GridSoundtracks = New DevExpress.XtraGrid.GridControl
         Me.GridViewSoundTracks = New DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView
@@ -978,6 +994,14 @@ Public Class frmDVD_Maint
         CType(Me.PanelControl4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl4.SuspendLayout()
         Me.tabTrailers.SuspendLayout()
+        CType(Me.grpPictures, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.grpPictures.SuspendLayout()
+        CType(Me.imgIMDBID_6.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imgIMDBID_5.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imgIMDBID_4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imgIMDBID_3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imgIMDBID_2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.imgIMDBID_1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grpSoundTracks, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpSoundTracks.SuspendLayout()
         CType(Me.GridSoundtracks, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -3025,11 +3049,11 @@ Public Class frmDVD_Maint
         Me.TreeListCategories.CustomizationFormBounds = New System.Drawing.Rectangle(960, 402, 208, 170)
         Me.TreeListCategories.DataSource = Me.objDS.categories_fr_view1
         Me.TreeListCategories.Dock = System.Windows.Forms.DockStyle.Fill
-        FilterCondition3.Column = Me.colcategory_selected
-        FilterCondition3.Condition = DevExpress.XtraTreeList.FilterConditionEnum.Equals
-        FilterCondition3.Value1 = True
-        FilterCondition3.Visible = True
-        Me.TreeListCategories.FilterConditions.AddRange(New DevExpress.XtraTreeList.FilterCondition() {FilterCondition3})
+        FilterCondition1.Column = Me.colcategory_selected
+        FilterCondition1.Condition = DevExpress.XtraTreeList.FilterConditionEnum.Equals
+        FilterCondition1.Value1 = True
+        FilterCondition1.Visible = True
+        Me.TreeListCategories.FilterConditions.AddRange(New DevExpress.XtraTreeList.FilterCondition() {FilterCondition1})
         Me.TreeListCategories.KeyFieldName = "categories_id"
         Me.TreeListCategories.Location = New System.Drawing.Point(2, 2)
         Me.TreeListCategories.Name = "TreeListCategories"
@@ -3315,12 +3339,87 @@ Public Class frmDVD_Maint
         '
         'tabTrailers
         '
+        Me.tabTrailers.Controls.Add(Me.Splitter1)
+        Me.tabTrailers.Controls.Add(Me.grpPictures)
         Me.tabTrailers.Controls.Add(Me.grpSoundTracks)
         Me.tabTrailers.Controls.Add(Me.SplitterControl3)
         Me.tabTrailers.Controls.Add(Me.grpTrailers)
         Me.tabTrailers.Name = "tabTrailers"
         Me.tabTrailers.Size = New System.Drawing.Size(1047, 629)
-        Me.tabTrailers.Text = "Trailers / Sound Tracks"
+        Me.tabTrailers.Text = "Trailers / Sound Tracks/ Pictures"
+        '
+        'Splitter1
+        '
+        Me.Splitter1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Splitter1.Location = New System.Drawing.Point(714, 0)
+        Me.Splitter1.Name = "Splitter1"
+        Me.Splitter1.Size = New System.Drawing.Size(10, 629)
+        Me.Splitter1.TabIndex = 5
+        Me.Splitter1.TabStop = False
+        '
+        'grpPictures
+        '
+        Me.grpPictures.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
+        Me.grpPictures.Controls.Add(Me.imgIMDBID_6)
+        Me.grpPictures.Controls.Add(Me.imgIMDBID_5)
+        Me.grpPictures.Controls.Add(Me.imgIMDBID_4)
+        Me.grpPictures.Controls.Add(Me.imgIMDBID_3)
+        Me.grpPictures.Controls.Add(Me.imgIMDBID_2)
+        Me.grpPictures.Controls.Add(Me.imgIMDBID_1)
+        Me.grpPictures.Dock = System.Windows.Forms.DockStyle.Right
+        Me.grpPictures.Location = New System.Drawing.Point(724, 0)
+        Me.grpPictures.Name = "grpPictures"
+        Me.grpPictures.Size = New System.Drawing.Size(323, 629)
+        Me.grpPictures.TabIndex = 4
+        Me.grpPictures.Text = "SoundTracks"
+        '
+        'imgIMDBID_6
+        '
+        Me.imgIMDBID_6.Location = New System.Drawing.Point(6, 509)
+        Me.imgIMDBID_6.Name = "imgIMDBID_6"
+        Me.imgIMDBID_6.Properties.ReadOnly = True
+        Me.imgIMDBID_6.Size = New System.Drawing.Size(265, 95)
+        Me.imgIMDBID_6.TabIndex = 11
+        '
+        'imgIMDBID_5
+        '
+        Me.imgIMDBID_5.Location = New System.Drawing.Point(6, 414)
+        Me.imgIMDBID_5.Name = "imgIMDBID_5"
+        Me.imgIMDBID_5.Properties.ReadOnly = True
+        Me.imgIMDBID_5.Size = New System.Drawing.Size(265, 95)
+        Me.imgIMDBID_5.TabIndex = 10
+        '
+        'imgIMDBID_4
+        '
+        Me.imgIMDBID_4.Location = New System.Drawing.Point(6, 319)
+        Me.imgIMDBID_4.Name = "imgIMDBID_4"
+        Me.imgIMDBID_4.Properties.ReadOnly = True
+        Me.imgIMDBID_4.Size = New System.Drawing.Size(265, 95)
+        Me.imgIMDBID_4.TabIndex = 9
+        '
+        'imgIMDBID_3
+        '
+        Me.imgIMDBID_3.Location = New System.Drawing.Point(6, 224)
+        Me.imgIMDBID_3.Name = "imgIMDBID_3"
+        Me.imgIMDBID_3.Properties.ReadOnly = True
+        Me.imgIMDBID_3.Size = New System.Drawing.Size(265, 95)
+        Me.imgIMDBID_3.TabIndex = 8
+        '
+        'imgIMDBID_2
+        '
+        Me.imgIMDBID_2.Location = New System.Drawing.Point(6, 129)
+        Me.imgIMDBID_2.Name = "imgIMDBID_2"
+        Me.imgIMDBID_2.Properties.ReadOnly = True
+        Me.imgIMDBID_2.Size = New System.Drawing.Size(265, 95)
+        Me.imgIMDBID_2.TabIndex = 7
+        '
+        'imgIMDBID_1
+        '
+        Me.imgIMDBID_1.Location = New System.Drawing.Point(6, 23)
+        Me.imgIMDBID_1.Name = "imgIMDBID_1"
+        Me.imgIMDBID_1.Properties.ReadOnly = True
+        Me.imgIMDBID_1.Size = New System.Drawing.Size(265, 106)
+        Me.imgIMDBID_1.TabIndex = 6
         '
         'grpSoundTracks
         '
@@ -3328,9 +3427,9 @@ Public Class frmDVD_Maint
         Me.grpSoundTracks.Controls.Add(Me.GridSoundtracks)
         Me.grpSoundTracks.Controls.Add(Me.PanelControl9)
         Me.grpSoundTracks.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.grpSoundTracks.Location = New System.Drawing.Point(590, 0)
+        Me.grpSoundTracks.Location = New System.Drawing.Point(424, 0)
         Me.grpSoundTracks.Name = "grpSoundTracks"
-        Me.grpSoundTracks.Size = New System.Drawing.Size(457, 629)
+        Me.grpSoundTracks.Size = New System.Drawing.Size(623, 629)
         Me.grpSoundTracks.TabIndex = 3
         Me.grpSoundTracks.Text = "SoundTracks"
         '
@@ -3352,7 +3451,7 @@ Public Class frmDVD_Maint
         Me.GridSoundtracks.MainView = Me.GridViewSoundTracks
         Me.GridSoundtracks.Name = "GridSoundtracks"
         Me.GridSoundtracks.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbSoundTracks})
-        Me.GridSoundtracks.Size = New System.Drawing.Size(453, 567)
+        Me.GridSoundtracks.Size = New System.Drawing.Size(619, 567)
         Me.GridSoundtracks.TabIndex = 4
         Me.GridSoundtracks.UseEmbeddedNavigator = True
         Me.GridSoundtracks.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewSoundTracks})
@@ -3375,7 +3474,7 @@ Public Class frmDVD_Maint
         Me.GridBand8.Columns.Add(Me.colproducts_id5)
         Me.GridBand8.Columns.Add(Me.colproducts_soundtracks_id)
         Me.GridBand8.Name = "GridBand8"
-        Me.GridBand8.Width = 310
+        Me.GridBand8.Width = 179
         '
         'colproducts_id5
         '
@@ -3391,7 +3490,7 @@ Public Class frmDVD_Maint
         Me.colproducts_soundtracks_id.FieldName = "products_soundtracks_id"
         Me.colproducts_soundtracks_id.Name = "colproducts_soundtracks_id"
         Me.colproducts_soundtracks_id.Visible = True
-        Me.colproducts_soundtracks_id.Width = 310
+        Me.colproducts_soundtracks_id.Width = 179
         '
         'cmbSoundTracks
         '
@@ -3411,7 +3510,7 @@ Public Class frmDVD_Maint
         Me.PanelControl9.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PanelControl9.Location = New System.Drawing.Point(2, 587)
         Me.PanelControl9.Name = "PanelControl9"
-        Me.PanelControl9.Size = New System.Drawing.Size(453, 40)
+        Me.PanelControl9.Size = New System.Drawing.Size(619, 40)
         Me.PanelControl9.TabIndex = 5
         '
         'btnSoundTracks
@@ -3427,7 +3526,7 @@ Public Class frmDVD_Maint
         Me.SplitterControl3.Appearance.BackColor = System.Drawing.SystemColors.Highlight
         Me.SplitterControl3.Appearance.Options.UseBackColor = True
         Me.SplitterControl3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.SplitterControl3.Location = New System.Drawing.Point(584, 0)
+        Me.SplitterControl3.Location = New System.Drawing.Point(418, 0)
         Me.SplitterControl3.Name = "SplitterControl3"
         Me.SplitterControl3.Size = New System.Drawing.Size(6, 629)
         Me.SplitterControl3.TabIndex = 2
@@ -3441,7 +3540,7 @@ Public Class frmDVD_Maint
         Me.grpTrailers.Dock = System.Windows.Forms.DockStyle.Left
         Me.grpTrailers.Location = New System.Drawing.Point(0, 0)
         Me.grpTrailers.Name = "grpTrailers"
-        Me.grpTrailers.Size = New System.Drawing.Size(584, 629)
+        Me.grpTrailers.Size = New System.Drawing.Size(418, 629)
         Me.grpTrailers.TabIndex = 1
         Me.grpTrailers.Text = "Trailers"
         '
@@ -3463,7 +3562,7 @@ Public Class frmDVD_Maint
         Me.GridTrailers.MainView = Me.GridViewTrailers
         Me.GridTrailers.Name = "GridTrailers"
         Me.GridTrailers.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbLangTrailer, Me.cmbTrailers_Broadcast, Me.ButtonWatchTrailer})
-        Me.GridTrailers.Size = New System.Drawing.Size(580, 567)
+        Me.GridTrailers.Size = New System.Drawing.Size(414, 567)
         Me.GridTrailers.TabIndex = 4
         Me.GridTrailers.UseEmbeddedNavigator = True
         Me.GridTrailers.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewTrailers})
@@ -3491,7 +3590,7 @@ Public Class frmDVD_Maint
         Me.GridBand7.Columns.Add(Me.colbroadcast)
         Me.GridBand7.MinWidth = 20
         Me.GridBand7.Name = "GridBand7"
-        Me.GridBand7.Width = 605
+        Me.GridBand7.Width = 388
         '
         'coltrailers_id
         '
@@ -3529,7 +3628,7 @@ Public Class frmDVD_Maint
         Me.collanguage_id1.FieldName = "language_id"
         Me.collanguage_id1.Name = "collanguage_id1"
         Me.collanguage_id1.Visible = True
-        Me.collanguage_id1.Width = 113
+        Me.collanguage_id1.Width = 87
         '
         'cmbLangTrailer
         '
@@ -3548,7 +3647,7 @@ Public Class frmDVD_Maint
         Me.coltrailer.FieldName = "trailer"
         Me.coltrailer.Name = "coltrailer"
         Me.coltrailer.Visible = True
-        Me.coltrailer.Width = 330
+        Me.coltrailer.Width = 141
         '
         'colbroadcast
         '
@@ -3557,7 +3656,7 @@ Public Class frmDVD_Maint
         Me.colbroadcast.FieldName = "broadcast"
         Me.colbroadcast.Name = "colbroadcast"
         Me.colbroadcast.Visible = True
-        Me.colbroadcast.Width = 113
+        Me.colbroadcast.Width = 111
         '
         'cmbTrailers_Broadcast
         '
@@ -3575,7 +3674,7 @@ Public Class frmDVD_Maint
         Me.PanelControl8.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PanelControl8.Location = New System.Drawing.Point(2, 587)
         Me.PanelControl8.Name = "PanelControl8"
-        Me.PanelControl8.Size = New System.Drawing.Size(580, 40)
+        Me.PanelControl8.Size = New System.Drawing.Size(414, 40)
         Me.PanelControl8.TabIndex = 5
         '
         'tabFeeSharing
@@ -4658,7 +4757,7 @@ Public Class frmDVD_Maint
         'GridViewPrevision
         '
         Me.GridViewPrevision.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBandPrevision})
-        Me.GridViewPrevision.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition3})
+        Me.GridViewPrevision.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition1})
         Me.GridViewPrevision.GridControl = Me.GridPrevision
         Me.GridViewPrevision.Name = "GridViewPrevision"
         Me.GridViewPrevision.OptionsView.ShowFooter = True
@@ -4689,7 +4788,7 @@ Public Class frmDVD_Maint
         'gridViewWishlistCustomers
         '
         Me.gridViewWishlistCustomers.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand11})
-        Me.gridViewWishlistCustomers.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition4})
+        Me.gridViewWishlistCustomers.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition2})
         Me.gridViewWishlistCustomers.GridControl = Me.GridWishlistCustomers
         Me.gridViewWishlistCustomers.Name = "gridViewWishlistCustomers"
         Me.gridViewWishlistCustomers.OptionsBehavior.Editable = False
@@ -5013,7 +5112,7 @@ Public Class frmDVD_Maint
         'gridViewVODWishlist
         '
         Me.gridViewVODWishlist.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand12})
-        Me.gridViewVODWishlist.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition1})
+        Me.gridViewVODWishlist.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition3})
         Me.gridViewVODWishlist.GridControl = Me.GridVODWishlist
         Me.gridViewVODWishlist.Name = "gridViewVODWishlist"
         Me.gridViewVODWishlist.OptionsBehavior.Editable = False
@@ -5329,6 +5428,14 @@ Public Class frmDVD_Maint
         CType(Me.PanelControl4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl4.ResumeLayout(False)
         Me.tabTrailers.ResumeLayout(False)
+        CType(Me.grpPictures, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.grpPictures.ResumeLayout(False)
+        CType(Me.imgIMDBID_6.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imgIMDBID_5.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imgIMDBID_4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imgIMDBID_3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imgIMDBID_2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.imgIMDBID_1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grpSoundTracks, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grpSoundTracks.ResumeLayout(False)
         CType(Me.GridSoundtracks, System.ComponentModel.ISupportInitialize).EndInit()
@@ -5993,10 +6100,11 @@ Public Class frmDVD_Maint
         If LstRefreshData(TypeOfTab.TRAILERS) Then
             MainData.LoadTrailers()
             MainData.LoadSoundtracks()
+            RefreshPictureTrailer()
         End If
         LstRefreshData(TypeOfTab.TRAILERS) = False
     End Sub
-    
+
     Private Sub loadLanguages()
         If LstRefreshData(TypeOfTab.LANGUAGES) Then
             MainData.LoadLanguages()
@@ -6025,7 +6133,6 @@ Public Class frmDVD_Maint
     Private Sub loadDVDStatus()
         DvdPostData.clsConnection.FillDataSet(objDS.products_dvd_status, "SELECT * FROM products_dvd_status ")
     End Sub
-
 
     Public Sub LoadBKComboSet()
         Try
@@ -6815,6 +6922,25 @@ Public Class frmDVD_Maint
 
         End If
     End Sub
+    Private Sub LoadPictureTrailer(ByVal CtrlnamePicture As String, ByVal ctrlImg As DevExpress.XtraEditors.PictureEdit)
+
+        If CtrlnamePicture Is Nothing Then Return
+        ctrlImg.Image = Nothing
+        Dim pathserver As String
+        If CtrlnamePicture & "" <> "" Then
+            If MainData.productsType & "" = "DVD_NORM" Then
+                pathserver = DVDPostBuziness.clsPicture.getPathServer(DvdPostData.clsProductDvd.Type_DVD.DVD_NORM)
+            Else
+                pathserver = DVDPostBuziness.clsPicture.getPathServer(DvdPostData.clsProductDvd.Type_DVD.DVD_ADULT)
+            End If
+            pathserver = pathserver & CtrlnamePicture
+
+            If System.IO.File.Exists(pathserver) Then
+                ctrlImg.Image = System.Drawing.Image.FromFile(pathserver)
+            End If
+
+        End If
+    End Sub
     Private Sub RefreshSmallPicture()
         RefreshPicture(txtPictureImage, PictProducts_Image)
     End Sub
@@ -6827,6 +6953,14 @@ Public Class frmDVD_Maint
     End Sub
     Private Sub RefreshPictureEN()
         RefreshPicture(txtImageEN, pictEN)
+    End Sub
+    Private Sub RefreshPictureTrailer()
+        LoadPictureTrailer("screenshots\small\" & txtIMDB_ID.Text & "_1.jpg", imgIMDBID_1)
+        LoadPictureTrailer("screenshots\small\" & txtIMDB_ID.Text & "_2.jpg", imgIMDBID_2)
+        LoadPictureTrailer("screenshots\small\" & txtIMDB_ID.Text & "_3.jpg", imgIMDBID_3)
+        LoadPictureTrailer("screenshots\small\" & txtIMDB_ID.Text & "_4.jpg", imgIMDBID_4)
+        LoadPictureTrailer("screenshots\small\" & txtIMDB_ID.Text & "_5.jpg", imgIMDBID_5)
+        LoadPictureTrailer("screenshots\small\" & txtIMDB_ID.Text & "_6.jpg", imgIMDBID_6)
     End Sub
 #End Region
 
@@ -7032,7 +7166,7 @@ Public Class frmDVD_Maint
             frmShowTrailer.Width = 700
             frmShowTrailer.Height = 550
         End If
-        
+
         WebTrailer.DocumentText = strDocumentText
         WebTrailer.Dock = DockStyle.Fill
 
@@ -7043,7 +7177,7 @@ Public Class frmDVD_Maint
 
         End Try
 
-WebTrailer.Stop()
+        WebTrailer.Stop()
         WebTrailer.Dispose()
         WebTrailer = Nothing
         frmShowTrailer.Dispose()
