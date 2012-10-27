@@ -491,6 +491,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsCustomerMaint.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSets\dsCustomerMaint.vb">
+      <DependentUpon>dsCustomerMaint.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\dsCustomers.Designer.vb">
       <DependentUpon>dsCustomers.xsd</DependentUpon>
       <AutoGen>True</AutoGen>

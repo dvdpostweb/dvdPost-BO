@@ -24,7 +24,7 @@ Public Class ClsVod
     Public Shared Function getViewVod(ByVal customers_id As Integer) As String
 
         Dim sql As String
-        sql = "select t.customer_id,products_title,p.imdb_id,t.created_at,t.updated_at,ti.cpt used_ip, count_ip,count(svh.id) nb_viewed" & _
+        sql = "select t.id, t.customer_id,products_title,p.imdb_id,t.created_at,t.updated_at,ti.cpt used_ip, count_ip,count(svh.id) nb_viewed,  If(t.compensed = 1, 'True', 'False')  as compensed " & _
               " from tokens t " & _
               " join (select imdb_id,products_title from products group by imdb_id) p on t.imdb_id = p.imdb_id " & _
               " left join streaming_viewing_histories svh on svh.token_id = t.id" & _

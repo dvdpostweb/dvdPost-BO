@@ -5,6 +5,12 @@ Public Class ClsCustomersData
 
 #Region "enum"
 
+    Public Enum PPVREADY
+        NOCREDITCARD = 0
+        PPVENABLED = 1
+        PPVDISABLED = 2
+    End Enum
+
     Public Enum Wishlist_Source
         CANCELORDER = 1
     End Enum
@@ -1053,6 +1059,14 @@ Public Class ClsCustomersData
         sql = "update customers set domiciliation_number = '" & numDom & "',domiciliation_status = " & DomiciliationStatus.OK & " where customers_id = " & customers_id
         Return sql
     End Function
+
+    Public Shared Function GetUpdatePPV_ready(ByVal customers_id As Integer, ByVal ppv_status_id As Integer) As String
+        Dim sql As String
+
+        sql = "update customers set ppv_status_id = " & ppv_status_id & " where customers_id = " & customers_id
+        Return sql
+    End Function
+
     Public Shared Function getUpdateNoActivation(ByVal customers_id As Integer) As String
         Dim sql As String
 

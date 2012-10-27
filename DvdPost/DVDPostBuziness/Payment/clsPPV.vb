@@ -22,7 +22,7 @@ Public Class clsPPV
                 clsMsgError.MsgBox("Payment already exists!")
                 Return False
             End If
-            DvdPostData.clsConnection.CreateTransaction(False)
+            DvdPostData.clsConnection.CreateTransaction(False) ' false parameter creates transaction
             sql = clsPPVPayments.getSelectForPPVPayments(idcountry, dateFrom, dateTo)
 
             dtPPVPayments = DvdPostData.clsConnection.FillDataSet(sql)
@@ -31,7 +31,7 @@ Public Class clsPPV
                 idBatchOgone = ClsBatchOgone.getIdBatchOgone()
 
                 insertCustomersOgonePayment(dtPPVPayments, idBatchOgone)
-                CreatePPVPaymentsFile(dtPPVPayments, idcountry, idBatchOgone)
+                CreatePPVPaymentsFile(dtPPVPayments, idcountry, idBatchOgone, filepath)
                 CreatePPVPayments(idBatchOgone, idcountry, dateFrom, dateTo)
                 DvdPostData.clsConnection.CommitTransaction(True)
                 Return True
@@ -62,7 +62,7 @@ Public Class clsPPV
     Public Sub CreatePPVPaymentsFile(ByVal dtPPVPayments As DataTable, ByVal idcountry As Integer, ByVal idBatchOgone As Integer, Optional ByVal filepath As String = "")
         Dim stroutput As String = ""
         Dim message As String = ""
-        Dim pathfile As String = ClsBatchOgone.CreatePathFile(ClsBatchOgone.TypeBatch.PAY_PER_VIEW, idcountry)
+        Dim pathfile As String = ClsBatchOgone.CreatePathFile(ClsBatchOgone.TypeBatch.PAY_PER_VIEW, idcountry, filepath)
         RaiseEvent initMapping_Event(dtPPVPayments.Rows.Count)
 
         stroutput = stroutput + GetHeader(dtPPVPayments.Rows.Count, idBatchOgone, idcountry)
@@ -74,7 +74,7 @@ Public Class clsPPV
         Next
         stroutput = stroutput + GetFooter()
 
-        Dim ok As Boolean = DVDPostTools.clsFile.WriteFileNoExist(ClsBatchOgone.CreatePathFile(ClsBatchOgone.TypeBatch.PAY_PER_VIEW, idcountry), stroutput)
+        Dim ok As Boolean = DVDPostTools.clsFile.WriteFileNoExist(ClsBatchOgone.CreatePathFile(ClsBatchOgone.TypeBatch.PAY_PER_VIEW, idcountry, filepath), stroutput)
 
         If ok Then
             message = " PPV File " & pathfile & " is successfuly created "

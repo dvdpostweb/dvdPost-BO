@@ -145,7 +145,7 @@ Public Class frmPayPerViewMaint
             System.Windows.Forms.MessageBox.Show("Country, 'FromDate' and ToDate' should be set !")
             Return
         End If
-        clsPPV.CreatePPVPaymentsManager(cmbCountry.EditValue, txtFromDate.DateTime.Date, txtToDate.DateTime.Date, txtPPVFolder.Text)
+        clsPPV.CreatePPVPaymentsManager(cmbCountry.EditValue, txtFromDate.EditValue, txtToDate.EditValue, txtPPVFolder.Text)
 
     End Sub
 End Class

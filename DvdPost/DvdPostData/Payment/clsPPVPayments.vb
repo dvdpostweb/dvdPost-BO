@@ -23,7 +23,15 @@ Public Class clsPPVPayments
     Public Shared Function getSelectPPVPaymentExists(ByVal country_id As Integer, ByVal datetimeFrom As DateTime, ByVal datetimeTo As DateTime) As String
         Dim sql As String
 
-        sql = " Select batch_id from payments_ppv where country_id = " & country_id & " and '" & DVDPostTools.ClsDate.formatDate(datetimeFrom) & "' and '" & DVDPostTools.ClsDate.formatDate(datetimeTo) & "' "
+        sql = " Select batch_id from payments_ppv where country_id = " & country_id & " and from_date = '" & DVDPostTools.ClsDate.formatDate(datetimeFrom) & "' and to_date = '" & DVDPostTools.ClsDate.formatDate(datetimeTo) & "' "
+
+        Return sql
+    End Function
+
+    Public Shared Function getSelectPPVPaymentExists(ByVal batch_id As Integer) As String
+        Dim sql As String
+
+        sql = " Select count(*) from payments_ppv where batch_id = " & batch_id
 
         Return sql
     End Function

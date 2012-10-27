@@ -56,6 +56,8 @@ Partial Public Class dsCustomerMaint
     
     Private tablecustomers_abo_payment_method As customers_abo_payment_methodDataTable
     
+    Private tableppv_status As ppv_statusDataTable
+    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -127,6 +129,9 @@ Partial Public Class dsCustomerMaint
             End If
             If (Not (ds.Tables("customers_abo_payment_method")) Is Nothing) Then
                 MyBase.Tables.Add(New customers_abo_payment_methodDataTable(ds.Tables("customers_abo_payment_method")))
+            End If
+            If (Not (ds.Tables("ppv_status")) Is Nothing) Then
+                MyBase.Tables.Add(New ppv_statusDataTable(ds.Tables("ppv_status")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -281,6 +286,15 @@ Partial Public Class dsCustomerMaint
     End Property
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property ppv_status() As ppv_statusDataTable
+        Get
+            Return Me.tableppv_status
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.ComponentModel.BrowsableAttribute(true),  _
      Global.System.ComponentModel.DesignerSerializationVisibilityAttribute(Global.System.ComponentModel.DesignerSerializationVisibility.Visible)>  _
     Public Overrides Property SchemaSerializationMode() As Global.System.Data.SchemaSerializationMode
@@ -383,6 +397,9 @@ Partial Public Class dsCustomerMaint
             End If
             If (Not (ds.Tables("customers_abo_payment_method")) Is Nothing) Then
                 MyBase.Tables.Add(New customers_abo_payment_methodDataTable(ds.Tables("customers_abo_payment_method")))
+            End If
+            If (Not (ds.Tables("ppv_status")) Is Nothing) Then
+                MyBase.Tables.Add(New ppv_statusDataTable(ds.Tables("ppv_status")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -503,6 +520,12 @@ Partial Public Class dsCustomerMaint
                 Me.tablecustomers_abo_payment_method.InitVars
             End If
         End If
+        Me.tableppv_status = CType(MyBase.Tables("ppv_status"),ppv_statusDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableppv_status) Is Nothing) Then
+                Me.tableppv_status.InitVars
+            End If
+        End If
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -542,6 +565,8 @@ Partial Public Class dsCustomerMaint
         MyBase.Tables.Add(Me.tableaddress_book_all)
         Me.tablecustomers_abo_payment_method = New customers_abo_payment_methodDataTable
         MyBase.Tables.Add(Me.tablecustomers_abo_payment_method)
+        Me.tableppv_status = New ppv_statusDataTable
+        MyBase.Tables.Add(Me.tableppv_status)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -616,6 +641,11 @@ Partial Public Class dsCustomerMaint
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
     Private Function ShouldSerializecustomers_abo_payment_method() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+    Private Function ShouldSerializeppv_status() As Boolean
         Return false
     End Function
     
@@ -704,6 +734,8 @@ Partial Public Class dsCustomerMaint
     Public Delegate Sub address_book_allRowChangeEventHandler(ByVal sender As Object, ByVal e As address_book_allRowChangeEvent)
     
     Public Delegate Sub customers_abo_payment_methodRowChangeEventHandler(ByVal sender As Object, ByVal e As customers_abo_payment_methodRowChangeEvent)
+    
+    Public Delegate Sub ppv_statusRowChangeEventHandler(ByVal sender As Object, ByVal e As ppv_statusRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -4529,7 +4561,7 @@ Partial Public Class dsCustomerMaint
         
         Private columnsleep As Global.System.Data.DataColumn
         
-        Private columnppv_ready As Global.System.Data.DataColumn
+        Private columnppv_status_id As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub New()
@@ -5243,9 +5275,9 @@ Partial Public Class dsCustomerMaint
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public ReadOnly Property ppv_readyColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property ppv_status_idColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnppv_ready
+                Return Me.columnppv_status_id
             End Get
         End Property
         
@@ -5375,9 +5407,9 @@ Partial Public Class dsCustomerMaint
                     ByVal refresh_token_expires_at As Date,  _
                     ByVal access_token_expires_at As Date,  _
                     ByVal sleep As Boolean,  _
-                    ByVal ppv_ready As Boolean) As customersRow
+                    ByVal ppv_status_id As Integer) As customersRow
             Dim rowcustomersRow As customersRow = CType(Me.NewRow,customersRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, EntityID, group_id, customers_gender, customers_firstname, customers_lastname, customers_dob, customers_email_address, customers_default_address_id, customers_telephone, customers_telephone_evening, customers_fax, customers_password, customers_newsletter, customers_newsletterpartner, customers_privilege, customers_privilege_balance, customers_garantie, sponsoring_code, sponsored_code, customers_abo, customers_abo_suspended, customers_abo_type, customers_next_abo_type, flagminiat1995, customers_abo_method, customers_abo_dvd_norm, customers_abo_dvd_adult, customers_abo_dvd_home_norm, customers_abo_dvd_home_adult, throttling, customers_abo_validityto, customers_abo_rank, customers_abo_start_rentthismonth, customers_abo_dvd_credit, customers_abo_dvd_remain, customers_abo_multishipment, customers_abo_discount_recurring_to_date, abotested, customers_abo_status, customers_abo_payment_method, domiciliation_status, domiciliation_debiter_name, domiciliation_number, domiciliation_account_number, adult_pwd, ogone_card_type, ogone_card_no, ogone_exp_date, ogone_owner, ogone_cc_expiration_status, offline_payment_status, comment, vip, black_listed, red_listed, sm_eligible, customers_enquiry_id, date_first_delivery, mail_wl_adult_not_sufficient, mail_wl_norm_not_sufficient, mgm_points, wishlist_kind, activation_discount_code_id, activation_discount_code_type, customers_next_discount_code, customers_registration_step, customers_abo_auto_stop_next_reconduction, customers_info_date_of_last_logon, customers_info_number_of_logons, customers_info_date_account_created, customers_info_date_account_last_modified, global_product_notifications, customers_language, site, partners_id, belgiqueloisirs_id, dvdpost_known_by, selected_for_email, is_email_valid, last_suspension_date, customers_locked__for_reconduction, abo_not_served_reason, rating_users, rating_count, marketing_ok, encrypted_password, password_salt, reset_password_token, remember_token, remember_created_at, authentication_token, verification_code, refresh_token, refresh_token_expires_at, access_token_expires_at, sleep, ppv_ready}
+            Dim columnValuesArray() As Object = New Object() {Nothing, EntityID, group_id, customers_gender, customers_firstname, customers_lastname, customers_dob, customers_email_address, customers_default_address_id, customers_telephone, customers_telephone_evening, customers_fax, customers_password, customers_newsletter, customers_newsletterpartner, customers_privilege, customers_privilege_balance, customers_garantie, sponsoring_code, sponsored_code, customers_abo, customers_abo_suspended, customers_abo_type, customers_next_abo_type, flagminiat1995, customers_abo_method, customers_abo_dvd_norm, customers_abo_dvd_adult, customers_abo_dvd_home_norm, customers_abo_dvd_home_adult, throttling, customers_abo_validityto, customers_abo_rank, customers_abo_start_rentthismonth, customers_abo_dvd_credit, customers_abo_dvd_remain, customers_abo_multishipment, customers_abo_discount_recurring_to_date, abotested, customers_abo_status, customers_abo_payment_method, domiciliation_status, domiciliation_debiter_name, domiciliation_number, domiciliation_account_number, adult_pwd, ogone_card_type, ogone_card_no, ogone_exp_date, ogone_owner, ogone_cc_expiration_status, offline_payment_status, comment, vip, black_listed, red_listed, sm_eligible, customers_enquiry_id, date_first_delivery, mail_wl_adult_not_sufficient, mail_wl_norm_not_sufficient, mgm_points, wishlist_kind, activation_discount_code_id, activation_discount_code_type, customers_next_discount_code, customers_registration_step, customers_abo_auto_stop_next_reconduction, customers_info_date_of_last_logon, customers_info_number_of_logons, customers_info_date_account_created, customers_info_date_account_last_modified, global_product_notifications, customers_language, site, partners_id, belgiqueloisirs_id, dvdpost_known_by, selected_for_email, is_email_valid, last_suspension_date, customers_locked__for_reconduction, abo_not_served_reason, rating_users, rating_count, marketing_ok, encrypted_password, password_salt, reset_password_token, remember_token, remember_created_at, authentication_token, verification_code, refresh_token, refresh_token_expires_at, access_token_expires_at, sleep, ppv_status_id}
             rowcustomersRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowcustomersRow)
             Return rowcustomersRow
@@ -5504,7 +5536,7 @@ Partial Public Class dsCustomerMaint
             Me.columnrefresh_token_expires_at = MyBase.Columns("refresh_token_expires_at")
             Me.columnaccess_token_expires_at = MyBase.Columns("access_token_expires_at")
             Me.columnsleep = MyBase.Columns("sleep")
-            Me.columnppv_ready = MyBase.Columns("ppv_ready")
+            Me.columnppv_status_id = MyBase.Columns("ppv_status_id")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -5703,8 +5735,8 @@ Partial Public Class dsCustomerMaint
             MyBase.Columns.Add(Me.columnaccess_token_expires_at)
             Me.columnsleep = New Global.System.Data.DataColumn("sleep", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnsleep)
-            Me.columnppv_ready = New Global.System.Data.DataColumn("ppv_ready", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnppv_ready)
+            Me.columnppv_status_id = New Global.System.Data.DataColumn("ppv_status_id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnppv_status_id)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint4", New Global.System.Data.DataColumn() {Me.columncustomers_id}, true))
             Me.columncustomers_id.AutoIncrement = true
             Me.columncustomers_id.AllowDBNull = false
@@ -6852,6 +6884,252 @@ Partial Public Class dsCustomerMaint
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute
             attribute2.Name = "tableTypeName"
             attribute2.FixedValue = "customers_abo_payment_methodDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0"),  _
+     Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class ppv_statusDataTable
+        Inherits Global.System.Data.DataTable
+        Implements Global.System.Collections.IEnumerable
+        
+        Private columnppv_status_id As Global.System.Data.DataColumn
+        
+        Private columnppv_status_name As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "ppv_status"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property ppv_status_idColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnppv_status_id
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property ppv_status_nameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnppv_status_name
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As ppv_statusRow
+            Get
+                Return CType(Me.Rows(index),ppv_statusRow)
+            End Get
+        End Property
+        
+        Public Event ppv_statusRowChanging As ppv_statusRowChangeEventHandler
+        
+        Public Event ppv_statusRowChanged As ppv_statusRowChangeEventHandler
+        
+        Public Event ppv_statusRowDeleting As ppv_statusRowChangeEventHandler
+        
+        Public Event ppv_statusRowDeleted As ppv_statusRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Overloads Sub Addppv_statusRow(ByVal row As ppv_statusRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Overloads Function Addppv_statusRow(ByVal ppv_status_id As Integer, ByVal ppv_status_name As String) As ppv_statusRow
+            Dim rowppv_statusRow As ppv_statusRow = CType(Me.NewRow,ppv_statusRow)
+            Dim columnValuesArray() As Object = New Object() {ppv_status_id, ppv_status_name}
+            rowppv_statusRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowppv_statusRow)
+            Return rowppv_statusRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Overridable Function GetEnumerator() As Global.System.Collections.IEnumerator Implements Global.System.Collections.IEnumerable.GetEnumerator
+            Return Me.Rows.GetEnumerator
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As ppv_statusDataTable = CType(MyBase.Clone,ppv_statusDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New ppv_statusDataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Sub InitVars()
+            Me.columnppv_status_id = MyBase.Columns("ppv_status_id")
+            Me.columnppv_status_name = MyBase.Columns("ppv_status_name")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Private Sub InitClass()
+            Me.columnppv_status_id = New Global.System.Data.DataColumn("ppv_status_id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnppv_status_id)
+            Me.columnppv_status_name = New Global.System.Data.DataColumn("ppv_status_name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnppv_status_name)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Newppv_statusRow() As ppv_statusRow
+            Return CType(Me.NewRow,ppv_statusRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New ppv_statusRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(ppv_statusRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.ppv_statusRowChangedEvent) Is Nothing) Then
+                RaiseEvent ppv_statusRowChanged(Me, New ppv_statusRowChangeEvent(CType(e.Row,ppv_statusRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.ppv_statusRowChangingEvent) Is Nothing) Then
+                RaiseEvent ppv_statusRowChanging(Me, New ppv_statusRowChangeEvent(CType(e.Row,ppv_statusRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.ppv_statusRowDeletedEvent) Is Nothing) Then
+                RaiseEvent ppv_statusRowDeleted(Me, New ppv_statusRowChangeEvent(CType(e.Row,ppv_statusRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.ppv_statusRowDeletingEvent) Is Nothing) Then
+                RaiseEvent ppv_statusRowDeleting(Me, New ppv_statusRowChangeEvent(CType(e.Row,ppv_statusRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Removeppv_statusRow(ByVal row As ppv_statusRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence
+            Dim ds As dsCustomerMaint = New dsCustomerMaint
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "ppv_statusDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -9957,16 +10235,16 @@ Partial Public Class dsCustomerMaint
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Property ppv_ready() As Boolean
+        Public Property ppv_status_id() As Integer
             Get
                 Try 
-                    Return CType(Me(Me.tablecustomers.ppv_readyColumn),Boolean)
+                    Return CType(Me(Me.tablecustomers.ppv_status_idColumn),Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'ppv_ready' in table 'customers' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ppv_status_id' in table 'customers' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablecustomers.ppv_readyColumn) = value
+                Me(Me.tablecustomers.ppv_status_idColumn) = value
             End Set
         End Property
         
@@ -10391,13 +10669,13 @@ Partial Public Class dsCustomerMaint
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Function Isppv_readyNull() As Boolean
-            Return Me.IsNull(Me.tablecustomers.ppv_readyColumn)
+        Public Function Isppv_status_idNull() As Boolean
+            Return Me.IsNull(Me.tablecustomers.ppv_status_idColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Sub Setppv_readyNull()
-            Me(Me.tablecustomers.ppv_readyColumn) = Global.System.Convert.DBNull
+        Public Sub Setppv_status_idNull()
+            Me(Me.tablecustomers.ppv_status_idColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -10858,6 +11136,70 @@ Partial Public Class dsCustomerMaint
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub Setcustomers_abo_payment_method_nameNull()
             Me(Me.tablecustomers_abo_payment_method.customers_abo_payment_method_nameColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")>  _
+    Partial Public Class ppv_statusRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tableppv_status As ppv_statusDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableppv_status = CType(Me.Table,ppv_statusDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property ppv_status_id() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableppv_status.ppv_status_idColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ppv_status_id' in table 'ppv_status' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableppv_status.ppv_status_idColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property ppv_status_name() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableppv_status.ppv_status_nameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ppv_status_name' in table 'ppv_status' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableppv_status.ppv_status_nameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isppv_status_idNull() As Boolean
+            Return Me.IsNull(Me.tableppv_status.ppv_status_idColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setppv_status_idNull()
+            Me(Me.tableppv_status.ppv_status_idColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isppv_status_nameNull() As Boolean
+            Return Me.IsNull(Me.tableppv_status.ppv_status_nameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setppv_status_nameNull()
+            Me(Me.tableppv_status.ppv_status_nameColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -11343,6 +11685,39 @@ Partial Public Class dsCustomerMaint
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public ReadOnly Property Row() As customers_abo_payment_methodRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")>  _
+    Public Class ppv_statusRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As ppv_statusRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub New(ByVal row As ppv_statusRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property Row() As ppv_statusRow
             Get
                 Return Me.eventRow
             End Get

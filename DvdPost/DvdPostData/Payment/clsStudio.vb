@@ -263,7 +263,7 @@ Public Class clsStudio
  "  left join studio ps on ps.studio_id = p.products_studio " & _
  "  left join directors d on d.directors_id = p.products_directors_id  " & _
 "  where sp.expire_at between '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' " & _
-     "      and s.studio_id = " & in_studio_id & _
+     "      and s.studio_id = " & in_studio_id & " group by s.studio_name, ps.studio_name, c.customers_id, t.created_at " & _
  " order by s.studio_name, ps.studio_name,  p.products_title " & _
  " ) x  where x.qty_credit <> 10000  " & _
 " group by 1,2,3"
@@ -405,6 +405,7 @@ Public Class clsStudio
 " left join directors d on d.directors_id = p.products_directors_id " & _
 " where date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
 allstudio & _
+" group by s.studio_name, ps.studio_name, c.customers_id, t.created_at " & _
 " order by s.studio_name, ps.studio_name,  p.products_title " & _
 " ) x  where x.qty_credit <> 10000 "
 
@@ -469,6 +470,7 @@ allstudio & _
  " left join directors d on d.directors_id = p.products_directors_id " & _
 " where date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
 allstudio & _
+" group by s.studio_name, ps.studio_name, c.customers_id, t.created_at " & _
 " order by s.studio_name, ps.studio_name,  p.products_title " & _
 " ) x  where x.qty_credit <> 10000 " & _
 " group by 1,2,3 "
@@ -524,6 +526,7 @@ allstudio & _
 " left join studio ps on ps.studio_id = p.products_studio " & _
 " left join directors d on d.directors_id = p.products_directors_id " & _
 " where date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
+" group by s.studio_name, ps.studio_name, c.customers_id, t.created_at " & _
 " order by s.studio_name, ps.studio_name,  p.products_title " & _
 " ) x where x.qty_credit <> 10000 "
 
@@ -574,6 +577,7 @@ allstudio & _
  " left join studio ps on ps.studio_id = p.products_studio " & _
  " left join directors d on d.directors_id = p.products_directors_id " & _
 " where date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
+" group by s.studio_name, ps.studio_name, c.customers_id, t.created_at " & _
 " order by s.studio_name, ps.studio_name,  p.products_title " & _
 " ) x  where x.qty_credit <> 10000  " & _
 " group by 1,2 "

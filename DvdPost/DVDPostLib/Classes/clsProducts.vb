@@ -525,7 +525,7 @@ Public Class clsProduct_DVD
 
         DvdPostData.clsConnection.UpdateDataTableInDB(DataSet1.Tables("products_to_categories"), "select products_id, categories_id from products_to_categories where products_id = " & ProductsID)
         DvdPostData.clsConnection.ExecuteNonQuery("delete from products_to_categories where products_id <> " & ProductsID & " and products_id in (select products_id from products where imdb_id = " & imdb_id & ")")
-        DvdPostData.clsConnection.ExecuteNonQuery("insert into products_to_categories select p.products_id, c.categories_id, sysdate() from (Select categories_id from products_to_categories where products_id = 3088) c," & _
+        DvdPostData.clsConnection.ExecuteNonQuery("insert into products_to_categories select p.products_id, c.categories_id, sysdate() from (Select categories_id from products_to_categories where products_id = " & ProductsID & ") c," & _
                                                     "( select products_id from products where imdb_id = " & imdb_id & " and products_id <> " & ProductsID & " ) p ")
 
         If refresh Then
@@ -556,7 +556,7 @@ Public Class clsProduct_DVD
         End If
         DvdPostData.clsConnection.UpdateDataTableInDB(DataSet1.Tables("products_to_themes"), "select * from products_to_themes where products_id = " & ProductsID)
         DvdPostData.clsConnection.ExecuteNonQuery("delete from products_to_themes where products_id <> " & ProductsID & " and products_id in (select products_id from products where imdb_id = " & imdb_id & ")")
-        DvdPostData.clsConnection.ExecuteNonQuery("insert into products_to_themes select p.products_id, c.categories_id, sysdate() from (Select categories_id from products_to_themes where products_id = 3088) c," & _
+        DvdPostData.clsConnection.ExecuteNonQuery("insert into products_to_themes select p.products_id, c.themes_id, sysdate() from (Select themes_id from products_to_themes where products_id = " & ProductsID & ") c," & _
                                                     "( select products_id from products where imdb_id = " & imdb_id & " and products_id <> " & ProductsID & " ) p ")
         If refresh Then
             LoadThemes()

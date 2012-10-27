@@ -892,7 +892,11 @@ Public Class frmCustomers_Maint
     Friend WithEvents lblRemainDVD As DevExpress.XtraEditors.LabelControl
     Friend WithEvents lblNextDVDRemain As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txtNextDVDRemain As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents chkPPVReady As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents lblPPVStatus As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents cmbPPVStatus As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents GCCompensation As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents GCID As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents cmbDiscType As DevExpress.XtraEditors.ComboBoxEdit
 
 
@@ -1313,6 +1317,8 @@ Me.btnDelPhoAct = New DevExpress.XtraEditors.SimpleButton
 Me.btnActPhone = New DevExpress.XtraEditors.SimpleButton
 Me.btnReActivate = New DevExpress.XtraEditors.SimpleButton
 Me.GCAboInfo = New DevExpress.XtraEditors.GroupControl
+Me.cmbPPVStatus = New DevExpress.XtraEditors.LookUpEdit
+Me.lblPPVStatus = New DevExpress.XtraEditors.LabelControl
 Me.txtRemainDVD = New DevExpress.XtraEditors.SpinEdit
 Me.lblRemainDVD = New DevExpress.XtraEditors.LabelControl
 Me.cmbDiscountActivation = New DevExpress.XtraEditors.LookUpEdit
@@ -1368,7 +1374,6 @@ Me.txtDeliveryPostCode = New DevExpress.XtraEditors.TextEdit
 Me.txtDeliveryAddr = New DevExpress.XtraEditors.TextEdit
 Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl
 Me.GCcustomersInfo = New DevExpress.XtraEditors.GroupControl
-Me.chkPPVReady = New DevExpress.XtraEditors.CheckEdit
 Me.chkCreditReceivedBySite = New DevExpress.XtraEditors.CheckEdit
 Me.chkOnly_VOD = New DevExpress.XtraEditors.CheckEdit
 Me.txtLast_logon = New DevExpress.XtraEditors.TextEdit
@@ -1583,6 +1588,9 @@ Me.GCImdb_id = New DevExpress.XtraGrid.Columns.GridColumn
 Me.GCCount_ip = New DevExpress.XtraGrid.Columns.GridColumn
 Me.GCNb_viewed = New DevExpress.XtraGrid.Columns.GridColumn
 Me.GCUsedIp = New DevExpress.XtraGrid.Columns.GridColumn
+Me.GCCompensation = New DevExpress.XtraGrid.Columns.GridColumn
+Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
+Me.GCID = New DevExpress.XtraGrid.Columns.GridColumn
 Me.tabCritiques = New DevExpress.XtraTab.XtraTabPage
 Me.lblValueRating = New DevExpress.XtraEditors.LabelControl
 Me.lblRating = New DevExpress.XtraEditors.LabelControl
@@ -1856,6 +1864,7 @@ CType(Me.DateCallPhoneActivation.Properties.VistaTimeProperties,System.Component
 CType(Me.DateCallPhoneActivation.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.GCAboInfo,System.ComponentModel.ISupportInitialize).BeginInit
 Me.GCAboInfo.SuspendLayout
+CType(Me.cmbPPVStatus.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.txtRemainDVD.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.cmbDiscountActivation.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.cmbDiscType.Properties,System.ComponentModel.ISupportInitialize).BeginInit
@@ -1890,7 +1899,6 @@ CType(Me.txtDeliveryPostCode.Properties,System.ComponentModel.ISupportInitialize
 CType(Me.txtDeliveryAddr.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.GCcustomersInfo,System.ComponentModel.ISupportInitialize).BeginInit
 Me.GCcustomersInfo.SuspendLayout
-CType(Me.chkPPVReady.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.chkCreditReceivedBySite.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.chkOnly_VOD.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.txtLast_logon.Properties,System.ComponentModel.ISupportInitialize).BeginInit
@@ -1982,6 +1990,7 @@ CType(Me.GridViewSuspendedHistory,System.ComponentModel.ISupportInitialize).Begi
 Me.tabVodView.SuspendLayout
 CType(Me.GridViewVod,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.GridView1,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.RepositoryItemCheckEdit1,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tabCritiques.SuspendLayout
 CType(Me.GridCritiques,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.GridViewCritiques,System.ComponentModel.ISupportInitialize).BeginInit
@@ -5871,16 +5880,16 @@ Me.GCACtPhone.Controls.Add(Me.cmbPhoneActivDelete)
 Me.GCACtPhone.Controls.Add(Me.LabelReason)
 Me.GCACtPhone.Controls.Add(Me.DateCallPhoneActivation)
 Me.GCACtPhone.Controls.Add(Me.LabelCallMeDate)
-Me.GCACtPhone.Location = New System.Drawing.Point(632, 533)
+Me.GCACtPhone.Location = New System.Drawing.Point(632, 597)
 Me.GCACtPhone.Name = "GCACtPhone"
-Me.GCACtPhone.Size = New System.Drawing.Size(328, 237)
+Me.GCACtPhone.Size = New System.Drawing.Size(328, 177)
 Me.GCACtPhone.TabIndex = 10
 Me.GCACtPhone.Text = "Phone activation Info"
 '
 'MemoOtherReason
 '
 Me.MemoOtherReason.Enabled = false
-Me.MemoOtherReason.Location = New System.Drawing.Point(25, 131)
+Me.MemoOtherReason.Location = New System.Drawing.Point(91, 89)
 Me.MemoOtherReason.Name = "MemoOtherReason"
 Me.MemoOtherReason.Size = New System.Drawing.Size(232, 79)
 Me.MemoOtherReason.StyleController = Me.LayoutCustServ
@@ -5889,7 +5898,7 @@ Me.MemoOtherReason.TabIndex = 43
 'Label2
 '
 Me.Label2.AutoSize = true
-Me.Label2.Location = New System.Drawing.Point(22, 116)
+Me.Label2.Location = New System.Drawing.Point(22, 91)
 Me.Label2.Name = "Label2"
 Me.Label2.Size = New System.Drawing.Size(51, 13)
 Me.Label2.TabIndex = 42
@@ -5898,7 +5907,7 @@ Me.Label2.Text = "Comment"
 'cmbPhoneActivDelete
 '
 Me.cmbPhoneActivDelete.Enabled = false
-Me.cmbPhoneActivDelete.Location = New System.Drawing.Point(136, 70)
+Me.cmbPhoneActivDelete.Location = New System.Drawing.Point(136, 58)
 Me.cmbPhoneActivDelete.Name = "cmbPhoneActivDelete"
 Me.cmbPhoneActivDelete.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.cmbPhoneActivDelete.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("reason", "reason", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("stop_phone_id", "stop_phone_id", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None)})
@@ -5912,7 +5921,7 @@ Me.cmbPhoneActivDelete.Visible = false
 'LabelReason
 '
 Me.LabelReason.AutoSize = true
-Me.LabelReason.Location = New System.Drawing.Point(22, 73)
+Me.LabelReason.Location = New System.Drawing.Point(22, 61)
 Me.LabelReason.Name = "LabelReason"
 Me.LabelReason.Size = New System.Drawing.Size(99, 13)
 Me.LabelReason.TabIndex = 23
@@ -5924,7 +5933,7 @@ Me.LabelReason.Visible = false
 Me.DateCallPhoneActivation.CausesValidation = false
 Me.DateCallPhoneActivation.EditValue = Nothing
 Me.DateCallPhoneActivation.Enabled = false
-Me.DateCallPhoneActivation.Location = New System.Drawing.Point(136, 42)
+Me.DateCallPhoneActivation.Location = New System.Drawing.Point(136, 30)
 Me.DateCallPhoneActivation.Name = "DateCallPhoneActivation"
 Me.DateCallPhoneActivation.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.DateCallPhoneActivation.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
@@ -5933,7 +5942,7 @@ Me.DateCallPhoneActivation.TabIndex = 18
 '
 'LabelCallMeDate
 '
-Me.LabelCallMeDate.Location = New System.Drawing.Point(25, 45)
+Me.LabelCallMeDate.Location = New System.Drawing.Point(25, 33)
 Me.LabelCallMeDate.Name = "LabelCallMeDate"
 Me.LabelCallMeDate.Size = New System.Drawing.Size(57, 13)
 Me.LabelCallMeDate.TabIndex = 13
@@ -5966,6 +5975,8 @@ Me.btnReActivate.Text = "Re-Activate"
 'GCAboInfo
 '
 Me.GCAboInfo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
+Me.GCAboInfo.Controls.Add(Me.cmbPPVStatus)
+Me.GCAboInfo.Controls.Add(Me.lblPPVStatus)
 Me.GCAboInfo.Controls.Add(Me.txtRemainDVD)
 Me.GCAboInfo.Controls.Add(Me.lblRemainDVD)
 Me.GCAboInfo.Controls.Add(Me.cmbDiscountActivation)
@@ -6003,9 +6014,32 @@ Me.GCAboInfo.Controls.Add(Me.lblNextAbo)
 Me.GCAboInfo.Controls.Add(Me.lblAbo)
 Me.GCAboInfo.Location = New System.Drawing.Point(632, 67)
 Me.GCAboInfo.Name = "GCAboInfo"
-Me.GCAboInfo.Size = New System.Drawing.Size(336, 432)
+Me.GCAboInfo.Size = New System.Drawing.Size(336, 486)
 Me.GCAboInfo.TabIndex = 5
 Me.GCAboInfo.Text = "ABO Info"
+'
+'cmbPPVStatus
+'
+Me.cmbPPVStatus.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.ppv_status_id", true))
+Me.cmbPPVStatus.Enabled = false
+Me.cmbPPVStatus.Location = New System.Drawing.Point(160, 434)
+Me.cmbPPVStatus.Name = "cmbPPVStatus"
+Me.cmbPPVStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+Me.cmbPPVStatus.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ppv_status_id", "ppv_status_id", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("ppv_status_name", "ppv_status_name", 80, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)})
+Me.cmbPPVStatus.Properties.DataSource = Me.objDS.ppv_status
+Me.cmbPPVStatus.Properties.DisplayMember = "ppv_status_name"
+Me.cmbPPVStatus.Properties.NullText = ""
+Me.cmbPPVStatus.Properties.ValueMember = "ppv_status_id"
+Me.cmbPPVStatus.Size = New System.Drawing.Size(152, 20)
+Me.cmbPPVStatus.TabIndex = 63
+'
+'lblPPVStatus
+'
+Me.lblPPVStatus.Location = New System.Drawing.Point(11, 441)
+Me.lblPPVStatus.Name = "lblPPVStatus"
+Me.lblPPVStatus.Size = New System.Drawing.Size(52, 13)
+Me.lblPPVStatus.TabIndex = 62
+Me.lblPPVStatus.Text = "PPV Status"
 '
 'txtRemainDVD
 '
@@ -6600,7 +6634,6 @@ Me.LabelControl9.Text = "Address"
 'GCcustomersInfo
 '
 Me.GCcustomersInfo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
-Me.GCcustomersInfo.Controls.Add(Me.chkPPVReady)
 Me.GCcustomersInfo.Controls.Add(Me.chkCreditReceivedBySite)
 Me.GCcustomersInfo.Controls.Add(Me.chkOnly_VOD)
 Me.GCcustomersInfo.Controls.Add(Me.txtLast_logon)
@@ -6647,17 +6680,6 @@ Me.GCcustomersInfo.Name = "GCcustomersInfo"
 Me.GCcustomersInfo.Size = New System.Drawing.Size(600, 413)
 Me.GCcustomersInfo.TabIndex = 0
 Me.GCcustomersInfo.Text = "Global Info"
-'
-'chkPPVReady
-'
-Me.chkPPVReady.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.ppv_ready", true))
-Me.chkPPVReady.Enabled = false
-Me.chkPPVReady.Location = New System.Drawing.Point(456, 384)
-Me.chkPPVReady.Name = "chkPPVReady"
-Me.chkPPVReady.Properties.Caption = "PPV ready"
-Me.chkPPVReady.RightToLeft = System.Windows.Forms.RightToLeft.No
-Me.chkPPVReady.Size = New System.Drawing.Size(128, 19)
-Me.chkPPVReady.TabIndex = 62
 '
 'chkCreditReceivedBySite
 '
@@ -8720,13 +8742,14 @@ Me.GridViewVod.FormsUseDefaultLookAndFeel = false
 Me.GridViewVod.Location = New System.Drawing.Point(0, 0)
 Me.GridViewVod.MainView = Me.GridView1
 Me.GridViewVod.Name = "GridViewVod"
+Me.GridViewVod.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit1})
 Me.GridViewVod.Size = New System.Drawing.Size(1253, 791)
 Me.GridViewVod.TabIndex = 2
 Me.GridViewVod.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
 '
 'GridView1
 '
-Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.gcDate_added, Me.GCLast_modified, Me.GCProducts_title, Me.GCImdb_id, Me.GCCount_ip, Me.GCNb_viewed, Me.GCUsedIp})
+Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.gcDate_added, Me.GCLast_modified, Me.GCProducts_title, Me.GCImdb_id, Me.GCCount_ip, Me.GCNb_viewed, Me.GCUsedIp, Me.GCCompensation, Me.GCID})
 Me.GridView1.GridControl = Me.GridViewVod
 Me.GridView1.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways
 Me.GridView1.Name = "GridView1"
@@ -8804,6 +8827,39 @@ Me.GCUsedIp.FieldName = "used_ip"
 Me.GCUsedIp.Name = "GCUsedIp"
 Me.GCUsedIp.Visible = true
 Me.GCUsedIp.VisibleIndex = 4
+'
+'GCCompensation
+'
+Me.GCCompensation.Caption = "compensed"
+Me.GCCompensation.ColumnEdit = Me.RepositoryItemCheckEdit1
+Me.GCCompensation.FieldName = "compensed"
+Me.GCCompensation.Name = "GCCompensation"
+Me.GCCompensation.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.[False]
+Me.GCCompensation.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.[False]
+Me.GCCompensation.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.[False]
+Me.GCCompensation.UnboundType = DevExpress.Data.UnboundColumnType.[Integer]
+Me.GCCompensation.Visible = true
+Me.GCCompensation.VisibleIndex = 7
+'
+'RepositoryItemCheckEdit1
+'
+Me.RepositoryItemCheckEdit1.AppearanceDisabled.BackColor = System.Drawing.Color.White
+Me.RepositoryItemCheckEdit1.AppearanceDisabled.Options.UseBackColor = true
+Me.RepositoryItemCheckEdit1.AppearanceFocused.BackColor = System.Drawing.Color.White
+Me.RepositoryItemCheckEdit1.AppearanceFocused.Options.UseBackColor = true
+Me.RepositoryItemCheckEdit1.AppearanceReadOnly.BackColor = System.Drawing.Color.White
+Me.RepositoryItemCheckEdit1.AppearanceReadOnly.Options.UseBackColor = true
+Me.RepositoryItemCheckEdit1.AutoHeight = false
+Me.RepositoryItemCheckEdit1.Name = "RepositoryItemCheckEdit1"
+Me.RepositoryItemCheckEdit1.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked
+Me.RepositoryItemCheckEdit1.ValueChecked = "True"
+Me.RepositoryItemCheckEdit1.ValueUnchecked = "False"
+'
+'GCID
+'
+Me.GCID.Caption = "ID"
+Me.GCID.FieldName = "id"
+Me.GCID.Name = "GCID"
 '
 'tabCritiques
 '
@@ -10235,6 +10291,7 @@ CType(Me.DateCallPhoneActivation.Properties,System.ComponentModel.ISupportInitia
 CType(Me.GCAboInfo,System.ComponentModel.ISupportInitialize).EndInit
 Me.GCAboInfo.ResumeLayout(false)
 Me.GCAboInfo.PerformLayout
+CType(Me.cmbPPVStatus.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.txtRemainDVD.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.cmbDiscountActivation.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.cmbDiscType.Properties,System.ComponentModel.ISupportInitialize).EndInit
@@ -10271,7 +10328,6 @@ CType(Me.txtDeliveryAddr.Properties,System.ComponentModel.ISupportInitialize).En
 CType(Me.GCcustomersInfo,System.ComponentModel.ISupportInitialize).EndInit
 Me.GCcustomersInfo.ResumeLayout(false)
 Me.GCcustomersInfo.PerformLayout
-CType(Me.chkPPVReady.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.chkCreditReceivedBySite.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.chkOnly_VOD.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.txtLast_logon.Properties,System.ComponentModel.ISupportInitialize).EndInit
@@ -10366,6 +10422,7 @@ CType(Me.GridViewSuspendedHistory,System.ComponentModel.ISupportInitialize).EndI
 Me.tabVodView.ResumeLayout(false)
 CType(Me.GridViewVod,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.GridView1,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.RepositoryItemCheckEdit1,System.ComponentModel.ISupportInitialize).EndInit
 Me.tabCritiques.ResumeLayout(false)
 Me.tabCritiques.PerformLayout
 CType(Me.GridCritiques,System.ComponentModel.ISupportInitialize).EndInit
@@ -10512,8 +10569,8 @@ End Sub
         clsDevExpress.AddHyperlinkDynamic(GridGodFather)
         clsDevExpress.AddHyperlinkDynamic(GridCompensation)
         clsDevExpress.AddHyperlinkDynamic(GridProductsRating)
-        clsDevExpress.AddHyperlinkDynamic(GridViewVod)
-
+        'clsDevExpress.AddHyperlinkDynamic(GridViewVod)
+        clsDevExpress.AddHyperlinkDynamicWithCheckBox(GridViewVod)
 
         Me._dataSet.Tables.Add("reason_to_stop") ' for stop the abo with the button "stop abo"
 
@@ -10671,9 +10728,10 @@ End Sub
         Try
             BKCombo.GetCombo(objDS, "country", "countries_name", "SELECT * FROM country")
             BKCombo.GetCombo(objDS, "products_abo", "products_id", "SELECT products_id, products_model, products_title FROM products where products_type = 'ABO' ")
+            'BKCombo.GetCombo(objDS, "ppv_status", "ppv_status_id", "SELECT ppv_status_id, ppv_status_name FROM ppv_status ")
             ' DvdPostData.clsConnection.FillDataSet(objDS.Tables("abo_action"), "SELECT * FROM abo_action")
             ' DvdPostData.clsConnection.FillDataSet(objDS.Tables("orders_status"), "SELECT * FROM orders_status WHERE language_id = 1 ")
-            ' DvdPostData.clsConnection.FillDataSet(objDS.Tables("orders_products_status"), "SELECT * FROM orders_products_status")
+            DvdPostData.clsConnection.FillDataSet(objDS.Tables("ppv_status"), "SELECT id as ppv_status_id, name as ppv_status_name FROM ppv_status")
             DvdPostData.clsConnection.FillDataSet(objDS.Tables("discount_code"), "SELECT discount_code code ,discount_code_id code_id,dc.* FROM discount_code dc ")
             DvdPostData.clsConnection.FillDataSet(objDS.Tables("languages"), "SELECT * FROM languages")
             DvdPostData.clsConnection.FillDataSet(objDS.Tables("generalentity"), "SELECT EntityID, name, description, currcode FROM generalentity")
@@ -11183,6 +11241,7 @@ End Sub
         ChangeStateControl(txtRemainDVD, Enabling And isrightAccess() And DVDPostBuziness.ClsInventory.isNPP(txtCustomers_id.Text) And Not DVDPostBuziness.ClsInventory.isAboprocessRun())
         ChangeStateControl(cmbNextDiscCode, Enabling And isrightAccess())
         ChangeStateControl(txtAbo_ValidityTo, Enabling And isrightAccess())
+        ChangeStateControl(cmbPPVStatus, Enabling)
 
 
         ChangeStateControl(txtComment, Enabling)
@@ -11238,7 +11297,6 @@ End Sub
         ChangeStateControl(txtCustServ_Response_Message, Enabling)
 
         ChangeStatecheckBox(chkOnly_VOD, Enabling)
-        ChangeStatecheckBox(chkPPVReady, Enabling)
         ChangeStatecheckBox(chkCreditReceivedBySite, False)
 
 
@@ -12718,6 +12776,28 @@ End Sub
             cmbSuspended.ForeColor = Drawing.Color.White
         Else
             cmbSuspended.BackColor = Nothing
+        End If
+
+    End Sub
+
+    Private Sub RepositoryItemCheckEdit1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RepositoryItemCheckEdit1.CheckedChanged
+        Dim row As DataRow
+        Dim sql As String
+
+        If MsgBox("Are you sure to flag this token as compensed?", MsgBoxStyle.YesNo, "Warrning!") = MsgBoxResult.Yes Then
+
+            row = GridView1.GetDataRow(GridView1.FocusedRowHandle())
+
+
+            If row("compensed") = "True" Then
+                row("compensed") = "False"
+                sql = "update tokens set compensed = 0 where id = " & row("ID")
+            Else
+                sql = "update tokens set compensed = 1 where id = " & row("ID")
+                row("compensed") = "True"
+            End If
+
+            DvdPostData.clsConnection.ExecuteNonQuery(sql, True)
         End If
 
     End Sub

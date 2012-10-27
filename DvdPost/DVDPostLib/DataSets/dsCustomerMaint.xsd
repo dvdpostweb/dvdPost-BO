@@ -456,7 +456,7 @@
               <xs:element name="refresh_token_expires_at" msprop:Generator_UserColumnName="refresh_token_expires_at" msprop:Generator_ColumnVarNameInTable="columnrefresh_token_expires_at" msprop:Generator_ColumnPropNameInRow="refresh_token_expires_at" msprop:Generator_ColumnPropNameInTable="refresh_token_expires_atColumn" type="xs:dateTime" minOccurs="0" />
               <xs:element name="access_token_expires_at" msprop:Generator_UserColumnName="access_token_expires_at" msprop:Generator_ColumnVarNameInTable="columnaccess_token_expires_at" msprop:Generator_ColumnPropNameInRow="access_token_expires_at" msprop:Generator_ColumnPropNameInTable="access_token_expires_atColumn" type="xs:dateTime" minOccurs="0" />
               <xs:element name="sleep" msprop:Generator_UserColumnName="sleep" msprop:Generator_ColumnVarNameInTable="columnsleep" msprop:Generator_ColumnPropNameInRow="sleep" msprop:Generator_ColumnPropNameInTable="sleepColumn" type="xs:boolean" minOccurs="0" />
-              <xs:element name="ppv_ready" msprop:Generator_UserColumnName="ppv_ready" msprop:Generator_ColumnPropNameInRow="ppv_ready" msprop:Generator_ColumnVarNameInTable="columnppv_ready" msprop:Generator_ColumnPropNameInTable="ppv_readyColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ppv_status_id" msprop:Generator_UserColumnName="ppv_status_id" msprop:Generator_ColumnPropNameInRow="ppv_status_id" msprop:Generator_ColumnVarNameInTable="columnppv_status_id" msprop:Generator_ColumnPropNameInTable="ppv_status_idColumn" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -499,6 +499,14 @@
             <xs:sequence>
               <xs:element name="customers_abo_payment_method_id" msprop:Generator_UserColumnName="customers_abo_payment_method_id" msprop:Generator_ColumnVarNameInTable="columncustomers_abo_payment_method_id" msprop:Generator_ColumnPropNameInRow="customers_abo_payment_method_id" msprop:Generator_ColumnPropNameInTable="customers_abo_payment_method_idColumn" type="xs:int" />
               <xs:element name="customers_abo_payment_method_name" msprop:Generator_UserColumnName="customers_abo_payment_method_name" msprop:Generator_ColumnVarNameInTable="columncustomers_abo_payment_method_name" msprop:Generator_ColumnPropNameInRow="customers_abo_payment_method_name" msprop:Generator_ColumnPropNameInTable="customers_abo_payment_method_nameColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ppv_status" msprop:Generator_UserTableName="ppv_status" msprop:Generator_RowDeletedName="ppv_statusRowDeleted" msprop:Generator_RowChangedName="ppv_statusRowChanged" msprop:Generator_RowClassName="ppv_statusRow" msprop:Generator_RowChangingName="ppv_statusRowChanging" msprop:Generator_RowEvArgName="ppv_statusRowChangeEvent" msprop:Generator_RowEvHandlerName="ppv_statusRowChangeEventHandler" msprop:Generator_TableClassName="ppv_statusDataTable" msprop:Generator_TableVarName="tableppv_status" msprop:Generator_RowDeletingName="ppv_statusRowDeleting" msprop:Generator_TablePropName="ppv_status">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ppv_status_id" msprop:Generator_UserColumnName="ppv_status_id" msprop:Generator_ColumnVarNameInTable="columnppv_status_id" msprop:Generator_ColumnPropNameInRow="ppv_status_id" msprop:Generator_ColumnPropNameInTable="ppv_status_idColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ppv_status_name" msprop:Generator_UserColumnName="ppv_status_name" msprop:Generator_ColumnVarNameInTable="columnppv_status_name" msprop:Generator_ColumnPropNameInRow="ppv_status_name" msprop:Generator_ColumnPropNameInTable="ppv_status_nameColumn" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

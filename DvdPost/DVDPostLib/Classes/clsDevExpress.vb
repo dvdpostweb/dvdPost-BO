@@ -116,4 +116,36 @@ Public Class clsDevExpress
 
     End Sub
 
+    Public Shared Sub AddHyperlinkDynamicWithCheckBox(ByRef grid As DevExpress.XtraGrid.GridControl)
+        Dim gridview As DevExpress.XtraGrid.Views.Grid.GridView
+
+        gridview = grid.Views(0)
+        Dim hyperlink As DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit
+
+        For Each col As DevExpress.XtraGrid.Columns.GridColumn In gridview.Columns
+            If IsColumnHyperLink(col.Caption) Then
+                gridview.OptionsBehavior.Editable = True
+                col.OptionsColumn.AllowEdit = True
+                hyperlink = New DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit()
+                col.ColumnEdit = hyperlink
+                hyperlink.Tag = col.Caption
+
+                If col.Caption = "customers_id" Then
+                    AddHandler hyperlink.Click, AddressOf hyperlinkCustomers_click
+                Else
+                    AddHandler hyperlink.Click, AddressOf hyperlinkOtherColumn_click
+                End If
+            Else
+                ' ne pas rendre readonly une column button 
+                If col.ColumnEdit Is Nothing OrElse (Not TypeOf col.ColumnEdit Is DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit And Not TypeOf col.ColumnEdit Is DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit) Then
+                    col.OptionsColumn.AllowEdit = False
+                Else
+                    col.OptionsColumn.AllowEdit = True
+                End If
+            End If
+
+        Next
+
+    End Sub
+
 End Class
