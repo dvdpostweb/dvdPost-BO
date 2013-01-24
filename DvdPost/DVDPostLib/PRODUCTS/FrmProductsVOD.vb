@@ -41,7 +41,12 @@ Public Class FrmProductsVOD
         cmbStudioEdit.EditValue = blank
         cmbStatus.EditValue = blank
         chkAvailable.Checked = False
-
+        chkIsPPV.Checked = False
+        txtPPVPrice.EditValue = blank
+        chkIsPPVLU.Checked = False
+        txtPPVPriceLU.EditValue = blank
+        chkIsPPVNL.Checked = False
+        txtPPVPriceNL.EditValue = blank
 
     End Sub
     Private Sub loadData(ByVal row As DataRow)
@@ -125,6 +130,135 @@ Public Class FrmProductsVOD
 
     End Sub
 
+    Private Sub ClearLUData()
+        chkLU.Checked = False
+        txtIdLU.EditValue = Nothing
+        cmbDateExpiredLU.EditValue = DateTime.MinValue
+        cmbDateStartLU.EditValue = DateTime.MinValue
+        cmbDateLaterStartLU.EditValue = DateTime.MinValue
+        cmbDateLaterExpiredLU.EditValue = DateTime.MinValue
+        chkAvailableLU.Checked = False
+        'cmbStatusLU.Text = String.Empty
+        spedCreditLU.EditValue = String.Empty
+        chkIsPPVLU.Checked = False
+        txtPPVPriceLU.Text = String.Empty
+
+    End Sub
+    Private Sub loadDataLU(ByVal row As DataRow)
+
+        chkLU.Checked = True
+        txtIdLU.EditValue = row("id")
+
+        If row("expire_at") Is DBNull.Value Then
+            cmbDateExpiredLU.EditValue = DateTime.MinValue
+        Else
+            cmbDateExpiredLU.EditValue = row("expire_at")
+        End If
+
+        If row("available_from") Is DBNull.Value Then
+            cmbDateStartLU.EditValue = DateTime.MinValue
+        Else
+            cmbDateStartLU.EditValue = row("available_from")
+        End If
+
+        If row("available_backcatalogue_from") Is DBNull.Value Then
+            cmbDateLaterStartLU.EditValue = DateTime.MinValue
+        Else
+            cmbDateLaterStartLU.EditValue = row("available_backcatalogue_from")
+        End If
+
+        If row("expire_backcatalogue_at") Is DBNull.Value Then
+            cmbDateLaterExpiredLU.EditValue = DateTime.MinValue
+        Else
+            cmbDateLaterExpiredLU.EditValue = row("expire_backcatalogue_at")
+        End If
+
+        chkAvailableLU.Checked = row("available")
+
+        'cmbStatusLU.EditValue = row("status")
+
+        spedCreditLU.EditValue = row("credits")
+
+        If row("is_ppv") Is DBNull.Value Then
+            chkIsPPVLU.Checked = False
+        Else
+            chkIsPPVLU.Checked = row("is_ppv")
+        End If
+
+        If row("ppv_price") Is DBNull.Value Then
+            txtPPVPriceLU.Text = String.Empty
+        Else
+            txtPPVPriceLU.Text = row("ppv_price")
+        End If
+
+    End Sub
+
+    Private Sub ClearNLData()
+        chkNL.Checked = False
+        txtIdNL.EditValue = Nothing
+        cmbDateExpiredNL.EditValue = DateTime.MinValue
+        cmbDateStartNL.EditValue = DateTime.MinValue
+        cmbDateLaterStartNL.EditValue = DateTime.MinValue
+        cmbDateLaterExpiredNL.EditValue = DateTime.MinValue
+        chkAvailableNL.Checked = False
+        'cmbStatusNL.Text = String.Empty
+        spedCreditNL.EditValue = String.Empty
+        chkIsPPVNL.Checked = False
+        txtPPVPriceNL.Text = String.Empty
+
+    End Sub
+
+    Private Sub loadDataNL(ByVal row As DataRow)
+
+        chkNL.Checked = True
+        txtIdNL.EditValue = row("id")
+
+        If row("expire_at") Is DBNull.Value Then
+            cmbDateExpiredNL.EditValue = DateTime.MinValue
+        Else
+            cmbDateExpiredNL.EditValue = row("expire_at")
+        End If
+
+        If row("available_from") Is DBNull.Value Then
+            cmbDateStartNL.EditValue = DateTime.MinValue
+        Else
+            cmbDateStartNL.EditValue = row("available_from")
+        End If
+
+        If row("available_backcatalogue_from") Is DBNull.Value Then
+            cmbDateLaterStartNL.EditValue = DateTime.MinValue
+        Else
+            cmbDateLaterStartNL.EditValue = row("available_backcatalogue_from")
+        End If
+
+        If row("expire_backcatalogue_at") Is DBNull.Value Then
+            cmbDateLaterExpiredNL.EditValue = DateTime.MinValue
+        Else
+            cmbDateLaterExpiredNL.EditValue = row("expire_backcatalogue_at")
+        End If
+
+        chkAvailableNL.Checked = row("available")
+
+        'cmbStatusNL.EditValue = row("status")
+
+        spedCreditNL.EditValue = row("credits")
+
+        If row("is_ppv") Is DBNull.Value Then
+            chkIsPPVNL.Checked = False
+        Else
+            chkIsPPVNL.Checked = row("is_ppv")
+        End If
+
+        If row("ppv_price") Is DBNull.Value Then
+            txtPPVPriceNL.Text = String.Empty
+        Else
+            txtPPVPriceNL.Text = row("ppv_price")
+        End If
+
+    End Sub
+
+
+
     Private Sub EnableField(ByVal enable As Boolean)
 
         TxtFilename.Enabled = enable
@@ -145,6 +279,8 @@ Public Class FrmProductsVOD
         chkIsPPV.Enabled = enable
         txtPPVPrice.Enabled = enable And chkIsPPV.Checked
 
+        LuxEnable(enable)
+        NLEnable(enable)
 
     End Sub
     Private Sub ChangeStep(ByVal stepCurrent As StepForm)
@@ -261,6 +397,7 @@ Public Class FrmProductsVOD
         cmbStudioEdit.Properties.ValueMember = "studio_id"
         cmbStudioEdit.Properties.DisplayMember = "studio_name"
         cmbStudioEdit.Properties.DataSource = dt
+
     End Sub
     Private Sub loadSource()
         Dim sql As String
@@ -295,6 +432,14 @@ Public Class FrmProductsVOD
         cmbStatus.Properties.ValueMember = "Value"
         cmbStatus.Properties.DisplayMember = "DisplayMember"
         cmbStatus.Properties.DataSource = lststatus
+
+        'cmbStatusLU.Properties.ValueMember = "Value"
+        'cmbStatusLU.Properties.DisplayMember = "DisplayMember"
+        'cmbStatusLU.Properties.DataSource = lststatus
+
+        'cmbStatusNL.Properties.ValueMember = "Value"
+        'cmbStatusNL.Properties.DisplayMember = "DisplayMember"
+        'cmbStatusNL.Properties.DataSource = lststatus
 
     End Sub
     Private Function SplitFileName(ByVal full_filename As String) As String()
@@ -394,6 +539,19 @@ Public Class FrmProductsVOD
         If GridViewSearch.RowCount > 0 Then
             row = GridViewSearch.GetDataRow(GridViewSearch.FocusedRowHandle())
             loadData(row)
+            Dim drLU As DataRow() = CType(GridVod.DataSource, DataTable).Select("imdb_id = " & row("imdb_id") & " " & IIf(IsDBNull(row("language_id")), "", " and language_id = " & row("language_id")) & " and id <> " & row("id") & IIf(IsDBNull(row("subtitle_id")), "", " and subtitle_id = " & row("subtitle_id")) & " and source = 'alphanetworks' and status <> 'deleted' and country = 'LU' ")
+            If drLU.Length > 0 Then
+                loadDataLU(drLU(0))
+            Else
+                ClearLUData()
+            End If
+            Dim drNL As DataRow() = CType(GridVod.DataSource, DataTable).Select("imdb_id = " & row("imdb_id") & " " & IIf(IsDBNull(row("language_id")), "", " and language_id = " & row("language_id")) & " " & IIf(IsDBNull(row("subtitle_id")), "", " and subtitle_id = " & row("subtitle_id")) & " and id <> " & row("id") & " and source = 'alphanetworks' and status <> 'deleted' and country = 'NL' ")
+            If drNL.Length > 0 Then
+                loadDataNL(drNL(0))
+            Else
+                ClearNLData()
+            End If
+
         End If
     End Sub
 
@@ -401,6 +559,8 @@ Public Class FrmProductsVOD
 
         Dim sql As String
         Dim dt As DataTable = Nothing
+        Dim dtBE As DataTable = Nothing
+
         If txtTitleSearch.EditValue <> String.Empty Then
             sql = DvdPostData.ClsVod.SearchViewVodpartTitle(txtTitleSearch.EditValue)
             dt = DvdPostData.clsConnection.FillDataSet(sql)
@@ -413,6 +573,9 @@ Public Class FrmProductsVOD
         End If
         If Not dt Is Nothing Then
             GridVod.DataSource = dt
+
+            GridViewSearch.ActiveFilterString = "country = 'BE'"
+
             ChangeStep(StepForm.LOAD)
             _typesearch = typeSearch.DETAIL
         End If
@@ -423,18 +586,44 @@ Public Class FrmProductsVOD
         Dim sql As String
         Try
 
-
             If txtId.EditValue Is Nothing Then
-                sql = DvdPostData.ClsVod.GetInsertVod(txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStart.EditValue, cmbDateExpired.EditValue, chkAvailable.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCredit.EditValue, cmbDateLaterStart.EditValue, cmbDateLaterExpired.EditValue, chkIsPPV.EditValue, txtPPVPrice.EditValue)
+                sql = DvdPostData.ClsVod.GetInsertVod(txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStart.EditValue, cmbDateExpired.EditValue, chkAvailable.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCredit.EditValue, cmbDateLaterStart.EditValue, cmbDateLaterExpired.EditValue, chkIsPPV.EditValue, txtPPVPrice.EditValue, "BE")
                 DvdPostData.clsConnection.ExecuteNonQuery(sql)
+                If chkLU.Checked Then
+                    sql = DvdPostData.ClsVod.GetInsertVod(txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStart.EditValue, cmbDateExpired.EditValue, chkAvailable.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCredit.EditValue, cmbDateLaterStart.EditValue, cmbDateLaterExpired.EditValue, chkIsPPV.EditValue, txtPPVPrice.EditValue, "LU")
+                    DvdPostData.clsConnection.ExecuteNonQuery(sql)
+                End If
+                If chkNL.Checked Then
+                    sql = DvdPostData.ClsVod.GetInsertVod(txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStart.EditValue, cmbDateExpired.EditValue, chkAvailable.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCredit.EditValue, cmbDateLaterStart.EditValue, cmbDateLaterExpired.EditValue, chkIsPPV.EditValue, txtPPVPrice.EditValue, "NL")
+                    DvdPostData.clsConnection.ExecuteNonQuery(sql)
+                End If
             Else
-                sql = DvdPostData.ClsVod.GetUpdateVod(txtId.EditValue, txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStart.EditValue, cmbDateExpired.EditValue, chkAvailable.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCredit.EditValue, cmbDateLaterStart.EditValue, cmbDateLaterExpired.EditValue, chkIsPPV.EditValue, txtPPVPrice.EditValue)
+                sql = DvdPostData.ClsVod.GetUpdateVod(txtId.EditValue, txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStart.EditValue, cmbDateExpired.EditValue, chkAvailable.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCredit.EditValue, cmbDateLaterStart.EditValue, cmbDateLaterExpired.EditValue, chkIsPPV.EditValue, txtPPVPrice.EditValue, "BE")
                 DvdPostData.clsConnection.ExecuteNonQuery(sql)
+                If chkLU.Checked Then
+                    If txtIdLU.EditValue Is Nothing Then
+                        sql = DvdPostData.ClsVod.GetInsertVod(txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStartLU.EditValue, cmbDateExpiredLU.EditValue, chkAvailableLU.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCreditLU.EditValue, cmbDateLaterStartLU.EditValue, cmbDateLaterExpiredLU.EditValue, chkIsPPVLU.EditValue, txtPPVPriceLU.EditValue, "LU")
+                        DvdPostData.clsConnection.ExecuteNonQuery(sql)
+                    Else
+                        sql = DvdPostData.ClsVod.GetUpdateVod(txtIdLU.EditValue, txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStartLU.EditValue, cmbDateExpiredLU.EditValue, chkAvailableLU.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCreditLU.EditValue, cmbDateLaterStartLU.EditValue, cmbDateLaterExpiredLU.EditValue, chkIsPPVLU.EditValue, txtPPVPriceLU.EditValue, "LU")
+                        DvdPostData.clsConnection.ExecuteNonQuery(sql)
+                    End If
+                End If
+                If chkNL.Checked Then
+                    If txtIdNL.EditValue Is Nothing Then
+                        sql = DvdPostData.ClsVod.GetInsertVod(txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStartNL.EditValue, cmbDateExpiredNL.EditValue, chkAvailableNL.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCreditNL.EditValue, cmbDateLaterStartNL.EditValue, cmbDateLaterExpiredNL.EditValue, chkIsPPVNL.EditValue, txtPPVPriceNL.EditValue, "NL")
+                        DvdPostData.clsConnection.ExecuteNonQuery(sql)
+                    Else
+                        sql = DvdPostData.ClsVod.GetUpdateVod(txtIdNL.EditValue, txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStartNL.EditValue, cmbDateExpiredNL.EditValue, chkAvailableNL.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCreditNL.EditValue, cmbDateLaterStartNL.EditValue, cmbDateLaterExpiredNL.EditValue, chkIsPPVNL.EditValue, txtPPVPriceNL.EditValue, "NL")
+                        DvdPostData.clsConnection.ExecuteNonQuery(sql)
+                    End If
+                End If
 
             End If
             Return True
         Catch ex As Exception
             DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Vod, ex)
+            DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Vod, sql)
             Return False
         End Try
     End Function
@@ -582,7 +771,7 @@ Public Class FrmProductsVOD
                 filename = fileInfo.Name
                 language_audio_id = SearchLangID(elts(DVDPostBuziness.clsFileZilla.FormatFile.LANGUAGE_AUDIO_ID), filename)
                 language_subtitle_id = SearchLangID(elts(DVDPostBuziness.clsFileZilla.FormatFile.LANGUAGE_SUBTITLE_ID), filename)
-                sql = DvdPostData.ClsVod.GetInsertVod(elts(DVDPostBuziness.clsFileZilla.FormatFile.IMDB_ID), extension + filename, Date.MinValue, Date.MinValue, True, language_audio_id, language_subtitle_id, elts(DVDPostBuziness.clsFileZilla.FormatFile.STUDIO_ID), "uploaded", strQuality, "SOFTLAYER", 1, 1, Date.MinValue, Date.MinValue, "false", "")
+                sql = DvdPostData.ClsVod.GetInsertVod(elts(DVDPostBuziness.clsFileZilla.FormatFile.IMDB_ID), extension + filename, Date.MinValue, Date.MinValue, True, language_audio_id, language_subtitle_id, elts(DVDPostBuziness.clsFileZilla.FormatFile.STUDIO_ID), "uploaded", strQuality, "SOFTLAYER", 1, 1, Date.MinValue, Date.MinValue, "false", "", "BE")
                 DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
                 fileZilla.InsertNodeQueue(file, fileInfo.Name, fileInfo.Length)
@@ -943,7 +1132,7 @@ Public Class FrmProductsVOD
                             Integer.Parse(result(DvdPostData.ClsVod.ListField.CREDIT)), _
                             result(DvdPostData.ClsVod.ListField.AVAILABLE_BACKCATALOGUE_FROM), _
                             result(DvdPostData.ClsVod.ListField.EXPIRE_BACKKATALOGUE_AT), _
-                            "false", "")
+                            "false", "", "BE")
 
                     DvdPostData.clsConnection.ExecuteNonQuery(sql)
                     LstResult.Items.Add(name)
@@ -979,7 +1168,7 @@ Public Class FrmProductsVOD
 
         grdOnlyVODMovie.DataSource = dt
     End Sub
-    
+
     Private Sub btnDeleteVOD_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDeleteVOD.Click
         Dim sql As String
 
@@ -1025,7 +1214,8 @@ Public Class FrmProductsVOD
                                         IIf(dr("available_backcatalogue_from") Is System.DBNull.Value, DateTime.MinValue, dr("available_backcatalogue_from")), _
                                         IIf(dr("expire_backcatalogue_at") Is System.DBNull.Value, DateTime.MinValue, dr("expire_backcatalogue_at")), _
                                         IIf(dr("is_ppv") Is System.DBNull.Value, "false", dr("is_ppv")), _
-                                        IIf(dr("ppv_price") Is System.DBNull.Value, "", dr("ppv_price")))
+                                        IIf(dr("ppv_price") Is System.DBNull.Value, "", dr("ppv_price")), _
+                                        dr("country"))
             DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
         Next
@@ -1039,8 +1229,51 @@ Public Class FrmProductsVOD
         'WebSiteDvdPost.Width = (XTabControlVod.Width - GridVodWatch.Width) + 203
     End Sub
 
-    Private Sub chkIsPPV_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkIsPPV.CheckedChanged
+    Private Sub chkIsPPV_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
         txtPPVPrice.Enabled = chkIsPPV.Checked
 
+    End Sub
+
+    Private Sub chkLux_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkLU.CheckedChanged
+        LuxEnable(True)
+    End Sub
+
+    Private Sub LuxEnable(ByVal enable As Boolean)
+        chkLU.Enabled = enable
+        cmbDateStartLU.Enabled = chkLU.Checked And enable
+        cmbDateExpiredLU.Enabled = chkLU.Checked And enable
+        cmbDateLaterStartLU.Enabled = chkLU.Checked And enable
+        cmbDateLaterExpiredLU.Enabled = chkLU.Checked And enable
+        chkAvailableLU.Enabled = chkLU.Checked And enable
+        'cmbStatusLU.Enabled = chkLU.Checked And enable
+        spedCreditLU.Enabled = chkLU.Checked And enable
+        chkIsPPVLU.Enabled = chkLU.Checked And enable
+        txtPPVPriceLU.Enabled = chkLU.Checked And enable And chkIsPPVLU.Checked
+
+    End Sub
+
+    Private Sub chkNL_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkNL.CheckedChanged
+        NLEnable(True)
+    End Sub
+
+    Private Sub NLEnable(ByVal enable As Boolean)
+        chkNL.Enabled = enable
+        cmbDateStartNL.Enabled = chkNL.Checked And enable
+        cmbDateExpiredNL.Enabled = chkNL.Checked And enable
+        cmbDateLaterStartNL.Enabled = chkNL.Checked And enable
+        cmbDateLaterExpiredNL.Enabled = chkNL.Checked And enable
+        chkAvailableNL.Enabled = chkNL.Checked And enable
+        'cmbStatusNL.Enabled = chkNL.Checked And enable
+        spedCreditNL.Enabled = chkNL.Checked And enable
+        chkIsPPVNL.Enabled = chkNL.Checked And enable
+        txtPPVPriceNL.Enabled = chkNL.Checked And enable And chkIsPPVNL.Checked
+    End Sub
+
+    Private Sub chkIsPPVLU_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkIsPPVLU.CheckedChanged
+        txtPPVPriceLU.Enabled = chkLU.Checked And chkIsPPVLU.Checked
+    End Sub
+
+    Private Sub chkIsPPVNL_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkIsPPVNL.CheckedChanged
+        txtPPVPriceNL.Enabled = chkLU.Checked And chkIsPPVNL.Checked
     End Sub
 End Class

@@ -143,12 +143,12 @@ Public Class clsStudio
                     " ( select studio_id from streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id order by updated_at desc limit 1 ) as studio_id " & _
 "                       from streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' and month(available_backcatalogue_from) = month('" & DVDPostTools.ClsDate.formatDate(dateFrom) & "') and year(available_backcatalogue_from ) < year('" & DVDPostTools.ClsDate.formatDate(dateTo) & "') group by s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at) sp on p.imdb_id = sp.imdb_id " & _
   "      join customers c on t.customer_id = c.customers_id " & _
-    "    join products pabo on pabo.products_id = c.customers_abo_type " & _
+    "    join products pabo on pabo.products_id = fn_customers_abopackage(c.customers_id,t.created_at)  " & _
       "  join products_abo pa on pabo.products_id = pa.products_id " & _
        " left join studio s on s.studio_id = sp.studio_id " & _
        " left join studio ps on ps.studio_id = p.products_studio " & _
        " left join directors d on d.directors_id = p.products_directors_id " & _
-        " where s.studio_id = " & studio_id & _
+        " where t.compensed = 0 and s.studio_id = " & studio_id & _
         " and t.created_at between date_add('" & DVDPostTools.ClsDate.formatDate(dateFrom) & "', interval -1 year) and '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' " & _
 " group by s.studio_name, ps.studio_name, c.customers_id, t.created_at " & _
   "             order by s.studio_name, ps.studio_name,  p.products_title, t.created_at " & _
@@ -201,12 +201,12 @@ Public Class clsStudio
  " join (select s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at,s.credits, " & _
  " ( select studio_id from streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id order by updated_at desc limit 1 ) as studio_id from streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' and month(available_backcatalogue_from) = month('" & DVDPostTools.ClsDate.formatDate(dateFrom) & "') and year(available_backcatalogue_from ) < year('" & DVDPostTools.ClsDate.formatDate(dateFrom) & "')" & _
 "  group by s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at) sp on p.imdb_id = sp.imdb_id " & _
- "  join customers c on t.customer_id = c.customers_id  join products pabo on pabo.products_id = c.customers_abo_type " & _
+ "  join customers c on t.customer_id = c.customers_id  join products pabo on pabo.products_id = fn_customers_abopackage(c.customers_id,t.created_at)  " & _
 "   join products_abo pa on pabo.products_id = pa.products_id " & _
  "  left join studio s on s.studio_id = sp.studio_id  " & _
  "  left join studio ps on ps.studio_id = p.products_studio " & _
  "  left join directors d on d.directors_id = p.products_directors_id  " & _
-"  where s.studio_id = " & studio_id & _
+"  where t.compensed = 0 and  s.studio_id = " & studio_id & _
      " and t.created_at between date_add('" & DVDPostTools.ClsDate.formatDate(dateFrom) & "', interval -1 year) and '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' " & _
  " order by s.studio_name, ps.studio_name,  p.products_title " & _
  " ) x  where x.qty_credit <> 10000  " & _
@@ -257,12 +257,12 @@ Public Class clsStudio
  " join (select s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at,s.credits, " & _
  " ( select studio_id from streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id order by updated_at desc limit 1 ) as studio_id from streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' " & _
 "  group by s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at) sp on p.imdb_id = sp.imdb_id  and t.created_at between sp.available_from and sp.expire_at  " & _
- "  join customers c on t.customer_id = c.customers_id  join products pabo on pabo.products_id = c.customers_abo_type " & _
+ "  join customers c on t.customer_id = c.customers_id  join products pabo on pabo.products_id = fn_customers_abopackage(c.customers_id,t.created_at)  " & _
 "   join products_abo pa on pabo.products_id = pa.products_id " & _
  "  left join studio s on s.studio_id = sp.studio_id  " & _
  "  left join studio ps on ps.studio_id = p.products_studio " & _
  "  left join directors d on d.directors_id = p.products_directors_id  " & _
-"  where sp.expire_at between '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' " & _
+"  where t.compensed = 0 and sp.expire_at between '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' " & _
      "      and s.studio_id = " & in_studio_id & " group by s.studio_name, ps.studio_name, c.customers_id, t.created_at " & _
  " order by s.studio_name, ps.studio_name,  p.products_title " & _
  " ) x  where x.qty_credit <> 10000  " & _
@@ -334,12 +334,12 @@ Public Class clsStudio
          "            ( select studio_id from streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id order by updated_at desc limit 1 ) as studio_id " & _
                       " from streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' and expire_at between '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' group by s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at) sp on p.imdb_id = sp.imdb_id  and t.created_at between sp.available_from and sp.expire_at  " & _
        " join customers c on t.customer_id = c.customers_id " & _
-       " join products pabo on pabo.products_id = c.customers_abo_type " & _
+       " join products pabo on pabo.products_id = fn_customers_abopackage(c.customers_id,t.created_at)  " & _
        " join products_abo pa on pabo.products_id = pa.products_id " & _
        " left join studio s on s.studio_id = sp.studio_id " & _
        " left join studio ps on ps.studio_id = p.products_studio " & _
        " left join directors d on d.directors_id = p.products_directors_id " & _
-        "         where s.studio_id = " & in_studio_id & _
+        "         where t.compensed = 0 and s.studio_id = " & in_studio_id & _
 " group by s.studio_name, ps.studio_name, c.customers_id, t.created_at " & _
   "             order by s.studio_name, ps.studio_name,  p.products_title, t.created_at  " & _
   " ) x " & _
@@ -398,12 +398,12 @@ Public Class clsStudio
 " join (select imdb_id,products_directors_id,products_date_available,products_title, products_studio, products_type from products group by imdb_id) p on t.imdb_id = p.imdb_id " & _
 " join (select s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at,s.credits, " & _
 " ( select studio_id from streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id order by updated_at desc limit 1 ) as studio_id from streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' group by s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at) sp on p.imdb_id = sp.imdb_id  and ( ( t.created_at between sp.available_from and expire_at ) or (t.created_at between sp.available_backcatalogue_from and expire_backcatalogue_at))" & _
-" join customers c on t.customer_id = c.customers_id  join products pabo on pabo.products_id = c.customers_abo_type " & _
+" join customers c on t.customer_id = c.customers_id  join products pabo on pabo.products_id = fn_customers_abopackage(c.customers_id,t.created_at)  " & _
 " join products_abo pa on pabo.products_id = pa.products_id " & _
 " left join studio s on s.studio_id = sp.studio_id " & _
 " left join studio ps on ps.studio_id = p.products_studio " & _
 " left join directors d on d.directors_id = p.products_directors_id " & _
-" where date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
+" where t.compensed = 0 and date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
 allstudio & _
 " group by s.studio_name, ps.studio_name, c.customers_id, t.created_at " & _
 " order by s.studio_name, ps.studio_name,  p.products_title " & _
@@ -463,12 +463,12 @@ allstudio & _
 "  join (select imdb_id,products_directors_id,products_date_available,products_title, products_studio, products_type from products group by imdb_id) p on t.imdb_id = p.imdb_id " & _
  " join (select s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at,s.credits, " & _
  " ( select studio_id from streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id order by updated_at desc limit 1 ) as studio_id from streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' group by s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at) sp on p.imdb_id = sp.imdb_id  and ( ( t.created_at between sp.available_from and expire_at ) or (t.created_at between sp.available_backcatalogue_from and expire_backcatalogue_at))" & _
- " join customers c on t.customer_id = c.customers_id  join products pabo on pabo.products_id = c.customers_abo_type " & _
+ " join customers c on t.customer_id = c.customers_id  join products pabo on pabo.products_id = fn_customers_abopackage(c.customers_id,t.created_at)  " & _
  " join products_abo pa on pabo.products_id = pa.products_id " & _
  " left join studio s on s.studio_id = sp.studio_id " & _
  " left join studio ps on ps.studio_id = p.products_studio " & _
  " left join directors d on d.directors_id = p.products_directors_id " & _
-" where date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
+" where t.compensed = 0 and date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
 allstudio & _
 " group by s.studio_name, ps.studio_name, c.customers_id, t.created_at " & _
 " order by s.studio_name, ps.studio_name,  p.products_title " & _
@@ -520,12 +520,12 @@ allstudio & _
 " join (select imdb_id,products_directors_id,products_date_available,products_title, products_studio, products_type from products where products_type = '" & productsType & "' group by imdb_id) p on t.imdb_id = p.imdb_id " & _
 " join (select s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at,s.credits, " & _
 " ( select studio_id from streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id order by updated_at desc limit 1 ) as studio_id from streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' group by s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at) sp on p.imdb_id = sp.imdb_id  and ( ( t.created_at between sp.available_from and expire_at ) or (t.created_at between sp.available_backcatalogue_from and expire_backcatalogue_at))" & _
-" join customers c on t.customer_id = c.customers_id  join products pabo on pabo.products_id = c.customers_abo_type " & _
+" join customers c on t.customer_id = c.customers_id  join products pabo on pabo.products_id = fn_customers_abopackage(c.customers_id,t.created_at)  " & _
 " join products_abo pa on pabo.products_id = pa.products_id " & _
 " left join studio s on s.studio_id = sp.studio_id " & _
 " left join studio ps on ps.studio_id = p.products_studio " & _
 " left join directors d on d.directors_id = p.products_directors_id " & _
-" where date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
+" where t.compensed = 0 and date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
 " group by s.studio_name, ps.studio_name, c.customers_id, t.created_at " & _
 " order by s.studio_name, ps.studio_name,  p.products_title " & _
 " ) x where x.qty_credit <> 10000 "
@@ -571,12 +571,12 @@ allstudio & _
 "  join (select imdb_id,products_directors_id,products_date_available,products_title, products_studio, products_type from products where products_type = '" & productsType & "' group by imdb_id) p on t.imdb_id = p.imdb_id " & _
  " join (select s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at,s.credits, " & _
  " ( select studio_id from streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id order by updated_at desc limit 1 ) as studio_id from streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' group by s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at) sp on p.imdb_id = sp.imdb_id  and ( ( t.created_at between sp.available_from and expire_at ) or (t.created_at between sp.available_backcatalogue_from and expire_backcatalogue_at))" & _
- " join customers c on t.customer_id = c.customers_id  join products pabo on pabo.products_id = c.customers_abo_type " & _
+ " join customers c on t.customer_id = c.customers_id  join products pabo on pabo.products_id = fn_customers_abopackage(c.customers_id,t.created_at)  " & _
  " join products_abo pa on pabo.products_id = pa.products_id " & _
  " left join studio s on s.studio_id = sp.studio_id " & _
  " left join studio ps on ps.studio_id = p.products_studio " & _
  " left join directors d on d.directors_id = p.products_directors_id " & _
-" where date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
+" where t.compensed = 0 and date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
 " group by s.studio_name, ps.studio_name, c.customers_id, t.created_at " & _
 " order by s.studio_name, ps.studio_name,  p.products_title " & _
 " ) x  where x.qty_credit <> 10000  " & _

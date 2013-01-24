@@ -1,6 +1,6 @@
 Public Class clsStock
     Const MAXPARTINBOX As Integer = 5
-    Const MAXNUMBERBOX As Integer = 4500
+    Const MAXNUMBERBOX As Integer = 6000
 
     Public Shared Function GetSelectStock(ByVal box_id As Integer, ByVal inStockOnly As Boolean) As String
         Dim sql As String

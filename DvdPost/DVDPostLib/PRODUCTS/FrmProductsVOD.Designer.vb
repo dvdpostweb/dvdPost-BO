@@ -145,19 +145,44 @@ Partial Class FrmProductsVOD
         Me.GridBand3 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand
         Me.colCredit = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.GridBand4 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand
+        Me.colcountry = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.RepositoryItemLookUpEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.XTabView = New DevExpress.XtraTab.XtraTabPage
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl
-        Me.chkIsPPV = New DevExpress.XtraEditors.CheckEdit
-        Me.txtPPVPrice = New DevExpress.XtraEditors.TextEdit
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox
+        Me.txtIdNL = New DevExpress.XtraEditors.TextEdit
+        Me.txtPPVPriceNL = New DevExpress.XtraEditors.TextEdit
+        Me.LabelControl14 = New DevExpress.XtraEditors.LabelControl
+        Me.chkIsPPVNL = New DevExpress.XtraEditors.CheckEdit
+        Me.chkNL = New DevExpress.XtraEditors.CheckEdit
+        Me.spedCreditNL = New DevExpress.XtraEditors.SpinEdit
+        Me.chkAvailableNL = New DevExpress.XtraEditors.CheckEdit
+        Me.cmbDateLaterExpiredNL = New DevExpress.XtraEditors.DateEdit
+        Me.cmbDateLaterStartNL = New DevExpress.XtraEditors.DateEdit
+        Me.cmbDateExpiredNL = New DevExpress.XtraEditors.DateEdit
+        Me.cmbDateStartNL = New DevExpress.XtraEditors.DateEdit
+        Me.LabelControl15 = New DevExpress.XtraEditors.LabelControl
+        Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl
+        Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl
+        Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl
+        Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl
+        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl
+        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl
+        Me.gpbLuxemburg = New System.Windows.Forms.GroupBox
+        Me.txtIdLU = New DevExpress.XtraEditors.TextEdit
+        Me.txtPPVPriceLU = New DevExpress.XtraEditors.TextEdit
+        Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl
+        Me.chkIsPPVLU = New DevExpress.XtraEditors.CheckEdit
+        Me.chkLU = New DevExpress.XtraEditors.CheckEdit
+        Me.spedCreditLU = New DevExpress.XtraEditors.SpinEdit
+        Me.chkAvailableLU = New DevExpress.XtraEditors.CheckEdit
+        Me.cmbDateLaterExpiredLU = New DevExpress.XtraEditors.DateEdit
+        Me.cmbDateLaterStartLU = New DevExpress.XtraEditors.DateEdit
+        Me.cmbDateExpiredLU = New DevExpress.XtraEditors.DateEdit
+        Me.cmbDateStartLU = New DevExpress.XtraEditors.DateEdit
         Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl
         Me.cmbDateLaterExpired = New DevExpress.XtraEditors.DateEdit
         Me.cmbDateLaterStart = New DevExpress.XtraEditors.DateEdit
-        Me.lblDateLaterExpire = New DevExpress.XtraEditors.LabelControl
-        Me.lblDateLaterStart = New DevExpress.XtraEditors.LabelControl
         Me.btnDeleteVOD = New DevExpress.XtraEditors.SimpleButton
-        Me.lblCredit = New DevExpress.XtraEditors.LabelControl
         Me.spedCredit = New DevExpress.XtraEditors.SpinEdit
         Me.cmbSupportVod = New DevExpress.XtraEditors.LookUpEdit
         Me.lblSupport = New DevExpress.XtraEditors.LabelControl
@@ -170,7 +195,6 @@ Partial Class FrmProductsVOD
         Me.cmbStudioEdit = New DevExpress.XtraEditors.LookUpEdit
         Me.lblStudio = New DevExpress.XtraEditors.LabelControl
         Me.txtId = New DevExpress.XtraEditors.TextEdit
-        Me.lblId = New DevExpress.XtraEditors.LabelControl
         Me.btnCancelVod = New DevExpress.XtraEditors.SimpleButton
         Me.cmbLanguageSubtitle = New DevExpress.XtraEditors.LookUpEdit
         Me.cmbLanguageSound = New DevExpress.XtraEditors.LookUpEdit
@@ -178,10 +202,7 @@ Partial Class FrmProductsVOD
         Me.cmbDateStart = New DevExpress.XtraEditors.DateEdit
         Me.TxtFilename = New DevExpress.XtraEditors.TextEdit
         Me.chkAvailable = New DevExpress.XtraEditors.CheckEdit
-        Me.lblAvailable = New DevExpress.XtraEditors.LabelControl
         Me.lblNameFile = New DevExpress.XtraEditors.LabelControl
-        Me.lblDateExpired = New DevExpress.XtraEditors.LabelControl
-        Me.lblDateStart = New DevExpress.XtraEditors.LabelControl
         Me.lblLanguage_subtitle = New DevExpress.XtraEditors.LabelControl
         Me.lblLanguageSound = New DevExpress.XtraEditors.LabelControl
         Me.txtImdbView = New DevExpress.XtraEditors.TextEdit
@@ -256,6 +277,9 @@ Partial Class FrmProductsVOD
         Me.TextEdit4 = New DevExpress.XtraEditors.TextEdit
         Me.FolderChoose = New System.Windows.Forms.FolderBrowserDialog
         Me.OpenFile = New System.Windows.Forms.OpenFileDialog
+        Me.chkIsPPV = New DevExpress.XtraEditors.CheckEdit
+        Me.txtPPVPrice = New DevExpress.XtraEditors.TextEdit
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox
         colDateStartUploaded = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         CType(Me.cmbViewListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtQuickSearchRepos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -289,9 +313,36 @@ Partial Class FrmProductsVOD
         CType(Me.chkcolAvailable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XTabView.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
-        CType(Me.chkIsPPV.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtPPVPrice.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
+        CType(Me.txtIdNL.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtPPVPriceNL.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkIsPPVNL.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkNL.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.spedCreditNL.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkAvailableNL.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbDateLaterExpiredNL.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbDateLaterExpiredNL.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbDateLaterStartNL.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbDateLaterStartNL.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbDateExpiredNL.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbDateExpiredNL.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbDateStartNL.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbDateStartNL.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gpbLuxemburg.SuspendLayout()
+        CType(Me.txtIdLU.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtPPVPriceLU.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkIsPPVLU.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkLU.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.spedCreditLU.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkAvailableLU.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbDateLaterExpiredLU.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbDateLaterExpiredLU.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbDateLaterStartLU.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbDateLaterStartLU.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbDateExpiredLU.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbDateExpiredLU.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbDateStartLU.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbDateStartLU.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbDateLaterExpired.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbDateLaterExpired.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbDateLaterStart.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -339,6 +390,9 @@ Partial Class FrmProductsVOD
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkIsPPV.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtPPVPrice.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'colDateStartUploaded
@@ -353,6 +407,10 @@ Partial Class FrmProductsVOD
         'BarManager1
         '
         Me.BarManager1.Categories.AddRange(New DevExpress.XtraBars.BarManagerCategory() {New DevExpress.XtraBars.BarManagerCategory("Main", New System.Guid("434484d9-7ac5-47e5-9412-313a111b7240")), New DevExpress.XtraBars.BarManagerCategory("Miscelaneous", New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")), New DevExpress.XtraBars.BarManagerCategory("Views", New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")), New DevExpress.XtraBars.BarManagerCategory("Filters", New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")), New DevExpress.XtraBars.BarManagerCategory("Reporting", New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")), New DevExpress.XtraBars.BarManagerCategory("Default Values", New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")), New DevExpress.XtraBars.BarManagerCategory("Quick Search", New System.Guid("2d735e09-7c7c-4ed4-b3ca-996e094a2026")), New DevExpress.XtraBars.BarManagerCategory("Misc_Maintenance", New System.Guid("d45f4b42-7c78-4255-9839-0f9b81be7603")), New DevExpress.XtraBars.BarManagerCategory("Navigation", New System.Guid("d55c49d9-25b9-4030-98b4-b0b1e7d65b90"))})
+        Me.BarManager1.DockControls.Add(Me.barDockControlTop)
+        Me.BarManager1.DockControls.Add(Me.barDockControlBottom)
+        Me.BarManager1.DockControls.Add(Me.barDockControlLeft)
+        Me.BarManager1.DockControls.Add(Me.barDockControlRight)
         Me.BarManager1.Form = Me
         Me.BarManager1.MaxItemId = 73
         Me.BarManager1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbViewListRepos, Me.txtQuickSearchRepos, Me.cmbReportListRepos, Me.cmbFilterListRepos, Me.cmbDefaultListRepos})
@@ -959,7 +1017,7 @@ Partial Class FrmProductsVOD
         Me.XTabControlVod.Location = New System.Drawing.Point(0, 30)
         Me.XTabControlVod.Name = "XTabControlVod"
         Me.XTabControlVod.SelectedTabPage = Me.XTabSearch
-        Me.XTabControlVod.Size = New System.Drawing.Size(1020, 665)
+        Me.XTabControlVod.Size = New System.Drawing.Size(980, 665)
         Me.XTabControlVod.TabIndex = 4
         Me.XTabControlVod.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.XTabSearch, Me.XTabResult, Me.XTabView, Me.XTabProcess, Me.XTabViewVod, Me.XTabFtp, Me.XtabAutomateTranscode, Me.xTabVODOnlyMovie})
         Me.XTabControlVod.Text = "VOD"
@@ -977,7 +1035,7 @@ Partial Class FrmProductsVOD
         Me.XTabSearch.Controls.Add(Me.txtTitleSearch)
         Me.XTabSearch.Controls.Add(Me.lblPartTitle)
         Me.XTabSearch.Name = "XTabSearch"
-        Me.XTabSearch.Size = New System.Drawing.Size(1011, 634)
+        Me.XTabSearch.Size = New System.Drawing.Size(971, 634)
         Me.XTabSearch.Text = "Search"
         '
         'btnRipped
@@ -1062,7 +1120,7 @@ Partial Class FrmProductsVOD
         Me.XTabResult.Controls.Add(Me.btnSaveAllChanges)
         Me.XTabResult.Controls.Add(Me.GridVod)
         Me.XTabResult.Name = "XTabResult"
-        Me.XTabResult.Size = New System.Drawing.Size(1011, 634)
+        Me.XTabResult.Size = New System.Drawing.Size(971, 634)
         Me.XTabResult.Text = "Result"
         '
         'btnSaveAllChanges
@@ -1075,16 +1133,14 @@ Partial Class FrmProductsVOD
         '
         'GridVod
         '
-        Me.GridVod.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GridVod.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GridVod.EmbeddedNavigator.Name = ""
         Me.GridVod.FormsUseDefaultLookAndFeel = False
-        Me.GridVod.Location = New System.Drawing.Point(9, 32)
+        Me.GridVod.Location = New System.Drawing.Point(0, 0)
         Me.GridVod.MainView = Me.GridViewSearch
         Me.GridVod.Name = "GridVod"
         Me.GridVod.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbLanguages, Me.chkcolAvailable, Me.cmbStudio, Me.RepositorycmbSupportVod, Me.cmbgridStatus, Me.dpDateStart, Me.dtpDateExpired, Me.cmbLanguagesSubtitleEdit, Me.RepositoryItemLookUpEdit2, Me.spnedtCredit, Me.dpBackcatalogueStart, Me.dpBackcataloguExpired})
-        Me.GridVod.Size = New System.Drawing.Size(1000, 602)
+        Me.GridVod.Size = New System.Drawing.Size(971, 634)
         Me.GridVod.TabIndex = 4
         Me.GridVod.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewSearch})
         '
@@ -1094,7 +1150,7 @@ Partial Class FrmProductsVOD
         Me.GridViewSearch.Appearance.FocusedRow.Options.UseBackColor = True
         Me.GridViewSearch.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand1, Me.GridBand3, Me.GridBand4})
         Me.GridViewSearch.ColumnPanelRowHeight = 45
-        Me.GridViewSearch.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.colImdb_id, Me.collanguage_id, Me.colproducts_name, Me.ColAvailable_from, Me.colExpireAt, Me.colAvailableBackCatalogueFrom, Me.colBackcatalogueExpireAt, Me.colLanguage_subtitle, Me.colAvailable, Me.colStudio, Me.colStatus, Me.colSource, Me.colQuality, Me.colSupportVod, Me.colCredit})
+        Me.GridViewSearch.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.colImdb_id, Me.collanguage_id, Me.colproducts_name, Me.ColAvailable_from, Me.colExpireAt, Me.colAvailableBackCatalogueFrom, Me.colBackcatalogueExpireAt, Me.colLanguage_subtitle, Me.colAvailable, Me.colStudio, Me.colStatus, Me.colSource, Me.colQuality, Me.colSupportVod, Me.colCredit, Me.colcountry})
         Me.GridViewSearch.CustomizationFormBounds = New System.Drawing.Rectangle(0, 375, 225, 209)
         Me.GridViewSearch.DetailHeight = 50
         Me.GridViewSearch.GridControl = Me.GridVod
@@ -1364,6 +1420,12 @@ Partial Class FrmProductsVOD
         Me.GridBand4.Name = "GridBand4"
         Me.GridBand4.Width = 62
         '
+        'colcountry
+        '
+        Me.colcountry.Caption = "country"
+        Me.colcountry.FieldName = "country"
+        Me.colcountry.Name = "colcountry"
+        '
         'RepositoryItemLookUpEdit2
         '
         Me.RepositoryItemLookUpEdit2.AutoHeight = False
@@ -1373,13 +1435,16 @@ Partial Class FrmProductsVOD
         'XTabView
         '
         Me.XTabView.Controls.Add(Me.GroupBox1)
-        Me.XTabView.Controls.Add(Me.cmbDateLaterExpired)
-        Me.XTabView.Controls.Add(Me.cmbDateLaterStart)
-        Me.XTabView.Controls.Add(Me.lblDateLaterExpire)
-        Me.XTabView.Controls.Add(Me.lblDateLaterStart)
+        Me.XTabView.Controls.Add(Me.GroupBox2)
+        Me.XTabView.Controls.Add(Me.LabelControl15)
+        Me.XTabView.Controls.Add(Me.LabelControl12)
+        Me.XTabView.Controls.Add(Me.LabelControl10)
+        Me.XTabView.Controls.Add(Me.LabelControl9)
+        Me.XTabView.Controls.Add(Me.LabelControl8)
+        Me.XTabView.Controls.Add(Me.LabelControl7)
+        Me.XTabView.Controls.Add(Me.LabelControl6)
+        Me.XTabView.Controls.Add(Me.gpbLuxemburg)
         Me.XTabView.Controls.Add(Me.btnDeleteVOD)
-        Me.XTabView.Controls.Add(Me.lblCredit)
-        Me.XTabView.Controls.Add(Me.spedCredit)
         Me.XTabView.Controls.Add(Me.cmbSupportVod)
         Me.XTabView.Controls.Add(Me.lblSupport)
         Me.XTabView.Controls.Add(Me.cmbSource)
@@ -1390,19 +1455,11 @@ Partial Class FrmProductsVOD
         Me.XTabView.Controls.Add(Me.lblStatus)
         Me.XTabView.Controls.Add(Me.cmbStudioEdit)
         Me.XTabView.Controls.Add(Me.lblStudio)
-        Me.XTabView.Controls.Add(Me.txtId)
-        Me.XTabView.Controls.Add(Me.lblId)
         Me.XTabView.Controls.Add(Me.btnCancelVod)
         Me.XTabView.Controls.Add(Me.cmbLanguageSubtitle)
         Me.XTabView.Controls.Add(Me.cmbLanguageSound)
-        Me.XTabView.Controls.Add(Me.cmbDateExpired)
-        Me.XTabView.Controls.Add(Me.cmbDateStart)
         Me.XTabView.Controls.Add(Me.TxtFilename)
-        Me.XTabView.Controls.Add(Me.chkAvailable)
-        Me.XTabView.Controls.Add(Me.lblAvailable)
         Me.XTabView.Controls.Add(Me.lblNameFile)
-        Me.XTabView.Controls.Add(Me.lblDateExpired)
-        Me.XTabView.Controls.Add(Me.lblDateStart)
         Me.XTabView.Controls.Add(Me.lblLanguage_subtitle)
         Me.XTabView.Controls.Add(Me.lblLanguageSound)
         Me.XTabView.Controls.Add(Me.txtImdbView)
@@ -1410,49 +1467,314 @@ Partial Class FrmProductsVOD
         Me.XTabView.Controls.Add(Me.btnSaveVod)
         Me.XTabView.Controls.Add(Me.btnEditVod)
         Me.XTabView.Name = "XTabView"
-        Me.XTabView.Size = New System.Drawing.Size(1011, 634)
+        Me.XTabView.Size = New System.Drawing.Size(971, 634)
         Me.XTabView.Text = "View"
         '
-        'GroupBox1
+        'GroupBox2
         '
-        Me.GroupBox1.Controls.Add(Me.LabelControl4)
-        Me.GroupBox1.Controls.Add(Me.chkIsPPV)
-        Me.GroupBox1.Controls.Add(Me.txtPPVPrice)
-        Me.GroupBox1.Controls.Add(Me.LabelControl1)
-        Me.GroupBox1.Location = New System.Drawing.Point(521, 200)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(324, 165)
-        Me.GroupBox1.TabIndex = 91
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Pay per view - PPV"
+        Me.GroupBox2.Controls.Add(Me.txtIdNL)
+        Me.GroupBox2.Controls.Add(Me.txtPPVPriceNL)
+        Me.GroupBox2.Controls.Add(Me.LabelControl14)
+        Me.GroupBox2.Controls.Add(Me.chkIsPPVNL)
+        Me.GroupBox2.Controls.Add(Me.chkNL)
+        Me.GroupBox2.Controls.Add(Me.spedCreditNL)
+        Me.GroupBox2.Controls.Add(Me.chkAvailableNL)
+        Me.GroupBox2.Controls.Add(Me.cmbDateLaterExpiredNL)
+        Me.GroupBox2.Controls.Add(Me.cmbDateLaterStartNL)
+        Me.GroupBox2.Controls.Add(Me.cmbDateExpiredNL)
+        Me.GroupBox2.Controls.Add(Me.cmbDateStartNL)
+        Me.GroupBox2.Location = New System.Drawing.Point(18, 524)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(932, 82)
+        Me.GroupBox2.TabIndex = 101
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Nederland"
         '
-        'LabelControl4
+        'txtIdNL
         '
-        Me.LabelControl4.Location = New System.Drawing.Point(21, 31)
-        Me.LabelControl4.Name = "LabelControl4"
-        Me.LabelControl4.Size = New System.Drawing.Size(278, 13)
-        Me.LabelControl4.TabIndex = 94
-        Me.LabelControl4.Text = "This price will be automaticaly set to all VODs of this movie"
+        Me.txtIdNL.Enabled = False
+        Me.txtIdNL.Location = New System.Drawing.Point(76, 19)
+        Me.txtIdNL.Name = "txtIdNL"
+        Me.txtIdNL.Size = New System.Drawing.Size(73, 20)
+        Me.txtIdNL.TabIndex = 102
         '
-        'chkIsPPV
+        'txtPPVPriceNL
         '
-        Me.chkIsPPV.Location = New System.Drawing.Point(19, 72)
-        Me.chkIsPPV.Name = "chkIsPPV"
-        Me.chkIsPPV.Properties.Caption = "Is PPV"
-        Me.chkIsPPV.Size = New System.Drawing.Size(108, 19)
-        Me.chkIsPPV.TabIndex = 93
+        Me.txtPPVPriceNL.Enabled = False
+        Me.txtPPVPriceNL.Location = New System.Drawing.Point(820, 52)
+        Me.txtPPVPriceNL.Name = "txtPPVPriceNL"
+        Me.txtPPVPriceNL.Size = New System.Drawing.Size(98, 20)
+        Me.txtPPVPriceNL.TabIndex = 98
         '
-        'txtPPVPrice
+        'LabelControl14
         '
-        Me.txtPPVPrice.Enabled = False
-        Me.txtPPVPrice.Location = New System.Drawing.Point(118, 109)
-        Me.txtPPVPrice.Name = "txtPPVPrice"
-        Me.txtPPVPrice.Size = New System.Drawing.Size(179, 20)
-        Me.txtPPVPrice.TabIndex = 68
+        Me.LabelControl14.Location = New System.Drawing.Point(756, 55)
+        Me.LabelControl14.Name = "LabelControl14"
+        Me.LabelControl14.Size = New System.Drawing.Size(44, 13)
+        Me.LabelControl14.TabIndex = 97
+        Me.LabelControl14.Text = "PPV price"
+        '
+        'chkIsPPVNL
+        '
+        Me.chkIsPPVNL.Location = New System.Drawing.Point(818, 20)
+        Me.chkIsPPVNL.Name = "chkIsPPVNL"
+        Me.chkIsPPVNL.Properties.Caption = "Is PPV"
+        Me.chkIsPPVNL.Size = New System.Drawing.Size(59, 19)
+        Me.chkIsPPVNL.TabIndex = 96
+        '
+        'chkNL
+        '
+        Me.chkNL.Location = New System.Drawing.Point(6, 20)
+        Me.chkNL.Name = "chkNL"
+        Me.chkNL.Properties.Caption = ""
+        Me.chkNL.Size = New System.Drawing.Size(56, 19)
+        Me.chkNL.TabIndex = 95
+        '
+        'spedCreditNL
+        '
+        Me.spedCreditNL.EditValue = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.spedCreditNL.Location = New System.Drawing.Point(726, 19)
+        Me.spedCreditNL.Name = "spedCreditNL"
+        Me.spedCreditNL.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+        Me.spedCreditNL.Properties.MaxValue = New Decimal(New Integer() {4, 0, 0, 0})
+        Me.spedCreditNL.Properties.MinValue = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.spedCreditNL.Size = New System.Drawing.Size(59, 20)
+        Me.spedCreditNL.TabIndex = 94
+        '
+        'chkAvailableNL
+        '
+        Me.chkAvailableNL.Location = New System.Drawing.Point(674, 20)
+        Me.chkAvailableNL.Name = "chkAvailableNL"
+        Me.chkAvailableNL.Properties.Caption = ""
+        Me.chkAvailableNL.Size = New System.Drawing.Size(47, 19)
+        Me.chkAvailableNL.TabIndex = 92
+        '
+        'cmbDateLaterExpiredNL
+        '
+        Me.cmbDateLaterExpiredNL.EditValue = Nothing
+        Me.cmbDateLaterExpiredNL.Enabled = False
+        Me.cmbDateLaterExpiredNL.Location = New System.Drawing.Point(547, 19)
+        Me.cmbDateLaterExpiredNL.Name = "cmbDateLaterExpiredNL"
+        Me.cmbDateLaterExpiredNL.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbDateLaterExpiredNL.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+        Me.cmbDateLaterExpiredNL.Size = New System.Drawing.Size(112, 20)
+        Me.cmbDateLaterExpiredNL.TabIndex = 91
+        '
+        'cmbDateLaterStartNL
+        '
+        Me.cmbDateLaterStartNL.EditValue = Nothing
+        Me.cmbDateLaterStartNL.Enabled = False
+        Me.cmbDateLaterStartNL.Location = New System.Drawing.Point(429, 19)
+        Me.cmbDateLaterStartNL.Name = "cmbDateLaterStartNL"
+        Me.cmbDateLaterStartNL.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbDateLaterStartNL.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+        Me.cmbDateLaterStartNL.Size = New System.Drawing.Size(112, 20)
+        Me.cmbDateLaterStartNL.TabIndex = 90
+        '
+        'cmbDateExpiredNL
+        '
+        Me.cmbDateExpiredNL.EditValue = Nothing
+        Me.cmbDateExpiredNL.Enabled = False
+        Me.cmbDateExpiredNL.Location = New System.Drawing.Point(312, 19)
+        Me.cmbDateExpiredNL.Name = "cmbDateExpiredNL"
+        Me.cmbDateExpiredNL.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbDateExpiredNL.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+        Me.cmbDateExpiredNL.Size = New System.Drawing.Size(112, 20)
+        Me.cmbDateExpiredNL.TabIndex = 78
+        '
+        'cmbDateStartNL
+        '
+        Me.cmbDateStartNL.EditValue = Nothing
+        Me.cmbDateStartNL.Enabled = False
+        Me.cmbDateStartNL.Location = New System.Drawing.Point(194, 19)
+        Me.cmbDateStartNL.Name = "cmbDateStartNL"
+        Me.cmbDateStartNL.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbDateStartNL.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+        Me.cmbDateStartNL.Size = New System.Drawing.Size(112, 20)
+        Me.cmbDateStartNL.TabIndex = 77
+        '
+        'LabelControl15
+        '
+        Me.LabelControl15.Location = New System.Drawing.Point(94, 310)
+        Me.LabelControl15.Name = "LabelControl15"
+        Me.LabelControl15.Size = New System.Drawing.Size(11, 13)
+        Me.LabelControl15.TabIndex = 99
+        Me.LabelControl15.Text = "ID"
+        '
+        'LabelControl12
+        '
+        Me.LabelControl12.Location = New System.Drawing.Point(877, 310)
+        Me.LabelControl12.Name = "LabelControl12"
+        Me.LabelControl12.Size = New System.Drawing.Size(27, 13)
+        Me.LabelControl12.TabIndex = 100
+        Me.LabelControl12.Text = "credit"
+        '
+        'LabelControl10
+        '
+        Me.LabelControl10.Location = New System.Drawing.Point(694, 310)
+        Me.LabelControl10.Name = "LabelControl10"
+        Me.LabelControl10.Size = New System.Drawing.Size(42, 13)
+        Me.LabelControl10.TabIndex = 98
+        Me.LabelControl10.Text = "available"
+        '
+        'LabelControl9
+        '
+        Me.LabelControl9.Location = New System.Drawing.Point(565, 310)
+        Me.LabelControl9.Name = "LabelControl9"
+        Me.LabelControl9.Size = New System.Drawing.Size(97, 13)
+        Me.LabelControl9.TabIndex = 97
+        Me.LabelControl9.Text = "backatalogue expire"
+        '
+        'LabelControl8
+        '
+        Me.LabelControl8.Location = New System.Drawing.Point(447, 310)
+        Me.LabelControl8.Name = "LabelControl8"
+        Me.LabelControl8.Size = New System.Drawing.Size(90, 13)
+        Me.LabelControl8.TabIndex = 96
+        Me.LabelControl8.Text = "backatalogue start"
+        '
+        'LabelControl7
+        '
+        Me.LabelControl7.Location = New System.Drawing.Point(330, 310)
+        Me.LabelControl7.Name = "LabelControl7"
+        Me.LabelControl7.Size = New System.Drawing.Size(61, 13)
+        Me.LabelControl7.TabIndex = 95
+        Me.LabelControl7.Text = "date expired"
+        '
+        'LabelControl6
+        '
+        Me.LabelControl6.Location = New System.Drawing.Point(212, 310)
+        Me.LabelControl6.Name = "LabelControl6"
+        Me.LabelControl6.Size = New System.Drawing.Size(48, 13)
+        Me.LabelControl6.TabIndex = 94
+        Me.LabelControl6.Text = "date start"
+        '
+        'gpbLuxemburg
+        '
+        Me.gpbLuxemburg.Controls.Add(Me.txtIdLU)
+        Me.gpbLuxemburg.Controls.Add(Me.txtPPVPriceLU)
+        Me.gpbLuxemburg.Controls.Add(Me.LabelControl13)
+        Me.gpbLuxemburg.Controls.Add(Me.chkIsPPVLU)
+        Me.gpbLuxemburg.Controls.Add(Me.chkLU)
+        Me.gpbLuxemburg.Controls.Add(Me.spedCreditLU)
+        Me.gpbLuxemburg.Controls.Add(Me.chkAvailableLU)
+        Me.gpbLuxemburg.Controls.Add(Me.cmbDateLaterExpiredLU)
+        Me.gpbLuxemburg.Controls.Add(Me.cmbDateLaterStartLU)
+        Me.gpbLuxemburg.Controls.Add(Me.cmbDateExpiredLU)
+        Me.gpbLuxemburg.Controls.Add(Me.cmbDateStartLU)
+        Me.gpbLuxemburg.Location = New System.Drawing.Point(18, 436)
+        Me.gpbLuxemburg.Name = "gpbLuxemburg"
+        Me.gpbLuxemburg.Size = New System.Drawing.Size(932, 82)
+        Me.gpbLuxemburg.TabIndex = 92
+        Me.gpbLuxemburg.TabStop = False
+        Me.gpbLuxemburg.Text = "Luxemburg"
+        '
+        'txtIdLU
+        '
+        Me.txtIdLU.Enabled = False
+        Me.txtIdLU.Location = New System.Drawing.Point(76, 19)
+        Me.txtIdLU.Name = "txtIdLU"
+        Me.txtIdLU.Size = New System.Drawing.Size(73, 20)
+        Me.txtIdLU.TabIndex = 100
+        '
+        'txtPPVPriceLU
+        '
+        Me.txtPPVPriceLU.Enabled = False
+        Me.txtPPVPriceLU.Location = New System.Drawing.Point(820, 51)
+        Me.txtPPVPriceLU.Name = "txtPPVPriceLU"
+        Me.txtPPVPriceLU.Size = New System.Drawing.Size(98, 20)
+        Me.txtPPVPriceLU.TabIndex = 98
+        '
+        'LabelControl13
+        '
+        Me.LabelControl13.Location = New System.Drawing.Point(756, 55)
+        Me.LabelControl13.Name = "LabelControl13"
+        Me.LabelControl13.Size = New System.Drawing.Size(44, 13)
+        Me.LabelControl13.TabIndex = 97
+        Me.LabelControl13.Text = "PPV price"
+        '
+        'chkIsPPVLU
+        '
+        Me.chkIsPPVLU.Location = New System.Drawing.Point(818, 19)
+        Me.chkIsPPVLU.Name = "chkIsPPVLU"
+        Me.chkIsPPVLU.Properties.Caption = "Is PPV"
+        Me.chkIsPPVLU.Size = New System.Drawing.Size(59, 19)
+        Me.chkIsPPVLU.TabIndex = 96
+        '
+        'chkLU
+        '
+        Me.chkLU.Location = New System.Drawing.Point(6, 20)
+        Me.chkLU.Name = "chkLU"
+        Me.chkLU.Properties.Caption = ""
+        Me.chkLU.Size = New System.Drawing.Size(56, 19)
+        Me.chkLU.TabIndex = 95
+        '
+        'spedCreditLU
+        '
+        Me.spedCreditLU.EditValue = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.spedCreditLU.Location = New System.Drawing.Point(726, 19)
+        Me.spedCreditLU.Name = "spedCreditLU"
+        Me.spedCreditLU.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+        Me.spedCreditLU.Properties.MaxValue = New Decimal(New Integer() {4, 0, 0, 0})
+        Me.spedCreditLU.Properties.MinValue = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.spedCreditLU.Size = New System.Drawing.Size(59, 20)
+        Me.spedCreditLU.TabIndex = 94
+        '
+        'chkAvailableLU
+        '
+        Me.chkAvailableLU.Location = New System.Drawing.Point(674, 20)
+        Me.chkAvailableLU.Name = "chkAvailableLU"
+        Me.chkAvailableLU.Properties.Caption = ""
+        Me.chkAvailableLU.Size = New System.Drawing.Size(47, 19)
+        Me.chkAvailableLU.TabIndex = 92
+        '
+        'cmbDateLaterExpiredLU
+        '
+        Me.cmbDateLaterExpiredLU.EditValue = Nothing
+        Me.cmbDateLaterExpiredLU.Enabled = False
+        Me.cmbDateLaterExpiredLU.Location = New System.Drawing.Point(547, 19)
+        Me.cmbDateLaterExpiredLU.Name = "cmbDateLaterExpiredLU"
+        Me.cmbDateLaterExpiredLU.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbDateLaterExpiredLU.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+        Me.cmbDateLaterExpiredLU.Size = New System.Drawing.Size(112, 20)
+        Me.cmbDateLaterExpiredLU.TabIndex = 91
+        '
+        'cmbDateLaterStartLU
+        '
+        Me.cmbDateLaterStartLU.EditValue = Nothing
+        Me.cmbDateLaterStartLU.Enabled = False
+        Me.cmbDateLaterStartLU.Location = New System.Drawing.Point(429, 19)
+        Me.cmbDateLaterStartLU.Name = "cmbDateLaterStartLU"
+        Me.cmbDateLaterStartLU.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbDateLaterStartLU.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+        Me.cmbDateLaterStartLU.Size = New System.Drawing.Size(112, 20)
+        Me.cmbDateLaterStartLU.TabIndex = 90
+        '
+        'cmbDateExpiredLU
+        '
+        Me.cmbDateExpiredLU.EditValue = Nothing
+        Me.cmbDateExpiredLU.Enabled = False
+        Me.cmbDateExpiredLU.Location = New System.Drawing.Point(312, 19)
+        Me.cmbDateExpiredLU.Name = "cmbDateExpiredLU"
+        Me.cmbDateExpiredLU.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbDateExpiredLU.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+        Me.cmbDateExpiredLU.Size = New System.Drawing.Size(112, 20)
+        Me.cmbDateExpiredLU.TabIndex = 78
+        '
+        'cmbDateStartLU
+        '
+        Me.cmbDateStartLU.EditValue = Nothing
+        Me.cmbDateStartLU.Enabled = False
+        Me.cmbDateStartLU.Location = New System.Drawing.Point(194, 19)
+        Me.cmbDateStartLU.Name = "cmbDateStartLU"
+        Me.cmbDateStartLU.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbDateStartLU.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+        Me.cmbDateStartLU.Size = New System.Drawing.Size(112, 20)
+        Me.cmbDateStartLU.TabIndex = 77
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(23, 113)
+        Me.LabelControl1.Location = New System.Drawing.Point(770, 58)
         Me.LabelControl1.Name = "LabelControl1"
         Me.LabelControl1.Size = New System.Drawing.Size(44, 13)
         Me.LabelControl1.TabIndex = 67
@@ -1462,7 +1784,7 @@ Partial Class FrmProductsVOD
         '
         Me.cmbDateLaterExpired.EditValue = Nothing
         Me.cmbDateLaterExpired.Enabled = False
-        Me.cmbDateLaterExpired.Location = New System.Drawing.Point(123, 358)
+        Me.cmbDateLaterExpired.Location = New System.Drawing.Point(548, 18)
         Me.cmbDateLaterExpired.Name = "cmbDateLaterExpired"
         Me.cmbDateLaterExpired.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbDateLaterExpired.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
@@ -1473,28 +1795,12 @@ Partial Class FrmProductsVOD
         '
         Me.cmbDateLaterStart.EditValue = Nothing
         Me.cmbDateLaterStart.Enabled = False
-        Me.cmbDateLaterStart.Location = New System.Drawing.Point(123, 312)
+        Me.cmbDateLaterStart.Location = New System.Drawing.Point(430, 18)
         Me.cmbDateLaterStart.Name = "cmbDateLaterStart"
         Me.cmbDateLaterStart.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbDateLaterStart.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
         Me.cmbDateLaterStart.Size = New System.Drawing.Size(112, 20)
         Me.cmbDateLaterStart.TabIndex = 89
-        '
-        'lblDateLaterExpire
-        '
-        Me.lblDateLaterExpire.Location = New System.Drawing.Point(18, 362)
-        Me.lblDateLaterExpire.Name = "lblDateLaterExpire"
-        Me.lblDateLaterExpire.Size = New System.Drawing.Size(97, 13)
-        Me.lblDateLaterExpire.TabIndex = 88
-        Me.lblDateLaterExpire.Text = "backatalogue expire"
-        '
-        'lblDateLaterStart
-        '
-        Me.lblDateLaterStart.Location = New System.Drawing.Point(18, 316)
-        Me.lblDateLaterStart.Name = "lblDateLaterStart"
-        Me.lblDateLaterStart.Size = New System.Drawing.Size(90, 13)
-        Me.lblDateLaterStart.TabIndex = 87
-        Me.lblDateLaterStart.Text = "backatalogue start"
         '
         'btnDeleteVOD
         '
@@ -1505,30 +1811,22 @@ Partial Class FrmProductsVOD
         Me.btnDeleteVOD.TabIndex = 86
         Me.btnDeleteVOD.Text = "Delete"
         '
-        'lblCredit
-        '
-        Me.lblCredit.Location = New System.Drawing.Point(257, 362)
-        Me.lblCredit.Name = "lblCredit"
-        Me.lblCredit.Size = New System.Drawing.Size(27, 13)
-        Me.lblCredit.TabIndex = 85
-        Me.lblCredit.Text = "credit"
-        '
         'spedCredit
         '
         Me.spedCredit.EditValue = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.spedCredit.Location = New System.Drawing.Point(352, 358)
+        Me.spedCredit.Location = New System.Drawing.Point(726, 18)
         Me.spedCredit.Name = "spedCredit"
         Me.spedCredit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
         Me.spedCredit.Properties.MaxValue = New Decimal(New Integer() {4, 0, 0, 0})
         Me.spedCredit.Properties.MinValue = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.spedCredit.Size = New System.Drawing.Size(112, 20)
+        Me.spedCredit.Size = New System.Drawing.Size(59, 20)
         Me.spedCredit.TabIndex = 84
         '
         'cmbSupportVod
         '
         Me.cmbSupportVod.AllowDrop = True
         Me.cmbSupportVod.Enabled = False
-        Me.cmbSupportVod.Location = New System.Drawing.Point(352, 312)
+        Me.cmbSupportVod.Location = New System.Drawing.Point(594, 135)
         Me.cmbSupportVod.Name = "cmbSupportVod"
         Me.cmbSupportVod.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbSupportVod.Properties.DisplayMember = "status_desc"
@@ -1539,7 +1837,7 @@ Partial Class FrmProductsVOD
         '
         'lblSupport
         '
-        Me.lblSupport.Location = New System.Drawing.Point(257, 316)
+        Me.lblSupport.Location = New System.Drawing.Point(542, 139)
         Me.lblSupport.Name = "lblSupport"
         Me.lblSupport.Size = New System.Drawing.Size(37, 13)
         Me.lblSupport.TabIndex = 82
@@ -1549,7 +1847,7 @@ Partial Class FrmProductsVOD
         '
         Me.cmbSource.AllowDrop = True
         Me.cmbSource.Enabled = False
-        Me.cmbSource.Location = New System.Drawing.Point(351, 270)
+        Me.cmbSource.Location = New System.Drawing.Point(594, 100)
         Me.cmbSource.Name = "cmbSource"
         Me.cmbSource.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbSource.Properties.DisplayMember = "status_desc"
@@ -1560,7 +1858,7 @@ Partial Class FrmProductsVOD
         '
         'lblSource
         '
-        Me.lblSource.Location = New System.Drawing.Point(259, 274)
+        Me.lblSource.Location = New System.Drawing.Point(542, 104)
         Me.lblSource.Name = "lblSource"
         Me.lblSource.Size = New System.Drawing.Size(32, 13)
         Me.lblSource.TabIndex = 80
@@ -1570,7 +1868,7 @@ Partial Class FrmProductsVOD
         '
         Me.cmbQuality.AllowDrop = True
         Me.cmbQuality.Enabled = False
-        Me.cmbQuality.Location = New System.Drawing.Point(352, 224)
+        Me.cmbQuality.Location = New System.Drawing.Point(398, 171)
         Me.cmbQuality.Name = "cmbQuality"
         Me.cmbQuality.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbQuality.Properties.DisplayMember = "status_desc"
@@ -1581,7 +1879,7 @@ Partial Class FrmProductsVOD
         '
         'lblHigh
         '
-        Me.lblHigh.Location = New System.Drawing.Point(257, 228)
+        Me.lblHigh.Location = New System.Drawing.Point(349, 175)
         Me.lblHigh.Name = "lblHigh"
         Me.lblHigh.Size = New System.Drawing.Size(32, 13)
         Me.lblHigh.TabIndex = 78
@@ -1590,7 +1888,7 @@ Partial Class FrmProductsVOD
         'cmbStatus
         '
         Me.cmbStatus.Enabled = False
-        Me.cmbStatus.Location = New System.Drawing.Point(352, 178)
+        Me.cmbStatus.Location = New System.Drawing.Point(398, 136)
         Me.cmbStatus.Name = "cmbStatus"
         Me.cmbStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbStatus.Properties.DisplayMember = "status_desc"
@@ -1601,7 +1899,7 @@ Partial Class FrmProductsVOD
         '
         'lblStatus
         '
-        Me.lblStatus.Location = New System.Drawing.Point(257, 182)
+        Me.lblStatus.Location = New System.Drawing.Point(349, 140)
         Me.lblStatus.Name = "lblStatus"
         Me.lblStatus.Size = New System.Drawing.Size(30, 13)
         Me.lblStatus.TabIndex = 76
@@ -1610,7 +1908,7 @@ Partial Class FrmProductsVOD
         'cmbStudioEdit
         '
         Me.cmbStudioEdit.Enabled = False
-        Me.cmbStudioEdit.Location = New System.Drawing.Point(123, 107)
+        Me.cmbStudioEdit.Location = New System.Drawing.Point(398, 100)
         Me.cmbStudioEdit.Name = "cmbStudioEdit"
         Me.cmbStudioEdit.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbStudioEdit.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("studio_id", "id", 63, DevExpress.Utils.FormatType.Numeric, "", True, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("studio_name", "name", 64, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
@@ -1622,7 +1920,7 @@ Partial Class FrmProductsVOD
         '
         'lblStudio
         '
-        Me.lblStudio.Location = New System.Drawing.Point(18, 110)
+        Me.lblStudio.Location = New System.Drawing.Point(349, 104)
         Me.lblStudio.Name = "lblStudio"
         Me.lblStudio.Size = New System.Drawing.Size(29, 13)
         Me.lblStudio.TabIndex = 74
@@ -1631,18 +1929,10 @@ Partial Class FrmProductsVOD
         'txtId
         '
         Me.txtId.Enabled = False
-        Me.txtId.Location = New System.Drawing.Point(389, 66)
+        Me.txtId.Location = New System.Drawing.Point(76, 18)
         Me.txtId.Name = "txtId"
-        Me.txtId.Size = New System.Drawing.Size(112, 20)
+        Me.txtId.Size = New System.Drawing.Size(73, 20)
         Me.txtId.TabIndex = 73
-        '
-        'lblId
-        '
-        Me.lblId.Location = New System.Drawing.Point(352, 69)
-        Me.lblId.Name = "lblId"
-        Me.lblId.Size = New System.Drawing.Size(11, 13)
-        Me.lblId.TabIndex = 72
-        Me.lblId.Text = "ID"
         '
         'btnCancelVod
         '
@@ -1656,7 +1946,7 @@ Partial Class FrmProductsVOD
         'cmbLanguageSubtitle
         '
         Me.cmbLanguageSubtitle.Enabled = False
-        Me.cmbLanguageSubtitle.Location = New System.Drawing.Point(123, 178)
+        Me.cmbLanguageSubtitle.Location = New System.Drawing.Point(123, 208)
         Me.cmbLanguageSubtitle.Name = "cmbLanguageSubtitle"
         Me.cmbLanguageSubtitle.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbLanguageSubtitle.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("subtitle_id", "id", 63, DevExpress.Utils.FormatType.Numeric, "", True, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("lngdsc", "Language", 64, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
@@ -1669,7 +1959,7 @@ Partial Class FrmProductsVOD
         'cmbLanguageSound
         '
         Me.cmbLanguageSound.Enabled = False
-        Me.cmbLanguageSound.Location = New System.Drawing.Point(123, 142)
+        Me.cmbLanguageSound.Location = New System.Drawing.Point(123, 173)
         Me.cmbLanguageSound.Name = "cmbLanguageSound"
         Me.cmbLanguageSound.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbLanguageSound.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "id", 63, DevExpress.Utils.FormatType.Numeric, "", True, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("lngdsc", "Language", 64, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
@@ -1683,7 +1973,7 @@ Partial Class FrmProductsVOD
         '
         Me.cmbDateExpired.EditValue = Nothing
         Me.cmbDateExpired.Enabled = False
-        Me.cmbDateExpired.Location = New System.Drawing.Point(123, 270)
+        Me.cmbDateExpired.Location = New System.Drawing.Point(312, 18)
         Me.cmbDateExpired.Name = "cmbDateExpired"
         Me.cmbDateExpired.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbDateExpired.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
@@ -1694,7 +1984,7 @@ Partial Class FrmProductsVOD
         '
         Me.cmbDateStart.EditValue = Nothing
         Me.cmbDateStart.Enabled = False
-        Me.cmbDateStart.Location = New System.Drawing.Point(123, 224)
+        Me.cmbDateStart.Location = New System.Drawing.Point(194, 18)
         Me.cmbDateStart.Name = "cmbDateStart"
         Me.cmbDateStart.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbDateStart.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
@@ -1704,54 +1994,30 @@ Partial Class FrmProductsVOD
         'TxtFilename
         '
         Me.TxtFilename.Enabled = False
-        Me.TxtFilename.Location = New System.Drawing.Point(352, 103)
+        Me.TxtFilename.Location = New System.Drawing.Point(123, 135)
         Me.TxtFilename.Name = "TxtFilename"
         Me.TxtFilename.Size = New System.Drawing.Size(179, 20)
         Me.TxtFilename.TabIndex = 66
         '
         'chkAvailable
         '
-        Me.chkAvailable.Location = New System.Drawing.Point(350, 143)
+        Me.chkAvailable.Location = New System.Drawing.Point(674, 19)
         Me.chkAvailable.Name = "chkAvailable"
         Me.chkAvailable.Properties.Caption = ""
-        Me.chkAvailable.Size = New System.Drawing.Size(56, 19)
+        Me.chkAvailable.Size = New System.Drawing.Size(44, 19)
         Me.chkAvailable.TabIndex = 65
-        '
-        'lblAvailable
-        '
-        Me.lblAvailable.Location = New System.Drawing.Point(257, 146)
-        Me.lblAvailable.Name = "lblAvailable"
-        Me.lblAvailable.Size = New System.Drawing.Size(42, 13)
-        Me.lblAvailable.TabIndex = 64
-        Me.lblAvailable.Text = "available"
         '
         'lblNameFile
         '
-        Me.lblNameFile.Location = New System.Drawing.Point(257, 110)
+        Me.lblNameFile.Location = New System.Drawing.Point(18, 139)
         Me.lblNameFile.Name = "lblNameFile"
         Me.lblNameFile.Size = New System.Drawing.Size(43, 13)
         Me.lblNameFile.TabIndex = 63
         Me.lblNameFile.Text = "file name"
         '
-        'lblDateExpired
-        '
-        Me.lblDateExpired.Location = New System.Drawing.Point(18, 274)
-        Me.lblDateExpired.Name = "lblDateExpired"
-        Me.lblDateExpired.Size = New System.Drawing.Size(61, 13)
-        Me.lblDateExpired.TabIndex = 62
-        Me.lblDateExpired.Text = "date expired"
-        '
-        'lblDateStart
-        '
-        Me.lblDateStart.Location = New System.Drawing.Point(18, 228)
-        Me.lblDateStart.Name = "lblDateStart"
-        Me.lblDateStart.Size = New System.Drawing.Size(48, 13)
-        Me.lblDateStart.TabIndex = 61
-        Me.lblDateStart.Text = "date start"
-        '
         'lblLanguage_subtitle
         '
-        Me.lblLanguage_subtitle.Location = New System.Drawing.Point(18, 182)
+        Me.lblLanguage_subtitle.Location = New System.Drawing.Point(18, 212)
         Me.lblLanguage_subtitle.Name = "lblLanguage_subtitle"
         Me.lblLanguage_subtitle.Size = New System.Drawing.Size(82, 13)
         Me.lblLanguage_subtitle.TabIndex = 60
@@ -1759,7 +2025,7 @@ Partial Class FrmProductsVOD
         '
         'lblLanguageSound
         '
-        Me.lblLanguageSound.Location = New System.Drawing.Point(18, 146)
+        Me.lblLanguageSound.Location = New System.Drawing.Point(17, 177)
         Me.lblLanguageSound.Name = "lblLanguageSound"
         Me.lblLanguageSound.Size = New System.Drawing.Size(76, 13)
         Me.lblLanguageSound.TabIndex = 59
@@ -1768,14 +2034,14 @@ Partial Class FrmProductsVOD
         'txtImdbView
         '
         Me.txtImdbView.Enabled = False
-        Me.txtImdbView.Location = New System.Drawing.Point(123, 81)
+        Me.txtImdbView.Location = New System.Drawing.Point(123, 100)
         Me.txtImdbView.Name = "txtImdbView"
         Me.txtImdbView.Size = New System.Drawing.Size(112, 20)
         Me.txtImdbView.TabIndex = 58
         '
         'lblImdbView
         '
-        Me.lblImdbView.Location = New System.Drawing.Point(18, 84)
+        Me.lblImdbView.Location = New System.Drawing.Point(18, 104)
         Me.lblImdbView.Name = "lblImdbView"
         Me.lblImdbView.Size = New System.Drawing.Size(38, 13)
         Me.lblImdbView.TabIndex = 57
@@ -1810,7 +2076,7 @@ Partial Class FrmProductsVOD
         Me.XTabProcess.Controls.Add(Me.btnSource)
         Me.XTabProcess.Controls.Add(Me.lblPathSourceTitle)
         Me.XTabProcess.Name = "XTabProcess"
-        Me.XTabProcess.Size = New System.Drawing.Size(1011, 634)
+        Me.XTabProcess.Size = New System.Drawing.Size(971, 634)
         Me.XTabProcess.Text = "Processus vod"
         '
         'lblDestinationPathFile
@@ -1882,7 +2148,7 @@ Partial Class FrmProductsVOD
         Me.XTabViewVod.Controls.Add(Me.GridVodWatch)
         Me.XTabViewVod.Controls.Add(Me.WebSiteDvdPost)
         Me.XTabViewVod.Name = "XTabViewVod"
-        Me.XTabViewVod.Size = New System.Drawing.Size(1011, 634)
+        Me.XTabViewVod.Size = New System.Drawing.Size(971, 634)
         Me.XTabViewVod.Text = "view vod"
         '
         'GridVodWatch
@@ -2086,7 +2352,7 @@ Partial Class FrmProductsVOD
         Me.XTabFtp.Controls.Add(Me.BtnCompare)
         Me.XTabFtp.Controls.Add(Me.lblFTP)
         Me.XTabFtp.Name = "XTabFtp"
-        Me.XTabFtp.Size = New System.Drawing.Size(1011, 634)
+        Me.XTabFtp.Size = New System.Drawing.Size(971, 634)
         Me.XTabFtp.Text = "Compare Ftp"
         '
         'lblDbFtp
@@ -2229,7 +2495,7 @@ Partial Class FrmProductsVOD
         Me.XtabAutomateTranscode.Controls.Add(Me.lblTxtFile)
         Me.XtabAutomateTranscode.Margin = New System.Windows.Forms.Padding(2)
         Me.XtabAutomateTranscode.Name = "XtabAutomateTranscode"
-        Me.XtabAutomateTranscode.Size = New System.Drawing.Size(1011, 634)
+        Me.XtabAutomateTranscode.Size = New System.Drawing.Size(971, 634)
         Me.XtabAutomateTranscode.Text = "Automate Transcode"
         Me.XtabAutomateTranscode.Tooltip = "Deletes data from last load"
         '
@@ -2308,7 +2574,7 @@ Partial Class FrmProductsVOD
         Me.xTabVODOnlyMovie.Controls.Add(Me.grdOnlyVODMovie)
         Me.xTabVODOnlyMovie.Controls.Add(Me.btnAllNoMovieInfo)
         Me.xTabVODOnlyMovie.Name = "xTabVODOnlyMovie"
-        Me.xTabVODOnlyMovie.Size = New System.Drawing.Size(1011, 634)
+        Me.xTabVODOnlyMovie.Size = New System.Drawing.Size(971, 634)
         Me.xTabVODOnlyMovie.Text = "VOD Without Info"
         '
         'grdOnlyVODMovie
@@ -2418,11 +2684,46 @@ Partial Class FrmProductsVOD
         Me.FolderChoose.RootFolder = System.Environment.SpecialFolder.MyComputer
         Me.FolderChoose.SelectedPath = "Z:\VOD\tmp"
         '
+        'chkIsPPV
+        '
+        Me.chkIsPPV.Location = New System.Drawing.Point(818, 18)
+        Me.chkIsPPV.Name = "chkIsPPV"
+        Me.chkIsPPV.Properties.Caption = "Is PPV"
+        Me.chkIsPPV.Size = New System.Drawing.Size(69, 19)
+        Me.chkIsPPV.TabIndex = 103
+        '
+        'txtPPVPrice
+        '
+        Me.txtPPVPrice.Enabled = False
+        Me.txtPPVPrice.Location = New System.Drawing.Point(820, 52)
+        Me.txtPPVPrice.Name = "txtPPVPrice"
+        Me.txtPPVPrice.Size = New System.Drawing.Size(97, 20)
+        Me.txtPPVPrice.TabIndex = 102
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.txtId)
+        Me.GroupBox1.Controls.Add(Me.LabelControl1)
+        Me.GroupBox1.Controls.Add(Me.cmbDateStart)
+        Me.GroupBox1.Controls.Add(Me.cmbDateExpired)
+        Me.GroupBox1.Controls.Add(Me.chkIsPPV)
+        Me.GroupBox1.Controls.Add(Me.cmbDateLaterStart)
+        Me.GroupBox1.Controls.Add(Me.txtPPVPrice)
+        Me.GroupBox1.Controls.Add(Me.cmbDateLaterExpired)
+        Me.GroupBox1.Controls.Add(Me.chkAvailable)
+        Me.GroupBox1.Controls.Add(Me.spedCredit)
+        Me.GroupBox1.Location = New System.Drawing.Point(18, 329)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(928, 82)
+        Me.GroupBox1.TabIndex = 104
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Belgium"
+        '
         'FrmProductsVOD
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1020, 695)
+        Me.ClientSize = New System.Drawing.Size(980, 695)
         Me.Controls.Add(Me.XTabControlVod)
         Me.Controls.Add(Me.barDockControlLeft)
         Me.Controls.Add(Me.barDockControlRight)
@@ -2469,10 +2770,38 @@ Partial Class FrmProductsVOD
         CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XTabView.ResumeLayout(False)
         Me.XTabView.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        CType(Me.chkIsPPV.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtPPVPrice.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        CType(Me.txtIdNL.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtPPVPriceNL.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkIsPPVNL.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkNL.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.spedCreditNL.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkAvailableNL.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbDateLaterExpiredNL.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbDateLaterExpiredNL.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbDateLaterStartNL.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbDateLaterStartNL.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbDateExpiredNL.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbDateExpiredNL.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbDateStartNL.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbDateStartNL.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gpbLuxemburg.ResumeLayout(False)
+        Me.gpbLuxemburg.PerformLayout()
+        CType(Me.txtIdLU.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtPPVPriceLU.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkIsPPVLU.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkLU.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.spedCreditLU.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkAvailableLU.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbDateLaterExpiredLU.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbDateLaterExpiredLU.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbDateLaterStartLU.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbDateLaterStartLU.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbDateExpiredLU.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbDateExpiredLU.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbDateStartLU.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbDateStartLU.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbDateLaterExpired.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbDateLaterExpired.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbDateLaterStart.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2523,6 +2852,10 @@ Partial Class FrmProductsVOD
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkIsPPV.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtPPVPrice.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2560,10 +2893,7 @@ Partial Class FrmProductsVOD
     Friend WithEvents TextEdit3 As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents TextEdit4 As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents lblAvailable As DevExpress.XtraEditors.LabelControl
     Friend WithEvents lblNameFile As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents lblDateExpired As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents lblDateStart As DevExpress.XtraEditors.LabelControl
     Friend WithEvents lblLanguage_subtitle As DevExpress.XtraEditors.LabelControl
     Friend WithEvents lblLanguageSound As DevExpress.XtraEditors.LabelControl
     Friend WithEvents TxtFilename As DevExpress.XtraEditors.TextEdit
@@ -2575,7 +2905,6 @@ Partial Class FrmProductsVOD
     Friend WithEvents btnCancelVod As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents chkcolAvailable As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents txtId As DevExpress.XtraEditors.TextEdit
-    Friend WithEvents lblId As DevExpress.XtraEditors.LabelControl
     Friend WithEvents colStudio As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
     Friend WithEvents cmbStudio As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents cmbStudioEdit As DevExpress.XtraEditors.LookUpEdit
@@ -2723,7 +3052,6 @@ Partial Class FrmProductsVOD
     Private WithEvents btnNext As DevExpress.XtraBars.BarButtonItem
     Private WithEvents btnLast As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents colSource As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
-    Friend WithEvents lblCredit As DevExpress.XtraEditors.LabelControl
     Friend WithEvents spedCredit As DevExpress.XtraEditors.SpinEdit
     Friend WithEvents colCredit As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
     Friend WithEvents xTabVODOnlyMovie As DevExpress.XtraTab.XtraTabPage
@@ -2750,24 +3078,61 @@ Partial Class FrmProductsVOD
     Friend WithEvents WebSiteDvdPost As System.Windows.Forms.WebBrowser
     Friend WithEvents cmbDateLaterExpired As DevExpress.XtraEditors.DateEdit
     Friend WithEvents cmbDateLaterStart As DevExpress.XtraEditors.DateEdit
-    Friend WithEvents lblDateLaterExpire As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents lblDateLaterStart As DevExpress.XtraEditors.LabelControl
     Friend WithEvents colAvailableBackCatalogueFrom As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
     Friend WithEvents dpBackcatalogueStart As DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
     Friend WithEvents colBackcatalogueExpireAt As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
     Friend WithEvents dpBackcataloguExpired As DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
-    Friend WithEvents chkIsPPV As DevExpress.XtraEditors.CheckEdit
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents txtPPVPrice As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
     'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
     'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
     'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
     'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
-    Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
+    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents gpbLuxemburg As System.Windows.Forms.GroupBox
+    Friend WithEvents LabelControl12 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl10 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl9 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents spedCreditLU As DevExpress.XtraEditors.SpinEdit
+    Friend WithEvents chkAvailableLU As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents cmbDateLaterExpiredLU As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents cmbDateLaterStartLU As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents cmbDateExpiredLU As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents cmbDateStartLU As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents chkLU As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents txtPPVPriceLU As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl13 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents chkIsPPVLU As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents txtPPVPriceNL As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl14 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents chkIsPPVNL As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents chkNL As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents spedCreditNL As DevExpress.XtraEditors.SpinEdit
+    Friend WithEvents chkAvailableNL As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents cmbDateLaterExpiredNL As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents cmbDateLaterStartNL As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents cmbDateExpiredNL As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents cmbDateStartNL As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents txtIdNL As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtIdLU As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl15 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents colcountry As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
     Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents chkIsPPV As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents txtPPVPrice As DevExpress.XtraEditors.TextEdit
+    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
 
 End Class

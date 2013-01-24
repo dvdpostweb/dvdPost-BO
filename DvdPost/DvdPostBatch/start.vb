@@ -67,6 +67,8 @@ Module start
                 clscust.ReconductionVirement(DvdPostData.ClsCustomersData.Country.BELGIUM)
                 clscust.ReconductionVirement(DvdPostData.ClsCustomersData.Country.NEDERLANDS)
 
+                
+
                 DVDPostBuziness.ClsBankTransfer.print()
 
                 Dim _OffLinePay As New DVDPostBuziness.clsOffLinePayments()
@@ -93,10 +95,14 @@ Module start
                 clscust.UpdateDvd_at_Home()
                 DVDPostBuziness.ClsVod.UpdateVodCreditsAfterStartPeriod()
                 DVDPostBuziness.ClsVod.UpdateSoonVod()
+                
                 'PPV
                 If (Configuration.ConfigurationManager.AppSettings("do_ppv") = "true") Then
 
                 End If
+
+                clscust.ReconductionPayPal(DvdPostData.ClsCustomersData.Country.BELGIUM)
+                clscust.ReconductionPayPal(DvdPostData.ClsCustomersData.Country.NEDERLANDS)
 
             Else
                 Console.WriteLine("Error Argument")

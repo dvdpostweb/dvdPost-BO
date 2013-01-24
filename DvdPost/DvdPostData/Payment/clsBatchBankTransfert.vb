@@ -25,6 +25,12 @@ Public Class clsBatchBankTransfert
         Return sql
     End Function
 
+    Public Shared Function insertPayPalBankTransfert(ByVal abo_id As Integer, ByVal customers_id As Integer, ByVal amount As String) As String
+        Dim sql As String
+        sql = ClsPayment.CreatePayment(abo_id, ClsCustomersData.Payment_Method.PAYPAL, customers_id, amount, 0)
+        Return sql
+    End Function
+
     'Private Shared Function UpdateUser() As String
     '    Dim sql As String
 
@@ -60,6 +66,13 @@ Public Class clsBatchBankTransfert
         sql = ClsPayment.GetUpdatePaymentStatus(list_id, status)
         Return sql
     End Function
+
+    Public Shared Function InsertPayPalPaymentsHistory(ByVal payment_id As Integer, ByVal XMLRequest As String, ByVal XMLResponse As String, ByVal message As String, ByVal customers_id As Integer) As String
+        Dim sql As String
+        sql = ClsPayment.CreatePayPalPaymentsHistory(payment_id, XMLRequest, XMLResponse, message, customers_id)
+        Return sql
+    End Function
+
     'Public Shared Function UpdateCloseStatus(ByVal id_movement As Integer, ByVal id As Integer, ByVal status As PaymentOfflineData.StepPayment) As String
     '    Dim sql As String
     '    sql = "update payment p set p.account_movements_id = " & id_movement & _

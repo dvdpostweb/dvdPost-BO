@@ -12784,7 +12784,7 @@ End Sub
         Dim row As DataRow
         Dim sql As String
 
-        If MsgBox("Are you sure to flag this token as compensed?", MsgBoxStyle.YesNo, "Warrning!") = MsgBoxResult.Yes Then
+        If MsgBox("Are you sure to flag this token as compensed/uncompansed?", MsgBoxStyle.YesNo, "Warrning!") = MsgBoxResult.Yes Then
 
             row = GridView1.GetDataRow(GridView1.FocusedRowHandle())
 

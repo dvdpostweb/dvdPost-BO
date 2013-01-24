@@ -214,7 +214,8 @@ Public Class ClsVod
                                         ByVal available_backcatalogue_from As Date, _
                                         ByVal expire_backcatalogue_at As Date, _
                                         ByVal is_ppv As String, _
-                                        ByVal ppv_price As String) As String
+                                        ByVal ppv_price As String, _
+                                        ByVal country As String) As String
         Dim sql As String
         Dim strLanguageSubtitle As String
         Dim strlanguage As String
@@ -231,6 +232,7 @@ Public Class ClsVod
         Dim str_is_ppv As String
         Dim str_ppv_price As String
         Dim IsSamePPVPriceForAllAudioSubtitle As Boolean = True
+        Dim strCountry As String
 
         If filename = "" Then
             strfilename = "null"
@@ -314,6 +316,12 @@ Public Class ClsVod
             str_ppv_price = ppv_price.Replace(",", ".")
         End If
 
+        If country = "" Then
+            strCountry = "'BE'"
+        Else
+            strCountry = "'" & country & "'"
+        End If
+
         If IsSamePPVPriceForAllAudioSubtitle Then
 
             sql = "update streaming_products sp " & _
@@ -335,12 +343,13 @@ Public Class ClsVod
                   ", vod_support_id = " & strSupport & _
                   ", is_ppv = " & str_is_ppv & _
                   ", ppv_price = " & str_ppv_price & _
+                  ", country = " & strCountry & _
                   " where id = " & streaming_products_id
 
             sql = sql & " ; update streaming_products sp " & _
                   " set is_ppv = " & str_is_ppv & _
                   ", ppv_price = " & str_ppv_price & _
-                  " where imdb_id = " & imdb_id & ";"
+                  " where country = " & strCountry & " and imdb_id = " & imdb_id & ";"
         Else
             sql = "update streaming_products sp " & _
                   " set filename = " & strfilename & "" & _
@@ -361,6 +370,7 @@ Public Class ClsVod
                   ", vod_support_id = " & strSupport & _
                   ", is_ppv = " & str_is_ppv & _
                   ", ppv_price = " & str_ppv_price & _
+                  ", country = " & strCountry & _
                   " where id = " & streaming_products_id
 
         End If
@@ -409,7 +419,8 @@ Public Class ClsVod
                                         ByVal available_backcatalogue_from As Date, _
                                         ByVal expire_backcatalogue_at As Date, _
                                         ByVal is_ppv As String, _
-                                        ByVal ppv_price As String) As String
+                                        ByVal ppv_price As String, _
+                                        ByVal country As String) As String
         Dim sql As String
         Dim strLanguageSubtitle As String
         Dim strQuality As String
@@ -422,6 +433,7 @@ Public Class ClsVod
         Dim str_is_ppv As String
         Dim str_ppv_price As String
         Dim IsSamePPVPriceForAllAudioSubtitle As Boolean = True
+        Dim strCountry As String
 
         If language_id <= 0 Then
             strlanguage = "null"
@@ -483,14 +495,20 @@ Public Class ClsVod
             str_ppv_price = ppv_price.Replace(",", ".")
         End If
 
+        If country = "" Then
+            strCountry = "'BE'"
+        Else
+            strCountry = "'" & country & "'"
+        End If
+
         If (IsSamePPVPriceForAllAudioSubtitle) Then
             sql = "insert into streaming_products values (null," & imdb_id & ",'" & filename & "'," & strAvailable_from & _
-                              "," & strExpireAt & ", " & strBackcatalogue_from & ", " & strBackcatalogue_expire & "," & available & "," & strlanguage & "," & strLanguageSubtitle & ",now(),now()," & strStudio & ",'" & status & "'," & strQuality & ",'" & source & "'," & support & "," & credit & "," & str_is_ppv & "," & str_ppv_price & ") ; " & _
-                              " update streaming_products set  is_ppv = " & str_is_ppv & ", ppv_price = " & str_ppv_price & " where imdb_id = " & imdb_id & ";"
+                              "," & strExpireAt & ", " & strBackcatalogue_from & ", " & strBackcatalogue_expire & "," & available & "," & strlanguage & "," & strLanguageSubtitle & ",now(),now()," & strStudio & ",'" & status & "'," & strQuality & ",'" & source & "'," & support & "," & credit & "," & str_is_ppv & "," & str_ppv_price & ", " & strCountry & " ) ; " & _
+                              " update streaming_products set  is_ppv = " & str_is_ppv & ", ppv_price = " & str_ppv_price & " where country = " & strCountry & " and imdb_id = " & imdb_id & ";"
         Else
 
             sql = "insert into streaming_products values (null," & imdb_id & ",'" & filename & "'," & strAvailable_from & _
-                  "," & strExpireAt & ", " & strBackcatalogue_from & ", " & strBackcatalogue_expire & "," & available & "," & strlanguage & "," & strLanguageSubtitle & ",now(),now()," & strStudio & ",'" & status & "'," & strQuality & ",'" & source & "'," & support & "," & credit & "," & str_is_ppv & "," & str_ppv_price & ")"
+                  "," & strExpireAt & ", " & strBackcatalogue_from & ", " & strBackcatalogue_expire & "," & available & "," & strlanguage & "," & strLanguageSubtitle & ",now(),now()," & strStudio & ",'" & status & "'," & strQuality & ",'" & source & "'," & support & "," & credit & "," & str_is_ppv & "," & str_ppv_price & ", " & strCountry & ")"
         End If
         Return sql
     End Function

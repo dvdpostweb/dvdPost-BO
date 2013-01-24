@@ -158,6 +158,14 @@ Public Class ClsPayment
         Return sql
     End Function
 
+    Public Shared Function CreatePayPalPaymentsHistory(ByVal payment_id As Integer, ByVal xml_request As String, ByVal xml_response As String, ByVal message As String, ByVal customers_id As Integer)
+        Dim sql As String
+        sql = "insert into paypal_payments_history "
+        sql = sql & " (payment_id, pp_request, pp_response, created_date, message, customer_id) "
+        sql = sql & " values (" & payment_id & ", '" & xml_request & "', '" & xml_response & "',now() , '" & message & "', " & customers_id & ")"
+        Return sql
+    End Function
+
     Public Shared Function CreatePayment(ByVal abo_id As Integer, ByVal method As ClsCustomersData.Payment_Method, ByVal customers_id As Integer, ByVal price As String) As String
         Dim sql As String
         sql = "insert into payment "

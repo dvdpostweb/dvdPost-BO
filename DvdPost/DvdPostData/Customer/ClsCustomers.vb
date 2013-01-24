@@ -80,6 +80,7 @@ Public Class ClsCustomersData
         '  PHONE = 20
         '  SMS = 21
         VIREMENT = 3
+        PAYPAL = 4
         '  BANK_TRANSFER = 0
     End Enum
 
@@ -89,6 +90,7 @@ Public Class ClsCustomersData
         PHONE = 5
         SMS = 6
         VIREMENT = 7
+        PAYPAL = 4
     End Enum
 
     Public Enum TypeAction
@@ -608,6 +610,51 @@ Public Class ClsCustomersData
         sql = sql & " '-1' amount,"
         sql = sql & " ca.combined, "
         sql = sql & "( SELECT if(pa.qty_dvd_max >= 0, 1, 0) FROM products_abo pa WHERE pa.products_id = c.customers_next_abo_type ) as npp_logic" ' npp
+        sql = sql & " FROM customers c join products p on c.customers_next_abo_type = p.products_id "
+        sql = sql & " join customer_attributes ca on c.customers_id = ca.customer_id "
+        sql = sql & " WHERE date(customers_abo_validityto) <= '" & strmysqldate & "'"
+        sql = sql & " AND customers_abo = 1 "
+        sql = sql & " AND customers_abo_payment_method = " & typePayment & " and customers_abo_suspended = 0 "
+
+
+        If customers_id > -1 Then
+            sql = sql & " AND c.customers_id = " & customers_id
+        Else
+            sql = sql & " AND EntityID = " & country_id
+        End If
+        Return sql
+    End Function
+
+    Public Shared Function GetSelectReconductionPayPalCustomers(ByVal typePayment As Integer, ByVal country_id As Integer, ByVal customers_id As Integer) As String
+        Dim sql As String
+
+        Dim strmysqldate As String = DVDPostTools.ClsDate.formatDate()
+
+        sql = "select c.customers_abo_auto_stop_next_reconduction,"
+        sql = sql & " c.customers_next_abo_type,c.customers_abo,"
+        sql = sql & " c.customers_abo_type,"
+        sql = sql & " c.customers_abo_payment_method,"
+        sql = sql & " c.customers_id,"
+        sql = sql & " c.customers_abo_dvd_norm,"
+        sql = sql & " c.customers_abo_dvd_adult,"
+        sql = sql & " c.customers_email_address,"
+        sql = sql & " concat(c.customers_firstname,' ',c.customers_lastname) customers_name,"
+        sql = sql & " p.products_model,"
+        sql = sql & "if(c.customers_abo_discount_recurring_to_date > now(), 1, 0) as recurring_discount, "
+        sql = sql & " c.customers_abo_validityto,"
+        sql = sql & " c.activation_discount_code_id,"
+        sql = sql & " c.activation_discount_code_type,"
+        sql = sql & " c.customers_next_discount_code,"
+        sql = sql & " domiciliation_number,"
+        sql = sql & " c.ogone_card_type,"
+        sql = sql & " c.ogone_card_no,"
+        sql = sql & " c.ogone_exp_date,"
+        sql = sql & " p.products_price,"
+        sql = sql & " '-1' amount,"
+        sql = sql & " ca.combined,  "
+        sql = sql & "( SELECT if(pa.qty_dvd_max >= 0, 1, 0) FROM products_abo pa WHERE pa.products_id = c.customers_next_abo_type ) as npp_logic, " 'npp
+        sql = sql & " c.paypal_agreement_id, c.paypal_transaction_id, " 'paypal
+        sql = sql & " 0 payment_id"
         sql = sql & " FROM customers c join products p on c.customers_next_abo_type = p.products_id "
         sql = sql & " join customer_attributes ca on c.customers_id = ca.customer_id "
         sql = sql & " WHERE date(customers_abo_validityto) <= '" & strmysqldate & "'"

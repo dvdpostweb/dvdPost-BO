@@ -55,6 +55,7 @@ Public Class clsMail
         MAIL_DVDABOSTOPBACKLOG = 575
         MAIL_REPLY_MESSAGERIE = 578
         MAIL_REPLY = 579
+        MAIL_REGISTRATION = 600
 
     End Enum
     Public Shared Function CreateVariableGeneric(ByVal str As String) As String
@@ -82,8 +83,8 @@ Public Class clsMail
 
         Select Case mail_id
 
-            Case Mail.MAIL_CUST_SERV
-                Return MailCategory.MOnCompte
+            Case Mail.MAIL_CUST_SERV, Mail.MAIL_REGISTRATION
+                Return MailCategory.MONCOMPTE
             Case Mail.MAIL_DVDABOSTOP, Mail.MAIL_DVDABOSTOPBACKLOG, Mail.MAIL_STOP
                 Return MailCategory.STOABO
             Case Mail.MAIL_IN, Mail.MAIL_OUT, Mail.MAIL_VOD_CONFIRMATION

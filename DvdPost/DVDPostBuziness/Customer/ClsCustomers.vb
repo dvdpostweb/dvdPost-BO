@@ -1,5 +1,6 @@
 Imports DvdPostData
 Imports System.Collections.Generic
+Imports PayPal_Merchant_SDK
 
 Public Class ClsCustomers
 
@@ -247,6 +248,10 @@ Public Class ClsCustomers
 
     Public Function GetCustomersId(ByVal drCustomer As DataRow) As Integer
         Return drCustomer("customers_id")
+    End Function
+
+    Public Function GetPaymentId(ByVal drCustomer As DataRow) As Integer
+        Return drCustomer("payment_id")
     End Function
 
     Public Function GetCustomersEmail(ByVal drCustomer As DataRow) As String
@@ -1033,7 +1038,12 @@ Public Class ClsCustomers
         Dim cptFreeTrialist As Integer
         Dim email As String
 
-        sql = DvdPostData.ClsCustomersData.GetSelectReconductionCustomers(pay_method, idcountry, customers_id)
+        If pay_method = ClsCustomersData.Payment_Method.PAYPAL Then
+            sql = DvdPostData.ClsCustomersData.GetSelectReconductionPayPalCustomers(pay_method, idcountry, customers_id)
+        Else
+            sql = DvdPostData.ClsCustomersData.GetSelectReconductionCustomers(pay_method, idcountry, customers_id)
+
+        End If
 
         dtCustomersReconduction = DvdPostData.clsConnection.FillDataSet(sql)
         RaiseEvent initMapping_Event(dtCustomersReconduction.Rows.Count)
@@ -1430,6 +1440,66 @@ Public Class ClsCustomers
         End Try
     End Sub
 
+    Private Sub InsertAllPayPalBankTransfert(ByVal dtResult As DataTable, ByVal typePaymentCommunication As Integer)
+        Dim customers_id As Integer
+        Dim price As String
+        Dim sql As String
+        Dim id As Object
+        Dim payment_method As Integer
+        Dim communication As String
+
+        Try
+            sql = DvdPostData.ClsPayment.getIdLastPayment()
+            id = DvdPostData.clsConnection.ExecuteScalar(sql)
+            If id Is DBNull.Value Then
+                id = 0
+            End If
+
+            For Each drcustomers As DataRow In dtResult.Rows
+
+                customers_id = GetCustomersId(drcustomers)
+                price = GetCustomersAmount(drcustomers)
+                If price <= 0 Then
+                    Throw New Exception("Error price " & price & "€ Customers_id : " & customers_id)
+                End If
+                payment_method = GetCustomersPayment_method(drcustomers)
+                sql = DvdPostData.clsBatchBankTransfert.insertPayPalBankTransfert(0, customers_id, price)
+                DvdPostData.clsConnection.ExecuteNonQuery(sql)
+                id += 1
+                drcustomers("payment_id") = id
+                ' une communication identique par client id = customers_id 
+                communication = clsCompta.CreateCommunicationStruct(id, typePaymentCommunication)
+                If communication = "0" Then
+                    Throw New Exception("Error Communication Customers_id : " & customers_id)
+                End If
+                sql = DvdPostData.clsBatchBankTransfert.UpdateCommunicationBankTransfert(id, communication)
+                DvdPostData.clsConnection.ExecuteNonQuery(sql)
+
+                'DvdPostData.clsConnection.CommitTransaction(True)
+
+
+            Next
+
+            ' link abo and payment 
+            sql = DvdPostData.clsBatchBankTransfert.GetUpdateLinkAbo()
+            DvdPostData.clsConnection.ExecuteNonQuery(sql)
+
+        Catch ex As Exception
+
+            ' DvdPostData.clsConnection.CommitTransaction(False)
+
+            'sql = ClsCustomersData.GetSuspendedCustomersError(customers_id)
+            ' DvdPostData.clsConnection.ExecuteNonQuery(sql)
+            'Dim lstDr As DataRow()
+            'lstDr = dtResult.Select("customers_id = " & customers_id)
+            'If lstDr.Length > 0 Then
+            '    dtResult.Rows.Remove(lstDr(0))
+            'End If
+            clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Reconduction, ex)
+            Throw ex
+        End Try
+    End Sub
+
 
     Public Function ReconductionDomiciliation(ByVal idcountry As ClsCustomersData.Country, Optional ByVal customers_id As Integer = -1, Optional ByVal classique As Boolean = True) As Boolean
         Dim flux_dom80 As String
@@ -1519,18 +1589,95 @@ Public Class ClsCustomers
 
 
     End Function
+
+    Public Function ReconductionPayPal(ByVal idcountry As ClsCustomersData.Country, Optional ByVal customers_id As Integer = -1, Optional ByVal classique As Boolean = True) As Boolean
+        Dim dtResult As DataTable
+        Dim cpt_result As Integer
+        Dim sql As String
+        Dim str As String = ""
+        DvdPostData.clsConnection.CreateTransaction(True)
+        Try
+            dtResult = Reconduction(ClsCustomersData.Payment_Method.PAYPAL, idcountry, customers_id, classique, True)
+            InsertAllPayPalBankTransfert(dtResult, ClsCustomersData.TypePaymentCommunication.PAYPAL)
+
+            Dim result = DvdPostData.clsConnection.ExecuteBulkQuery(DvdPostData.clsMsgError.processType.Reconduction, cpt_result)
+
+            Dim paypal As PayPal.DoReferenceTransaction = New PayPal.DoReferenceTransaction()
+            str = 1
+
+            If dtResult.Rows.Count > 0 Then
+                For Each drCustomers As DataRow In dtResult.Rows
+                    Dim paypalResult As PayPal.PayPalResponse
+
+                    customers_id = GetCustomersId(drCustomers)
+                    str = 2
+                    paypalResult = paypal.PayPalSendPayments(drCustomers)
+                    str = 3
+                    Dim message As String
+
+                    If paypalResult.Response.Ack.HasValue Then
+                        str = 4
+                        If (paypalResult.Response.Ack.Value = Global.PayPal.PayPalAPIInterfaceService.Model.AckCodeType.SUCCESS) Or (paypalResult.Response.Ack.Value = Global.PayPal.PayPalAPIInterfaceService.Model.AckCodeType.SUCCESSWITHWARNING) Then
+                            sql = DvdPostData.clsBatchBankTransfert.UpdateStatusBankTransfert(GetPaymentId(drCustomers), PaymentOfflineData.StepPayment.PAID)
+                            str = 5
+                            DvdPostData.clsConnection.ExecuteNonQuery(sql)
+                            message = paypalResult.Response.Ack.Value.ToString()
+                            str = 6
+                        Else
+                            str = 7
+                            message = paypalResult.Response.Ack.Value.ToString()
+                            str = 8
+                            If paypalResult.Response.Errors.Count > 0 Then
+                                str = 9
+                                Try
+                                    message = message & ":" & paypalResult.Response.DoReferenceTransactionResponseDetails.PaymentInfo.PaymentError.LongMessage
+                                    str = 10
+                                Catch ex As Exception
+                                    message = message & ":" & ex.Message
+                                End Try
+                            End If
+                            str = 11
+                            DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Batch, "PayPal payment does not succedded. Please check logs, the returned status is : " & paypalResult.Response.Ack.Value.ToString(), GetCustomersId(drCustomers))
+                            str = 12
+                        End If
+                    Else
+                        str = 13
+                        message = "paypalResult.Response.Ack is not returned"
+                    End If
+                    
+
+                    sql = DvdPostData.clsBatchBankTransfert.InsertPayPalPaymentsHistory(GetPaymentId(drCustomers), paypalResult.XMLRequest, paypalResult.XMLResponse, message, GetCustomersId(drCustomers))
+                    str = 14
+                    DvdPostData.clsConnection.ExecuteNonQuery(sql)
+                    str = 15
+
+                Next
+
+            End If
+            Return True
+        Catch ex As Exception
+            ' insert msg into db  
+            DvdPostData.clsConnection.CancelBulkQuery()
+            clsMsgError.MsgBox(ex.Message)
+            clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Reconduction, ex, customers_id & " : position: " & str)
+            Return True
+        End Try
+
+
+    End Function
+
     Public Function ReplayReconductionNoInvoice_customers(ByVal d As String, ByVal idcountry As ClsCustomersData.Country) As Boolean
         Dim sql As String
         Dim dtResult As DataTable
         Dim flux As String
         Dim ok As Boolean
 
-        sql = DvdPostData.ClsCustomersData.GetRecreateBatchOgonewithoutpaymentCreate(d)
-        dtResult = DvdPostData.clsConnection.FillDataSet(sql)
+        Sql = DvdPostData.ClsCustomersData.GetRecreateBatchOgonewithoutpaymentCreate(d)
+        dtResult = DvdPostData.clsConnection.FillDataSet(Sql)
         If dtResult.Rows.Count > 0 Then
             Dim clsBatchOgone As ClsBatchOgone = New ClsBatchOgone()
-            flux = clsBatchOgone.CreateBatchFile(dtResult, idcountry)
-            ok = DVDPostTools.clsFile.WriteFileNoExist(clsBatchOgone.CreatePathFile(clsBatchOgone.TypeBatch.CHANGE_CREDITCARD, idcountry), flux)
+            flux = ClsBatchOgone.CreateBatchFile(dtResult, idcountry)
+            ok = DVDPostTools.clsFile.WriteFileNoExist(ClsBatchOgone.CreatePathFile(ClsBatchOgone.TypeBatch.CHANGE_CREDITCARD, idcountry), flux)
 
             For Each dr As DataRow In dtResult.Rows
                 clsPayment.CreateInvoice(dr("customers_id"), ClsCustomersData.Payment_Method.OGONE, DvdPostData.ClsPayment.Payment_type.RECONDUCTION, ClsCustomersData.TypePaymentCommunication.OGONE, DVDPostTools.ClsPrice.FormatPrice(dr("amount")))
