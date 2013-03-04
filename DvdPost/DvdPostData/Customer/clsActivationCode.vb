@@ -21,7 +21,7 @@ Public Class clsActivationCode
 
     Public Shared Function GetProducts(ByVal productsType As String) As String
         Dim sql As String
-        sql = "SELECT products_id, products_model , products_title FROM products where products_type = '" & productsType & "' "
+        sql = "SELECT products_id, products_model , products_title FROM products where products_type = '" & productsType & "' order by products_id desc"
         Return sql
     End Function
 
@@ -41,7 +41,11 @@ Public Class clsActivationCode
                                                 ByVal DVDCredit As Integer, ByVal DVDRemain As Integer, ByVal _NextDiscountCodeID As Integer, ByVal chkAuto_Stop_at_Next_Reconduction As Integer, _
                                                 ByVal txtBanner As String, ByVal txtDescFR As String, ByVal txtDescNL As String, ByVal txtDescEN As String, _
                                                 ByVal chkFree_Upgrade_Allowed As Integer, ByVal txtFooter As String, ByVal txtCampaign As String, _
-                                                ByVal combinetActi As String) As String
+                                                ByVal combinetActi As String, _
+                                                ByVal paypal As Integer, _
+                                                ByVal creditcard As Integer, _
+                                                ByVal debitcard As Integer, _
+                                                ByVal discount_action As String) As String
 
         txtComment = replaceSingleCote(txtComment)
         txtDescFR = replaceSingleCote(txtDescFR)
@@ -62,7 +66,8 @@ Public Class clsActivationCode
                                             "activation_code_creation_date, activation_code_validto_date , activation_products_id , " & _
                                             "validity_type ,validity_value ,activation_waranty ,comment ,abo_dvd_credit , abo_dvd_remain, " & _
                                             "next_discount , abo_auto_stop_next_reconduction , banner , activation_text_fr , " & _
-                                            "activation_text_nl ,activation_text_en , free_upgrade_allowed ,footer ,campaign ,combined_action ) values " & _
+                                            "activation_text_nl ,activation_text_en , free_upgrade_allowed ,footer ,campaign ,combined_action, " & _
+                                            "paypal, creditcard, debitcard, discount_action) values " & _
                                             "  ('" & _ActivationCode & "'" & _
                       " ,0 " & _
                       " , " & group & _
@@ -84,7 +89,12 @@ Public Class clsActivationCode
                       " , " & chkFree_Upgrade_Allowed & _
                       " , '" & txtFooter & "' " & _
                       " , '" & txtCampaign & "' " & _
-                      " , '" & combinetActi & "') "
+                      " , '" & combinetActi & "' " & _
+                      " , " & paypal & _
+                      " , " & creditcard & _
+                      " , " & debitcard & _
+                      " , '" & discount_action & "' )"
+
 
         Return sql
     End Function
@@ -111,7 +121,11 @@ Public Class clsActivationCode
                                                 ByVal DVDCredit As Integer, ByVal DVDRemain As Integer, ByVal nextDiscountCodeId As Integer, ByVal chkAuto_Stop_at_Next_Reconduction As Integer, _
                                                 ByVal banner As String, ByVal txtDescFR As String, ByVal txtDescNL As String, ByVal txtDescEN As String, _
                                                 ByVal chkFree_Upgrade_Allowed As Integer, ByVal txtFooter As String, ByVal txtCampaign As String, _
-                                                ByVal combinetActi As String, ByVal activation_code_cretion_date As String, ByVal activation_code_condition As String, ByVal next_abotype As Integer) As String
+                                                ByVal combinetActi As String, ByVal activation_code_cretion_date As String, ByVal activation_code_condition As String, ByVal next_abotype As Integer, _
+                                                ByVal paypal As Integer, _
+                                                ByVal creditcard As Integer, _
+                                                ByVal debitcard As Integer, _
+                                                ByVal discount_action As String) As String
         Comment = replaceSingleCote(Comment)
         txtDescFR = replaceSingleCote(txtDescFR)
         txtDescNL = replaceSingleCote(txtDescNL)
@@ -145,6 +159,10 @@ Public Class clsActivationCode
               " , footer = '" & txtFooter & "' " & _
               " , combined_action = '" & combinetActi & "' " & _
               ", next_abo_type = " & next_abotype & _
+              " , paypal = " & paypal & _
+              " , creditcard = " & creditcard & _
+              " , debitcard = " & debitcard & _
+              " , discount_action = '" & discount_action & "' " & _
               "  where DATE(activation_code_creation_date) = '" & DVDPostTools.ClsDate.formatDate(activation_code_cretion_date) & "' " & _
               "  and  customers_id = 0 and activation_code like '" & activation_code_condition & "%' " & _
               "  and  campaign = '" & txtCampaign & "' "
@@ -225,7 +243,7 @@ Public Class clsActivationCode
     Public Shared Function GetActivtionCodeAllFields() As String
         Dim sql = "select (select count(*) from wishlist w where w.customers_id = ac.customers_id) size_w,activation_id, activation_code, activation_group, campaign_id, activation_group_id, activation_pack, activation_code_creation_date, activation_code_validto_date, activation_products_id," & _
                   " validity_month, validity_type, validity_value, activation_waranty, customers_id,   activation_date  , comment, abo_dvd_credit, abo_dvd_remain, next_discount, credit0_auto_reconduct, " & _
-                  "abo_auto_stop_next_reconduction, banner, activation_text_fr, activation_text_nl, activation_text_en, free_upgrade_allowed, footer, campaign, combined_action,next_abo_type " & _
+                  "abo_auto_stop_next_reconduction, banner, activation_text_fr, activation_text_nl, activation_text_en, free_upgrade_allowed, footer, campaign, combined_action,next_abo_type, paypal, creditcard, debitcard, discount_action " & _
                   " from activation_code ac  where 1 "
         Return sql
         'if (activation_date is null , '0000-00-00 00:00:00',activation_date) as
@@ -389,7 +407,11 @@ Public Class clsActivationCode
                                               ByVal Footer As String, _
                                               ByVal free_upgrade_allowed As Integer, _
                                               ByVal group_id As Integer, _
-                                              ByVal next_abo_type As Integer _
+                                              ByVal next_abo_type As Integer, _
+                                              ByVal paypal As Integer, _
+                                              ByVal creditcard As Integer, _
+                                              ByVal debitcard As Integer, _
+                                              ByVal discount_action As String _
                                               ) As String
         Dim sql As String
 
@@ -437,6 +459,10 @@ Public Class clsActivationCode
                                       " , Footer = '" & Footer & "'" & _
                                       " , free_upgrade_allowed = " & free_upgrade_allowed & _
                                       " , next_abo_type = " & next_abo_type & _
+                                      " , paypal = " & paypal & _
+                                      " , creditcard = " & creditcard & _
+                                      " , debitcard = " & debitcard & _
+                                      " , discount_action = '" & discount_action & "' " & _
                                       " where discount_code = '" & discount_code & "'"
         Return sql
     End Function
@@ -472,8 +498,11 @@ Public Class clsActivationCode
                                               ByVal Footer As String, _
                                               ByVal free_upgrade_allowed As Integer, _
                                               ByVal group_id As Integer, _
-                                              ByVal nextAboType As Integer _
-                                              ) As String
+                                              ByVal nextAboType As Integer, _
+                                              ByVal paypal As Integer, _
+                                              ByVal creditcard As Integer, _
+                                              ByVal debitcard As Integer, _
+                                              ByVal discount_action As String) As String
         Dim sql As String
 
         If discount_validityto = "" Then
@@ -493,7 +522,7 @@ Public Class clsActivationCode
                                         " discount_commitment, discount_status, discount_text_fr, discount_text_nl, discount_text_en, discount_abo_validityto_type," & _
                                         " discount_abo_validityto_value, comment, discount_nbr_month_before_reuse, discount_recurring_nbr_of_month, bypass_discountuse," & _
                                         " discount_validityto, payable, abo_dvd_credit, abo_dvd_remain, next_discount, credit0_auto_reconduct, landing_page, landing_page_php, " & _
-                                        " listing_products_allowed, abo_auto_stop_next_reconduction, goto_step, banner, Footer, free_upgrade_allowed, group_id , shopping_discount , droselia,next_abo_type )" & _
+                                        " listing_products_allowed, abo_auto_stop_next_reconduction, goto_step, banner, Footer, free_upgrade_allowed, group_id , shopping_discount , droselia,next_abo_type, paypal, creditcard, debitcard, discount_action )" & _
                                         " values  ( '" & discount_code & "' " & _
                                                    " , " & discount_type & _
                                                    " , " & discount_value & _
@@ -525,7 +554,7 @@ Public Class clsActivationCode
                                       " , " & free_upgrade_allowed & _
                                       "  , " & group_id & _
                                       " , DEFAULT(shopping_discount) , 0 " & _
-                                       "  , " & nextAboType & ") "
+                                       "  , " & nextAboType & " , " & paypal & ", " & creditcard & ", " & debitcard & ", '" & discount_action & "' ) "
 
 
         Return sql
@@ -597,6 +626,13 @@ Public Class clsActivationCode
     Private Shared Function replaceSingleCote(ByVal str As String) As String
         str = Replace(str, "'", "\'")
         Return str
+    End Function
+
+    Public Shared Function GetEnumMysqlDiscountAction() As String
+        Dim sql As String
+
+        sql = "SHOW COLUMNS FROM discount_code LIKE 'discount_action' "
+        Return sql
     End Function
 
 

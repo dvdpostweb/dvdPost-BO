@@ -1,7 +1,7 @@
 Imports System.Collections.Generic
 Public Class ucCallsHistory
 
-    Private Shared lstValue As List(Of Integer)
+    Private lstValue As List(Of Integer)
     Private stateCurrent As StateCall
     Private Enum StateCall
         [NEW]
@@ -95,6 +95,9 @@ Public Class ucCallsHistory
                 lblTitle.Text = dv(0)("parent_text")
             End If
 
+        End If
+        If Not lstValue Is Nothing Then
+            lstValue.Clear()
         End If
     End Sub
     Private Sub InitData()

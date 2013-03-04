@@ -98,9 +98,11 @@ Public Class frmContactMe_Browse
         If GridViewCallMeBrowse.FocusedRowHandle < 0 Then Exit Sub
         id = GridViewCallMeBrowse.GetDataRow(GridViewCallMeBrowse.FocusedRowHandle)("id")
         Comment = InputBox("Add your comment", "Comment", "")
-        sql = DvdPostData.clsCallMeBrowse.getUpdateCallMeBrowse(Comment, id)
-        DvdPostData.clsConnection.ExecuteNonQuery(sql)
-        loadDataset()
+        If Not Comment.Equals(String.Empty) Then
+            sql = DvdPostData.clsCallMeBrowse.getUpdateCallMeBrowse(Comment, id)
+            DvdPostData.clsConnection.ExecuteNonQuery(sql)
+            loadDataset()
+        End If
     End Sub
 
     Private Sub frmContactMe_Browse_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load

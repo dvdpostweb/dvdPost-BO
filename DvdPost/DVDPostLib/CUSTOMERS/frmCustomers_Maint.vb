@@ -2069,7 +2069,7 @@ Me.SuspendLayout
 '
 'StatusBar1
 '
-Me.StatusBar1.Location = New System.Drawing.Point(0, 872)
+Me.StatusBar1.Location = New System.Drawing.Point(0, 864)
 Me.StatusBar1.Size = New System.Drawing.Size(1262, 10)
 '
 'coldvd_finally_arrived_mail3
@@ -2152,7 +2152,7 @@ coldvd_to_send.Width = 117
 '
 Me.tabAboProcessOld.Controls.Add(Me.GridAboprocessOld)
 Me.tabAboProcessOld.Name = "tabAboProcessOld"
-Me.tabAboProcessOld.Size = New System.Drawing.Size(1253, 791)
+Me.tabAboProcessOld.Size = New System.Drawing.Size(1253, 783)
 Me.tabAboProcessOld.Text = "aboProcess Old"
 '
 'GridAboprocessOld
@@ -2163,7 +2163,7 @@ Me.GridAboprocessOld.FormsUseDefaultLookAndFeel = false
 Me.GridAboprocessOld.Location = New System.Drawing.Point(0, 0)
 Me.GridAboprocessOld.MainView = Me.GridViewAboprocessOld
 Me.GridAboprocessOld.Name = "GridAboprocessOld"
-Me.GridAboprocessOld.Size = New System.Drawing.Size(1253, 791)
+Me.GridAboprocessOld.Size = New System.Drawing.Size(1253, 783)
 Me.GridAboprocessOld.TabIndex = 0
 Me.GridAboprocessOld.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewAboprocessOld})
 '
@@ -3059,7 +3059,7 @@ Me.tabMailHistory.AutoScroll = true
 Me.tabMailHistory.Controls.Add(Me.browser)
 Me.tabMailHistory.Controls.Add(Me.grpContEmail)
 Me.tabMailHistory.Name = "tabMailHistory"
-Me.tabMailHistory.Size = New System.Drawing.Size(1253, 791)
+Me.tabMailHistory.Size = New System.Drawing.Size(1253, 783)
 Me.tabMailHistory.Text = "mail history"
 '
 'browser
@@ -3171,7 +3171,7 @@ Me.GridCustServ.FormsUseDefaultLookAndFeel = false
 Me.GridCustServ.Location = New System.Drawing.Point(0, 0)
 Me.GridCustServ.MainView = Me.gridViewCustServ
 Me.GridCustServ.Name = "GridCustServ"
-Me.GridCustServ.Size = New System.Drawing.Size(672, 791)
+Me.GridCustServ.Size = New System.Drawing.Size(672, 783)
 Me.GridCustServ.TabIndex = 1
 Me.GridCustServ.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.gridViewCustServ})
 '
@@ -3299,7 +3299,7 @@ Me.tabDroselia.Controls.Add(Me.txtDroselia)
 Me.tabDroselia.Controls.Add(Me.GridDroselia)
 Me.tabDroselia.Controls.Add(Me.butGenCode)
 Me.tabDroselia.Name = "tabDroselia"
-Me.tabDroselia.Size = New System.Drawing.Size(1253, 791)
+Me.tabDroselia.Size = New System.Drawing.Size(1253, 783)
 Me.tabDroselia.Text = "Droselia"
 '
 'LabelControl38
@@ -3331,7 +3331,7 @@ Me.GridDroselia.FormsUseDefaultLookAndFeel = false
 Me.GridDroselia.Location = New System.Drawing.Point(0, 58)
 Me.GridDroselia.MainView = Me.GridViewDroselia
 Me.GridDroselia.Name = "GridDroselia"
-Me.GridDroselia.Size = New System.Drawing.Size(1252, 733)
+Me.GridDroselia.Size = New System.Drawing.Size(1252, 725)
 Me.GridDroselia.TabIndex = 16
 Me.GridDroselia.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewDroselia})
 '
@@ -3418,7 +3418,7 @@ Me.butGenCode.Text = "Generate code"
 '
 Me.tabPaymentMovements.Controls.Add(Me.GCBankAccountMovement)
 Me.tabPaymentMovements.Name = "tabPaymentMovements"
-Me.tabPaymentMovements.Size = New System.Drawing.Size(1253, 791)
+Me.tabPaymentMovements.Size = New System.Drawing.Size(1253, 783)
 Me.tabPaymentMovements.Text = "Payment Movements"
 '
 'GCBankAccountMovement
@@ -3428,7 +3428,7 @@ Me.GCBankAccountMovement.Controls.Add(Me.GridBankAccountMovements)
 Me.GCBankAccountMovement.Dock = System.Windows.Forms.DockStyle.Fill
 Me.GCBankAccountMovement.Location = New System.Drawing.Point(0, 0)
 Me.GCBankAccountMovement.Name = "GCBankAccountMovement"
-Me.GCBankAccountMovement.Size = New System.Drawing.Size(1253, 791)
+Me.GCBankAccountMovement.Size = New System.Drawing.Size(1253, 783)
 Me.GCBankAccountMovement.TabIndex = 1
 Me.GCBankAccountMovement.Text = "Bank Account movements"
 '
@@ -3441,7 +3441,7 @@ Me.GridBankAccountMovements.Location = New System.Drawing.Point(2, 20)
 Me.GridBankAccountMovements.MainView = Me.GridViewBankAccountMovements
 Me.GridBankAccountMovements.Name = "GridBankAccountMovements"
 Me.GridBankAccountMovements.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryCmbMatching})
-Me.GridBankAccountMovements.Size = New System.Drawing.Size(1249, 769)
+Me.GridBankAccountMovements.Size = New System.Drawing.Size(1249, 761)
 Me.GridBankAccountMovements.TabIndex = 5
 Me.GridBankAccountMovements.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewBankAccountMovements})
 '
@@ -3630,7 +3630,7 @@ Me.GridOrders.Location = New System.Drawing.Point(0, 0)
 Me.GridOrders.MainView = Me.GridViewOrders
 Me.GridOrders.Name = "GridOrders"
 Me.GridOrders.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryIbtnCheckOrder})
-Me.GridOrders.Size = New System.Drawing.Size(1115, 769)
+Me.GridOrders.Size = New System.Drawing.Size(1115, 761)
 Me.GridOrders.TabIndex = 1
 Me.GridOrders.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewOrders})
 '
@@ -3812,7 +3812,7 @@ Me.GridABO.FormsUseDefaultLookAndFeel = false
 Me.GridABO.Location = New System.Drawing.Point(0, 0)
 Me.GridABO.MainView = Me.GridViewABO
 Me.GridABO.Name = "GridABO"
-Me.GridABO.Size = New System.Drawing.Size(1253, 791)
+Me.GridABO.Size = New System.Drawing.Size(1253, 783)
 Me.GridABO.TabIndex = 0
 Me.GridABO.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewABO})
 '
@@ -3980,7 +3980,7 @@ Me.tabPayment.Controls.Add(Me.LabelControl49)
 Me.tabPayment.Controls.Add(Me.cmbPayMethod)
 Me.tabPayment.Controls.Add(Me.LabelControl50)
 Me.tabPayment.Name = "tabPayment"
-Me.tabPayment.Size = New System.Drawing.Size(1253, 791)
+Me.tabPayment.Size = New System.Drawing.Size(1253, 783)
 Me.tabPayment.Text = "Invoices"
 '
 'GridPayment
@@ -4433,7 +4433,7 @@ Me.GridWishList.Location = New System.Drawing.Point(2, 133)
 Me.GridWishList.MainView = Me.GridViewWishList
 Me.GridWishList.Name = "GridWishList"
 Me.GridWishList.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.btnSendIt, Me.checkAvailibility})
-Me.GridWishList.Size = New System.Drawing.Size(605, 656)
+Me.GridWishList.Size = New System.Drawing.Size(605, 648)
 Me.GridWishList.TabIndex = 0
 Me.GridWishList.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewWishList})
 '
@@ -4641,7 +4641,7 @@ Me.tabCustServ.Controls.Add(Me.GridCustServ)
 Me.tabCustServ.Name = "tabCustServ"
 Me.tabCustServ.PageEnabled = false
 Me.tabCustServ.PageVisible = false
-Me.tabCustServ.Size = New System.Drawing.Size(1253, 791)
+Me.tabCustServ.Size = New System.Drawing.Size(1253, 783)
 Me.tabCustServ.Text = "Cust Serv"
 '
 'PanelControl7
@@ -4652,7 +4652,7 @@ Me.PanelControl7.Controls.Add(Me.GCCustServ)
 Me.PanelControl7.Dock = System.Windows.Forms.DockStyle.Fill
 Me.PanelControl7.Location = New System.Drawing.Point(678, 0)
 Me.PanelControl7.Name = "PanelControl7"
-Me.PanelControl7.Size = New System.Drawing.Size(575, 791)
+Me.PanelControl7.Size = New System.Drawing.Size(575, 783)
 Me.PanelControl7.TabIndex = 3
 '
 'PanelControl8
@@ -4662,7 +4662,7 @@ Me.PanelControl8.Controls.Add(Me.LayoutCustServ)
 Me.PanelControl8.Dock = System.Windows.Forms.DockStyle.Fill
 Me.PanelControl8.Location = New System.Drawing.Point(2, 65)
 Me.PanelControl8.Name = "PanelControl8"
-Me.PanelControl8.Size = New System.Drawing.Size(571, 724)
+Me.PanelControl8.Size = New System.Drawing.Size(571, 716)
 Me.PanelControl8.TabIndex = 1
 '
 'LayoutCustServ
@@ -4679,22 +4679,22 @@ Me.LayoutCustServ.Dock = System.Windows.Forms.DockStyle.Fill
 Me.LayoutCustServ.Location = New System.Drawing.Point(2, 2)
 Me.LayoutCustServ.Name = "LayoutCustServ"
 Me.LayoutCustServ.Root = Me.LayoutControlGroup1
-Me.LayoutCustServ.Size = New System.Drawing.Size(567, 720)
+Me.LayoutCustServ.Size = New System.Drawing.Size(567, 712)
 Me.LayoutCustServ.TabIndex = 0
 Me.LayoutCustServ.Text = "DataLayoutControl1"
 '
 'txtCustServ_Response_Message
 '
-Me.txtCustServ_Response_Message.Location = New System.Drawing.Point(107, 458)
+Me.txtCustServ_Response_Message.Location = New System.Drawing.Point(107, 454)
 Me.txtCustServ_Response_Message.Name = "txtCustServ_Response_Message"
-Me.txtCustServ_Response_Message.Size = New System.Drawing.Size(451, 253)
+Me.txtCustServ_Response_Message.Size = New System.Drawing.Size(451, 249)
 Me.txtCustServ_Response_Message.StyleController = Me.LayoutCustServ
 Me.txtCustServ_Response_Message.TabIndex = 14
 '
 'txtCustServ_DVD_ID
 '
 Me.txtCustServ_DVD_ID.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "custserv.dvd_id", true))
-Me.txtCustServ_DVD_ID.Location = New System.Drawing.Point(479, 372)
+Me.txtCustServ_DVD_ID.Location = New System.Drawing.Point(479, 368)
 Me.txtCustServ_DVD_ID.Name = "txtCustServ_DVD_ID"
 Me.txtCustServ_DVD_ID.Properties.ReadOnly = true
 Me.txtCustServ_DVD_ID.Size = New System.Drawing.Size(79, 20)
@@ -4704,7 +4704,7 @@ Me.txtCustServ_DVD_ID.TabIndex = 11
 'txtCustServ_Products_id
 '
 Me.txtCustServ_Products_id.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "custserv.products_id", true))
-Me.txtCustServ_Products_id.Location = New System.Drawing.Point(293, 372)
+Me.txtCustServ_Products_id.Location = New System.Drawing.Point(293, 368)
 Me.txtCustServ_Products_id.Name = "txtCustServ_Products_id"
 Me.txtCustServ_Products_id.Properties.ReadOnly = true
 Me.txtCustServ_Products_id.Size = New System.Drawing.Size(78, 20)
@@ -4714,7 +4714,7 @@ Me.txtCustServ_Products_id.TabIndex = 10
 'txtCustServ_OrderID
 '
 Me.txtCustServ_OrderID.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "custserv.orders_id", true))
-Me.txtCustServ_OrderID.Location = New System.Drawing.Point(107, 372)
+Me.txtCustServ_OrderID.Location = New System.Drawing.Point(107, 368)
 Me.txtCustServ_OrderID.Name = "txtCustServ_OrderID"
 Me.txtCustServ_OrderID.Properties.ReadOnly = true
 Me.txtCustServ_OrderID.Size = New System.Drawing.Size(78, 20)
@@ -4738,13 +4738,13 @@ Me.txtCustServ_CustDate.TabIndex = 8
 Me.MemoEdit1.Location = New System.Drawing.Point(107, 59)
 Me.MemoEdit1.Name = "MemoEdit1"
 Me.MemoEdit1.Properties.ReadOnly = true
-Me.MemoEdit1.Size = New System.Drawing.Size(451, 278)
+Me.MemoEdit1.Size = New System.Drawing.Size(451, 274)
 Me.MemoEdit1.StyleController = Me.LayoutCustServ
 Me.MemoEdit1.TabIndex = 7
 '
 'txtCustServ_Subject
 '
-Me.txtCustServ_Subject.Location = New System.Drawing.Point(104, 406)
+Me.txtCustServ_Subject.Location = New System.Drawing.Point(104, 402)
 Me.txtCustServ_Subject.Name = "txtCustServ_Subject"
 Me.txtCustServ_Subject.Size = New System.Drawing.Size(457, 20)
 Me.txtCustServ_Subject.StyleController = Me.LayoutCustServ
@@ -4756,7 +4756,7 @@ Me.LayoutControlGroup1.CustomizationFormText = "LayoutControlGroup1"
 Me.LayoutControlGroup1.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LCGMisc, Me.LayoutControlGroup3, Me.LCGResponse, Me.LayoutControlItem3})
 Me.LayoutControlGroup1.Location = New System.Drawing.Point(0, 0)
 Me.LayoutControlGroup1.Name = "LayoutControlGroup1"
-Me.LayoutControlGroup1.Size = New System.Drawing.Size(567, 720)
+Me.LayoutControlGroup1.Size = New System.Drawing.Size(567, 712)
 Me.LayoutControlGroup1.Spacing = New DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0)
 Me.LayoutControlGroup1.Text = "LayoutControlGroup1"
 Me.LayoutControlGroup1.TextVisible = false
@@ -4765,7 +4765,7 @@ Me.LayoutControlGroup1.TextVisible = false
 '
 Me.LCGMisc.CustomizationFormText = "Misc"
 Me.LCGMisc.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem7, Me.LayoutControlItem6, Me.LayoutControlItem8})
-Me.LCGMisc.Location = New System.Drawing.Point(0, 344)
+Me.LCGMisc.Location = New System.Drawing.Point(0, 340)
 Me.LCGMisc.Name = "LCGMisc"
 Me.LCGMisc.Size = New System.Drawing.Size(565, 55)
 Me.LCGMisc.Text = "Misc"
@@ -4809,7 +4809,7 @@ Me.LayoutControlGroup3.CustomizationFormText = "Call / E-Mail Info"
 Me.LayoutControlGroup3.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem5, Me.LayoutControlItem4})
 Me.LayoutControlGroup3.Location = New System.Drawing.Point(0, 0)
 Me.LayoutControlGroup3.Name = "LayoutControlGroup3"
-Me.LayoutControlGroup3.Size = New System.Drawing.Size(565, 344)
+Me.LayoutControlGroup3.Size = New System.Drawing.Size(565, 340)
 Me.LayoutControlGroup3.Text = "Call / E-Mail Info"
 '
 'LayoutControlItem5
@@ -4829,7 +4829,7 @@ Me.LayoutControlItem4.Control = Me.MemoEdit1
 Me.LayoutControlItem4.CustomizationFormText = "Message"
 Me.LayoutControlItem4.Location = New System.Drawing.Point(0, 31)
 Me.LayoutControlItem4.Name = "LayoutControlItem4"
-Me.LayoutControlItem4.Size = New System.Drawing.Size(559, 289)
+Me.LayoutControlItem4.Size = New System.Drawing.Size(559, 285)
 Me.LayoutControlItem4.Text = "Message"
 Me.LayoutControlItem4.TextLocation = DevExpress.Utils.Locations.Left
 Me.LayoutControlItem4.TextSize = New System.Drawing.Size(92, 20)
@@ -4838,9 +4838,9 @@ Me.LayoutControlItem4.TextSize = New System.Drawing.Size(92, 20)
 '
 Me.LCGResponse.CustomizationFormText = "Response"
 Me.LCGResponse.Items.AddRange(New DevExpress.XtraLayout.BaseLayoutItem() {Me.LayoutControlItem11})
-Me.LCGResponse.Location = New System.Drawing.Point(0, 430)
+Me.LCGResponse.Location = New System.Drawing.Point(0, 426)
 Me.LCGResponse.Name = "LCGResponse"
-Me.LCGResponse.Size = New System.Drawing.Size(565, 288)
+Me.LCGResponse.Size = New System.Drawing.Size(565, 284)
 Me.LCGResponse.Text = "Response"
 '
 'LayoutControlItem11
@@ -4849,7 +4849,7 @@ Me.LayoutControlItem11.Control = Me.txtCustServ_Response_Message
 Me.LayoutControlItem11.CustomizationFormText = "Response Message"
 Me.LayoutControlItem11.Location = New System.Drawing.Point(0, 0)
 Me.LayoutControlItem11.Name = "LayoutControlItem11"
-Me.LayoutControlItem11.Size = New System.Drawing.Size(559, 264)
+Me.LayoutControlItem11.Size = New System.Drawing.Size(559, 260)
 Me.LayoutControlItem11.Text = "Response Message"
 Me.LayoutControlItem11.TextLocation = DevExpress.Utils.Locations.Left
 Me.LayoutControlItem11.TextSize = New System.Drawing.Size(92, 20)
@@ -4858,7 +4858,7 @@ Me.LayoutControlItem11.TextSize = New System.Drawing.Size(92, 20)
 '
 Me.LayoutControlItem3.Control = Me.txtCustServ_Subject
 Me.LayoutControlItem3.CustomizationFormText = "Subject"
-Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 399)
+Me.LayoutControlItem3.Location = New System.Drawing.Point(0, 395)
 Me.LayoutControlItem3.Name = "LayoutControlItem3"
 Me.LayoutControlItem3.Size = New System.Drawing.Size(565, 31)
 Me.LayoutControlItem3.Text = "Subject"
@@ -4901,7 +4901,7 @@ Me.btnSaveCustServ.Text = "Save"
 '
 Me.SPlitCCustserv.Location = New System.Drawing.Point(672, 0)
 Me.SPlitCCustserv.Name = "SPlitCCustserv"
-Me.SPlitCCustserv.Size = New System.Drawing.Size(6, 791)
+Me.SPlitCCustserv.Size = New System.Drawing.Size(6, 783)
 Me.SPlitCCustserv.TabIndex = 2
 Me.SPlitCCustserv.TabStop = false
 '
@@ -4914,7 +4914,7 @@ Me.GridWishListAssigned.Location = New System.Drawing.Point(2, 20)
 Me.GridWishListAssigned.MainView = Me.GridViewWishListAssigned
 Me.GridWishListAssigned.Name = "GridWishListAssigned"
 Me.GridWishListAssigned.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryIbtnAddDVD})
-Me.GridWishListAssigned.Size = New System.Drawing.Size(634, 769)
+Me.GridWishListAssigned.Size = New System.Drawing.Size(634, 761)
 Me.GridWishListAssigned.TabIndex = 2
 Me.GridWishListAssigned.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewWishListAssigned})
 '
@@ -5374,7 +5374,7 @@ Me.tabOrdersHistor.Appearance.Header.Font = New System.Drawing.Font("Tahoma", 9.
 Me.tabOrdersHistor.Appearance.Header.Options.UseFont = true
 Me.tabOrdersHistor.Controls.Add(Me.SplitContainerOrders)
 Me.tabOrdersHistor.Name = "tabOrdersHistor"
-Me.tabOrdersHistor.Size = New System.Drawing.Size(1253, 791)
+Me.tabOrdersHistor.Size = New System.Drawing.Size(1253, 783)
 Me.tabOrdersHistor.Text = "Orders History"
 '
 'SplitContainerOrders
@@ -5389,7 +5389,7 @@ Me.SplitContainerOrders.Panel1.Text = "Orders"
 Me.SplitContainerOrders.Panel2.Controls.Add(Me.GridOrdersStatusHistory)
 Me.SplitContainerOrders.Panel2.ShowCaption = true
 Me.SplitContainerOrders.Panel2.Text = "Order Status History"
-Me.SplitContainerOrders.Size = New System.Drawing.Size(1253, 791)
+Me.SplitContainerOrders.Size = New System.Drawing.Size(1253, 783)
 Me.SplitContainerOrders.SplitterPosition = 1119
 Me.SplitContainerOrders.TabIndex = 3
 Me.SplitContainerOrders.Text = "SplitContainerControl1"
@@ -5402,7 +5402,7 @@ Me.GridOrdersStatusHistory.FormsUseDefaultLookAndFeel = false
 Me.GridOrdersStatusHistory.Location = New System.Drawing.Point(0, 0)
 Me.GridOrdersStatusHistory.MainView = Me.GridViewOrdersHistory
 Me.GridOrdersStatusHistory.Name = "GridOrdersStatusHistory"
-Me.GridOrdersStatusHistory.Size = New System.Drawing.Size(124, 769)
+Me.GridOrdersStatusHistory.Size = New System.Drawing.Size(124, 761)
 Me.GridOrdersStatusHistory.TabIndex = 2
 Me.GridOrdersStatusHistory.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewOrdersHistory})
 '
@@ -5466,7 +5466,7 @@ Me.GridControl1.Location = New System.Drawing.Point(0, 176)
 Me.GridControl1.MainView = Me.GridViewSearch
 Me.GridControl1.Name = "GridControl1"
 Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {GridchkAbo, GridchkBlackList, Me.RepositoryICustomersCustomers_id})
-Me.GridControl1.Size = New System.Drawing.Size(1253, 615)
+Me.GridControl1.Size = New System.Drawing.Size(1253, 607)
 Me.GridControl1.TabIndex = 1
 Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewSearch})
 '
@@ -5497,7 +5497,7 @@ Me.GridBand1.Columns.Add(Me.call_phone)
 Me.GridBand1.Columns.Add(Me.custserv_customer_date)
 Me.GridBand1.MinWidth = 20
 Me.GridBand1.Name = "GridBand1"
-Me.GridBand1.Width = 1322
+Me.GridBand1.Width = 1039
 '
 'col2customers_id
 '
@@ -5547,7 +5547,6 @@ Me.colcustomers_abo.ColumnEdit = GridchkAbo
 Me.colcustomers_abo.FieldName = "customers_abo"
 Me.colcustomers_abo.Name = "colcustomers_abo"
 Me.colcustomers_abo.OptionsColumn.AllowEdit = false
-Me.colcustomers_abo.Visible = true
 Me.colcustomers_abo.Width = 90
 '
 'colblack_listed
@@ -5557,7 +5556,6 @@ Me.colblack_listed.ColumnEdit = GridchkBlackList
 Me.colblack_listed.FieldName = "black_listed"
 Me.colblack_listed.Name = "colblack_listed"
 Me.colblack_listed.OptionsColumn.AllowEdit = false
-Me.colblack_listed.Visible = true
 Me.colblack_listed.Width = 72
 '
 'colentry_postcode
@@ -5585,7 +5583,6 @@ Me.coldomiciliation_number.Caption = "domiciliation"
 Me.coldomiciliation_number.FieldName = "domiciliation_number"
 Me.coldomiciliation_number.Name = "coldomiciliation_number"
 Me.coldomiciliation_number.OptionsColumn.AllowEdit = false
-Me.coldomiciliation_number.Visible = true
 Me.coldomiciliation_number.Width = 121
 '
 'colcustomers_language
@@ -5621,7 +5618,7 @@ Me.tabAboHistory.Appearance.Header.Font = New System.Drawing.Font("Tahoma", 9.75
 Me.tabAboHistory.Appearance.Header.Options.UseFont = true
 Me.tabAboHistory.Controls.Add(Me.GridABO)
 Me.tabAboHistory.Name = "tabAboHistory"
-Me.tabAboHistory.Size = New System.Drawing.Size(1253, 791)
+Me.tabAboHistory.Size = New System.Drawing.Size(1253, 783)
 Me.tabAboHistory.Text = "ABO History"
 '
 'tabWishList
@@ -5632,7 +5629,7 @@ Me.tabWishList.Controls.Add(Me.GCWishlistAssigned)
 Me.tabWishList.Controls.Add(Me.SplitterControl1)
 Me.tabWishList.Controls.Add(Me.PanelControl11)
 Me.tabWishList.Name = "tabWishList"
-Me.tabWishList.Size = New System.Drawing.Size(1253, 791)
+Me.tabWishList.Size = New System.Drawing.Size(1253, 783)
 Me.tabWishList.Text = "WishList"
 '
 'GCWishlistAssigned
@@ -5642,7 +5639,7 @@ Me.GCWishlistAssigned.Controls.Add(Me.GridWishListAssigned)
 Me.GCWishlistAssigned.Dock = System.Windows.Forms.DockStyle.Fill
 Me.GCWishlistAssigned.Location = New System.Drawing.Point(615, 0)
 Me.GCWishlistAssigned.Name = "GCWishlistAssigned"
-Me.GCWishlistAssigned.Size = New System.Drawing.Size(638, 791)
+Me.GCWishlistAssigned.Size = New System.Drawing.Size(638, 783)
 Me.GCWishlistAssigned.TabIndex = 3
 Me.GCWishlistAssigned.Text = "DVD Already Assigned"
 '
@@ -5650,7 +5647,7 @@ Me.GCWishlistAssigned.Text = "DVD Already Assigned"
 '
 Me.SplitterControl1.Location = New System.Drawing.Point(609, 0)
 Me.SplitterControl1.Name = "SplitterControl1"
-Me.SplitterControl1.Size = New System.Drawing.Size(6, 791)
+Me.SplitterControl1.Size = New System.Drawing.Size(6, 783)
 Me.SplitterControl1.TabIndex = 1
 Me.SplitterControl1.TabStop = false
 '
@@ -5662,7 +5659,7 @@ Me.PanelControl11.Controls.Add(Me.PanelDetailWishlist)
 Me.PanelControl11.Dock = System.Windows.Forms.DockStyle.Left
 Me.PanelControl11.Location = New System.Drawing.Point(0, 0)
 Me.PanelControl11.Name = "PanelControl11"
-Me.PanelControl11.Size = New System.Drawing.Size(609, 791)
+Me.PanelControl11.Size = New System.Drawing.Size(609, 783)
 Me.PanelControl11.TabIndex = 4
 '
 'PanelDetailWishlist
@@ -5755,7 +5752,7 @@ Me.tabMain.Controls.Add(Me.btnStopAtReconduction)
 Me.tabMain.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.tabMain.Name = "tabMain"
 Me.tabMain.ShowCloseButton = DevExpress.Utils.DefaultBoolean.[True]
-Me.tabMain.Size = New System.Drawing.Size(1253, 791)
+Me.tabMain.Size = New System.Drawing.Size(1253, 783)
 Me.tabMain.Text = "General Info"
 '
 'lblNextDVDRemain
@@ -7104,7 +7101,7 @@ Me.tabSearch.Controls.Add(Me.GridControl1)
 Me.tabSearch.Controls.Add(Me.PanelControl1)
 Me.tabSearch.Name = "tabSearch"
 Me.tabSearch.ShowCloseButton = DevExpress.Utils.DefaultBoolean.[False]
-Me.tabSearch.Size = New System.Drawing.Size(1253, 791)
+Me.tabSearch.Size = New System.Drawing.Size(1253, 783)
 Me.tabSearch.Text = "Search"
 '
 'PanelControl1
@@ -7326,7 +7323,7 @@ Me.XTabCustomers.Location = New System.Drawing.Point(0, 57)
 Me.XTabCustomers.Name = "XTabCustomers"
 Me.XTabCustomers.SelectedTabPage = Me.tabMain
 Me.XTabCustomers.ShowTabHeader = DevExpress.Utils.DefaultBoolean.[True]
-Me.XTabCustomers.Size = New System.Drawing.Size(1262, 825)
+Me.XTabCustomers.Size = New System.Drawing.Size(1262, 817)
 Me.XTabCustomers.TabIndex = 35
 Me.XTabCustomers.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.tabSearch, Me.tabMain, Me.tabComment, Me.tabCalls, Me.tabWishList, Me.tabAboHistory, Me.tabOrdersHistor, Me.tabMessagerie, Me.tabCustServ, Me.tabPayment, Me.tabMailHistory, Me.tabSponsorShip, Me.tabPaymentMovements, Me.tabDroselia, Me.tabAboprocess, Me.tabAboProcessOld, Me.tabPurchase, Me.tabCreditHist, Me.tabCompensation, Me.tabProductsRating, Me.tabSuspendedHistory, Me.tabVodView, Me.tabCritiques, Me.tabConfig})
 '
@@ -7341,7 +7338,7 @@ Me.tabComment.Controls.Add(Me.MemoInsertComment)
 Me.tabComment.Controls.Add(Me.btnAddCustomersComment)
 Me.tabComment.Name = "tabComment"
 Me.tabComment.ShowCloseButton = DevExpress.Utils.DefaultBoolean.[True]
-Me.tabComment.Size = New System.Drawing.Size(1253, 791)
+Me.tabComment.Size = New System.Drawing.Size(1253, 783)
 Me.tabComment.Text = "Comment"
 '
 'MemoCustomersComment
@@ -7425,7 +7422,7 @@ Me.tabCalls.Appearance.Header.Font = New System.Drawing.Font("Tahoma", 9.75!, Sy
 Me.tabCalls.Appearance.Header.Options.UseFont = true
 Me.tabCalls.Controls.Add(Me.UcCallsHistory1)
 Me.tabCalls.Name = "tabCalls"
-Me.tabCalls.Size = New System.Drawing.Size(1253, 791)
+Me.tabCalls.Size = New System.Drawing.Size(1253, 783)
 Me.tabCalls.Text = "calls"
 '
 'UcCallsHistory1
@@ -7445,7 +7442,7 @@ Me.tabMessagerie.Appearance.Header.Font = New System.Drawing.Font("Tahoma", 9.75
 Me.tabMessagerie.Appearance.Header.Options.UseFont = true
 Me.tabMessagerie.Controls.Add(Me.UcMessagerieCustomer)
 Me.tabMessagerie.Name = "tabMessagerie"
-Me.tabMessagerie.Size = New System.Drawing.Size(1253, 791)
+Me.tabMessagerie.Size = New System.Drawing.Size(1253, 783)
 Me.tabMessagerie.Text = "Messagerie"
 '
 'UcMessagerieCustomer
@@ -7456,7 +7453,7 @@ Me.UcMessagerieCustomer.language_id = 0
 Me.UcMessagerieCustomer.Location = New System.Drawing.Point(0, 0)
 Me.UcMessagerieCustomer.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
 Me.UcMessagerieCustomer.Name = "UcMessagerieCustomer"
-Me.UcMessagerieCustomer.Size = New System.Drawing.Size(1253, 791)
+Me.UcMessagerieCustomer.Size = New System.Drawing.Size(1253, 783)
 Me.UcMessagerieCustomer.TabIndex = 0
 '
 'tabSponsorShip
@@ -7470,7 +7467,7 @@ Me.tabSponsorShip.Controls.Add(Me.grpCustomersPoint)
 Me.tabSponsorShip.Controls.Add(Me.GCGift)
 Me.tabSponsorShip.Controls.Add(Me.GCSponsorShip)
 Me.tabSponsorShip.Name = "tabSponsorShip"
-Me.tabSponsorShip.Size = New System.Drawing.Size(1253, 791)
+Me.tabSponsorShip.Size = New System.Drawing.Size(1253, 783)
 Me.tabSponsorShip.Text = "Sponsorship"
 '
 'GCCodeLinked
@@ -7925,7 +7922,7 @@ Me.col2customers_firstname.Width = 277
 '
 Me.tabAboprocess.Controls.Add(Me.gridAboprocess)
 Me.tabAboprocess.Name = "tabAboprocess"
-Me.tabAboprocess.Size = New System.Drawing.Size(1253, 791)
+Me.tabAboprocess.Size = New System.Drawing.Size(1253, 783)
 Me.tabAboprocess.Text = "aboprocess"
 '
 'gridAboprocess
@@ -7936,7 +7933,7 @@ Me.gridAboprocess.FormsUseDefaultLookAndFeel = false
 Me.gridAboprocess.Location = New System.Drawing.Point(0, 0)
 Me.gridAboprocess.MainView = Me.GridViewAboprocess
 Me.gridAboprocess.Name = "gridAboprocess"
-Me.gridAboprocess.Size = New System.Drawing.Size(1253, 791)
+Me.gridAboprocess.Size = New System.Drawing.Size(1253, 783)
 Me.gridAboprocess.TabIndex = 1
 Me.gridAboprocess.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewAboprocess})
 '
@@ -8114,7 +8111,7 @@ Me.colWishlist.Width = 83
 Me.tabPurchase.AutoScroll = true
 Me.tabPurchase.Controls.Add(Me.GridShoppingOrders)
 Me.tabPurchase.Name = "tabPurchase"
-Me.tabPurchase.Size = New System.Drawing.Size(1253, 791)
+Me.tabPurchase.Size = New System.Drawing.Size(1253, 783)
 Me.tabPurchase.Text = "Purchase"
 '
 'GridShoppingOrders
@@ -8329,7 +8326,7 @@ Me.shopping_discount_value.Width = 662
 '
 Me.tabCreditHist.Controls.Add(Me.GridCreditHistory)
 Me.tabCreditHist.Name = "tabCreditHist"
-Me.tabCreditHist.Size = New System.Drawing.Size(1253, 791)
+Me.tabCreditHist.Size = New System.Drawing.Size(1253, 783)
 Me.tabCreditHist.Text = "Credit history"
 '
 'GridCreditHistory
@@ -8340,7 +8337,7 @@ Me.GridCreditHistory.FormsUseDefaultLookAndFeel = false
 Me.GridCreditHistory.Location = New System.Drawing.Point(0, 0)
 Me.GridCreditHistory.MainView = Me.GridViewCreditHistory
 Me.GridCreditHistory.Name = "GridCreditHistory"
-Me.GridCreditHistory.Size = New System.Drawing.Size(1253, 791)
+Me.GridCreditHistory.Size = New System.Drawing.Size(1253, 783)
 Me.GridCreditHistory.TabIndex = 1
 Me.GridCreditHistory.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewCreditHistory})
 '
@@ -8462,7 +8459,7 @@ Me.tabCompensation.Controls.Add(Me.GridCompensation)
 Me.tabCompensation.Name = "tabCompensation"
 Me.tabCompensation.PageEnabled = false
 Me.tabCompensation.PageVisible = false
-Me.tabCompensation.Size = New System.Drawing.Size(1253, 791)
+Me.tabCompensation.Size = New System.Drawing.Size(1253, 783)
 Me.tabCompensation.Text = "Compensation"
 '
 'GridCompensation
@@ -8473,7 +8470,7 @@ Me.GridCompensation.FormsUseDefaultLookAndFeel = false
 Me.GridCompensation.Location = New System.Drawing.Point(0, 0)
 Me.GridCompensation.MainView = Me.GridViewCompensation
 Me.GridCompensation.Name = "GridCompensation"
-Me.GridCompensation.Size = New System.Drawing.Size(1253, 791)
+Me.GridCompensation.Size = New System.Drawing.Size(1253, 783)
 Me.GridCompensation.TabIndex = 0
 Me.GridCompensation.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewCompensation})
 '
@@ -8575,7 +8572,7 @@ Me.colCompProducts_name.Width = 300
 '
 Me.tabProductsRating.Controls.Add(Me.GridProductsRating)
 Me.tabProductsRating.Name = "tabProductsRating"
-Me.tabProductsRating.Size = New System.Drawing.Size(1253, 791)
+Me.tabProductsRating.Size = New System.Drawing.Size(1253, 783)
 Me.tabProductsRating.Text = "Products rating"
 '
 'GridProductsRating
@@ -8586,7 +8583,7 @@ Me.GridProductsRating.FormsUseDefaultLookAndFeel = false
 Me.GridProductsRating.Location = New System.Drawing.Point(0, 0)
 Me.GridProductsRating.MainView = Me.GridViewProductsRating
 Me.GridProductsRating.Name = "GridProductsRating"
-Me.GridProductsRating.Size = New System.Drawing.Size(1253, 791)
+Me.GridProductsRating.Size = New System.Drawing.Size(1253, 783)
 Me.GridProductsRating.TabIndex = 2
 Me.GridProductsRating.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewProductsRating})
 '
@@ -8663,7 +8660,7 @@ Me.colRatingProducts_name.Width = 249
 '
 Me.tabSuspendedHistory.Controls.Add(Me.GridSuspendedHistory)
 Me.tabSuspendedHistory.Name = "tabSuspendedHistory"
-Me.tabSuspendedHistory.Size = New System.Drawing.Size(1253, 791)
+Me.tabSuspendedHistory.Size = New System.Drawing.Size(1253, 783)
 Me.tabSuspendedHistory.Text = "Suspended History"
 '
 'GridSuspendedHistory
@@ -8674,7 +8671,7 @@ Me.GridSuspendedHistory.FormsUseDefaultLookAndFeel = false
 Me.GridSuspendedHistory.Location = New System.Drawing.Point(0, 0)
 Me.GridSuspendedHistory.MainView = Me.GridViewSuspendedHistory
 Me.GridSuspendedHistory.Name = "GridSuspendedHistory"
-Me.GridSuspendedHistory.Size = New System.Drawing.Size(1253, 791)
+Me.GridSuspendedHistory.Size = New System.Drawing.Size(1253, 783)
 Me.GridSuspendedHistory.TabIndex = 1
 Me.GridSuspendedHistory.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewSuspendedHistory})
 '
@@ -8731,7 +8728,7 @@ Me.abosuspended_history_type.Width = 161
 '
 Me.tabVodView.Controls.Add(Me.GridViewVod)
 Me.tabVodView.Name = "tabVodView"
-Me.tabVodView.Size = New System.Drawing.Size(1253, 791)
+Me.tabVodView.Size = New System.Drawing.Size(1253, 783)
 Me.tabVodView.Text = "Vod Viewed"
 '
 'GridViewVod
@@ -8743,7 +8740,7 @@ Me.GridViewVod.Location = New System.Drawing.Point(0, 0)
 Me.GridViewVod.MainView = Me.GridView1
 Me.GridViewVod.Name = "GridViewVod"
 Me.GridViewVod.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemCheckEdit1})
-Me.GridViewVod.Size = New System.Drawing.Size(1253, 791)
+Me.GridViewVod.Size = New System.Drawing.Size(1253, 783)
 Me.GridViewVod.TabIndex = 2
 Me.GridViewVod.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridView1})
 '
@@ -8875,7 +8872,7 @@ Me.tabCritiques.Controls.Add(Me.lblValueRatingAverage)
 Me.tabCritiques.Controls.Add(Me.lblRatingAverage)
 Me.tabCritiques.Controls.Add(Me.GridCritiques)
 Me.tabCritiques.Name = "tabCritiques"
-Me.tabCritiques.Size = New System.Drawing.Size(1253, 791)
+Me.tabCritiques.Size = New System.Drawing.Size(1253, 783)
 Me.tabCritiques.Text = "Critiques"
 '
 'lblValueRating
@@ -9001,7 +8998,7 @@ Me.GridViewCritiques.OptionsView.ShowFooter = true
 Me.tabConfig.Controls.Add(Me.btnRefreshTab)
 Me.tabConfig.Controls.Add(Me.ChkListConfig)
 Me.tabConfig.Name = "tabConfig"
-Me.tabConfig.Size = New System.Drawing.Size(1253, 791)
+Me.tabConfig.Size = New System.Drawing.Size(1253, 783)
 Me.tabConfig.Text = "Config"
 '
 'btnRefreshTab
@@ -10141,7 +10138,7 @@ Me.GridView3.Name = "GridView3"
 '
 Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
 Me.AutoScroll = true
-Me.ClientSize = New System.Drawing.Size(1262, 882)
+Me.ClientSize = New System.Drawing.Size(1262, 874)
 Me.Controls.Add(Me.XTabCustomers)
 Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
 Me.Name = "frmCustomers_Maint"

@@ -50,6 +50,10 @@ Public Class frmDiscountCode
     Dim _bypassDiscountuse As Integer
     Dim _FreeUpgradeAllowed As Integer
     Dim _discountStatus As Integer
+    Dim _paypal As Integer
+    Dim _creditcard As Integer
+    Dim _debitcard As Integer
+    Dim _discount_action As String
 
     Dim _shoppingdiscountCode As String
     Dim _shoppingDiscountType As Integer
@@ -114,6 +118,18 @@ Public Class frmDiscountCode
 
     'Private Sub UndoChanges(ByVal Sender As System.Object, ByVal e As System.EventArgs) Handles PopMenuUndo.Click, MyBase.EventUndoChanges
 
+    Private Sub loadDiscountAction()
+        Dim lstdiscountaction As List(Of DVDPostBuziness.clsKeyComboEnum)
+        Dim sql As String
+
+        sql = DvdPostData.clsActivationCode.GetEnumMysqlDiscountAction()
+        lstdiscountaction = DVDPostBuziness.ClsCombo.GetListEnum(sql)
+
+        cmbDiscountAction.Properties.ValueMember = "Value"
+        cmbDiscountAction.Properties.DisplayMember = "DisplayMember"
+        cmbDiscountAction.Properties.DataSource = lstdiscountaction
+    End Sub
+
     Public Sub LoadBKComboMaint()
         Try
 
@@ -139,6 +155,8 @@ Public Class frmDiscountCode
 
             'cmbGroupIDsearch.Properties.DataSource = DvdPostData.clsConnection.FillDataSet(DvdPostData.clsActivationCode.GetActivationGroup)
             cmbGroupIDsearch.Properties.DataSource = GetListCmb(DvdPostData.clsActivationCode.GetActivationGroup(), "activation_group_name", "activation_group_id")
+
+            loadDiscountAction()
 
         Catch ex As Exception
             DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Stock, ex)
@@ -224,6 +242,14 @@ Public Class frmDiscountCode
         CheckLandingPage.Enabled = Enabling
         CheckPayable.Enabled = Enabling
         CheckPayable.Enabled = Enabling
+
+        GroupBox1.Enabled = Enabling
+        CheckPaypal.Enabled = Enabling
+        CheckCreditCard.Enabled = Enabling
+        CheckDebitCard.Enabled = Enabling
+
+        cmbDiscountAction.Enabled = Enabling
+
     End Sub
 
 
@@ -261,6 +287,10 @@ Public Class frmDiscountCode
         CheckByPassDiscountUse.EditValue = clsMarketing.clsDiscountCode.GetBypassDiscountUse(dr) 'dr("bypass_discountuse")
         CheckFreeUpgradeAllowed.EditValue = clsMarketing.clsDiscountCode.GetFreeUpGradeAllowed(dr) 'dr("free_upgrade_allowed")
         CheckDiscountStatus.EditValue = clsMarketing.clsDiscountCode.GetDiscountStatus(dr) 'dr("discount_status")
+        CheckPaypal.EditValue = clsMarketing.clsDiscountCode.GetPayPal(dr)
+        CheckCreditCard.EditValue = clsMarketing.clsDiscountCode.GetCrediCard(dr)
+        CheckDebitCard.EditValue = clsMarketing.clsDiscountCode.GetDebitCard(dr)
+        cmbDiscountAction.EditValue = dr("discount_action")
 
 
     End Sub
@@ -300,6 +330,11 @@ Public Class frmDiscountCode
         _FreeUpgradeAllowed = CheckFreeUpgradeAllowed.EditValue
         _discountStatus = CheckDiscountStatus.EditValue
 
+        _paypal = CheckPaypal.EditValue
+        _creditcard = CheckCreditCard.EditValue
+        _debitcard = CheckDebitCard.EditValue
+        _discount_action = cmbDiscountAction.EditValue
+
     End Sub
 
 
@@ -318,7 +353,7 @@ Public Class frmDiscountCode
                                                                    _discountAboValiditytoType, _discountAboValiditytoValue, _commentDiscount, _iscountNbrMonthBeforeReuse, _
                                                                    _discountRecurringNbrOfMonth, _bypassDiscountuse, _discountValidityTo, _payable, _aboDvdCredit, _aboDvdRemain, _
                                                                    _nextDiscount, _credit0AutoReconduct, _landingPage, _landingPagePhp, _aboType, _
-                                                                   _aboAutoStopNextReconduction, _gotoStep, _bannerDiscount, _footerDiscount, _FreeUpgradeAllowed, _groupId, _NextaboType)
+                                                                   _aboAutoStopNextReconduction, _gotoStep, _bannerDiscount, _footerDiscount, _FreeUpgradeAllowed, _groupId, _NextaboType, _paypal, _creditcard, _debitcard, _discount_action)
             DvdPostData.clsConnection.CreateTransaction(True)
             cnt = DvdPostData.clsConnection.ExecuteNonQuery(sql)
             DvdPostData.clsConnection.ExecuteBulkQuery(DvdPostData.clsMsgError.processType.Discount, cnt)
@@ -542,7 +577,7 @@ Public Class frmDiscountCode
                                                                    _discountAboValiditytoType, _discountAboValiditytoValue, _commentDiscount, _iscountNbrMonthBeforeReuse, _
                                                                    _discountRecurringNbrOfMonth, _bypassDiscountuse, _discountValidityTo, _payable, _aboDvdCredit, _aboDvdRemain, _
                                                                    _nextDiscount, _credit0AutoReconduct, _landingPage, _landingPagePhp, _aboType, _
-                                                                   _aboAutoStopNextReconduction, _gotoStep, _bannerDiscount, _footerDiscount, _FreeUpgradeAllowed, _groupId, _NextaboType)
+                                                                   _aboAutoStopNextReconduction, _gotoStep, _bannerDiscount, _footerDiscount, _FreeUpgradeAllowed, _groupId, _NextaboType, _paypal, _creditcard, _debitcard, _discount_action)
         DvdPostData.clsConnection.CreateTransaction(True)
         cnt = DvdPostData.clsConnection.ExecuteNonQuery(sql)
         DvdPostData.clsConnection.ExecuteBulkQuery(DvdPostData.clsMsgError.processType.Feesharing, cnt)

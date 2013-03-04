@@ -595,6 +595,12 @@
     <Compile Include="PAYMENT\Ogone\frmPayPerViewMaint.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PAYMENT\PayPal\frmPayPal.Designer.vb">
+      <DependentUpon>frmPayPal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PAYMENT\PayPal\frmPayPal.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PAYMENT\Studio\frmStudioPayment.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -980,6 +986,10 @@
     <EmbeddedResource Include="PAYMENT\Ogone\frmPayPerViewMaint.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmPayPerViewMaint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAYMENT\PayPal\frmPayPal.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmPayPal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PAYMENT\Studio\frmStudioPayment.fr.resx">
       <DependentUpon>frmStudioPayment.vb</DependentUpon>

@@ -369,6 +369,9 @@ Public Class ClsCustomers
     Private Function IsRecurringDiscount(ByVal dr As DataRow) As Boolean
         Return dr("recurring_discount") = 1
     End Function
+    Private Function IsRecurringDiscountCode(ByVal dr As DataRow) As Boolean
+        Return dr("discount_recurring_nbr_of_month") > 0
+    End Function
     Private Function GetActivationDiscountCode(ByVal drCustomer As DataRow) As Integer
         If drCustomer("activation_discount_code_id") IsNot DBNull.Value Then
             Return drCustomer("activation_discount_code_id")
@@ -748,8 +751,10 @@ Public Class ClsCustomers
         Else
             ' parrainage classique 
             ClsWebServices.CallUrlSponsor(customers_id, 0)
+            If IsRecurringDiscountCode(drDiscount) Then
+                ActivateRecurringDiscountCode(drCustomer, drDiscount, discount_id, strDurationActivation)
+            End If
         End If
-
 
         If drDiscount Is Nothing Then ' discount doesn't exists
             forcedcredit = 0
@@ -1644,7 +1649,7 @@ Public Class ClsCustomers
                         str = 13
                         message = "paypalResult.Response.Ack is not returned"
                     End If
-                    
+
 
                     sql = DvdPostData.clsBatchBankTransfert.InsertPayPalPaymentsHistory(GetPaymentId(drCustomers), paypalResult.XMLRequest, paypalResult.XMLResponse, message, GetCustomersId(drCustomers))
                     str = 14
@@ -1754,7 +1759,7 @@ Public Class ClsCustomers
         Dim payment_method As Integer
 
         payment_method = GetCustomersPayment_method(customers_id)
-        Return ReconductionOgone(ClsCustomersData.Country.BELGIUM)
+        'Return ReconductionOgone(ClsCustomersData.Country.BELGIUM)
 
 
         Select Case payment_method
@@ -1880,6 +1885,19 @@ Public Class ClsCustomers
         Dim sql As String
         sql = DvdPostData.ClsCustomersData.GetUpdateDvd_at_Home()
         DvdPostData.clsConnection.ExecuteNonQuery(sql)
+    End Sub
+
+    Private Sub ActivateRecurringDiscountCode(ByVal drcustomer As DataRow, _
+                                             ByVal drDiscountCode As DataRow, _
+                                             ByVal discount_code_Id As Integer, _
+                                             ByRef strDurationActivation As String)
+        Dim Sql As String
+        strDurationActivation = GetDurationActivation(GetDiscountCodeTypeDate(drDiscountCode), GetDiscountCodeValueDate(drDiscountCode))
+        Sql = DvdPostData.ClsCustomersData.GetUpdateRecurringDiscountCode(GetCustomersId(drcustomer), discount_code_Id, Getdiscount_recurring_nbr_of_month(drDiscountCode), ClsCustomersData.CODE_DISCOUNT)
+        DvdPostData.clsConnection.ExecuteNonQuery(Sql)
+
+        Sql = DvdPostData.ClsCustomersData.GetInsertDiscountUse(GetCustomersId(drcustomer), discount_code_Id)
+        DvdPostData.clsConnection.ExecuteNonQuery(Sql)
     End Sub
 
 

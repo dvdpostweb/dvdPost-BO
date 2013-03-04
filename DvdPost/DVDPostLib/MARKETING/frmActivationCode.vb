@@ -152,6 +152,16 @@ Public Class frmActivationCode
     'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
     Friend WithEvents txtDVDRemain As DevExpress.XtraEditors.SpinEdit
     Friend WithEvents lblDvdRemain As DevExpress.XtraEditors.LabelControl
+    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents CheckDebitCard As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents CheckCreditCard As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents CheckPaypal As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents cmbDiscountAction As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents LabelControl28 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
@@ -168,7 +178,20 @@ Public Class frmActivationCode
     'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
     'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
     'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
+    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
     Friend WithEvents txtComment As DevExpress.XtraEditors.TextEdit
+
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmActivationCode))
@@ -295,6 +318,12 @@ Public Class frmActivationCode
         Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl
         Me.txtDVDRemain = New DevExpress.XtraEditors.SpinEdit
         Me.lblDvdRemain = New DevExpress.XtraEditors.LabelControl
+        Me.CheckDebitCard = New DevExpress.XtraEditors.CheckEdit
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.CheckCreditCard = New DevExpress.XtraEditors.CheckEdit
+        Me.CheckPaypal = New DevExpress.XtraEditors.CheckEdit
+        Me.cmbDiscountAction = New DevExpress.XtraEditors.LookUpEdit
+        Me.LabelControl28 = New DevExpress.XtraEditors.LabelControl
         Me.Panel1.SuspendLayout()
         CType(Me.TabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -364,6 +393,11 @@ Public Class frmActivationCode
         CType(Me.cmbNextAboType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BarManager2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtDVDRemain.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CheckDebitCard.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.CheckCreditCard.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CheckPaypal.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbDiscountAction.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'StatusBar1
@@ -389,6 +423,9 @@ Public Class frmActivationCode
         '
         'TabParameters
         '
+        Me.TabParameters.Controls.Add(Me.cmbDiscountAction)
+        Me.TabParameters.Controls.Add(Me.LabelControl28)
+        Me.TabParameters.Controls.Add(Me.GroupBox1)
         Me.TabParameters.Controls.Add(Me.txtDVDRemain)
         Me.TabParameters.Controls.Add(Me.lblDvdRemain)
         Me.TabParameters.Controls.Add(Me.btnCancel)
@@ -1297,6 +1334,10 @@ Public Class frmActivationCode
         'BarManager2
         '
         Me.BarManager2.Categories.AddRange(New DevExpress.XtraBars.BarManagerCategory() {CType(resources.GetObject("BarManager2.Categories"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager2.Categories1"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager2.Categories2"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager2.Categories3"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager2.Categories4"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager2.Categories5"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager2.Categories6"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager2.Categories7"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager2.Categories8"), DevExpress.XtraBars.BarManagerCategory)})
+        Me.BarManager2.DockControls.Add(Me.barDockControlTop)
+        Me.BarManager2.DockControls.Add(Me.barDockControlBottom)
+        Me.BarManager2.DockControls.Add(Me.barDockControlLeft)
+        Me.BarManager2.DockControls.Add(Me.barDockControlRight)
         Me.BarManager2.Form = Me
         Me.BarManager2.MaxItemId = 73
         Me.BarManager2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbViewListRepos, Me.txtQuickSearchRepos, Me.cmbReportListRepos, Me.cmbFilterListRepos, Me.cmbDefaultListRepos})
@@ -1315,6 +1356,58 @@ Public Class frmActivationCode
         resources.ApplyResources(Me.lblDvdRemain, "lblDvdRemain")
         Me.lblDvdRemain.Name = "lblDvdRemain"
         Me.HelpProvider1.SetShowHelp(Me.lblDvdRemain, CType(resources.GetObject("lblDvdRemain.ShowHelp"), Boolean))
+        '
+        'CheckDebitCard
+        '
+        resources.ApplyResources(Me.CheckDebitCard, "CheckDebitCard")
+        Me.CheckDebitCard.Name = "CheckDebitCard"
+        Me.CheckDebitCard.Properties.Caption = resources.GetString("CheckDebitCard.Properties.Caption")
+        Me.CheckDebitCard.Properties.ValueChecked = 1
+        Me.CheckDebitCard.Properties.ValueUnchecked = 0
+        Me.HelpProvider1.SetShowHelp(Me.CheckDebitCard, CType(resources.GetObject("CheckDebitCard.ShowHelp"), Boolean))
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.CheckDebitCard)
+        Me.GroupBox1.Controls.Add(Me.CheckCreditCard)
+        Me.GroupBox1.Controls.Add(Me.CheckPaypal)
+        resources.ApplyResources(Me.GroupBox1, "GroupBox1")
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.TabStop = False
+        '
+        'CheckCreditCard
+        '
+        resources.ApplyResources(Me.CheckCreditCard, "CheckCreditCard")
+        Me.CheckCreditCard.Name = "CheckCreditCard"
+        Me.CheckCreditCard.Properties.Caption = resources.GetString("CheckCreditCard.Properties.Caption")
+        Me.CheckCreditCard.Properties.ValueChecked = 1
+        Me.CheckCreditCard.Properties.ValueUnchecked = 0
+        Me.HelpProvider1.SetShowHelp(Me.CheckCreditCard, CType(resources.GetObject("CheckCreditCard.ShowHelp"), Boolean))
+        '
+        'CheckPaypal
+        '
+        resources.ApplyResources(Me.CheckPaypal, "CheckPaypal")
+        Me.CheckPaypal.Name = "CheckPaypal"
+        Me.CheckPaypal.Properties.Caption = resources.GetString("CheckPaypal.Properties.Caption")
+        Me.CheckPaypal.Properties.ValueChecked = 1
+        Me.CheckPaypal.Properties.ValueUnchecked = 0
+        Me.HelpProvider1.SetShowHelp(Me.CheckPaypal, CType(resources.GetObject("CheckPaypal.ShowHelp"), Boolean))
+        '
+        'cmbDiscountAction
+        '
+        Me.cmbDiscountAction.AllowDrop = True
+        resources.ApplyResources(Me.cmbDiscountAction, "cmbDiscountAction")
+        Me.cmbDiscountAction.Name = "cmbDiscountAction"
+        Me.cmbDiscountAction.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(CType(resources.GetObject("cmbDiscountAction.Properties.Buttons"), DevExpress.XtraEditors.Controls.ButtonPredefines))})
+        Me.cmbDiscountAction.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Value", "Value", 87, DevExpress.Utils.FormatType.Numeric, "", True, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DisplayMember", "DisplayMember", 98, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
+        Me.cmbDiscountAction.Properties.DisplayMember = "DisplayMember"
+        Me.cmbDiscountAction.Properties.NullText = resources.GetString("cmbDiscountAction.Properties.NullText")
+        Me.cmbDiscountAction.Properties.ValueMember = "Value"
+        '
+        'LabelControl28
+        '
+        resources.ApplyResources(Me.LabelControl28, "LabelControl28")
+        Me.LabelControl28.Name = "LabelControl28"
         '
         'frmActivationCode
         '
@@ -1410,6 +1503,11 @@ Public Class frmActivationCode
         CType(Me.cmbNextAboType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BarManager2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtDVDRemain.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CheckDebitCard.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        CType(Me.CheckCreditCard.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CheckPaypal.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbDiscountAction.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1455,6 +1553,10 @@ Public Class frmActivationCode
     Dim _campaignActivation As String
     Dim _combinedAction As String
     Dim _validityToChangeCustomers As String
+    Dim _paypal As Integer
+    Dim _creditcard As Integer
+    Dim _debitcard As Integer
+    Dim _discount_action As String
 
     Dim _enableField As Boolean
 
@@ -1575,12 +1677,13 @@ Public Class frmActivationCode
     Public Sub LoadBKComboSet()
 
         cmbGroup.Properties.DataSource = GetListCmb(DvdPostData.clsActivationCode.GetActivationGroup, "activation_group_name", "activation_group_id") 'GetCombo(DvdPostData.clsActivationCode.GetActivationGroup)
-        cmbProductsID.Properties.DataSource = GetListCmb(DvdPostData.clsActivationCode.GetProducts(DvdPostData.clsActivationCode.productsTypeAbo), "products_model", "products_id") 'GetCombo(DvdPostData.clsActivationCode.GetProducts(DvdPostData.clsActivationCode.productsTypeAbo))
+        cmbProductsID.Properties.DataSource = GetListCmb(DvdPostData.clsActivationCode.GetProducts(DvdPostData.clsActivationCode.productsTypeAbo), "products_title", "products_id") 'GetCombo(DvdPostData.clsActivationCode.GetProducts(DvdPostData.clsActivationCode.productsTypeAbo))
         cmbValidType.Properties.DataSource = GetListCmb(DvdPostData.clsActivationCode.GetActivationValidityType, "validity_type_explained", "validity_type_id") 'GetCombo(DvdPostData.clsActivationCode.GetActivationValidityType)
         cmbNextDiscount.Properties.DataSource = GetListCmb(DvdPostData.clsActivationCode.GetDiscountCode(), "discount_code", "discount_code_id") 'GetCombo(DvdPostData.clsActivationCode.GetDiscountCode)
         cmbGroupSearch.Properties.DataSource = GetListCmb(DvdPostData.clsActivationCode.GetActivationGroup(), "activation_group_name", "activation_group_id")
         cmbCombinedAction.Properties.DataSource = GetListCombinedAction()
         cmbNextAboType.Properties.DataSource = GetListCmb(DvdPostData.clsActivationCode.GetProducts(DvdPostData.clsActivationCode.productsTypeAbo), "products_title", "products_id")
+        loadDiscountAction()
 
     End Sub
 
@@ -1677,6 +1780,18 @@ Public Class frmActivationCode
     End Function
 
 
+    Private Sub loadDiscountAction()
+        Dim lstdiscountaction As List(Of DVDPostBuziness.clsKeyComboEnum)
+        Dim sql As String
+
+        sql = DvdPostData.clsActivationCode.GetEnumMysqlDiscountAction()
+        lstdiscountaction = DVDPostBuziness.ClsCombo.GetListEnum(sql)
+
+        cmbDiscountAction.Properties.ValueMember = "Value"
+        cmbDiscountAction.Properties.DisplayMember = "DisplayMember"
+        cmbDiscountAction.Properties.DataSource = lstdiscountaction
+    End Sub
+
     Private Sub generateActivationCode(ByVal number As Integer)
         Dim tabCode As ArrayList = createData(number)
         Dim count As Integer = 0
@@ -1700,7 +1815,7 @@ Public Class frmActivationCode
                                                                             _activationTextFr, _activationTextNl, _
                                                                             _activationTextEn, _freeUpgradeAllowed, _
                                                                             _footerActivation, _campaignActivation, _
-                                                                            _combinedAction)
+                                                                            _combinedAction, _paypal, _creditcard, _debitcard, _discount_action)
             DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
         Next
@@ -1893,6 +2008,10 @@ Public Class frmActivationCode
         '  txtValidityToCustomersChange.EditValue = blank
         txtCreationDate.EditValue = blank
         cmbNextAboType.EditValue = 0
+        CheckPaypal.Checked = False
+        CheckCreditCard.Checked = False
+        CheckDebitCard.Checked = False
+        cmbDiscountAction.EditValue = Nothing
 
     End Sub
 
@@ -1927,6 +2046,11 @@ Public Class frmActivationCode
         txtValidityToCustomersChange.EditValue = clsMarketing.clsActivationCode.GetActivationCodeValidtoDate(dr)
         txtCreationDate.EditValue = clsMarketing.clsActivationCode.GetActivationCodeCreationDate(dr)
         cmbNextAboType.EditValue = clsMarketing.clsDiscountCode.GetNextAboType(dr) 'dr("next_abo_type")
+
+        CheckPaypal.EditValue = clsMarketing.clsDiscountCode.GetPayPal(dr)
+        CheckCreditCard.EditValue = clsMarketing.clsDiscountCode.GetCrediCard(dr)
+        CheckDebitCard.EditValue = clsMarketing.clsDiscountCode.GetDebitCard(dr)
+        cmbDiscountAction.EditValue = dr("discount_action")
 
     End Sub
 
@@ -1966,6 +2090,11 @@ Public Class frmActivationCode
         _customersId = txtCustomerId.EditValue
 
         _NextaboType = cmbNextAboType.EditValue
+
+        _paypal = CheckPaypal.EditValue
+        _creditcard = CheckCreditCard.EditValue
+        _debitcard = CheckDebitCard.EditValue
+        _discount_action = cmbDiscountAction.EditValue
 
     End Sub
 
@@ -2043,7 +2172,8 @@ Public Class frmActivationCode
                                                                                  _activationTextFr, _activationTextNl, _
                                                                                  _activationTextEn, _freeUpgradeAllowed, _
                                                                                  _footerActivation, _campaignActivation, _
-                                                                                 _combinedAction, _activationCodeCreationDate, activationCodeCondition, _NextaboType)
+                                                                                 _combinedAction, _activationCodeCreationDate, activationCodeCondition, _
+                                                                                 _NextaboType, _paypal, _creditcard, _debitcard, _discount_action)
 
             count = DvdPostData.clsConnection.ExecuteNonQuery(sql)
             If MsgBox("you go to update " & count & " activations codes ", MsgBoxStyle.OkCancel) = MsgBoxResult.Ok Then
@@ -2098,6 +2228,13 @@ Public Class frmActivationCode
 
         txtQtyToGenerate.Enabled = enable
         cmbNextAboType.Enabled = enable
+
+        GroupBox1.Enabled = enable
+        CheckPaypal.Enabled = enable
+        CheckCreditCard.Enabled = enable
+        CheckDebitCard.Enabled = enable
+
+        cmbDiscountAction.Enabled = enable
         Return ok
     End Function
 

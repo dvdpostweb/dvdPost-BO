@@ -262,4 +262,11 @@ Public Class ClsPayment
         Return sql
 
     End Function
+
+    Public Shared Function GetSelectPaymentStatuses() As String
+        Dim sql As String
+        sql = "SELECT id, name FROM payment_status "
+
+        Return sql
+    End Function
 End Class

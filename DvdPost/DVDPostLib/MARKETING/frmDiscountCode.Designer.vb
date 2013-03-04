@@ -19,7 +19,7 @@ Partial Class frmDiscountCode
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode
+        Dim GridLevelNode2 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDiscountCode))
         Me.GridViewShoppingDiscount = New DevExpress.XtraGrid.Views.Grid.GridView
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl
@@ -71,6 +71,14 @@ Partial Class frmDiscountCode
         Me.tabResult = New System.Windows.Forms.TabPage
         Me.tabDiscount = New System.Windows.Forms.TabPage
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl
+        Me.cmbDiscountAction = New DevExpress.XtraEditors.LookUpEdit
+        Me.LabelControl21 = New DevExpress.XtraEditors.LabelControl
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox
+        Me.CheckDebitCard = New DevExpress.XtraEditors.CheckEdit
+        Me.CheckCreditCard = New DevExpress.XtraEditors.CheckEdit
+        Me.CheckPaypal = New DevExpress.XtraEditors.CheckEdit
+        Me.txtRemainDVD = New DevExpress.XtraEditors.SpinEdit
+        Me.lblRemainDVD = New DevExpress.XtraEditors.LabelControl
         Me.cmbNextAboType = New DevExpress.XtraEditors.LookUpEdit
         Me.LabelControl18 = New DevExpress.XtraEditors.LabelControl
         Me.cmbAboType = New DevExpress.XtraEditors.LookUpEdit
@@ -151,8 +159,6 @@ Partial Class frmDiscountCode
         Me.LabelControl43 = New DevExpress.XtraEditors.LabelControl
         Me.txtShoppingDiscount = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl44 = New DevExpress.XtraEditors.LabelControl
-        Me.txtRemainDVD = New DevExpress.XtraEditors.SpinEdit
-        Me.lblRemainDVD = New DevExpress.XtraEditors.LabelControl
         CType(Me.PrintSystem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MainDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbViewListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -179,6 +185,12 @@ Partial Class frmDiscountCode
         Me.tabDiscount.SuspendLayout()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelControl1.SuspendLayout()
+        CType(Me.cmbDiscountAction.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
+        CType(Me.CheckDebitCard.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CheckCreditCard.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CheckPaypal.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtRemainDVD.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbNextAboType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbAboType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtGotToStep2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -226,7 +238,6 @@ Partial Class frmDiscountCode
         CType(Me.dateShoppingDiscountValidityTo.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbShoppingDiscountType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtShoppingDiscount.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txtRemainDVD.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'StatusBar1
@@ -249,9 +260,9 @@ Partial Class frmDiscountCode
         Me.GridControl1.EmbeddedNavigator.Buttons.Edit.Enabled = False
         Me.GridControl1.EmbeddedNavigator.Name = ""
         Me.GridControl1.FormsUseDefaultLookAndFeel = False
-        GridLevelNode1.LevelTemplate = Me.GridViewShoppingDiscount
-        GridLevelNode1.RelationName = "Level1"
-        Me.GridControl1.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode1})
+        GridLevelNode2.LevelTemplate = Me.GridViewShoppingDiscount
+        GridLevelNode2.RelationName = "Level1"
+        Me.GridControl1.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode2})
         Me.GridControl1.Location = New System.Drawing.Point(3, 3)
         Me.GridControl1.MainView = Me.GridViewDiscount
         Me.GridControl1.Name = "GridControl1"
@@ -710,6 +721,9 @@ Partial Class frmDiscountCode
         'PanelControl1
         '
         Me.PanelControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
+        Me.PanelControl1.Controls.Add(Me.cmbDiscountAction)
+        Me.PanelControl1.Controls.Add(Me.LabelControl21)
+        Me.PanelControl1.Controls.Add(Me.GroupBox1)
         Me.PanelControl1.Controls.Add(Me.txtRemainDVD)
         Me.PanelControl1.Controls.Add(Me.lblRemainDVD)
         Me.PanelControl1.Controls.Add(Me.cmbNextAboType)
@@ -763,6 +777,99 @@ Partial Class frmDiscountCode
         Me.PanelControl1.Size = New System.Drawing.Size(1158, 585)
         Me.PanelControl1.TabIndex = 37
         '
+        'cmbDiscountAction
+        '
+        Me.cmbDiscountAction.AllowDrop = True
+        Me.cmbDiscountAction.Enabled = False
+        Me.cmbDiscountAction.Location = New System.Drawing.Point(938, 188)
+        Me.cmbDiscountAction.Name = "cmbDiscountAction"
+        Me.cmbDiscountAction.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbDiscountAction.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Value", "Value", 87, DevExpress.Utils.FormatType.Numeric, "", True, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DisplayMember", "DisplayMember", 98, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
+        Me.cmbDiscountAction.Properties.DisplayMember = "DisplayMember"
+        Me.cmbDiscountAction.Properties.NullText = ""
+        Me.cmbDiscountAction.Properties.ValueMember = "Value"
+        Me.cmbDiscountAction.Size = New System.Drawing.Size(154, 20)
+        Me.cmbDiscountAction.TabIndex = 90
+        '
+        'LabelControl21
+        '
+        Me.LabelControl21.Location = New System.Drawing.Point(844, 192)
+        Me.LabelControl21.Name = "LabelControl21"
+        Me.LabelControl21.Size = New System.Drawing.Size(73, 13)
+        Me.LabelControl21.TabIndex = 89
+        Me.LabelControl21.Text = "Discount action"
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.CheckDebitCard)
+        Me.GroupBox1.Controls.Add(Me.CheckCreditCard)
+        Me.GroupBox1.Controls.Add(Me.CheckPaypal)
+        Me.GroupBox1.Location = New System.Drawing.Point(835, 68)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(257, 106)
+        Me.GroupBox1.TabIndex = 88
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Payment methods"
+        '
+        'CheckDebitCard
+        '
+        Me.CheckDebitCard.EditValue = 0
+        Me.CheckDebitCard.Enabled = False
+        Me.CheckDebitCard.Location = New System.Drawing.Point(16, 72)
+        Me.CheckDebitCard.Name = "CheckDebitCard"
+        Me.CheckDebitCard.Properties.Caption = "Debit Card"
+        Me.CheckDebitCard.Properties.ValueChecked = 1
+        Me.CheckDebitCard.Properties.ValueUnchecked = 0
+        Me.HelpProvider1.SetShowHelp(Me.CheckDebitCard, True)
+        Me.CheckDebitCard.Size = New System.Drawing.Size(150, 19)
+        Me.CheckDebitCard.TabIndex = 90
+        '
+        'CheckCreditCard
+        '
+        Me.CheckCreditCard.EditValue = 0
+        Me.CheckCreditCard.Enabled = False
+        Me.CheckCreditCard.Location = New System.Drawing.Point(16, 47)
+        Me.CheckCreditCard.Name = "CheckCreditCard"
+        Me.CheckCreditCard.Properties.Caption = "Credit Card "
+        Me.CheckCreditCard.Properties.ValueChecked = 1
+        Me.CheckCreditCard.Properties.ValueUnchecked = 0
+        Me.HelpProvider1.SetShowHelp(Me.CheckCreditCard, True)
+        Me.CheckCreditCard.Size = New System.Drawing.Size(150, 19)
+        Me.CheckCreditCard.TabIndex = 89
+        '
+        'CheckPaypal
+        '
+        Me.CheckPaypal.EditValue = 0
+        Me.CheckPaypal.Enabled = False
+        Me.CheckPaypal.Location = New System.Drawing.Point(16, 22)
+        Me.CheckPaypal.Name = "CheckPaypal"
+        Me.CheckPaypal.Properties.Caption = "PayPal"
+        Me.CheckPaypal.Properties.ValueChecked = 1
+        Me.CheckPaypal.Properties.ValueUnchecked = 0
+        Me.HelpProvider1.SetShowHelp(Me.CheckPaypal, True)
+        Me.CheckPaypal.Size = New System.Drawing.Size(150, 19)
+        Me.CheckPaypal.TabIndex = 88
+        '
+        'txtRemainDVD
+        '
+        Me.txtRemainDVD.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
+        Me.txtRemainDVD.Enabled = False
+        Me.txtRemainDVD.Location = New System.Drawing.Point(113, 189)
+        Me.txtRemainDVD.Name = "txtRemainDVD"
+        Me.txtRemainDVD.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+        Me.txtRemainDVD.Properties.MaxValue = New Decimal(New Integer() {100, 0, 0, 0})
+        Me.HelpProvider1.SetShowHelp(Me.txtRemainDVD, True)
+        Me.txtRemainDVD.Size = New System.Drawing.Size(100, 20)
+        Me.txtRemainDVD.TabIndex = 84
+        '
+        'lblRemainDVD
+        '
+        Me.lblRemainDVD.Location = New System.Drawing.Point(13, 189)
+        Me.lblRemainDVD.Name = "lblRemainDVD"
+        Me.lblRemainDVD.Size = New System.Drawing.Size(58, 13)
+        Me.lblRemainDVD.TabIndex = 83
+        Me.lblRemainDVD.Text = "Remain DVD"
+        '
         'cmbNextAboType
         '
         Me.cmbNextAboType.AllowDrop = True
@@ -772,6 +879,7 @@ Partial Class frmDiscountCode
         Me.cmbNextAboType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbNextAboType.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Value", "Value", 87, DevExpress.Utils.FormatType.Numeric, "", True, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DisplayMember", "DisplayMember", 98, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
         Me.cmbNextAboType.Properties.DisplayMember = "DisplayMember"
+        Me.cmbNextAboType.Properties.DropDownRows = 15
         Me.cmbNextAboType.Properties.NullText = ""
         Me.cmbNextAboType.Properties.ValueMember = "Value"
         Me.cmbNextAboType.Size = New System.Drawing.Size(100, 20)
@@ -792,8 +900,8 @@ Partial Class frmDiscountCode
         Me.cmbAboType.Location = New System.Drawing.Point(374, 161)
         Me.cmbAboType.Name = "cmbAboType"
         Me.cmbAboType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cmbAboType.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Value", "Value", 87, DevExpress.Utils.FormatType.Numeric, "", True, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DisplayMember", "DisplayMember", 98, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
         Me.cmbAboType.Properties.DisplayMember = "DisplayMember"
+        Me.cmbAboType.Properties.DropDownRows = 15
         Me.cmbAboType.Properties.NullText = ""
         Me.cmbAboType.Properties.ValueMember = "Value"
         Me.cmbAboType.Size = New System.Drawing.Size(100, 20)
@@ -1001,7 +1109,6 @@ Partial Class frmDiscountCode
         Me.HelpProvider1.SetShowHelp(Me.txtNbrMonthReuse, True)
         Me.txtNbrMonthReuse.Size = New System.Drawing.Size(100, 20)
         Me.txtNbrMonthReuse.TabIndex = 62
-        Me.txtNbrMonthReuse.Visible = False
         '
         'txtNbrRecuring2
         '
@@ -1037,7 +1144,6 @@ Partial Class frmDiscountCode
         Me.GroupControl2.Size = New System.Drawing.Size(549, 250)
         Me.GroupControl2.TabIndex = 60
         Me.GroupControl2.Text = "Web Site Info"
-        Me.GroupControl2.Visible = False
         '
         'CheckLandingPage
         '
@@ -1060,7 +1166,6 @@ Partial Class frmDiscountCode
         Me.LabelControl10.Size = New System.Drawing.Size(38, 13)
         Me.LabelControl10.TabIndex = 18
         Me.LabelControl10.Text = "Text FR"
-        Me.LabelControl10.Visible = False
         '
         'LabelControl8
         '
@@ -1069,7 +1174,6 @@ Partial Class frmDiscountCode
         Me.LabelControl8.Size = New System.Drawing.Size(38, 13)
         Me.LabelControl8.TabIndex = 14
         Me.LabelControl8.Text = "Text EN"
-        Me.LabelControl8.Visible = False
         '
         'txtText_EN
         '
@@ -1078,7 +1182,6 @@ Partial Class frmDiscountCode
         Me.txtText_EN.Name = "txtText_EN"
         Me.txtText_EN.Size = New System.Drawing.Size(371, 20)
         Me.txtText_EN.TabIndex = 24
-        Me.txtText_EN.Visible = False
         '
         'LabelControl9
         '
@@ -1087,7 +1190,6 @@ Partial Class frmDiscountCode
         Me.LabelControl9.Size = New System.Drawing.Size(37, 13)
         Me.LabelControl9.TabIndex = 16
         Me.LabelControl9.Text = "Text NL"
-        Me.LabelControl9.Visible = False
         '
         'txtText_NL
         '
@@ -1096,7 +1198,6 @@ Partial Class frmDiscountCode
         Me.txtText_NL.Name = "txtText_NL"
         Me.txtText_NL.Size = New System.Drawing.Size(371, 20)
         Me.txtText_NL.TabIndex = 23
-        Me.txtText_NL.Visible = False
         '
         'txtText_Fr
         '
@@ -1105,7 +1206,6 @@ Partial Class frmDiscountCode
         Me.txtText_Fr.Name = "txtText_Fr"
         Me.txtText_Fr.Size = New System.Drawing.Size(371, 20)
         Me.txtText_Fr.TabIndex = 22
-        Me.txtText_Fr.Visible = False
         '
         'LabelControl28
         '
@@ -1288,7 +1388,6 @@ Partial Class frmDiscountCode
         Me.LabelControl14.Size = New System.Drawing.Size(136, 13)
         Me.LabelControl14.TabIndex = 26
         Me.LabelControl14.Text = "Nbr of Month before Re-Use"
-        Me.LabelControl14.Visible = False
         '
         'txtComment
         '
@@ -1593,26 +1692,6 @@ Partial Class frmDiscountCode
         Me.LabelControl44.TabIndex = 2
         Me.LabelControl44.Text = "Discount Code"
         '
-        'txtRemainDVD
-        '
-        Me.txtRemainDVD.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.txtRemainDVD.Enabled = False
-        Me.txtRemainDVD.Location = New System.Drawing.Point(113, 189)
-        Me.txtRemainDVD.Name = "txtRemainDVD"
-        Me.txtRemainDVD.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-        Me.txtRemainDVD.Properties.MaxValue = New Decimal(New Integer() {100, 0, 0, 0})
-        Me.HelpProvider1.SetShowHelp(Me.txtRemainDVD, True)
-        Me.txtRemainDVD.Size = New System.Drawing.Size(100, 20)
-        Me.txtRemainDVD.TabIndex = 84
-        '
-        'lblRemainDVD
-        '
-        Me.lblRemainDVD.Location = New System.Drawing.Point(13, 189)
-        Me.lblRemainDVD.Name = "lblRemainDVD"
-        Me.lblRemainDVD.Size = New System.Drawing.Size(58, 13)
-        Me.lblRemainDVD.TabIndex = 83
-        Me.lblRemainDVD.Text = "Remain DVD"
-        '
         'frmDiscountCode
         '
         Me.ClientSize = New System.Drawing.Size(1172, 708)
@@ -1649,6 +1728,12 @@ Partial Class frmDiscountCode
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelControl1.ResumeLayout(False)
         Me.PanelControl1.PerformLayout()
+        CType(Me.cmbDiscountAction.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        CType(Me.CheckDebitCard.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CheckCreditCard.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CheckPaypal.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtRemainDVD.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbNextAboType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbAboType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtGotToStep2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1699,7 +1784,6 @@ Partial Class frmDiscountCode
         CType(Me.dateShoppingDiscountValidityTo.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbShoppingDiscountType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtShoppingDiscount.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txtRemainDVD.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1835,5 +1919,11 @@ Partial Class frmDiscountCode
     Friend WithEvents btnXls As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents txtRemainDVD As DevExpress.XtraEditors.SpinEdit
     Friend WithEvents lblRemainDVD As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents CheckDebitCard As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents CheckCreditCard As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents CheckPaypal As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents cmbDiscountAction As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents LabelControl21 As DevExpress.XtraEditors.LabelControl
 
 End Class

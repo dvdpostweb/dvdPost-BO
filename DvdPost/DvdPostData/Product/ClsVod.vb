@@ -215,7 +215,8 @@ Public Class ClsVod
                                         ByVal expire_backcatalogue_at As Date, _
                                         ByVal is_ppv As String, _
                                         ByVal ppv_price As String, _
-                                        ByVal country As String) As String
+                                        ByVal country As String, _
+                                        Optional ByVal doStatusUpdate As Boolean = False) As String
         Dim sql As String
         Dim strLanguageSubtitle As String
         Dim strlanguage As String
@@ -349,7 +350,14 @@ Public Class ClsVod
             sql = sql & " ; update streaming_products sp " & _
                   " set is_ppv = " & str_is_ppv & _
                   ", ppv_price = " & str_ppv_price & _
-                  " where country = " & strCountry & " and imdb_id = " & imdb_id & ";"
+                  ", updated_at = now() " & _
+                  " where country = " & strCountry & " and imdb_id = " & imdb_id & "; "
+            If doStatusUpdate Then
+                sql = sql & " update streaming_products set status = " & strStatus & _
+                ", updated_at = now() " & _
+                " where source = 'alphanetworks' and imdb_id = " & imdb_id & _
+                " and language_id = " & strlanguage & " and subtitle_id = " & strLanguageSubtitle & ";"
+            End If
         Else
             sql = "update streaming_products sp " & _
                   " set filename = " & strfilename & "" & _
@@ -557,4 +565,5 @@ Public Class ClsVod
         sql = "SHOW COLUMNS FROM streaming_products LIKE 'status' "
         Return sql
     End Function
+
 End Class

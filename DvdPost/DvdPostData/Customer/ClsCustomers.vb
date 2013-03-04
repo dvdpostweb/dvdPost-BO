@@ -991,6 +991,21 @@ Public Class ClsCustomersData
         sql = sql & " where customers_id = " & customers_id
         Return sql
     End Function
+    Public Shared Function GetUpdateRecurringDiscountCode(ByVal customers_id As Integer, ByVal newdiscount_code As Integer, ByVal discount_recurring_of_month As Integer, ByVal activation_discount_code_type As String, Optional ByVal discount_code As Integer = 0) As String
+        Dim sql As String
+        Dim RecurringDate As DateTime
+        Dim strRecurringdate As String
+
+        If discount_recurring_of_month > 0 Then
+            RecurringDate = DateAdd(DateInterval.Month, discount_recurring_of_month + 1, Now())
+            RecurringDate = DateAdd(DateInterval.Day, -1, RecurringDate)
+            strRecurringdate = "'" & Year(RecurringDate) & "-" & Month(RecurringDate) & "-" & Day(RecurringDate) & "'"
+        Else
+            strRecurringdate = "null"
+        End If
+        sql = "update customers set customers_abo_discount_recurring_to_date = " & strRecurringdate & " where customers_id = " & customers_id
+        Return sql
+    End Function
     Public Shared Function GetUpdateActivationCode(ByVal customers_id As Integer, ByVal activation_code_id As Integer) As String
         Dim sql As String
         sql = " UPDATE activation_code set activation_date = now(), customers_id = " & customers_id & " where activation_id = " & activation_code_id

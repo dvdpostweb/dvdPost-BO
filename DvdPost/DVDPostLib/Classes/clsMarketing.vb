@@ -324,6 +324,30 @@ Public Class clsMarketing
         End Function
 
 
+        Public Shared Function GetPayPal(ByVal dr As DataRow) As Integer
+            If Not IsDBNull(dr("paypal")) Then
+                Return dr("paypal")
+            Else
+                Return 0
+            End If
+        End Function
+
+        Public Shared Function GetCrediCard(ByVal dr As DataRow) As Integer
+            If Not IsDBNull(dr("creditcard")) Then
+                Return dr("creditcard")
+            Else
+                Return 0
+            End If
+        End Function
+
+        Public Shared Function GetDebitCard(ByVal dr As DataRow) As Integer
+            If Not IsDBNull(dr("debitcard")) Then
+                Return dr("debitcard")
+            Else
+                Return 0
+            End If
+        End Function
+
         Public Shared Function GetShoppingDiscountValidityTo(ByVal dr As DataRow) As String
             If Not IsDBNull(dr("validity_to")) Then
                 Return dr("validity_to")
