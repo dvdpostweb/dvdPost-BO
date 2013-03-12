@@ -1334,10 +1334,6 @@ Public Class frmActivationCode
         'BarManager2
         '
         Me.BarManager2.Categories.AddRange(New DevExpress.XtraBars.BarManagerCategory() {CType(resources.GetObject("BarManager2.Categories"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager2.Categories1"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager2.Categories2"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager2.Categories3"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager2.Categories4"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager2.Categories5"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager2.Categories6"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager2.Categories7"), DevExpress.XtraBars.BarManagerCategory), CType(resources.GetObject("BarManager2.Categories8"), DevExpress.XtraBars.BarManagerCategory)})
-        Me.BarManager2.DockControls.Add(Me.barDockControlTop)
-        Me.BarManager2.DockControls.Add(Me.barDockControlBottom)
-        Me.BarManager2.DockControls.Add(Me.barDockControlLeft)
-        Me.BarManager2.DockControls.Add(Me.barDockControlRight)
         Me.BarManager2.Form = Me
         Me.BarManager2.MaxItemId = 73
         Me.BarManager2.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbViewListRepos, Me.txtQuickSearchRepos, Me.cmbReportListRepos, Me.cmbFilterListRepos, Me.cmbDefaultListRepos})
@@ -1781,15 +1777,23 @@ Public Class frmActivationCode
 
 
     Private Sub loadDiscountAction()
+        Dim listCmb As New List(Of DVDPostBuziness.clsKeyCombo)
         Dim lstdiscountaction As List(Of DVDPostBuziness.clsKeyComboEnum)
         Dim sql As String
+        Dim dr As DataRow
 
         sql = DvdPostData.clsActivationCode.GetEnumMysqlDiscountAction()
         lstdiscountaction = DVDPostBuziness.ClsCombo.GetListEnum(sql)
 
-        cmbDiscountAction.Properties.ValueMember = "Value"
-        cmbDiscountAction.Properties.DisplayMember = "DisplayMember"
-        cmbDiscountAction.Properties.DataSource = lstdiscountaction
+        listCmb.Add(New DVDPostBuziness.clsKeyCombo("", 0))
+        For i As Integer = 0 To lstdiscountaction.Count - 1
+            listCmb.Add(New DVDPostBuziness.clsKeyCombo(lstdiscountaction(i).Value, i + 1))
+        Next
+
+        'cmbDiscountAction.Properties.ValueMember = "Value"
+        'cmbDiscountAction.Properties.DisplayMember = "DisplayMember"
+        cmbDiscountAction.Properties.DataSource = listCmb
+        cmbDiscountAction.SelectedText = ""
     End Sub
 
     Private Sub generateActivationCode(ByVal number As Integer)
@@ -2050,7 +2054,7 @@ Public Class frmActivationCode
         CheckPaypal.EditValue = clsMarketing.clsDiscountCode.GetPayPal(dr)
         CheckCreditCard.EditValue = clsMarketing.clsDiscountCode.GetCrediCard(dr)
         CheckDebitCard.EditValue = clsMarketing.clsDiscountCode.GetDebitCard(dr)
-        cmbDiscountAction.EditValue = dr("discount_action")
+        cmbDiscountAction.EditValue = clsMarketing.clsDiscountCode.GetDiscountAction(dr)
 
     End Sub
 

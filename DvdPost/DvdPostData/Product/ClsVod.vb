@@ -21,6 +21,22 @@ Public Class ClsVod
         IS_PPV
         PPV_PRICE
     End Enum
+
+    Public Enum TrailerListField
+        ID = 0
+        IMDB_ID
+        FILENAME
+        AVAILABLE_FROM
+        EXPIRE_AT
+        AVAILABLE
+        LANGUAGE
+        SUBTITLE
+        CREATED_AT
+        UPDATED_AT
+        STATUS
+        VOD_SUPPORT
+    End Enum
+
     Public Shared Function getViewVod(ByVal customers_id As Integer) As String
 
         Dim sql As String
@@ -63,7 +79,7 @@ Public Class ClsVod
     Public Shared Function getSelectMovieData(ByVal imdb_id As Long)
         Dim sql As String
 
-        sql = " select * from products where imdb_id = " & imdb_id 
+        sql = " select * from products where imdb_id = " & imdb_id
 
         Return sql
 
@@ -98,6 +114,22 @@ Public Class ClsVod
 
         Return sql
     End Function
+
+    Public Shared Function getSelectTrailer(ByVal imdb_id As Long, ByVal lang As Integer, ByVal subtitle As Integer) As String
+        Dim sql As String
+        Dim strLanguageSubtitle As String
+        If subtitle = 0 Then
+            strLanguageSubtitle = "subtitle_id is null"
+        Else
+            strLanguageSubtitle = "subtitle_id = " & subtitle
+        End If
+
+        sql = " select * from streaming_trailers where imdb_id = " & imdb_id & _
+              " and language_id = " & lang & " and " & strLanguageSubtitle & " and  status <> 'deleted' "
+
+        Return sql
+    End Function
+
     Public Shared Function SearchAllViewVod() As String
         Dim sql As String
         sql = " SELECT distinct sp.*, P.products_title products_name " & _
@@ -125,8 +157,18 @@ Public Class ClsVod
         Return sql
     End Function
 
+    Private Shared Function SearchViewTrailersStatus(ByVal status As String) As String
+        Dim sql As String
+        sql = " SELECT sp.* from streaming_trailers sp where sp.status = '" & status & "'"
+        Return sql
+    End Function
+
     Public Shared Function SearchViewVodProductUploaded() As String
         Return SearchViewVodProductStatus("uploaded")
+    End Function
+
+    Public Shared Function SearchViewTrailersUploaded() As String
+        Return SearchViewTrailersStatus("uploaded")
     End Function
 
     Public Shared Function SearchViewVodProductRipped() As String
@@ -385,6 +427,79 @@ Public Class ClsVod
         Return sql
     End Function
 
+    Public Shared Function GetUpdateTrailer(ByVal streaming_trailers_id As Integer, _
+                                      ByVal imdb_id As Integer, _
+                                      ByVal filename As String, _
+                                      ByVal available_from As DateTime, _
+                                      ByVal expire_at As DateTime, _
+                                      ByVal available As Boolean, _
+                                      ByVal language_id As Integer, _
+                                      ByVal language_subtitle_id As Integer, _
+                                      ByVal status As String) As String
+        Dim sql As String
+        Dim strLanguageSubtitle As String
+        Dim strlanguage As String
+        Dim strStatus As String
+        Dim strimbd_id As String
+        Dim stravailable_from As String
+        Dim strexpire_at As String
+        Dim strfilename As String
+
+        If filename = "" Then
+            strfilename = "null"
+        Else
+            strfilename = "'" & filename & "'"
+        End If
+        If available_from = DateTime.MinValue Then
+            stravailable_from = "null"
+        Else
+            stravailable_from = "'" & DVDPostTools.ClsDate.formatDateDB(available_from) & "'"
+        End If
+
+        If expire_at = DateTime.MinValue Then
+            strexpire_at = "null"
+        Else
+            strexpire_at = "'" & DVDPostTools.ClsDate.formatDateDB(expire_at) & "'"
+        End If
+
+        If imdb_id = 0 Then
+            strimbd_id = "null"
+        Else
+            strimbd_id = imdb_id
+        End If
+
+        If status = "" Then
+            strStatus = "null"
+        Else
+            strStatus = "'" & status & "'"
+        End If
+
+        If language_id = 0 Then
+            strlanguage = "null"
+        Else
+            strlanguage = language_id
+        End If
+
+        If language_subtitle_id = 0 Then
+            strLanguageSubtitle = "null"
+        Else
+            strLanguageSubtitle = language_subtitle_id
+        End If
+
+        sql = "update streaming_trailers sp " & _
+              " set filename = " & strfilename & "" & _
+              ", available_from = " & stravailable_from & "" & _
+              ", expire_at = " & strexpire_at & "" & _
+              ", available = " & available & _
+              ", language_id = " & strlanguage & _
+              ", subtitle_id = " & strLanguageSubtitle & _
+              ", updated_at = now()" & _
+              ", status = " & strStatus & "" & _
+              " where id = " & streaming_trailers_id
+
+        Return sql
+    End Function
+
     Public Shared Function GetDeleteVod(ByVal streaming_products_id As Integer) As String
         Dim sql As String
 
@@ -518,6 +633,52 @@ Public Class ClsVod
             sql = "insert into streaming_products values (null," & imdb_id & ",'" & filename & "'," & strAvailable_from & _
                   "," & strExpireAt & ", " & strBackcatalogue_from & ", " & strBackcatalogue_expire & "," & available & "," & strlanguage & "," & strLanguageSubtitle & ",now(),now()," & strStudio & ",'" & status & "'," & strQuality & ",'" & source & "'," & support & "," & credit & "," & str_is_ppv & "," & str_ppv_price & ", " & strCountry & ")"
         End If
+        Return sql
+    End Function
+
+    Public Shared Function GetInsertTrailer(ByVal imdb_id As Integer, _
+                                       ByVal filename As String, _
+                                       ByVal available_from As DateTime, _
+                                       ByVal expire_at As DateTime, _
+                                       ByVal available As Boolean, _
+                                       ByVal language_id As Integer, _
+                                       ByVal language_subtitle_id As String, _
+                                       ByVal status As String) As String
+        Dim sql As String
+        Dim strLanguageSubtitle As String
+        Dim strQuality As String
+        Dim strlanguage As String
+        Dim strExpireAt As String
+        Dim strAvailable_from As String
+
+        If language_id <= 0 Then
+            strlanguage = "null"
+        Else
+            strlanguage = language_id
+        End If
+
+        If language_subtitle_id Is Nothing OrElse language_subtitle_id <= 0 Then
+            strLanguageSubtitle = "null"
+        Else
+            strLanguageSubtitle = language_subtitle_id
+        End If
+
+        If available_from = DateTime.MinValue Then
+            strAvailable_from = "null"
+        Else
+            strAvailable_from = "'" & DVDPostTools.ClsDate.formatDateDB(available_from) & "'"
+        End If
+
+        If expire_at = DateTime.MinValue Then
+            strExpireAt = "null"
+        Else
+            strExpireAt = "'" & DVDPostTools.ClsDate.formatDateDB(expire_at) & "'"
+        End If
+
+        sql = "insert into streaming_trailers(imdb_id, filename, available_from, expire_at, available, language_id, subtitle_id, created_at, updated_at, status)  values (" _
+                & imdb_id & ",'" & filename & "'," & strAvailable_from & "," & strExpireAt & "," & available & "," & strlanguage & "," & _
+                strLanguageSubtitle & ",now(),now()," & "'" & status & "')"
+
         Return sql
     End Function
 

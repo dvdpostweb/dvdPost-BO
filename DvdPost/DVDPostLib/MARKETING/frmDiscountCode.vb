@@ -119,15 +119,23 @@ Public Class frmDiscountCode
     'Private Sub UndoChanges(ByVal Sender As System.Object, ByVal e As System.EventArgs) Handles PopMenuUndo.Click, MyBase.EventUndoChanges
 
     Private Sub loadDiscountAction()
+        Dim listCmb As New List(Of DVDPostBuziness.clsKeyCombo)
         Dim lstdiscountaction As List(Of DVDPostBuziness.clsKeyComboEnum)
         Dim sql As String
+        Dim dr As DataRow
 
         sql = DvdPostData.clsActivationCode.GetEnumMysqlDiscountAction()
         lstdiscountaction = DVDPostBuziness.ClsCombo.GetListEnum(sql)
 
-        cmbDiscountAction.Properties.ValueMember = "Value"
-        cmbDiscountAction.Properties.DisplayMember = "DisplayMember"
-        cmbDiscountAction.Properties.DataSource = lstdiscountaction
+        listCmb.Add(New DVDPostBuziness.clsKeyCombo("", 0))
+        For i As Integer = 0 To lstdiscountaction.Count - 1
+            listCmb.Add(New DVDPostBuziness.clsKeyCombo(lstdiscountaction(i).Value, i + 1))
+        Next
+
+        'cmbDiscountAction.Properties.ValueMember = "Value"
+        'cmbDiscountAction.Properties.DisplayMember = "DisplayMember"
+        cmbDiscountAction.Properties.DataSource = listCmb
+        cmbDiscountAction.SelectedText = ""
     End Sub
 
     Public Sub LoadBKComboMaint()
@@ -216,10 +224,6 @@ Public Class frmDiscountCode
         cmbGroup_Partner.Enabled = Enabling
         cmbDiscount_Type.Enabled = Enabling
 
-
-
-
-
         txtValidityTo.Enabled = Enabling
         txtNbrRecuring2.Enabled = Enabling
         txtNbrMonthReuse.Enabled = Enabling
@@ -290,7 +294,8 @@ Public Class frmDiscountCode
         CheckPaypal.EditValue = clsMarketing.clsDiscountCode.GetPayPal(dr)
         CheckCreditCard.EditValue = clsMarketing.clsDiscountCode.GetCrediCard(dr)
         CheckDebitCard.EditValue = clsMarketing.clsDiscountCode.GetDebitCard(dr)
-        cmbDiscountAction.EditValue = dr("discount_action")
+        
+        cmbDiscountAction.EditValue = clsMarketing.clsDiscountCode.GetDiscountAction(dr)
 
 
     End Sub
@@ -394,9 +399,6 @@ Public Class frmDiscountCode
             loadTextBoxInfo(dr)
         End If
     End Sub
-
-
-
 
     Private Sub loadDiscountExpiration() 'by gauthier
         Dim dt As DataTable

@@ -19,7 +19,7 @@ Partial Class frmDiscountCode
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim GridLevelNode2 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode
+        Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmDiscountCode))
         Me.GridViewShoppingDiscount = New DevExpress.XtraGrid.Views.Grid.GridView
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl
@@ -260,9 +260,9 @@ Partial Class frmDiscountCode
         Me.GridControl1.EmbeddedNavigator.Buttons.Edit.Enabled = False
         Me.GridControl1.EmbeddedNavigator.Name = ""
         Me.GridControl1.FormsUseDefaultLookAndFeel = False
-        GridLevelNode2.LevelTemplate = Me.GridViewShoppingDiscount
-        GridLevelNode2.RelationName = "Level1"
-        Me.GridControl1.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode2})
+        GridLevelNode1.LevelTemplate = Me.GridViewShoppingDiscount
+        GridLevelNode1.RelationName = "Level1"
+        Me.GridControl1.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode1})
         Me.GridControl1.Location = New System.Drawing.Point(3, 3)
         Me.GridControl1.MainView = Me.GridViewDiscount
         Me.GridControl1.Name = "GridControl1"

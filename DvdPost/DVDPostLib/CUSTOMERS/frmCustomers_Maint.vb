@@ -5474,6 +5474,7 @@ Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseV
 '
 Me.GridViewSearch.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand1})
 Me.GridViewSearch.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.colcustomers_firstname, Me.colcustomers_lastname, Me.colcustomers_email_address, Me.colcustomers_abo, Me.colblack_listed, Me.custserv_customer_date, Me.colentry_postcode, Me.coldomiciliation_number, Me.col2customers_id, Me.colcustomers_language, Me.call_phone, Me.colentry_street_address})
+Me.GridViewSearch.CustomizationFormBounds = New System.Drawing.Rectangle(1357, 529, 225, 209)
 Me.GridViewSearch.GridControl = Me.GridControl1
 Me.GridViewSearch.Name = "GridViewSearch"
 Me.GridViewSearch.OptionsView.ShowAutoFilterRow = true
@@ -5487,17 +5488,17 @@ Me.GridBand1.Columns.Add(Me.col2customers_id)
 Me.GridBand1.Columns.Add(Me.colcustomers_firstname)
 Me.GridBand1.Columns.Add(Me.colcustomers_lastname)
 Me.GridBand1.Columns.Add(Me.colcustomers_email_address)
-Me.GridBand1.Columns.Add(Me.colcustomers_abo)
-Me.GridBand1.Columns.Add(Me.colblack_listed)
 Me.GridBand1.Columns.Add(Me.colentry_postcode)
 Me.GridBand1.Columns.Add(Me.colentry_street_address)
 Me.GridBand1.Columns.Add(Me.coldomiciliation_number)
 Me.GridBand1.Columns.Add(Me.colcustomers_language)
 Me.GridBand1.Columns.Add(Me.call_phone)
 Me.GridBand1.Columns.Add(Me.custserv_customer_date)
+Me.GridBand1.Columns.Add(Me.colcustomers_abo)
+Me.GridBand1.Columns.Add(Me.colblack_listed)
 Me.GridBand1.MinWidth = 20
 Me.GridBand1.Name = "GridBand1"
-Me.GridBand1.Width = 1039
+Me.GridBand1.Width = 1201
 '
 'col2customers_id
 '
@@ -5547,6 +5548,7 @@ Me.colcustomers_abo.ColumnEdit = GridchkAbo
 Me.colcustomers_abo.FieldName = "customers_abo"
 Me.colcustomers_abo.Name = "colcustomers_abo"
 Me.colcustomers_abo.OptionsColumn.AllowEdit = false
+Me.colcustomers_abo.Visible = true
 Me.colcustomers_abo.Width = 90
 '
 'colblack_listed
@@ -5556,6 +5558,7 @@ Me.colblack_listed.ColumnEdit = GridchkBlackList
 Me.colblack_listed.FieldName = "black_listed"
 Me.colblack_listed.Name = "colblack_listed"
 Me.colblack_listed.OptionsColumn.AllowEdit = false
+Me.colblack_listed.Visible = true
 Me.colblack_listed.Width = 72
 '
 'colentry_postcode

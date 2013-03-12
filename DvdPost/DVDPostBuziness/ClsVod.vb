@@ -24,4 +24,10 @@ Public Class ClsVod
         DvdPostData.clsConnection.ExecuteNonQuery(sql)
     End Sub
 
+    Public Shared Sub UpdateGeoIP()
+        Dim sql As String
+
+    End Sub
+
+
 End Class

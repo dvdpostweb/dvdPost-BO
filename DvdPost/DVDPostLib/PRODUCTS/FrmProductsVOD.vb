@@ -494,6 +494,10 @@ Public Class FrmProductsVOD
         RepositorycmbLanguage.DisplayMember = value
         RepositorycmbLanguage.DataSource = _dtLanguageSound
 
+        repLanguageTrailers.ValueMember = key
+        repLanguageTrailers.DisplayMember = value
+        repLanguageTrailers.DataSource = _dtLanguageSound
+
         cmbLanguages.ValueMember = key
         cmbLanguages.DisplayMember = value
         cmbLanguages.DataSource = _dtLanguageSound
@@ -515,6 +519,10 @@ Public Class FrmProductsVOD
         RepositoryLanguageSubtitleGrid.ValueMember = keySubtitle
         RepositoryLanguageSubtitleGrid.DisplayMember = value
         RepositoryLanguageSubtitleGrid.DataSource = _dtLanguageSubtitle
+
+        repSubtitleTrailers.ValueMember = keySubtitle
+        repSubtitleTrailers.DisplayMember = value
+        repSubtitleTrailers.DataSource = _dtLanguageSubtitle
 
 
 
@@ -687,6 +695,7 @@ Public Class FrmProductsVOD
         statuses = statuses.Replace(")", "")
         Dim arrst As String() = statuses.Split(",")
         cmbgridStatus.Items.AddRange(arrst)
+        cmbgridStatusTrailer.Items.AddRange(arrst)
         'studio
 
 
@@ -701,6 +710,16 @@ Public Class FrmProductsVOD
         dt = DvdPostData.clsConnection.FillDataSet(sql)
 
         GridVodWatch.DataSource = dt
+    End Sub
+
+    Private Sub laodUploadedTrailers()
+        Dim sql As String
+        Dim dt As DataTable
+
+        sql = DvdPostData.ClsVod.SearchViewTrailersUploaded()
+        dt = DvdPostData.clsConnection.FillDataSet(sql)
+
+        grdTrailers.DataSource = dt
     End Sub
 
     Private Sub BtnViewAll_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnViewAll.Click
@@ -802,6 +821,8 @@ Public Class FrmProductsVOD
     Private Sub XTabControlVod_SelectedPageChanged(ByVal sender As Object, ByVal e As DevExpress.XtraTab.TabPageChangedEventArgs) Handles XTabControlVod.SelectedPageChanged
         If XTabControlVod.SelectedTabPage Is XTabViewVod Then
             loadDatatUploaded()
+        ElseIf XTabControlVod.SelectedTabPage Is xTabTrailers Then
+            laodUploadedTrailers()
         End If
     End Sub
 
@@ -939,6 +960,16 @@ Public Class FrmProductsVOD
         Return dt.Rows.Count > 0
     End Function
 
+
+    Private Function ExistAlreadyTrailer(ByVal result() As String) As Boolean
+        Dim sql As String
+        Dim dt As DataTable
+
+        sql = DvdPostData.ClsVod.getSelectTrailer(result(DvdPostData.ClsVod.TrailerListField.IMDB_ID), result(DvdPostData.ClsVod.TrailerListField.LANGUAGE), result(DvdPostData.ClsVod.TrailerListField.SUBTITLE))
+        dt = DvdPostData.clsConnection.FillDataSet(sql)
+        Return dt.Rows.Count > 0
+    End Function
+
     Private Function ExistMovieData(ByVal imdb_id As Long) As Boolean
         Dim sql As String
         Dim dt As DataTable
@@ -965,6 +996,23 @@ Public Class FrmProductsVOD
         End If
 
     End Function
+
+    Private Function TrailerGetInfoVod(ByVal result() As String) As DataRow
+
+        Dim sql As String
+        Dim dt As DataTable
+
+        sql = DvdPostData.ClsVod.getSelectTrailer(result(DvdPostData.ClsVod.TrailerListField.IMDB_ID), result(DvdPostData.ClsVod.TrailerListField.LANGUAGE), result(DvdPostData.ClsVod.TrailerListField.SUBTITLE))
+        dt = DvdPostData.clsConnection.FillDataSet(sql)
+
+        If dt.Rows.Count > 0 Then
+            Return dt.Rows(0)
+        Else
+            Return Nothing
+        End If
+
+    End Function
+
     Private Function CheckEltFileName(ByVal elt As String, ByVal key As String) As String
 
         If elt(0) <> key Then
@@ -1051,9 +1099,63 @@ Public Class FrmProductsVOD
         End If
 
     End Sub
+
+    Private Sub TrailerCheckParseFileName(ByVal name As String, ByRef result() As String)
+        ' rules path NameFile@Imdbid_DTypeOfVod_ALanguage_SSubtitle_BitRate.Extension   FATAL@1473357_Dpc_Afre_Snon_3000k.f4v
+
+        Dim elt() As String
+        Dim tmp() As String
+        Dim valueElt As String
+        elt = name.Split("@")
+
+        If elt.Length <> 2 Then
+            result = Nothing
+            Return
+        Else
+            tmp = elt(1).Split("_")
+            If tmp.Length <> 5 Then
+                result = Nothing
+                Return
+            Else
+                result(DvdPostData.ClsVod.TrailerListField.FILENAME) = elt(0)
+                result(DvdPostData.ClsVod.TrailerListField.IMDB_ID) = tmp(0)
+            End If
+
+            valueElt = CheckEltFileName(tmp(1), "D")
+            If valueElt Is Nothing Then
+                result = Nothing
+                Return
+            Else
+                result(DvdPostData.ClsVod.TrailerListField.VOD_SUPPORT) = valueElt
+            End If
+
+            valueElt = CheckEltFileName(tmp(2), "A")
+            If valueElt Is Nothing Then
+                result = Nothing
+                Return
+            Else
+                result(DvdPostData.ClsVod.TrailerListField.LANGUAGE) = valueElt
+            End If
+
+            valueElt = CheckEltFileName(tmp(3), "S")
+            If valueElt Is Nothing Then
+                result = Nothing
+                Return
+            Else
+                result(DvdPostData.ClsVod.TrailerListField.SUBTITLE) = valueElt
+            End If
+
+        End If
+
+    End Sub
+
     Private Sub FillEmptyValue(ByRef result() As String)
 
         result = [Enum].GetNames(GetType(DvdPostData.ClsVod.ListField))
+    End Sub
+    Private Sub TrailerFillEmptyValue(ByRef result() As String)
+
+        result = [Enum].GetNames(GetType(DvdPostData.ClsVod.TrailerListField))
     End Sub
     Private Sub btnGenerateVod_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGenerateVod.Click
         ' parse file path 
@@ -1071,75 +1173,129 @@ Public Class FrmProductsVOD
 
         For Each name As String In struct
 
-            FillEmptyValue(result)
-            CheckParseFileName(name, result)
+            If name.StartsWith("trailer_") Then
+                TrailerFillEmptyValue(result)
+                TrailerCheckParseFileName(name, result)
 
-            If result IsNot Nothing Then
+                If result IsNot Nothing Then
 
-                result(DvdPostData.ClsVod.ListField.LANGUAGE) = GetId(result(DvdPostData.ClsVod.ListField.LANGUAGE), _dtLanguageSound)
-                result(DvdPostData.ClsVod.ListField.SUBTITLE) = SubtitleGetId(result(DvdPostData.ClsVod.ListField.SUBTITLE), _dtLanguageSubtitle)
-                result(DvdPostData.ClsVod.ListField.VOD_SUPPORT) = GetId(result(DvdPostData.ClsVod.ListField.VOD_SUPPORT), _dtSupport)
+                    result(DvdPostData.ClsVod.TrailerListField.LANGUAGE) = GetId(result(DvdPostData.ClsVod.TrailerListField.LANGUAGE), _dtLanguageSound)
+                    result(DvdPostData.ClsVod.TrailerListField.SUBTITLE) = SubtitleGetId(result(DvdPostData.ClsVod.TrailerListField.SUBTITLE), _dtLanguageSubtitle)
+                    result(DvdPostData.ClsVod.TrailerListField.VOD_SUPPORT) = GetId(result(DvdPostData.ClsVod.TrailerListField.VOD_SUPPORT), _dtSupport)
 
-                If result(DvdPostData.ClsVod.ListField.LANGUAGE) Is Nothing _
-                   Or result(DvdPostData.ClsVod.ListField.SUBTITLE) Is Nothing _
-                   Or result(DvdPostData.ClsVod.ListField.VOD_SUPPORT) Is Nothing Then
-                    Continue For
-                End If
-
-
-                dr = GetInfoVod(result)
-
-                If dr Is Nothing Then
-                    result(DvdPostData.ClsVod.ListField.EXPIRE_AT) = Date.MinValue
-                    result(DvdPostData.ClsVod.ListField.STUDIO) = ""
-                Else
-
-                    If dr("expire_at") IsNot DBNull.Value Then
-                        result(DvdPostData.ClsVod.ListField.EXPIRE_AT) = dr("expire_at")
-                    Else
-                        result(DvdPostData.ClsVod.ListField.EXPIRE_AT) = DateTime.MinValue
+                    If result(DvdPostData.ClsVod.TrailerListField.LANGUAGE) Is Nothing _
+                       Or result(DvdPostData.ClsVod.TrailerListField.SUBTITLE) Is Nothing Then
+                        Continue For
                     End If
 
-                    result(DvdPostData.ClsVod.ListField.STUDIO) = dr("studio_id").ToString()
 
-                    result(DvdPostData.ClsVod.ListField.IS_PPV) = dr("is_ppv").ToString()
-                    result(DvdPostData.ClsVod.ListField.PPV_PRICE) = dr("ppv_price").ToString()
+                    dr = TrailerGetInfoVod(result)
 
+                    If dr Is Nothing Then
+                        result(DvdPostData.ClsVod.TrailerListField.EXPIRE_AT) = Date.MinValue
+                    Else
+
+                        If dr("expire_at") IsNot DBNull.Value Then
+                            result(DvdPostData.ClsVod.TrailerListField.EXPIRE_AT) = dr("expire_at")
+                        Else
+                            result(DvdPostData.ClsVod.TrailerListField.EXPIRE_AT) = DateTime.MinValue
+                        End If
+                    End If
+
+                    result(DvdPostData.ClsVod.TrailerListField.AVAILABLE_FROM) = DateTime.MinValue
+                    result(DvdPostData.ClsVod.TrailerListField.STATUS) = "uploaded"
+                    result(DvdPostData.ClsVod.TrailerListField.AVAILABLE) = "true"
+
+                    If Not ExistAlreadyTrailer(result) Then
+                        sql = DvdPostData.ClsVod.GetInsertTrailer( _
+                                result(DvdPostData.ClsVod.TrailerListField.IMDB_ID), _
+                                result(DvdPostData.ClsVod.TrailerListField.FILENAME), _
+                                result(DvdPostData.ClsVod.TrailerListField.AVAILABLE_FROM), _
+                                result(DvdPostData.ClsVod.TrailerListField.EXPIRE_AT), _
+                                result(DvdPostData.ClsVod.TrailerListField.AVAILABLE), _
+                                result(DvdPostData.ClsVod.TrailerListField.LANGUAGE), _
+                                result(DvdPostData.ClsVod.TrailerListField.SUBTITLE), _
+                                result(DvdPostData.ClsVod.TrailerListField.STATUS))
+
+                        DvdPostData.clsConnection.ExecuteNonQuery(sql)
+                        LstResult.Items.Add(name)
+                    End If
+
+                Else
+                    lstError.Items.Add(name)
                 End If
-
-                result(DvdPostData.ClsVod.ListField.AVAILABLE_FROM) = DateTime.MinValue
-                result(DvdPostData.ClsVod.ListField.STATUS) = "uploaded"
-                result(DvdPostData.ClsVod.ListField.AVAILABLE) = "true"
-                result(DvdPostData.ClsVod.ListField.SOURCE) = "ALPHANETWORKS"
-                result(DvdPostData.ClsVod.ListField.CREDIT) = 1
-                result(DvdPostData.ClsVod.ListField.AVAILABLE_BACKCATALOGUE_FROM) = Date.MinValue
-                result(DvdPostData.ClsVod.ListField.EXPIRE_BACKKATALOGUE_AT) = Date.MinValue
-
-                If Not ExistAlreadyMovie(result) Then
-                    sql = DvdPostData.ClsVod.GetInsertVod( _
-                            result(DvdPostData.ClsVod.ListField.IMDB_ID), _
-                            result(DvdPostData.ClsVod.ListField.FILENAME), _
-                            result(DvdPostData.ClsVod.ListField.AVAILABLE_FROM), _
-                            result(DvdPostData.ClsVod.ListField.EXPIRE_AT), _
-                            result(DvdPostData.ClsVod.ListField.AVAILABLE), _
-                            result(DvdPostData.ClsVod.ListField.LANGUAGE), _
-                            result(DvdPostData.ClsVod.ListField.SUBTITLE), _
-                            result(DvdPostData.ClsVod.ListField.STUDIO), _
-                            result(DvdPostData.ClsVod.ListField.STATUS), _
-                            String.Empty, _
-                            result(DvdPostData.ClsVod.ListField.SOURCE), _
-                            result(DvdPostData.ClsVod.ListField.VOD_SUPPORT), _
-                            Integer.Parse(result(DvdPostData.ClsVod.ListField.CREDIT)), _
-                            result(DvdPostData.ClsVod.ListField.AVAILABLE_BACKCATALOGUE_FROM), _
-                            result(DvdPostData.ClsVod.ListField.EXPIRE_BACKKATALOGUE_AT), _
-                            "false", "", "BE")
-
-                    DvdPostData.clsConnection.ExecuteNonQuery(sql)
-                    LstResult.Items.Add(name)
-                End If
-
             Else
-                lstError.Items.Add(name)
+
+                FillEmptyValue(result)
+                CheckParseFileName(name, result)
+
+                If result IsNot Nothing Then
+
+                    result(DvdPostData.ClsVod.ListField.LANGUAGE) = GetId(result(DvdPostData.ClsVod.ListField.LANGUAGE), _dtLanguageSound)
+                    result(DvdPostData.ClsVod.ListField.SUBTITLE) = SubtitleGetId(result(DvdPostData.ClsVod.ListField.SUBTITLE), _dtLanguageSubtitle)
+                    result(DvdPostData.ClsVod.ListField.VOD_SUPPORT) = GetId(result(DvdPostData.ClsVod.ListField.VOD_SUPPORT), _dtSupport)
+
+                    If result(DvdPostData.ClsVod.ListField.LANGUAGE) Is Nothing _
+                       Or result(DvdPostData.ClsVod.ListField.SUBTITLE) Is Nothing _
+                       Or result(DvdPostData.ClsVod.ListField.VOD_SUPPORT) Is Nothing Then
+                        Continue For
+                    End If
+
+
+                    dr = GetInfoVod(result)
+
+                    If dr Is Nothing Then
+                        result(DvdPostData.ClsVod.ListField.EXPIRE_AT) = Date.MinValue
+                        result(DvdPostData.ClsVod.ListField.STUDIO) = ""
+                    Else
+
+                        If dr("expire_at") IsNot DBNull.Value Then
+                            result(DvdPostData.ClsVod.ListField.EXPIRE_AT) = dr("expire_at")
+                        Else
+                            result(DvdPostData.ClsVod.ListField.EXPIRE_AT) = DateTime.MinValue
+                        End If
+
+                        result(DvdPostData.ClsVod.ListField.STUDIO) = dr("studio_id").ToString()
+
+                        result(DvdPostData.ClsVod.ListField.IS_PPV) = dr("is_ppv").ToString()
+                        result(DvdPostData.ClsVod.ListField.PPV_PRICE) = dr("ppv_price").ToString()
+
+                    End If
+
+                    result(DvdPostData.ClsVod.ListField.AVAILABLE_FROM) = DateTime.MinValue
+                    result(DvdPostData.ClsVod.ListField.STATUS) = "uploaded"
+                    result(DvdPostData.ClsVod.ListField.AVAILABLE) = "true"
+                    result(DvdPostData.ClsVod.ListField.SOURCE) = "ALPHANETWORKS"
+                    result(DvdPostData.ClsVod.ListField.CREDIT) = 1
+                    result(DvdPostData.ClsVod.ListField.AVAILABLE_BACKCATALOGUE_FROM) = Date.MinValue
+                    result(DvdPostData.ClsVod.ListField.EXPIRE_BACKKATALOGUE_AT) = Date.MinValue
+
+                    If Not ExistAlreadyMovie(result) Then
+                        sql = DvdPostData.ClsVod.GetInsertVod( _
+                                result(DvdPostData.ClsVod.ListField.IMDB_ID), _
+                                result(DvdPostData.ClsVod.ListField.FILENAME), _
+                                result(DvdPostData.ClsVod.ListField.AVAILABLE_FROM), _
+                                result(DvdPostData.ClsVod.ListField.EXPIRE_AT), _
+                                result(DvdPostData.ClsVod.ListField.AVAILABLE), _
+                                result(DvdPostData.ClsVod.ListField.LANGUAGE), _
+                                result(DvdPostData.ClsVod.ListField.SUBTITLE), _
+                                result(DvdPostData.ClsVod.ListField.STUDIO), _
+                                result(DvdPostData.ClsVod.ListField.STATUS), _
+                                String.Empty, _
+                                result(DvdPostData.ClsVod.ListField.SOURCE), _
+                                result(DvdPostData.ClsVod.ListField.VOD_SUPPORT), _
+                                Integer.Parse(result(DvdPostData.ClsVod.ListField.CREDIT)), _
+                                result(DvdPostData.ClsVod.ListField.AVAILABLE_BACKCATALOGUE_FROM), _
+                                result(DvdPostData.ClsVod.ListField.EXPIRE_BACKKATALOGUE_AT), _
+                                "false", "", "BE")
+
+                        DvdPostData.clsConnection.ExecuteNonQuery(sql)
+                        LstResult.Items.Add(name)
+                    End If
+
+                Else
+                    lstError.Items.Add(name)
+                End If
             End If
         Next
 
@@ -1275,5 +1431,33 @@ Public Class FrmProductsVOD
 
     Private Sub chkIsPPVNL_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkIsPPVNL.CheckedChanged
         txtPPVPriceNL.Enabled = chkLU.Checked And chkIsPPVNL.Checked
+    End Sub
+
+    Private Sub btnSaveTrailers_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSaveTrailers.Click
+        Dim dt As DataTable
+        dt = grdTrailers.DataSource.GetChanges()
+
+
+        If dt Is Nothing Then
+            Return
+        ElseIf MsgBoxResult.Cancel = MsgBox(dt.Rows.Count & " trailers; status are updated and will be saved, please confim ! ", MsgBoxStyle.OkCancel) Then
+            Return
+        End If
+        For Each dr As DataRow In dt.Rows
+            Dim sql As String
+            sql = DvdPostData.ClsVod.GetUpdateTrailer(dr("id"), _
+                                        IIf(dr("imdb_id") Is System.DBNull.Value, 0, dr("imdb_id")), _
+                                        IIf(dr("filename") Is System.DBNull.Value, "", dr("filename")), _
+                                        IIf(dr("available_from") Is System.DBNull.Value, DateTime.MinValue, dr("available_from")), _
+                                        IIf(dr("expire_at") Is System.DBNull.Value, DateTime.MinValue, dr("expire_at")), _
+                                        dr("available"), _
+                                        IIf(dr("language_id") Is System.DBNull.Value, 0, dr("language_id")), _
+                                        IIf(dr("subtitle_id") Is System.DBNull.Value, 0, dr("subtitle_id")), _
+                                        IIf(dr("status") Is System.DBNull.Value, 0, dr("status")))
+            DvdPostData.clsConnection.ExecuteNonQuery(sql)
+
+        Next
+        grdTrailers.DataSource.AcceptChanges()
+
     End Sub
 End Class

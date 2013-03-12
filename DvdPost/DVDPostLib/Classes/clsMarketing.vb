@@ -249,6 +249,14 @@ Public Class clsMarketing
             End If
         End Function
 
+        Public Shared Function GetDiscountAction(ByVal dr As DataRow) As String
+            If Not IsDBNull(dr("discount_action")) AndAlso Not dr("discount_action") Is String.Empty Then
+                Return dr("discount_action")
+            Else
+                Return ""
+            End If
+        End Function
+
         Public Shared Function GetAboType(ByVal dr As DataRow) As Integer
             If Not IsDBNull(dr("listing_products_allowed")) AndAlso Not dr("listing_products_allowed") Is String.Empty Then
                 Return dr("listing_products_allowed")
