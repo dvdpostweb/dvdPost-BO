@@ -547,13 +547,13 @@ Public Class FrmProductsVOD
         If GridViewSearch.RowCount > 0 Then
             row = GridViewSearch.GetDataRow(GridViewSearch.FocusedRowHandle())
             loadData(row)
-            Dim drLU As DataRow() = CType(GridVod.DataSource, DataTable).Select("imdb_id = " & row("imdb_id") & " " & IIf(IsDBNull(row("language_id")), "", " and language_id = " & row("language_id")) & " and id <> " & row("id") & IIf(IsDBNull(row("subtitle_id")), "", " and subtitle_id = " & row("subtitle_id")) & " and source = 'alphanetworks' and status <> 'deleted' and country = 'LU' ")
+            Dim drLU As DataRow() = CType(GridVod.DataSource, DataTable).Select("imdb_id = " & row("imdb_id") & " " & IIf(IsDBNull(row("language_id")), " and language_id is null ", " and language_id = " & row("language_id")) & " and id <> " & row("id") & IIf(IsDBNull(row("subtitle_id")), " and subtitle_id is null ", " and subtitle_id = " & row("subtitle_id")) & " and source = 'alphanetworks' and status <> 'deleted' and country = 'LU' ")
             If drLU.Length > 0 Then
                 loadDataLU(drLU(0))
             Else
                 ClearLUData()
             End If
-            Dim drNL As DataRow() = CType(GridVod.DataSource, DataTable).Select("imdb_id = " & row("imdb_id") & " " & IIf(IsDBNull(row("language_id")), "", " and language_id = " & row("language_id")) & " " & IIf(IsDBNull(row("subtitle_id")), "", " and subtitle_id = " & row("subtitle_id")) & " and id <> " & row("id") & " and source = 'alphanetworks' and status <> 'deleted' and country = 'NL' ")
+            Dim drNL As DataRow() = CType(GridVod.DataSource, DataTable).Select("imdb_id = " & row("imdb_id") & " " & IIf(IsDBNull(row("language_id")), " and language_id is null ", " and language_id = " & row("language_id")) & " " & IIf(IsDBNull(row("subtitle_id")), " and subtitle_id is null ", " and subtitle_id = " & row("subtitle_id")) & " and id <> " & row("id") & " and source = 'alphanetworks' and status <> 'deleted' and country = 'NL' ")
             If drNL.Length > 0 Then
                 loadDataNL(drNL(0))
             Else
@@ -831,6 +831,18 @@ Public Class FrmProductsVOD
         If gridViewVodWatch.RowCount > 0 Then
             row = gridViewVodWatch.GetDataRow(gridViewVodWatch.FocusedRowHandle())
             loadData(row)
+            Dim drLU As DataRow() = CType(GridVodWatch.DataSource, DataTable).Select("imdb_id = " & row("imdb_id") & " " & IIf(IsDBNull(row("language_id")), " and language_id is null ", " and language_id = " & row("language_id")) & " and id <> " & row("id") & IIf(IsDBNull(row("subtitle_id")), " and subtitle_id is null ", " and subtitle_id = " & row("subtitle_id")) & " and source = 'alphanetworks' and status <> 'deleted' and country = 'LU' ")
+            If drLU.Length > 0 Then
+                loadDataLU(drLU(0))
+            Else
+                ClearLUData()
+            End If
+            Dim drNL As DataRow() = CType(GridVodWatch.DataSource, DataTable).Select("imdb_id = " & row("imdb_id") & " " & IIf(IsDBNull(row("language_id")), " and language_id is null ", " and language_id = " & row("language_id")) & " " & IIf(IsDBNull(row("subtitle_id")), " and subtitle_id is null ", " and subtitle_id = " & row("subtitle_id")) & " and id <> " & row("id") & " and source = 'alphanetworks' and status <> 'deleted' and country = 'NL' ")
+            If drNL.Length > 0 Then
+                loadDataNL(drNL(0))
+            Else
+                ClearNLData()
+            End If
         End If
         ChangeStep(StepForm.CHOOSEVOD)
     End Sub
@@ -840,6 +852,18 @@ Public Class FrmProductsVOD
         If gridViewVodWatch.RowCount > 0 Then
             row = gridViewVodWatch.GetDataRow(gridViewVodWatch.FocusedRowHandle())
             loadData(row)
+            Dim drLU As DataRow() = CType(GridVodWatch.DataSource, DataTable).Select("imdb_id = " & row("imdb_id") & " " & IIf(IsDBNull(row("language_id")), " and language_id is null ", " and language_id = " & row("language_id")) & " and id <> " & row("id") & IIf(IsDBNull(row("subtitle_id")), " and subtitle_id is null ", " and subtitle_id = " & row("subtitle_id")) & " and source = 'alphanetworks' and status <> 'deleted' and country = 'LU' ")
+            If drLU.Length > 0 Then
+                loadDataLU(drLU(0))
+            Else
+                ClearLUData()
+            End If
+            Dim drNL As DataRow() = CType(GridVodWatch.DataSource, DataTable).Select("imdb_id = " & row("imdb_id") & " " & IIf(IsDBNull(row("language_id")), " and language_id is null ", " and language_id = " & row("language_id")) & " " & IIf(IsDBNull(row("subtitle_id")), " and subtitle_id is null ", " and subtitle_id = " & row("subtitle_id")) & " and id <> " & row("id") & " and source = 'alphanetworks' and status <> 'deleted' and country = 'NL' ")
+            If drNL.Length > 0 Then
+                loadDataNL(drNL(0))
+            Else
+                ClearNLData()
+            End If
         End If
     End Sub
 
@@ -1385,7 +1409,7 @@ Public Class FrmProductsVOD
         'WebSiteDvdPost.Width = (XTabControlVod.Width - GridVodWatch.Width) + 203
     End Sub
 
-    Private Sub chkIsPPV_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    Private Sub chkIsPPV_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkIsPPV.CheckedChanged
         txtPPVPrice.Enabled = chkIsPPV.Checked
 
     End Sub

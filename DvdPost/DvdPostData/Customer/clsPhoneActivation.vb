@@ -6,7 +6,7 @@ Public Class clsPhoneActivation
 
 
         If call_phone <> "" Then
-            call_phone = " '" & DVDPostTools.ClsDate.formatDate(call_phone) & "' "
+            call_phone = " '" & call_phone & "' " '" '" & DVDPostTools.ClsDate.formatDate(call_phone) & "' "
         Else
             call_phone = " DEFAULT(call_phone)"
         End If
@@ -47,7 +47,7 @@ Public Class clsPhoneActivation
 
 
         If call_phone <> "" Then
-            call_phone = " '" & DVDPostTools.ClsDate.formatDate(call_phone) & "' "
+            call_phone = " '" & call_phone & "' " '" '" & DVDPostTools.ClsDate.formatDateTimeDB(call_phone) & "' "
         Else
             call_phone = " DEFAULT(call_phone)"
         End If

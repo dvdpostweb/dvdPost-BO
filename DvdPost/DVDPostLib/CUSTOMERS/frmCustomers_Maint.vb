@@ -1273,14 +1273,14 @@ Me.RepositoryICustomersCustomers_id = New DevExpress.XtraEditors.Repository.Repo
 Me.colcustomers_firstname = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
 Me.colcustomers_lastname = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
 Me.colcustomers_email_address = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
-Me.colcustomers_abo = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
-Me.colblack_listed = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
 Me.colentry_postcode = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
 Me.colentry_street_address = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
 Me.coldomiciliation_number = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
 Me.colcustomers_language = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
 Me.call_phone = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
 Me.custserv_customer_date = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+Me.colcustomers_abo = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+Me.colblack_listed = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
 Me.tabAboHistory = New DevExpress.XtraTab.XtraTabPage
 Me.tabWishList = New DevExpress.XtraTab.XtraTabPage
 Me.GCWishlistAssigned = New DevExpress.XtraEditors.GroupControl
@@ -5541,26 +5541,6 @@ Me.colcustomers_email_address.OptionsColumn.AllowEdit = false
 Me.colcustomers_email_address.Visible = true
 Me.colcustomers_email_address.Width = 143
 '
-'colcustomers_abo
-'
-Me.colcustomers_abo.Caption = "abo"
-Me.colcustomers_abo.ColumnEdit = GridchkAbo
-Me.colcustomers_abo.FieldName = "customers_abo"
-Me.colcustomers_abo.Name = "colcustomers_abo"
-Me.colcustomers_abo.OptionsColumn.AllowEdit = false
-Me.colcustomers_abo.Visible = true
-Me.colcustomers_abo.Width = 90
-'
-'colblack_listed
-'
-Me.colblack_listed.Caption = "black_listed"
-Me.colblack_listed.ColumnEdit = GridchkBlackList
-Me.colblack_listed.FieldName = "black_listed"
-Me.colblack_listed.Name = "colblack_listed"
-Me.colblack_listed.OptionsColumn.AllowEdit = false
-Me.colblack_listed.Visible = true
-Me.colblack_listed.Width = 72
-'
 'colentry_postcode
 '
 Me.colentry_postcode.Caption = "postcode"
@@ -5614,6 +5594,26 @@ Me.custserv_customer_date.Name = "custserv_customer_date"
 Me.custserv_customer_date.OptionsColumn.AllowEdit = false
 Me.custserv_customer_date.Visible = true
 Me.custserv_customer_date.Width = 124
+'
+'colcustomers_abo
+'
+Me.colcustomers_abo.Caption = "abo"
+Me.colcustomers_abo.ColumnEdit = GridchkAbo
+Me.colcustomers_abo.FieldName = "customers_abo"
+Me.colcustomers_abo.Name = "colcustomers_abo"
+Me.colcustomers_abo.OptionsColumn.AllowEdit = false
+Me.colcustomers_abo.Visible = true
+Me.colcustomers_abo.Width = 90
+'
+'colblack_listed
+'
+Me.colblack_listed.Caption = "black_listed"
+Me.colblack_listed.ColumnEdit = GridchkBlackList
+Me.colblack_listed.FieldName = "black_listed"
+Me.colblack_listed.Name = "colblack_listed"
+Me.colblack_listed.OptionsColumn.AllowEdit = false
+Me.colblack_listed.Visible = true
+Me.colblack_listed.Width = 72
 '
 'tabAboHistory
 '
@@ -5914,7 +5914,7 @@ Me.cmbPhoneActivDelete.Properties.Columns.AddRange(New DevExpress.XtraEditors.Co
 Me.cmbPhoneActivDelete.Properties.DisplayMember = "reason"
 Me.cmbPhoneActivDelete.Properties.NullText = ""
 Me.cmbPhoneActivDelete.Properties.ValueMember = "stop_phone_id"
-Me.cmbPhoneActivDelete.Size = New System.Drawing.Size(121, 20)
+Me.cmbPhoneActivDelete.Size = New System.Drawing.Size(185, 20)
 Me.cmbPhoneActivDelete.TabIndex = 40
 Me.cmbPhoneActivDelete.Visible = false
 '
@@ -5931,13 +5931,18 @@ Me.LabelReason.Visible = false
 'DateCallPhoneActivation
 '
 Me.DateCallPhoneActivation.CausesValidation = false
-Me.DateCallPhoneActivation.EditValue = Nothing
+Me.DateCallPhoneActivation.EditValue = New Date(2013, 3, 21, 15, 38, 23, 0)
 Me.DateCallPhoneActivation.Enabled = false
 Me.DateCallPhoneActivation.Location = New System.Drawing.Point(136, 30)
 Me.DateCallPhoneActivation.Name = "DateCallPhoneActivation"
 Me.DateCallPhoneActivation.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+Me.DateCallPhoneActivation.Properties.DisplayFormat.FormatString = "dd.MM.yyyy HH:mm:ss"
+Me.DateCallPhoneActivation.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+Me.DateCallPhoneActivation.Properties.EditFormat.FormatString = "dd.MM.yyyy HH:mm:ss"
+Me.DateCallPhoneActivation.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime
+Me.DateCallPhoneActivation.Properties.Mask.EditMask = "s"
 Me.DateCallPhoneActivation.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-Me.DateCallPhoneActivation.Size = New System.Drawing.Size(121, 20)
+Me.DateCallPhoneActivation.Size = New System.Drawing.Size(185, 20)
 Me.DateCallPhoneActivation.TabIndex = 18
 '
 'LabelCallMeDate
@@ -11634,7 +11639,7 @@ End Sub
 
 
         If DateCallPhoneActivation.EditValue IsNot Nothing Then
-            call_phone = DateCallPhoneActivation.EditValue.ToString
+            call_phone = DateCallPhoneActivation.DateTime.ToString("yyyy-MM-dd HH:mm:ss")
         Else
             call_phone = String.Empty
         End If

@@ -105,8 +105,8 @@ Public Class clsStudio
  " x.qty_at_home, " & _
  " x.credits, " & _
  " x.price_of_movie_tvac, " & _
- " x.price_of_movie_htva, " & _
- " case x.catalogue_type when 'N' then  if((x.price_of_movie_htva * x.fee_new_vod) < x.minimum_new_vod, x.minimum_new_vod, (x.price_of_movie_htva * x.fee_new_vod))  when 'B' then  if((x.price_of_movie_htva * x.fee_back_catalogue) < x.minimum_back_catalogue, x.minimum_back_catalogue, (x.price_of_movie_htva * x.fee_back_catalogue))  end amount  " & _
+ " (x.price_of_movie_tvac / 1.21) price_of_movie_htva, " & _
+ " case x.catalogue_type when 'N' then  if(((x.price_of_movie_tvac / 1.21) * x.fee_new_vod) < x.minimum_new_vod, x.minimum_new_vod, ((x.price_of_movie_tvac / 1.21) * x.fee_new_vod))  when 'B' then  if((x.price_of_movie_htva * x.fee_back_catalogue) < x.minimum_back_catalogue, x.minimum_back_catalogue, ((x.price_of_movie_tvac / 1.21) * x.fee_back_catalogue))  end amount  " & _
  "       from " & _
  " ( " & _
  " select " & _
@@ -131,7 +131,7 @@ Public Class clsStudio
   " if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at)) qty_credit, " & _
    " pa.qty_at_home, " & _
    " if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)) credits, " & _
-    " (pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1))) price_of_movie_tvac, " & _
+    " if(t.is_ppv = 1, t.ppv_price,(pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) price_of_movie_tvac, " & _
      " (((pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) / 1.21) price_of_movie_htva, " & _
       " s.minimum_new_vod, " & _
        " s.fee_new_vod, " & _
@@ -162,9 +162,9 @@ Public Class clsStudio
         Dim sql As String
         sql = "  select x.vodstudio, x.productstudio, x.products_title, count(x.imdb_id) number_titles, sum(x.price_of_movie_tvac)  tvac_sum, " & _
 " sum(x.price_of_movie_htva) htvac_sum, " & _
-" sum(case x.catalogue_type when 'N' then if((x.price_of_movie_htva * x.fee_new_vod) < x.minimum_new_vod, x.minimum_new_vod, (x.price_of_movie_htva * x.fee_new_vod)) " & _
+" sum(case x.catalogue_type when 'N' then if(((x.price_of_movie_tvac / 1.21) * x.fee_new_vod) < x.minimum_new_vod, x.minimum_new_vod, ((x.price_of_movie_tvac / 1.21) * x.fee_new_vod)) " & _
 " when 'B' then " & _
- " if((x.price_of_movie_htva * x.fee_back_catalogue) < x.minimum_back_catalogue, x.minimum_back_catalogue, (x.price_of_movie_htva * x.fee_back_catalogue)) " & _
+ " if(((x.price_of_movie_tvac / 1.21) * x.fee_back_catalogue) < x.minimum_back_catalogue, x.minimum_back_catalogue, ((x.price_of_movie_tvac / 1.21) * x.fee_back_catalogue)) " & _
  " end ) amount_sum " & _
         " from " & _
  "( " & _
@@ -190,7 +190,7 @@ Public Class clsStudio
  "  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at)) qty_credit,  " & _
    "              pa.qty_at_home, " & _
 "   if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)) credits,  " & _
-"  (pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1))) price_of_movie_tvac,  " & _
+"  if(t.is_ppv = 1, t.ppv_price,(pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) price_of_movie_tvac,  " & _
 "  (((pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) / 1.21) price_of_movie_htva, " & _
                    "  s.minimum_new_vod, " & _
                    "  s.fee_new_vod, " & _
@@ -218,9 +218,9 @@ Public Class clsStudio
         Dim sql As String
         sql = "  select x.vodstudio, x.productstudio, x.products_title, count(x.imdb_id) number_titles, sum(x.price_of_movie_tvac)  tvac_sum, " & _
 " sum(x.price_of_movie_htva) htvac_sum, " & _
-" sum(case x.catalogue_type when 'N' then if((x.price_of_movie_htva * x.fee_new_vod) < x.minimum_new_vod, x.minimum_new_vod, (x.price_of_movie_htva * x.fee_new_vod)) " & _
+" sum(case x.catalogue_type when 'N' then if(((x.price_of_movie_tvac / 1.21) * x.fee_new_vod) < x.minimum_new_vod, x.minimum_new_vod, ((x.price_of_movie_tvac / 1.21)* x.fee_new_vod)) " & _
 " when 'B' then " & _
- " if((x.price_of_movie_htva * x.fee_back_catalogue) < x.minimum_back_catalogue, x.minimum_back_catalogue, (x.price_of_movie_htva * x.fee_back_catalogue)) " & _
+ " if(((x.price_of_movie_tvac / 1.21) * x.fee_back_catalogue) < x.minimum_back_catalogue, x.minimum_back_catalogue, ((x.price_of_movie_tvac / 1.21) * x.fee_back_catalogue)) " & _
  " end ) amount_sum " & _
         " from " & _
  "( " & _
@@ -246,7 +246,7 @@ Public Class clsStudio
  "  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at)) qty_credit,  " & _
    "              pa.qty_at_home, " & _
 "   if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)) credits,  " & _
-"  (pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1))) price_of_movie_tvac,  " & _
+"  if(t.is_ppv = 1, t.ppv_price,(pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) price_of_movie_tvac,  " & _
 "  (((pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) / 1.21) price_of_movie_htva, " & _
                    "  s.minimum_new_vod, " & _
                    "  s.fee_new_vod, " & _
@@ -296,8 +296,8 @@ Public Class clsStudio
         " x.qty_at_home, " & _
         " x.credits, " & _
         " x.price_of_movie_tvac, " & _
-        " x.price_of_movie_htva, " & _
- " case x.catalogue_type when 'N' then  if((x.price_of_movie_htva * x.fee_new_vod) < x.minimum_new_vod, x.minimum_new_vod, (x.price_of_movie_htva * x.fee_new_vod))  when 'B' then  if((x.price_of_movie_htva * x.fee_back_catalogue) < x.minimum_back_catalogue, x.minimum_back_catalogue, (x.price_of_movie_htva * x.fee_back_catalogue))  end amount  " & _
+        " (x.price_of_movie_tvac / 1.21) price_of_movie_htva, " & _
+ " case x.catalogue_type when 'N' then  if(((x.price_of_movie_tvac / 1.21) * x.fee_new_vod) < x.minimum_new_vod, x.minimum_new_vod, ((x.price_of_movie_tvac / 1.21) * x.fee_new_vod))  when 'B' then  if((x.price_of_movie_htva * x.fee_back_catalogue) < x.minimum_back_catalogue, x.minimum_back_catalogue, (x.price_of_movie_htva * x.fee_back_catalogue))  end amount  " & _
         " from  " & _
 " (  " & _
  " select " & _
@@ -322,7 +322,7 @@ Public Class clsStudio
   " if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at)) qty_credit, " & _
     "         pa.qty_at_home, " & _
    " if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)) credits, " & _
-    " (pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1))) price_of_movie_tvac, " & _
+    " if(t.is_ppv = 1, t.ppv_price,(pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) price_of_movie_tvac, " & _
      " (((pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) / 1.21) price_of_movie_htva, " & _
        "  s.minimum_new_vod, " & _
         " s.fee_new_vod, " & _
@@ -360,11 +360,11 @@ Public Class clsStudio
         sql = " select  x.vodstudio, x.productstudio, x.products_title, x.customer_id, x.customers_abo_type, x.customers_lastname," & _
  " x.customers_firstname, x.customers_language, x.imdb_id, x.products_type, x.created_at, x.products_date_available, x.available_from, " & _
  " x.expire_at, x.available_backcatalogue_from, x.expire_backcatalogue_at, x.catalogue_type , x.products_price, x.qty_credit, " & _
- " x.qty_at_home, x.credits, x.price_of_movie_tvac, x.price_of_movie_htva, " & _
+ " x.qty_at_home, x.credits, x.price_of_movie_tvac, (x.price_of_movie_tvac/1.21) price_of_movie_htva, " & _
 " case x.catalogue_type when 'N' then " & _
-" if((x.price_of_movie_htva * x.fee_new_vod) < x.minimum_new_vod, x.minimum_new_vod, (x.price_of_movie_htva * x.fee_new_vod)) " & _
+" if(((x.price_of_movie_tvac/1.21) * x.fee_new_vod) < x.minimum_new_vod, x.minimum_new_vod, ((x.price_of_movie_tvac/1.21) * x.fee_new_vod)) " & _
 " when 'B' then " & _
-" if((x.price_of_movie_htva * x.fee_back_catalogue) < x.minimum_back_catalogue, x.minimum_back_catalogue, (x.price_of_movie_htva * x.fee_back_catalogue)) " & _
+" if(((x.price_of_movie_tvac/1.21) * x.fee_back_catalogue) < x.minimum_back_catalogue, x.minimum_back_catalogue, ((x.price_of_movie_tvac/1.21) * x.fee_back_catalogue)) " & _
 " end amount from " & _
 " ( " & _
 " select " & _
@@ -388,7 +388,7 @@ Public Class clsStudio
 " if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at)) qty_credit, " & _
 " pa.qty_at_home, " & _
 " if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)) credits, " & _
-" (pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1))) price_of_movie_tvac, " & _
+" if(t.is_ppv = 1, t.ppv_price,(pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) price_of_movie_tvac, " & _
 " (((pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) / 1.21) price_of_movie_htva, " & _
 " s.minimum_new_vod, " & _
 " s.fee_new_vod, " & _
@@ -424,9 +424,9 @@ allstudio & _
         End If
 
         sql = "  select x.vodstudio, x.productstudio, x.products_title, count(x.imdb_id) number_titles, sum(x.price_of_movie_tvac)  tvac_sum, " & _
-        " sum(x.price_of_movie_htva) htvac_sum, " & _
+        " sum((x.price_of_movie_tvac/1.21)) htvac_sum, " & _
         " sum(case x.catalogue_type when 'N' then " & _
-" if((x.price_of_movie_htva * x.fee_new_vod) < x.minimum_new_vod, x.minimum_new_vod, (x.price_of_movie_htva * x.fee_new_vod))" & _
+" if(((x.price_of_movie_tvac/1.21) * x.fee_new_vod) < x.minimum_new_vod, x.minimum_new_vod, ((x.price_of_movie_tvac/1.21) * x.fee_new_vod))" & _
 " when 'B' then " & _
 " if((x.price_of_movie_htva * x.fee_back_catalogue) < x.minimum_back_catalogue, x.minimum_back_catalogue, (x.price_of_movie_htva * x.fee_back_catalogue)) " & _
 " end ) amount_sum , date(sysdate()) date_created, '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' period_start , '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' period_end" & _
@@ -453,7 +453,7 @@ allstudio & _
 "  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at)) qty_credit, " & _
 "  pa.qty_at_home, " & _
 "  if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)) credits, " & _
-" (pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1))) price_of_movie_tvac, " & _
+" if(t.is_ppv = 1, t.ppv_price,(pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) price_of_movie_tvac, " & _
 " (((pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) / 1.21) price_of_movie_htva, " & _
 " s.minimum_new_vod, " & _
 " s.fee_new_vod, " & _
@@ -488,7 +488,7 @@ allstudio & _
  " (select d.directors_name from directors d where d.directors_id = x.products_directors_id) directors_name , x.imdb_id, x.products_title, x.products_type, x.created_at, x.products_date_available, x.available_from, " & _
  " x.expire_at, x.available_backcatalogue_from, x.expire_backcatalogue_at, x.catalogue_type , x.products_price, x.qty_credit, " & _
  " x.qty_at_home, x.price_of_movie_tvac 'Price per film', if( x.products_type = 'DVD_ADULT', '1.00%', '1.38%') 'SABAM%', " & _
- "x.price_of_movie_htva * if( x.products_type = 'DVD_ADULT', 0.01, 0.01375) 'Sabam Fee' " & _
+ "(x.price_of_movie_tvac/1.21) * if( x.products_type = 'DVD_ADULT', 0.01, 0.01375) 'Sabam Fee' " & _
 " from " & _
 " ( " & _
 " select " & _
@@ -510,7 +510,7 @@ allstudio & _
 " if(fn_customers_credit(customers_id, t.created_at) = 0,11, fn_customers_credit(customers_id, t.created_at)) qty_credit, " & _
 " pa.qty_at_home, " & _
 " if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)) credits, " & _
-" (pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11, fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1))) price_of_movie_tvac, " & _
+" if(t.is_ppv = 1, t.ppv_price, (pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11, fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) price_of_movie_tvac, " & _
 " (((pabo.products_price /  if( fn_customers_credit(customers_id, t.created_at)=0,11, fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) / 1.21) price_of_movie_htva, " & _
 " s.minimum_new_vod, " & _
 " s.fee_new_vod, " & _
@@ -540,8 +540,8 @@ allstudio & _
 
         sql = "select x.products_title, (select d.directors_name from directors d where d.directors_id = x.products_directors_id) directors_name , " & _
         " count(x.imdb_id) 'Nombre de products_title', " & _
-        " sum(x.price_of_movie_htva) 'Somme de Price per film', " & _
-        " sum(x.price_of_movie_htva) * if( x.products_type = 'DVD_ADULT', 0.01, 0.01375) 'Somme de Sabam Fee' " & _
+        " sum((x.price_of_movie_tvac/1.21)) 'Somme de Price per film', " & _
+        " sum((x.price_of_movie_tvac/1.21)) * if( x.products_type = 'DVD_ADULT', 0.01, 0.01375) 'Somme de Sabam Fee' " & _
 " from " & _
 " ( " & _
 "  select " & _
@@ -561,7 +561,7 @@ allstudio & _
 "  if(fn_customers_credit(customers_id, t.created_at)=0,11, fn_customers_credit(customers_id, t.created_at)) qty_credit, " & _
 "  pa.qty_at_home, " & _
 "  if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)) credits, " & _
-" (pabo.products_price /  if( fn_customers_credit(customers_id, t.created_at)=0,11, fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1))) price_of_movie_tvac, " & _
+" if(t.is_ppv = 1, t.ppv_price,(pabo.products_price /  if( fn_customers_credit(customers_id, t.created_at)=0,11, fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) price_of_movie_tvac, " & _
 " (((pabo.products_price /  if( fn_customers_credit(customers_id, t.created_at)=0,11, fn_customers_credit(customers_id, t.created_at))) * (if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)))) / 1.21) price_of_movie_htva, " & _
 " s.minimum_new_vod, " & _
 " s.fee_new_vod, " & _

@@ -7,7 +7,7 @@ Public Class clsPPVPayments
         " tokens t join customers c on t.customer_id = c.customers_id " & _
         " join products p on p.imdb_id = t.imdb_id " & _
         " where t.is_ppv = 1 and c.EntityID = " & countryid & " and t.created_at >= '" & DVDPostTools.ClsDate.formatDate(datetimeFrom) & "' and " & _
-        " t.created_at <= '" & DVDPostTools.ClsDate.formatDate(datetimeTo) & "' "
+        " t.created_at < '" & DVDPostTools.ClsDate.formatDate(datetimeTo) & "' group by c.customers_id, p.products_title, t.imdb_id, t.created_at "
 
         Return sql
     End Function

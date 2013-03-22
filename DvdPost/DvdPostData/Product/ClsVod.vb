@@ -153,7 +153,7 @@ Public Class ClsVod
         sql = " SELECT distinct sp.*, P.products_title products_name " & _
               " from (select imdb_id,products_title from products group by imdb_id) P " & _
               " join streaming_products sp on sp.imdb_id = P.imdb_id " & _
-              " where sp.status = '" & status & "'"
+              " where sp.status = '" & status & "' group by sp.imdb_id, sp.language_id, sp.subtitle_id "
         Return sql
     End Function
 

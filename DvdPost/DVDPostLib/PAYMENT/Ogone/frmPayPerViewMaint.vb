@@ -116,7 +116,7 @@ Public Class frmPayPerViewMaint
 
         sql = " select c.customers_id, p.products_title, t.imdb_id, t.created_at, t.is_ppv, t.ppv_price amount from " & _
                 " tokens t join customers c on t.customer_id = c.customers_id " & _
-                " join products p on p.imdb_id = t.imdb_id where t.is_ppv = 1 "
+                " join products p on p.imdb_id = t.imdb_id where t.is_ppv = 1 group by c.customers_id, p.products_title, t.imdb_id, t.created_at"
 
         If cmbSearchCountry.Text <> String.Empty Then
             sql = sql & " and c.EntityID = " & cmbSearchCountry.EditValue
