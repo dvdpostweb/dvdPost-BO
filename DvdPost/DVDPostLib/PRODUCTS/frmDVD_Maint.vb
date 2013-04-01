@@ -450,6 +450,20 @@ Public Class frmDVD_Maint
     Friend WithEvents imgIMDBID_5 As DevExpress.XtraEditors.PictureEdit
     Friend WithEvents imgIMDBID_4 As DevExpress.XtraEditors.PictureEdit
     Friend WithEvents imgIMDBID_3 As DevExpress.XtraEditors.PictureEdit
+    Friend WithEvents GridStreamingTrailers As DevExpress.XtraGrid.GridControl
+    Friend WithEvents AdvBandedGridView2 As DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView
+    Friend WithEvents GridBand13 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
+    Friend WithEvents BandedGridColumn3 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn4 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents RepositoryItemButtonEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
+    Friend WithEvents BandedGridColumn8 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents RepositoryItemLookUpEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents BandedGridColumn9 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents BandedGridColumn10 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents RepositoryItemLookUpEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents Splitter2 As System.Windows.Forms.Splitter
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents LabelControl48 As DevExpress.XtraEditors.LabelControl
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Dim FilterCondition1 As DevExpress.XtraTreeList.FilterCondition = New DevExpress.XtraTreeList.FilterCondition
@@ -676,6 +690,20 @@ Public Class frmDVD_Maint
         Me.btnSoundTracks = New DevExpress.XtraEditors.SimpleButton
         Me.SplitterControl3 = New DevExpress.XtraEditors.SplitterControl
         Me.grpTrailers = New DevExpress.XtraEditors.GroupControl
+        Me.Panel2 = New System.Windows.Forms.Panel
+        Me.GridStreamingTrailers = New DevExpress.XtraGrid.GridControl
+        Me.AdvBandedGridView2 = New DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView
+        Me.GridBand13 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand
+        Me.BandedGridColumn3 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+        Me.BandedGridColumn4 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+        Me.BandedGridColumn8 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+        Me.BandedGridColumn9 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+        Me.BandedGridColumn10 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+        Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+        Me.RepositoryItemLookUpEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+        Me.RepositoryItemButtonEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
+        Me.Splitter2 = New System.Windows.Forms.Splitter
+        Me.Panel1 = New System.Windows.Forms.Panel
         Me.GridTrailers = New DevExpress.XtraGrid.GridControl
         Me.GridViewTrailers = New DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView
         Me.GridBand7 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand
@@ -1011,6 +1039,13 @@ Public Class frmDVD_Maint
         Me.PanelControl9.SuspendLayout()
         CType(Me.grpTrailers, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpTrailers.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        CType(Me.GridStreamingTrailers, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.AdvBandedGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryItemButtonEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         CType(Me.GridTrailers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridViewTrailers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ButtonWatchTrailer, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -3535,7 +3570,9 @@ Public Class frmDVD_Maint
         'grpTrailers
         '
         Me.grpTrailers.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
-        Me.grpTrailers.Controls.Add(Me.GridTrailers)
+        Me.grpTrailers.Controls.Add(Me.Panel2)
+        Me.grpTrailers.Controls.Add(Me.Splitter2)
+        Me.grpTrailers.Controls.Add(Me.Panel1)
         Me.grpTrailers.Controls.Add(Me.PanelControl8)
         Me.grpTrailers.Dock = System.Windows.Forms.DockStyle.Left
         Me.grpTrailers.Location = New System.Drawing.Point(0, 0)
@@ -3543,6 +3580,147 @@ Public Class frmDVD_Maint
         Me.grpTrailers.Size = New System.Drawing.Size(418, 629)
         Me.grpTrailers.TabIndex = 1
         Me.grpTrailers.Text = "Trailers"
+        '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.GridStreamingTrailers)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Location = New System.Drawing.Point(2, 393)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(414, 194)
+        Me.Panel2.TabIndex = 9
+        '
+        'GridStreamingTrailers
+        '
+        Me.GridStreamingTrailers.DataSource = Me.objDS.streaming_trailers
+        Me.GridStreamingTrailers.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridStreamingTrailers.EmbeddedNavigator.Buttons.Edit.Visible = False
+        Me.GridStreamingTrailers.EmbeddedNavigator.Buttons.First.Visible = False
+        Me.GridStreamingTrailers.EmbeddedNavigator.Buttons.Last.Visible = False
+        Me.GridStreamingTrailers.EmbeddedNavigator.Buttons.Next.Visible = False
+        Me.GridStreamingTrailers.EmbeddedNavigator.Buttons.NextPage.Visible = False
+        Me.GridStreamingTrailers.EmbeddedNavigator.Buttons.Prev.Visible = False
+        Me.GridStreamingTrailers.EmbeddedNavigator.Buttons.PrevPage.Visible = False
+        Me.GridStreamingTrailers.EmbeddedNavigator.Enabled = False
+        Me.GridStreamingTrailers.EmbeddedNavigator.Name = ""
+        Me.GridStreamingTrailers.FormsUseDefaultLookAndFeel = False
+        Me.GridStreamingTrailers.Location = New System.Drawing.Point(0, 0)
+        Me.GridStreamingTrailers.MainView = Me.AdvBandedGridView2
+        Me.GridStreamingTrailers.Name = "GridStreamingTrailers"
+        Me.GridStreamingTrailers.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit1, Me.RepositoryItemLookUpEdit2, Me.RepositoryItemButtonEdit1})
+        Me.GridStreamingTrailers.Size = New System.Drawing.Size(414, 194)
+        Me.GridStreamingTrailers.TabIndex = 6
+        Me.GridStreamingTrailers.UseEmbeddedNavigator = True
+        Me.GridStreamingTrailers.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.AdvBandedGridView2})
+        '
+        'AdvBandedGridView2
+        '
+        Me.AdvBandedGridView2.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand13})
+        Me.AdvBandedGridView2.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.BandedGridColumn3, Me.BandedGridColumn4, Me.BandedGridColumn8, Me.BandedGridColumn9, Me.BandedGridColumn10})
+        Me.AdvBandedGridView2.CustomizationFormBounds = New System.Drawing.Rectangle(755, 333, 217, 222)
+        Me.AdvBandedGridView2.GridControl = Me.GridStreamingTrailers
+        Me.AdvBandedGridView2.Name = "AdvBandedGridView2"
+        Me.AdvBandedGridView2.OptionsBehavior.Editable = False
+        Me.AdvBandedGridView2.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom
+        Me.AdvBandedGridView2.OptionsView.ShowBands = False
+        Me.AdvBandedGridView2.OptionsView.ShowGroupPanel = False
+        '
+        'GridBand13
+        '
+        Me.GridBand13.Caption = "GridBand2"
+        Me.GridBand13.Columns.Add(Me.BandedGridColumn3)
+        Me.GridBand13.Columns.Add(Me.BandedGridColumn4)
+        Me.GridBand13.Columns.Add(Me.BandedGridColumn8)
+        Me.GridBand13.Columns.Add(Me.BandedGridColumn9)
+        Me.GridBand13.Columns.Add(Me.BandedGridColumn10)
+        Me.GridBand13.MinWidth = 20
+        Me.GridBand13.Name = "GridBand13"
+        Me.GridBand13.Width = 419
+        '
+        'BandedGridColumn3
+        '
+        Me.BandedGridColumn3.Caption = "id"
+        Me.BandedGridColumn3.FieldName = "id"
+        Me.BandedGridColumn3.Name = "BandedGridColumn3"
+        Me.BandedGridColumn3.Width = 121
+        '
+        'BandedGridColumn4
+        '
+        Me.BandedGridColumn4.Caption = "filename"
+        Me.BandedGridColumn4.FieldName = "filename"
+        Me.BandedGridColumn4.Name = "BandedGridColumn4"
+        Me.BandedGridColumn4.Visible = True
+        Me.BandedGridColumn4.Width = 173
+        '
+        'BandedGridColumn8
+        '
+        Me.BandedGridColumn8.Caption = "audio"
+        Me.BandedGridColumn8.FieldName = "audio"
+        Me.BandedGridColumn8.Name = "BandedGridColumn8"
+        Me.BandedGridColumn8.Visible = True
+        Me.BandedGridColumn8.Width = 51
+        '
+        'BandedGridColumn9
+        '
+        Me.BandedGridColumn9.Caption = "subtitle"
+        Me.BandedGridColumn9.FieldName = "subtitle"
+        Me.BandedGridColumn9.Name = "BandedGridColumn9"
+        Me.BandedGridColumn9.Visible = True
+        Me.BandedGridColumn9.Width = 58
+        '
+        'BandedGridColumn10
+        '
+        Me.BandedGridColumn10.Caption = "status"
+        Me.BandedGridColumn10.FieldName = "status"
+        Me.BandedGridColumn10.Name = "BandedGridColumn10"
+        Me.BandedGridColumn10.Visible = True
+        Me.BandedGridColumn10.Width = 137
+        '
+        'RepositoryItemLookUpEdit1
+        '
+        Me.RepositoryItemLookUpEdit1.AutoHeight = False
+        Me.RepositoryItemLookUpEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit1.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("languages_id", "languages_id", 82, DevExpress.Utils.FormatType.Numeric, "", True, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("languages_description", "languages_description", 113, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
+        Me.RepositoryItemLookUpEdit1.DataSource = Me.objDS.products_languages
+        Me.RepositoryItemLookUpEdit1.DisplayMember = "languages_description"
+        Me.RepositoryItemLookUpEdit1.Name = "RepositoryItemLookUpEdit1"
+        Me.RepositoryItemLookUpEdit1.NullText = "New Line"
+        Me.RepositoryItemLookUpEdit1.ValueMember = "languages_id"
+        '
+        'RepositoryItemLookUpEdit2
+        '
+        Me.RepositoryItemLookUpEdit2.AutoHeight = False
+        Me.RepositoryItemLookUpEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.RepositoryItemLookUpEdit2.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("broadcast", "broadcast", 67, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
+        Me.RepositoryItemLookUpEdit2.DataSource = Me.objDS.trailers_broadcast
+        Me.RepositoryItemLookUpEdit2.DisplayMember = "broadcast"
+        Me.RepositoryItemLookUpEdit2.Name = "RepositoryItemLookUpEdit2"
+        Me.RepositoryItemLookUpEdit2.ValueMember = "broadcast"
+        '
+        'RepositoryItemButtonEdit1
+        '
+        Me.RepositoryItemButtonEdit1.AutoHeight = False
+        Me.RepositoryItemButtonEdit1.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+        Me.RepositoryItemButtonEdit1.Name = "RepositoryItemButtonEdit1"
+        Me.RepositoryItemButtonEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
+        '
+        'Splitter2
+        '
+        Me.Splitter2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Splitter2.Location = New System.Drawing.Point(2, 383)
+        Me.Splitter2.Name = "Splitter2"
+        Me.Splitter2.Size = New System.Drawing.Size(414, 10)
+        Me.Splitter2.TabIndex = 8
+        Me.Splitter2.TabStop = False
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.GridTrailers)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(2, 20)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(414, 363)
+        Me.Panel1.TabIndex = 7
         '
         'GridTrailers
         '
@@ -3558,11 +3736,11 @@ Public Class frmDVD_Maint
         Me.GridTrailers.EmbeddedNavigator.Enabled = False
         Me.GridTrailers.EmbeddedNavigator.Name = ""
         Me.GridTrailers.FormsUseDefaultLookAndFeel = False
-        Me.GridTrailers.Location = New System.Drawing.Point(2, 20)
+        Me.GridTrailers.Location = New System.Drawing.Point(0, 0)
         Me.GridTrailers.MainView = Me.GridViewTrailers
         Me.GridTrailers.Name = "GridTrailers"
         Me.GridTrailers.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbLangTrailer, Me.cmbTrailers_Broadcast, Me.ButtonWatchTrailer})
-        Me.GridTrailers.Size = New System.Drawing.Size(414, 567)
+        Me.GridTrailers.Size = New System.Drawing.Size(414, 363)
         Me.GridTrailers.TabIndex = 4
         Me.GridTrailers.UseEmbeddedNavigator = True
         Me.GridTrailers.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewTrailers})
@@ -5445,6 +5623,13 @@ Public Class frmDVD_Maint
         Me.PanelControl9.ResumeLayout(False)
         CType(Me.grpTrailers, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grpTrailers.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        CType(Me.GridStreamingTrailers, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.AdvBandedGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryItemButtonEdit1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
         CType(Me.GridTrailers, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridViewTrailers, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ButtonWatchTrailer, System.ComponentModel.ISupportInitialize).EndInit()
@@ -6099,6 +6284,7 @@ Public Class frmDVD_Maint
     Private Sub loadTrailer()
         If LstRefreshData(TypeOfTab.TRAILERS) Then
             MainData.LoadTrailers()
+            MainData.LoadStreamingTrailers()
             MainData.LoadSoundtracks()
             RefreshPictureTrailer()
         End If

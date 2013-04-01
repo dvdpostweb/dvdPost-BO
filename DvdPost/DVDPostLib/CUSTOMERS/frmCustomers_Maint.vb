@@ -897,6 +897,7 @@ Public Class frmCustomers_Maint
     Friend WithEvents GCCompensation As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents GCID As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
+    Friend WithEvents phone_activation_id As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
     Friend WithEvents cmbDiscType As DevExpress.XtraEditors.ComboBoxEdit
 
 
@@ -1719,6 +1720,7 @@ Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl
 Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl
 Me.GridControl3 = New DevExpress.XtraGrid.GridControl
 Me.GridView3 = New DevExpress.XtraGrid.Views.Grid.GridView
+Me.phone_activation_id = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
 coldvd_finally_arrived_mail3 = New DevExpress.XtraGrid.Columns.GridColumn
 GridchkAbo = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
 GridchkBlackList = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
@@ -5473,7 +5475,7 @@ Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseV
 'GridViewSearch
 '
 Me.GridViewSearch.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand1})
-Me.GridViewSearch.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.colcustomers_firstname, Me.colcustomers_lastname, Me.colcustomers_email_address, Me.colcustomers_abo, Me.colblack_listed, Me.custserv_customer_date, Me.colentry_postcode, Me.coldomiciliation_number, Me.col2customers_id, Me.colcustomers_language, Me.call_phone, Me.colentry_street_address})
+Me.GridViewSearch.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.colcustomers_firstname, Me.colcustomers_lastname, Me.colcustomers_email_address, Me.colcustomers_abo, Me.colblack_listed, Me.custserv_customer_date, Me.colentry_postcode, Me.coldomiciliation_number, Me.col2customers_id, Me.colcustomers_language, Me.call_phone, Me.colentry_street_address, Me.phone_activation_id})
 Me.GridViewSearch.CustomizationFormBounds = New System.Drawing.Rectangle(1357, 529, 225, 209)
 Me.GridViewSearch.GridControl = Me.GridControl1
 Me.GridViewSearch.Name = "GridViewSearch"
@@ -5484,6 +5486,7 @@ Me.GridViewSearch.OptionsView.ShowFooter = true
 'GridBand1
 '
 Me.GridBand1.Caption = "GridBand1"
+Me.GridBand1.Columns.Add(Me.phone_activation_id)
 Me.GridBand1.Columns.Add(Me.col2customers_id)
 Me.GridBand1.Columns.Add(Me.colcustomers_firstname)
 Me.GridBand1.Columns.Add(Me.colcustomers_lastname)
@@ -5498,7 +5501,7 @@ Me.GridBand1.Columns.Add(Me.colcustomers_abo)
 Me.GridBand1.Columns.Add(Me.colblack_listed)
 Me.GridBand1.MinWidth = 20
 Me.GridBand1.Name = "GridBand1"
-Me.GridBand1.Width = 1201
+Me.GridBand1.Width = 1276
 '
 'col2customers_id
 '
@@ -10141,6 +10144,13 @@ Me.GridControl3.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseV
 '
 Me.GridView3.GridControl = Me.GridControl3
 Me.GridView3.Name = "GridView3"
+'
+'phone_activation_id
+'
+Me.phone_activation_id.Caption = "phone_activation_id"
+Me.phone_activation_id.FieldName = "phone_activation_id"
+Me.phone_activation_id.Name = "phone_activation_id"
+Me.phone_activation_id.Visible = true
 '
 'frmCustomers_Maint
 '

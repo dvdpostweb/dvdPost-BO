@@ -486,6 +486,14 @@ Public Class clsProduct_DVD
         DvdPostData.clsConnection.FillDataSet(DataSet1.Tables("products_trailers"), "select * from products_trailers where products_id = " & ProductsID)
         DataSet1.Tables("products_trailers").Columns("products_id").DefaultValue = ProductsID
     End Sub
+    Public Sub LoadStreamingTrailers()
+        DataSet1.Tables("streaming_trailers").Clear()
+        DvdPostData.clsConnection.FillDataSet(DataSet1.Tables("streaming_trailers"), "select sp.id, sp.filename, pl.short_alpha audio, pu.short_alpha subtitle, sp.status" & _
+        " from products p join streaming_trailers sp on p.imdb_id = sp.imdb_id " & _
+        " left join products_languages pl on sp.language_id = pl.languages_id and pl.languagenav_id = 1 " & _
+        " left join products_undertitles pu on sp.subtitle_id = pu.undertitles_id and pu.language_id = 1 " & _
+        " where p.products_id = " & ProductsID)
+    End Sub
     Public Sub SaveTrailers()
         Dim refresh As Boolean = False
         If Not DataSet1.Tables("products_trailers").GetChanges() Is Nothing Then
