@@ -6146,7 +6146,8 @@ Public Class frmDVD_Maint
     End Sub
     Private Sub LoadActors()
 
-        DvdPostData.clsConnection.FillDataSet(objDS.actors, "SELECT * FROM actors order by actors_name ")
+        DvdPostData.clsConnection.FillDataSet(objDS.actors, "SELECT   actors_id,  actors_name,  actors_image,  actors_dateofbirth ,  birth_place,  death_at,  death_place,  actors_description ,  actors_awards ,  top_actors,  actors_type,  cached_slug, image_active, focus, sexuality  FROM actors order by actors_name ")
+        'DvdPostData.clsConnection.FillDataSet(objDS.actors, "SELECT * FROM actors order by actors_name ")
     End Sub
     Private Sub loadSeries()
         DvdPostData.clsConnection.FillDataSet(objDS.series, "SELECT * FROM series")

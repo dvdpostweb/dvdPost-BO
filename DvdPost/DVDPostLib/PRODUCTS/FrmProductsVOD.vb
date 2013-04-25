@@ -9,6 +9,7 @@ Public Class FrmProductsVOD
 
 
     Const KEYWEBSITE As String = "WEBSITEVOD"
+    Const KEYANTRAILER As String = "WEBSITEANTRAILER"
 
     Enum StepForm
         EDIT
@@ -1483,5 +1484,23 @@ Public Class FrmProductsVOD
         Next
         grdTrailers.DataSource.AcceptChanges()
 
+    End Sub
+
+    Private Sub RepositoryBtnWatchTrailer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RepositoryBtnWatchTrailer.Click
+        Dim imdb_id As Integer
+
+        If GridViewTrailers.FocusedRowHandle > -1 Then
+            imdb_id = GridViewTrailers.GetDataRow(GridViewTrailers.FocusedRowHandle)("imdb_id")
+            Dim sql As String = DvdPostData.clsProducts.GetProduct_id(imdb_id)
+            Dim products_id As Integer = DvdPostData.clsConnection.ExecuteScalar(sql)
+
+            Dim url As String = Configuration.ConfigurationManager.AppSettings(KEYANTRAILER)
+            url = String.Format(url, products_id)
+
+            webTrailers.Url = New Uri(url)
+            'loadInfoVodWatch()
+        Else
+            MsgBox("after watch movie select product please !", MsgBoxStyle.Critical)
+        End If
     End Sub
 End Class

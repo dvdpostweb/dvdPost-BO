@@ -7322,6 +7322,20 @@ Partial Public Class dsProducts
         
         Private columntop_actors As Global.System.Data.DataColumn
         
+        Private columndeath_at As Global.System.Data.DataColumn
+        
+        Private columndeath_place As Global.System.Data.DataColumn
+        
+        Private columnactors_type As Global.System.Data.DataColumn
+        
+        Private columncached_slug As Global.System.Data.DataColumn
+        
+        Private columnimage_active As Global.System.Data.DataColumn
+        
+        Private columnfocus As Global.System.Data.DataColumn
+        
+        Private columnsexuality As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub New()
             MyBase.New
@@ -7403,6 +7417,55 @@ Partial Public Class dsProducts
             End Get
         End Property
         
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property death_atColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columndeath_at
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property death_placeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columndeath_place
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property actors_typeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnactors_type
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property cached_slugColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncached_slug
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property image_activeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnimage_active
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property focusColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnfocus
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property sexualityColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnsexuality
+            End Get
+        End Property
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -7432,9 +7495,9 @@ Partial Public Class dsProducts
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Overloads Function AddactorsRow(ByVal actors_name As String, ByVal actors_image As String, ByVal actors_dateofbirth As String, ByVal actors_description As String, ByVal actors_awards As String, ByVal top_actors As Integer) As actorsRow
+        Public Overloads Function AddactorsRow(ByVal actors_name As String, ByVal actors_image As String, ByVal actors_dateofbirth As String, ByVal actors_description As String, ByVal actors_awards As String, ByVal top_actors As Integer, ByVal death_at As Date, ByVal death_place As String, ByVal actors_type As String, ByVal cached_slug As String, ByVal image_active As Short, ByVal focus As Short, ByVal sexuality As String) As actorsRow
             Dim rowactorsRow As actorsRow = CType(Me.NewRow,actorsRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, actors_name, actors_image, actors_dateofbirth, actors_description, actors_awards, top_actors}
+            Dim columnValuesArray() As Object = New Object() {Nothing, actors_name, actors_image, actors_dateofbirth, actors_description, actors_awards, top_actors, death_at, death_place, actors_type, cached_slug, image_active, focus, sexuality}
             rowactorsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowactorsRow)
             Return rowactorsRow
@@ -7471,6 +7534,13 @@ Partial Public Class dsProducts
             Me.columnactors_description = MyBase.Columns("actors_description")
             Me.columnactors_awards = MyBase.Columns("actors_awards")
             Me.columntop_actors = MyBase.Columns("top_actors")
+            Me.columndeath_at = MyBase.Columns("death_at")
+            Me.columndeath_place = MyBase.Columns("death_place")
+            Me.columnactors_type = MyBase.Columns("actors_type")
+            Me.columncached_slug = MyBase.Columns("cached_slug")
+            Me.columnimage_active = MyBase.Columns("image_active")
+            Me.columnfocus = MyBase.Columns("focus")
+            Me.columnsexuality = MyBase.Columns("sexuality")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -7489,6 +7559,20 @@ Partial Public Class dsProducts
             MyBase.Columns.Add(Me.columnactors_awards)
             Me.columntop_actors = New Global.System.Data.DataColumn("top_actors", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columntop_actors)
+            Me.columndeath_at = New Global.System.Data.DataColumn("death_at", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columndeath_at)
+            Me.columndeath_place = New Global.System.Data.DataColumn("death_place", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columndeath_place)
+            Me.columnactors_type = New Global.System.Data.DataColumn("actors_type", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnactors_type)
+            Me.columncached_slug = New Global.System.Data.DataColumn("cached_slug", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncached_slug)
+            Me.columnimage_active = New Global.System.Data.DataColumn("image_active", GetType(Short), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnimage_active)
+            Me.columnfocus = New Global.System.Data.DataColumn("focus", GetType(Short), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnfocus)
+            Me.columnsexuality = New Global.System.Data.DataColumn("sexuality", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnsexuality)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("dsProductsKey3", New Global.System.Data.DataColumn() {Me.columnactors_id}, true))
             Me.columnactors_id.AutoIncrement = true
             Me.columnactors_id.AllowDBNull = false
@@ -25069,6 +25153,104 @@ Partial Public Class dsProducts
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property death_at() As Date
+            Get
+                Try 
+                    Return CType(Me(Me.tableactors.death_atColumn),Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'death_at' in table 'actors' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableactors.death_atColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property death_place() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableactors.death_placeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'death_place' in table 'actors' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableactors.death_placeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property actors_type() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableactors.actors_typeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'actors_type' in table 'actors' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableactors.actors_typeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property cached_slug() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableactors.cached_slugColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'cached_slug' in table 'actors' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableactors.cached_slugColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property image_active() As Short
+            Get
+                Try 
+                    Return CType(Me(Me.tableactors.image_activeColumn),Short)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'image_active' in table 'actors' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableactors.image_activeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property focus() As Short
+            Get
+                Try 
+                    Return CType(Me(Me.tableactors.focusColumn),Short)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'focus' in table 'actors' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableactors.focusColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property sexuality() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableactors.sexualityColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'sexuality' in table 'actors' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableactors.sexualityColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function Isactors_imageNull() As Boolean
             Return Me.IsNull(Me.tableactors.actors_imageColumn)
         End Function
@@ -25116,6 +25298,76 @@ Partial Public Class dsProducts
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub Settop_actorsNull()
             Me(Me.tableactors.top_actorsColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isdeath_atNull() As Boolean
+            Return Me.IsNull(Me.tableactors.death_atColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setdeath_atNull()
+            Me(Me.tableactors.death_atColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isdeath_placeNull() As Boolean
+            Return Me.IsNull(Me.tableactors.death_placeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setdeath_placeNull()
+            Me(Me.tableactors.death_placeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isactors_typeNull() As Boolean
+            Return Me.IsNull(Me.tableactors.actors_typeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setactors_typeNull()
+            Me(Me.tableactors.actors_typeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Iscached_slugNull() As Boolean
+            Return Me.IsNull(Me.tableactors.cached_slugColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setcached_slugNull()
+            Me(Me.tableactors.cached_slugColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isimage_activeNull() As Boolean
+            Return Me.IsNull(Me.tableactors.image_activeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setimage_activeNull()
+            Me(Me.tableactors.image_activeColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IsfocusNull() As Boolean
+            Return Me.IsNull(Me.tableactors.focusColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetfocusNull()
+            Me(Me.tableactors.focusColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function IssexualityNull() As Boolean
+            Return Me.IsNull(Me.tableactors.sexualityColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub SetsexualityNull()
+            Me(Me.tableactors.sexualityColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

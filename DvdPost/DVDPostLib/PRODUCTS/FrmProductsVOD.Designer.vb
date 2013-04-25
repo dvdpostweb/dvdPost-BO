@@ -277,10 +277,10 @@ Partial Class FrmProductsVOD
         Me.xTabTrailers = New DevExpress.XtraTab.XtraTabPage
         Me.btnSaveTrailers = New DevExpress.XtraEditors.SimpleButton
         Me.grdTrailers = New DevExpress.XtraGrid.GridControl
-        Me.AdvBandedGridView1 = New DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView
+        Me.GridViewTrailers = New DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView
         Me.GridBand5 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand
         Me.col_watch_trailer = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
-        Me.cmbgridStatusTrailer = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox
+        Me.RepositoryBtnWatchTrailer = New DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
         Me.col_trailer_filename = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.col_imdb_id = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.col_audio = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
@@ -290,6 +290,7 @@ Partial Class FrmProductsVOD
         Me.repSubtitleTrailers = New DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit
         Me.GridView2 = New DevExpress.XtraGrid.Views.Grid.GridView
         Me.col_status = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+        Me.cmbgridStatusTrailer = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox
         Me.col_available = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.cmbLanguagesTrailers = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox
         Me.cmbSubtitleTrailers = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox
@@ -418,12 +419,13 @@ Partial Class FrmProductsVOD
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.xTabTrailers.SuspendLayout()
         CType(Me.grdTrailers, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.AdvBandedGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmbgridStatusTrailer, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridViewTrailers, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RepositoryBtnWatchTrailer, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.repLanguageTrailers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemGridLookUpEdit1View, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.repSubtitleTrailers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbgridStatusTrailer, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbLanguagesTrailers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbSubtitleTrailers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -438,7 +440,7 @@ Partial Class FrmProductsVOD
         colDateStartUploaded.Name = "colDateStartUploaded"
         colDateStartUploaded.OptionsColumn.AllowEdit = False
         colDateStartUploaded.Visible = True
-        colDateStartUploaded.Width = 68
+        colDateStartUploaded.Width = 48
         '
         'RepositoryItemLookUpEdit1
         '
@@ -469,10 +471,6 @@ Partial Class FrmProductsVOD
         'BarManager1
         '
         Me.BarManager1.Categories.AddRange(New DevExpress.XtraBars.BarManagerCategory() {New DevExpress.XtraBars.BarManagerCategory("Main", New System.Guid("434484d9-7ac5-47e5-9412-313a111b7240")), New DevExpress.XtraBars.BarManagerCategory("Miscelaneous", New System.Guid("a767b561-c256-451a-a199-6ebf84a07265")), New DevExpress.XtraBars.BarManagerCategory("Views", New System.Guid("af850004-dbd4-452a-ae51-0d3b7833023a")), New DevExpress.XtraBars.BarManagerCategory("Filters", New System.Guid("347bb883-f9ce-44fc-b2c1-d98bab86cea9")), New DevExpress.XtraBars.BarManagerCategory("Reporting", New System.Guid("9db3be29-f7ff-440f-a6cc-0249be6c1df4")), New DevExpress.XtraBars.BarManagerCategory("Default Values", New System.Guid("95aa002d-ba5d-485a-9e35-d9c5d76d68de")), New DevExpress.XtraBars.BarManagerCategory("Quick Search", New System.Guid("2d735e09-7c7c-4ed4-b3ca-996e094a2026")), New DevExpress.XtraBars.BarManagerCategory("Misc_Maintenance", New System.Guid("d45f4b42-7c78-4255-9839-0f9b81be7603")), New DevExpress.XtraBars.BarManagerCategory("Navigation", New System.Guid("d55c49d9-25b9-4030-98b4-b0b1e7d65b90"))})
-        Me.BarManager1.DockControls.Add(Me.barDockControlTop)
-        Me.BarManager1.DockControls.Add(Me.barDockControlBottom)
-        Me.BarManager1.DockControls.Add(Me.barDockControlLeft)
-        Me.BarManager1.DockControls.Add(Me.barDockControlRight)
         Me.BarManager1.Form = Me
         Me.BarManager1.MaxItemId = 73
         Me.BarManager1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbViewListRepos, Me.txtQuickSearchRepos, Me.cmbReportListRepos, Me.cmbFilterListRepos, Me.cmbDefaultListRepos})
@@ -2289,7 +2287,7 @@ Partial Class FrmProductsVOD
         Me.GridBand2.Columns.Add(Me.colAvailableUploaded)
         Me.GridBand2.MinWidth = 20
         Me.GridBand2.Name = "GridBand2"
-        Me.GridBand2.Width = 582
+        Me.GridBand2.Width = 448
         '
         'colBtnWatchFilm
         '
@@ -2298,7 +2296,7 @@ Partial Class FrmProductsVOD
         Me.colBtnWatchFilm.FieldName = "colBtnWatchFilm"
         Me.colBtnWatchFilm.Name = "colBtnWatchFilm"
         Me.colBtnWatchFilm.Visible = True
-        Me.colBtnWatchFilm.Width = 67
+        Me.colBtnWatchFilm.Width = 78
         '
         'RepositoryBtnWatchMovie
         '
@@ -2314,7 +2312,7 @@ Partial Class FrmProductsVOD
         Me.colQuality2.Name = "colQuality2"
         Me.colQuality2.OptionsColumn.AllowEdit = False
         Me.colQuality2.Visible = True
-        Me.colQuality2.Width = 46
+        Me.colQuality2.Width = 32
         '
         'colProductNameUploaded
         '
@@ -2323,7 +2321,7 @@ Partial Class FrmProductsVOD
         Me.colProductNameUploaded.Name = "colProductNameUploaded"
         Me.colProductNameUploaded.OptionsColumn.AllowEdit = False
         Me.colProductNameUploaded.Visible = True
-        Me.colProductNameUploaded.Width = 121
+        Me.colProductNameUploaded.Width = 86
         '
         'colStudioUploaded
         '
@@ -2357,7 +2355,7 @@ Partial Class FrmProductsVOD
         Me.ColImdbUploaded.Name = "ColImdbUploaded"
         Me.ColImdbUploaded.OptionsColumn.AllowEdit = False
         Me.ColImdbUploaded.Visible = True
-        Me.ColImdbUploaded.Width = 64
+        Me.ColImdbUploaded.Width = 45
         '
         'colLangAudioUploaded
         '
@@ -2367,7 +2365,7 @@ Partial Class FrmProductsVOD
         Me.colLangAudioUploaded.Name = "colLangAudioUploaded"
         Me.colLangAudioUploaded.OptionsColumn.AllowEdit = False
         Me.colLangAudioUploaded.Visible = True
-        Me.colLangAudioUploaded.Width = 51
+        Me.colLangAudioUploaded.Width = 36
         '
         'RepositorycmbLanguage
         '
@@ -2387,7 +2385,7 @@ Partial Class FrmProductsVOD
         Me.colLangSubtitleUploaded.Name = "colLangSubtitleUploaded"
         Me.colLangSubtitleUploaded.OptionsColumn.AllowEdit = False
         Me.colLangSubtitleUploaded.Visible = True
-        Me.colLangSubtitleUploaded.Width = 59
+        Me.colLangSubtitleUploaded.Width = 42
         '
         'RepositoryLanguageSubtitleGrid
         '
@@ -2405,7 +2403,7 @@ Partial Class FrmProductsVOD
         Me.colDateExpiredUploaded.Name = "colDateExpiredUploaded"
         Me.colDateExpiredUploaded.OptionsColumn.AllowEdit = False
         Me.colDateExpiredUploaded.Visible = True
-        Me.colDateExpiredUploaded.Width = 86
+        Me.colDateExpiredUploaded.Width = 61
         '
         'colAvailableUploaded
         '
@@ -2744,24 +2742,24 @@ Partial Class FrmProductsVOD
         Me.grdTrailers.EmbeddedNavigator.Name = ""
         Me.grdTrailers.FormsUseDefaultLookAndFeel = False
         Me.grdTrailers.Location = New System.Drawing.Point(0, 0)
-        Me.grdTrailers.MainView = Me.AdvBandedGridView1
+        Me.grdTrailers.MainView = Me.GridViewTrailers
         Me.grdTrailers.Name = "grdTrailers"
-        Me.grdTrailers.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbgridStatusTrailer, Me.cmbLanguagesTrailers, Me.cmbSubtitleTrailers, Me.repLanguageTrailers, Me.repSubtitleTrailers})
+        Me.grdTrailers.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.cmbgridStatusTrailer, Me.cmbLanguagesTrailers, Me.cmbSubtitleTrailers, Me.repLanguageTrailers, Me.repSubtitleTrailers, Me.RepositoryBtnWatchTrailer})
         Me.grdTrailers.Size = New System.Drawing.Size(438, 634)
         Me.grdTrailers.TabIndex = 8
-        Me.grdTrailers.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.AdvBandedGridView1})
+        Me.grdTrailers.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewTrailers})
         '
-        'AdvBandedGridView1
+        'GridViewTrailers
         '
-        Me.AdvBandedGridView1.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand5})
-        Me.AdvBandedGridView1.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.col_imdb_id, Me.col_trailer_filename, Me.col_audio, Me.col_sub, Me.col_available, Me.col_status, Me.col_watch_trailer})
-        Me.AdvBandedGridView1.CustomizationFormBounds = New System.Drawing.Rectangle(799, 449, 225, 209)
-        Me.AdvBandedGridView1.GridControl = Me.grdTrailers
-        Me.AdvBandedGridView1.Name = "AdvBandedGridView1"
-        Me.AdvBandedGridView1.OptionsView.ColumnAutoWidth = True
-        Me.AdvBandedGridView1.OptionsView.ShowAutoFilterRow = True
-        Me.AdvBandedGridView1.OptionsView.ShowBands = False
-        Me.AdvBandedGridView1.OptionsView.ShowFooter = True
+        Me.GridViewTrailers.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand5})
+        Me.GridViewTrailers.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.col_imdb_id, Me.col_trailer_filename, Me.col_audio, Me.col_sub, Me.col_available, Me.col_status, Me.col_watch_trailer})
+        Me.GridViewTrailers.CustomizationFormBounds = New System.Drawing.Rectangle(799, 449, 225, 209)
+        Me.GridViewTrailers.GridControl = Me.grdTrailers
+        Me.GridViewTrailers.Name = "GridViewTrailers"
+        Me.GridViewTrailers.OptionsView.ColumnAutoWidth = True
+        Me.GridViewTrailers.OptionsView.ShowAutoFilterRow = True
+        Me.GridViewTrailers.OptionsView.ShowBands = False
+        Me.GridViewTrailers.OptionsView.ShowFooter = True
         '
         'GridBand5
         '
@@ -2775,22 +2773,23 @@ Partial Class FrmProductsVOD
         Me.GridBand5.Columns.Add(Me.col_available)
         Me.GridBand5.MinWidth = 20
         Me.GridBand5.Name = "GridBand5"
-        Me.GridBand5.Width = 1392
+        Me.GridBand5.Width = 417
         '
         'col_watch_trailer
         '
         Me.col_watch_trailer.Caption = "watch trailer"
-        Me.col_watch_trailer.ColumnEdit = Me.cmbgridStatusTrailer
+        Me.col_watch_trailer.ColumnEdit = Me.RepositoryBtnWatchTrailer
         Me.col_watch_trailer.FieldName = "colBtnWatchFilm"
         Me.col_watch_trailer.Name = "col_watch_trailer"
         Me.col_watch_trailer.Visible = True
-        Me.col_watch_trailer.Width = 23
+        Me.col_watch_trailer.Width = 77
         '
-        'cmbgridStatusTrailer
+        'RepositoryBtnWatchTrailer
         '
-        Me.cmbgridStatusTrailer.AutoHeight = False
-        Me.cmbgridStatusTrailer.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        Me.cmbgridStatusTrailer.Name = "cmbgridStatusTrailer"
+        Me.RepositoryBtnWatchTrailer.AutoHeight = False
+        Me.RepositoryBtnWatchTrailer.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+        Me.RepositoryBtnWatchTrailer.Name = "RepositoryBtnWatchTrailer"
+        Me.RepositoryBtnWatchTrailer.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor
         '
         'col_trailer_filename
         '
@@ -2799,7 +2798,7 @@ Partial Class FrmProductsVOD
         Me.col_trailer_filename.Name = "col_trailer_filename"
         Me.col_trailer_filename.OptionsColumn.AllowEdit = False
         Me.col_trailer_filename.Visible = True
-        Me.col_trailer_filename.Width = 460
+        Me.col_trailer_filename.Width = 137
         '
         'col_imdb_id
         '
@@ -2808,7 +2807,7 @@ Partial Class FrmProductsVOD
         Me.col_imdb_id.Name = "col_imdb_id"
         Me.col_imdb_id.OptionsColumn.AllowEdit = False
         Me.col_imdb_id.Visible = True
-        Me.col_imdb_id.Width = 156
+        Me.col_imdb_id.Width = 46
         '
         'col_audio
         '
@@ -2818,7 +2817,7 @@ Partial Class FrmProductsVOD
         Me.col_audio.Name = "col_audio"
         Me.col_audio.OptionsColumn.AllowEdit = False
         Me.col_audio.Visible = True
-        Me.col_audio.Width = 140
+        Me.col_audio.Width = 41
         '
         'repLanguageTrailers
         '
@@ -2843,7 +2842,7 @@ Partial Class FrmProductsVOD
         Me.col_sub.Name = "col_sub"
         Me.col_sub.OptionsColumn.AllowEdit = False
         Me.col_sub.Visible = True
-        Me.col_sub.Width = 154
+        Me.col_sub.Width = 46
         '
         'repSubtitleTrailers
         '
@@ -2867,7 +2866,13 @@ Partial Class FrmProductsVOD
         Me.col_status.FieldName = "status"
         Me.col_status.Name = "col_status"
         Me.col_status.Visible = True
-        Me.col_status.Width = 459
+        Me.col_status.Width = 70
+        '
+        'cmbgridStatusTrailer
+        '
+        Me.cmbgridStatusTrailer.AutoHeight = False
+        Me.cmbgridStatusTrailer.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        Me.cmbgridStatusTrailer.Name = "cmbgridStatusTrailer"
         '
         'col_available
         '
@@ -2896,10 +2901,10 @@ Partial Class FrmProductsVOD
         Me.webTrailers.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
                     Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.webTrailers.Location = New System.Drawing.Point(85, 1)
+        Me.webTrailers.Location = New System.Drawing.Point(445, 0)
         Me.webTrailers.MinimumSize = New System.Drawing.Size(20, 20)
         Me.webTrailers.Name = "webTrailers"
-        Me.webTrailers.Size = New System.Drawing.Size(1003, 630)
+        Me.webTrailers.Size = New System.Drawing.Size(818, 630)
         Me.webTrailers.TabIndex = 9
         '
         'TextEdit2
@@ -3101,12 +3106,13 @@ Partial Class FrmProductsVOD
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.xTabTrailers.ResumeLayout(False)
         CType(Me.grdTrailers, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.AdvBandedGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmbgridStatusTrailer, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridViewTrailers, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RepositoryBtnWatchTrailer, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.repLanguageTrailers, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RepositoryItemGridLookUpEdit1View, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.repSubtitleTrailers, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbgridStatusTrailer, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbLanguagesTrailers, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbSubtitleTrailers, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3317,10 +3323,6 @@ Partial Class FrmProductsVOD
     Friend WithEvents imdb_id As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents filename As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents btnDeleteVOD As DevExpress.XtraEditors.SimpleButton
-    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
     Friend WithEvents cmbgridStatus As DevExpress.XtraEditors.Repository.RepositoryItemComboBox
     Friend WithEvents GridBand3 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
     Friend WithEvents GridBand4 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
@@ -3339,14 +3341,6 @@ Partial Class FrmProductsVOD
     Friend WithEvents colBackcatalogueExpireAt As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
     Friend WithEvents dpBackcataloguExpired As DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
     Friend WithEvents LabelControl1 As DevExpress.XtraEditors.LabelControl
-    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
     Friend WithEvents gpbLuxemburg As System.Windows.Forms.GroupBox
     Friend WithEvents LabelControl12 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl10 As DevExpress.XtraEditors.LabelControl
@@ -3379,16 +3373,12 @@ Partial Class FrmProductsVOD
     Friend WithEvents txtIdLU As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl15 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents colcountry As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
-    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents chkIsPPV As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents txtPPVPrice As DevExpress.XtraEditors.TextEdit
     Friend WithEvents xTabTrailers As DevExpress.XtraTab.XtraTabPage
     Friend WithEvents grdTrailers As DevExpress.XtraGrid.GridControl
-    Friend WithEvents AdvBandedGridView1 As DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView
+    Friend WithEvents GridViewTrailers As DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView
     Friend WithEvents GridBand5 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
     Friend WithEvents col_watch_trailer As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
     Friend WithEvents col_trailer_filename As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
@@ -3403,23 +3393,15 @@ Partial Class FrmProductsVOD
     Friend WithEvents RepositoryItemLookUpEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents RepositoryItemLookUpEdit3 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
-    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
     Friend WithEvents cmbLanguagesTrailers As DevExpress.XtraEditors.Repository.RepositoryItemComboBox
     Friend WithEvents cmbSubtitleTrailers As DevExpress.XtraEditors.Repository.RepositoryItemComboBox
     Friend WithEvents repLanguageTrailers As DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit
     Friend WithEvents RepositoryItemGridLookUpEdit1View As DevExpress.XtraGrid.Views.Grid.GridView
     Friend WithEvents repSubtitleTrailers As DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit
     Friend WithEvents GridView2 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents RepositoryBtnWatchTrailer As DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit
     Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
-
 End Class

@@ -114,7 +114,10 @@ Public Class clsPhoneActivation
               "                                                     (select max(hist_phone_activation_id) as id , customers_id " & _
               "                                                      from historique_phone_activation group by customers_id) xx on yy.customers_id =  xx.customers_id) " & _
               "      hpa  on hpa.customers_id = c.customers_id " & _
-              " where  c.customers_registration_step = " & DvdPostData.ClsCustomersData.StepRegistrationStatus.OK & " and c.customers_abo = " & DvdPostData.ClsCustomersData.abo.UNVALID & "    And c.customers_abo_payment_method = " & DvdPostData.ClsCustomersData.Payment_Method.VIREMENT & " order by 1 desc"
+              " where  c.customers_registration_step = " & DvdPostData.ClsCustomersData.StepRegistrationStatus.OK & " and c.customers_abo = " & DvdPostData.ClsCustomersData.abo.UNVALID & _
+              " order by 1 desc"
+        '"    And c.customers_abo_payment_method = " & DvdPostData.ClsCustomersData.Payment_Method.VIREMENT & _ Igor: this condition is removed on Christophe's request
+
         '" and (hpa.customers_id is null or (hpa.date_delete_phone_activation is null and hpa.stop_phone_id is null))"
         Return sql
     End Function
