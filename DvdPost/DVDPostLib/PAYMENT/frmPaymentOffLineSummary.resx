@@ -166,14 +166,18 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1104, 598</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="chkdetails.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
   <data name="chkdetails.Location" type="System.Drawing.Point, System.Drawing">
-    <value>540, 5</value>
+    <value>754, 5</value>
   </data>
   <data name="chkdetails.Properties.Caption" xml:space="preserve">
     <value>details</value>
   </data>
   <data name="chkdetails.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 19</value>
+    <value>135, 19</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="chkdetails.TabIndex" type="System.Int32, mscorlib">

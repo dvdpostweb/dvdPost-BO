@@ -36,6 +36,7 @@ Public Class PaymentOfflineData
         LETTER = 3
         LETTER_AVOCAT = 4
         LETTER_BANKTRANSFER = 1103
+        LETTER_BANKTRANSFER_ADULTSVOD = 1104
     End Enum
 
     Public Shared Function GetListRecoverySuspended() As String

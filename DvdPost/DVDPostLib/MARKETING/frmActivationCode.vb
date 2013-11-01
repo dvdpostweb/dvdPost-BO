@@ -146,16 +146,8 @@ Public Class frmActivationCode
     Friend WithEvents Grid1 As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView1 As DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView
     Friend WithEvents BarManager2 As DevExpress.XtraBars.BarManager
-    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
     Friend WithEvents txtDVDRemain As DevExpress.XtraEditors.SpinEdit
     Friend WithEvents lblDvdRemain As DevExpress.XtraEditors.LabelControl
-    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents CheckDebitCard As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents CheckCreditCard As DevExpress.XtraEditors.CheckEdit
@@ -166,30 +158,6 @@ Public Class frmActivationCode
     Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
-    'Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
     Friend WithEvents txtComment As DevExpress.XtraEditors.TextEdit
 
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()

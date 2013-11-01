@@ -78,6 +78,17 @@ Public Class ClsDom80_128
         Return path_file & nameFile
 
     End Function
+
+    Public Shared Function CreatePathFileADULTSVOD(ByVal tBatch As String, ByVal country As String) As String
+        Dim nameFile As String
+        Dim path_file As String
+
+        path_file = Configuration.ConfigurationManager.AppSettings(KEYFILE)
+        nameFile = "ADULTSVOD_" & country & "_" & tBatch.ToString() & "_" & DVDPostTools.ClsDate.formatDate() & ".txt"
+
+        Return path_file & nameFile
+
+    End Function
    
     Public Function GetDateTimeFormat(ByVal dt As DateTime) As String
         Return dt.ToString(FORMATDATETIME)

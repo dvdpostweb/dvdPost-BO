@@ -88,6 +88,8 @@
               <xs:element name="game_online" msprop:Generator_UserColumnName="game_online" msprop:Generator_ColumnVarNameInTable="columngame_online" msprop:Generator_ColumnPropNameInRow="game_online" msprop:Generator_ColumnPropNameInTable="game_onlineColumn" type="xs:int" minOccurs="0" />
               <xs:element name="imdb_id_serie" msprop:Generator_UserColumnName="imdb_id_serie" msprop:Generator_ColumnVarNameInTable="columnimdb_id_serie" msprop:Generator_ColumnPropNameInRow="imdb_id_serie" msprop:Generator_ColumnPropNameInTable="imdb_id_serieColumn" type="xs:long" default="0" minOccurs="0" />
               <xs:element name="vod_next" msprop:Generator_UserColumnName="vod_next" msprop:Generator_ColumnPropNameInRow="vod_next" msprop:Generator_ColumnVarNameInTable="columnvod_next" msprop:Generator_ColumnPropNameInTable="vod_nextColumn" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="vod_next_lux" msprop:Generator_UserColumnName="vod_next_lux" msprop:Generator_ColumnVarNameInTable="columnvod_next_lux" msprop:Generator_ColumnPropNameInRow="vod_next_lux" msprop:Generator_ColumnPropNameInTable="vod_next_luxColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="vod_next_nl" msprop:Generator_UserColumnName="vod_next_nl" msprop:Generator_ColumnVarNameInTable="columnvod_next_nl" msprop:Generator_ColumnPropNameInRow="vod_next_nl" msprop:Generator_ColumnPropNameInTable="vod_next_nlColumn" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -287,6 +289,7 @@
               <xs:element name="image_active" msprop:Generator_UserColumnName="image_active" msprop:Generator_ColumnPropNameInRow="image_active" msprop:Generator_ColumnVarNameInTable="columnimage_active" msprop:Generator_ColumnPropNameInTable="image_activeColumn" type="xs:short" minOccurs="0" />
               <xs:element name="focus" msprop:Generator_UserColumnName="focus" msprop:Generator_ColumnPropNameInRow="focus" msprop:Generator_ColumnVarNameInTable="columnfocus" msprop:Generator_ColumnPropNameInTable="focusColumn" type="xs:short" minOccurs="0" />
               <xs:element name="sexuality" msprop:Generator_UserColumnName="sexuality" msprop:Generator_ColumnPropNameInRow="sexuality" msprop:Generator_ColumnVarNameInTable="columnsexuality" msprop:Generator_ColumnPropNameInTable="sexualityColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="birth_place" msprop:Generator_UserColumnName="birth_place" msprop:Generator_ColumnPropNameInRow="birth_place" msprop:Generator_ColumnVarNameInTable="columnbirth_place" msprop:Generator_ColumnPropNameInTable="birth_placeColumn" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

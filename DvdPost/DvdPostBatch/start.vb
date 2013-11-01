@@ -50,6 +50,10 @@ Module start
                 clscust.ReconductionOgone(DvdPostData.ClsCustomersData.Country.BELGIUM)
                 clscust.ReconductionOgone(DvdPostData.ClsCustomersData.Country.NEDERLANDS)
 
+                clscust.ReconductionOgoneADULTSVOD(DvdPostData.ClsCustomersData.Country.BELGIUM)
+                clscust.ReconductionOgoneADULTSVOD(DvdPostData.ClsCustomersData.Country.NEDERLANDS)
+                clscust.ReconductionOgoneADULTSVOD(DvdPostData.ClsCustomersData.Country.LUXEMBOURG)
+
                 clscust.ChangeCard_customers(DvdPostData.ClsCustomersData.Country.BELGIUM)
                 clscust.ChangeCard_customers(DvdPostData.ClsCustomersData.Country.NEDERLANDS)
 
@@ -57,6 +61,8 @@ Module start
                 clscust.RejetFileOgone()
 
                 clscust.ReconductionDomiciliation(DvdPostData.ClsCustomersData.Country.BELGIUM)
+
+                clscust.ReconductionDomiciliationADULTSVOD(DvdPostData.ClsCustomersData.Country.BELGIUM)
 
                 'clscust.ReconductionPhone(DvdPostData.ClsCustomersData.Country.BELGIQUE)
                 'clscust.ReconductionPhone(DvdPostData.ClsCustomersData.Country.PAYSBAS)
@@ -67,7 +73,8 @@ Module start
                 clscust.ReconductionVirement(DvdPostData.ClsCustomersData.Country.BELGIUM)
                 clscust.ReconductionVirement(DvdPostData.ClsCustomersData.Country.NEDERLANDS)
 
-                
+                clscust.ReconductionVirementADULTSVOD(DvdPostData.ClsCustomersData.Country.BELGIUM)
+                clscust.ReconductionVirementADULTSVOD(DvdPostData.ClsCustomersData.Country.NEDERLANDS)
 
                 DVDPostBuziness.ClsBankTransfer.print()
 
@@ -85,7 +92,7 @@ Module start
                 Dim sql As String
                 'call store procedure to calculate average of the duration of keeping dvdat home
                 Sql = DvdPostData.ClsPurchaseSale.GetInsertCreateRateRotationAbo()
-                DvdPostData.clsConnection.ExecuteNonQuery(Sql)
+                DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
                 ' Dim cls As New DVDPostBuziness.ClsPurchaseSale
                 ' cls.CreatePrevisionAchat()
@@ -95,14 +102,18 @@ Module start
                 clscust.UpdateDvd_at_Home()
                 DVDPostBuziness.ClsVod.UpdateVodCreditsAfterStartPeriod()
                 DVDPostBuziness.ClsVod.UpdateSoonVod()
-                
-                'PPV
-                If (Configuration.ConfigurationManager.AppSettings("do_ppv") = "true") Then
-
-                End If
 
                 clscust.ReconductionPayPal(DvdPostData.ClsCustomersData.Country.BELGIUM)
                 clscust.ReconductionPayPal(DvdPostData.ClsCustomersData.Country.NEDERLANDS)
+
+                clscust.ReconductionPayPalADULTSVOD(DvdPostData.ClsCustomersData.Country.BELGIUM)
+                clscust.ReconductionPayPalADULTSVOD(DvdPostData.ClsCustomersData.Country.NEDERLANDS)
+
+                'PPV
+                If (Configuration.ConfigurationManager.AppSettings("do_ppv") = "true") Then
+                    Dim clsPPV As DVDPostBuziness.clsPPV = New DVDPostBuziness.clsPPV
+                    clsPPV.CreatePPVPaymentsManager(DvdPostData.ClsCustomersData.Country.BELGIUM, DateTime.Now.Date.AddDays(-1), DateTime.Now.Date)
+                End If
 
             Else
                 Console.WriteLine("Error Argument")

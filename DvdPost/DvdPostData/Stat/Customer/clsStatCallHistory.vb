@@ -45,7 +45,7 @@ Public Class clsStatCallHistory
         '      " group by c.text,date(ch.start_date),su.fullname,ch.ft " & _
         '      " ) totalPerUserPerDay on totalPerDay.start_date = totalPerUserPerDay.start_date and totalPerDay.ft = totalPerUserPerDay.ft "
 
-        sql = " select c.text,date(ch.start_date) start_date,su.fullname,ch.ft " & _
+        sql = " select c.text,date(ch.start_date) start_date,su.fullname,ch.ft, (select cc.text from call_contacts cc where cc.id = ch.contact_id) contact, ch.comment " & _
                " from call_histories ch join call_details_histories cdh on ch.id = cdh.call_history_id " & _
                " join securityuser su on ch.user_id = su.userid " & _
                " join calls c on c.id = cdh.call_id " & _
@@ -81,7 +81,7 @@ Public Class clsStatCallHistory
         '        " group by c.text,date(ch.start_date),su.fullname,ch.ft " & _
         '        " ) totalPerUserPerDay on totalPerDay.start_date = totalPerUserPerDay.start_date and totalPerDay.ft = totalPerUserPerDay.ft and totalPerDay.text = totalPerUserPerDay.text "
 
-        sql = " select c.text,date(ch.start_date) start_date,su.fullname,ch.ft,ch.id " & _
+        sql = " select c.text,date(ch.start_date) start_date,su.fullname,ch.ft,ch.id, (select cc.text from call_contacts cc where cc.id = ch.contact_id) contact, ch.comment " & _
               " from call_histories ch " & _
               " join call_details_histories cdh on ch.id = cdh.call_history_id " & _
               " join securityuser su on ch.user_id = su.userid " & _
@@ -127,9 +127,9 @@ Public Class clsStatCallHistory
         '      " join calls cStopReason on xxx.reason_id = cStopReason.id " & _
         '      " join calls cRetenu on xxx.call_id = cRetenu.id "
 
-        sql = "  select father.start_date,su.fullname,fathertext.text catgegorie ,childtext.text sous_categorie " & _
+        sql = "  select father.start_date,su.fullname, father.customers_id, fathertext.text catgegorie ,childtext.text sous_categorie, childtext2.text sous_categorie2, (select cc.text from call_contacts cc where cc.id = father.contact_id) contact, father.comment  " & _
               " from ( " & _
-              "   select ch.id,cdh.call_id,ch.user_id,date(ch.start_date) start_date from call_histories ch  join  call_details_histories cdh on ch.id = cdh.call_history_id join ( " & _
+              "   select ch.id,ch.customers_id,cdh.call_id,ch.user_id,date(ch.start_date) start_date, ch.contact_id, ch.comment from call_histories ch  join  call_details_histories cdh on ch.id = cdh.call_history_id join ( " & _
               "   select id from calls_hierarchy where parent_id = " & parent_id & _
               "  ) main on cdh.call_id = main.id " & _
               " where date(ch.start_date) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(ch.start_date) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "') father " & _
@@ -138,6 +138,9 @@ Public Class clsStatCallHistory
               " left join (select call_history_id,count(*) cpt from call_details_histories group by call_history_id having count(*) = 1) father_alone on father_alone.call_history_id = father.id " & _
               " join calls fathertext on father.call_id = fathertext.id " & _
               " left join calls childtext on child.call_id = childtext.id " & _
+              " left join calls_hierarchy chi3 on chi3.parent_id = chi2.id" & _
+              " left join call_details_histories child2 on child2.call_history_id = father.id and child2.call_id = chi3.id " & _
+              " left join calls childtext2 on child2.call_id = childtext2.id " & _
               " join securityuser su on father.user_id = su.userid " & _
               " where child.call_id is not null or father_alone.call_history_id is not null "
 

@@ -36,6 +36,7 @@ Public Class ClsBatchDomiciliation
             abo_id = DvdPostData.clsConnection.ExecuteScalar(sql)
 
             price = clsCust.GetCustomersAmount(drReconduction)
+            price = DVDPostTools.ClsPrice.FormatPrice(price)
             If price = "0" Then Return True
             strDomNumber = clsCust.getCustomersDomiciliationNumber(drReconduction)
 
@@ -69,6 +70,10 @@ Public Class ClsBatchDomiciliation
 
     Public Function CreatePathFile(ByVal tBatch As String, ByVal country As String) As String
         Return ClsDom80_128.CreatePathFile(tBatch, country)
+    End Function
+
+    Public Function CreatePathFileADULTSVOD(ByVal tBatch As String, ByVal country As String) As String
+        Return ClsDom80_128.CreatePathFileADULTSVOD(tBatch, country)
     End Function
 
     Private Sub InitProgressBar(ByVal cpt As Integer)

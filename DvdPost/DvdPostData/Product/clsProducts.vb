@@ -6,4 +6,13 @@ Public Class clsProducts
 
         Return sql
     End Function
+
+    Public Shared Function GetProduct_id(ByVal imdb_id As Integer) As String
+        Dim sql As String
+
+        sql = "select products_id from products where products_status !=-1 and imdb_id = " & imdb_id & " limit 1"
+
+        Return sql
+    End Function
+
 End Class

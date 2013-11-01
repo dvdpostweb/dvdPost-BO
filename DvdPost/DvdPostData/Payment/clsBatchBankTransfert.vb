@@ -10,7 +10,14 @@ Public Class clsBatchBankTransfert
     '    sql = "SELECT max(id) as obid FROM payment"
     '    Return sql
     'End Function
+    Public Shared Function GetUpdateLinkADULTSVODAbo() As String
+        Dim sql As String
 
+        sql = "update payment p set abo_id = (select max(abo_id) from abo a where a.customerid = p.customers_id and a.action = " & ClsCustomersData.TypeAction.ACTION_RECONDUCTION_ADULT_SVOD & ")" & _
+              " where p.abo_id = 0 and date(p.date_added) = date(now())"
+
+        Return sql
+    End Function
     Public Shared Function GetUpdateLinkAbo() As String
         Dim sql As String
 
@@ -178,10 +185,37 @@ Public Class clsBatchBankTransfert
             ",c.customers_abo_validityto ,c.customers_abo," & _
             " date(date_add(now() , interval " & nb_limitdaysPayment & " day)) as limit_date_payment " & _
             " FROM customers c join payment p on c.customers_id = p.customers_id " & _
-            " join products_abo pa on c.customers_abo_type = pa.products_id" & _
+            " join abo a on p.abo_id = a.abo_id and a.product_id <> (SELECT products_id  FROM products where products_title = 'ADULTSVOD') " & _
+            " join products_abo pa on c.customers_abo_type = pa.products_id " & _
             " left join address_book ab on ab.address_book_id = c.customers_default_address_id and c.customers_id = ab.customers_id " & _
             " where " & strvaliduser & customerStr & " And p.amount > 0 And p.payment_status = " & PaymentOfflineData.StepPayment.WAITING_PAYMENT & _
-             " and payment_method = " & ClsCustomersData.Payment_Method.VIREMENT & _
+             " and p.payment_method = " & ClsCustomersData.Payment_Method.VIREMENT & _
+             " order by  c.customers_language ASC "
+
+        Return Sql
+
+    End Function
+    Public Shared Function GetDataADULTSVODPaymentCustomer(ByVal nb_limitdaysPayment As Integer, Optional ByVal customer_id As Integer = 0) As String
+        Dim Sql As String
+        Dim customerStr As String = ""
+        Dim strvaliduser As String = ""
+        If customer_id > 0 Then
+            customerStr = " And c.customers_id = " & customer_id
+        End If
+
+        strvaliduser = " c.customers_abo = 1 and customers_abo_suspended = 0 "
+
+
+        Sql = "SELECT distinct pa.qty_credit,c.customers_gender,c.customers_language,c.customers_id, c.customers_firstname , c.customers_lastname,c.customers_email_address,p.*, " & _
+            " c.customers_abo ,ab.entry_street_address, ab.entry_postcode,ab.entry_city " & _
+            ",c.customers_abo_validityto ,c.customers_abo," & _
+            " date(date_add(now() , interval " & nb_limitdaysPayment & " day)) as limit_date_payment " & _
+            " FROM customers c join payment p on c.customers_id = p.customers_id " & _
+            " join abo a on p.abo_id = a.abo_id and a.product_id = (SELECT products_id  FROM products where products_title = 'ADULTSVOD')  " & _
+            " join products_abo pa on c.customers_abo_type = pa.products_id " & _
+            " left join address_book ab on ab.address_book_id = c.customers_default_address_id and c.customers_id = ab.customers_id " & _
+            " where " & strvaliduser & customerStr & " And p.amount > 0 And p.payment_status = " & PaymentOfflineData.StepPayment.WAITING_PAYMENT & _
+             " and p.payment_method = " & ClsCustomersData.Payment_Method.VIREMENT & _
              " order by  c.customers_language ASC "
 
         Return Sql

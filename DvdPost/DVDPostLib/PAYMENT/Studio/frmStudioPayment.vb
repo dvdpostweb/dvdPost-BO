@@ -61,7 +61,6 @@ Public Class frmStudioPayment
     Friend WithEvents GridBand4 As DevExpress.XtraGrid.Views.BandedGrid.GridBand
     Friend WithEvents colCredit As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
     Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
-    Friend WithEvents colBillingReportType As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
     Friend WithEvents cmbLanguages As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents chkcolAvailable As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents cmbStudio As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
@@ -78,8 +77,6 @@ Public Class frmStudioPayment
     Friend WithEvents lblHasBilling As DevExpress.XtraEditors.LabelControl
     Friend WithEvents chkHasBillingReport As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents btnEditStudio As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents cmbBillingReportType As DevExpress.XtraEditors.LookUpEdit
-    Friend WithEvents lblReportType As DevExpress.XtraEditors.LabelControl
     Friend WithEvents lblMinGlobal As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txtMinGlobal As DevExpress.XtraEditors.TextEdit
     Friend WithEvents lblMinBackcatalogueVOD As DevExpress.XtraEditors.LabelControl
@@ -140,6 +137,81 @@ Public Class frmStudioPayment
     Friend WithEvents XTabCineart As DevExpress.XtraTab.XtraTabPage
     Friend WithEvents GridCineart As DevExpress.XtraGrid.GridControl
     Friend WithEvents GridView5 As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents btnADULTSVODDetailedReport As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnADULTSVODSummary As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnKPNDetailReport As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents chkKPN As System.Windows.Forms.CheckBox
+    Friend WithEvents chkDVDPost As System.Windows.Forms.CheckBox
+    Friend WithEvents chkCineartSpecial As System.Windows.Forms.CheckBox
+    Friend WithEvents chkPlush As System.Windows.Forms.CheckBox
+    Friend WithEvents btnSVODDetailedReport As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnSVODSummaryReport As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox4 As System.Windows.Forms.CheckBox
+    Friend WithEvents SimpleButton2 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton3 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton4 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton5 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton6 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton7 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton8 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton9 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents DateEdit1 As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents LabelControl6 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents DateEdit2 As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents SimpleButton10 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton11 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents LookUpEdit1 As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents LabelControl7 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LookUpEdit2 As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents LabelControl8 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents CheckBox5 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox6 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox7 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox8 As System.Windows.Forms.CheckBox
+    Friend WithEvents SimpleButton12 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton13 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton14 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton15 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton16 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton17 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton18 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton19 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents LabelControl9 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents DateEdit3 As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents LabelControl10 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents DateEdit4 As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents SimpleButton20 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton21 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents LookUpEdit3 As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents LabelControl11 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LookUpEdit4 As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents LabelControl12 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents ckhTestPlush As System.Windows.Forms.CheckBox
+    Friend WithEvents LabelControl13 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtSVODMinGlobal As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl14 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtSVODMinBackcatalogueVOD As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl15 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtSVODMinNewVOD As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl16 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txt_svod_fee_backcatalogue As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl17 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txt_svod_fee_new As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl18 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl19 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtPriceBackcatalogue As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtPriceNew As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl20 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents chkVODNL As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents LabelControl21 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents chkVODLux As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents LabelControl22 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents chkVODBe As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents btnSearch As DevExpress.XtraEditors.SimpleButton
 
 
@@ -170,7 +242,6 @@ Public Class frmStudioPayment
         Me.colCredit = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.colHasBilling = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.RepositoryItemCheckEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
-        Me.colBillingReportType = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.cmbLanguages = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.chkcolAvailable = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
         Me.cmbStudio = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
@@ -189,11 +260,27 @@ Public Class frmStudioPayment
         Me.ContextMenu1 = New DVDPostBuziness.contextMenu
         Me.XtraTabStudio = New DevExpress.XtraTab.XtraTabControl
         Me.TabStudio = New DevExpress.XtraTab.XtraTabPage
+        Me.LabelControl20 = New DevExpress.XtraEditors.LabelControl
+        Me.chkVODNL = New DevExpress.XtraEditors.CheckEdit
+        Me.LabelControl21 = New DevExpress.XtraEditors.LabelControl
+        Me.chkVODLux = New DevExpress.XtraEditors.CheckEdit
+        Me.txtPriceBackcatalogue = New DevExpress.XtraEditors.TextEdit
+        Me.txtPriceNew = New DevExpress.XtraEditors.TextEdit
+        Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl
+        Me.txtSVODMinGlobal = New DevExpress.XtraEditors.TextEdit
+        Me.LabelControl14 = New DevExpress.XtraEditors.LabelControl
+        Me.txtSVODMinBackcatalogueVOD = New DevExpress.XtraEditors.TextEdit
+        Me.LabelControl15 = New DevExpress.XtraEditors.LabelControl
+        Me.txtSVODMinNewVOD = New DevExpress.XtraEditors.TextEdit
+        Me.LabelControl16 = New DevExpress.XtraEditors.LabelControl
+        Me.txt_svod_fee_backcatalogue = New DevExpress.XtraEditors.TextEdit
+        Me.LabelControl17 = New DevExpress.XtraEditors.LabelControl
+        Me.txt_svod_fee_new = New DevExpress.XtraEditors.TextEdit
+        Me.LabelControl18 = New DevExpress.XtraEditors.LabelControl
+        Me.LabelControl19 = New DevExpress.XtraEditors.LabelControl
         Me.lblHasBilling = New DevExpress.XtraEditors.LabelControl
         Me.chkHasBillingReport = New DevExpress.XtraEditors.CheckEdit
         Me.btnEditStudio = New DevExpress.XtraEditors.SimpleButton
-        Me.cmbBillingReportType = New DevExpress.XtraEditors.LookUpEdit
-        Me.lblReportType = New DevExpress.XtraEditors.LabelControl
         Me.lblMinGlobal = New DevExpress.XtraEditors.LabelControl
         Me.txtMinGlobal = New DevExpress.XtraEditors.TextEdit
         Me.lblMinBackcatalogueVOD = New DevExpress.XtraEditors.LabelControl
@@ -218,6 +305,17 @@ Public Class frmStudioPayment
         Me.lblLanguageSound = New DevExpress.XtraEditors.LabelControl
         Me.btnSaveStudio = New DevExpress.XtraEditors.SimpleButton
         Me.TabCreateReport = New DevExpress.XtraTab.XtraTabPage
+        Me.ckhTestPlush = New System.Windows.Forms.CheckBox
+        Me.btnSVODDetailedReport = New DevExpress.XtraEditors.SimpleButton
+        Me.btnSVODSummaryReport = New DevExpress.XtraEditors.SimpleButton
+        Me.chkPlush = New System.Windows.Forms.CheckBox
+        Me.chkCineartSpecial = New System.Windows.Forms.CheckBox
+        Me.chkKPN = New System.Windows.Forms.CheckBox
+        Me.chkDVDPost = New System.Windows.Forms.CheckBox
+        Me.btnKPNDetailReport = New DevExpress.XtraEditors.SimpleButton
+        Me.btnADULTSVODSummary = New DevExpress.XtraEditors.SimpleButton
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton
+        Me.btnADULTSVODDetailedReport = New DevExpress.XtraEditors.SimpleButton
         Me.btnCineartSummaryNew = New DevExpress.XtraEditors.SimpleButton
         Me.btnCineartSummaryBackcatalogue = New DevExpress.XtraEditors.SimpleButton
         Me.btnCineartDetailNew = New DevExpress.XtraEditors.SimpleButton
@@ -253,6 +351,52 @@ Public Class frmStudioPayment
         Me.XTabCineart = New DevExpress.XtraTab.XtraTabPage
         Me.GridCineart = New DevExpress.XtraGrid.GridControl
         Me.GridView5 = New DevExpress.XtraGrid.Views.Grid.GridView
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox
+        Me.CheckBox4 = New System.Windows.Forms.CheckBox
+        Me.SimpleButton2 = New DevExpress.XtraEditors.SimpleButton
+        Me.SimpleButton3 = New DevExpress.XtraEditors.SimpleButton
+        Me.SimpleButton4 = New DevExpress.XtraEditors.SimpleButton
+        Me.SimpleButton5 = New DevExpress.XtraEditors.SimpleButton
+        Me.SimpleButton6 = New DevExpress.XtraEditors.SimpleButton
+        Me.SimpleButton7 = New DevExpress.XtraEditors.SimpleButton
+        Me.SimpleButton8 = New DevExpress.XtraEditors.SimpleButton
+        Me.SimpleButton9 = New DevExpress.XtraEditors.SimpleButton
+        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl
+        Me.DateEdit1 = New DevExpress.XtraEditors.DateEdit
+        Me.LabelControl6 = New DevExpress.XtraEditors.LabelControl
+        Me.DateEdit2 = New DevExpress.XtraEditors.DateEdit
+        Me.SimpleButton10 = New DevExpress.XtraEditors.SimpleButton
+        Me.SimpleButton11 = New DevExpress.XtraEditors.SimpleButton
+        Me.LookUpEdit1 = New DevExpress.XtraEditors.LookUpEdit
+        Me.LabelControl7 = New DevExpress.XtraEditors.LabelControl
+        Me.LookUpEdit2 = New DevExpress.XtraEditors.LookUpEdit
+        Me.LabelControl8 = New DevExpress.XtraEditors.LabelControl
+        Me.CheckBox5 = New System.Windows.Forms.CheckBox
+        Me.CheckBox6 = New System.Windows.Forms.CheckBox
+        Me.CheckBox7 = New System.Windows.Forms.CheckBox
+        Me.CheckBox8 = New System.Windows.Forms.CheckBox
+        Me.SimpleButton12 = New DevExpress.XtraEditors.SimpleButton
+        Me.SimpleButton13 = New DevExpress.XtraEditors.SimpleButton
+        Me.SimpleButton14 = New DevExpress.XtraEditors.SimpleButton
+        Me.SimpleButton15 = New DevExpress.XtraEditors.SimpleButton
+        Me.SimpleButton16 = New DevExpress.XtraEditors.SimpleButton
+        Me.SimpleButton17 = New DevExpress.XtraEditors.SimpleButton
+        Me.SimpleButton18 = New DevExpress.XtraEditors.SimpleButton
+        Me.SimpleButton19 = New DevExpress.XtraEditors.SimpleButton
+        Me.LabelControl9 = New DevExpress.XtraEditors.LabelControl
+        Me.DateEdit3 = New DevExpress.XtraEditors.DateEdit
+        Me.LabelControl10 = New DevExpress.XtraEditors.LabelControl
+        Me.DateEdit4 = New DevExpress.XtraEditors.DateEdit
+        Me.SimpleButton20 = New DevExpress.XtraEditors.SimpleButton
+        Me.SimpleButton21 = New DevExpress.XtraEditors.SimpleButton
+        Me.LookUpEdit3 = New DevExpress.XtraEditors.LookUpEdit
+        Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl
+        Me.LookUpEdit4 = New DevExpress.XtraEditors.LookUpEdit
+        Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl
+        Me.LabelControl22 = New DevExpress.XtraEditors.LabelControl
+        Me.chkVODBe = New DevExpress.XtraEditors.CheckEdit
         CType(Me.cmbViewListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtQuickSearchRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbReportListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -287,8 +431,16 @@ Public Class frmStudioPayment
         CType(Me.XtraTabStudio, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabStudio.SuspendLayout()
         Me.TabStudio.SuspendLayout()
+        CType(Me.chkVODNL.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkVODLux.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtPriceBackcatalogue.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtPriceNew.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtSVODMinGlobal.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtSVODMinBackcatalogueVOD.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtSVODMinNewVOD.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_svod_fee_backcatalogue.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_svod_fee_new.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkHasBillingReport.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.cmbBillingReportType.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtMinGlobal.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtMinBackcatalogueVOD.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtMinNewVOD.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -324,6 +476,19 @@ Public Class frmStudioPayment
         Me.XTabCineart.SuspendLayout()
         CType(Me.GridCineart, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DateEdit1.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DateEdit2.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DateEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LookUpEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DateEdit3.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DateEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DateEdit4.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DateEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LookUpEdit3.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LookUpEdit4.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkVODBe.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabSearch
@@ -414,7 +579,7 @@ Public Class frmStudioPayment
         Me.GridViewSearch.Appearance.FocusedRow.Options.UseBackColor = True
         Me.GridViewSearch.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand1, Me.GridBand3, Me.GridBand4})
         Me.GridViewSearch.ColumnPanelRowHeight = 45
-        Me.GridViewSearch.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.colStudio, Me.colStudioType, Me.colCreditNew, Me.colCredit, Me.colStudioID, Me.colHasBilling, Me.colBillingReportType})
+        Me.GridViewSearch.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.colStudio, Me.colStudioType, Me.colCreditNew, Me.colCredit, Me.colStudioID, Me.colHasBilling})
         Me.GridViewSearch.CustomizationFormBounds = New System.Drawing.Rectangle(0, 375, 225, 209)
         Me.GridViewSearch.DetailHeight = 50
         Me.GridViewSearch.GridControl = Me.GridStudio
@@ -471,7 +636,6 @@ Public Class frmStudioPayment
         resources.ApplyResources(Me.GridBand4, "GridBand4")
         Me.GridBand4.Columns.Add(Me.colCredit)
         Me.GridBand4.Columns.Add(Me.colHasBilling)
-        Me.GridBand4.Columns.Add(Me.colBillingReportType)
         '
         'colCredit
         '
@@ -493,12 +657,6 @@ Public Class frmStudioPayment
         Me.RepositoryItemCheckEdit1.Name = "RepositoryItemCheckEdit1"
         Me.RepositoryItemCheckEdit1.ValueChecked = "1"
         Me.RepositoryItemCheckEdit1.ValueUnchecked = "0"
-        '
-        'colBillingReportType
-        '
-        resources.ApplyResources(Me.colBillingReportType, "colBillingReportType")
-        Me.colBillingReportType.FieldName = "billing_report_type"
-        Me.colBillingReportType.Name = "colBillingReportType"
         '
         'cmbLanguages
         '
@@ -618,11 +776,29 @@ Public Class frmStudioPayment
         '
         'TabStudio
         '
+        Me.TabStudio.Controls.Add(Me.LabelControl22)
+        Me.TabStudio.Controls.Add(Me.chkVODBe)
+        Me.TabStudio.Controls.Add(Me.LabelControl20)
+        Me.TabStudio.Controls.Add(Me.chkVODNL)
+        Me.TabStudio.Controls.Add(Me.LabelControl21)
+        Me.TabStudio.Controls.Add(Me.chkVODLux)
+        Me.TabStudio.Controls.Add(Me.txtPriceBackcatalogue)
+        Me.TabStudio.Controls.Add(Me.txtPriceNew)
+        Me.TabStudio.Controls.Add(Me.LabelControl13)
+        Me.TabStudio.Controls.Add(Me.txtSVODMinGlobal)
+        Me.TabStudio.Controls.Add(Me.LabelControl14)
+        Me.TabStudio.Controls.Add(Me.txtSVODMinBackcatalogueVOD)
+        Me.TabStudio.Controls.Add(Me.LabelControl15)
+        Me.TabStudio.Controls.Add(Me.txtSVODMinNewVOD)
+        Me.TabStudio.Controls.Add(Me.LabelControl16)
+        Me.TabStudio.Controls.Add(Me.txt_svod_fee_backcatalogue)
+        Me.TabStudio.Controls.Add(Me.LabelControl17)
+        Me.TabStudio.Controls.Add(Me.txt_svod_fee_new)
+        Me.TabStudio.Controls.Add(Me.LabelControl18)
+        Me.TabStudio.Controls.Add(Me.LabelControl19)
         Me.TabStudio.Controls.Add(Me.lblHasBilling)
         Me.TabStudio.Controls.Add(Me.chkHasBillingReport)
         Me.TabStudio.Controls.Add(Me.btnEditStudio)
-        Me.TabStudio.Controls.Add(Me.cmbBillingReportType)
-        Me.TabStudio.Controls.Add(Me.lblReportType)
         Me.TabStudio.Controls.Add(Me.lblMinGlobal)
         Me.TabStudio.Controls.Add(Me.txtMinGlobal)
         Me.TabStudio.Controls.Add(Me.lblMinBackcatalogueVOD)
@@ -649,6 +825,101 @@ Public Class frmStudioPayment
         Me.TabStudio.Name = "TabStudio"
         resources.ApplyResources(Me.TabStudio, "TabStudio")
         '
+        'LabelControl20
+        '
+        resources.ApplyResources(Me.LabelControl20, "LabelControl20")
+        Me.LabelControl20.Name = "LabelControl20"
+        '
+        'chkVODNL
+        '
+        resources.ApplyResources(Me.chkVODNL, "chkVODNL")
+        Me.chkVODNL.Name = "chkVODNL"
+        Me.chkVODNL.Properties.Caption = resources.GetString("chkVODNL.Properties.Caption")
+        '
+        'LabelControl21
+        '
+        resources.ApplyResources(Me.LabelControl21, "LabelControl21")
+        Me.LabelControl21.Name = "LabelControl21"
+        '
+        'chkVODLux
+        '
+        resources.ApplyResources(Me.chkVODLux, "chkVODLux")
+        Me.chkVODLux.Name = "chkVODLux"
+        Me.chkVODLux.Properties.Caption = resources.GetString("chkVODLux.Properties.Caption")
+        '
+        'txtPriceBackcatalogue
+        '
+        resources.ApplyResources(Me.txtPriceBackcatalogue, "txtPriceBackcatalogue")
+        Me.txtPriceBackcatalogue.Name = "txtPriceBackcatalogue"
+        Me.txtPriceBackcatalogue.Properties.Mask.IgnoreMaskBlank = CType(resources.GetObject("txtPriceBackcatalogue.Properties.Mask.IgnoreMaskBlank"), Boolean)
+        '
+        'txtPriceNew
+        '
+        resources.ApplyResources(Me.txtPriceNew, "txtPriceNew")
+        Me.txtPriceNew.Name = "txtPriceNew"
+        Me.txtPriceNew.Properties.Mask.IgnoreMaskBlank = CType(resources.GetObject("txtPriceNew.Properties.Mask.IgnoreMaskBlank"), Boolean)
+        '
+        'LabelControl13
+        '
+        resources.ApplyResources(Me.LabelControl13, "LabelControl13")
+        Me.LabelControl13.Name = "LabelControl13"
+        '
+        'txtSVODMinGlobal
+        '
+        resources.ApplyResources(Me.txtSVODMinGlobal, "txtSVODMinGlobal")
+        Me.txtSVODMinGlobal.Name = "txtSVODMinGlobal"
+        '
+        'LabelControl14
+        '
+        resources.ApplyResources(Me.LabelControl14, "LabelControl14")
+        Me.LabelControl14.Name = "LabelControl14"
+        '
+        'txtSVODMinBackcatalogueVOD
+        '
+        resources.ApplyResources(Me.txtSVODMinBackcatalogueVOD, "txtSVODMinBackcatalogueVOD")
+        Me.txtSVODMinBackcatalogueVOD.Name = "txtSVODMinBackcatalogueVOD"
+        '
+        'LabelControl15
+        '
+        resources.ApplyResources(Me.LabelControl15, "LabelControl15")
+        Me.LabelControl15.Name = "LabelControl15"
+        '
+        'txtSVODMinNewVOD
+        '
+        resources.ApplyResources(Me.txtSVODMinNewVOD, "txtSVODMinNewVOD")
+        Me.txtSVODMinNewVOD.Name = "txtSVODMinNewVOD"
+        '
+        'LabelControl16
+        '
+        resources.ApplyResources(Me.LabelControl16, "LabelControl16")
+        Me.LabelControl16.Name = "LabelControl16"
+        '
+        'txt_svod_fee_backcatalogue
+        '
+        resources.ApplyResources(Me.txt_svod_fee_backcatalogue, "txt_svod_fee_backcatalogue")
+        Me.txt_svod_fee_backcatalogue.Name = "txt_svod_fee_backcatalogue"
+        '
+        'LabelControl17
+        '
+        resources.ApplyResources(Me.LabelControl17, "LabelControl17")
+        Me.LabelControl17.Name = "LabelControl17"
+        '
+        'txt_svod_fee_new
+        '
+        resources.ApplyResources(Me.txt_svod_fee_new, "txt_svod_fee_new")
+        Me.txt_svod_fee_new.Name = "txt_svod_fee_new"
+        Me.txt_svod_fee_new.Properties.Mask.IgnoreMaskBlank = CType(resources.GetObject("txt_svod_fee_new.Properties.Mask.IgnoreMaskBlank"), Boolean)
+        '
+        'LabelControl18
+        '
+        resources.ApplyResources(Me.LabelControl18, "LabelControl18")
+        Me.LabelControl18.Name = "LabelControl18"
+        '
+        'LabelControl19
+        '
+        resources.ApplyResources(Me.LabelControl19, "LabelControl19")
+        Me.LabelControl19.Name = "LabelControl19"
+        '
         'lblHasBilling
         '
         resources.ApplyResources(Me.lblHasBilling, "lblHasBilling")
@@ -664,19 +935,6 @@ Public Class frmStudioPayment
         '
         resources.ApplyResources(Me.btnEditStudio, "btnEditStudio")
         Me.btnEditStudio.Name = "btnEditStudio"
-        '
-        'cmbBillingReportType
-        '
-        resources.ApplyResources(Me.cmbBillingReportType, "cmbBillingReportType")
-        Me.cmbBillingReportType.Name = "cmbBillingReportType"
-        Me.cmbBillingReportType.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(CType(resources.GetObject("cmbBillingReportType.Properties.Buttons"), DevExpress.XtraEditors.Controls.ButtonPredefines))})
-        Me.cmbBillingReportType.Properties.NullText = resources.GetString("cmbBillingReportType.Properties.NullText")
-        Me.cmbBillingReportType.Properties.ValueMember = "id"
-        '
-        'lblReportType
-        '
-        resources.ApplyResources(Me.lblReportType, "lblReportType")
-        Me.lblReportType.Name = "lblReportType"
         '
         'lblMinGlobal
         '
@@ -805,6 +1063,17 @@ Public Class frmStudioPayment
         '
         'TabCreateReport
         '
+        Me.TabCreateReport.Controls.Add(Me.ckhTestPlush)
+        Me.TabCreateReport.Controls.Add(Me.btnSVODDetailedReport)
+        Me.TabCreateReport.Controls.Add(Me.btnSVODSummaryReport)
+        Me.TabCreateReport.Controls.Add(Me.chkPlush)
+        Me.TabCreateReport.Controls.Add(Me.chkCineartSpecial)
+        Me.TabCreateReport.Controls.Add(Me.chkKPN)
+        Me.TabCreateReport.Controls.Add(Me.chkDVDPost)
+        Me.TabCreateReport.Controls.Add(Me.btnKPNDetailReport)
+        Me.TabCreateReport.Controls.Add(Me.btnADULTSVODSummary)
+        Me.TabCreateReport.Controls.Add(Me.SimpleButton1)
+        Me.TabCreateReport.Controls.Add(Me.btnADULTSVODDetailedReport)
         Me.TabCreateReport.Controls.Add(Me.btnCineartSummaryNew)
         Me.TabCreateReport.Controls.Add(Me.btnCineartSummaryBackcatalogue)
         Me.TabCreateReport.Controls.Add(Me.btnCineartDetailNew)
@@ -821,6 +1090,66 @@ Public Class frmStudioPayment
         Me.TabCreateReport.Controls.Add(Me.lblStudioBilling)
         Me.TabCreateReport.Name = "TabCreateReport"
         resources.ApplyResources(Me.TabCreateReport, "TabCreateReport")
+        '
+        'ckhTestPlush
+        '
+        resources.ApplyResources(Me.ckhTestPlush, "ckhTestPlush")
+        Me.ckhTestPlush.Name = "ckhTestPlush"
+        Me.ckhTestPlush.UseVisualStyleBackColor = True
+        '
+        'btnSVODDetailedReport
+        '
+        resources.ApplyResources(Me.btnSVODDetailedReport, "btnSVODDetailedReport")
+        Me.btnSVODDetailedReport.Name = "btnSVODDetailedReport"
+        '
+        'btnSVODSummaryReport
+        '
+        resources.ApplyResources(Me.btnSVODSummaryReport, "btnSVODSummaryReport")
+        Me.btnSVODSummaryReport.Name = "btnSVODSummaryReport"
+        '
+        'chkPlush
+        '
+        resources.ApplyResources(Me.chkPlush, "chkPlush")
+        Me.chkPlush.Name = "chkPlush"
+        Me.chkPlush.UseVisualStyleBackColor = True
+        '
+        'chkCineartSpecial
+        '
+        resources.ApplyResources(Me.chkCineartSpecial, "chkCineartSpecial")
+        Me.chkCineartSpecial.Name = "chkCineartSpecial"
+        Me.chkCineartSpecial.UseVisualStyleBackColor = True
+        '
+        'chkKPN
+        '
+        resources.ApplyResources(Me.chkKPN, "chkKPN")
+        Me.chkKPN.Name = "chkKPN"
+        Me.chkKPN.UseVisualStyleBackColor = True
+        '
+        'chkDVDPost
+        '
+        resources.ApplyResources(Me.chkDVDPost, "chkDVDPost")
+        Me.chkDVDPost.Name = "chkDVDPost"
+        Me.chkDVDPost.UseVisualStyleBackColor = True
+        '
+        'btnKPNDetailReport
+        '
+        resources.ApplyResources(Me.btnKPNDetailReport, "btnKPNDetailReport")
+        Me.btnKPNDetailReport.Name = "btnKPNDetailReport"
+        '
+        'btnADULTSVODSummary
+        '
+        resources.ApplyResources(Me.btnADULTSVODSummary, "btnADULTSVODSummary")
+        Me.btnADULTSVODSummary.Name = "btnADULTSVODSummary"
+        '
+        'SimpleButton1
+        '
+        resources.ApplyResources(Me.SimpleButton1, "SimpleButton1")
+        Me.SimpleButton1.Name = "SimpleButton1"
+        '
+        'btnADULTSVODDetailedReport
+        '
+        resources.ApplyResources(Me.btnADULTSVODDetailedReport, "btnADULTSVODDetailedReport")
+        Me.btnADULTSVODDetailedReport.Name = "btnADULTSVODDetailedReport"
         '
         'btnCineartSummaryNew
         '
@@ -1045,6 +1374,269 @@ Public Class frmStudioPayment
         Me.GridView5.GridControl = Me.GridCineart
         Me.GridView5.Name = "GridView5"
         '
+        'CheckBox1
+        '
+        resources.ApplyResources(Me.CheckBox1, "CheckBox1")
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'CheckBox2
+        '
+        resources.ApplyResources(Me.CheckBox2, "CheckBox2")
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
+        'CheckBox3
+        '
+        resources.ApplyResources(Me.CheckBox3, "CheckBox3")
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.UseVisualStyleBackColor = True
+        '
+        'CheckBox4
+        '
+        resources.ApplyResources(Me.CheckBox4, "CheckBox4")
+        Me.CheckBox4.Name = "CheckBox4"
+        Me.CheckBox4.UseVisualStyleBackColor = True
+        '
+        'SimpleButton2
+        '
+        resources.ApplyResources(Me.SimpleButton2, "SimpleButton2")
+        Me.SimpleButton2.Name = "SimpleButton2"
+        '
+        'SimpleButton3
+        '
+        resources.ApplyResources(Me.SimpleButton3, "SimpleButton3")
+        Me.SimpleButton3.Name = "SimpleButton3"
+        '
+        'SimpleButton4
+        '
+        resources.ApplyResources(Me.SimpleButton4, "SimpleButton4")
+        Me.SimpleButton4.Name = "SimpleButton4"
+        '
+        'SimpleButton5
+        '
+        resources.ApplyResources(Me.SimpleButton5, "SimpleButton5")
+        Me.SimpleButton5.Name = "SimpleButton5"
+        '
+        'SimpleButton6
+        '
+        resources.ApplyResources(Me.SimpleButton6, "SimpleButton6")
+        Me.SimpleButton6.Name = "SimpleButton6"
+        '
+        'SimpleButton7
+        '
+        resources.ApplyResources(Me.SimpleButton7, "SimpleButton7")
+        Me.SimpleButton7.Name = "SimpleButton7"
+        '
+        'SimpleButton8
+        '
+        resources.ApplyResources(Me.SimpleButton8, "SimpleButton8")
+        Me.SimpleButton8.Name = "SimpleButton8"
+        '
+        'SimpleButton9
+        '
+        resources.ApplyResources(Me.SimpleButton9, "SimpleButton9")
+        Me.SimpleButton9.Name = "SimpleButton9"
+        '
+        'LabelControl5
+        '
+        resources.ApplyResources(Me.LabelControl5, "LabelControl5")
+        Me.LabelControl5.Name = "LabelControl5"
+        '
+        'DateEdit1
+        '
+        Me.DateEdit1.EditValue = Nothing
+        resources.ApplyResources(Me.DateEdit1, "DateEdit1")
+        Me.DateEdit1.Name = "DateEdit1"
+        Me.DateEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(CType(resources.GetObject("DateEdit1.Properties.Buttons"), DevExpress.XtraEditors.Controls.ButtonPredefines))})
+        Me.DateEdit1.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+        '
+        'LabelControl6
+        '
+        resources.ApplyResources(Me.LabelControl6, "LabelControl6")
+        Me.LabelControl6.Name = "LabelControl6"
+        '
+        'DateEdit2
+        '
+        Me.DateEdit2.EditValue = Nothing
+        resources.ApplyResources(Me.DateEdit2, "DateEdit2")
+        Me.DateEdit2.Name = "DateEdit2"
+        Me.DateEdit2.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(CType(resources.GetObject("DateEdit2.Properties.Buttons"), DevExpress.XtraEditors.Controls.ButtonPredefines))})
+        Me.DateEdit2.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+        '
+        'SimpleButton10
+        '
+        resources.ApplyResources(Me.SimpleButton10, "SimpleButton10")
+        Me.SimpleButton10.Name = "SimpleButton10"
+        '
+        'SimpleButton11
+        '
+        resources.ApplyResources(Me.SimpleButton11, "SimpleButton11")
+        Me.SimpleButton11.Name = "SimpleButton11"
+        '
+        'LookUpEdit1
+        '
+        resources.ApplyResources(Me.LookUpEdit1, "LookUpEdit1")
+        Me.LookUpEdit1.Name = "LookUpEdit1"
+        Me.LookUpEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(CType(resources.GetObject("LookUpEdit1.Properties.Buttons"), DevExpress.XtraEditors.Controls.ButtonPredefines))})
+        Me.LookUpEdit1.Properties.NullText = resources.GetString("LookUpEdit1.Properties.NullText")
+        '
+        'LabelControl7
+        '
+        resources.ApplyResources(Me.LabelControl7, "LabelControl7")
+        Me.LabelControl7.Name = "LabelControl7"
+        '
+        'LookUpEdit2
+        '
+        resources.ApplyResources(Me.LookUpEdit2, "LookUpEdit2")
+        Me.LookUpEdit2.Name = "LookUpEdit2"
+        Me.LookUpEdit2.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(CType(resources.GetObject("LookUpEdit2.Properties.Buttons"), DevExpress.XtraEditors.Controls.ButtonPredefines))})
+        Me.LookUpEdit2.Properties.DisplayMember = "status_desc"
+        Me.LookUpEdit2.Properties.NullText = resources.GetString("LookUpEdit2.Properties.NullText")
+        Me.LookUpEdit2.Properties.ValueMember = "status_id"
+        '
+        'LabelControl8
+        '
+        resources.ApplyResources(Me.LabelControl8, "LabelControl8")
+        Me.LabelControl8.Name = "LabelControl8"
+        '
+        'CheckBox5
+        '
+        resources.ApplyResources(Me.CheckBox5, "CheckBox5")
+        Me.CheckBox5.Name = "CheckBox5"
+        Me.CheckBox5.UseVisualStyleBackColor = True
+        '
+        'CheckBox6
+        '
+        resources.ApplyResources(Me.CheckBox6, "CheckBox6")
+        Me.CheckBox6.Name = "CheckBox6"
+        Me.CheckBox6.UseVisualStyleBackColor = True
+        '
+        'CheckBox7
+        '
+        resources.ApplyResources(Me.CheckBox7, "CheckBox7")
+        Me.CheckBox7.Name = "CheckBox7"
+        Me.CheckBox7.UseVisualStyleBackColor = True
+        '
+        'CheckBox8
+        '
+        resources.ApplyResources(Me.CheckBox8, "CheckBox8")
+        Me.CheckBox8.Name = "CheckBox8"
+        Me.CheckBox8.UseVisualStyleBackColor = True
+        '
+        'SimpleButton12
+        '
+        resources.ApplyResources(Me.SimpleButton12, "SimpleButton12")
+        Me.SimpleButton12.Name = "SimpleButton12"
+        '
+        'SimpleButton13
+        '
+        resources.ApplyResources(Me.SimpleButton13, "SimpleButton13")
+        Me.SimpleButton13.Name = "SimpleButton13"
+        '
+        'SimpleButton14
+        '
+        resources.ApplyResources(Me.SimpleButton14, "SimpleButton14")
+        Me.SimpleButton14.Name = "SimpleButton14"
+        '
+        'SimpleButton15
+        '
+        resources.ApplyResources(Me.SimpleButton15, "SimpleButton15")
+        Me.SimpleButton15.Name = "SimpleButton15"
+        '
+        'SimpleButton16
+        '
+        resources.ApplyResources(Me.SimpleButton16, "SimpleButton16")
+        Me.SimpleButton16.Name = "SimpleButton16"
+        '
+        'SimpleButton17
+        '
+        resources.ApplyResources(Me.SimpleButton17, "SimpleButton17")
+        Me.SimpleButton17.Name = "SimpleButton17"
+        '
+        'SimpleButton18
+        '
+        resources.ApplyResources(Me.SimpleButton18, "SimpleButton18")
+        Me.SimpleButton18.Name = "SimpleButton18"
+        '
+        'SimpleButton19
+        '
+        resources.ApplyResources(Me.SimpleButton19, "SimpleButton19")
+        Me.SimpleButton19.Name = "SimpleButton19"
+        '
+        'LabelControl9
+        '
+        resources.ApplyResources(Me.LabelControl9, "LabelControl9")
+        Me.LabelControl9.Name = "LabelControl9"
+        '
+        'DateEdit3
+        '
+        Me.DateEdit3.EditValue = Nothing
+        resources.ApplyResources(Me.DateEdit3, "DateEdit3")
+        Me.DateEdit3.Name = "DateEdit3"
+        Me.DateEdit3.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(CType(resources.GetObject("DateEdit3.Properties.Buttons"), DevExpress.XtraEditors.Controls.ButtonPredefines))})
+        Me.DateEdit3.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+        '
+        'LabelControl10
+        '
+        resources.ApplyResources(Me.LabelControl10, "LabelControl10")
+        Me.LabelControl10.Name = "LabelControl10"
+        '
+        'DateEdit4
+        '
+        Me.DateEdit4.EditValue = Nothing
+        resources.ApplyResources(Me.DateEdit4, "DateEdit4")
+        Me.DateEdit4.Name = "DateEdit4"
+        Me.DateEdit4.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(CType(resources.GetObject("DateEdit4.Properties.Buttons"), DevExpress.XtraEditors.Controls.ButtonPredefines))})
+        Me.DateEdit4.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+        '
+        'SimpleButton20
+        '
+        resources.ApplyResources(Me.SimpleButton20, "SimpleButton20")
+        Me.SimpleButton20.Name = "SimpleButton20"
+        '
+        'SimpleButton21
+        '
+        resources.ApplyResources(Me.SimpleButton21, "SimpleButton21")
+        Me.SimpleButton21.Name = "SimpleButton21"
+        '
+        'LookUpEdit3
+        '
+        resources.ApplyResources(Me.LookUpEdit3, "LookUpEdit3")
+        Me.LookUpEdit3.Name = "LookUpEdit3"
+        Me.LookUpEdit3.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(CType(resources.GetObject("LookUpEdit3.Properties.Buttons"), DevExpress.XtraEditors.Controls.ButtonPredefines))})
+        Me.LookUpEdit3.Properties.NullText = resources.GetString("LookUpEdit3.Properties.NullText")
+        '
+        'LabelControl11
+        '
+        resources.ApplyResources(Me.LabelControl11, "LabelControl11")
+        Me.LabelControl11.Name = "LabelControl11"
+        '
+        'LookUpEdit4
+        '
+        resources.ApplyResources(Me.LookUpEdit4, "LookUpEdit4")
+        Me.LookUpEdit4.Name = "LookUpEdit4"
+        Me.LookUpEdit4.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(CType(resources.GetObject("LookUpEdit4.Properties.Buttons"), DevExpress.XtraEditors.Controls.ButtonPredefines))})
+        Me.LookUpEdit4.Properties.DisplayMember = "status_desc"
+        Me.LookUpEdit4.Properties.NullText = resources.GetString("LookUpEdit4.Properties.NullText")
+        Me.LookUpEdit4.Properties.ValueMember = "status_id"
+        '
+        'LabelControl12
+        '
+        resources.ApplyResources(Me.LabelControl12, "LabelControl12")
+        Me.LabelControl12.Name = "LabelControl12"
+        '
+        'LabelControl22
+        '
+        resources.ApplyResources(Me.LabelControl22, "LabelControl22")
+        Me.LabelControl22.Name = "LabelControl22"
+        '
+        'chkVODBe
+        '
+        resources.ApplyResources(Me.chkVODBe, "chkVODBe")
+        Me.chkVODBe.Name = "chkVODBe"
+        Me.chkVODBe.Properties.Caption = resources.GetString("chkVODBe.Properties.Caption")
+        '
         'frmStudioPayment
         '
         resources.ApplyResources(Me, "$this")
@@ -1087,8 +1679,16 @@ Public Class frmStudioPayment
         Me.XtraTabStudio.ResumeLayout(False)
         Me.TabStudio.ResumeLayout(False)
         Me.TabStudio.PerformLayout()
+        CType(Me.chkVODNL.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkVODLux.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtPriceBackcatalogue.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtPriceNew.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtSVODMinGlobal.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtSVODMinBackcatalogueVOD.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtSVODMinNewVOD.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_svod_fee_backcatalogue.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_svod_fee_new.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkHasBillingReport.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.cmbBillingReportType.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtMinGlobal.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtMinBackcatalogueVOD.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtMinNewVOD.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1126,6 +1726,19 @@ Public Class frmStudioPayment
         Me.XTabCineart.ResumeLayout(False)
         CType(Me.GridCineart, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridView5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DateEdit1.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DateEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DateEdit2.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DateEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LookUpEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LookUpEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DateEdit3.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DateEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DateEdit4.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DateEdit4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LookUpEdit3.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.LookUpEdit4.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkVODBe.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1142,6 +1755,7 @@ Public Class frmStudioPayment
 
     Private Enum STUDIO
         CINEART = 26
+        CINEARTSPECIAL = 828
     End Enum
 
     Dim WithEvents _ExportExcel As DevExpress.XtraBars.BarButtonItem = MainBtns_btnExcel
@@ -1164,7 +1778,7 @@ Public Class frmStudioPayment
 
         loadStudioType()
         loadStudioSearch()
-        loadBillingReportType()
+        'loadBillingReportType()
         loadStudioBilling()
         loadProductsType()
 
@@ -1222,7 +1836,16 @@ Public Class frmStudioPayment
         txtMinBackcatalogueVOD.EditValue = blank
         txtMinGlobal.EditValue = blank
         chkHasBillingReport.Checked = False
-        cmbBillingReportType.EditValue = blank
+        chkVODBe.Checked = False
+        chkVODLux.Checked = False
+        chkVODNL.Checked = False
+        txtPriceNew.EditValue = blank
+        txtPriceBackcatalogue.EditValue = blank
+        txt_svod_fee_new.EditValue = blank
+        txt_svod_fee_backcatalogue.EditValue = blank
+        txtSVODMinNewVOD.EditValue = blank
+        txtSVODMinBackcatalogueVOD.EditValue = blank
+        txtSVODMinGlobal.EditValue = blank
 
     End Sub
 
@@ -1281,16 +1904,64 @@ Public Class frmStudioPayment
             txtMinGlobal.EditValue = row("minimum_global")
         End If
 
+        If row("vod_be") = 0 Then
+            chkVODBe.Checked = False
+        Else
+            chkVODBe.Checked = True
+        End If
+
+        If row("vod_lux") = 0 Then
+            chkVODLux.Checked = False
+        Else
+            chkVODLux.Checked = True
+        End If
+
+        If row("vod_nl") = 0 Then
+            chkVODNL.Checked = False
+        Else
+            chkVODNL.Checked = True
+        End If
+
         If row("billing_reporting") = 0 Then
             chkHasBillingReport.Checked = False
         Else
             chkHasBillingReport.Checked = True
         End If
 
-        If row("billing_report_type") Is DBNull.Value Then
-            cmbBillingReportType.EditValue = ""
+        If row("plush_price_new") Is DBNull.Value Then
+            txtPriceNew.EditValue = 0
         Else
-            cmbBillingReportType.EditValue = row("billing_report_type")
+            txtPriceNew.EditValue = row("plush_price_new")
+        End If
+        If row("plush_price_back_catalogue") Is DBNull.Value Then
+            txtPriceBackcatalogue.EditValue = 0
+        Else
+            txtPriceBackcatalogue.EditValue = row("plush_price_back_catalogue")
+        End If
+        If row("svod_fee_new_vod") Is DBNull.Value Then
+            txt_svod_fee_new.EditValue = 0
+        Else
+            txt_svod_fee_new.EditValue = row("svod_fee_new_vod")
+        End If
+        If row("svod_fee_back_catalogue") Is DBNull.Value Then
+            txt_svod_fee_backcatalogue.EditValue = 0
+        Else
+            txt_svod_fee_backcatalogue.EditValue = row("svod_fee_back_catalogue")
+        End If
+        If row("svod_minimum_new_vod") Is DBNull.Value Then
+            txtSVODMinNewVOD.EditValue = 0
+        Else
+            txtSVODMinNewVOD.EditValue = row("svod_minimum_new_vod")
+        End If
+        If row("svod_minimum_back_catalogue") Is DBNull.Value Then
+            txtSVODMinBackcatalogueVOD.EditValue = 0
+        Else
+            txtSVODMinBackcatalogueVOD.EditValue = row("svod_minimum_back_catalogue")
+        End If
+        If row("svod_minimum_global") Is DBNull.Value Then
+            txtSVODMinGlobal.EditValue = 0
+        Else
+            txtSVODMinGlobal.EditValue = row("svod_minimum_global")
         End If
 
     End Sub
@@ -1308,7 +1979,16 @@ Public Class frmStudioPayment
         txtMinNewVOD.Enabled = enable
         txtMinGlobal.Enabled = enable
         chkHasBillingReport.Enabled = enable
-        cmbBillingReportType.Enabled = enable And chkHasBillingReport.Checked
+        chkVODBe.Enabled = enable
+        chkVODLux.Enabled = enable
+        chkVODNL.Enabled = enable
+        txtPriceNew.Enabled = enable
+        txtPriceBackcatalogue.Enabled = enable
+        txt_svod_fee_new.Enabled = enable
+        txt_svod_fee_backcatalogue.Enabled = enable
+        txtSVODMinNewVOD.Enabled = enable
+        txtSVODMinBackcatalogueVOD.Enabled = enable
+        txtSVODMinGlobal.Enabled = enable
 
     End Sub
 
@@ -1405,18 +2085,18 @@ Public Class frmStudioPayment
         XtraTabStudio.Refresh()
     End Sub
 
-    Private Sub loadBillingReportType()
+    'Private Sub loadBillingReportType()
 
-        Dim lstBillingReportType As List(Of DVDPostBuziness.clsKeyComboEnum)
-        Dim sqlBillingReportType As String
+    '    Dim lstBillingReportType As List(Of DVDPostBuziness.clsKeyComboEnum)
+    '    Dim sqlBillingReportType As String
 
-        sqlBillingReportType = DvdPostData.clsStudio.GetEnumMysqlBillingReportType()
-        lstBillingReportType = DVDPostBuziness.ClsCombo.GetListEnum(sqlBillingReportType)
+    '    sqlBillingReportType = DvdPostData.clsStudio.GetEnumMysqlBillingReportType()
+    '    lstBillingReportType = DVDPostBuziness.ClsCombo.GetListEnum(sqlBillingReportType)
 
-        cmbBillingReportType.Properties.ValueMember = "Value"
-        cmbBillingReportType.Properties.DisplayMember = "DisplayMember"
-        cmbBillingReportType.Properties.DataSource = lstBillingReportType
-    End Sub
+    '    cmbBillingReportType.Properties.ValueMember = "Value"
+    '    cmbBillingReportType.Properties.DisplayMember = "DisplayMember"
+    '    cmbBillingReportType.Properties.DataSource = lstBillingReportType
+    'End Sub
 
     Private Sub loadStudioType()
 
@@ -1503,11 +2183,15 @@ Public Class frmStudioPayment
         Try
             If txtId.EditValue Is Nothing Then
                 sql = DvdPostData.clsStudio.getInsertStudio(txtStudioName.EditValue, cmbStudioType.EditValue, spedCreditNew.EditValue, spedCredit.EditValue, txtFeeNew.EditValue, _
-                    txt_fee_backcatalogue.EditValue, txtMinNewVOD.EditValue, txtMinBackcatalogueVOD.EditValue, txtMinGlobal.EditValue, chkHasBillingReport.Checked, cmbBillingReportType.EditValue)
+                    txt_fee_backcatalogue.EditValue, txtMinNewVOD.EditValue, txtMinBackcatalogueVOD.EditValue, txtMinGlobal.EditValue, chkHasBillingReport.Checked, _
+                    chkVODBe.Checked, chkVODLux.Checked, chkVODNL.Checked, txtPriceNew.EditValue, txtPriceBackcatalogue.EditValue, txt_svod_fee_new.EditValue, txt_svod_fee_backcatalogue.EditValue, _
+                    txtSVODMinNewVOD.EditValue, txtMinBackcatalogueVOD.EditValue, txtSVODMinGlobal.EditValue)
                 DvdPostData.clsConnection.ExecuteNonQuery(sql)
             Else
                 sql = DvdPostData.clsStudio.getUpdateStudio(txtId.EditValue, txtStudioName.EditValue, cmbStudioType.EditValue, spedCreditNew.EditValue, spedCredit.EditValue, _
-                    txtFeeNew.EditValue, txt_fee_backcatalogue.EditValue, txtMinNewVOD.EditValue, txtMinBackcatalogueVOD.EditValue, txtMinGlobal.EditValue, chkHasBillingReport.Checked, cmbBillingReportType.EditValue)
+                    txtFeeNew.EditValue, txt_fee_backcatalogue.EditValue, txtMinNewVOD.EditValue, txtMinBackcatalogueVOD.EditValue, txtMinGlobal.EditValue, chkHasBillingReport.Checked, _
+                    chkVODBe.Checked, chkVODLux.Checked, chkVODNL.Checked, txtPriceNew.EditValue, txtPriceBackcatalogue.EditValue, txt_svod_fee_new.EditValue, txt_svod_fee_backcatalogue.EditValue, _
+                    txtSVODMinNewVOD.EditValue, txtMinBackcatalogueVOD.EditValue, txtSVODMinGlobal.EditValue)
                 DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
             End If
@@ -1638,7 +2322,7 @@ Public Class frmStudioPayment
         Dim dt As DataTable
         Dim sql As String
 
-        sql = DvdPostData.clsStudio.GetStudioSummaryReport(txtFromDate.EditValue, txtToDate.EditValue, cmbStudioBilling.EditValue)
+        sql = DvdPostData.clsStudio.GetStudioSummaryReport(txtFromDate.EditValue, txtToDate.EditValue, cmbStudioBilling.EditValue, chkDVDPost.Checked, chkKPN.Checked, chkPlush.Checked)
 
         dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
         Dim rpt As New rptStudioSummaryReport
@@ -1648,7 +2332,7 @@ Public Class frmStudioPayment
     End Sub
 
     Private Sub chkHasBillingReport_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkHasBillingReport.CheckedChanged
-        cmbBillingReportType.Enabled = chkHasBillingReport.Checked
+        'cmbBillingReportType.Enabled = chkHasBillingReport.Checked
     End Sub
 
     Private Sub btnCreateSABAMDetail_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCreateSABAMDetail.Click
@@ -1681,7 +2365,7 @@ Public Class frmStudioPayment
         Dim dt As DataTable
         Dim sql As String
 
-        sql = DvdPostData.clsStudio.GetCineartDetailedReportNew(txtFromDate.EditValue, txtToDate.EditValue, STUDIO.CINEART)
+        sql = DvdPostData.clsStudio.GetCineartDetailedReportNew(txtFromDate.EditValue, txtToDate.EditValue, IIf(chkCineartSpecial.Checked, STUDIO.CINEARTSPECIAL, STUDIO.CINEART))
 
         dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
 
@@ -1697,7 +2381,7 @@ Public Class frmStudioPayment
         Dim dt As DataTable
         Dim sql As String
 
-        sql = DvdPostData.clsStudio.GetCineartDetailedReportBackcatalogue(txtFromDate.EditValue, txtToDate.EditValue, STUDIO.CINEART)
+        sql = DvdPostData.clsStudio.GetCineartDetailedReportBackcatalogue(txtFromDate.EditValue, txtToDate.EditValue, IIf(chkCineartSpecial.Checked, STUDIO.CINEARTSPECIAL, STUDIO.CINEART))
 
         dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
 
@@ -1713,7 +2397,7 @@ Public Class frmStudioPayment
         Dim dt As DataTable
         Dim sql As String
 
-        sql = DvdPostData.clsStudio.GetCineartSummaryReportNew(txtFromDate.EditValue, txtToDate.EditValue, STUDIO.CINEART)
+        sql = DvdPostData.clsStudio.GetCineartSummaryReportNew(txtFromDate.EditValue, txtToDate.EditValue, IIf(chkCineartSpecial.Checked, STUDIO.CINEARTSPECIAL, STUDIO.CINEART), chkDVDPost.Checked, chkKPN.Checked, chkPlush.Checked)
 
         dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
 
@@ -1729,7 +2413,7 @@ Public Class frmStudioPayment
         Dim dt As DataTable
         Dim sql As String
 
-        sql = DvdPostData.clsStudio.GetCineartSummaryReportBackcatalogue(txtFromDate.EditValue, txtToDate.EditValue, STUDIO.CINEART)
+        sql = DvdPostData.clsStudio.GetCineartSummaryReportBackcatalogue(txtFromDate.EditValue, txtToDate.EditValue, IIf(chkCineartSpecial.Checked, STUDIO.CINEARTSPECIAL, STUDIO.CINEART), chkDVDPost.Checked, chkKPN.Checked, chkPlush.Checked)
 
         dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
 
@@ -1739,6 +2423,106 @@ Public Class frmStudioPayment
         GridCineart.DataSource = dt
         XTabCineart.Text = "Cineart summary backcatalogue"
         XtraTabStudio.SelectedTabPage = XTabCineart
+    End Sub
+
+    Private Sub btnADULTSVODDetailedReport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnADULTSVODDetailedReport.Click
+        Dim dt As DataTable
+        Dim sql As String
+
+        sql = DvdPostData.clsStudio.GetStudioADULTSVODDetailedReport(txtFromDate.EditValue, txtToDate.EditValue, cmbStudioBilling.EditValue)
+
+        dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
+        ' dt = DvdPostData.clsConnection.FillDataSet(sql)
+        GridStudioDetail.DataSource = Nothing
+        GridStudioDetail.Views(0).PopulateColumns()
+
+        GridStudioDetail.DataSource = dt
+        XtraTabStudio.SelectedTabPage = TabStudioDetailReport
+    End Sub
+
+    Private Sub SimpleButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SimpleButton1.Click
+        Dim dt As DataTable
+        Dim sql As String
+
+        sql = DvdPostData.clsStudio.GetSummaryADULTSVODNewReconnduction(txtFromDate.EditValue, txtToDate.EditValue, cmbStudioBilling.EditValue)
+
+        dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
+        ' dt = DvdPostData.clsConnection.FillDataSet(sql)
+        GridStudioDetail.DataSource = Nothing
+        GridStudioDetail.Views(0).PopulateColumns()
+
+        GridStudioDetail.DataSource = dt
+        XtraTabStudio.SelectedTabPage = TabStudioDetailReport
+    End Sub
+
+    Private Sub btnADULTSVODSummary_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnADULTSVODSummary.Click
+        Dim dt As DataTable
+        Dim sql As String
+
+        sql = DvdPostData.clsStudio.GetSummaryADULTSVOD(txtFromDate.EditValue, txtToDate.EditValue, cmbStudioBilling.EditValue)
+
+        dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
+        Dim rpt As New rptADULTSVODSummary()
+
+        rpt.DataSource = dt
+        rpt.ShowPreview()
+    End Sub
+
+    Private Sub btnKPNDetailReport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnKPNDetailReport.Click
+        Dim dt As DataTable
+        Dim sql As String
+
+        sql = DvdPostData.clsStudio.GetStudioKPNDetailedReport(txtFromDate.EditValue, txtToDate.EditValue, cmbStudioBilling.EditValue)
+
+        dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
+        ' dt = DvdPostData.clsConnection.FillDataSet(sql)
+        GridStudioDetail.DataSource = Nothing
+        GridStudioDetail.Views(0).PopulateColumns()
+
+        GridStudioDetail.DataSource = dt
+        XtraTabStudio.SelectedTabPage = TabStudioDetailReport
+    End Sub
+
+    Private Sub btnSVODDetailedReport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSVODDetailedReport.Click
+        Dim dt As DataTable
+        Dim sql As String
+        Dim dbPrefix As String = "studio_reporting"
+
+        If ckhTestPlush.Checked Then
+            dbPrefix = "studio_reporting_test"
+        End If
+
+        sql = DvdPostData.clsStudio.GetStudioSVODDetailedReport(txtFromDate.EditValue, txtToDate.EditValue, cmbStudioBilling.EditValue, dbPrefix)
+
+        dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
+        ' dt = DvdPostData.clsConnection.FillDataSet(sql)
+        GridStudioDetail.DataSource = Nothing
+        GridStudioDetail.Views(0).PopulateColumns()
+
+        GridStudioDetail.DataSource = dt
+        XtraTabStudio.SelectedTabPage = TabStudioDetailReport
+    End Sub
+
+    Private Sub btnSVODSummaryReport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSVODSummaryReport.Click
+        Dim dt As DataTable
+        Dim sql As String
+        Dim dbPrefix As String = "studio_reporting"
+
+        If ckhTestPlush.Checked Then
+            dbPrefix = "studio_reporting_test"
+        End If
+
+        sql = DvdPostData.clsStudio.GetStudioSVODSummaryReport(txtFromDate.EditValue, txtToDate.EditValue, cmbStudioBilling.EditValue, dbPrefix)
+
+        dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
+        Dim rpt As New rptStudioSummaryReport
+
+        rpt.DataSource = dt
+        rpt.ShowPreview()
+    End Sub
+
+    Private Sub BtnNewVodProduct_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnNewVodProduct.Click
+        ChangeStep(StepForm.[NEW])
     End Sub
 End Class
 

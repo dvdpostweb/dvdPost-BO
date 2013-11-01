@@ -81,7 +81,7 @@ Public Class clsActivationCode
                       " , " & DVDCredit & _
                       " , " & DVDRemain & _
                       " , " & _NextDiscountCodeID & _
-                      " , " & chkAuto_Stop_at_Next_Reconduction & _
+                      " , " & Math.Abs(chkAuto_Stop_at_Next_Reconduction) & _
                       " , '" & txtBanner & "' " & _
                       " , '" & txtDescFR & "' " & _
                       " , '" & txtDescNL & "' " & _

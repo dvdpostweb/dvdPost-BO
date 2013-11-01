@@ -898,6 +898,12 @@ Public Class frmCustomers_Maint
     Friend WithEvents GCID As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents RepositoryItemCheckEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents phone_activation_id As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents cmbADULTSVODStatus As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents LabelControl15 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl14 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtADULTSVOD_ValidityTo As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents LabelControl16 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtPPAgreementID As DevExpress.XtraEditors.TextEdit
     Friend WithEvents cmbDiscType As DevExpress.XtraEditors.ComboBoxEdit
 
 
@@ -1269,6 +1275,7 @@ Me.old_status = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
 Me.GridControl1 = New DevExpress.XtraGrid.GridControl
 Me.GridViewSearch = New DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView
 Me.GridBand1 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand
+Me.phone_activation_id = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
 Me.col2customers_id = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
 Me.RepositoryICustomersCustomers_id = New DevExpress.XtraEditors.Repository.RepositoryItemHyperLinkEdit
 Me.colcustomers_firstname = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
@@ -1318,6 +1325,10 @@ Me.btnDelPhoAct = New DevExpress.XtraEditors.SimpleButton
 Me.btnActPhone = New DevExpress.XtraEditors.SimpleButton
 Me.btnReActivate = New DevExpress.XtraEditors.SimpleButton
 Me.GCAboInfo = New DevExpress.XtraEditors.GroupControl
+Me.cmbADULTSVODStatus = New DevExpress.XtraEditors.LookUpEdit
+Me.LabelControl15 = New DevExpress.XtraEditors.LabelControl
+Me.LabelControl14 = New DevExpress.XtraEditors.LabelControl
+Me.txtADULTSVOD_ValidityTo = New DevExpress.XtraEditors.DateEdit
 Me.cmbPPVStatus = New DevExpress.XtraEditors.LookUpEdit
 Me.lblPPVStatus = New DevExpress.XtraEditors.LabelControl
 Me.txtRemainDVD = New DevExpress.XtraEditors.SpinEdit
@@ -1420,6 +1431,8 @@ Me.btnStopNow = New DevExpress.XtraEditors.SimpleButton
 Me.btnStopAtReconduction = New DevExpress.XtraEditors.SimpleButton
 Me.tabSearch = New DevExpress.XtraTab.XtraTabPage
 Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl
+Me.LabelControl16 = New DevExpress.XtraEditors.LabelControl
+Me.txtPPAgreementID = New DevExpress.XtraEditors.TextEdit
 Me.btnReplayAllCreditHistory = New DevExpress.XtraEditors.SimpleButton
 Me.BtnEmailError = New DevExpress.XtraEditors.SimpleButton
 Me.btnRedlisted = New DevExpress.XtraEditors.SimpleButton
@@ -1720,7 +1733,6 @@ Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl
 Me.LabelControl13 = New DevExpress.XtraEditors.LabelControl
 Me.GridControl3 = New DevExpress.XtraGrid.GridControl
 Me.GridView3 = New DevExpress.XtraGrid.Views.Grid.GridView
-Me.phone_activation_id = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
 coldvd_finally_arrived_mail3 = New DevExpress.XtraGrid.Columns.GridColumn
 GridchkAbo = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
 GridchkBlackList = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
@@ -1866,6 +1878,9 @@ CType(Me.DateCallPhoneActivation.Properties.VistaTimeProperties,System.Component
 CType(Me.DateCallPhoneActivation.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.GCAboInfo,System.ComponentModel.ISupportInitialize).BeginInit
 Me.GCAboInfo.SuspendLayout
+CType(Me.cmbADULTSVODStatus.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtADULTSVOD_ValidityTo.Properties.VistaTimeProperties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtADULTSVOD_ValidityTo.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.cmbPPVStatus.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.txtRemainDVD.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.cmbDiscountActivation.Properties,System.ComponentModel.ISupportInitialize).BeginInit
@@ -1930,6 +1945,7 @@ CType(Me.txtCustomers_id.Properties,System.ComponentModel.ISupportInitialize).Be
 Me.tabSearch.SuspendLayout
 CType(Me.PanelControl1,System.ComponentModel.ISupportInitialize).BeginInit
 Me.PanelControl1.SuspendLayout
+CType(Me.txtPPAgreementID.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.TxtCustomers_NumComm.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.txtcustomers_domiciliation_number_search.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.txtcustomers_postcode_search.Properties,System.ComponentModel.ISupportInitialize).BeginInit
@@ -5503,6 +5519,13 @@ Me.GridBand1.MinWidth = 20
 Me.GridBand1.Name = "GridBand1"
 Me.GridBand1.Width = 1276
 '
+'phone_activation_id
+'
+Me.phone_activation_id.Caption = "phone_activation_id"
+Me.phone_activation_id.FieldName = "phone_activation_id"
+Me.phone_activation_id.Name = "phone_activation_id"
+Me.phone_activation_id.Visible = true
+'
 'col2customers_id
 '
 Me.col2customers_id.Caption = "customers_id"
@@ -5979,10 +6002,15 @@ Me.btnReActivate.Name = "btnReActivate"
 Me.btnReActivate.Size = New System.Drawing.Size(144, 23)
 Me.btnReActivate.TabIndex = 6
 Me.btnReActivate.Text = "Re-Activate"
+Me.btnReActivate.Visible = false
 '
 'GCAboInfo
 '
 Me.GCAboInfo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
+Me.GCAboInfo.Controls.Add(Me.cmbADULTSVODStatus)
+Me.GCAboInfo.Controls.Add(Me.LabelControl15)
+Me.GCAboInfo.Controls.Add(Me.LabelControl14)
+Me.GCAboInfo.Controls.Add(Me.txtADULTSVOD_ValidityTo)
 Me.GCAboInfo.Controls.Add(Me.cmbPPVStatus)
 Me.GCAboInfo.Controls.Add(Me.lblPPVStatus)
 Me.GCAboInfo.Controls.Add(Me.txtRemainDVD)
@@ -6022,9 +6050,51 @@ Me.GCAboInfo.Controls.Add(Me.lblNextAbo)
 Me.GCAboInfo.Controls.Add(Me.lblAbo)
 Me.GCAboInfo.Location = New System.Drawing.Point(632, 67)
 Me.GCAboInfo.Name = "GCAboInfo"
-Me.GCAboInfo.Size = New System.Drawing.Size(336, 486)
+Me.GCAboInfo.Size = New System.Drawing.Size(336, 524)
 Me.GCAboInfo.TabIndex = 5
 Me.GCAboInfo.Text = "ABO Info"
+'
+'cmbADULTSVODStatus
+'
+Me.cmbADULTSVODStatus.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.svod_adult", true))
+Me.cmbADULTSVODStatus.Enabled = false
+Me.cmbADULTSVODStatus.Location = New System.Drawing.Point(160, 498)
+Me.cmbADULTSVODStatus.Name = "cmbADULTSVODStatus"
+Me.cmbADULTSVODStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+Me.cmbADULTSVODStatus.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Value", "Value", 75, DevExpress.Utils.FormatType.Numeric, "", false, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DisplayMember", "DisplayMember", 82, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near)})
+Me.cmbADULTSVODStatus.Properties.DisplayMember = "DisplayMember"
+Me.cmbADULTSVODStatus.Properties.NullText = ""
+Me.cmbADULTSVODStatus.Properties.ValueMember = "Value"
+Me.cmbADULTSVODStatus.Size = New System.Drawing.Size(152, 20)
+Me.cmbADULTSVODStatus.TabIndex = 67
+'
+'LabelControl15
+'
+Me.LabelControl15.Location = New System.Drawing.Point(8, 502)
+Me.LabelControl15.Name = "LabelControl15"
+Me.LabelControl15.Size = New System.Drawing.Size(96, 13)
+Me.LabelControl15.TabIndex = 66
+Me.LabelControl15.Text = "ADULT SVOD Status"
+'
+'LabelControl14
+'
+Me.LabelControl14.Location = New System.Drawing.Point(8, 480)
+Me.LabelControl14.Name = "LabelControl14"
+Me.LabelControl14.Size = New System.Drawing.Size(109, 13)
+Me.LabelControl14.TabIndex = 65
+Me.LabelControl14.Text = "ADULT SVOD Validityto"
+'
+'txtADULTSVOD_ValidityTo
+'
+Me.txtADULTSVOD_ValidityTo.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_svod.validityto", true))
+Me.txtADULTSVOD_ValidityTo.EditValue = Nothing
+Me.txtADULTSVOD_ValidityTo.Enabled = false
+Me.txtADULTSVOD_ValidityTo.Location = New System.Drawing.Point(160, 472)
+Me.txtADULTSVOD_ValidityTo.Name = "txtADULTSVOD_ValidityTo"
+Me.txtADULTSVOD_ValidityTo.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+Me.txtADULTSVOD_ValidityTo.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+Me.txtADULTSVOD_ValidityTo.Size = New System.Drawing.Size(152, 20)
+Me.txtADULTSVOD_ValidityTo.TabIndex = 64
 '
 'cmbPPVStatus
 '
@@ -7118,6 +7188,8 @@ Me.tabSearch.Text = "Search"
 'PanelControl1
 '
 Me.PanelControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
+Me.PanelControl1.Controls.Add(Me.LabelControl16)
+Me.PanelControl1.Controls.Add(Me.txtPPAgreementID)
 Me.PanelControl1.Controls.Add(Me.btnReplayAllCreditHistory)
 Me.PanelControl1.Controls.Add(Me.BtnEmailError)
 Me.PanelControl1.Controls.Add(Me.btnRedlisted)
@@ -7147,9 +7219,24 @@ Me.PanelControl1.Name = "PanelControl1"
 Me.PanelControl1.Size = New System.Drawing.Size(1253, 176)
 Me.PanelControl1.TabIndex = 0
 '
+'LabelControl16
+'
+Me.LabelControl16.Location = New System.Drawing.Point(261, 71)
+Me.LabelControl16.Name = "LabelControl16"
+Me.LabelControl16.Size = New System.Drawing.Size(78, 13)
+Me.LabelControl16.TabIndex = 62
+Me.LabelControl16.Text = "PP agreement id"
+'
+'txtPPAgreementID
+'
+Me.txtPPAgreementID.Location = New System.Drawing.Point(346, 68)
+Me.txtPPAgreementID.Name = "txtPPAgreementID"
+Me.txtPPAgreementID.Size = New System.Drawing.Size(156, 20)
+Me.txtPPAgreementID.TabIndex = 61
+'
 'btnReplayAllCreditHistory
 '
-Me.btnReplayAllCreditHistory.Location = New System.Drawing.Point(812, 86)
+Me.btnReplayAllCreditHistory.Location = New System.Drawing.Point(889, 86)
 Me.btnReplayAllCreditHistory.Name = "btnReplayAllCreditHistory"
 Me.btnReplayAllCreditHistory.Size = New System.Drawing.Size(138, 39)
 Me.btnReplayAllCreditHistory.TabIndex = 60
@@ -7158,7 +7245,7 @@ Me.btnReplayAllCreditHistory.Visible = false
 '
 'BtnEmailError
 '
-Me.BtnEmailError.Location = New System.Drawing.Point(510, 119)
+Me.BtnEmailError.Location = New System.Drawing.Point(587, 119)
 Me.BtnEmailError.Name = "BtnEmailError"
 Me.BtnEmailError.Size = New System.Drawing.Size(138, 23)
 Me.BtnEmailError.TabIndex = 59
@@ -7166,7 +7253,7 @@ Me.BtnEmailError.Text = "Email Error"
 '
 'btnRedlisted
 '
-Me.btnRedlisted.Location = New System.Drawing.Point(657, 48)
+Me.btnRedlisted.Location = New System.Drawing.Point(734, 48)
 Me.btnRedlisted.Name = "btnRedlisted"
 Me.btnRedlisted.Size = New System.Drawing.Size(138, 23)
 Me.btnRedlisted.TabIndex = 58
@@ -7174,7 +7261,7 @@ Me.btnRedlisted.Text = "Customers Redlisted"
 '
 'btnBlackListed
 '
-Me.btnBlackListed.Location = New System.Drawing.Point(510, 48)
+Me.btnBlackListed.Location = New System.Drawing.Point(587, 48)
 Me.btnBlackListed.Name = "btnBlackListed"
 Me.btnBlackListed.Size = New System.Drawing.Size(141, 23)
 Me.btnBlackListed.TabIndex = 57
@@ -7182,7 +7269,7 @@ Me.btnBlackListed.Text = "Customers Blacklisted"
 '
 'BtnSponsorCard
 '
-Me.BtnSponsorCard.Location = New System.Drawing.Point(812, 48)
+Me.BtnSponsorCard.Location = New System.Drawing.Point(889, 48)
 Me.BtnSponsorCard.Name = "BtnSponsorCard"
 Me.BtnSponsorCard.Size = New System.Drawing.Size(138, 23)
 Me.BtnSponsorCard.TabIndex = 56
@@ -7190,7 +7277,7 @@ Me.BtnSponsorCard.Text = "Sponsor card"
 '
 'btnViewGift
 '
-Me.btnViewGift.Location = New System.Drawing.Point(657, 119)
+Me.btnViewGift.Location = New System.Drawing.Point(734, 119)
 Me.btnViewGift.Name = "btnViewGift"
 Me.btnViewGift.Size = New System.Drawing.Size(138, 23)
 Me.btnViewGift.TabIndex = 55
@@ -7198,7 +7285,7 @@ Me.btnViewGift.Text = "View Customers With Gift"
 '
 'btnViewCustserv
 '
-Me.btnViewCustserv.Location = New System.Drawing.Point(657, 86)
+Me.btnViewCustserv.Location = New System.Drawing.Point(734, 86)
 Me.btnViewCustserv.Name = "btnViewCustserv"
 Me.btnViewCustserv.Size = New System.Drawing.Size(138, 23)
 Me.btnViewCustserv.TabIndex = 54
@@ -7214,7 +7301,7 @@ Me.TxtCustomers_NumComm.TabIndex = 53
 '
 'lblNumComm
 '
-Me.lblNumComm.Location = New System.Drawing.Point(34, 111)
+Me.lblNumComm.Location = New System.Drawing.Point(24, 111)
 Me.lblNumComm.Name = "lblNumComm"
 Me.lblNumComm.Size = New System.Drawing.Size(96, 13)
 Me.lblNumComm.TabIndex = 52
@@ -7229,7 +7316,7 @@ Me.txtcustomers_domiciliation_number_search.TabIndex = 51
 '
 'LabelControl4
 '
-Me.LabelControl4.Location = New System.Drawing.Point(34, 142)
+Me.LabelControl4.Location = New System.Drawing.Point(24, 142)
 Me.LabelControl4.Name = "LabelControl4"
 Me.LabelControl4.Size = New System.Drawing.Size(82, 13)
 Me.LabelControl4.TabIndex = 50
@@ -7237,7 +7324,7 @@ Me.LabelControl4.Text = "Domiciliation Num"
 '
 'btnPhoneActivation
 '
-Me.btnPhoneActivation.Location = New System.Drawing.Point(510, 86)
+Me.btnPhoneActivation.Location = New System.Drawing.Point(587, 86)
 Me.btnPhoneActivation.Name = "btnPhoneActivation"
 Me.btnPhoneActivation.Size = New System.Drawing.Size(141, 23)
 Me.btnPhoneActivation.TabIndex = 49
@@ -7253,7 +7340,7 @@ Me.LabelControl35.Text = "E-Mail"
 '
 'LabelControl6
 '
-Me.LabelControl6.Location = New System.Drawing.Point(261, 50)
+Me.LabelControl6.Location = New System.Drawing.Point(261, 48)
 Me.LabelControl6.Name = "LabelControl6"
 Me.LabelControl6.Size = New System.Drawing.Size(46, 13)
 Me.LabelControl6.TabIndex = 47
@@ -7269,7 +7356,7 @@ Me.LabelControl5.Text = "Street"
 '
 'txtcustomers_postcode_search
 '
-Me.txtcustomers_postcode_search.Location = New System.Drawing.Point(313, 47)
+Me.txtcustomers_postcode_search.Location = New System.Drawing.Point(346, 43)
 Me.txtcustomers_postcode_search.Name = "txtcustomers_postcode_search"
 Me.txtcustomers_postcode_search.Size = New System.Drawing.Size(156, 20)
 Me.txtcustomers_postcode_search.TabIndex = 12
@@ -7284,7 +7371,7 @@ Me.btnSearch.Text = "&Search"
 '
 'txtcustomers_address_street_search
 '
-Me.txtcustomers_address_street_search.Location = New System.Drawing.Point(313, 21)
+Me.txtcustomers_address_street_search.Location = New System.Drawing.Point(346, 19)
 Me.txtcustomers_address_street_search.Name = "txtcustomers_address_street_search"
 Me.txtcustomers_address_street_search.Size = New System.Drawing.Size(156, 20)
 Me.txtcustomers_address_street_search.TabIndex = 9
@@ -10145,13 +10232,6 @@ Me.GridControl3.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseV
 Me.GridView3.GridControl = Me.GridControl3
 Me.GridView3.Name = "GridView3"
 '
-'phone_activation_id
-'
-Me.phone_activation_id.Caption = "phone_activation_id"
-Me.phone_activation_id.FieldName = "phone_activation_id"
-Me.phone_activation_id.Name = "phone_activation_id"
-Me.phone_activation_id.Visible = true
-'
 'frmCustomers_Maint
 '
 Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
@@ -10306,6 +10386,9 @@ CType(Me.DateCallPhoneActivation.Properties,System.ComponentModel.ISupportInitia
 CType(Me.GCAboInfo,System.ComponentModel.ISupportInitialize).EndInit
 Me.GCAboInfo.ResumeLayout(false)
 Me.GCAboInfo.PerformLayout
+CType(Me.cmbADULTSVODStatus.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtADULTSVOD_ValidityTo.Properties.VistaTimeProperties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtADULTSVOD_ValidityTo.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.cmbPPVStatus.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.txtRemainDVD.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.cmbDiscountActivation.Properties,System.ComponentModel.ISupportInitialize).EndInit
@@ -10373,6 +10456,7 @@ Me.tabSearch.ResumeLayout(false)
 CType(Me.PanelControl1,System.ComponentModel.ISupportInitialize).EndInit
 Me.PanelControl1.ResumeLayout(false)
 Me.PanelControl1.PerformLayout
+CType(Me.txtPPAgreementID.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.TxtCustomers_NumComm.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.txtcustomers_domiciliation_number_search.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.txtcustomers_postcode_search.Properties,System.ComponentModel.ISupportInitialize).EndInit
@@ -10537,6 +10621,7 @@ End Sub
     Dim _old_date_Holiday As Date
     Dim _oldSuspended As Integer
     Private _lstSuspended As New List(Of DVDPostBuziness.clsKeyCombo)
+    Private _lstADULTSVOD As New List(Of DVDPostBuziness.clsKeyCombo)
     Private _loadInfo As Boolean
 
 
@@ -10761,6 +10846,7 @@ End Sub
             '  DvdPostData.clsConnection.FillDataSet(objDS.Tables("custserv_cat"), "SELECT * FROM custserv_cat  where language_id = 1 ")
             '  DvdPostData.clsConnection.FillDataSet(objDS.Tables("payment_offline_status"), "SELECT * FROM payment_offline_status ")
             LoadSuspended()
+            LoadADULTSVOD()
         Catch ex As Exception
             Throw ex
         End Try
@@ -10779,6 +10865,7 @@ End Sub
         Dim NameCustomer As String
         Dim streetCustomer As String
         Dim PostCodeCustomer As String
+        Dim PayPalAgreementID As String
         Dim NumDom As String
         Dim NumComm As String
 
@@ -10799,7 +10886,8 @@ End Sub
         streetCustomer = txtcustomers_address_street_search.Text.Trim
         PostCodeCustomer = txtcustomers_postcode_search.Text.Trim
         NumComm = TxtCustomers_NumComm.Text.Trim
-        sql = DvdPostData.ClsCustomersData.GetSelectCustomersSearch(customers_id, email, NameCustomer, streetCustomer, PostCodeCustomer, NumDom, NumComm)
+        PayPalAgreementID = txtPPAgreementID.Text.Trim
+        sql = DvdPostData.ClsCustomersData.GetSelectCustomersSearch(customers_id, email, NameCustomer, streetCustomer, PostCodeCustomer, NumDom, NumComm, PayPalAgreementID)
 
         Dim dt As DataTable
         dt = DvdPostData.clsConnection.FillDataSet(sql)
@@ -11083,6 +11171,19 @@ End Sub
 
     End Sub
 
+    Private Sub LoadADULTSVOD()
+
+        _lstADULTSVOD.Add(New DVDPostBuziness.clsKeyCombo("CHARGE_ACTIVE", 1))
+        _lstADULTSVOD.Add(New DVDPostBuziness.clsKeyCombo("ACTIVE", 2))
+        _lstADULTSVOD.Add(New DVDPostBuziness.clsKeyCombo("CHARGE_STOPNEXTRECONDUCTION", 3))
+        _lstADULTSVOD.Add(New DVDPostBuziness.clsKeyCombo("STOPNEXTRECONDUCTION", 4))
+        _lstADULTSVOD.Add(New DVDPostBuziness.clsKeyCombo("STOPED", 0))
+        _lstSuspended.Add(New DVDPostBuziness.clsKeyCombo("", -1))
+        Me.cmbADULTSVODStatus.Properties.DataSource = _lstADULTSVOD
+        cmbADULTSVODStatus.Enabled = False
+
+    End Sub
+
     Private Sub loadAboHist(ByVal index As Integer, ByVal customers_id As Integer)
 
         If refreshTab(index) Then
@@ -11103,6 +11204,12 @@ End Sub
         Dim sql As String
         sql = DvdPostData.ClsCustomersData.getSelectAttributes(customers_id)
         DvdPostData.clsConnection.FillDataSet(objDS.Tables("customer_attributes"), sql)
+
+    End Sub
+    Private Sub loadCustomerSVOD(ByVal customers_id As Integer)
+        Dim sql As String
+        sql = DvdPostData.ClsCustomersData.getSelectSVOD(customers_id)
+        DvdPostData.clsConnection.FillDataSet(objDS.Tables("customers_svod"), sql)
 
     End Sub
     Private Sub loadDiscountActivation(ByVal drCust As DataRow)
@@ -11145,6 +11252,7 @@ End Sub
 
         objDS.Tables("address_book_all").Clear()
         objDS.Tables("customer_attributes").Clear()
+        objDS.Tables("customers_svod").Clear()
         objDS.Tables("customers").Clear()
 
 
@@ -11180,6 +11288,7 @@ End Sub
             txtABO.BackColor = Drawing.Color.Red
         End If
         cmbSuspended.EditValue = drCust("customers_abo_suspended")
+        cmbADULTSVODStatus.EditValue = drCust("svod_adult")
        
         'calcul the Age
         If drCust("customers_dob") IsNot (DBNull.Value) Then
@@ -11203,6 +11312,7 @@ End Sub
         'display addressbook
         loadAddressBook(_CurrentCustomerID)
         loadAttributesCustomer(_CurrentCustomerID)
+        loadCustomerSVOD(_CurrentCustomerID)
         loadCptReconduction(_CurrentCustomerID)
         chkFt.Checked = DVDPostBuziness.ClsCustomers.isFT(_CurrentCustomerID)
         HideTab()
@@ -11261,6 +11371,7 @@ End Sub
 
         ChangeStateControl(txtComment, Enabling)
         ChangeStateControl(cmbSuspended, Enabling)
+        ChangeStateControl(cmbADULTSVODStatus, Enabling)
         ChangeStatecheckBox(chkMultiShipment, Enabling)
         ChangeStatecheckBox(chkAutoStop, Enabling)
         ChangeStatecheckBox(chksleep, Enabling)
@@ -11452,7 +11563,7 @@ End Sub
     End Sub
     Private Sub btnStopAtReconduction_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnStopAtReconduction.Click
         Dim _Return As Integer
-        Dim _SQLTxt As String = "update customers set customers_abo_auto_stop_next_reconduction = 1 where customers_id = " & txtCustomers_id.EditValue
+        Dim _SQLTxt As String = "update customers set customers_abo_auto_stop_next_reconduction = 1, customers_abo_discount_recurring_to_date = null where customers_id = " & txtCustomers_id.EditValue
         _Return = DvdPostData.clsConnection.ExecuteNonQuery(_SQLTxt)
         If _Return = 1 Then
             MsgBox("Customer will be Auto-Stopped at next reconduction", MsgBoxStyle.Exclamation)

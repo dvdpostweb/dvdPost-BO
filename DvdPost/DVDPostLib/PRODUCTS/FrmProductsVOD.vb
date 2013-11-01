@@ -6,7 +6,7 @@ Public Class FrmProductsVOD
     Dim _dtLanguageSubtitle As DataTable
     Dim _dtSupport As DataTable
     'Igor
-
+    Dim dtViewWithCountries As DataTable = New DataTable()
 
     Const KEYWEBSITE As String = "WEBSITEVOD"
     Const KEYANTRAILER As String = "WEBSITEANTRAILER"
@@ -26,6 +26,7 @@ Public Class FrmProductsVOD
         ALL
     End Enum
     Private _typesearch As typeSearch
+    Private _trailertypesearch As typeSearch
     Private Sub initForm()
         Dim blank As String = String.Empty
 
@@ -128,6 +129,50 @@ Public Class FrmProductsVOD
         Else
             txtPPVPrice.Text = row("ppv_price")
         End If
+
+    End Sub
+
+    Private Sub loadDataTrailer(ByVal row As DataRow)
+
+        txtTrailerID.EditValue = row("id")
+
+        If row("filename") Is DBNull.Value Then
+            txtTrailerFilename.EditValue = ""
+        Else
+            txtTrailerFilename.EditValue = row("filename")
+        End If
+
+        txtTrailerImdb.EditValue = row("imdb_id")
+
+        If row("expire_at") Is DBNull.Value Then
+            cmbTRailerDateExpired.EditValue = DateTime.MinValue
+        Else
+            cmbTRailerDateExpired.EditValue = row("expire_at")
+        End If
+
+        If row("available_from") Is DBNull.Value Then
+            cmbTrailerDateStart.EditValue = DateTime.MinValue
+        Else
+            cmbTrailerDateStart.EditValue = row("available_from")
+        End If
+
+
+        If (row("language_id") Is DBNull.Value) Then
+            cmbTrailerLanguageSound.EditValue = 0
+        Else
+            cmbTrailerLanguageSound.EditValue = row("language_id")
+        End If
+
+        If row("subtitle_id") Is DBNull.Value Then
+            cmbTrailerSubtitle.EditValue = 0
+        Else
+
+            cmbTrailerSubtitle.EditValue = row("subtitle_id")
+        End If
+
+        chkTrailerAvailable.Checked = row("available")
+
+        cmdTrailerStatus.EditValue = row("status")
 
     End Sub
 
@@ -284,6 +329,20 @@ Public Class FrmProductsVOD
         NLEnable(enable)
 
     End Sub
+
+    Private Sub TrailerEnableField(ByVal enable As Boolean)
+
+        txtTrailerFilename.Enabled = enable
+        txtTrailerImdb.Enabled = enable
+        cmbTRailerDateExpired.Enabled = enable
+        cmbTrailerDateStart.Enabled = enable
+        cmbTrailerLanguageSound.Enabled = enable
+        cmbTrailerSubtitle.Enabled = enable
+        cmdTrailerStatus.Enabled = enable
+        chkTrailerAvailable.Enabled = enable
+
+    End Sub
+
     Private Sub ChangeStep(ByVal stepCurrent As StepForm)
         Select Case stepCurrent
             Case StepForm.CANCEL
@@ -318,7 +377,7 @@ Public Class FrmProductsVOD
                 XTabResult.PageVisible = False
                 XTabSearch.PageVisible = True
                 XTabView.PageVisible = False
-                XTabControlVod.SelectedTabPage = XTabSearch
+                XTabVODAndTrailers.SelectedTabPage = XTabSearch
 
 
             Case StepForm.[NEW]
@@ -330,7 +389,7 @@ Public Class FrmProductsVOD
                 EnableField(True)
                 XTabResult.PageVisible = False
                 XTabView.PageVisible = True
-                XTabControlVod.SelectedTabPage = XTabView
+                XTabVODAndTrailers.SelectedTabPage = XTabView
 
             Case StepForm.SAVE
                 btnEditVod.Enabled = True
@@ -350,7 +409,7 @@ Public Class FrmProductsVOD
                 EnableField(False)
                 XTabResult.PageVisible = True
                 XTabView.PageVisible = False
-                XTabControlVod.SelectedTabPage = XTabResult
+                XTabVODAndTrailers.SelectedTabPage = XTabResult
 
             Case StepForm.CHOOSEVOD
                 btnEditVod.Enabled = True
@@ -359,7 +418,88 @@ Public Class FrmProductsVOD
 
                 EnableField(False)
                 XTabView.PageVisible = True
-                XTabControlVod.SelectedTabPage = XTabView
+                XTabVODAndTrailers.SelectedTabPage = XTabView
+
+        End Select
+    End Sub
+
+    Private Sub TrailerChangeStep(ByVal stepCurrent As StepForm)
+        Select Case stepCurrent
+            Case StepForm.CANCEL
+                btnTrailerEdit.Enabled = True
+                btnTrailerSave.Enabled = False
+                btnTrailerCancel.Enabled = False
+                btnTrailerDelete.Enabled = True
+
+                TrailerEnableField(False)
+
+                XtraTabTrailerSearch.PageVisible = True
+                XtraTabTrailerResult.PageVisible = True
+
+            Case StepForm.EDIT
+                btnTrailerEdit.Enabled = False
+                btnTrailerSave.Enabled = True
+                btnTrailerCancel.Enabled = True
+                btnTrailerDelete.Enabled = True
+
+                TrailerEnableField(True)
+                XtraTabTrailerView.PageVisible = True
+                XtraTabTrailerResult.PageVisible = False
+
+            Case StepForm.INIT
+                btnTrailerEdit.Enabled = False
+                btnTrailerSave.Enabled = False
+                btnTrailerCancel.Enabled = False
+                btnTrailerDelete.Enabled = False
+
+                TrailerEnableField(False)
+
+                XtraTabTrailerResult.PageVisible = False
+                XtraTabTrailerSearch.PageVisible = True
+                XtraTabTrailerView.PageVisible = False
+                XTabVODAndTrailers.SelectedTabPage = XtraTabTrailerSearch
+
+
+            Case StepForm.[NEW]
+                btnTrailerEdit.Enabled = False
+                btnTrailerSave.Enabled = True
+                btnTrailerCancel.Enabled = True
+                btnTrailerDelete.Enabled = False
+
+                TrailerEnableField(True)
+                XTabResult.PageVisible = False
+                XTabView.PageVisible = True
+                XTabVODAndTrailers.SelectedTabPage = XtraTabTrailerView
+
+            Case StepForm.SAVE
+                btnTrailerEdit.Enabled = True
+                btnTrailerSave.Enabled = False
+                btnTrailerCancel.Enabled = False
+                btnTrailerDelete.Enabled = True
+
+                TrailerEnableField(False)
+                XtraTabTrailerView.PageVisible = True
+                XtraTabTrailerResult.PageVisible = True
+
+            Case StepForm.LOAD
+                btnTrailerEdit.Enabled = True
+                btnTrailerSave.Enabled = False
+                btnTrailerCancel.Enabled = False
+
+                TrailerEnableField(False)
+                XtraTabTrailerResult.PageVisible = True
+                XtraTabTrailerView.PageVisible = False
+                XTabVODAndTrailers.SelectedTabPage = XtraTabTrailerResult
+
+            Case StepForm.CHOOSEVOD
+
+                btnTrailerEdit.Enabled = True
+                btnTrailerSave.Enabled = False
+                btnTrailerCancel.Enabled = False
+
+                TrailerEnableField(False)
+                XtraTabTrailerView.PageVisible = True
+                XTabVODAndTrailers.SelectedTabPage = XtraTabTrailerView
 
         End Select
     End Sub
@@ -417,10 +557,16 @@ Public Class FrmProductsVOD
 
         sql = DvdPostData.ClsVod.GetEnumMysqlQuality()
         lstquality = DVDPostBuziness.ClsCombo.GetListEnum(sql)
-        lstquality.Add(New DVDPostBuziness.clsKeyComboEnum("", ""))
+        lstquality.RemoveAt(5)
+        lstquality.RemoveAt(4)
+        lstquality.RemoveAt(3)
+        'lstquality.Add(New DVDPostBuziness.clsKeyComboEnum("", ""))
         cmbQuality.Properties.ValueMember = "Value"
         cmbQuality.Properties.DisplayMember = "DisplayMember"
         cmbQuality.Properties.DataSource = lstquality
+        cmbQuality.SelectedText = "SD"
+        cmbQuality.Text = "SD"
+        cmbQuality.EditValue = cmbQuality.Properties.GetKeyValueByDisplayText("SD")
 
     End Sub
     Private Sub loadStatus()
@@ -434,9 +580,9 @@ Public Class FrmProductsVOD
         cmbStatus.Properties.DisplayMember = "DisplayMember"
         cmbStatus.Properties.DataSource = lststatus
 
-        'cmbStatusLU.Properties.ValueMember = "Value"
-        'cmbStatusLU.Properties.DisplayMember = "DisplayMember"
-        'cmbStatusLU.Properties.DataSource = lststatus
+        cmdTrailerStatus.Properties.ValueMember = "Value"
+        cmdTrailerStatus.Properties.DisplayMember = "DisplayMember"
+        cmdTrailerStatus.Properties.DataSource = lststatus
 
         'cmbStatusNL.Properties.ValueMember = "Value"
         'cmbStatusNL.Properties.DisplayMember = "DisplayMember"
@@ -508,6 +654,14 @@ Public Class FrmProductsVOD
         cmbLanguageSound.Properties.DisplayMember = lngdsc
         cmbLanguageSound.Properties.DataSource = _dtLanguageSound
 
+        cmbTrailerLanguageSound.Properties.ValueMember = key
+        cmbTrailerLanguageSound.Properties.DisplayMember = lngdsc
+        cmbTrailerLanguageSound.Properties.DataSource = _dtLanguageSound
+
+        cmbTrailerLanguageGrid.ValueMember = key
+        cmbTrailerLanguageGrid.DisplayMember = lngdsc
+        cmbTrailerLanguageGrid.DataSource = _dtLanguageSound
+
         _dtLanguageSubtitle = DVDPostBuziness.ClsCombo.addRowEmpty(_dtLanguageSubtitle)
         cmbLanguageSubtitle.Properties.ValueMember = keySubtitle
         cmbLanguageSubtitle.Properties.DisplayMember = lngdsc
@@ -516,6 +670,14 @@ Public Class FrmProductsVOD
         cmbLanguagesSubtitleEdit.ValueMember = keySubtitle
         cmbLanguagesSubtitleEdit.DisplayMember = value
         cmbLanguagesSubtitleEdit.DataSource = _dtLanguageSubtitle
+       
+        cmbTrailerSubtitleGrid.ValueMember = keySubtitle
+        cmbTrailerSubtitleGrid.DisplayMember = lngdsc
+        cmbTrailerSubtitleGrid.DataSource = _dtLanguageSubtitle
+
+        cmbTrailerSubtitle.Properties.ValueMember = keySubtitle
+        cmbTrailerSubtitle.Properties.DisplayMember = lngdsc
+        cmbTrailerSubtitle.Properties.DataSource = _dtLanguageSubtitle
 
         RepositoryLanguageSubtitleGrid.ValueMember = keySubtitle
         RepositoryLanguageSubtitleGrid.DisplayMember = value
@@ -561,6 +723,15 @@ Public Class FrmProductsVOD
                 ClearNLData()
             End If
 
+        End If
+    End Sub
+
+    Private Sub loadInfoTrailer()
+
+        Dim row As DataRow
+        If GridViewTrailer.RowCount > 0 Then
+            row = GridViewTrailer.GetDataRow(GridViewTrailer.FocusedRowHandle())
+            loadDataTrailer(row)
         End If
     End Sub
 
@@ -628,6 +799,25 @@ Public Class FrmProductsVOD
                     End If
                 End If
 
+            End If
+            Return True
+        Catch ex As Exception
+            DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Vod, ex)
+            DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Vod, sql)
+            Return False
+        End Try
+    End Function
+
+    Private Function SaveTrailer() As Boolean
+        Dim sql As String = String.Empty
+        Try
+
+            If txtTrailerID.EditValue Is Nothing Then
+                sql = DvdPostData.ClsVod.GetInsertTrailer(txtTrailerImdb.EditValue, txtTrailerFilename.EditValue, cmbTrailerDateStart.EditValue, cmbTRailerDateExpired.EditValue, chkTrailerAvailable.Checked, cmbTrailerLanguageSound.EditValue, cmbTrailerSubtitle.EditValue, cmdTrailerStatus.EditValue)
+                DvdPostData.clsConnection.ExecuteNonQuery(sql)
+            Else
+                sql = DvdPostData.ClsVod.GetUpdateTrailer(txtTrailerID.EditValue, txtTrailerImdb.EditValue, txtTrailerFilename.EditValue, cmbTrailerDateStart.EditValue, cmbTRailerDateExpired.EditValue, chkTrailerAvailable.Checked, cmbTrailerLanguageSound.EditValue, cmbTrailerSubtitle.EditValue, cmdTrailerStatus.EditValue)
+                DvdPostData.clsConnection.ExecuteNonQuery(sql)
             End If
             Return True
         Catch ex As Exception
@@ -707,8 +897,12 @@ Public Class FrmProductsVOD
         Dim sql As String
         Dim dt As DataTable
 
+        dtViewWithCountries.Clear()
+
         sql = DvdPostData.ClsVod.SearchViewVodProductUploaded()
         dt = DvdPostData.clsConnection.FillDataSet(sql)
+        sql = DvdPostData.ClsVod.SearchViewVodProductUploadedWithCountries()
+        dtViewWithCountries = DvdPostData.clsConnection.FillDataSet(sql)
 
         GridVodWatch.DataSource = dt
     End Sub
@@ -732,6 +926,8 @@ Public Class FrmProductsVOD
 
         If Not dt Is Nothing Then
             GridVod.DataSource = dt
+            GridViewSearch.ActiveFilterString = "country = 'BE'"
+
             ChangeStep(StepForm.LOAD)
             _typesearch = typeSearch.ALL
         End If
@@ -819,10 +1015,10 @@ Public Class FrmProductsVOD
     End Sub
 
 
-    Private Sub XTabControlVod_SelectedPageChanged(ByVal sender As Object, ByVal e As DevExpress.XtraTab.TabPageChangedEventArgs) Handles XTabControlVod.SelectedPageChanged
-        If XTabControlVod.SelectedTabPage Is XTabViewVod Then
+    Private Sub XTabControlVod_SelectedPageChanged(ByVal sender As Object, ByVal e As DevExpress.XtraTab.TabPageChangedEventArgs) Handles XTabVODAndTrailers.SelectedPageChanged
+        If XTabVODAndTrailers.SelectedTabPage Is XTabViewVod Then
             loadDatatUploaded()
-        ElseIf XTabControlVod.SelectedTabPage Is xTabTrailers Then
+        ElseIf XTabVODAndTrailers.SelectedTabPage Is xTabTrailers Then
             laodUploadedTrailers()
         End If
     End Sub
@@ -832,13 +1028,13 @@ Public Class FrmProductsVOD
         If gridViewVodWatch.RowCount > 0 Then
             row = gridViewVodWatch.GetDataRow(gridViewVodWatch.FocusedRowHandle())
             loadData(row)
-            Dim drLU As DataRow() = CType(GridVodWatch.DataSource, DataTable).Select("imdb_id = " & row("imdb_id") & " " & IIf(IsDBNull(row("language_id")), " and language_id is null ", " and language_id = " & row("language_id")) & " and id <> " & row("id") & IIf(IsDBNull(row("subtitle_id")), " and subtitle_id is null ", " and subtitle_id = " & row("subtitle_id")) & " and source = 'alphanetworks' and status <> 'deleted' and country = 'LU' ")
+            Dim drLU As DataRow() = dtViewWithCountries.Select("imdb_id = " & row("imdb_id") & " " & IIf(IsDBNull(row("language_id")), " and language_id is null ", " and language_id = " & row("language_id")) & " and id <> " & row("id") & IIf(IsDBNull(row("subtitle_id")), " and subtitle_id is null ", " and subtitle_id = " & row("subtitle_id")) & " and source = 'alphanetworks' and status <> 'deleted' and country = 'LU' ")
             If drLU.Length > 0 Then
                 loadDataLU(drLU(0))
             Else
                 ClearLUData()
             End If
-            Dim drNL As DataRow() = CType(GridVodWatch.DataSource, DataTable).Select("imdb_id = " & row("imdb_id") & " " & IIf(IsDBNull(row("language_id")), " and language_id is null ", " and language_id = " & row("language_id")) & " " & IIf(IsDBNull(row("subtitle_id")), " and subtitle_id is null ", " and subtitle_id = " & row("subtitle_id")) & " and id <> " & row("id") & " and source = 'alphanetworks' and status <> 'deleted' and country = 'NL' ")
+            Dim drNL As DataRow() = dtViewWithCountries.Select("imdb_id = " & row("imdb_id") & " " & IIf(IsDBNull(row("language_id")), " and language_id is null ", " and language_id = " & row("language_id")) & " " & IIf(IsDBNull(row("subtitle_id")), " and subtitle_id is null ", " and subtitle_id = " & row("subtitle_id")) & " and id <> " & row("id") & " and source = 'alphanetworks' and status <> 'deleted' and country = 'NL' ")
             If drNL.Length > 0 Then
                 loadDataNL(drNL(0))
             Else
@@ -1404,8 +1600,8 @@ Public Class FrmProductsVOD
 
     End Sub
 
-    Private Sub XTabControlVod_Resize(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles XTabControlVod.Resize
-        Dim center As Integer = GridVodWatch.Width + (XTabControlVod.Width - GridVodWatch.Width) / 2
+    Private Sub XTabControlVod_Resize(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles XTabVODAndTrailers.Resize
+        Dim center As Integer = GridVodWatch.Width + (XTabVODAndTrailers.Width - GridVodWatch.Width) / 2
         'WebSiteDvdPost.Left = GridVodWatch.Left + GridVodWatch.Width - 203
         'WebSiteDvdPost.Width = (XTabControlVod.Width - GridVodWatch.Width) + 203
     End Sub
@@ -1502,5 +1698,87 @@ Public Class FrmProductsVOD
         Else
             MsgBox("after watch movie select product please !", MsgBoxStyle.Critical)
         End If
+    End Sub
+
+    Private Sub btnTrailerSearch_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTrailerSearch.Click
+        Dim sql As String
+        Dim dt As DataTable = Nothing
+        Dim dtBE As DataTable = Nothing
+
+        If txtTrailerTitleSearch.EditValue <> String.Empty Then
+            sql = DvdPostData.ClsVod.SearchViewTrailerpartTitle(txtTrailerTitleSearch.EditValue)
+            dt = DvdPostData.clsConnection.FillDataSet(sql)
+        ElseIf txtTrailerProductsIDSearch.EditValue <> String.Empty Then
+            sql = DvdPostData.ClsVod.SearchViewTrailerProduct(txtTrailerProductsIDSearch.EditValue)
+            dt = DvdPostData.clsConnection.FillDataSet(sql)
+        ElseIf txtTrailerImdbSearch.EditValue <> String.Empty Then
+            sql = DvdPostData.ClsVod.SearchViewTrailersImdb(txtTrailerImdbSearch.EditValue)
+            dt = DvdPostData.clsConnection.FillDataSet(sql)
+        End If
+        If Not dt Is Nothing Then
+            gridTrailersResult.DataSource = dt
+
+            TrailerChangeStep(StepForm.LOAD)
+            _trailertypesearch = typeSearch.DETAIL
+        End If
+    End Sub
+
+    Private Sub gridTrailersResult_DoubleClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles gridTrailersResult.DoubleClick
+        loadInfoTrailer()
+        TrailerChangeStep(StepForm.CHOOSEVOD)
+    End Sub
+
+    Private Sub btnTrailerEdit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTrailerEdit.Click
+        TrailerChangeStep(StepForm.EDIT)
+    End Sub
+
+    Private Sub btnTrailerCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTrailerCancel.Click
+        TrailerChangeStep(StepForm.CANCEL)
+    End Sub
+
+    Private Sub btnTrailerSave_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTrailerSave.Click
+        If SaveTrailer() Then
+            TrailerChangeStep(StepForm.SAVE)
+            If _trailertypesearch = typeSearch.DETAIL Then
+                btnTrailerSearch_Click(Nothing, Nothing)
+            Else
+                BtnViewAll_Click(Nothing, Nothing)
+            End If
+        Else
+            MsgBox("Error Save Vod (voir log)", MsgBoxStyle.Critical)
+        End If
+    End Sub
+
+    Private Sub btnTrailerViewAll_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTrailerViewAll.Click
+        Dim sql As String
+        Dim dt As DataTable = Nothing
+
+        sql = DvdPostData.ClsVod.SearchAllViewVod()
+        dt = DvdPostData.clsConnection.FillDataSet(sql)
+
+        If Not dt Is Nothing Then
+            gridTrailersResult.DataSource = dt
+            TrailerChangeStep(StepForm.LOAD)
+            _trailertypesearch = typeSearch.ALL
+        End If
+    End Sub
+
+    Private Sub btnMoveToPlush_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMoveToPlush.Click
+        Dim sqlCall As String = "call spProductToPlush({0})"
+        'Dim sqlVODExists As String = "select count(*) from stremaing_products where imdb_id = txtIMDB_ID.EditValue and status <> deleted "
+        'Dim vodExists As Integer = DvdPostData.clsConnection.ExecuteScalar(sqlVODExists, DvdPostData.clsConnection.typeAccessDb.READ)
+        'If vodExists = 0 Then
+        '    MsgBox("This movie is not available in OVD")
+        '    Return
+        'End If
+
+        sqlCall = String.Format(sqlCall, txtImdbView.EditValue)
+        Try
+            DvdPostData.clsConnection.ExecuteNonQuery(sqlCall)
+            MsgBox("Movie transfered to Plush", MsgBoxStyle.OkOnly)
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.OkOnly, "Movie not transfered to Plsuh")
+            DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.BO, ex)
+        End Try
     End Sub
 End Class

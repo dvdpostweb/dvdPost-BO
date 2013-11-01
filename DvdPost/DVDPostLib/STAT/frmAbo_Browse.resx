@@ -118,14 +118,11 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="HelpProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>414, 17</value>
+    <value>363, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="StatusBar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 570</value>
-  </data>
-  <data name="StatusBar1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1104, 28</value>
+    <value>0, 574</value>
   </data>
   <data name="&gt;&gt;StatusBar1.Name" xml:space="preserve">
     <value>StatusBar1</value>
@@ -140,10 +137,10 @@
     <value>1</value>
   </data>
   <data name="Panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 35</value>
+    <value>0, 30</value>
   </data>
   <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1104, 535</value>
+    <value>1104, 544</value>
   </data>
   <data name="&gt;&gt;Panel1.Name" xml:space="preserve">
     <value>Panel1</value>
@@ -158,13 +155,13 @@
     <value>0</value>
   </data>
   <metadata name="RightMouseMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>563, 17</value>
+    <value>492, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleBaseSize" type="System.Drawing.Size, System.Drawing">
-    <value>6, 15</value>
+    <value>5, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1104, 598</value>
@@ -300,7 +297,7 @@
     <value>BizzLib.frmGeneral_Browse, BizzLib, Version=1.0.3210.18722, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1104, 535</value>
+    <value>1104, 544</value>
   </data>
   <data name="&gt;&gt;TabControl1.Name" xml:space="preserve">
     <value>TabControl1</value>
@@ -319,13 +316,13 @@
     <value>NoControl</value>
   </data>
   <data name="Label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 367</value>
+    <value>22, 318</value>
   </data>
   <data name="Label6.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="Label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 23</value>
+    <value>100, 20</value>
   </data>
   <data name="Label6.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -346,13 +343,13 @@
     <value>0</value>
   </data>
   <data name="txtLimit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>161, 367</value>
+    <value>134, 318</value>
   </data>
   <data name="txtLimit.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="txtLimit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 22</value>
+    <value>64, 20</value>
   </data>
   <data name="txtLimit.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
@@ -373,13 +370,13 @@
     <value>1</value>
   </data>
   <data name="ProgressBar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 441</value>
+    <value>22, 382</value>
   </data>
   <data name="ProgressBar1.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="ProgressBar1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>442, 21</value>
+    <value>368, 18</value>
   </data>
   <data name="ProgressBar1.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
@@ -400,10 +397,10 @@
     <value>GrowOnly</value>
   </data>
   <data name="lblActionID.Location" type="System.Drawing.Point, System.Drawing">
-    <value>342, 68</value>
+    <value>285, 59</value>
   </data>
   <data name="lblActionID.Size" type="System.Drawing.Size, System.Drawing">
-    <value>482, 242</value>
+    <value>402, 210</value>
   </data>
   <data name="lblActionID.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -421,13 +418,13 @@
     <value>0</value>
   </data>
   <data name="txtActionList.Location" type="System.Drawing.Point, System.Drawing">
-    <value>432, 38</value>
+    <value>360, 33</value>
   </data>
   <data name="txtActionList.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="txtActionList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>392, 22</value>
+    <value>327, 20</value>
   </data>
   <data name="txtActionList.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -451,13 +448,13 @@
     <value>NoControl</value>
   </data>
   <data name="Label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>338, 42</value>
+    <value>282, 36</value>
   </data>
   <data name="Label1.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="Label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 18</value>
+    <value>72, 16</value>
   </data>
   <data name="Label1.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -478,13 +475,13 @@
     <value>2</value>
   </data>
   <data name="TBMailId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 92</value>
+    <value>144, 80</value>
   </data>
   <data name="TBMailId.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="TBMailId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
+    <value>100, 20</value>
   </data>
   <data name="TBMailId.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -505,13 +502,13 @@
     <value>NoControl</value>
   </data>
   <data name="LMailId.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 92</value>
+    <value>48, 80</value>
   </data>
   <data name="LMailId.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="LMailId.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 19</value>
+    <value>72, 16</value>
   </data>
   <data name="LMailId.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -532,7 +529,7 @@
     <value>4</value>
   </data>
   <data name="chkPreviousDiscount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 194</value>
+    <value>64, 168</value>
   </data>
   <data name="chkPreviousDiscount.Properties.Caption" xml:space="preserve">
     <value>Previous Discount</value>
@@ -541,7 +538,7 @@
     <value>False</value>
   </data>
   <data name="chkPreviousDiscount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 21</value>
+    <value>176, 19</value>
   </data>
   <data name="chkPreviousDiscount.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -559,7 +556,7 @@
     <value>5</value>
   </data>
   <data name="chkWishListSize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 222</value>
+    <value>64, 192</value>
   </data>
   <data name="chkWishListSize.Properties.Caption" xml:space="preserve">
     <value>WishList Size</value>
@@ -568,7 +565,7 @@
     <value>False</value>
   </data>
   <data name="chkWishListSize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 21</value>
+    <value>176, 19</value>
   </data>
   <data name="chkWishListSize.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -586,7 +583,7 @@
     <value>6</value>
   </data>
   <data name="chkPreviousAvtion.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 166</value>
+    <value>64, 144</value>
   </data>
   <data name="chkPreviousAvtion.Properties.Caption" xml:space="preserve">
     <value>Previous Action</value>
@@ -595,7 +592,7 @@
     <value>False</value>
   </data>
   <data name="chkPreviousAvtion.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 21</value>
+    <value>176, 19</value>
   </data>
   <data name="chkPreviousAvtion.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -613,7 +610,7 @@
     <value>7</value>
   </data>
   <data name="chkABOCreateDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>77, 138</value>
+    <value>64, 120</value>
   </data>
   <data name="chkABOCreateDate.Properties.Caption" xml:space="preserve">
     <value>Abo Create Date</value>
@@ -622,7 +619,7 @@
     <value>False</value>
   </data>
   <data name="chkABOCreateDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 21</value>
+    <value>176, 19</value>
   </data>
   <data name="chkABOCreateDate.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -643,13 +640,13 @@
     <value>8</value>
   </data>
   <data name="LabelControl2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 65</value>
+    <value>48, 56</value>
   </data>
   <data name="LabelControl2.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="LabelControl2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 16</value>
+    <value>38, 13</value>
   </data>
   <data name="LabelControl2.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -670,13 +667,13 @@
     <value>9</value>
   </data>
   <data name="LabelControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>58, 37</value>
+    <value>48, 32</value>
   </data>
   <data name="LabelControl1.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="LabelControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 16</value>
+    <value>50, 13</value>
   </data>
   <data name="LabelControl1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -697,7 +694,7 @@
     <value>10</value>
   </data>
   <data name="txtToDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 65</value>
+    <value>144, 56</value>
   </data>
   <assembly alias="DevExpress.Utils.v8.1" name="DevExpress.Utils.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
   <data name="txtToDate.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v8.1">
@@ -707,7 +704,7 @@
     <value>False</value>
   </data>
   <data name="txtToDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
+    <value>100, 20</value>
   </data>
   <data name="txtToDate.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -725,7 +722,7 @@
     <value>11</value>
   </data>
   <data name="txtFromDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>173, 37</value>
+    <value>144, 32</value>
   </data>
   <data name="txtFromDate.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v8.1">
     <value>Combo</value>
@@ -734,7 +731,7 @@
     <value>False</value>
   </data>
   <data name="txtFromDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 22</value>
+    <value>100, 20</value>
   </data>
   <data name="txtFromDate.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -752,13 +749,13 @@
     <value>12</value>
   </data>
   <data name="GroupControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>29, 18</value>
+    <value>24, 16</value>
   </data>
   <data name="GroupControl1.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="GroupControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>842, 333</value>
+    <value>702, 288</value>
   </data>
   <data name="GroupControl1.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -782,13 +779,13 @@
     <value>NoControl</value>
   </data>
   <data name="lbl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>26, 404</value>
+    <value>22, 350</value>
   </data>
   <data name="lbl1.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="lbl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 26</value>
+    <value>192, 23</value>
   </data>
   <data name="lbl1.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -809,7 +806,7 @@
     <value>4</value>
   </data>
   <data name="TabParameters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1095, 501</value>
+    <value>1095, 513</value>
   </data>
   <data name="&gt;&gt;TabParameters.Name" xml:space="preserve">
     <value>TabParameters</value>
@@ -824,7 +821,7 @@
     <value>0</value>
   </data>
   <data name="TabResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1095, 501</value>
+    <value>1095, 513</value>
   </data>
   <data name="&gt;&gt;TabResult.Name" xml:space="preserve">
     <value>TabResult</value>
@@ -839,7 +836,7 @@
     <value>1</value>
   </data>
   <data name="TabAnalyse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1316, 588</value>
+    <value>911, 437</value>
   </data>
   <data name="&gt;&gt;TabAnalyse.Name" xml:space="preserve">
     <value>TabAnalyse</value>
@@ -854,10 +851,10 @@
     <value>2</value>
   </data>
   <metadata name="SaveFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>254, 17</value>
+    <value>226, 17</value>
   </metadata>
   <data name="UcPivotGrid1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1316, 588</value>
+    <value>911, 437</value>
   </data>
   <data name="&gt;&gt;UcPivotGrid1.Name" xml:space="preserve">
     <value>UcPivotGrid1</value>
@@ -872,7 +869,7 @@
     <value>0</value>
   </data>
   <data name="UcChart1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1316, 588</value>
+    <value>911, 437</value>
   </data>
   <data name="&gt;&gt;UcChart1.Name" xml:space="preserve">
     <value>UcChart1</value>
@@ -887,7 +884,7 @@
     <value>0</value>
   </data>
   <data name="TabChart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1316, 588</value>
+    <value>911, 437</value>
   </data>
   <data name="&gt;&gt;TabChart.Name" xml:space="preserve">
     <value>TabChart</value>

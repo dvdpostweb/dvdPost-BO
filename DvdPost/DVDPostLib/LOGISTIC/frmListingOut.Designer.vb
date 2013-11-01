@@ -80,11 +80,10 @@ Partial Class frmListingOUT
         'TabControlListingOut
         '
         Me.TabControlListingOut.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TabControlListingOut.Location = New System.Drawing.Point(0, 35)
-        Me.TabControlListingOut.Margin = New System.Windows.Forms.Padding(4)
+        Me.TabControlListingOut.Location = New System.Drawing.Point(0, 30)
         Me.TabControlListingOut.Name = "TabControlListingOut"
         Me.TabControlListingOut.SelectedTabPage = Me.TabParameters
-        Me.TabControlListingOut.Size = New System.Drawing.Size(1547, 292)
+        Me.TabControlListingOut.Size = New System.Drawing.Size(1160, 236)
         Me.TabControlListingOut.TabIndex = 4
         Me.TabControlListingOut.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.TabParameters, Me.TabResult})
         Me.TabControlListingOut.Text = "ListingOut"
@@ -109,39 +108,37 @@ Partial Class frmListingOUT
         Me.TabParameters.Controls.Add(Me.LblLuxembourg)
         Me.TabParameters.Controls.Add(Me.btnSetPickingGroup)
         Me.TabParameters.Controls.Add(Me.btnLoadOrders)
-        Me.TabParameters.Margin = New System.Windows.Forms.Padding(4)
         Me.TabParameters.Name = "TabParameters"
-        Me.TabParameters.Size = New System.Drawing.Size(1538, 258)
+        Me.TabParameters.Size = New System.Drawing.Size(1151, 205)
         Me.TabParameters.Text = "Parameters"
         '
         'NbUserLogistic
         '
         Me.NbUserLogistic.EditValue = New Decimal(New Integer() {3, 0, 0, 0})
-        Me.NbUserLogistic.Location = New System.Drawing.Point(278, 163)
+        Me.NbUserLogistic.Location = New System.Drawing.Point(208, 132)
+        Me.NbUserLogistic.Margin = New System.Windows.Forms.Padding(2)
         Me.NbUserLogistic.Name = "NbUserLogistic"
         Me.NbUserLogistic.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
         Me.NbUserLogistic.Properties.MaxLength = 2
         Me.NbUserLogistic.Properties.MaxValue = New Decimal(New Integer() {15, 0, 0, 0})
-        Me.NbUserLogistic.Size = New System.Drawing.Size(63, 22)
+        Me.NbUserLogistic.Size = New System.Drawing.Size(47, 20)
         Me.NbUserLogistic.TabIndex = 45
         '
         'Chkstock
         '
-        Me.Chkstock.Location = New System.Drawing.Point(216, 31)
-        Me.Chkstock.Margin = New System.Windows.Forms.Padding(4)
+        Me.Chkstock.Location = New System.Drawing.Point(162, 25)
         Me.Chkstock.Name = "Chkstock"
         Me.Chkstock.Properties.Caption = "stock"
-        Me.Chkstock.Size = New System.Drawing.Size(100, 21)
+        Me.Chkstock.Size = New System.Drawing.Size(75, 19)
         Me.Chkstock.TabIndex = 43
         '
         'Lblnb_cust
         '
         Me.Lblnb_cust.AutoSize = True
         Me.Lblnb_cust.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.Lblnb_cust.Location = New System.Drawing.Point(757, 26)
-        Me.Lblnb_cust.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Lblnb_cust.Location = New System.Drawing.Point(568, 21)
         Me.Lblnb_cust.Name = "Lblnb_cust"
-        Me.Lblnb_cust.Size = New System.Drawing.Size(93, 17)
+        Me.Lblnb_cust.Size = New System.Drawing.Size(70, 13)
         Me.Lblnb_cust.TabIndex = 42
         Me.Lblnb_cust.Text = "nb customers"
         '
@@ -149,11 +146,10 @@ Partial Class frmListingOUT
         '
         Me.txtBelgiqueNLQtyClient.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
         Me.txtBelgiqueNLQtyClient.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.txtBelgiqueNLQtyClient.Location = New System.Drawing.Point(748, 194)
-        Me.txtBelgiqueNLQtyClient.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtBelgiqueNLQtyClient.Location = New System.Drawing.Point(561, 158)
         Me.txtBelgiqueNLQtyClient.Name = "txtBelgiqueNLQtyClient"
         Me.txtBelgiqueNLQtyClient.ReadOnly = True
-        Me.txtBelgiqueNLQtyClient.Size = New System.Drawing.Size(105, 26)
+        Me.txtBelgiqueNLQtyClient.Size = New System.Drawing.Size(80, 22)
         Me.txtBelgiqueNLQtyClient.TabIndex = 41
         Me.txtBelgiqueNLQtyClient.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtBelgiqueNLQtyClient.Visible = False
@@ -161,33 +157,30 @@ Partial Class frmListingOUT
         'txtBelgiqueFRQtyClient
         '
         Me.txtBelgiqueFRQtyClient.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.txtBelgiqueFRQtyClient.Location = New System.Drawing.Point(748, 156)
-        Me.txtBelgiqueFRQtyClient.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtBelgiqueFRQtyClient.Location = New System.Drawing.Point(561, 127)
         Me.txtBelgiqueFRQtyClient.Name = "txtBelgiqueFRQtyClient"
         Me.txtBelgiqueFRQtyClient.ReadOnly = True
-        Me.txtBelgiqueFRQtyClient.Size = New System.Drawing.Size(105, 26)
+        Me.txtBelgiqueFRQtyClient.Size = New System.Drawing.Size(80, 22)
         Me.txtBelgiqueFRQtyClient.TabIndex = 40
         Me.txtBelgiqueFRQtyClient.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtNetherlandsQtyClient
         '
         Me.txtNetherlandsQtyClient.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.txtNetherlandsQtyClient.Location = New System.Drawing.Point(748, 96)
-        Me.txtNetherlandsQtyClient.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtNetherlandsQtyClient.Location = New System.Drawing.Point(561, 78)
         Me.txtNetherlandsQtyClient.Name = "txtNetherlandsQtyClient"
         Me.txtNetherlandsQtyClient.ReadOnly = True
-        Me.txtNetherlandsQtyClient.Size = New System.Drawing.Size(105, 26)
+        Me.txtNetherlandsQtyClient.Size = New System.Drawing.Size(80, 22)
         Me.txtNetherlandsQtyClient.TabIndex = 39
         Me.txtNetherlandsQtyClient.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtLuxembourgQtyClient
         '
         Me.txtLuxembourgQtyClient.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.txtLuxembourgQtyClient.Location = New System.Drawing.Point(748, 62)
-        Me.txtLuxembourgQtyClient.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtLuxembourgQtyClient.Location = New System.Drawing.Point(561, 50)
         Me.txtLuxembourgQtyClient.Name = "txtLuxembourgQtyClient"
         Me.txtLuxembourgQtyClient.ReadOnly = True
-        Me.txtLuxembourgQtyClient.Size = New System.Drawing.Size(105, 26)
+        Me.txtLuxembourgQtyClient.Size = New System.Drawing.Size(80, 22)
         Me.txtLuxembourgQtyClient.TabIndex = 38
         Me.txtLuxembourgQtyClient.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -195,20 +188,18 @@ Partial Class frmListingOUT
         '
         Me.lblPickGroup.AutoSize = True
         Me.lblPickGroup.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblPickGroup.Location = New System.Drawing.Point(456, 26)
-        Me.lblPickGroup.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblPickGroup.Location = New System.Drawing.Point(342, 21)
         Me.lblPickGroup.Name = "lblPickGroup"
-        Me.lblPickGroup.Size = New System.Drawing.Size(78, 17)
+        Me.lblPickGroup.Size = New System.Drawing.Size(60, 13)
         Me.lblPickGroup.TabIndex = 37
         Me.lblPickGroup.Text = "Pick Group"
         '
         'txtBelgiqueNL
         '
         Me.txtBelgiqueNL.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.txtBelgiqueNL.Location = New System.Drawing.Point(459, 194)
-        Me.txtBelgiqueNL.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtBelgiqueNL.Location = New System.Drawing.Point(344, 158)
         Me.txtBelgiqueNL.Name = "txtBelgiqueNL"
-        Me.txtBelgiqueNL.Size = New System.Drawing.Size(260, 26)
+        Me.txtBelgiqueNL.Size = New System.Drawing.Size(196, 22)
         Me.txtBelgiqueNL.TabIndex = 36
         Me.txtBelgiqueNL.Text = "3,4"
         Me.txtBelgiqueNL.Visible = False
@@ -216,32 +207,29 @@ Partial Class frmListingOUT
         'txtBelgiqueFR
         '
         Me.txtBelgiqueFR.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.txtBelgiqueFR.Location = New System.Drawing.Point(459, 159)
-        Me.txtBelgiqueFR.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtBelgiqueFR.Location = New System.Drawing.Point(344, 129)
         Me.txtBelgiqueFR.Name = "txtBelgiqueFR"
         Me.txtBelgiqueFR.ReadOnly = True
-        Me.txtBelgiqueFR.Size = New System.Drawing.Size(260, 26)
+        Me.txtBelgiqueFR.Size = New System.Drawing.Size(196, 22)
         Me.txtBelgiqueFR.TabIndex = 35
         '
         'txtNetherlands
         '
         Me.txtNetherlands.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.txtNetherlands.Location = New System.Drawing.Point(459, 105)
-        Me.txtNetherlands.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtNetherlands.Location = New System.Drawing.Point(344, 85)
         Me.txtNetherlands.Name = "txtNetherlands"
         Me.txtNetherlands.ReadOnly = True
-        Me.txtNetherlands.Size = New System.Drawing.Size(36, 26)
+        Me.txtNetherlands.Size = New System.Drawing.Size(28, 22)
         Me.txtNetherlands.TabIndex = 34
         Me.txtNetherlands.Text = "2"
         '
         'txtLuxembourg
         '
         Me.txtLuxembourg.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!)
-        Me.txtLuxembourg.Location = New System.Drawing.Point(459, 62)
-        Me.txtLuxembourg.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtLuxembourg.Location = New System.Drawing.Point(344, 50)
         Me.txtLuxembourg.Name = "txtLuxembourg"
         Me.txtLuxembourg.ReadOnly = True
-        Me.txtLuxembourg.Size = New System.Drawing.Size(36, 26)
+        Me.txtLuxembourg.Size = New System.Drawing.Size(28, 22)
         Me.txtLuxembourg.TabIndex = 33
         Me.txtLuxembourg.Text = "1"
         '
@@ -249,10 +237,9 @@ Partial Class frmListingOUT
         '
         Me.LblBelgique.AutoSize = True
         Me.LblBelgique.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.LblBelgique.Location = New System.Drawing.Point(348, 162)
-        Me.LblBelgique.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LblBelgique.Location = New System.Drawing.Point(261, 132)
         Me.LblBelgique.Name = "LblBelgique"
-        Me.LblBelgique.Size = New System.Drawing.Size(58, 17)
+        Me.LblBelgique.Size = New System.Drawing.Size(44, 13)
         Me.LblBelgique.TabIndex = 32
         Me.LblBelgique.Text = "Belgium"
         '
@@ -260,10 +247,9 @@ Partial Class frmListingOUT
         '
         Me.LblBelgiqueNL.AutoSize = True
         Me.LblBelgiqueNL.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.LblBelgiqueNL.Location = New System.Drawing.Point(348, 194)
-        Me.LblBelgiqueNL.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LblBelgiqueNL.Location = New System.Drawing.Point(261, 158)
         Me.LblBelgiqueNL.Name = "LblBelgiqueNL"
-        Me.LblBelgiqueNL.Size = New System.Drawing.Size(85, 17)
+        Me.LblBelgiqueNL.Size = New System.Drawing.Size(65, 13)
         Me.LblBelgiqueNL.TabIndex = 31
         Me.LblBelgiqueNL.Text = "Belgique NL"
         Me.LblBelgiqueNL.Visible = False
@@ -272,10 +258,9 @@ Partial Class frmListingOUT
         '
         Me.lblNetherlands.AutoSize = True
         Me.lblNetherlands.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblNetherlands.Location = New System.Drawing.Point(349, 105)
-        Me.lblNetherlands.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.lblNetherlands.Location = New System.Drawing.Point(262, 85)
         Me.lblNetherlands.Name = "lblNetherlands"
-        Me.lblNetherlands.Size = New System.Drawing.Size(85, 17)
+        Me.lblNetherlands.Size = New System.Drawing.Size(64, 13)
         Me.lblNetherlands.TabIndex = 30
         Me.lblNetherlands.Text = "Netherlands"
         '
@@ -283,29 +268,26 @@ Partial Class frmListingOUT
         '
         Me.LblLuxembourg.AutoSize = True
         Me.LblLuxembourg.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.LblLuxembourg.Location = New System.Drawing.Point(349, 65)
-        Me.LblLuxembourg.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LblLuxembourg.Location = New System.Drawing.Point(262, 53)
         Me.LblLuxembourg.Name = "LblLuxembourg"
-        Me.LblLuxembourg.Size = New System.Drawing.Size(86, 17)
+        Me.LblLuxembourg.Size = New System.Drawing.Size(65, 13)
         Me.LblLuxembourg.TabIndex = 29
         Me.LblLuxembourg.Text = "Luxembourg"
         '
         'btnSetPickingGroup
         '
-        Me.btnSetPickingGroup.Location = New System.Drawing.Point(12, 144)
-        Me.btnSetPickingGroup.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnSetPickingGroup.Location = New System.Drawing.Point(9, 117)
         Me.btnSetPickingGroup.Name = "btnSetPickingGroup"
-        Me.btnSetPickingGroup.Size = New System.Drawing.Size(171, 28)
+        Me.btnSetPickingGroup.Size = New System.Drawing.Size(128, 23)
         Me.btnSetPickingGroup.TabIndex = 28
         Me.btnSetPickingGroup.Text = "Set Picking Group"
         Me.btnSetPickingGroup.ToolTip = "Set Picking Group"
         '
         'btnLoadOrders
         '
-        Me.btnLoadOrders.Location = New System.Drawing.Point(12, 26)
-        Me.btnLoadOrders.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnLoadOrders.Location = New System.Drawing.Point(9, 21)
         Me.btnLoadOrders.Name = "btnLoadOrders"
-        Me.btnLoadOrders.Size = New System.Drawing.Size(171, 28)
+        Me.btnLoadOrders.Size = New System.Drawing.Size(128, 23)
         Me.btnLoadOrders.TabIndex = 24
         Me.btnLoadOrders.Text = "Load/Update Orders"
         Me.btnLoadOrders.ToolTip = "Assign DVD_ID to orders (due to OLD Abo Process)"
@@ -313,22 +295,19 @@ Partial Class frmListingOUT
         'TabResult
         '
         Me.TabResult.Controls.Add(Me.GridListingOut)
-        Me.TabResult.Margin = New System.Windows.Forms.Padding(4)
         Me.TabResult.Name = "TabResult"
-        Me.TabResult.Size = New System.Drawing.Size(1538, 258)
+        Me.TabResult.Size = New System.Drawing.Size(1151, 205)
         Me.TabResult.Text = "Result"
         '
         'GridListingOut
         '
         Me.GridListingOut.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GridListingOut.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4)
         Me.GridListingOut.EmbeddedNavigator.Name = ""
         Me.GridListingOut.FormsUseDefaultLookAndFeel = False
         Me.GridListingOut.Location = New System.Drawing.Point(0, 0)
         Me.GridListingOut.MainView = Me.GridViewListingOut
-        Me.GridListingOut.Margin = New System.Windows.Forms.Padding(4)
         Me.GridListingOut.Name = "GridListingOut"
-        Me.GridListingOut.Size = New System.Drawing.Size(1538, 258)
+        Me.GridListingOut.Size = New System.Drawing.Size(1151, 205)
         Me.GridListingOut.TabIndex = 1
         Me.GridListingOut.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewListingOut})
         '
@@ -336,7 +315,7 @@ Partial Class frmListingOUT
         '
         Me.GridViewListingOut.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand1})
         Me.GridViewListingOut.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.colOrders_id, Me.colCustomers_id, Me.coldelivery_country, Me.colProducts_id, Me.coldvd_id, Me.colBoxId, Me.colpibox_id, Me.colLanguage, Me.colpickgroup, Me.coldatepurchased, Me.colorders_type, Me.colpick_boxid, Me.coldate, Me.colserie, Me.colTitle, Me.colQtyStock})
-        Me.GridViewListingOut.CustomizationFormBounds = New System.Drawing.Rectangle(1454, 748, 216, 178)
+        Me.GridViewListingOut.CustomizationFormBounds = New System.Drawing.Rectangle(1384, 570, 216, 178)
         Me.GridViewListingOut.GridControl = Me.GridListingOut
         Me.GridViewListingOut.Name = "GridViewListingOut"
         Me.GridViewListingOut.OptionsSelection.MultiSelect = True
@@ -508,11 +487,10 @@ Partial Class frmListingOUT
         '
         'frmListingOUT
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1547, 327)
+        Me.ClientSize = New System.Drawing.Size(1160, 266)
         Me.Controls.Add(Me.TabControlListingOut)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmListingOUT"
         Me.Text = "frmListingOut"
         Me.Controls.SetChildIndex(Me.TabControlListingOut, 0)

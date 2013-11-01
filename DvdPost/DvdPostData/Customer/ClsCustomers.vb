@@ -103,7 +103,10 @@ Public Class ClsCustomersData
         ACTION_FROM_DISCOUNT = 6
         ACTION_FROM_ACTIVATION = 8
         ACTION_CHANGCARD = 18
+        ACTION_RECONDUCTION_ADULT_SVOD = 33
+        ACTION_RECONDUCTION_STOP_ADULT_SVOD = 34
     End Enum
+
     Public Enum DomiciliationStatus
 
         CREATE = 0
@@ -235,6 +238,11 @@ Public Class ClsCustomersData
         sql = " select * from customer_attributes a where a.customer_id = " & customers_id
         Return sql
     End Function
+    Public Shared Function getSelectSVOD(ByVal customers_id As Integer) As String
+        Dim sql As String
+        sql = " select * from customers_svod sv where sv.customer_id = " & customers_id
+        Return sql
+    End Function
 
     Public Shared Function getSelectAboHistory(ByVal customers_id As Integer) As String
         Dim sql As String
@@ -350,7 +358,7 @@ Public Class ClsCustomersData
                                                  ByVal streetCustomer As String, _
                                                  ByVal PostCodeCustomer As String, _
                                                  ByVal NumDom As String, _
-                                                 ByVal NumComm As String) As String
+                                                 ByVal NumComm As String, ByVal PPAgreementID As String) As String
         Dim sql As String
         Dim sqlWhere As String
         sql = " SELECT distinct c.*,ab.* " & _
@@ -366,6 +374,11 @@ Public Class ClsCustomersData
         If email <> String.Empty Then
             email = email.ToUpper()
             sqlWhere += " and c.customers_email_address like '%" & email & "%'"
+        End If
+
+        If PPAgreementID <> String.Empty Then
+            PPAgreementID = PPAgreementID.ToUpper()
+            sqlWhere += " and c.paypal_agreement_id like '%" & PPAgreementID & "%'"
         End If
 
         If NameCustomer <> String.Empty Then
@@ -597,7 +610,7 @@ Public Class ClsCustomersData
         sql = sql & " c.customers_email_address,"
         sql = sql & " concat(c.customers_firstname,' ',c.customers_lastname) customers_name,"
         sql = sql & " p.products_model,"
-        sql = sql & "if(c.customers_abo_discount_recurring_to_date > now(), 1, 0) as recurring_discount, "
+        sql = sql & "if(date(c.customers_abo_discount_recurring_to_date) > now(), 1, 0) as recurring_discount, "
         sql = sql & " c.customers_abo_validityto,"
         sql = sql & " c.activation_discount_code_id,"
         sql = sql & " c.activation_discount_code_type,"
@@ -640,7 +653,7 @@ Public Class ClsCustomersData
         sql = sql & " c.customers_email_address,"
         sql = sql & " concat(c.customers_firstname,' ',c.customers_lastname) customers_name,"
         sql = sql & " p.products_model,"
-        sql = sql & "if(c.customers_abo_discount_recurring_to_date > now(), 1, 0) as recurring_discount, "
+        sql = sql & "if(date(c.customers_abo_discount_recurring_to_date) > now(), 1, 0) as recurring_discount, "
         sql = sql & " c.customers_abo_validityto,"
         sql = sql & " c.activation_discount_code_id,"
         sql = sql & " c.activation_discount_code_type,"
@@ -660,6 +673,101 @@ Public Class ClsCustomersData
         sql = sql & " WHERE date(customers_abo_validityto) <= '" & strmysqldate & "'"
         sql = sql & " AND customers_abo = 1 "
         sql = sql & " AND customers_abo_payment_method = " & typePayment & " and customers_abo_suspended = 0 "
+
+
+        If customers_id > -1 Then
+            sql = sql & " AND c.customers_id = " & customers_id
+        Else
+            sql = sql & " AND EntityID = " & country_id
+        End If
+        Return sql
+    End Function
+
+    Public Shared Function GetUpdateADULTSVOD(ByVal customers_id As Integer, ByVal validity_period As String) As String
+        Dim sql As String
+
+        sql = "update customers_svod set validityto = date_add( now(), INTERVAL 1 " & validity_period & "), updated_at = now() " & _
+" where customer_id = " & customers_id & "; update customers set svod_adult = (case when svod_adult = 1 then 2 when svod_adult = 3 then 4 end) where svod_adult in(1,3) and customers_id = " & customers_id & " ;"
+
+        Return sql
+    End Function
+
+    Public Shared Function GetStopADULTSVOD(ByVal customers_id As Integer) As String
+        Dim sql As String
+
+        sql = "update customers set svod_adult = 0 where svod_adult = 4 and customers_id = " & customers_id
+
+        Return sql
+    End Function
+
+    Public Shared Function GetSelectReconductionADULTSVOD(ByVal typePayment As Integer, ByVal country_id As Integer, ByVal customers_id As Integer) As String
+        Dim sql As String
+
+        Dim strmysqldate As String = DVDPostTools.ClsDate.formatDate()
+
+        sql = "select c.customers_id,"
+        sql = sql & " c.customers_email_address,"
+        sql = sql & " concat(c.customers_firstname,' ',c.customers_lastname) customers_name,"
+        sql = sql & " c.customers_abo_payment_method,"
+        sql = sql & " cs.amount as products_price, "
+        sql = sql & " '' as amount, "
+        sql = sql & " cs.product_abo_id, "
+        sql = sql & " cs.product_abo_id customers_abo_type, "
+        sql = sql & " cs.product_abo_id customers_next_abo_type, "
+        sql = sql & " cs.validity_period, "
+        sql = sql & " 'pack' as products_model,"
+        sql = sql & " domiciliation_number,"
+        sql = sql & " c.ogone_card_type,"
+        sql = sql & " c.ogone_card_no,"
+        sql = sql & " c.ogone_exp_date,"
+        sql = sql & " c.paypal_agreement_id, c.paypal_transaction_id, "
+        sql = sql & " 0 payment_id, "
+        sql = sql & " c.svod_adult "
+        sql = sql & " FROM customers c join customers_svod cs on c.customers_id = cs.customer_id "
+        sql = sql & " WHERE date(cs.validityto) <= '" & strmysqldate & "'"
+        sql = sql & " AND c.customers_abo = 1 "
+        sql = sql & " AND c.customers_abo_payment_method = " & typePayment & " and c.customers_abo_suspended = 0 "
+        sql = sql & " AND c.svod_adult in (1, 2, 3, 4) "
+
+
+        If customers_id > -1 Then
+            sql = sql & " AND c.customers_id = " & customers_id
+        Else
+            sql = sql & " AND EntityID = " & country_id
+        End If
+        Return sql
+    End Function
+
+    Public Shared Function GetSelectPAYPALReconductionADULTSVOD(ByVal typePayment As Integer, ByVal country_id As Integer, ByVal customers_id As Integer) As String
+        Dim sql As String
+
+        Dim strmysqldate As String = DVDPostTools.ClsDate.formatDate()
+
+        sql = "select c.customers_id,"
+        sql = sql & " c.customers_email_address,"
+        sql = sql & " concat(c.customers_firstname,' ',c.customers_lastname) customers_name,"
+        sql = sql & " c.customers_abo_payment_method,"
+        sql = sql & " cs.amount as products_price, "
+        sql = sql & " '' as amount, "
+        sql = sql & " cs.product_abo_id, "
+        sql = sql & " cs.product_abo_id customers_abo_type, "
+        sql = sql & " cs.product_abo_id customers_next_abo_type, "
+        sql = sql & " cs.validity_period, "
+        sql = sql & " 'DVDPost subscription pack' as products_model,"
+        sql = sql & " domiciliation_number,"
+        sql = sql & " c.ogone_card_type,"
+        sql = sql & " c.ogone_card_no,"
+        sql = sql & " c.ogone_exp_date,"
+        sql = sql & " c.paypal_agreement_id, c.paypal_transaction_id, "
+        sql = sql & " 0 payment_id, "
+        sql = sql & " c.svod_adult, "
+        sql = sql & " c.paypal_agreement_id, c.paypal_transaction_id, " 'paypal
+        sql = sql & " 0 payment_id"
+        sql = sql & " FROM customers c join customers_svod cs on c.customers_id = cs.customer_id "
+        sql = sql & " WHERE date(cs.validityto) <= '" & strmysqldate & "'"
+        sql = sql & " AND c.customers_abo = 1 "
+        sql = sql & " AND c.customers_abo_payment_method = " & typePayment & " and c.customers_abo_suspended = 0 "
+        sql = sql & " AND c.svod_adult in (1, 2, 3, 4) "
 
 
         If customers_id > -1 Then

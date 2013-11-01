@@ -457,6 +457,7 @@
               <xs:element name="access_token_expires_at" msprop:Generator_UserColumnName="access_token_expires_at" msprop:Generator_ColumnVarNameInTable="columnaccess_token_expires_at" msprop:Generator_ColumnPropNameInRow="access_token_expires_at" msprop:Generator_ColumnPropNameInTable="access_token_expires_atColumn" type="xs:dateTime" minOccurs="0" />
               <xs:element name="sleep" msprop:Generator_UserColumnName="sleep" msprop:Generator_ColumnVarNameInTable="columnsleep" msprop:Generator_ColumnPropNameInRow="sleep" msprop:Generator_ColumnPropNameInTable="sleepColumn" type="xs:boolean" minOccurs="0" />
               <xs:element name="ppv_status_id" msprop:Generator_UserColumnName="ppv_status_id" msprop:Generator_ColumnPropNameInRow="ppv_status_id" msprop:Generator_ColumnVarNameInTable="columnppv_status_id" msprop:Generator_ColumnPropNameInTable="ppv_status_idColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="svod_adult" msprop:Generator_UserColumnName="svod_adult" msprop:Generator_ColumnVarNameInTable="columnsvod_adult" msprop:Generator_ColumnPropNameInRow="svod_adult" msprop:Generator_ColumnPropNameInTable="svod_adultColumn" type="xs:int" default="-1" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -507,6 +508,20 @@
             <xs:sequence>
               <xs:element name="ppv_status_id" msprop:Generator_UserColumnName="ppv_status_id" msprop:Generator_ColumnVarNameInTable="columnppv_status_id" msprop:Generator_ColumnPropNameInRow="ppv_status_id" msprop:Generator_ColumnPropNameInTable="ppv_status_idColumn" type="xs:int" minOccurs="0" />
               <xs:element name="ppv_status_name" msprop:Generator_UserColumnName="ppv_status_name" msprop:Generator_ColumnVarNameInTable="columnppv_status_name" msprop:Generator_ColumnPropNameInRow="ppv_status_name" msprop:Generator_ColumnPropNameInTable="ppv_status_nameColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="customers_svod" msprop:Generator_UserTableName="customers_svod" msprop:Generator_RowDeletedName="customers_svodRowDeleted" msprop:Generator_RowChangedName="customers_svodRowChanged" msprop:Generator_RowClassName="customers_svodRow" msprop:Generator_RowChangingName="customers_svodRowChanging" msprop:Generator_RowEvArgName="customers_svodRowChangeEvent" msprop:Generator_RowEvHandlerName="customers_svodRowChangeEventHandler" msprop:Generator_TableClassName="customers_svodDataTable" msprop:Generator_TableVarName="tablecustomers_svod" msprop:Generator_RowDeletingName="customers_svodRowDeleting" msprop:Generator_TablePropName="customers_svod">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="customer_id" msprop:Generator_UserColumnName="customer_id" msprop:Generator_ColumnVarNameInTable="columncustomer_id" msprop:Generator_ColumnPropNameInRow="customer_id" msprop:Generator_ColumnPropNameInTable="customer_idColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="validityto" msprop:Generator_UserColumnName="validityto" msprop:Generator_ColumnVarNameInTable="columnvalidityto" msprop:Generator_ColumnPropNameInRow="validityto" msprop:Generator_ColumnPropNameInTable="validitytoColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="validity_period" msprop:Generator_UserColumnName="validity_period" msprop:Generator_ColumnVarNameInTable="columnvalidity_period" msprop:Generator_ColumnPropNameInRow="validity_period" msprop:Generator_ColumnPropNameInTable="validity_periodColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="amount" msprop:Generator_UserColumnName="amount" msprop:Generator_ColumnVarNameInTable="columnamount" msprop:Generator_ColumnPropNameInRow="amount" msprop:Generator_ColumnPropNameInTable="amountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="product_abo_id" msprop:Generator_UserColumnName="product_abo_id" msprop:Generator_ColumnVarNameInTable="columnproduct_abo_id" msprop:Generator_ColumnPropNameInRow="product_abo_id" msprop:Generator_ColumnPropNameInTable="product_abo_idColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="created_at" msprop:Generator_UserColumnName="created_at" msprop:Generator_ColumnVarNameInTable="columncreated_at" msprop:Generator_ColumnPropNameInRow="created_at" msprop:Generator_ColumnPropNameInTable="created_atColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="updated_at" msprop:Generator_UserColumnName="updated_at" msprop:Generator_ColumnVarNameInTable="columnupdated_at" msprop:Generator_ColumnPropNameInRow="updated_at" msprop:Generator_ColumnPropNameInTable="updated_atColumn" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -464,8 +464,13 @@ Public Class frmDVD_Maint
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents Splitter2 As System.Windows.Forms.Splitter
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents BandedGridColumn7 As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents chkVodNextNL As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents chkVodNextLU As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents btnMoveToPlush As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents LabelControl48 As DevExpress.XtraEditors.LabelControl
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+        Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode
         Dim FilterCondition1 As DevExpress.XtraTreeList.FilterCondition = New DevExpress.XtraTreeList.FilterCondition
         Dim StyleFormatCondition1 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
         Dim StyleFormatCondition2 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
@@ -484,6 +489,7 @@ Public Class frmDVD_Maint
         Me.cmbLanguages = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.colproducts_name = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.colproducts_model = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+        Me.BandedGridColumn7 = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl
         Me.lblDirectorSearch = New DevExpress.XtraEditors.LabelControl
         Me.txtDirectorSearch = New DevExpress.XtraEditors.TextEdit
@@ -513,6 +519,7 @@ Public Class frmDVD_Maint
         Me.GroupControl2 = New DevExpress.XtraEditors.GroupControl
         Me.MemoEdit1 = New DevExpress.XtraEditors.MemoEdit
         Me.PanelControl3 = New DevExpress.XtraEditors.PanelControl
+        Me.btnMoveToPlush = New DevExpress.XtraEditors.SimpleButton
         Me.btnDeleteFromliste = New DevExpress.XtraEditors.SimpleButton
         Me.btnCopy = New DevExpress.XtraEditors.SimpleButton
         Me.btnReCalcQty = New DevExpress.XtraEditors.SimpleButton
@@ -543,6 +550,8 @@ Public Class frmDVD_Maint
         Me.cmbSerie = New DevExpress.XtraEditors.LookUpEdit
         Me.lblSeries = New DevExpress.XtraEditors.LabelControl
         Me.grpMain = New DevExpress.XtraEditors.GroupControl
+        Me.chkVodNextNL = New DevExpress.XtraEditors.CheckEdit
+        Me.chkVodNextLU = New DevExpress.XtraEditors.CheckEdit
         Me.chkVodNext = New DevExpress.XtraEditors.CheckEdit
         Me.cmbProducts_product_type = New DevExpress.XtraEditors.LookUpEdit
         Me.LabelControl52 = New DevExpress.XtraEditors.LabelControl
@@ -942,6 +951,8 @@ Public Class frmDVD_Maint
         CType(Me.cmbSerie.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grpMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpMain.SuspendLayout()
+        CType(Me.chkVodNextNL.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkVodNextLU.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkVodNext.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbProducts_product_type.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtIMDB_ID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1221,12 +1232,13 @@ Public Class frmDVD_Maint
         'GridViewSearch
         '
         Me.GridViewSearch.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand1})
-        Me.GridViewSearch.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.colproducts_id, Me.collanguage_id, Me.colproducts_name, Me.colproducts_model})
+        Me.GridViewSearch.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.colproducts_id, Me.collanguage_id, Me.colproducts_name, Me.colproducts_model, Me.BandedGridColumn7})
         Me.GridViewSearch.GridControl = Me.GridProductsDVD
         Me.GridViewSearch.Name = "GridViewSearch"
         Me.GridViewSearch.OptionsView.ShowAutoFilterRow = True
         Me.GridViewSearch.OptionsView.ShowBands = False
         Me.GridViewSearch.OptionsView.ShowFooter = True
+        Me.GridViewSearch.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.colproducts_model, DevExpress.Data.ColumnSortOrder.Ascending)})
         '
         'GridBand1
         '
@@ -1235,8 +1247,10 @@ Public Class frmDVD_Maint
         Me.GridBand1.Columns.Add(Me.collanguage_id)
         Me.GridBand1.Columns.Add(Me.colproducts_name)
         Me.GridBand1.Columns.Add(Me.colproducts_model)
+        Me.GridBand1.Columns.Add(Me.BandedGridColumn7)
+        Me.GridBand1.MinWidth = 20
         Me.GridBand1.Name = "GridBand1"
-        Me.GridBand1.Width = 806
+        Me.GridBand1.Width = 774
         '
         'colproducts_id
         '
@@ -1259,7 +1273,7 @@ Public Class frmDVD_Maint
         Me.collanguage_id.Name = "collanguage_id"
         Me.collanguage_id.OptionsColumn.AllowEdit = False
         Me.collanguage_id.Visible = True
-        Me.collanguage_id.Width = 147
+        Me.collanguage_id.Width = 84
         '
         'cmbLanguages
         '
@@ -1278,7 +1292,7 @@ Public Class frmDVD_Maint
         Me.colproducts_name.Name = "colproducts_name"
         Me.colproducts_name.OptionsColumn.AllowEdit = False
         Me.colproducts_name.Visible = True
-        Me.colproducts_name.Width = 219
+        Me.colproducts_name.Width = 326
         '
         'colproducts_model
         '
@@ -1287,7 +1301,15 @@ Public Class frmDVD_Maint
         Me.colproducts_model.Name = "colproducts_model"
         Me.colproducts_model.OptionsColumn.AllowEdit = False
         Me.colproducts_model.Visible = True
-        Me.colproducts_model.Width = 365
+        Me.colproducts_model.Width = 144
+        '
+        'BandedGridColumn7
+        '
+        Me.BandedGridColumn7.Caption = "products_media"
+        Me.BandedGridColumn7.FieldName = "products_media"
+        Me.BandedGridColumn7.Name = "BandedGridColumn7"
+        Me.BandedGridColumn7.Visible = True
+        Me.BandedGridColumn7.Width = 145
         '
         'PanelControl2
         '
@@ -1558,6 +1580,7 @@ Public Class frmDVD_Maint
         'PanelControl3
         '
         Me.PanelControl3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
+        Me.PanelControl3.Controls.Add(Me.btnMoveToPlush)
         Me.PanelControl3.Controls.Add(Me.btnDeleteFromliste)
         Me.PanelControl3.Controls.Add(Me.btnCopy)
         Me.PanelControl3.Controls.Add(Me.btnReCalcQty)
@@ -1567,6 +1590,14 @@ Public Class frmDVD_Maint
         Me.PanelControl3.Name = "PanelControl3"
         Me.PanelControl3.Size = New System.Drawing.Size(1047, 32)
         Me.PanelControl3.TabIndex = 4
+        '
+        'btnMoveToPlush
+        '
+        Me.btnMoveToPlush.Location = New System.Drawing.Point(497, 9)
+        Me.btnMoveToPlush.Name = "btnMoveToPlush"
+        Me.btnMoveToPlush.Size = New System.Drawing.Size(105, 23)
+        Me.btnMoveToPlush.TabIndex = 4
+        Me.btnMoveToPlush.Text = "Move to Plush"
         '
         'btnDeleteFromliste
         '
@@ -1625,6 +1656,8 @@ Public Class frmDVD_Maint
         Me.GridActors.EmbeddedNavigator.Enabled = False
         Me.GridActors.EmbeddedNavigator.Name = ""
         Me.GridActors.FormsUseDefaultLookAndFeel = False
+        GridLevelNode1.RelationName = "Level1"
+        Me.GridActors.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode1})
         Me.GridActors.Location = New System.Drawing.Point(2, 20)
         Me.GridActors.MainView = Me.GridViewActors
         Me.GridActors.Name = "GridActors"
@@ -1875,6 +1908,8 @@ Public Class frmDVD_Maint
         'grpMain
         '
         Me.grpMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
+        Me.grpMain.Controls.Add(Me.chkVodNextNL)
+        Me.grpMain.Controls.Add(Me.chkVodNextLU)
         Me.grpMain.Controls.Add(Me.chkVodNext)
         Me.grpMain.Controls.Add(Me.cmbProducts_product_type)
         Me.grpMain.Controls.Add(Me.LabelControl52)
@@ -1931,6 +1966,32 @@ Public Class frmDVD_Maint
         Me.grpMain.Size = New System.Drawing.Size(440, 465)
         Me.grpMain.TabIndex = 0
         Me.grpMain.Text = "General Info"
+        '
+        'chkVodNextNL
+        '
+        Me.chkVodNextNL.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "products.vod_next_nl", True))
+        Me.chkVodNextNL.EditValue = 0
+        Me.chkVodNextNL.Enabled = False
+        Me.chkVodNextNL.Location = New System.Drawing.Point(326, 425)
+        Me.chkVodNextNL.Name = "chkVodNextNL"
+        Me.chkVodNextNL.Properties.Caption = "Soon in VOD Nl"
+        Me.chkVodNextNL.Properties.ValueChecked = 1
+        Me.chkVodNextNL.Properties.ValueUnchecked = 0
+        Me.chkVodNextNL.Size = New System.Drawing.Size(100, 19)
+        Me.chkVodNextNL.TabIndex = 56
+        '
+        'chkVodNextLU
+        '
+        Me.chkVodNextLU.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "products.vod_next_lux", True))
+        Me.chkVodNextLU.EditValue = 0
+        Me.chkVodNextLU.Enabled = False
+        Me.chkVodNextLU.Location = New System.Drawing.Point(326, 407)
+        Me.chkVodNextLU.Name = "chkVodNextLU"
+        Me.chkVodNextLU.Properties.Caption = "Soon in VOD Lux"
+        Me.chkVodNextLU.Properties.ValueChecked = 1
+        Me.chkVodNextLU.Properties.ValueUnchecked = 0
+        Me.chkVodNextLU.Size = New System.Drawing.Size(106, 19)
+        Me.chkVodNextLU.TabIndex = 55
         '
         'chkVodNext
         '
@@ -5523,6 +5584,8 @@ Public Class frmDVD_Maint
         CType(Me.grpMain, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grpMain.ResumeLayout(False)
         Me.grpMain.PerformLayout()
+        CType(Me.chkVodNextNL.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkVodNextLU.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkVodNext.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbProducts_product_type.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtIMDB_ID.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -6146,7 +6209,7 @@ Public Class frmDVD_Maint
     End Sub
     Private Sub LoadActors()
 
-        DvdPostData.clsConnection.FillDataSet(objDS.actors, "SELECT   actors_id,  actors_name,  actors_image,  actors_dateofbirth ,  birth_place,  death_at,  death_place,  actors_description ,  actors_awards ,  top_actors,  actors_type,  cached_slug, image_active, focus, sexuality  FROM actors order by actors_name ")
+        DvdPostData.clsConnection.FillDataSet(objDS.actors, "SELECT   actors_id,  actors_name,  actors_image,  actors_dateofbirth ,  actors_description ,  actors_awards ,  top_actors,  death_at,  death_place,   actors_type,  cached_slug, image_active, focus, sexuality , birth_place   FROM actors order by actors_name ")
         'DvdPostData.clsConnection.FillDataSet(objDS.actors, "SELECT * FROM actors order by actors_name ")
     End Sub
     Private Sub loadSeries()
@@ -6518,6 +6581,8 @@ Public Class frmDVD_Maint
         chkInTheBagsNext.Enabled = Enabling
         chkProduct_Next.Enabled = Enabling
         chkVodNext.Enabled = Enabling
+        chkVodNextLU.Enabled = Enabling
+        chkVodNextNL.Enabled = Enabling
         'Categories
         TreeListCategories.OptionsBehavior.Editable = Enabling
         TreeListThemes.OptionsBehavior.Editable = Enabling
@@ -6607,7 +6672,7 @@ Public Class frmDVD_Maint
             director = " and P.products_directors_id in (select directors_id from directors where directors_name like '%" & txtDirectorSearch.Text.Trim & "%' ) "
         End If
 
-        _SQLTxt = "SELECT PD.products_id, PD.language_id, PD.products_name , P.products_model as products_model " & _
+        _SQLTxt = "SELECT PD.products_id, PD.language_id, PD.products_name , P.products_model as products_model, P.products_media " & _
                   " FROM products_description PD " & _
                   " Left join products P on P.products_id = PD.products_id " & _
                   " where 1 = 1" & searchTitle & searchImdb & searchImdb_id_serie & searchProducts_id & productsMedia & director & _
@@ -7389,5 +7454,25 @@ Public Class frmDVD_Maint
 
     Private Sub txtImageEN_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtImageEN.Leave
         ValidateImagePath(sender)
+    End Sub
+
+    Private Sub btnMoveToPlush_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMoveToPlush.Click
+        Dim sqlCall As String = "call spProductToPlush({0})"
+        'Dim sqlVODExists As String = "select count(*) from stremaing_products where imdb_id = txtIMDB_ID.EditValue and status <> deleted "
+        'Dim vodExists As Integer = DvdPostData.clsConnection.ExecuteScalar(sqlVODExists, DvdPostData.clsConnection.typeAccessDb.READ)
+        'If vodExists = 0 Then
+        '    MsgBox("This movie is not available in OVD")
+        '    Return
+        'End If
+
+        sqlCall = String.Format(sqlCall, txtIMDB_ID.EditValue)
+        Try
+            DvdPostData.clsConnection.ExecuteNonQuery(sqlCall)
+            MsgBox("Movie transfered to Plush", MsgBoxStyle.OkOnly)
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.OkOnly, "Movie not transfered to Plsuh")
+            DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.BO, ex)
+        End Try
+
     End Sub
 End Class

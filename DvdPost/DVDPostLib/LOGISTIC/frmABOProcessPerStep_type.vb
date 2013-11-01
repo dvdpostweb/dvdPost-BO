@@ -419,6 +419,7 @@ Public Class frmABOProcessPerStep_type
             If served Then
                 If compensation Then
                     customer.nb_compensation -= 1
+                    customer.statSend.dvd_compensation -= 1
                 Else
                     If Not customer.statSend.IllimitedCredit Then
                         customer.statSend.credit -= 1
@@ -713,6 +714,8 @@ Public Class frmABOProcessPerStep_type
 
         ' quand on calcul par rapport aux credit il ne faut pas tenir compte des compensations (car gratuites)
         ToSend -= stat.statSend.dvd_compensation
+        stat.nb_request_max -= stat.statSend.dvd_compensation
+
         If Not stat.statSend.IllimitedCredit Then
             limitMaxCredit(ToSend, stat.statSend.credit, stat.statSend.remaindvd)
         End If

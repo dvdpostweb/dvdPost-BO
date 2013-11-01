@@ -96,6 +96,13 @@ Public Class frmSearchProduct
     Friend WithEvents lblProductMedia As DevExpress.XtraEditors.LabelControl
     Friend WithEvents colCustHigh As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colVodExists As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colProductsMedia As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents cmbActiveCustomers As System.Windows.Forms.ComboBox
+    Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents customers_active As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents customers_not_active As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents LabelControl4 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtAvailabilityDate As DevExpress.XtraEditors.DateEdit
     Friend WithEvents colAvailability As DevExpress.XtraGrid.Columns.GridColumn
 
 
@@ -105,6 +112,8 @@ Public Class frmSearchProduct
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSearchProduct))
         Me.tabSearch = New DevExpress.XtraTab.XtraTabPage
         Me.GroupSearch = New DevExpress.XtraEditors.GroupControl
+        Me.cmbActiveCustomers = New System.Windows.Forms.ComboBox
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl
         Me.cmbDirector = New DevExpress.XtraEditors.LookUpEdit
         Me.lblDirector = New DevExpress.XtraEditors.LabelControl
         Me.cmbProductMedia = New DevExpress.XtraEditors.LookUpEdit
@@ -157,14 +166,19 @@ Public Class frmSearchProduct
         Me.colCptDvdOK = New DevExpress.XtraGrid.Columns.GridColumn
         Me.colcpt_cust = New DevExpress.XtraGrid.Columns.GridColumn
         Me.coldate = New DevExpress.XtraGrid.Columns.GridColumn
+        Me.customers_active = New DevExpress.XtraGrid.Columns.GridColumn
+        Me.customers_not_active = New DevExpress.XtraGrid.Columns.GridColumn
         Me.colCustHigh = New DevExpress.XtraGrid.Columns.GridColumn
+        Me.colVodExists = New DevExpress.XtraGrid.Columns.GridColumn
+        Me.colProductsMedia = New DevExpress.XtraGrid.Columns.GridColumn
         Me.RepositoryItemLookUpEditLanguage = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.DsSite1 = New DVDPostLib.DsSite
         Me.chkSelected = New DevExpress.XtraEditors.CheckEdit
         Me.lblSelected = New DevExpress.XtraEditors.LabelControl
         Me.ContextMenu1 = New DVDPostBuziness.contextMenu
         Me.XtraTabControlTheme = New DevExpress.XtraTab.XtraTabControl
-        Me.colVodExists = New DevExpress.XtraGrid.Columns.GridColumn
+        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl
+        Me.txtAvailabilityDate = New DevExpress.XtraEditors.DateEdit
         CType(Me.cmbViewListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtQuickSearchRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbReportListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -204,6 +218,8 @@ Public Class frmSearchProduct
         CType(Me.chkSelected.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.XtraTabControlTheme, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabControlTheme.SuspendLayout()
+        CType(Me.txtAvailabilityDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtAvailabilityDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tabSearch
@@ -215,6 +231,10 @@ Public Class frmSearchProduct
         'GroupSearch
         '
         resources.ApplyResources(Me.GroupSearch, "GroupSearch")
+        Me.GroupSearch.Controls.Add(Me.LabelControl4)
+        Me.GroupSearch.Controls.Add(Me.txtAvailabilityDate)
+        Me.GroupSearch.Controls.Add(Me.cmbActiveCustomers)
+        Me.GroupSearch.Controls.Add(Me.LabelControl3)
         Me.GroupSearch.Controls.Add(Me.cmbDirector)
         Me.GroupSearch.Controls.Add(Me.lblDirector)
         Me.GroupSearch.Controls.Add(Me.cmbProductMedia)
@@ -248,6 +268,18 @@ Public Class frmSearchProduct
         Me.GroupSearch.Controls.Add(Me.btnSearch)
         Me.GroupSearch.Controls.Add(Me.lblTheme)
         Me.GroupSearch.Name = "GroupSearch"
+        '
+        'cmbActiveCustomers
+        '
+        Me.cmbActiveCustomers.FormattingEnabled = True
+        Me.cmbActiveCustomers.Items.AddRange(New Object() {resources.GetString("cmbActiveCustomers.Items"), resources.GetString("cmbActiveCustomers.Items1")})
+        resources.ApplyResources(Me.cmbActiveCustomers, "cmbActiveCustomers")
+        Me.cmbActiveCustomers.Name = "cmbActiveCustomers"
+        '
+        'LabelControl3
+        '
+        resources.ApplyResources(Me.LabelControl3, "LabelControl3")
+        Me.LabelControl3.Name = "LabelControl3"
         '
         'cmbDirector
         '
@@ -464,7 +496,7 @@ Public Class frmSearchProduct
         '
         'GridViewProducts
         '
-        Me.GridViewProducts.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colId, Me.colName, Me.colStatus, Me.colAvailability, Me.colSerie, Me.colStudio, Me.colProductNext, Me.colRating, Me.colProductType, Me.colCptDvdOK, Me.colcpt_cust, Me.coldate, Me.colCustHigh, Me.colVodExists})
+        Me.GridViewProducts.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colId, Me.colName, Me.colStatus, Me.colAvailability, Me.colSerie, Me.colStudio, Me.colProductNext, Me.colRating, Me.colProductType, Me.colCptDvdOK, Me.colcpt_cust, Me.coldate, Me.customers_active, Me.customers_not_active, Me.colCustHigh, Me.colVodExists, Me.colProductsMedia})
         Me.GridViewProducts.CustomizationFormBounds = New System.Drawing.Rectangle(1382, 593, 218, 205)
         Me.GridViewProducts.GridControl = Me.GridProducts
         Me.GridViewProducts.Name = "GridViewProducts"
@@ -597,11 +629,35 @@ Public Class frmSearchProduct
         Me.coldate.FieldName = "products_date_added"
         Me.coldate.Name = "coldate"
         '
+        'customers_active
+        '
+        resources.ApplyResources(Me.customers_active, "customers_active")
+        Me.customers_active.FieldName = "customers_active"
+        Me.customers_active.Name = "customers_active"
+        '
+        'customers_not_active
+        '
+        resources.ApplyResources(Me.customers_not_active, "customers_not_active")
+        Me.customers_not_active.FieldName = "customers_not_active"
+        Me.customers_not_active.Name = "customers_not_active"
+        '
         'colCustHigh
         '
         resources.ApplyResources(Me.colCustHigh, "colCustHigh")
         Me.colCustHigh.FieldName = "cutomers_high"
         Me.colCustHigh.Name = "colCustHigh"
+        '
+        'colVodExists
+        '
+        resources.ApplyResources(Me.colVodExists, "colVodExists")
+        Me.colVodExists.FieldName = "vod_exists"
+        Me.colVodExists.Name = "colVodExists"
+        '
+        'colProductsMedia
+        '
+        resources.ApplyResources(Me.colProductsMedia, "colProductsMedia")
+        Me.colProductsMedia.FieldName = "products_media"
+        Me.colProductsMedia.Name = "colProductsMedia"
         '
         'RepositoryItemLookUpEditLanguage
         '
@@ -638,11 +694,18 @@ Public Class frmSearchProduct
         Me.XtraTabControlTheme.SelectedTabPage = Me.tabResult
         Me.XtraTabControlTheme.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.tabSearch, Me.tabResult})
         '
-        'colVodExists
+        'LabelControl4
         '
-        resources.ApplyResources(Me.colVodExists, "colVodExists")
-        Me.colVodExists.FieldName = "vod_exists"
-        Me.colVodExists.Name = "colVodExists"
+        resources.ApplyResources(Me.LabelControl4, "LabelControl4")
+        Me.LabelControl4.Name = "LabelControl4"
+        '
+        'txtAvailabilityDate
+        '
+        Me.txtAvailabilityDate.EditValue = Nothing
+        resources.ApplyResources(Me.txtAvailabilityDate, "txtAvailabilityDate")
+        Me.txtAvailabilityDate.Name = "txtAvailabilityDate"
+        Me.txtAvailabilityDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(CType(resources.GetObject("DateEdit1.Properties.Buttons"), DevExpress.XtraEditors.Controls.ButtonPredefines))})
+        Me.txtAvailabilityDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
         '
         'frmSearchProduct
         '
@@ -690,6 +753,8 @@ Public Class frmSearchProduct
         CType(Me.chkSelected.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.XtraTabControlTheme, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabControlTheme.ResumeLayout(False)
+        CType(Me.txtAvailabilityDate.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtAvailabilityDate.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1011,6 +1076,12 @@ Public Class frmSearchProduct
 
         Dim sql As String
         Dim dt As DataTable
+        Dim cust_active As String
+        If cmbActiveCustomers.Text.Equals("Active") Then
+            cust_active = " customers_abo = 1 and customers_abo_suspended <> 2 "
+        Else
+            cust_active = " ( customers_abo = 0 or customers_abo_suspended = 2 ) "
+        End If
 
         sql = DvdPostData.clsProductDvd.getSelectSearchViewProduct(cmbCategorie.EditValue, _
                                                                    cmbTheme.EditValue, _
@@ -1025,7 +1096,11 @@ Public Class frmSearchProduct
                                                                    cmbRating.Text, _
                                                                    cmbProductType.Text, _
                                                                    cmbProductMedia.Text, _
-                                                                   chkProductNext.CheckState, txtFromDate.EditValue, txtToDate.EditValue)
+                                                                   chkProductNext.CheckState, _
+                                                                   txtAvailabilityDate.EditValue, _
+                                                                   txtFromDate.EditValue, _
+                                                                   txtToDate.EditValue, _
+                                                                   cust_active)
 
 
         '  _sql = DvdPostData.clsThemeTop.GetSearch(id, title, kind, theme_event)

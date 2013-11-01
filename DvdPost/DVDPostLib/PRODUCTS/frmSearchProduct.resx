@@ -122,10 +122,119 @@
     <value>GrowOnly</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="LabelControl4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 157</value>
+  </data>
+  <data name="LabelControl4.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="LabelControl4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>77, 13</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="LabelControl4.TabIndex" type="System.Int32, mscorlib">
+    <value>92</value>
+  </data>
+  <data name="LabelControl4.Text" xml:space="preserve">
+    <value>Availability Date</value>
+  </data>
+  <data name="&gt;&gt;LabelControl4.Name" xml:space="preserve">
+    <value>LabelControl4</value>
+  </data>
+  <data name="&gt;&gt;LabelControl4.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;LabelControl4.Parent" xml:space="preserve">
+    <value>GroupSearch</value>
+  </data>
+  <data name="&gt;&gt;LabelControl4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtAvailabilityDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 154</value>
+  </data>
+  <data name="txtAvailabilityDate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <assembly alias="DevExpress.Utils.v8.1" name="DevExpress.Utils.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
+  <data name="DateEdit1.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v8.1">
+    <value>Combo</value>
+  </data>
+  <data name="txtAvailabilityDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 20</value>
+  </data>
+  <data name="txtAvailabilityDate.TabIndex" type="System.Int32, mscorlib">
+    <value>91</value>
+  </data>
+  <data name="&gt;&gt;txtAvailabilityDate.Name" xml:space="preserve">
+    <value>txtAvailabilityDate</value>
+  </data>
+  <data name="&gt;&gt;txtAvailabilityDate.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.DateEdit, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;txtAvailabilityDate.Parent" xml:space="preserve">
+    <value>GroupSearch</value>
+  </data>
+  <data name="&gt;&gt;txtAvailabilityDate.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cmbActiveCustomers.Items" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="cmbActiveCustomers.Items1" xml:space="preserve">
+    <value>Not Active</value>
+  </data>
+  <data name="cmbActiveCustomers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>104, 221</value>
+  </data>
+  <data name="cmbActiveCustomers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 21</value>
+  </data>
+  <data name="cmbActiveCustomers.TabIndex" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
+  <data name="cmbActiveCustomers.Text" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="&gt;&gt;cmbActiveCustomers.Name" xml:space="preserve">
+    <value>cmbActiveCustomers</value>
+  </data>
+  <data name="&gt;&gt;cmbActiveCustomers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmbActiveCustomers.Parent" xml:space="preserve">
+    <value>GroupSearch</value>
+  </data>
+  <data name="&gt;&gt;cmbActiveCustomers.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="LabelControl3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 226</value>
+  </data>
+  <data name="LabelControl3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 13</value>
+  </data>
+  <data name="LabelControl3.TabIndex" type="System.Int32, mscorlib">
+    <value>88</value>
+  </data>
+  <data name="LabelControl3.Text" xml:space="preserve">
+    <value>Customers Active</value>
+  </data>
+  <data name="&gt;&gt;LabelControl3.Name" xml:space="preserve">
+    <value>LabelControl3</value>
+  </data>
+  <data name="&gt;&gt;LabelControl3.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;LabelControl3.Parent" xml:space="preserve">
+    <value>GroupSearch</value>
+  </data>
+  <data name="&gt;&gt;LabelControl3.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="cmbDirector.Location" type="System.Drawing.Point, System.Drawing">
     <value>548, 62</value>
   </data>
-  <assembly alias="DevExpress.Utils.v8.1" name="DevExpress.Utils.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1" />
   <data name="cmbDirector.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v8.1">
     <value>Combo</value>
   </data>
@@ -135,7 +244,6 @@
   <data name="cmbDirector.Size" type="System.Drawing.Size, System.Drawing">
     <value>141, 20</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="cmbDirector.TabIndex" type="System.Int32, mscorlib">
     <value>87</value>
   </data>
@@ -149,7 +257,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;cmbDirector.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>4</value>
   </data>
   <data name="lblDirector.Location" type="System.Drawing.Point, System.Drawing">
     <value>470, 65</value>
@@ -173,7 +281,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;lblDirector.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="cmbProductMedia.Location" type="System.Drawing.Point, System.Drawing">
     <value>548, 31</value>
@@ -200,7 +308,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;cmbProductMedia.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <data name="lblProductMedia.Location" type="System.Drawing.Point, System.Drawing">
     <value>470, 31</value>
@@ -224,10 +332,10 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;lblProductMedia.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="LabelControl2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>198, 169</value>
+    <value>198, 186</value>
   </data>
   <data name="LabelControl2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -251,10 +359,10 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;LabelControl2.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>8</value>
   </data>
   <data name="txtToDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>218, 164</value>
+    <value>218, 181</value>
   </data>
   <data name="txtToDate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -278,10 +386,10 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;txtToDate.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="LabelControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 167</value>
+    <value>5, 184</value>
   </data>
   <data name="LabelControl1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -305,10 +413,10 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;LabelControl1.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>10</value>
   </data>
   <data name="txtFromDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 164</value>
+    <value>81, 181</value>
   </data>
   <data name="txtFromDate.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -332,7 +440,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;txtFromDate.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>11</value>
   </data>
   <data name="cmbProductType.Location" type="System.Drawing.Point, System.Drawing">
     <value>548, 96</value>
@@ -359,7 +467,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;cmbProductType.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>12</value>
   </data>
   <data name="lblProductType.Location" type="System.Drawing.Point, System.Drawing">
     <value>470, 98</value>
@@ -383,7 +491,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;lblProductType.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>13</value>
   </data>
   <data name="cmbRating.Location" type="System.Drawing.Point, System.Drawing">
     <value>346, 96</value>
@@ -410,7 +518,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;cmbRating.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>14</value>
   </data>
   <data name="lblRating.Location" type="System.Drawing.Point, System.Drawing">
     <value>277, 98</value>
@@ -434,10 +542,10 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;lblRating.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>15</value>
   </data>
   <data name="chkProductNext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>344, 167</value>
+    <value>344, 184</value>
   </data>
   <data name="chkProductNext.Properties.Caption" xml:space="preserve">
     <value>Product Next</value>
@@ -458,7 +566,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;chkProductNext.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>16</value>
   </data>
   <data name="cmbActor.Location" type="System.Drawing.Point, System.Drawing">
     <value>548, 202</value>
@@ -488,7 +596,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;cmbActor.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>17</value>
   </data>
   <data name="lblActors.Location" type="System.Drawing.Point, System.Drawing">
     <value>470, 207</value>
@@ -515,7 +623,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;lblActors.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>18</value>
   </data>
   <data name="cmbStudio.Location" type="System.Drawing.Point, System.Drawing">
     <value>82, 62</value>
@@ -542,7 +650,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;cmbStudio.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>19</value>
   </data>
   <data name="cmbSerie.Location" type="System.Drawing.Point, System.Drawing">
     <value>82, 31</value>
@@ -569,7 +677,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;cmbSerie.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>20</value>
   </data>
   <data name="cmbSubtitle.Location" type="System.Drawing.Point, System.Drawing">
     <value>346, 62</value>
@@ -596,7 +704,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;cmbSubtitle.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>21</value>
   </data>
   <data name="lblSubtitle.Location" type="System.Drawing.Point, System.Drawing">
     <value>277, 65</value>
@@ -620,7 +728,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;lblSubtitle.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>22</value>
   </data>
   <data name="cmbLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>346, 31</value>
@@ -647,7 +755,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;cmbLanguage.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>23</value>
   </data>
   <data name="lblLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>277, 31</value>
@@ -671,7 +779,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;lblLanguage.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>24</value>
   </data>
   <data name="lblSerie.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 31</value>
@@ -695,7 +803,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;lblSerie.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>25</value>
   </data>
   <data name="lblStudio.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 65</value>
@@ -719,7 +827,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;lblStudio.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>26</value>
   </data>
   <data name="cmbTheme.Location" type="System.Drawing.Point, System.Drawing">
     <value>548, 166</value>
@@ -749,7 +857,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;cmbTheme.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>27</value>
   </data>
   <data name="cmbCategorie.Location" type="System.Drawing.Point, System.Drawing">
     <value>548, 133</value>
@@ -779,7 +887,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;cmbCategorie.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>28</value>
   </data>
   <data name="cmbAvailability.Location" type="System.Drawing.Point, System.Drawing">
     <value>82, 127</value>
@@ -806,7 +914,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;cmbAvailability.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>29</value>
   </data>
   <data name="lblAvailability.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 132</value>
@@ -830,7 +938,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;lblAvailability.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>30</value>
   </data>
   <data name="cmbStatus.Location" type="System.Drawing.Point, System.Drawing">
     <value>82, 96</value>
@@ -857,7 +965,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;cmbStatus.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>31</value>
   </data>
   <data name="lblStatus.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, 98</value>
@@ -881,7 +989,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;lblStatus.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>32</value>
   </data>
   <data name="lblCategorie.Location" type="System.Drawing.Point, System.Drawing">
     <value>470, 135</value>
@@ -908,7 +1016,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;lblCategorie.ZOrder" xml:space="preserve">
-    <value>29</value>
+    <value>33</value>
   </data>
   <data name="btnSearch.Location" type="System.Drawing.Point, System.Drawing">
     <value>548, 250</value>
@@ -932,7 +1040,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;btnSearch.ZOrder" xml:space="preserve">
-    <value>30</value>
+    <value>34</value>
   </data>
   <data name="lblTheme.Location" type="System.Drawing.Point, System.Drawing">
     <value>470, 171</value>
@@ -959,7 +1067,7 @@
     <value>GroupSearch</value>
   </data>
   <data name="&gt;&gt;lblTheme.ZOrder" xml:space="preserve">
-    <value>31</value>
+    <value>35</value>
   </data>
   <data name="GroupSearch.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 25</value>
@@ -1018,9 +1126,6 @@
   <data name="colId.VisibleIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="colId.Width" type="System.Int32, mscorlib">
-    <value>81</value>
-  </data>
   <data name="colName.Caption" xml:space="preserve">
     <value>Title</value>
   </data>
@@ -1031,7 +1136,7 @@
     <value>1</value>
   </data>
   <data name="colName.Width" type="System.Int32, mscorlib">
-    <value>228</value>
+    <value>164</value>
   </data>
   <data name="colStatus.Caption" xml:space="preserve">
     <value>status</value>
@@ -1052,7 +1157,7 @@
     <value>2</value>
   </data>
   <data name="colStatus.Width" type="System.Int32, mscorlib">
-    <value>99</value>
+    <value>71</value>
   </data>
   <data name="colAvailability.Caption" xml:space="preserve">
     <value>availability</value>
@@ -1073,7 +1178,7 @@
     <value>3</value>
   </data>
   <data name="colAvailability.Width" type="System.Int32, mscorlib">
-    <value>94</value>
+    <value>67</value>
   </data>
   <data name="colSerie.Caption" xml:space="preserve">
     <value>serie</value>
@@ -1094,7 +1199,7 @@
     <value>4</value>
   </data>
   <data name="colSerie.Width" type="System.Int32, mscorlib">
-    <value>114</value>
+    <value>81</value>
   </data>
   <data name="colStudio.Caption" xml:space="preserve">
     <value>studio</value>
@@ -1115,7 +1220,7 @@
     <value>5</value>
   </data>
   <data name="colStudio.Width" type="System.Int32, mscorlib">
-    <value>86</value>
+    <value>61</value>
   </data>
   <data name="colProductNext.Caption" xml:space="preserve">
     <value>product next</value>
@@ -1136,7 +1241,7 @@
     <value>6</value>
   </data>
   <data name="colRating.Width" type="System.Int32, mscorlib">
-    <value>136</value>
+    <value>98</value>
   </data>
   <data name="colProductType.Caption" xml:space="preserve">
     <value>product type</value>
@@ -1148,7 +1253,7 @@
     <value>7</value>
   </data>
   <data name="colProductType.Width" type="System.Int32, mscorlib">
-    <value>103</value>
+    <value>74</value>
   </data>
   <data name="colCptDvdOK.Caption" xml:space="preserve">
     <value># dvd ok</value>
@@ -1160,7 +1265,7 @@
     <value>8</value>
   </data>
   <data name="colCptDvdOK.Width" type="System.Int32, mscorlib">
-    <value>100</value>
+    <value>72</value>
   </data>
   <data name="colcpt_cust.Caption" xml:space="preserve">
     <value># cust wishlist</value>
@@ -1172,10 +1277,34 @@
     <value>9</value>
   </data>
   <data name="colcpt_cust.Width" type="System.Int32, mscorlib">
-    <value>121</value>
+    <value>87</value>
   </data>
   <data name="coldate.Caption" xml:space="preserve">
     <value>created date</value>
+  </data>
+  <data name="customers_active.Caption" xml:space="preserve">
+    <value>customers_active</value>
+  </data>
+  <data name="customers_active.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="customers_active.VisibleIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="customers_active.Width" type="System.Int32, mscorlib">
+    <value>62</value>
+  </data>
+  <data name="customers_not_active.Caption" xml:space="preserve">
+    <value>customers_not_active</value>
+  </data>
+  <data name="customers_not_active.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="customers_not_active.VisibleIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="customers_not_active.Width" type="System.Int32, mscorlib">
+    <value>97</value>
   </data>
   <data name="colCustHigh.Caption" xml:space="preserve">
     <value>cust high</value>
@@ -1186,6 +1315,9 @@
   <data name="colCustHigh.VisibleIndex" type="System.Int32, mscorlib">
     <value>10</value>
   </data>
+  <data name="colCustHigh.Width" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
   <data name="colVodExists.Caption" xml:space="preserve">
     <value>vodexists</value>
   </data>
@@ -1194,6 +1326,21 @@
   </data>
   <data name="colVodExists.VisibleIndex" type="System.Int32, mscorlib">
     <value>11</value>
+  </data>
+  <data name="colVodExists.Width" type="System.Int32, mscorlib">
+    <value>67</value>
+  </data>
+  <data name="colProductsMedia.Caption" xml:space="preserve">
+    <value>Products Media</value>
+  </data>
+  <data name="colProductsMedia.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colProductsMedia.VisibleIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="colProductsMedia.Width" type="System.Int32, mscorlib">
+    <value>33</value>
   </data>
   <data name="RepositoryItemLookUpEditLanguage.AutoHeight" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1523,10 +1670,34 @@
   <data name="&gt;&gt;coldate.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
   </data>
+  <data name="&gt;&gt;customers_active.Name" xml:space="preserve">
+    <value>customers_active</value>
+  </data>
+  <data name="&gt;&gt;customers_active.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;customers_not_active.Name" xml:space="preserve">
+    <value>customers_not_active</value>
+  </data>
+  <data name="&gt;&gt;customers_not_active.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
   <data name="&gt;&gt;colCustHigh.Name" xml:space="preserve">
     <value>colCustHigh</value>
   </data>
   <data name="&gt;&gt;colCustHigh.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;colVodExists.Name" xml:space="preserve">
+    <value>colVodExists</value>
+  </data>
+  <data name="&gt;&gt;colVodExists.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+  </data>
+  <data name="&gt;&gt;colProductsMedia.Name" xml:space="preserve">
+    <value>colProductsMedia</value>
+  </data>
+  <data name="&gt;&gt;colProductsMedia.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
   </data>
   <data name="&gt;&gt;RepositoryItemLookUpEditLanguage.Name" xml:space="preserve">
@@ -1539,13 +1710,7 @@
     <value>DsSite1</value>
   </data>
   <data name="&gt;&gt;DsSite1.Type" xml:space="preserve">
-    <value>DVDPostLib.DsSite, DVDPostLib, Version=2.0.4638.3, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;colVodExists.Name" xml:space="preserve">
-    <value>colVodExists</value>
-  </data>
-  <data name="&gt;&gt;colVodExists.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</value>
+    <value>DVDPostLib.DsSite, DVDPostLib, Version=2.0.5038.3, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmSearchProduct</value>

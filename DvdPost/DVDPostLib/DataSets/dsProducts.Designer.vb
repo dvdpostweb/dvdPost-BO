@@ -2359,6 +2359,10 @@ Partial Public Class dsProducts
         
         Private columnvod_next As Global.System.Data.DataColumn
         
+        Private columnvod_next_lux As Global.System.Data.DataColumn
+        
+        Private columnvod_next_nl As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub New()
             MyBase.New
@@ -2881,6 +2885,20 @@ Partial Public Class dsProducts
             End Get
         End Property
         
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property vod_next_luxColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnvod_next_lux
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property vod_next_nlColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnvod_next_nl
+            End Get
+        End Property
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -2980,9 +2998,11 @@ Partial Public Class dsProducts
                     ByVal game_config_mini As String,  _
                     ByVal game_online As Integer,  _
                     ByVal imdb_id_serie As Long,  _
-                    ByVal vod_next As Integer) As productsRow
+                    ByVal vod_next As Integer,  _
+                    ByVal vod_next_lux As Integer,  _
+                    ByVal vod_next_nl As Integer) As productsRow
             Dim rowproductsRow As productsRow = CType(Me.NewRow,productsRow)
-            Dim columnValuesArray() As Object = New Object() {products_id, products_quantity, products_model, imdb_id, products_title, products_image, products_price, products_date_added, products_last_modified, products_date_available, products_weight, products_status, products_tax_class_id, manufacturers_id, products_ordered, products_public, products_runtime, products_year, products_countries_id, products_picture_format, products_rating, products_directors_id, products_regional_code, products_studio, products_barcode, products_dvd_quantity, products_language_fr, products_undertitle_nl, in_the_bags, in_the_bags_next, in_cinema_now, products_dvdpostchoice, products_other_language, products_french, products_next, products_tiscali_hp_fr, products_tiscali_hp_nl, products_series_id, products_series_number, products_series_aboprocess_id, products_series_aboprocess_number, cinebel_id, cinebel_trailer, feesharing, feesharing_end, feesharing_upfront_fee, feesharing_upfront_fee_recoverable, feesharing_turn_price, feesharing_turn_price_after3month, feesharing_buy_option_price, feesharing_expected_nbr_turns, products_desire, products_desire_weighted, products_availability, quantity_to_sale, products_sale_price, products_sale_date, quantity_to_keep, products_type, products_media, products_new_sale_price, quantity_new_to_sale, only_for_sale, products_product_type, game_nbr_of_players, game_nbr_of_players_online, game_config_mini, game_online, imdb_id_serie, vod_next}
+            Dim columnValuesArray() As Object = New Object() {products_id, products_quantity, products_model, imdb_id, products_title, products_image, products_price, products_date_added, products_last_modified, products_date_available, products_weight, products_status, products_tax_class_id, manufacturers_id, products_ordered, products_public, products_runtime, products_year, products_countries_id, products_picture_format, products_rating, products_directors_id, products_regional_code, products_studio, products_barcode, products_dvd_quantity, products_language_fr, products_undertitle_nl, in_the_bags, in_the_bags_next, in_cinema_now, products_dvdpostchoice, products_other_language, products_french, products_next, products_tiscali_hp_fr, products_tiscali_hp_nl, products_series_id, products_series_number, products_series_aboprocess_id, products_series_aboprocess_number, cinebel_id, cinebel_trailer, feesharing, feesharing_end, feesharing_upfront_fee, feesharing_upfront_fee_recoverable, feesharing_turn_price, feesharing_turn_price_after3month, feesharing_buy_option_price, feesharing_expected_nbr_turns, products_desire, products_desire_weighted, products_availability, quantity_to_sale, products_sale_price, products_sale_date, quantity_to_keep, products_type, products_media, products_new_sale_price, quantity_new_to_sale, only_for_sale, products_product_type, game_nbr_of_players, game_nbr_of_players_online, game_config_mini, game_online, imdb_id_serie, vod_next, vod_next_lux, vod_next_nl}
             rowproductsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowproductsRow)
             Return rowproductsRow
@@ -3082,6 +3102,8 @@ Partial Public Class dsProducts
             Me.columngame_online = MyBase.Columns("game_online")
             Me.columnimdb_id_serie = MyBase.Columns("imdb_id_serie")
             Me.columnvod_next = MyBase.Columns("vod_next")
+            Me.columnvod_next_lux = MyBase.Columns("vod_next_lux")
+            Me.columnvod_next_nl = MyBase.Columns("vod_next_nl")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -3226,6 +3248,10 @@ Partial Public Class dsProducts
             MyBase.Columns.Add(Me.columnimdb_id_serie)
             Me.columnvod_next = New Global.System.Data.DataColumn("vod_next", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnvod_next)
+            Me.columnvod_next_lux = New Global.System.Data.DataColumn("vod_next_lux", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnvod_next_lux)
+            Me.columnvod_next_nl = New Global.System.Data.DataColumn("vod_next_nl", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnvod_next_nl)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("dsProductsKey1", New Global.System.Data.DataColumn() {Me.columnproducts_id}, true))
             Me.columnproducts_id.AllowDBNull = false
             Me.columnproducts_id.Unique = true
@@ -7336,6 +7362,8 @@ Partial Public Class dsProducts
         
         Private columnsexuality As Global.System.Data.DataColumn
         
+        Private columnbirth_place As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub New()
             MyBase.New
@@ -7466,6 +7494,13 @@ Partial Public Class dsProducts
             End Get
         End Property
         
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public ReadOnly Property birth_placeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnbirth_place
+            End Get
+        End Property
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -7495,9 +7530,9 @@ Partial Public Class dsProducts
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
-        Public Overloads Function AddactorsRow(ByVal actors_name As String, ByVal actors_image As String, ByVal actors_dateofbirth As String, ByVal actors_description As String, ByVal actors_awards As String, ByVal top_actors As Integer, ByVal death_at As Date, ByVal death_place As String, ByVal actors_type As String, ByVal cached_slug As String, ByVal image_active As Short, ByVal focus As Short, ByVal sexuality As String) As actorsRow
+        Public Overloads Function AddactorsRow(ByVal actors_name As String, ByVal actors_image As String, ByVal actors_dateofbirth As String, ByVal actors_description As String, ByVal actors_awards As String, ByVal top_actors As Integer, ByVal death_at As Date, ByVal death_place As String, ByVal actors_type As String, ByVal cached_slug As String, ByVal image_active As Short, ByVal focus As Short, ByVal sexuality As String, ByVal birth_place As String) As actorsRow
             Dim rowactorsRow As actorsRow = CType(Me.NewRow,actorsRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, actors_name, actors_image, actors_dateofbirth, actors_description, actors_awards, top_actors, death_at, death_place, actors_type, cached_slug, image_active, focus, sexuality}
+            Dim columnValuesArray() As Object = New Object() {Nothing, actors_name, actors_image, actors_dateofbirth, actors_description, actors_awards, top_actors, death_at, death_place, actors_type, cached_slug, image_active, focus, sexuality, birth_place}
             rowactorsRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowactorsRow)
             Return rowactorsRow
@@ -7541,6 +7576,7 @@ Partial Public Class dsProducts
             Me.columnimage_active = MyBase.Columns("image_active")
             Me.columnfocus = MyBase.Columns("focus")
             Me.columnsexuality = MyBase.Columns("sexuality")
+            Me.columnbirth_place = MyBase.Columns("birth_place")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
@@ -7573,6 +7609,8 @@ Partial Public Class dsProducts
             MyBase.Columns.Add(Me.columnfocus)
             Me.columnsexuality = New Global.System.Data.DataColumn("sexuality", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnsexuality)
+            Me.columnbirth_place = New Global.System.Data.DataColumn("birth_place", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnbirth_place)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("dsProductsKey3", New Global.System.Data.DataColumn() {Me.columnactors_id}, true))
             Me.columnactors_id.AutoIncrement = true
             Me.columnactors_id.AllowDBNull = false
@@ -22383,6 +22421,34 @@ Partial Public Class dsProducts
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property vod_next_lux() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableproducts.vod_next_luxColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'vod_next_lux' in table 'products' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableproducts.vod_next_luxColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property vod_next_nl() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableproducts.vod_next_nlColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'vod_next_nl' in table 'products' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableproducts.vod_next_nlColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function Isproducts_modelNull() As Boolean
             Return Me.IsNull(Me.tableproducts.products_modelColumn)
         End Function
@@ -22710,6 +22776,26 @@ Partial Public Class dsProducts
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub Setvod_nextNull()
             Me(Me.tableproducts.vod_nextColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isvod_next_luxNull() As Boolean
+            Return Me.IsNull(Me.tableproducts.vod_next_luxColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setvod_next_luxNull()
+            Me(Me.tableproducts.vod_next_luxColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isvod_next_nlNull() As Boolean
+            Return Me.IsNull(Me.tableproducts.vod_next_nlColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setvod_next_nlNull()
+            Me(Me.tableproducts.vod_next_nlColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -25251,6 +25337,20 @@ Partial Public Class dsProducts
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Property birth_place() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableactors.birth_placeColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'birth_place' in table 'actors' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableactors.birth_placeColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Function Isactors_imageNull() As Boolean
             Return Me.IsNull(Me.tableactors.actors_imageColumn)
         End Function
@@ -25368,6 +25468,16 @@ Partial Public Class dsProducts
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
         Public Sub SetsexualityNull()
             Me(Me.tableactors.sexualityColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Function Isbirth_placeNull() As Boolean
+            Return Me.IsNull(Me.tableactors.birth_placeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute()>  _
+        Public Sub Setbirth_placeNull()
+            Me(Me.tableactors.birth_placeColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

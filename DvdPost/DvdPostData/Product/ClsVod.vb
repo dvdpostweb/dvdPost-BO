@@ -139,12 +139,30 @@ Public Class ClsVod
         Return sql
     End Function
 
+    Public Shared Function SearchAllViewTrailer() As String
+        Dim sql As String
+        sql = " SELECT distinct st.*, P.products_title products_name " & _
+              " from (select imdb_id,products_title from products group by imdb_id) P " & _
+              " join streaming_trailers st on st.imdb_id = P.imdb_id " & _
+              " where st.status <> 'deleted' "
+        Return sql
+    End Function
+
     Public Shared Function SearchViewVodpartTitle(ByVal partTitle As String) As String
         Dim sql As String
         sql = " SELECT distinct sp.*, P.products_title products_name " & _
               " from (select imdb_id,products_title from products group by imdb_id) P " & _
               " join streaming_products sp on sp.imdb_id = P.imdb_id " & _
               " where sp.status <> 'deleted' and products_title like '%" & partTitle.Trim & "%'  "
+        Return sql
+    End Function
+
+    Public Shared Function SearchViewTrailerpartTitle(ByVal partTitle As String) As String
+        Dim sql As String
+        sql = " SELECT distinct st.*, P.products_title products_name " & _
+              " from (select imdb_id, products_title from products group by imdb_id) P " & _
+              " join streaming_trailers st on st.imdb_id = P.imdb_id " & _
+              " where st.status <> 'deleted' and products_title like '%" & partTitle.Trim & "%'  "
         Return sql
     End Function
 
@@ -157,6 +175,15 @@ Public Class ClsVod
         Return sql
     End Function
 
+    Private Shared Function SearchViewVodProductStatusWithCoutries(ByVal status As String) As String
+        Dim sql As String
+        sql = " SELECT distinct sp.*, P.products_title products_name " & _
+              " from (select imdb_id,products_title from products group by imdb_id) P " & _
+              " join streaming_products sp on sp.imdb_id = P.imdb_id " & _
+              " where sp.status = '" & status & "' group by sp.imdb_id, sp.language_id, sp.subtitle_id, sp.country "
+        Return sql
+    End Function
+
     Private Shared Function SearchViewTrailersStatus(ByVal status As String) As String
         Dim sql As String
         sql = " SELECT sp.* from streaming_trailers sp where sp.status = '" & status & "'"
@@ -165,6 +192,10 @@ Public Class ClsVod
 
     Public Shared Function SearchViewVodProductUploaded() As String
         Return SearchViewVodProductStatus("uploaded")
+    End Function
+
+    Public Shared Function SearchViewVodProductUploadedWithCountries() As String
+        Return SearchViewVodProductStatusWithCoutries("uploaded")
     End Function
 
     Public Shared Function SearchViewTrailersUploaded() As String
@@ -184,12 +215,30 @@ Public Class ClsVod
         Return sql
     End Function
 
+    Public Shared Function SearchViewTrailerProduct(ByVal products_id As Integer) As String
+        Dim sql As String
+        sql = " SELECT distinct sp.*, P.products_title products_name " & _
+              " from (select imdb_id,products_title,products_id from products group by imdb_id) P " & _
+              " join streaming_trailers st on st.imdb_id = P.imdb_id " & _
+              " where st.status <> 'deleted' and P.products_id = " & products_id
+        Return sql
+    End Function
+
     Public Shared Function SearchViewVodImdb(ByVal imdb_id As Integer) As String
         Dim sql As String
         sql = " SELECT distinct sp.*, P.products_title products_name " & _
               " from (select imdb_id,products_title from products group by imdb_id) P " & _
               " join streaming_products sp on sp.imdb_id = P.imdb_id " & _
               " where status <> 'deleted' and P.imdb_id = " & imdb_id
+        Return sql
+    End Function
+
+    Public Shared Function SearchViewTrailersImdb(ByVal imdb_id As Integer) As String
+        Dim sql As String
+        sql = " SELECT distinct st.*, P.products_title products_name " & _
+              " from (select imdb_id,products_title from products group by imdb_id) P " & _
+              " join streaming_trailers st on st.imdb_id = P.imdb_id " & _
+              " where st.status <> 'deleted' and P.imdb_id = " & imdb_id
         Return sql
     End Function
 
@@ -261,7 +310,9 @@ Public Class ClsVod
                                         Optional ByVal doStatusUpdate As Boolean = False) As String
         Dim sql As String
         Dim strLanguageSubtitle As String
+        Dim strLanguageSubtitledoStatusUpdate As String
         Dim strlanguage As String
+        Dim strlanguagedoStatusUpdate As String
         Dim strQuality As String
         Dim strStatus As String
         Dim strStudio As String
@@ -315,18 +366,22 @@ Public Class ClsVod
         If status = "" Then
             strStatus = "null"
         Else
-            strStatus = "'" & status & "'"
+            strStatus = " '" & status & "'"
         End If
         If language_id = 0 Then
             strlanguage = "null"
+            strlanguagedoStatusUpdate = " is null"
         Else
             strlanguage = language_id
+            strlanguagedoStatusUpdate = " = " & language_id
         End If
 
         If language_subtitle_id = 0 Then
             strLanguageSubtitle = "null"
+            strLanguageSubtitledoStatusUpdate = " is null"
         Else
             strLanguageSubtitle = language_subtitle_id
+            strLanguageSubtitledoStatusUpdate = " = " & language_subtitle_id
         End If
 
         If quality = "" Then
@@ -398,7 +453,7 @@ Public Class ClsVod
                 sql = sql & " update streaming_products set status = " & strStatus & _
                 ", updated_at = now() " & _
                 " where source = 'alphanetworks' and imdb_id = " & imdb_id & _
-                " and language_id = " & strlanguage & " and subtitle_id = " & strLanguageSubtitle & ";"
+                " and status <> 'deleted' and language_id " & strlanguagedoStatusUpdate & " and subtitle_id " & strLanguageSubtitledoStatusUpdate & ";"
             End If
         Else
             sql = "update streaming_products sp " & _
@@ -646,7 +701,6 @@ Public Class ClsVod
                                        ByVal status As String) As String
         Dim sql As String
         Dim strLanguageSubtitle As String
-        Dim strQuality As String
         Dim strlanguage As String
         Dim strExpireAt As String
         Dim strAvailable_from As String
@@ -700,7 +754,7 @@ Public Class ClsVod
         Dim sql As String
         sql = " update streaming_products sp join studio s on sp.studio_id = s.studio_id " & _
               " set sp.credits = s.cost, sp.updated_at = sysdate() " & _
-              " where available_from < DATE_ADD(sysdate(), INTERVAL - 3 MONTH) " & _
+              " where (expire_at < sysdate() or expire_at is null) and sysdate() between available_backcatalogue_from and date_add(available_backcatalogue_from, interval 1 DAY) " & _
               " and s.cost_for_new <> s.cost and sp.credits <> s.cost "
 
         Return sql

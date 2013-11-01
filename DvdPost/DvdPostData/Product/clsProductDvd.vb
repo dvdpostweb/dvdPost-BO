@@ -147,18 +147,38 @@ Public Class clsProductDvd
     Public Shared Function GetSelectWishlistCustomerProduct(ByVal products_id As Integer) As String
         Dim sql As String
 
-        sql = "select c.customers_id,c.customers_language,c.customers_lastname,c.customers_firstname,w.priority" & _
-        ",(select count(*) from wishlist ww join products p on ww.product_id = p.products_id where ww.customers_id = w.customers_id and p.products_next = 0 and p.products_series_id = 0) nb_dvdNorm " & _
-        ",(select count(*) from wishlist ww join products p on ww.product_id = p.products_id where ww.customers_id = w.customers_id and p.products_next = 0 and p.products_series_id > 0) nb_dvdSeries " & _
-        ",(select count(*) from wishlist ww join products p on ww.product_id = p.products_id where ww.customers_id = w.customers_id and p.products_next = 1) nb_dvdNext " & _
-        ",(select count(*) from vod_wishlists where customer_id = w.customers_id) nb_vodwishlist " & _
-        ",(select count(*) from wishlist ww  join customers c on ww.customers_id = c.customers_id " & _
-        "    where c.customers_abo = " & ClsCustomersData.abo.VALID & " and c.customers_abo_suspended <> " & ClsCustomersData.Suspended.RECONDUCTION & _
-        "    and ww.product_id = " & products_id & " and ww.priority = 1) cutomers_high" & _
-        ",(select count(*) from products_dvd pd where pd.products_dvd_status = 1 and pd.products_id = " & products_id & ") dvd_ok" & _
-        " from customers c " & _
-        " join wishlist w on w.customers_id = c.customers_id " & _
-        " where c.customers_abo = " & ClsCustomersData.abo.VALID & " and c.customers_abo_suspended <> " & ClsCustomersData.Suspended.RECONDUCTION & " and product_id = " & products_id
+        'sql = "select c.customers_id,c.customers_language,c.customers_lastname,c.customers_firstname, c.customers_abo, w.priority" & _
+        '",(select count(*) from wishlist ww join products p on ww.product_id = p.products_id where ww.customers_id = w.customers_id and p.products_next = 0 and p.products_series_id = 0) nb_dvdNorm " & _
+        '",(select count(*) from wishlist ww join products p on ww.product_id = p.products_id where ww.customers_id = w.customers_id and p.products_next = 0 and p.products_series_id > 0) nb_dvdSeries " & _
+        '",(select count(*) from wishlist ww join products p on ww.product_id = p.products_id where ww.customers_id = w.customers_id and p.products_next = 1) nb_dvdNext " & _
+        '",(select count(*) from vod_wishlists where customer_id = w.customers_id) nb_vodwishlist " & _
+        '",(select count(*) from wishlist ww  join customers c on ww.customers_id = c.customers_id " & _
+        '"    where c.customers_abo in (" & ClsCustomersData.abo.VALID & ", " & ClsCustomersData.abo.UNVALID & ") and c.customers_abo_suspended <> " & ClsCustomersData.Suspended.RECONDUCTION & _
+        '"    and ww.product_id = " & products_id & " and ww.priority = 1) cutomers_high" & _
+        '",(select count(*) from products_dvd pd where pd.products_dvd_status = 1 and pd.products_id = " & products_id & ") dvd_ok" & _
+        '" from customers c " & _
+        '" join wishlist w on w.customers_id = c.customers_id " & _
+        '" where c.customers_abo in (" & ClsCustomersData.abo.VALID & ", " & ClsCustomersData.abo.UNVALID & ") And c.customers_abo_suspended <> " & ClsCustomersData.Suspended.RECONDUCTION & " And product_id = " & products_id
+
+        sql = "select c.customers_id,c.customers_language,c.customers_lastname,c.customers_firstname, " & _
+        " CASE WHEN c.customers_abo = 1 and c.customers_abo_suspended in(0, 1) THEN 'Active' " & _
+" WHEN c.customers_abo = 1 AND c.customers_abo_suspended = 2 THEN 'Not Active' " & _
+" WHEN c.customers_abo = 0 THEN 'Not Active' " & _
+" END customer_activity " & _
+", w.priority" & _
+",(select count(*) from wishlist ww join products p on ww.product_id = p.products_id where ww.customers_id = w.customers_id and p.products_next = 0 and p.products_series_id = 0) nb_dvdNorm " & _
+",(select count(*) from wishlist ww join products p on ww.product_id = p.products_id where ww.customers_id = w.customers_id and p.products_next = 0 and p.products_series_id > 0) nb_dvdSeries " & _
+",(select count(*) from wishlist ww join products p on ww.product_id = p.products_id where ww.customers_id = w.customers_id and p.products_next = 1) nb_dvdNext " & _
+",(select count(*) from vod_wishlists where customer_id = w.customers_id) nb_vodwishlist " & _
+",(select count(*) from wishlist ww  join customers c on ww.customers_id = c.customers_id " & _
+"    where  customers_abo = 1 and customers_abo_suspended <> 2 and ww.product_id = " & products_id & " and ww.priority = 1) cutomers_active_high" & _
+",(select count(*) from wishlist ww  join customers c on ww.customers_id = c.customers_id " & _
+"    where  ( customers_abo = 0 or customers_abo_suspended = 2 ) and ww.product_id = " & products_id & " and ww.priority = 1) cutomers_notactive_high" & _
+",(select count(*) from products_dvd pd where pd.products_dvd_status = 1 and pd.products_id = " & products_id & ") dvd_ok" & _
+" from customers c " & _
+" join wishlist w on w.customers_id = c.customers_id " & _
+" where product_id = " & products_id
+
         Return sql
 
     End Function
@@ -513,6 +533,19 @@ Public Class clsProductDvd
 
     End Function
 
+    Private Shared Function SearchAvailabilityDate(ByVal availabilityDate As String) As String
+        Dim sql As String
+
+        If availabilityDate = String.Empty Then
+            sql = ""
+        Else
+            sql = " and  date(p.products_date_available) = '" & DVDPostTools.ClsDate.formatDate(availabilityDate) & "' "
+        End If
+
+        Return sql
+
+    End Function
+
     Public Shared Function getSelectSearchViewProduct(ByVal categorie_id As Integer, _
                                              ByVal theme_id As Integer, _
                                              ByVal status As Integer, _
@@ -527,16 +560,27 @@ Public Class clsProductDvd
                                              ByVal product_type As String, _
                                              ByVal product_media As String, _
                                              ByVal product_next As Object, _
+                                             ByVal availabilityDate As String, _
                                              ByVal dateFrom As String, _
-                                             ByVal dateTo As String) As String
+                                             ByVal dateTo As String, _
+                                             ByVal cust_active As String) As String
 
         Dim sql As String
+        '& ClsCustomersData.abo.VALID & 
+        '", (select count(*) from wishlist ww  join customers c on ww.customers_id = c.customers_id " & _
+        '      "    where c.customers_abo = " & ClsCustomersData.abo.UNVALID & "  or c.customers_abo_suspended = " & ClsCustomersData.Suspended.RECONDUCTION & _
+        '      "    and ww.product_id = p.products_id  and ww.priority = 1) cutomers_notactive_high " & _
+
         sql = "select p.*,pde.products_name,pdvd.cpt_dvd,w.cpt_cust " & _
-        ",(select count(*) from wishlist ww  join customers c on ww.customers_id = c.customers_id " & _
-        "    where c.customers_abo = " & ClsCustomersData.abo.VALID & " and c.customers_abo_suspended <> " & ClsCustomersData.Suspended.RECONDUCTION & _
-        "    and ww.product_id = p.products_id  and ww.priority = 1) cutomers_high" & _
-        ", ( select if(count(*)>0,1,0) from dvdpost_be_prod.streaming_products sp where p.imdb_id = sp.imdb_id and sp.source = 'ALPHANETWORKS' and sp.status = 'online_test_ok' and ((sp.expire_at > sysdate() and sp.available_from < sysdate()) or ( sp.available_backcatalogue_from < sysdate() and sp.expire_backcatalogue_at > sysdate() ) ) ) vod_exists " & _
-        " from products p " & _
+      ",(select count(*) from wishlist ww  join customers c on ww.customers_id = c.customers_id " & _
+      "    where " & cust_active & _
+      "    and ww.product_id = p.products_id  and ww.priority = 1) cutomers_high " & _
+      ", ( select count(*) from wishlist ww  join customers c on ww.customers_id = c.customers_id " & _
+      " where c.customers_abo = 1 and c.customers_abo_suspended in(0,1) and ww.product_id = p.products_id) customers_active " & _
+      ", ( select count(*) from wishlist ww  join customers c on ww.customers_id = c.customers_id " & _
+      " where ((c.customers_abo = 1 and c.customers_abo_suspended = 2 ) or c.customers_abo = 0  )and ww.product_id = p.products_id) customers_not_active " & _
+      ", ( select if(count(*)>0,1,0) from dvdpost_be_prod.streaming_products sp where p.imdb_id = sp.imdb_id and sp.source = 'ALPHANETWORKS' and sp.status = 'online_test_ok' and ((sp.expire_at > sysdate() and sp.available_from < sysdate()) or ( sp.available_backcatalogue_from < sysdate() and sp.expire_backcatalogue_at > sysdate() ) ) ) vod_exists " & _
+      " from products p " & _
               " join products_description pde on p.products_id = pde.products_id and pde.language_id = 1 " & _
               " left join (select products_id,count(*) cpt_dvd from products_dvd pd where pd.products_dvd_status = 1 group by products_id) pdvd on p.products_id = pdvd.products_id " & _
               " left join (select w.product_id,count(*) cpt_cust from wishlist w " & _
@@ -562,6 +606,7 @@ Public Class clsProductDvd
                SearchRatingCondition(rating) & _
                SearchProductsMediaCondition(product_media) & _
                SearchProductsTypeCondition(product_type) & _
+               SearchAvailabilityDate(availabilityDate) & _
                SearchDateCreatedCondition(dateFrom, dateTo)
 
 
