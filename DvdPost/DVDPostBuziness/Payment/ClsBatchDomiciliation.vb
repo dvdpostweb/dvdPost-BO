@@ -18,6 +18,23 @@ Public Class ClsBatchDomiciliation
         dt = DvdPostData.clsConnection.FillDataSet(sql)
         Return dt
     End Function
+    Public Shared Function InsertEddPayment(ByVal customers_id As Integer, ByVal msg_id As Integer, ByVal pmt_inf_id As Integer, _
+                                                        ByVal pmt_instr_id As Integer, _
+                                                        ByVal end_to_end_id As String, _
+                                                        ByVal cre_dt_tm As String, _
+                                                        ByVal reqd_colltn_dt As String, _
+                                                        ByVal edd_payment_status As Integer, _
+                                                        ByVal iban As String)
+        Dim sql As String
+        Try
+            sql = DvdPostData.ClsBatchDomiciliation.CreateEddPayment(customers_id, msg_id, pmt_inf_id, pmt_instr_id, end_to_end_id, cre_dt_tm, reqd_colltn_dt, edd_payment_status, iban)
+            DvdPostData.clsConnection.ExecuteNonQuery(sql)
+            Return True
+        Catch ex As Exception
+            clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Reconduction, ex)
+        End Try
+    End Function
+
     Public Shared Function InsertDomiciliationPayment(ByVal drReconduction As DataRow, ByVal strcommunication As String, ByVal id_payment As Integer) As Boolean
         Dim abo_id As Integer
         Dim customers_id As Integer
@@ -58,6 +75,14 @@ Public Class ClsBatchDomiciliation
             clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Reconduction, ex)
         End Try
 
+    End Function
+
+    Public Function CreateEDDXMLBatchFile(ByVal dtCustomers As DataTable) As String
+        Dim edd As String = ""
+        Dim clsedd As clsEDD = New clsEDD()
+
+        'edd = clsedd.CreateEDDXMLFileManager(dtCustomers)
+        Return edd
     End Function
 
     Public Function CreateBatchFile(ByVal dtCustomers As DataTable) As String

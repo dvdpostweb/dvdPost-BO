@@ -257,6 +257,10 @@ Public Class ClsCustomers
         Return drCustomer("customers_id")
     End Function
 
+    Public Function GetEddManadateId(ByVal drCustomer As DataRow) As String
+        Return drCustomer("edd_mandate_id")
+    End Function
+
     Public Function GetCustomersSVODADULTStatus(ByVal drCustomer As DataRow) As Integer
         Return drCustomer("svod_adult")
     End Function
@@ -269,8 +273,40 @@ Public Class ClsCustomers
         Return drCustomer("payment_id")
     End Function
 
+    Public Function GetCustomersStreetAddress(ByVal drCustomer As DataRow) As String
+        Return drCustomer("customer_edd_street_number")
+    End Function
+
+    Public Function GetCustomersAgentBIC(ByVal drCustomer As DataRow) As String
+        Return drCustomer("bic")
+    End Function
+
+    Public Function GetEddMandateStatus(ByVal drCustomer As DataRow) As Integer
+        Return drCustomer("edd_mandate_status")
+    End Function
+
+    Public Function GetCustomersDateofSignature(ByVal drCustomer As DataRow) As DateTime
+        Return drCustomer("signature_date")
+    End Function
+
+    Public Function GetCustomersPostCodeAndCity(ByVal drCustomer As DataRow) As String
+        Return drCustomer("customer_edd_postcode") & ", " & drCustomer("customer_edd_city")
+    End Function
+
+    Public Function IsDom80Migraiton(ByVal drCustomer As DataRow) As Boolean
+        Return Not drCustomer("dom_nr") Is DBNull.Value
+    End Function
+
     Public Function GetCustomersEmail(ByVal drCustomer As DataRow) As String
         Return drCustomer("customers_email_address")
+    End Function
+
+    Public Function GetCustomersName(ByVal drCustomer As DataRow) As String
+        Return drCustomer("customers_name")
+    End Function
+
+    Public Function GetCustomersIBAN(ByVal drCustomer As DataRow) As String
+        Return drCustomer("iban")
     End Function
 
     Public Function GetCustomersLastAbo(ByVal drCustomer As DataRow) As Integer
@@ -1124,9 +1160,10 @@ Public Class ClsCustomers
 
         If pay_method = ClsCustomersData.Payment_Method.PAYPAL Then
             sql = DvdPostData.ClsCustomersData.GetSelectReconductionPayPalCustomers(pay_method, idcountry, customers_id)
+        ElseIf pay_method = ClsCustomersData.Payment_Method.DOMICILIATION And (Configuration.ConfigurationManager.AppSettings("edd") = "true") Then
+            sql = DvdPostData.ClsCustomersData.GetSelectDomiciliationReconductionCustomers(pay_method, idcountry, customers_id)
         Else
             sql = DvdPostData.ClsCustomersData.GetSelectReconductionCustomers(pay_method, idcountry, customers_id)
-
         End If
 
         dtCustomersReconduction = DvdPostData.clsConnection.FillDataSet(sql)
@@ -1651,20 +1688,29 @@ Public Class ClsCustomers
         Dim cpt_result As Integer
         DvdPostData.clsConnection.CreateTransaction(True)
         Try
-            Dim clsBatchdomiciliation As ClsBatchDomiciliation = New ClsBatchDomiciliation()
+
             dtResult_dom80 = Reconduction(ClsCustomersData.Payment_Method.DOMICILIATION, idcountry, customers_id, classique)
 
             If dtResult_dom80.Rows.Count > 0 Then
                 RaiseEvent ReInitProgressbar_event()
-                flux_dom80 = clsBatchdomiciliation.CreateBatchFile(dtResult_dom80)
-                DVDPostTools.clsFile.WriteFileNoExist(clsBatchdomiciliation.CreatePathFile(DVDPostTools.clsEnum.getNameStrEnum(DvdPostData.ClsBatchDomiciliation.TypeBatch.RECONDUCTION_DOM80), _
-                                                                              DVDPostTools.clsEnum.getNameStrEnum(ClsCustomersData.Country.BELGIUM)), flux_dom80)
+                If (Configuration.ConfigurationManager.AppSettings("edd") = "true") Then
+                    Dim clsEdd As clsEDD = New clsEDD()
+                    flux_dom80 = clsEdd.GenerateEDDFile(dtResult_dom80)
+                    DVDPostTools.clsFile.WriteFileNoExist(clsEdd.CreatePathFile(DVDPostTools.clsEnum.getNameStrEnum(DvdPostData.ClsBatchDomiciliation.TypeBatch.RECONDUCTION_DOM80), _
+                                                                                  DVDPostTools.clsEnum.getNameStrEnum(ClsCustomersData.Country.BELGIUM)), flux_dom80)
+                Else
+                    Dim clsBatchdomiciliation As ClsBatchDomiciliation = New ClsBatchDomiciliation()
+                    flux_dom80 = clsBatchdomiciliation.CreateBatchFile(dtResult_dom80)
+                    DVDPostTools.clsFile.WriteFileNoExist(clsBatchdomiciliation.CreatePathFile(DVDPostTools.clsEnum.getNameStrEnum(DvdPostData.ClsBatchDomiciliation.TypeBatch.RECONDUCTION_DOM80), _
+                                                                                  DVDPostTools.clsEnum.getNameStrEnum(ClsCustomersData.Country.BELGIUM)), flux_dom80)
+                End If
+
                 'DvdPostData.clsConnection.ExecuteNonQuery(DvdPostData.ClsBatchOgone.OgonePaymentBatch(flux))
 
                 'insertCustomersOgonePayment(dtResult)
             End If
 
-            Return DvdPostData.clsConnection.ExecuteBulkQuery(DvdPostData.clsMsgError.processType.Reconduction, cpt_result)
+                Return DvdPostData.clsConnection.ExecuteBulkQuery(DvdPostData.clsMsgError.processType.Reconduction, cpt_result)
 
         Catch ex As Exception
             ' insert msg into db  

@@ -169,9 +169,11 @@ Partial Class FrmProductsVOD
         Me.GridBand3 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand
         Me.colCredit = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.GridBand4 = New DevExpress.XtraGrid.Views.BandedGrid.GridBand
+        Me.colDRM = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.colcountry = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.RepositoryItemLookUpEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.XTabView = New DevExpress.XtraTab.XtraTabPage
+        Me.chkDRM = New DevExpress.XtraEditors.CheckEdit
         Me.btnMoveToPlush = New DevExpress.XtraEditors.SimpleButton
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
         Me.txtId = New DevExpress.XtraEditors.TextEdit
@@ -475,6 +477,7 @@ Partial Class FrmProductsVOD
         CType(Me.chkcolAvailable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XTabView.SuspendLayout()
+        CType(Me.chkDRM.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.txtId.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbDateStart.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1614,7 +1617,7 @@ Partial Class FrmProductsVOD
         Me.GridViewSearch.Appearance.FocusedRow.Options.UseBackColor = True
         Me.GridViewSearch.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand1, Me.GridBand3, Me.GridBand4})
         Me.GridViewSearch.ColumnPanelRowHeight = 45
-        Me.GridViewSearch.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.colImdb_id, Me.collanguage_id, Me.colproducts_name, Me.ColAvailable_from, Me.colExpireAt, Me.colAvailableBackCatalogueFrom, Me.colBackcatalogueExpireAt, Me.colLanguage_subtitle, Me.colAvailable, Me.colStudio, Me.colStatus, Me.colSource, Me.colQuality, Me.colSupportVod, Me.colCredit, Me.colcountry})
+        Me.GridViewSearch.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.colImdb_id, Me.collanguage_id, Me.colproducts_name, Me.ColAvailable_from, Me.colExpireAt, Me.colAvailableBackCatalogueFrom, Me.colBackcatalogueExpireAt, Me.colLanguage_subtitle, Me.colAvailable, Me.colStudio, Me.colStatus, Me.colSource, Me.colQuality, Me.colSupportVod, Me.colCredit, Me.colcountry, Me.colDRM})
         Me.GridViewSearch.CustomizationFormBounds = New System.Drawing.Rectangle(0, 375, 225, 209)
         Me.GridViewSearch.DetailHeight = 50
         Me.GridViewSearch.GridControl = Me.GridVod
@@ -1880,9 +1883,17 @@ Partial Class FrmProductsVOD
         'GridBand4
         '
         Me.GridBand4.Caption = "gridBand2"
+        Me.GridBand4.Columns.Add(Me.colDRM)
         Me.GridBand4.MinWidth = 20
         Me.GridBand4.Name = "GridBand4"
-        Me.GridBand4.Width = 62
+        Me.GridBand4.Width = 75
+        '
+        'colDRM
+        '
+        Me.colDRM.Caption = "DRM"
+        Me.colDRM.FieldName = "drm"
+        Me.colDRM.Name = "colDRM"
+        Me.colDRM.Visible = True
         '
         'colcountry
         '
@@ -1898,6 +1909,7 @@ Partial Class FrmProductsVOD
         '
         'XTabView
         '
+        Me.XTabView.Controls.Add(Me.chkDRM)
         Me.XTabView.Controls.Add(Me.btnMoveToPlush)
         Me.XTabView.Controls.Add(Me.GroupBox1)
         Me.XTabView.Controls.Add(Me.GroupBox2)
@@ -1934,6 +1946,14 @@ Partial Class FrmProductsVOD
         Me.XTabView.Name = "XTabView"
         Me.XTabView.Size = New System.Drawing.Size(971, 634)
         Me.XTabView.Text = "View"
+        '
+        'chkDRM
+        '
+        Me.chkDRM.Location = New System.Drawing.Point(540, 171)
+        Me.chkDRM.Name = "chkDRM"
+        Me.chkDRM.Properties.Caption = "DRM"
+        Me.chkDRM.Size = New System.Drawing.Size(69, 19)
+        Me.chkDRM.TabIndex = 106
         '
         'btnMoveToPlush
         '
@@ -2190,7 +2210,7 @@ Partial Class FrmProductsVOD
         '
         'LabelControl12
         '
-        Me.LabelControl12.Location = New System.Drawing.Point(877, 310)
+        Me.LabelControl12.Location = New System.Drawing.Point(774, 310)
         Me.LabelControl12.Name = "LabelControl12"
         Me.LabelControl12.Size = New System.Drawing.Size(27, 13)
         Me.LabelControl12.TabIndex = 100
@@ -4432,6 +4452,7 @@ Partial Class FrmProductsVOD
         CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XTabView.ResumeLayout(False)
         Me.XTabView.PerformLayout()
+        CType(Me.chkDRM.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.txtId.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -5017,6 +5038,8 @@ Partial Class FrmProductsVOD
     Friend WithEvents txtTrailerID As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl43 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents btnMoveToPlush As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents colDRM As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents chkDRM As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl

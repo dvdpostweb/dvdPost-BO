@@ -78,6 +78,7 @@
   <ItemGroup>
     <Compile Include="ClsCombo.vb" />
     <Compile Include="clsCompta.vb" />
+    <Compile Include="clsMandate.vb" />
     <Compile Include="Customer\clsCallHistory.vb" />
     <Compile Include="Customer\ClsCredits.vb" />
     <Compile Include="Customer\ClsCustomers.vb" />
@@ -116,6 +117,7 @@
     <Compile Include="Logistic\clsProductTypeAboprocessStep.vb" />
     <Compile Include="Logistic\StatAbo.vb" />
     <Compile Include="Payment\ClsBankTransfer.vb" />
+    <Compile Include="Payment\clsEDD.vb" />
     <Compile Include="Payment\clsOfflinePayments.vb" />
     <Compile Include="clsSingleton.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -197,6 +199,10 @@
     <ProjectReference Include="..\DVDPostTools\DVDPostTools.csproj">
       <Project>{35D76B95-2EA0-4429-9676-EC1896F9EBD6}</Project>
       <Name>DVDPostTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EddXml\EddXml.csproj">
+      <Project>{E4279A12-D309-414F-8F0A-8C87E73439D2}</Project>
+      <Name>EddXml</Name>
     </ProjectReference>
     <ProjectReference Include="..\PayPal_Merchant_SDK\PayPal_Merchant_SDK.csproj">
       <Project>{1F5FF00B-CE0F-40B8-9BC4-7B5ED2087266}</Project>

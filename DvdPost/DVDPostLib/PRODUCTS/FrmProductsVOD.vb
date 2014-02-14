@@ -49,6 +49,7 @@ Public Class FrmProductsVOD
         txtPPVPriceLU.EditValue = blank
         chkIsPPVNL.Checked = False
         txtPPVPriceNL.EditValue = blank
+        chkDRM.Checked = blank
 
     End Sub
     Private Sub loadData(ByVal row As DataRow)
@@ -128,6 +129,12 @@ Public Class FrmProductsVOD
             txtPPVPrice.Text = String.Empty
         Else
             txtPPVPrice.Text = row("ppv_price")
+        End If
+
+        If row("drm") Is DBNull.Value Then
+            chkDRM.Checked = False
+        Else
+            chkDRM.Checked = row("drm")
         End If
 
     End Sub
@@ -324,6 +331,7 @@ Public Class FrmProductsVOD
         spedCredit.Enabled = enable
         chkIsPPV.Enabled = enable
         txtPPVPrice.Enabled = enable And chkIsPPV.Checked
+        chkDRM.Enabled = enable
 
         LuxEnable(enable)
         NLEnable(enable)
@@ -767,34 +775,34 @@ Public Class FrmProductsVOD
         Try
 
             If txtId.EditValue Is Nothing Then
-                sql = DvdPostData.ClsVod.GetInsertVod(txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStart.EditValue, cmbDateExpired.EditValue, chkAvailable.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCredit.EditValue, cmbDateLaterStart.EditValue, cmbDateLaterExpired.EditValue, chkIsPPV.EditValue, txtPPVPrice.EditValue, "BE")
+                sql = DvdPostData.ClsVod.GetInsertVod(txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStart.EditValue, cmbDateExpired.EditValue, chkAvailable.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCredit.EditValue, cmbDateLaterStart.EditValue, cmbDateLaterExpired.EditValue, chkIsPPV.EditValue, txtPPVPrice.EditValue, "BE", chkDRM.EditValue)
                 DvdPostData.clsConnection.ExecuteNonQuery(sql)
                 If chkLU.Checked Then
-                    sql = DvdPostData.ClsVod.GetInsertVod(txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStart.EditValue, cmbDateExpired.EditValue, chkAvailable.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCredit.EditValue, cmbDateLaterStart.EditValue, cmbDateLaterExpired.EditValue, chkIsPPV.EditValue, txtPPVPrice.EditValue, "LU")
+                    sql = DvdPostData.ClsVod.GetInsertVod(txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStart.EditValue, cmbDateExpired.EditValue, chkAvailable.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCredit.EditValue, cmbDateLaterStart.EditValue, cmbDateLaterExpired.EditValue, chkIsPPV.EditValue, txtPPVPrice.EditValue, "LU", chkDRM.EditValue)
                     DvdPostData.clsConnection.ExecuteNonQuery(sql)
                 End If
                 If chkNL.Checked Then
-                    sql = DvdPostData.ClsVod.GetInsertVod(txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStart.EditValue, cmbDateExpired.EditValue, chkAvailable.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCredit.EditValue, cmbDateLaterStart.EditValue, cmbDateLaterExpired.EditValue, chkIsPPV.EditValue, txtPPVPrice.EditValue, "NL")
+                    sql = DvdPostData.ClsVod.GetInsertVod(txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStart.EditValue, cmbDateExpired.EditValue, chkAvailable.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCredit.EditValue, cmbDateLaterStart.EditValue, cmbDateLaterExpired.EditValue, chkIsPPV.EditValue, txtPPVPrice.EditValue, "NL", chkDRM.EditValue)
                     DvdPostData.clsConnection.ExecuteNonQuery(sql)
                 End If
             Else
-                sql = DvdPostData.ClsVod.GetUpdateVod(txtId.EditValue, txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStart.EditValue, cmbDateExpired.EditValue, chkAvailable.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCredit.EditValue, cmbDateLaterStart.EditValue, cmbDateLaterExpired.EditValue, chkIsPPV.EditValue, txtPPVPrice.EditValue, "BE")
+                sql = DvdPostData.ClsVod.GetUpdateVod(txtId.EditValue, txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStart.EditValue, cmbDateExpired.EditValue, chkAvailable.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCredit.EditValue, cmbDateLaterStart.EditValue, cmbDateLaterExpired.EditValue, chkIsPPV.EditValue, txtPPVPrice.EditValue, "BE", chkDRM.EditValue)
                 DvdPostData.clsConnection.ExecuteNonQuery(sql)
                 If chkLU.Checked Then
                     If txtIdLU.EditValue Is Nothing Then
-                        sql = DvdPostData.ClsVod.GetInsertVod(txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStartLU.EditValue, cmbDateExpiredLU.EditValue, chkAvailableLU.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCreditLU.EditValue, cmbDateLaterStartLU.EditValue, cmbDateLaterExpiredLU.EditValue, chkIsPPVLU.EditValue, txtPPVPriceLU.EditValue, "LU")
+                        sql = DvdPostData.ClsVod.GetInsertVod(txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStartLU.EditValue, cmbDateExpiredLU.EditValue, chkAvailableLU.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCreditLU.EditValue, cmbDateLaterStartLU.EditValue, cmbDateLaterExpiredLU.EditValue, chkIsPPVLU.EditValue, txtPPVPriceLU.EditValue, "LU", chkDRM.EditValue)
                         DvdPostData.clsConnection.ExecuteNonQuery(sql)
                     Else
-                        sql = DvdPostData.ClsVod.GetUpdateVod(txtIdLU.EditValue, txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStartLU.EditValue, cmbDateExpiredLU.EditValue, chkAvailableLU.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCreditLU.EditValue, cmbDateLaterStartLU.EditValue, cmbDateLaterExpiredLU.EditValue, chkIsPPVLU.EditValue, txtPPVPriceLU.EditValue, "LU")
+                        sql = DvdPostData.ClsVod.GetUpdateVod(txtIdLU.EditValue, txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStartLU.EditValue, cmbDateExpiredLU.EditValue, chkAvailableLU.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCreditLU.EditValue, cmbDateLaterStartLU.EditValue, cmbDateLaterExpiredLU.EditValue, chkIsPPVLU.EditValue, txtPPVPriceLU.EditValue, "LU", chkDRM.EditValue)
                         DvdPostData.clsConnection.ExecuteNonQuery(sql)
                     End If
                 End If
                 If chkNL.Checked Then
                     If txtIdNL.EditValue Is Nothing Then
-                        sql = DvdPostData.ClsVod.GetInsertVod(txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStartNL.EditValue, cmbDateExpiredNL.EditValue, chkAvailableNL.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCreditNL.EditValue, cmbDateLaterStartNL.EditValue, cmbDateLaterExpiredNL.EditValue, chkIsPPVNL.EditValue, txtPPVPriceNL.EditValue, "NL")
+                        sql = DvdPostData.ClsVod.GetInsertVod(txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStartNL.EditValue, cmbDateExpiredNL.EditValue, chkAvailableNL.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCreditNL.EditValue, cmbDateLaterStartNL.EditValue, cmbDateLaterExpiredNL.EditValue, chkIsPPVNL.EditValue, txtPPVPriceNL.EditValue, "NL", chkDRM.EditValue)
                         DvdPostData.clsConnection.ExecuteNonQuery(sql)
                     Else
-                        sql = DvdPostData.ClsVod.GetUpdateVod(txtIdNL.EditValue, txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStartNL.EditValue, cmbDateExpiredNL.EditValue, chkAvailableNL.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCreditNL.EditValue, cmbDateLaterStartNL.EditValue, cmbDateLaterExpiredNL.EditValue, chkIsPPVNL.EditValue, txtPPVPriceNL.EditValue, "NL")
+                        sql = DvdPostData.ClsVod.GetUpdateVod(txtIdNL.EditValue, txtImdbView.EditValue, TxtFilename.EditValue, cmbDateStartNL.EditValue, cmbDateExpiredNL.EditValue, chkAvailableNL.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCreditNL.EditValue, cmbDateLaterStartNL.EditValue, cmbDateLaterExpiredNL.EditValue, chkIsPPVNL.EditValue, txtPPVPriceNL.EditValue, "NL", chkDRM.EditValue)
                         DvdPostData.clsConnection.ExecuteNonQuery(sql)
                     End If
                 End If
@@ -987,7 +995,7 @@ Public Class FrmProductsVOD
                 filename = fileInfo.Name
                 language_audio_id = SearchLangID(elts(DVDPostBuziness.clsFileZilla.FormatFile.LANGUAGE_AUDIO_ID), filename)
                 language_subtitle_id = SearchLangID(elts(DVDPostBuziness.clsFileZilla.FormatFile.LANGUAGE_SUBTITLE_ID), filename)
-                sql = DvdPostData.ClsVod.GetInsertVod(elts(DVDPostBuziness.clsFileZilla.FormatFile.IMDB_ID), extension + filename, Date.MinValue, Date.MinValue, True, language_audio_id, language_subtitle_id, elts(DVDPostBuziness.clsFileZilla.FormatFile.STUDIO_ID), "uploaded", strQuality, "SOFTLAYER", 1, 1, Date.MinValue, Date.MinValue, "false", "", "BE")
+                sql = DvdPostData.ClsVod.GetInsertVod(elts(DVDPostBuziness.clsFileZilla.FormatFile.IMDB_ID), extension + filename, Date.MinValue, Date.MinValue, True, language_audio_id, language_subtitle_id, elts(DVDPostBuziness.clsFileZilla.FormatFile.STUDIO_ID), "uploaded", strQuality, "SOFTLAYER", 1, 1, Date.MinValue, Date.MinValue, "false", "", "BE", String.Empty)
                 DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
                 fileZilla.InsertNodeQueue(file, fileInfo.Name, fileInfo.Length)
@@ -1270,12 +1278,16 @@ Public Class FrmProductsVOD
 
     End Function
 
-    Private Sub CheckParseFileName(ByVal name As String, ByRef result() As String)
+    Private Sub CheckParseFileName(ByVal name As String, ByRef result() As String, Optional ByRef drm As Boolean = False)
         ' rules path NameFile@Imdbid_DTypeOfVod_ALanguage_SSubtitle_BitRate.Extension   FATAL@1473357_Dpc_Afre_Snon_3000k.f4v
 
         Dim elt() As String
         Dim tmp() As String
         Dim valueElt As String
+
+        If name.Contains("__") Then
+            name = name.Replace("__", "@")
+        End If
         elt = name.Split("@")
 
         If elt.Length <> 2 Then
@@ -1283,12 +1295,18 @@ Public Class FrmProductsVOD
             Return
         Else
             tmp = elt(1).Split("_")
-            If tmp.Length <> 5 Then
+            If tmp.Length = 4 Then
+                result(DvdPostData.ClsVod.ListField.FILENAME) = elt(0)
+                result(DvdPostData.ClsVod.ListField.IMDB_ID) = tmp(0)
+                drm = True
+            ElseIf tmp.Length <> 5 Then
                 result = Nothing
+                drm = False
                 Return
             Else
                 result(DvdPostData.ClsVod.ListField.FILENAME) = elt(0)
                 result(DvdPostData.ClsVod.ListField.IMDB_ID) = tmp(0)
+                drm = False
             End If
 
             valueElt = CheckEltFileName(tmp(1), "D")
@@ -1308,6 +1326,9 @@ Public Class FrmProductsVOD
             End If
 
             valueElt = CheckEltFileName(tmp(3), "S")
+            If drm Then
+                valueElt = valueElt.Replace(".m3u8", String.Empty)
+            End If
             If valueElt Is Nothing Then
                 result = Nothing
                 Return
@@ -1334,7 +1355,7 @@ Public Class FrmProductsVOD
             Return
         Else
             tmp = elt(1).Split("_")
-            If tmp.Length <> 5 Then
+           If tmp.Length <> 5 Then
                 result = Nothing
                 Return
             Else
@@ -1359,6 +1380,7 @@ Public Class FrmProductsVOD
             End If
 
             valueElt = CheckEltFileName(tmp(3), "S")
+            
             If valueElt Is Nothing Then
                 result = Nothing
                 Return
@@ -1390,6 +1412,7 @@ Public Class FrmProductsVOD
         Dim result() As String = Nothing
         Dim dr As DataRow
         Dim sql As String
+        Dim drm As Boolean = False
 
 
         For Each name As String In struct
@@ -1448,7 +1471,8 @@ Public Class FrmProductsVOD
             Else
 
                 FillEmptyValue(result)
-                CheckParseFileName(name, result)
+                drm = False
+                CheckParseFileName(name, result, drm)
 
                 If result IsNot Nothing Then
 
@@ -1508,7 +1532,7 @@ Public Class FrmProductsVOD
                                 Integer.Parse(result(DvdPostData.ClsVod.ListField.CREDIT)), _
                                 result(DvdPostData.ClsVod.ListField.AVAILABLE_BACKCATALOGUE_FROM), _
                                 result(DvdPostData.ClsVod.ListField.EXPIRE_BACKKATALOGUE_AT), _
-                                "false", "", "BE")
+                                "false", "", "BE", drm.ToString())
 
                         DvdPostData.clsConnection.ExecuteNonQuery(sql)
                         LstResult.Items.Add(name)
@@ -1592,7 +1616,7 @@ Public Class FrmProductsVOD
                                         IIf(dr("expire_backcatalogue_at") Is System.DBNull.Value, DateTime.MinValue, dr("expire_backcatalogue_at")), _
                                         IIf(dr("is_ppv") Is System.DBNull.Value, "false", dr("is_ppv")), _
                                         IIf(dr("ppv_price") Is System.DBNull.Value, "", dr("ppv_price")), _
-                                        dr("country"), True)
+                                        dr("country"), dr("drm"), True)
             DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
         Next

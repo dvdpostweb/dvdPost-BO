@@ -179,6 +179,36 @@ Public Class ClsBatchDomiciliation
         Return sql
     End Function
 
+    Public Shared Function CreateEddPayment(ByVal customers_id As Integer, ByVal msg_id As Integer, ByVal pmt_inf_id As Integer, _
+                                                        ByVal pmt_instr_id As Integer, _
+                                                        ByVal end_to_end_id As String, _
+                                                        ByVal cre_dt_tm As String, _
+                                                        ByVal reqd_colltn_dt As String, _
+                                                        ByVal edd_payment_status As Integer, _
+                                                        ByVal iban As String) As String
+        Dim sql As String
+        sql = String.Format("insert into payment_edd(customers_id, msg_id, pmt_inf_id, pmt_instr_id, end_to_end_id, cre_dt_tm, reqd_colltn_dt, edd_payment_status, iban) " & _
+                " values({0}, {1}, {2}, {3},'{4}', '{5}', '{6}', {7}, '{8}')", customers_id, msg_id, pmt_inf_id, pmt_instr_id, end_to_end_id, cre_dt_tm, reqd_colltn_dt, edd_payment_status, iban)
+
+        Return sql
+    End Function
+
+    Public Shared Function UpdateEDDPayment() As String
+        Dim sql As String
+        sql = "UPDATE payment_edd p join bank_account_movements b on b.entiredata = p.pmt_instr_id and b.ClientReference = p.end_to_end_id " & _
+              "   SET p.type_r_transaction = b.type_r_transaction, p.paid_or_refund_reason = b.paid_refund_reason, p.reason = b.reason " & _
+              " WHERE b.date_coda_created = date(now()) "
+
+        Return sql
+    End Function
+
+    Public Shared Function SelectEDDPaymentReturnedToRecurrent() As String
+        Dim sql As String
+        sql = "SELECT * payment_edd p where type_r_transaction = 2 "
+
+        Return sql
+    End Function
+
     Public Shared Function PrintActivation(ByVal typePayment As Integer, _
                                            ByVal country_id As Integer, _
                                            ByVal domiciliation_status_SendLetter As Integer, _
@@ -251,7 +281,7 @@ Public Class ClsBatchDomiciliation
     Public Shared Function GetBankAccountMovementWithCommunicationStructure(ByVal name_coda As String) As String
         Dim sql As String
 
-        sql = "select account_movements_id,communication from bank_account_movements where coda_filename = '" & name_coda & "' and communicationtypeid = 1 "
+        sql = "select account_movements_id, concat(concat(communication, if(ISNULL(communication2),'',communication2)), if(isnull(communication3),'',communication3)) as communication from bank_account_movements where coda_filename = '" & name_coda & "' and communicationtypeid = 1 "
         Return sql
     End Function
 End Class

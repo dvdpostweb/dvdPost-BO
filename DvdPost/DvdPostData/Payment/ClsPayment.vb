@@ -12,6 +12,27 @@ Public Class ClsPayment
         Return sql
     End Function
 
+    Public Shared Function getLastEddMsgId() As String
+        Dim sql As String
+        ' id   -> edd message
+        sql = "SELECT if(ISNULL(max(msg_id)),0, max(msg_id)) FROM edd_pmtinit_messages "
+        Return sql
+    End Function
+
+    Public Shared Function getLastEddPmtInfId() As String
+        Dim sql As String
+        ' id   -> payment info part in edd message
+        sql = "SELECT if(ISNULL(max(pmt_inf_id)),0, max(pmt_inf_id)) FROM edd_pmtinit_messages "
+        Return sql
+    End Function
+
+    Public Shared Function getCreateEddPmtInf(ByVal msg_id As Integer, ByVal pmt_inf_id As Integer, ByVal edd_xml_text As String, ByVal cre_dt_tm As String) As String
+        Dim sql As String
+        ' id   -> payment info part in edd message
+        sql = String.Format("INSERT INTO edd_pmtinit_messages(msg_id, pmt_inf_id, edd_xml_request, cre_dt_tm) values({0},{1},'{2}','{3}')", msg_id, pmt_inf_id, edd_xml_text, cre_dt_tm)
+        Return sql
+    End Function
+
     'Public Shared Function GetSelectCpt_Payment_open() As String
     '    Dim sql As String
     '    sql = " select count(*) from payment p where p.customers_id = p.customers_id and p2.payment_status not in (" & PaymentOfflineData.GetListClose() & ")"

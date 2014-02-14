@@ -160,7 +160,7 @@ Public Class clsOdersStatusHistory
     End Function
     Public Shared Function getSelectOrderOneMonthDelay() As String
         Dim sql As String
-        sql = "select o.orders_id,o.last_modified,o.customers_id,o.orders_status from orders o " & _
+        sql = "select o.orders_id,o.last_modified,o.customers_id, (select customers_language from customers c where c.customers_id = o.customers_id) language_id, o.orders_status from orders o " & _
         " where date_add(o.last_modified,interval 1 month) <= date(now()) " & _
         " and o.orders_status in (" & OrderStatusNew.DELAYED_BACK & "," & OrderStatusNew.DELAYED_GO & ")" & _
         " order by o.last_modified "
@@ -177,7 +177,7 @@ Public Class clsOdersStatusHistory
 
     Public Shared Function GetselectOrderComplaint_Inadmissible() As String
         Dim sql As String
-        sql = "select o.orders_id,o.date_purchased,o.customers_id,o.orders_status from orders o where o.orders_status = " & OrderStatusNew.COMPLAINT_INADMISSIBLE & _
+        sql = "select o.orders_id,o.date_purchased,o.customers_id, o.orders_status from orders o where o.orders_status = " & OrderStatusNew.COMPLAINT_INADMISSIBLE & _
         " order by o.date_purchased desc "
         Return sql
     End Function

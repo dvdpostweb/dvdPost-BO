@@ -237,15 +237,13 @@ Partial Class FrmReconciliation
         '
         'GridBankAccountMovements
         '
-        Me.GridBankAccountMovements.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4)
         Me.GridBankAccountMovements.EmbeddedNavigator.Name = ""
         Me.GridBankAccountMovements.FormsUseDefaultLookAndFeel = False
-        Me.GridBankAccountMovements.Location = New System.Drawing.Point(349, 44)
+        Me.GridBankAccountMovements.Location = New System.Drawing.Point(262, 36)
         Me.GridBankAccountMovements.MainView = Me.GridViewBankAccountMovements
-        Me.GridBankAccountMovements.Margin = New System.Windows.Forms.Padding(4)
         Me.GridBankAccountMovements.Name = "GridBankAccountMovements"
         Me.GridBankAccountMovements.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryCmbMatching})
-        Me.GridBankAccountMovements.Size = New System.Drawing.Size(1215, 332)
+        Me.GridBankAccountMovements.Size = New System.Drawing.Size(911, 270)
         Me.GridBankAccountMovements.TabIndex = 4
         Me.GridBankAccountMovements.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewBankAccountMovements})
         '
@@ -419,14 +417,13 @@ Partial Class FrmReconciliation
         '
         'CheckOpenPaymentCoda
         '
-        Me.CheckOpenPaymentCoda.Location = New System.Drawing.Point(37, 154)
-        Me.CheckOpenPaymentCoda.Margin = New System.Windows.Forms.Padding(4)
+        Me.CheckOpenPaymentCoda.Location = New System.Drawing.Point(28, 125)
         Me.CheckOpenPaymentCoda.Name = "CheckOpenPaymentCoda"
         Me.CheckOpenPaymentCoda.Properties.Caption = "Open Payment"
         Me.CheckOpenPaymentCoda.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.CheckOpenPaymentCoda.Properties.ValueChecked = 1
         Me.CheckOpenPaymentCoda.Properties.ValueUnchecked = 0
-        Me.CheckOpenPaymentCoda.Size = New System.Drawing.Size(288, 21)
+        Me.CheckOpenPaymentCoda.Size = New System.Drawing.Size(216, 19)
         Me.CheckOpenPaymentCoda.TabIndex = 59
         '
         'GCBankAccountMovements
@@ -441,86 +438,77 @@ Partial Class FrmReconciliation
         Me.GCBankAccountMovements.Controls.Add(Me.LcStartDate)
         Me.GCBankAccountMovements.Controls.Add(Me.txtEndDate)
         Me.GCBankAccountMovements.Controls.Add(Me.txtStartDate)
-        Me.GCBankAccountMovements.Location = New System.Drawing.Point(5, 44)
-        Me.GCBankAccountMovements.Margin = New System.Windows.Forms.Padding(4)
+        Me.GCBankAccountMovements.Location = New System.Drawing.Point(4, 36)
         Me.GCBankAccountMovements.Name = "GCBankAccountMovements"
-        Me.GCBankAccountMovements.Size = New System.Drawing.Size(336, 332)
+        Me.GCBankAccountMovements.Size = New System.Drawing.Size(252, 270)
         Me.GCBankAccountMovements.TabIndex = 13
         Me.GCBankAccountMovements.Text = "No Payment"
         '
         'btn_noPayment
         '
-        Me.btn_noPayment.Location = New System.Drawing.Point(64, 250)
-        Me.btn_noPayment.Margin = New System.Windows.Forms.Padding(4)
+        Me.btn_noPayment.Location = New System.Drawing.Point(48, 203)
         Me.btn_noPayment.Name = "btn_noPayment"
-        Me.btn_noPayment.Size = New System.Drawing.Size(192, 28)
+        Me.btn_noPayment.Size = New System.Drawing.Size(144, 23)
         Me.btn_noPayment.TabIndex = 59
         Me.btn_noPayment.Text = "no Payment"
         '
         'txtAccountMovement_id
         '
-        Me.txtAccountMovement_id.Location = New System.Drawing.Point(192, 111)
-        Me.txtAccountMovement_id.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtAccountMovement_id.Location = New System.Drawing.Point(144, 90)
         Me.txtAccountMovement_id.Name = "txtAccountMovement_id"
-        Me.txtAccountMovement_id.Size = New System.Drawing.Size(133, 22)
+        Me.txtAccountMovement_id.Size = New System.Drawing.Size(100, 20)
         Me.txtAccountMovement_id.TabIndex = 58
         '
         'lblAccountMovements_id
         '
-        Me.lblAccountMovements_id.Location = New System.Drawing.Point(60, 114)
-        Me.lblAccountMovements_id.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblAccountMovements_id.Location = New System.Drawing.Point(45, 93)
         Me.lblAccountMovements_id.Name = "lblAccountMovements_id"
-        Me.lblAccountMovements_id.Size = New System.Drawing.Size(12, 16)
+        Me.lblAccountMovements_id.Size = New System.Drawing.Size(11, 13)
         Me.lblAccountMovements_id.TabIndex = 57
         Me.lblAccountMovements_id.Text = "ID"
         '
         'BtnLoadBankAccountMovements
         '
-        Me.BtnLoadBankAccountMovements.Location = New System.Drawing.Point(60, 197)
-        Me.BtnLoadBankAccountMovements.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnLoadBankAccountMovements.Location = New System.Drawing.Point(45, 160)
         Me.BtnLoadBankAccountMovements.Name = "BtnLoadBankAccountMovements"
-        Me.BtnLoadBankAccountMovements.Size = New System.Drawing.Size(192, 28)
+        Me.BtnLoadBankAccountMovements.Size = New System.Drawing.Size(144, 23)
         Me.BtnLoadBankAccountMovements.TabIndex = 56
         Me.BtnLoadBankAccountMovements.Text = "Load"
         '
         'lcEnddate
         '
-        Me.lcEnddate.Location = New System.Drawing.Point(64, 79)
-        Me.lcEnddate.Margin = New System.Windows.Forms.Padding(4)
+        Me.lcEnddate.Location = New System.Drawing.Point(48, 64)
         Me.lcEnddate.Name = "lcEnddate"
-        Me.lcEnddate.Size = New System.Drawing.Size(51, 16)
+        Me.lcEnddate.Size = New System.Drawing.Size(44, 13)
         Me.lcEnddate.TabIndex = 3
         Me.lcEnddate.Text = "End Date"
         '
         'LcStartDate
         '
-        Me.LcStartDate.Location = New System.Drawing.Point(64, 39)
-        Me.LcStartDate.Margin = New System.Windows.Forms.Padding(4)
+        Me.LcStartDate.Location = New System.Drawing.Point(48, 32)
         Me.LcStartDate.Name = "LcStartDate"
-        Me.LcStartDate.Size = New System.Drawing.Size(56, 16)
+        Me.LcStartDate.Size = New System.Drawing.Size(49, 13)
         Me.LcStartDate.TabIndex = 2
         Me.LcStartDate.Text = "start Date"
         '
         'txtEndDate
         '
         Me.txtEndDate.EditValue = Nothing
-        Me.txtEndDate.Location = New System.Drawing.Point(192, 79)
-        Me.txtEndDate.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtEndDate.Location = New System.Drawing.Point(144, 64)
         Me.txtEndDate.Name = "txtEndDate"
         Me.txtEndDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.txtEndDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-        Me.txtEndDate.Size = New System.Drawing.Size(133, 22)
+        Me.txtEndDate.Size = New System.Drawing.Size(100, 20)
         Me.txtEndDate.TabIndex = 1
         '
         'txtStartDate
         '
         Me.txtStartDate.EditValue = Nothing
-        Me.txtStartDate.Location = New System.Drawing.Point(192, 39)
-        Me.txtStartDate.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtStartDate.Location = New System.Drawing.Point(144, 32)
         Me.txtStartDate.Name = "txtStartDate"
         Me.txtStartDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.txtStartDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-        Me.txtStartDate.Size = New System.Drawing.Size(133, 22)
+        Me.txtStartDate.Size = New System.Drawing.Size(100, 20)
         Me.txtStartDate.TabIndex = 0
         '
         'GCPayment
@@ -533,97 +521,86 @@ Partial Class FrmReconciliation
         Me.GCPayment.Controls.Add(Me.btnLoadPayment)
         Me.GCPayment.Controls.Add(Me.LabelControl8)
         Me.GCPayment.Controls.Add(Me.checkOpenPayment)
-        Me.GCPayment.Location = New System.Drawing.Point(5, 518)
-        Me.GCPayment.Margin = New System.Windows.Forms.Padding(4)
+        Me.GCPayment.Location = New System.Drawing.Point(4, 421)
         Me.GCPayment.Name = "GCPayment"
-        Me.GCPayment.Size = New System.Drawing.Size(336, 311)
+        Me.GCPayment.Size = New System.Drawing.Size(252, 253)
         Me.GCPayment.TabIndex = 54
         Me.GCPayment.Text = "Parameters Bank Account Movements"
         '
         'BtnReopen
         '
-        Me.BtnReopen.Location = New System.Drawing.Point(21, 222)
-        Me.BtnReopen.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnReopen.Location = New System.Drawing.Point(16, 180)
         Me.BtnReopen.Name = "BtnReopen"
-        Me.BtnReopen.Size = New System.Drawing.Size(192, 28)
+        Me.BtnReopen.Size = New System.Drawing.Size(144, 23)
         Me.BtnReopen.TabIndex = 61
         Me.BtnReopen.Text = "Re Opened Payment"
         '
         'txtMatching_id
         '
-        Me.txtMatching_id.Location = New System.Drawing.Point(121, 81)
-        Me.txtMatching_id.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtMatching_id.Location = New System.Drawing.Point(91, 66)
         Me.txtMatching_id.Name = "txtMatching_id"
-        Me.txtMatching_id.Size = New System.Drawing.Size(184, 22)
+        Me.txtMatching_id.Size = New System.Drawing.Size(138, 20)
         Me.txtMatching_id.TabIndex = 60
         '
         'lblMatching_id
         '
-        Me.lblMatching_id.Location = New System.Drawing.Point(21, 85)
-        Me.lblMatching_id.Margin = New System.Windows.Forms.Padding(4)
+        Me.lblMatching_id.Location = New System.Drawing.Point(16, 69)
         Me.lblMatching_id.Name = "lblMatching_id"
-        Me.lblMatching_id.Size = New System.Drawing.Size(67, 16)
+        Me.lblMatching_id.Size = New System.Drawing.Size(57, 13)
         Me.lblMatching_id.TabIndex = 59
         Me.lblMatching_id.Text = "Matching ID"
         '
         'txtcustomers_id
         '
-        Me.txtcustomers_id.Location = New System.Drawing.Point(121, 34)
-        Me.txtcustomers_id.Margin = New System.Windows.Forms.Padding(4)
+        Me.txtcustomers_id.Location = New System.Drawing.Point(91, 28)
         Me.txtcustomers_id.Name = "txtcustomers_id"
-        Me.txtcustomers_id.Size = New System.Drawing.Size(184, 22)
+        Me.txtcustomers_id.Size = New System.Drawing.Size(138, 20)
         Me.txtcustomers_id.TabIndex = 56
         '
         'btnLoadPayment
         '
-        Me.btnLoadPayment.Location = New System.Drawing.Point(21, 171)
-        Me.btnLoadPayment.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnLoadPayment.Location = New System.Drawing.Point(16, 139)
         Me.btnLoadPayment.Name = "btnLoadPayment"
-        Me.btnLoadPayment.Size = New System.Drawing.Size(192, 28)
+        Me.btnLoadPayment.Size = New System.Drawing.Size(144, 23)
         Me.btnLoadPayment.TabIndex = 55
         Me.btnLoadPayment.Text = "Load"
         '
         'LabelControl8
         '
-        Me.LabelControl8.Location = New System.Drawing.Point(21, 38)
-        Me.LabelControl8.Margin = New System.Windows.Forms.Padding(4)
+        Me.LabelControl8.Location = New System.Drawing.Point(16, 31)
         Me.LabelControl8.Name = "LabelControl8"
-        Me.LabelControl8.Size = New System.Drawing.Size(71, 16)
+        Me.LabelControl8.Size = New System.Drawing.Size(60, 13)
         Me.LabelControl8.TabIndex = 54
         Me.LabelControl8.Text = "Customer ID"
         '
         'checkOpenPayment
         '
-        Me.checkOpenPayment.Location = New System.Drawing.Point(17, 126)
-        Me.checkOpenPayment.Margin = New System.Windows.Forms.Padding(4)
+        Me.checkOpenPayment.Location = New System.Drawing.Point(13, 102)
         Me.checkOpenPayment.Name = "checkOpenPayment"
         Me.checkOpenPayment.Properties.Caption = "Open Payment"
         Me.checkOpenPayment.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
         Me.checkOpenPayment.Properties.ValueChecked = 1
         Me.checkOpenPayment.Properties.ValueUnchecked = 0
-        Me.checkOpenPayment.Size = New System.Drawing.Size(288, 21)
+        Me.checkOpenPayment.Size = New System.Drawing.Size(216, 19)
         Me.checkOpenPayment.TabIndex = 53
         '
         'BtnReconciliation
         '
-        Me.BtnReconciliation.Location = New System.Drawing.Point(47, 431)
-        Me.BtnReconciliation.Margin = New System.Windows.Forms.Padding(4)
+        Me.BtnReconciliation.Location = New System.Drawing.Point(35, 350)
         Me.BtnReconciliation.Name = "BtnReconciliation"
-        Me.BtnReconciliation.Size = New System.Drawing.Size(192, 28)
+        Me.BtnReconciliation.Size = New System.Drawing.Size(144, 23)
         Me.BtnReconciliation.TabIndex = 56
         Me.BtnReconciliation.Text = "Reconciliation"
         '
         'GridPayment
         '
-        Me.GridPayment.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(4)
         Me.GridPayment.EmbeddedNavigator.Name = ""
         Me.GridPayment.FormsUseDefaultLookAndFeel = False
-        Me.GridPayment.Location = New System.Drawing.Point(349, 518)
+        Me.GridPayment.Location = New System.Drawing.Point(262, 421)
         Me.GridPayment.MainView = Me.GridViewPayment
-        Me.GridPayment.Margin = New System.Windows.Forms.Padding(4)
         Me.GridPayment.Name = "GridPayment"
         Me.GridPayment.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit5})
-        Me.GridPayment.Size = New System.Drawing.Size(1215, 410)
+        Me.GridPayment.Size = New System.Drawing.Size(911, 333)
         Me.GridPayment.TabIndex = 62
         Me.GridPayment.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewPayment})
         '
@@ -725,15 +702,14 @@ Partial Class FrmReconciliation
         '
         'FrmReconciliation
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1580, 943)
+        Me.ClientSize = New System.Drawing.Size(1185, 766)
         Me.Controls.Add(Me.GridPayment)
         Me.Controls.Add(Me.BtnReconciliation)
         Me.Controls.Add(Me.GCPayment)
         Me.Controls.Add(Me.GCBankAccountMovements)
         Me.Controls.Add(Me.GridBankAccountMovements)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "FrmReconciliation"
         Me.Text = "FrmReconciliation"
         Me.Controls.SetChildIndex(Me.GridBankAccountMovements, 0)

@@ -904,6 +904,76 @@ Public Class frmCustomers_Maint
     Friend WithEvents txtADULTSVOD_ValidityTo As DevExpress.XtraEditors.DateEdit
     Friend WithEvents LabelControl16 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txtPPAgreementID As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents tabEDD As DevExpress.XtraTab.XtraTabPage
+    Friend WithEvents cmbEDDMandateStatus As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents LabelControl18 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtVolgnr As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl19 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtEddID As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl22 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtReference As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtMandateRef As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl32 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl37 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtEDDCustomersID As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl88 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl89 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtEDDMandateID As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl23 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtIBAN As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl24 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtCreateDate As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtCustomersEDDCity As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl92 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtCustomersEDDPostcode As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl93 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtCustomersEDDStreetNumber As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl94 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtCustomersEDDName As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl95 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl96 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl97 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtLastUpdate As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl98 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtKBO As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl99 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtBIC As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl100 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtGemeente As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl101 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl102 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtContractID As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl103 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtDebtorRefpartyCode As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtDebtorRefpartyName As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl104 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtContractDescrp As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents txtEDDSignatureDate As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents txtEDDCreateDate As DevExpress.XtraEditors.DateEdit
+    Friend WithEvents txtEDDSigningCity As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl17 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtDebtorIdentificationCode As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl90 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtCustomersEDDCountry As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl91 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents btnEDDNew As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents cmbLastPaymentStatus As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents grdEddHistory As DevExpress.XtraGrid.GridControl
+    Friend WithEvents grdViewEddHistory As DevExpress.XtraGrid.Views.Grid.GridView
+    Friend WithEvents RepositoryItemLookUpEdit2 As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+    Friend WithEvents chkEDDIBANChanged As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents chkBICChanged As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents chkMandateIDChanged As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents PanelControl2 As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents TextEdit24 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl105 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents TextEdit25 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl106 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents LabelControl107 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents TextEdit26 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl108 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents cmbInvoiceEDDManadateStatus As DevExpress.XtraEditors.LookUpEdit
+    Friend WithEvents LabelControl109 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents cmbDiscType As DevExpress.XtraEditors.ComboBoxEdit
 
 
@@ -1133,6 +1203,15 @@ Me.txt_cc_owner2 = New DevExpress.XtraEditors.TextEdit
 Me.LabelControl58 = New DevExpress.XtraEditors.LabelControl
 Me.BtnCancelPayment = New DevExpress.XtraEditors.SimpleButton
 Me.GroupDomiciliation = New DevExpress.XtraEditors.GroupControl
+Me.PanelControl2 = New DevExpress.XtraEditors.PanelControl
+Me.TextEdit24 = New DevExpress.XtraEditors.TextEdit
+Me.LabelControl105 = New DevExpress.XtraEditors.LabelControl
+Me.TextEdit25 = New DevExpress.XtraEditors.TextEdit
+Me.LabelControl106 = New DevExpress.XtraEditors.LabelControl
+Me.LabelControl107 = New DevExpress.XtraEditors.LabelControl
+Me.TextEdit26 = New DevExpress.XtraEditors.TextEdit
+Me.LabelControl108 = New DevExpress.XtraEditors.LabelControl
+Me.cmbInvoiceEDDManadateStatus = New DevExpress.XtraEditors.LookUpEdit
 Me.panelDomiciliation = New DevExpress.XtraEditors.PanelControl
 Me.txtDomAcctNumber = New DevExpress.XtraEditors.TextEdit
 Me.LabelControl51 = New DevExpress.XtraEditors.LabelControl
@@ -1457,6 +1536,67 @@ Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
 Me.txtcustomers_id_search = New DevExpress.XtraEditors.TextEdit
 Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl
 Me.XTabCustomers = New DevExpress.XtraTab.XtraTabControl
+Me.tabEDD = New DevExpress.XtraTab.XtraTabPage
+Me.LabelControl109 = New DevExpress.XtraEditors.LabelControl
+Me.chkBICChanged = New DevExpress.XtraEditors.CheckEdit
+Me.chkMandateIDChanged = New DevExpress.XtraEditors.CheckEdit
+Me.chkEDDIBANChanged = New DevExpress.XtraEditors.CheckEdit
+Me.grdEddHistory = New DevExpress.XtraGrid.GridControl
+Me.grdViewEddHistory = New DevExpress.XtraGrid.Views.Grid.GridView
+Me.RepositoryItemLookUpEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
+Me.cmbLastPaymentStatus = New DevExpress.XtraEditors.LookUpEdit
+Me.btnEDDNew = New DevExpress.XtraEditors.SimpleButton
+Me.txtEDDSigningCity = New DevExpress.XtraEditors.TextEdit
+Me.LabelControl17 = New DevExpress.XtraEditors.LabelControl
+Me.txtDebtorIdentificationCode = New DevExpress.XtraEditors.TextEdit
+Me.LabelControl90 = New DevExpress.XtraEditors.LabelControl
+Me.txtCustomersEDDCountry = New DevExpress.XtraEditors.TextEdit
+Me.LabelControl91 = New DevExpress.XtraEditors.LabelControl
+Me.txtEDDSignatureDate = New DevExpress.XtraEditors.DateEdit
+Me.txtEDDCreateDate = New DevExpress.XtraEditors.DateEdit
+Me.LabelControl97 = New DevExpress.XtraEditors.LabelControl
+Me.txtLastUpdate = New DevExpress.XtraEditors.TextEdit
+Me.LabelControl98 = New DevExpress.XtraEditors.LabelControl
+Me.txtKBO = New DevExpress.XtraEditors.TextEdit
+Me.LabelControl99 = New DevExpress.XtraEditors.LabelControl
+Me.txtBIC = New DevExpress.XtraEditors.TextEdit
+Me.LabelControl100 = New DevExpress.XtraEditors.LabelControl
+Me.txtGemeente = New DevExpress.XtraEditors.TextEdit
+Me.LabelControl101 = New DevExpress.XtraEditors.LabelControl
+Me.txtContractDescrp = New DevExpress.XtraEditors.TextEdit
+Me.LabelControl102 = New DevExpress.XtraEditors.LabelControl
+Me.txtContractID = New DevExpress.XtraEditors.TextEdit
+Me.LabelControl103 = New DevExpress.XtraEditors.LabelControl
+Me.txtDebtorRefpartyCode = New DevExpress.XtraEditors.TextEdit
+Me.txtDebtorRefpartyName = New DevExpress.XtraEditors.TextEdit
+Me.LabelControl104 = New DevExpress.XtraEditors.LabelControl
+Me.txtCreateDate = New DevExpress.XtraEditors.LabelControl
+Me.txtCustomersEDDCity = New DevExpress.XtraEditors.TextEdit
+Me.LabelControl92 = New DevExpress.XtraEditors.LabelControl
+Me.txtCustomersEDDPostcode = New DevExpress.XtraEditors.TextEdit
+Me.LabelControl93 = New DevExpress.XtraEditors.LabelControl
+Me.txtCustomersEDDStreetNumber = New DevExpress.XtraEditors.TextEdit
+Me.LabelControl94 = New DevExpress.XtraEditors.LabelControl
+Me.txtCustomersEDDName = New DevExpress.XtraEditors.TextEdit
+Me.LabelControl95 = New DevExpress.XtraEditors.LabelControl
+Me.LabelControl96 = New DevExpress.XtraEditors.LabelControl
+Me.txtMandateRef = New DevExpress.XtraEditors.TextEdit
+Me.LabelControl32 = New DevExpress.XtraEditors.LabelControl
+Me.LabelControl37 = New DevExpress.XtraEditors.LabelControl
+Me.txtEDDCustomersID = New DevExpress.XtraEditors.TextEdit
+Me.LabelControl88 = New DevExpress.XtraEditors.LabelControl
+Me.LabelControl89 = New DevExpress.XtraEditors.LabelControl
+Me.txtEDDMandateID = New DevExpress.XtraEditors.TextEdit
+Me.LabelControl23 = New DevExpress.XtraEditors.LabelControl
+Me.txtIBAN = New DevExpress.XtraEditors.TextEdit
+Me.LabelControl24 = New DevExpress.XtraEditors.LabelControl
+Me.txtReference = New DevExpress.XtraEditors.TextEdit
+Me.cmbEDDMandateStatus = New DevExpress.XtraEditors.LookUpEdit
+Me.LabelControl18 = New DevExpress.XtraEditors.LabelControl
+Me.txtVolgnr = New DevExpress.XtraEditors.TextEdit
+Me.LabelControl19 = New DevExpress.XtraEditors.LabelControl
+Me.txtEddID = New DevExpress.XtraEditors.TextEdit
+Me.LabelControl22 = New DevExpress.XtraEditors.LabelControl
 Me.tabComment = New DevExpress.XtraTab.XtraTabPage
 Me.MemoCustomersComment = New DevExpress.XtraEditors.MemoEdit
 Me.GridCustComment = New DevExpress.XtraGrid.GridControl
@@ -1800,6 +1940,12 @@ CType(Me.txt_cc_card_no2.Properties,System.ComponentModel.ISupportInitialize).Be
 CType(Me.txt_cc_owner2.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.GroupDomiciliation,System.ComponentModel.ISupportInitialize).BeginInit
 Me.GroupDomiciliation.SuspendLayout
+CType(Me.PanelControl2,System.ComponentModel.ISupportInitialize).BeginInit
+Me.PanelControl2.SuspendLayout
+CType(Me.TextEdit24.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.TextEdit25.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.TextEdit26.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.cmbInvoiceEDDManadateStatus.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.panelDomiciliation,System.ComponentModel.ISupportInitialize).BeginInit
 Me.panelDomiciliation.SuspendLayout
 CType(Me.txtDomAcctNumber.Properties,System.ComponentModel.ISupportInitialize).BeginInit
@@ -1955,6 +2101,41 @@ CType(Me.txtcustomers_name_search.Properties,System.ComponentModel.ISupportIniti
 CType(Me.txtcustomers_id_search.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.XTabCustomers,System.ComponentModel.ISupportInitialize).BeginInit
 Me.XTabCustomers.SuspendLayout
+Me.tabEDD.SuspendLayout
+CType(Me.chkBICChanged.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.chkMandateIDChanged.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.chkEDDIBANChanged.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.grdEddHistory,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.grdViewEddHistory,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.RepositoryItemLookUpEdit2,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.cmbLastPaymentStatus.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtEDDSigningCity.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtDebtorIdentificationCode.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtCustomersEDDCountry.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtEDDSignatureDate.Properties.VistaTimeProperties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtEDDSignatureDate.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtEDDCreateDate.Properties.VistaTimeProperties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtEDDCreateDate.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtLastUpdate.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtKBO.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtBIC.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtGemeente.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtContractDescrp.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtContractID.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtDebtorRefpartyCode.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtDebtorRefpartyName.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtCustomersEDDCity.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtCustomersEDDPostcode.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtCustomersEDDStreetNumber.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtCustomersEDDName.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtMandateRef.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtEDDCustomersID.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtEDDMandateID.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtIBAN.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtReference.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.cmbEDDMandateStatus.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtVolgnr.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.txtEddID.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 Me.tabComment.SuspendLayout
 CType(Me.MemoCustomersComment.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.GridCustComment,System.ComponentModel.ISupportInitialize).BeginInit
@@ -3032,7 +3213,7 @@ Me.TextEdit3.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.o
 Me.TextEdit3.Enabled = false
 Me.TextEdit3.Location = New System.Drawing.Point(280, 72)
 Me.TextEdit3.Name = "TextEdit3"
-Me.TextEdit3.Size = New System.Drawing.Size(312, 22)
+Me.TextEdit3.Size = New System.Drawing.Size(312, 20)
 Me.TextEdit3.TabIndex = 13
 '
 'TextEdit4
@@ -3041,7 +3222,7 @@ Me.TextEdit4.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.o
 Me.TextEdit4.Enabled = false
 Me.TextEdit4.Location = New System.Drawing.Point(152, 72)
 Me.TextEdit4.Name = "TextEdit4"
-Me.TextEdit4.Size = New System.Drawing.Size(120, 22)
+Me.TextEdit4.Size = New System.Drawing.Size(120, 20)
 Me.TextEdit4.TabIndex = 12
 '
 'TextEdit5
@@ -3050,7 +3231,7 @@ Me.TextEdit5.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.o
 Me.TextEdit5.Enabled = false
 Me.TextEdit5.Location = New System.Drawing.Point(152, 48)
 Me.TextEdit5.Name = "TextEdit5"
-Me.TextEdit5.Size = New System.Drawing.Size(224, 22)
+Me.TextEdit5.Size = New System.Drawing.Size(224, 20)
 Me.TextEdit5.TabIndex = 10
 '
 'LCNumDom
@@ -4005,11 +4186,11 @@ Me.tabPayment.Text = "Invoices"
 '
 Me.GridPayment.EmbeddedNavigator.Name = ""
 Me.GridPayment.FormsUseDefaultLookAndFeel = false
-Me.GridPayment.Location = New System.Drawing.Point(3, 233)
+Me.GridPayment.Location = New System.Drawing.Point(3, 243)
 Me.GridPayment.MainView = Me.GridViewPayment
 Me.GridPayment.Name = "GridPayment"
 Me.GridPayment.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit5})
-Me.GridPayment.Size = New System.Drawing.Size(1150, 449)
+Me.GridPayment.Size = New System.Drawing.Size(1205, 439)
 Me.GridPayment.TabIndex = 61
 Me.GridPayment.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewPayment})
 '
@@ -4101,7 +4282,7 @@ Me.checkOpenPayment.TabIndex = 62
 '
 Me.GroupOgone.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
 Me.GroupOgone.Controls.Add(Me.PanelOgone)
-Me.GroupOgone.Location = New System.Drawing.Point(424, 41)
+Me.GroupOgone.Location = New System.Drawing.Point(748, 46)
 Me.GroupOgone.Name = "GroupOgone"
 Me.GroupOgone.Size = New System.Drawing.Size(460, 140)
 Me.GroupOgone.TabIndex = 57
@@ -4223,12 +4404,104 @@ Me.BtnCancelPayment.Text = "Cancel Payment"
 'GroupDomiciliation
 '
 Me.GroupDomiciliation.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
+Me.GroupDomiciliation.Controls.Add(Me.PanelControl2)
 Me.GroupDomiciliation.Controls.Add(Me.panelDomiciliation)
 Me.GroupDomiciliation.Location = New System.Drawing.Point(19, 41)
 Me.GroupDomiciliation.Name = "GroupDomiciliation"
-Me.GroupDomiciliation.Size = New System.Drawing.Size(374, 145)
+Me.GroupDomiciliation.Size = New System.Drawing.Size(723, 145)
 Me.GroupDomiciliation.TabIndex = 56
 Me.GroupDomiciliation.Text = "Domiciliation"
+'
+'PanelControl2
+'
+Me.PanelControl2.Anchor = System.Windows.Forms.AnchorStyles.None
+Me.PanelControl2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
+Me.PanelControl2.Controls.Add(Me.TextEdit24)
+Me.PanelControl2.Controls.Add(Me.LabelControl105)
+Me.PanelControl2.Controls.Add(Me.TextEdit25)
+Me.PanelControl2.Controls.Add(Me.LabelControl106)
+Me.PanelControl2.Controls.Add(Me.LabelControl107)
+Me.PanelControl2.Controls.Add(Me.TextEdit26)
+Me.PanelControl2.Controls.Add(Me.LabelControl108)
+Me.PanelControl2.Controls.Add(Me.cmbInvoiceEDDManadateStatus)
+Me.PanelControl2.Location = New System.Drawing.Point(368, 23)
+Me.PanelControl2.Name = "PanelControl2"
+Me.PanelControl2.Size = New System.Drawing.Size(348, 116)
+Me.PanelControl2.TabIndex = 1
+'
+'TextEdit24
+'
+Me.TextEdit24.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.customer_edd_street_number", true))
+Me.TextEdit24.Enabled = false
+Me.TextEdit24.Location = New System.Drawing.Point(133, 83)
+Me.TextEdit24.Name = "TextEdit24"
+Me.TextEdit24.Size = New System.Drawing.Size(208, 20)
+Me.TextEdit24.TabIndex = 80
+'
+'LabelControl105
+'
+Me.LabelControl105.Location = New System.Drawing.Point(5, 86)
+Me.LabelControl105.Name = "LabelControl105"
+Me.LabelControl105.Size = New System.Drawing.Size(99, 13)
+Me.LabelControl105.TabIndex = 84
+Me.LabelControl105.Text = "customers edd name"
+'
+'TextEdit25
+'
+Me.TextEdit25.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.customer_edd_name", true))
+Me.TextEdit25.Enabled = false
+Me.TextEdit25.Location = New System.Drawing.Point(133, 57)
+Me.TextEdit25.Name = "TextEdit25"
+Me.TextEdit25.Size = New System.Drawing.Size(208, 20)
+Me.TextEdit25.TabIndex = 79
+'
+'LabelControl106
+'
+Me.LabelControl106.Location = New System.Drawing.Point(4, 60)
+Me.LabelControl106.Name = "LabelControl106"
+Me.LabelControl106.Size = New System.Drawing.Size(116, 13)
+Me.LabelControl106.TabIndex = 83
+Me.LabelControl106.Text = "cust. edd street number"
+'
+'LabelControl107
+'
+Me.LabelControl107.Location = New System.Drawing.Point(4, 34)
+Me.LabelControl107.Name = "LabelControl107"
+Me.LabelControl107.Size = New System.Drawing.Size(102, 13)
+Me.LabelControl107.TabIndex = 82
+Me.LabelControl107.Text = "edd_mandate_status"
+'
+'TextEdit26
+'
+Me.TextEdit26.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.edd_mandate_id", true))
+Me.TextEdit26.Enabled = false
+Me.TextEdit26.Location = New System.Drawing.Point(133, 5)
+Me.TextEdit26.Name = "TextEdit26"
+Me.TextEdit26.Size = New System.Drawing.Size(208, 20)
+Me.TextEdit26.TabIndex = 77
+'
+'LabelControl108
+'
+Me.LabelControl108.Location = New System.Drawing.Point(5, 8)
+Me.LabelControl108.Name = "LabelControl108"
+Me.LabelControl108.Size = New System.Drawing.Size(80, 13)
+Me.LabelControl108.TabIndex = 81
+Me.LabelControl108.Text = "edd_mandate_id"
+'
+'cmbInvoiceEDDManadateStatus
+'
+Me.cmbInvoiceEDDManadateStatus.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.edd_mandate_status", true))
+Me.cmbInvoiceEDDManadateStatus.Enabled = false
+Me.cmbInvoiceEDDManadateStatus.Location = New System.Drawing.Point(133, 31)
+Me.cmbInvoiceEDDManadateStatus.Name = "cmbInvoiceEDDManadateStatus"
+Me.cmbInvoiceEDDManadateStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+Me.cmbInvoiceEDDManadateStatus.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DisplayMember", "DisplayMember", 58, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Value", "Value", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None)})
+Me.cmbInvoiceEDDManadateStatus.Properties.DataSource = Me.objDS.generalentity
+Me.cmbInvoiceEDDManadateStatus.Properties.DisplayMember = "DisplayMember"
+Me.cmbInvoiceEDDManadateStatus.Properties.NullText = ""
+Me.cmbInvoiceEDDManadateStatus.Properties.ValueMember = "Value"
+Me.cmbInvoiceEDDManadateStatus.Size = New System.Drawing.Size(208, 20)
+Me.cmbInvoiceEDDManadateStatus.TabIndex = 78
 '
 'panelDomiciliation
 '
@@ -4242,9 +4515,9 @@ Me.panelDomiciliation.Controls.Add(Me.txtDomDebiterName)
 Me.panelDomiciliation.Controls.Add(Me.LabelControl53)
 Me.panelDomiciliation.Controls.Add(Me.cmbDomStatus)
 Me.panelDomiciliation.Controls.Add(Me.LabelControl54)
-Me.panelDomiciliation.Location = New System.Drawing.Point(3, 23)
+Me.panelDomiciliation.Location = New System.Drawing.Point(6, 23)
 Me.panelDomiciliation.Name = "panelDomiciliation"
-Me.panelDomiciliation.Size = New System.Drawing.Size(366, 111)
+Me.panelDomiciliation.Size = New System.Drawing.Size(357, 114)
 Me.panelDomiciliation.TabIndex = 0
 '
 'txtDomAcctNumber
@@ -7423,7 +7696,634 @@ Me.XTabCustomers.SelectedTabPage = Me.tabMain
 Me.XTabCustomers.ShowTabHeader = DevExpress.Utils.DefaultBoolean.[True]
 Me.XTabCustomers.Size = New System.Drawing.Size(1262, 817)
 Me.XTabCustomers.TabIndex = 35
-Me.XTabCustomers.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.tabSearch, Me.tabMain, Me.tabComment, Me.tabCalls, Me.tabWishList, Me.tabAboHistory, Me.tabOrdersHistor, Me.tabMessagerie, Me.tabCustServ, Me.tabPayment, Me.tabMailHistory, Me.tabSponsorShip, Me.tabPaymentMovements, Me.tabDroselia, Me.tabAboprocess, Me.tabAboProcessOld, Me.tabPurchase, Me.tabCreditHist, Me.tabCompensation, Me.tabProductsRating, Me.tabSuspendedHistory, Me.tabVodView, Me.tabCritiques, Me.tabConfig})
+Me.XTabCustomers.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.tabSearch, Me.tabMain, Me.tabEDD, Me.tabComment, Me.tabCalls, Me.tabWishList, Me.tabAboHistory, Me.tabOrdersHistor, Me.tabMessagerie, Me.tabCustServ, Me.tabPayment, Me.tabMailHistory, Me.tabSponsorShip, Me.tabPaymentMovements, Me.tabDroselia, Me.tabAboprocess, Me.tabAboProcessOld, Me.tabPurchase, Me.tabCreditHist, Me.tabCompensation, Me.tabProductsRating, Me.tabSuspendedHistory, Me.tabVodView, Me.tabCritiques, Me.tabConfig})
+'
+'tabEDD
+'
+Me.tabEDD.Controls.Add(Me.LabelControl109)
+Me.tabEDD.Controls.Add(Me.chkBICChanged)
+Me.tabEDD.Controls.Add(Me.chkMandateIDChanged)
+Me.tabEDD.Controls.Add(Me.chkEDDIBANChanged)
+Me.tabEDD.Controls.Add(Me.grdEddHistory)
+Me.tabEDD.Controls.Add(Me.cmbLastPaymentStatus)
+Me.tabEDD.Controls.Add(Me.btnEDDNew)
+Me.tabEDD.Controls.Add(Me.txtEDDSigningCity)
+Me.tabEDD.Controls.Add(Me.LabelControl17)
+Me.tabEDD.Controls.Add(Me.txtDebtorIdentificationCode)
+Me.tabEDD.Controls.Add(Me.LabelControl90)
+Me.tabEDD.Controls.Add(Me.txtCustomersEDDCountry)
+Me.tabEDD.Controls.Add(Me.LabelControl91)
+Me.tabEDD.Controls.Add(Me.txtEDDSignatureDate)
+Me.tabEDD.Controls.Add(Me.txtEDDCreateDate)
+Me.tabEDD.Controls.Add(Me.LabelControl97)
+Me.tabEDD.Controls.Add(Me.txtLastUpdate)
+Me.tabEDD.Controls.Add(Me.LabelControl98)
+Me.tabEDD.Controls.Add(Me.txtKBO)
+Me.tabEDD.Controls.Add(Me.LabelControl99)
+Me.tabEDD.Controls.Add(Me.txtBIC)
+Me.tabEDD.Controls.Add(Me.LabelControl100)
+Me.tabEDD.Controls.Add(Me.txtGemeente)
+Me.tabEDD.Controls.Add(Me.LabelControl101)
+Me.tabEDD.Controls.Add(Me.txtContractDescrp)
+Me.tabEDD.Controls.Add(Me.LabelControl102)
+Me.tabEDD.Controls.Add(Me.txtContractID)
+Me.tabEDD.Controls.Add(Me.LabelControl103)
+Me.tabEDD.Controls.Add(Me.txtDebtorRefpartyCode)
+Me.tabEDD.Controls.Add(Me.txtDebtorRefpartyName)
+Me.tabEDD.Controls.Add(Me.LabelControl104)
+Me.tabEDD.Controls.Add(Me.txtCreateDate)
+Me.tabEDD.Controls.Add(Me.txtCustomersEDDCity)
+Me.tabEDD.Controls.Add(Me.LabelControl92)
+Me.tabEDD.Controls.Add(Me.txtCustomersEDDPostcode)
+Me.tabEDD.Controls.Add(Me.LabelControl93)
+Me.tabEDD.Controls.Add(Me.txtCustomersEDDStreetNumber)
+Me.tabEDD.Controls.Add(Me.LabelControl94)
+Me.tabEDD.Controls.Add(Me.txtCustomersEDDName)
+Me.tabEDD.Controls.Add(Me.LabelControl95)
+Me.tabEDD.Controls.Add(Me.LabelControl96)
+Me.tabEDD.Controls.Add(Me.txtMandateRef)
+Me.tabEDD.Controls.Add(Me.LabelControl32)
+Me.tabEDD.Controls.Add(Me.LabelControl37)
+Me.tabEDD.Controls.Add(Me.txtEDDCustomersID)
+Me.tabEDD.Controls.Add(Me.LabelControl88)
+Me.tabEDD.Controls.Add(Me.LabelControl89)
+Me.tabEDD.Controls.Add(Me.txtEDDMandateID)
+Me.tabEDD.Controls.Add(Me.LabelControl23)
+Me.tabEDD.Controls.Add(Me.txtIBAN)
+Me.tabEDD.Controls.Add(Me.LabelControl24)
+Me.tabEDD.Controls.Add(Me.txtReference)
+Me.tabEDD.Controls.Add(Me.cmbEDDMandateStatus)
+Me.tabEDD.Controls.Add(Me.LabelControl18)
+Me.tabEDD.Controls.Add(Me.txtVolgnr)
+Me.tabEDD.Controls.Add(Me.LabelControl19)
+Me.tabEDD.Controls.Add(Me.txtEddID)
+Me.tabEDD.Controls.Add(Me.LabelControl22)
+Me.tabEDD.Name = "tabEDD"
+Me.tabEDD.ShowCloseButton = DevExpress.Utils.DefaultBoolean.[True]
+Me.tabEDD.Size = New System.Drawing.Size(1253, 783)
+Me.tabEDD.Text = "EDD"
+'
+'LabelControl109
+'
+Me.LabelControl109.Location = New System.Drawing.Point(30, 521)
+Me.LabelControl109.Name = "LabelControl109"
+Me.LabelControl109.Size = New System.Drawing.Size(101, 13)
+Me.LabelControl109.TabIndex = 119
+Me.LabelControl109.Text = "EDD mandate history"
+'
+'chkBICChanged
+'
+Me.chkBICChanged.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_abo", true))
+Me.chkBICChanged.Enabled = false
+Me.chkBICChanged.Location = New System.Drawing.Point(952, 314)
+Me.chkBICChanged.Name = "chkBICChanged"
+Me.chkBICChanged.Properties.Appearance.BackColor = System.Drawing.Color.Red
+Me.chkBICChanged.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 10!, System.Drawing.FontStyle.Bold)
+Me.chkBICChanged.Properties.Appearance.Options.UseBackColor = true
+Me.chkBICChanged.Properties.Appearance.Options.UseFont = true
+Me.chkBICChanged.Properties.Caption = "Changed"
+Me.chkBICChanged.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
+Me.chkBICChanged.Properties.ValueChecked = 1
+Me.chkBICChanged.Properties.ValueUnchecked = 0
+Me.chkBICChanged.Size = New System.Drawing.Size(82, 21)
+Me.chkBICChanged.TabIndex = 118
+'
+'chkMandateIDChanged
+'
+Me.chkMandateIDChanged.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_abo", true))
+Me.chkMandateIDChanged.Enabled = false
+Me.chkMandateIDChanged.Location = New System.Drawing.Point(407, 156)
+Me.chkMandateIDChanged.Name = "chkMandateIDChanged"
+Me.chkMandateIDChanged.Properties.Appearance.BackColor = System.Drawing.Color.Red
+Me.chkMandateIDChanged.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 10!, System.Drawing.FontStyle.Bold)
+Me.chkMandateIDChanged.Properties.Appearance.Options.UseBackColor = true
+Me.chkMandateIDChanged.Properties.Appearance.Options.UseFont = true
+Me.chkMandateIDChanged.Properties.Caption = "Changed"
+Me.chkMandateIDChanged.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
+Me.chkMandateIDChanged.Properties.ValueChecked = 1
+Me.chkMandateIDChanged.Properties.ValueUnchecked = 0
+Me.chkMandateIDChanged.Size = New System.Drawing.Size(82, 21)
+Me.chkMandateIDChanged.TabIndex = 117
+'
+'chkEDDIBANChanged
+'
+Me.chkEDDIBANChanged.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_abo", true))
+Me.chkEDDIBANChanged.Enabled = false
+Me.chkEDDIBANChanged.Location = New System.Drawing.Point(407, 125)
+Me.chkEDDIBANChanged.Name = "chkEDDIBANChanged"
+Me.chkEDDIBANChanged.Properties.Appearance.BackColor = System.Drawing.Color.Red
+Me.chkEDDIBANChanged.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 10!, System.Drawing.FontStyle.Bold)
+Me.chkEDDIBANChanged.Properties.Appearance.Options.UseBackColor = true
+Me.chkEDDIBANChanged.Properties.Appearance.Options.UseFont = true
+Me.chkEDDIBANChanged.Properties.Caption = "Changed"
+Me.chkEDDIBANChanged.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
+Me.chkEDDIBANChanged.Properties.ValueChecked = 1
+Me.chkEDDIBANChanged.Properties.ValueUnchecked = 0
+Me.chkEDDIBANChanged.Size = New System.Drawing.Size(82, 21)
+Me.chkEDDIBANChanged.TabIndex = 116
+'
+'grdEddHistory
+'
+Me.grdEddHistory.EmbeddedNavigator.Name = ""
+Me.grdEddHistory.FormsUseDefaultLookAndFeel = false
+Me.grdEddHistory.Location = New System.Drawing.Point(29, 540)
+Me.grdEddHistory.MainView = Me.grdViewEddHistory
+Me.grdEddHistory.Name = "grdEddHistory"
+Me.grdEddHistory.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemLookUpEdit2})
+Me.grdEddHistory.Size = New System.Drawing.Size(1150, 267)
+Me.grdEddHistory.TabIndex = 115
+Me.grdEddHistory.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.grdViewEddHistory})
+'
+'grdViewEddHistory
+'
+Me.grdViewEddHistory.CustomizationFormBounds = New System.Drawing.Rectangle(1273, 240, 327, 364)
+Me.grdViewEddHistory.GridControl = Me.grdEddHistory
+Me.grdViewEddHistory.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways
+Me.grdViewEddHistory.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always
+Me.grdViewEddHistory.Name = "grdViewEddHistory"
+Me.grdViewEddHistory.OptionsBehavior.Editable = false
+Me.grdViewEddHistory.OptionsSelection.MultiSelect = true
+Me.grdViewEddHistory.OptionsView.ColumnAutoWidth = false
+Me.grdViewEddHistory.OptionsView.ShowFooter = true
+'
+'RepositoryItemLookUpEdit2
+'
+Me.RepositoryItemLookUpEdit2.AutoHeight = false
+Me.RepositoryItemLookUpEdit2.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo), New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+Me.RepositoryItemLookUpEdit2.DisplayMember = "name"
+Me.RepositoryItemLookUpEdit2.Name = "RepositoryItemLookUpEdit2"
+Me.RepositoryItemLookUpEdit2.ValueMember = "id"
+'
+'cmbLastPaymentStatus
+'
+Me.cmbLastPaymentStatus.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.last_payment_status", true))
+Me.cmbLastPaymentStatus.Enabled = false
+Me.cmbLastPaymentStatus.Location = New System.Drawing.Point(158, 251)
+Me.cmbLastPaymentStatus.Name = "cmbLastPaymentStatus"
+Me.cmbLastPaymentStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+Me.cmbLastPaymentStatus.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DisplayMember", "DisplayMember", 33, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Value", "Value", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None)})
+Me.cmbLastPaymentStatus.Properties.DataSource = Me.objDS.generalentity
+Me.cmbLastPaymentStatus.Properties.DisplayMember = "DisplayMember"
+Me.cmbLastPaymentStatus.Properties.NullText = ""
+Me.cmbLastPaymentStatus.Properties.ValueMember = "Value"
+Me.cmbLastPaymentStatus.Size = New System.Drawing.Size(224, 20)
+Me.cmbLastPaymentStatus.TabIndex = 114
+'
+'btnEDDNew
+'
+Me.btnEDDNew.Location = New System.Drawing.Point(986, 57)
+Me.btnEDDNew.Name = "btnEDDNew"
+Me.btnEDDNew.Size = New System.Drawing.Size(144, 23)
+Me.btnEDDNew.TabIndex = 113
+Me.btnEDDNew.Text = "EDD New"
+'
+'txtEDDSigningCity
+'
+Me.txtEDDSigningCity.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.edd_signing_city", true))
+Me.txtEDDSigningCity.Enabled = false
+Me.txtEDDSigningCity.Location = New System.Drawing.Point(705, 65)
+Me.txtEDDSigningCity.Name = "txtEDDSigningCity"
+Me.txtEDDSigningCity.Size = New System.Drawing.Size(224, 20)
+Me.txtEDDSigningCity.TabIndex = 111
+'
+'LabelControl17
+'
+Me.LabelControl17.Location = New System.Drawing.Point(577, 65)
+Me.LabelControl17.Name = "LabelControl17"
+Me.LabelControl17.Size = New System.Drawing.Size(74, 13)
+Me.LabelControl17.TabIndex = 112
+Me.LabelControl17.Text = "edd signing city"
+'
+'txtDebtorIdentificationCode
+'
+Me.txtDebtorIdentificationCode.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.debtor_identification_code", true))
+Me.txtDebtorIdentificationCode.Enabled = false
+Me.txtDebtorIdentificationCode.Location = New System.Drawing.Point(705, 127)
+Me.txtDebtorIdentificationCode.Name = "txtDebtorIdentificationCode"
+Me.txtDebtorIdentificationCode.Size = New System.Drawing.Size(224, 20)
+Me.txtDebtorIdentificationCode.TabIndex = 108
+'
+'LabelControl90
+'
+Me.LabelControl90.Location = New System.Drawing.Point(576, 96)
+Me.LabelControl90.Name = "LabelControl90"
+Me.LabelControl90.Size = New System.Drawing.Size(110, 13)
+Me.LabelControl90.TabIndex = 110
+Me.LabelControl90.Text = "customers edd country"
+'
+'txtCustomersEDDCountry
+'
+Me.txtCustomersEDDCountry.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.customer_edd_country", true))
+Me.txtCustomersEDDCountry.Enabled = false
+Me.txtCustomersEDDCountry.Location = New System.Drawing.Point(705, 96)
+Me.txtCustomersEDDCountry.Name = "txtCustomersEDDCountry"
+Me.txtCustomersEDDCountry.Size = New System.Drawing.Size(224, 20)
+Me.txtCustomersEDDCountry.TabIndex = 107
+'
+'LabelControl91
+'
+Me.LabelControl91.Location = New System.Drawing.Point(577, 127)
+Me.LabelControl91.Name = "LabelControl91"
+Me.LabelControl91.Size = New System.Drawing.Size(122, 13)
+Me.LabelControl91.TabIndex = 109
+Me.LabelControl91.Text = "debtor identification code"
+'
+'txtEDDSignatureDate
+'
+Me.txtEDDSignatureDate.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.signature_date", true))
+Me.txtEDDSignatureDate.EditValue = Nothing
+Me.txtEDDSignatureDate.Enabled = false
+Me.txtEDDSignatureDate.Location = New System.Drawing.Point(158, 344)
+Me.txtEDDSignatureDate.Name = "txtEDDSignatureDate"
+Me.txtEDDSignatureDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
+Me.txtEDDSignatureDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+Me.txtEDDSignatureDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+Me.txtEDDSignatureDate.Size = New System.Drawing.Size(144, 20)
+Me.txtEDDSignatureDate.TabIndex = 104
+'
+'txtEDDCreateDate
+'
+Me.txtEDDCreateDate.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.create_date", true))
+Me.txtEDDCreateDate.EditValue = Nothing
+Me.txtEDDCreateDate.Enabled = false
+Me.txtEDDCreateDate.Location = New System.Drawing.Point(158, 313)
+Me.txtEDDCreateDate.Name = "txtEDDCreateDate"
+Me.txtEDDCreateDate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
+Me.txtEDDCreateDate.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+Me.txtEDDCreateDate.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+Me.txtEDDCreateDate.Size = New System.Drawing.Size(144, 20)
+Me.txtEDDCreateDate.TabIndex = 103
+'
+'LabelControl97
+'
+Me.LabelControl97.Location = New System.Drawing.Point(576, 158)
+Me.LabelControl97.Name = "LabelControl97"
+Me.LabelControl97.Size = New System.Drawing.Size(104, 13)
+Me.LabelControl97.TabIndex = 102
+Me.LabelControl97.Text = "debtor refparty name"
+'
+'txtLastUpdate
+'
+Me.txtLastUpdate.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.last_update", true))
+Me.txtLastUpdate.Enabled = false
+Me.txtLastUpdate.Location = New System.Drawing.Point(705, 375)
+Me.txtLastUpdate.Name = "txtLastUpdate"
+Me.txtLastUpdate.Size = New System.Drawing.Size(224, 20)
+Me.txtLastUpdate.TabIndex = 26
+'
+'LabelControl98
+'
+Me.LabelControl98.Location = New System.Drawing.Point(576, 344)
+Me.LabelControl98.Name = "LabelControl98"
+Me.LabelControl98.Size = New System.Drawing.Size(17, 13)
+Me.LabelControl98.TabIndex = 100
+Me.LabelControl98.Text = "kbo"
+'
+'txtKBO
+'
+Me.txtKBO.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.kbo", true))
+Me.txtKBO.Enabled = false
+Me.txtKBO.Location = New System.Drawing.Point(705, 344)
+Me.txtKBO.Name = "txtKBO"
+Me.txtKBO.Size = New System.Drawing.Size(224, 20)
+Me.txtKBO.TabIndex = 25
+'
+'LabelControl99
+'
+Me.LabelControl99.Location = New System.Drawing.Point(577, 375)
+Me.LabelControl99.Name = "LabelControl99"
+Me.LabelControl99.Size = New System.Drawing.Size(54, 13)
+Me.LabelControl99.TabIndex = 98
+Me.LabelControl99.Text = "last update"
+'
+'txtBIC
+'
+Me.txtBIC.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.bic", true))
+Me.txtBIC.Enabled = false
+Me.txtBIC.Location = New System.Drawing.Point(705, 313)
+Me.txtBIC.Name = "txtBIC"
+Me.txtBIC.Size = New System.Drawing.Size(224, 20)
+Me.txtBIC.TabIndex = 24
+'
+'LabelControl100
+'
+Me.LabelControl100.Location = New System.Drawing.Point(576, 282)
+Me.LabelControl100.Name = "LabelControl100"
+Me.LabelControl100.Size = New System.Drawing.Size(48, 13)
+Me.LabelControl100.TabIndex = 96
+Me.LabelControl100.Text = "gemeente"
+'
+'txtGemeente
+'
+Me.txtGemeente.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.gemeente", true))
+Me.txtGemeente.Enabled = false
+Me.txtGemeente.Location = New System.Drawing.Point(705, 282)
+Me.txtGemeente.Name = "txtGemeente"
+Me.txtGemeente.Size = New System.Drawing.Size(224, 20)
+Me.txtGemeente.TabIndex = 23
+'
+'LabelControl101
+'
+Me.LabelControl101.Location = New System.Drawing.Point(577, 313)
+Me.LabelControl101.Name = "LabelControl101"
+Me.LabelControl101.Size = New System.Drawing.Size(13, 13)
+Me.LabelControl101.TabIndex = 94
+Me.LabelControl101.Text = "bic"
+'
+'txtContractDescrp
+'
+Me.txtContractDescrp.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.contract_dscrp", true))
+Me.txtContractDescrp.Enabled = false
+Me.txtContractDescrp.Location = New System.Drawing.Point(705, 251)
+Me.txtContractDescrp.Name = "txtContractDescrp"
+Me.txtContractDescrp.Size = New System.Drawing.Size(224, 20)
+Me.txtContractDescrp.TabIndex = 22
+'
+'LabelControl102
+'
+Me.LabelControl102.Location = New System.Drawing.Point(576, 220)
+Me.LabelControl102.Name = "LabelControl102"
+Me.LabelControl102.Size = New System.Drawing.Size(54, 13)
+Me.LabelControl102.TabIndex = 92
+Me.LabelControl102.Text = "contract ID"
+'
+'txtContractID
+'
+Me.txtContractID.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.contract_id", true))
+Me.txtContractID.Enabled = false
+Me.txtContractID.Location = New System.Drawing.Point(705, 220)
+Me.txtContractID.Name = "txtContractID"
+Me.txtContractID.Size = New System.Drawing.Size(224, 20)
+Me.txtContractID.TabIndex = 21
+'
+'LabelControl103
+'
+Me.LabelControl103.Location = New System.Drawing.Point(577, 251)
+Me.LabelControl103.Name = "LabelControl103"
+Me.LabelControl103.Size = New System.Drawing.Size(90, 13)
+Me.LabelControl103.TabIndex = 90
+Me.LabelControl103.Text = "contract decription"
+'
+'txtDebtorRefpartyCode
+'
+Me.txtDebtorRefpartyCode.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.debtor_refparty_code", true))
+Me.txtDebtorRefpartyCode.Enabled = false
+Me.txtDebtorRefpartyCode.Location = New System.Drawing.Point(705, 189)
+Me.txtDebtorRefpartyCode.Name = "txtDebtorRefpartyCode"
+Me.txtDebtorRefpartyCode.Size = New System.Drawing.Size(224, 20)
+Me.txtDebtorRefpartyCode.TabIndex = 20
+'
+'txtDebtorRefpartyName
+'
+Me.txtDebtorRefpartyName.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.debtor_refparty_name", true))
+Me.txtDebtorRefpartyName.Enabled = false
+Me.txtDebtorRefpartyName.Location = New System.Drawing.Point(705, 158)
+Me.txtDebtorRefpartyName.Name = "txtDebtorRefpartyName"
+Me.txtDebtorRefpartyName.Size = New System.Drawing.Size(224, 20)
+Me.txtDebtorRefpartyName.TabIndex = 19
+'
+'LabelControl104
+'
+Me.LabelControl104.Location = New System.Drawing.Point(577, 189)
+Me.LabelControl104.Name = "LabelControl104"
+Me.LabelControl104.Size = New System.Drawing.Size(101, 13)
+Me.LabelControl104.TabIndex = 87
+Me.LabelControl104.Text = "debtor refparty code"
+'
+'txtCreateDate
+'
+Me.txtCreateDate.Location = New System.Drawing.Point(29, 313)
+Me.txtCreateDate.Name = "txtCreateDate"
+Me.txtCreateDate.Size = New System.Drawing.Size(56, 13)
+Me.txtCreateDate.TabIndex = 86
+Me.txtCreateDate.Text = "create date"
+'
+'txtCustomersEDDCity
+'
+Me.txtCustomersEDDCity.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.customer_edd_city", true))
+Me.txtCustomersEDDCity.Enabled = false
+Me.txtCustomersEDDCity.Location = New System.Drawing.Point(158, 474)
+Me.txtCustomersEDDCity.Name = "txtCustomersEDDCity"
+Me.txtCustomersEDDCity.Size = New System.Drawing.Size(224, 20)
+Me.txtCustomersEDDCity.TabIndex = 15
+'
+'LabelControl92
+'
+Me.LabelControl92.Location = New System.Drawing.Point(29, 437)
+Me.LabelControl92.Name = "LabelControl92"
+Me.LabelControl92.Size = New System.Drawing.Size(117, 13)
+Me.LabelControl92.TabIndex = 80
+Me.LabelControl92.Text = "customers edd postcode"
+'
+'txtCustomersEDDPostcode
+'
+Me.txtCustomersEDDPostcode.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.customer_edd_postcode", true))
+Me.txtCustomersEDDPostcode.Enabled = false
+Me.txtCustomersEDDPostcode.Location = New System.Drawing.Point(158, 446)
+Me.txtCustomersEDDPostcode.Name = "txtCustomersEDDPostcode"
+Me.txtCustomersEDDPostcode.Size = New System.Drawing.Size(224, 20)
+Me.txtCustomersEDDPostcode.TabIndex = 14
+'
+'LabelControl93
+'
+Me.LabelControl93.Location = New System.Drawing.Point(30, 468)
+Me.LabelControl93.Name = "LabelControl93"
+Me.LabelControl93.Size = New System.Drawing.Size(93, 13)
+Me.LabelControl93.TabIndex = 78
+Me.LabelControl93.Text = "customers_edd city"
+'
+'txtCustomersEDDStreetNumber
+'
+Me.txtCustomersEDDStreetNumber.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.customer_edd_street_number", true))
+Me.txtCustomersEDDStreetNumber.Enabled = false
+Me.txtCustomersEDDStreetNumber.Location = New System.Drawing.Point(158, 411)
+Me.txtCustomersEDDStreetNumber.Name = "txtCustomersEDDStreetNumber"
+Me.txtCustomersEDDStreetNumber.Size = New System.Drawing.Size(224, 20)
+Me.txtCustomersEDDStreetNumber.TabIndex = 13
+'
+'LabelControl94
+'
+Me.LabelControl94.Location = New System.Drawing.Point(29, 375)
+Me.LabelControl94.Name = "LabelControl94"
+Me.LabelControl94.Size = New System.Drawing.Size(99, 13)
+Me.LabelControl94.TabIndex = 76
+Me.LabelControl94.Text = "customers edd name"
+'
+'txtCustomersEDDName
+'
+Me.txtCustomersEDDName.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.customer_edd_name", true))
+Me.txtCustomersEDDName.Enabled = false
+Me.txtCustomersEDDName.Location = New System.Drawing.Point(158, 375)
+Me.txtCustomersEDDName.Name = "txtCustomersEDDName"
+Me.txtCustomersEDDName.Size = New System.Drawing.Size(224, 20)
+Me.txtCustomersEDDName.TabIndex = 12
+'
+'LabelControl95
+'
+Me.LabelControl95.Location = New System.Drawing.Point(30, 406)
+Me.LabelControl95.Name = "LabelControl95"
+Me.LabelControl95.Size = New System.Drawing.Size(116, 13)
+Me.LabelControl95.TabIndex = 74
+Me.LabelControl95.Text = "cust. edd street number"
+'
+'LabelControl96
+'
+Me.LabelControl96.Location = New System.Drawing.Point(30, 344)
+Me.LabelControl96.Name = "LabelControl96"
+Me.LabelControl96.Size = New System.Drawing.Size(70, 13)
+Me.LabelControl96.TabIndex = 71
+Me.LabelControl96.Text = "signature date"
+'
+'txtMandateRef
+'
+Me.txtMandateRef.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.mandate_ref", true))
+Me.txtMandateRef.Enabled = false
+Me.txtMandateRef.Location = New System.Drawing.Point(158, 282)
+Me.txtMandateRef.Name = "txtMandateRef"
+Me.txtMandateRef.Size = New System.Drawing.Size(224, 20)
+Me.txtMandateRef.TabIndex = 9
+'
+'LabelControl32
+'
+Me.LabelControl32.Location = New System.Drawing.Point(29, 251)
+Me.LabelControl32.Name = "LabelControl32"
+Me.LabelControl32.Size = New System.Drawing.Size(95, 13)
+Me.LabelControl32.TabIndex = 69
+Me.LabelControl32.Text = "last payment status"
+'
+'LabelControl37
+'
+Me.LabelControl37.Location = New System.Drawing.Point(30, 282)
+Me.LabelControl37.Name = "LabelControl37"
+Me.LabelControl37.Size = New System.Drawing.Size(62, 13)
+Me.LabelControl37.TabIndex = 67
+Me.LabelControl37.Text = "mandate_ref"
+'
+'txtEDDCustomersID
+'
+Me.txtEDDCustomersID.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.customers_id", true))
+Me.txtEDDCustomersID.Enabled = false
+Me.txtEDDCustomersID.Location = New System.Drawing.Point(158, 220)
+Me.txtEDDCustomersID.Name = "txtEDDCustomersID"
+Me.txtEDDCustomersID.Size = New System.Drawing.Size(224, 20)
+Me.txtEDDCustomersID.TabIndex = 6
+'
+'LabelControl88
+'
+Me.LabelControl88.Location = New System.Drawing.Point(29, 189)
+Me.LabelControl88.Name = "LabelControl88"
+Me.LabelControl88.Size = New System.Drawing.Size(102, 13)
+Me.LabelControl88.TabIndex = 65
+Me.LabelControl88.Text = "edd_mandate_status"
+'
+'LabelControl89
+'
+Me.LabelControl89.Location = New System.Drawing.Point(30, 220)
+Me.LabelControl89.Name = "LabelControl89"
+Me.LabelControl89.Size = New System.Drawing.Size(63, 13)
+Me.LabelControl89.TabIndex = 63
+Me.LabelControl89.Text = "customers_id"
+'
+'txtEDDMandateID
+'
+Me.txtEDDMandateID.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.edd_mandate_id", true))
+Me.txtEDDMandateID.Enabled = false
+Me.txtEDDMandateID.Location = New System.Drawing.Point(158, 158)
+Me.txtEDDMandateID.Name = "txtEDDMandateID"
+Me.txtEDDMandateID.Size = New System.Drawing.Size(224, 20)
+Me.txtEDDMandateID.TabIndex = 4
+'
+'LabelControl23
+'
+Me.LabelControl23.Location = New System.Drawing.Point(29, 127)
+Me.LabelControl23.Name = "LabelControl23"
+Me.LabelControl23.Size = New System.Drawing.Size(20, 13)
+Me.LabelControl23.TabIndex = 61
+Me.LabelControl23.Text = "iban"
+'
+'txtIBAN
+'
+Me.txtIBAN.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.iban", true))
+Me.txtIBAN.Enabled = false
+Me.txtIBAN.Location = New System.Drawing.Point(158, 127)
+Me.txtIBAN.Name = "txtIBAN"
+Me.txtIBAN.Size = New System.Drawing.Size(224, 20)
+Me.txtIBAN.TabIndex = 3
+'
+'LabelControl24
+'
+Me.LabelControl24.Location = New System.Drawing.Point(30, 158)
+Me.LabelControl24.Name = "LabelControl24"
+Me.LabelControl24.Size = New System.Drawing.Size(80, 13)
+Me.LabelControl24.TabIndex = 59
+Me.LabelControl24.Text = "edd_mandate_id"
+'
+'txtReference
+'
+Me.txtReference.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.reference", true))
+Me.txtReference.Enabled = false
+Me.txtReference.Location = New System.Drawing.Point(158, 96)
+Me.txtReference.Name = "txtReference"
+Me.txtReference.Size = New System.Drawing.Size(224, 20)
+Me.txtReference.TabIndex = 2
+'
+'cmbEDDMandateStatus
+'
+Me.cmbEDDMandateStatus.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.edd_mandate_status", true))
+Me.cmbEDDMandateStatus.Enabled = false
+Me.cmbEDDMandateStatus.Location = New System.Drawing.Point(158, 189)
+Me.cmbEDDMandateStatus.Name = "cmbEDDMandateStatus"
+Me.cmbEDDMandateStatus.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+Me.cmbEDDMandateStatus.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("DisplayMember", "DisplayMember", 58, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("Value", "Value", 20, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.[Default], DevExpress.Data.ColumnSortOrder.None)})
+Me.cmbEDDMandateStatus.Properties.DataSource = Me.objDS.generalentity
+Me.cmbEDDMandateStatus.Properties.DisplayMember = "DisplayMember"
+Me.cmbEDDMandateStatus.Properties.NullText = ""
+Me.cmbEDDMandateStatus.Properties.ValueMember = "Value"
+Me.cmbEDDMandateStatus.Size = New System.Drawing.Size(224, 20)
+Me.cmbEDDMandateStatus.TabIndex = 5
+'
+'LabelControl18
+'
+Me.LabelControl18.Location = New System.Drawing.Point(29, 65)
+Me.LabelControl18.Name = "LabelControl18"
+Me.LabelControl18.Size = New System.Drawing.Size(30, 13)
+Me.LabelControl18.TabIndex = 55
+Me.LabelControl18.Text = "volgnr"
+'
+'txtVolgnr
+'
+Me.txtVolgnr.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.volgnr", true))
+Me.txtVolgnr.Enabled = false
+Me.txtVolgnr.Location = New System.Drawing.Point(158, 65)
+Me.txtVolgnr.Name = "txtVolgnr"
+Me.txtVolgnr.Size = New System.Drawing.Size(224, 20)
+Me.txtVolgnr.TabIndex = 1
+'
+'LabelControl19
+'
+Me.LabelControl19.Location = New System.Drawing.Point(30, 96)
+Me.LabelControl19.Name = "LabelControl19"
+Me.LabelControl19.Size = New System.Drawing.Size(47, 13)
+Me.LabelControl19.TabIndex = 52
+Me.LabelControl19.Text = "reference"
+'
+'txtEddID
+'
+Me.txtEddID.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.id", true))
+Me.txtEddID.Enabled = false
+Me.txtEddID.Location = New System.Drawing.Point(158, 38)
+Me.txtEddID.Name = "txtEddID"
+Me.txtEddID.Properties.ReadOnly = true
+Me.txtEddID.Size = New System.Drawing.Size(128, 20)
+Me.txtEddID.TabIndex = 51
+'
+'LabelControl22
+'
+Me.LabelControl22.Location = New System.Drawing.Point(30, 41)
+Me.LabelControl22.Name = "LabelControl22"
+Me.LabelControl22.Size = New System.Drawing.Size(11, 13)
+Me.LabelControl22.TabIndex = 50
+Me.LabelControl22.Text = "ID"
 '
 'tabComment
 '
@@ -9101,7 +10001,7 @@ Me.tabConfig.Text = "Config"
 '
 'btnRefreshTab
 '
-Me.btnRefreshTab.Location = New System.Drawing.Point(636, 34)
+Me.btnRefreshTab.Location = New System.Drawing.Point(616, 43)
 Me.btnRefreshTab.Name = "btnRefreshTab"
 Me.btnRefreshTab.Size = New System.Drawing.Size(158, 41)
 Me.btnRefreshTab.TabIndex = 1
@@ -9112,12 +10012,12 @@ Me.btnRefreshTab.Text = "refresh tab"
 Me.ChkListConfig.Appearance.Font = New System.Drawing.Font("Tahoma", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.ChkListConfig.Appearance.Options.UseFont = true
 Me.ChkListConfig.CheckOnClick = true
-Me.ChkListConfig.Items.AddRange(New DevExpress.XtraEditors.Controls.CheckedListBoxItem() {New DevExpress.XtraEditors.Controls.CheckedListBoxItem("comment", System.Windows.Forms.CheckState.Checked), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("calls", System.Windows.Forms.CheckState.Checked), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("wishlist", System.Windows.Forms.CheckState.Checked), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("abo history", System.Windows.Forms.CheckState.Checked), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("orders history", System.Windows.Forms.CheckState.Checked), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("messagerie", System.Windows.Forms.CheckState.Checked), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("invoices", System.Windows.Forms.CheckState.Checked), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("payment movements"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("droselia"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("aboprocess"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("aboprocess old"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("mail history"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("purchase"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("credit history"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("sponsorship"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("products rating"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("suspended history"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("vod viewed"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("critiques")})
+Me.ChkListConfig.Items.AddRange(New DevExpress.XtraEditors.Controls.CheckedListBoxItem() {New DevExpress.XtraEditors.Controls.CheckedListBoxItem("comment", System.Windows.Forms.CheckState.Checked), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("edd", System.Windows.Forms.CheckState.Checked), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("calls", System.Windows.Forms.CheckState.Checked), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("wishlist", System.Windows.Forms.CheckState.Checked), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("abo history", System.Windows.Forms.CheckState.Checked), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("orders history", System.Windows.Forms.CheckState.Checked), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("messagerie", System.Windows.Forms.CheckState.Checked), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("invoices", System.Windows.Forms.CheckState.Checked), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("payment movements"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("droselia"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("aboprocess"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("aboprocess old"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("mail history"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("purchase"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("credit history"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("sponsorship"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("products rating"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("suspended history"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("vod viewed"), New DevExpress.XtraEditors.Controls.CheckedListBoxItem("critiques")})
 Me.ChkListConfig.LeftCoord = 0
 Me.ChkListConfig.Location = New System.Drawing.Point(33, 43)
 Me.ChkListConfig.MultiColumn = true
 Me.ChkListConfig.Name = "ChkListConfig"
-Me.ChkListConfig.Size = New System.Drawing.Size(545, 111)
+Me.ChkListConfig.Size = New System.Drawing.Size(545, 152)
 Me.ChkListConfig.TabIndex = 0
 '
 'LabelControl39
@@ -9158,7 +10058,7 @@ Me.TextEdit1.Enabled = false
 Me.TextEdit1.Location = New System.Drawing.Point(1025, 16)
 Me.TextEdit1.Name = "TextEdit1"
 Me.TextEdit1.Properties.ReadOnly = true
-Me.TextEdit1.Size = New System.Drawing.Size(95, 22)
+Me.TextEdit1.Size = New System.Drawing.Size(95, 20)
 Me.TextEdit1.TabIndex = 23
 '
 'TextEdit2
@@ -9167,7 +10067,7 @@ Me.TextEdit2.Enabled = false
 Me.TextEdit2.Location = New System.Drawing.Point(836, 16)
 Me.TextEdit2.Name = "TextEdit2"
 Me.TextEdit2.Properties.ReadOnly = true
-Me.TextEdit2.Size = New System.Drawing.Size(95, 22)
+Me.TextEdit2.Size = New System.Drawing.Size(95, 20)
 Me.TextEdit2.TabIndex = 21
 '
 'SimpleButton2
@@ -9223,7 +10123,7 @@ Me.LookUpEdit1.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.L
 Me.LookUpEdit1.Properties.DisplayMember = "reason"
 Me.LookUpEdit1.Properties.NullText = ""
 Me.LookUpEdit1.Properties.ValueMember = "stop_phone_id"
-Me.LookUpEdit1.Size = New System.Drawing.Size(145, 22)
+Me.LookUpEdit1.Size = New System.Drawing.Size(145, 20)
 Me.LookUpEdit1.TabIndex = 40
 Me.LookUpEdit1.Visible = false
 '
@@ -9246,7 +10146,7 @@ Me.DateEdit1.Location = New System.Drawing.Point(163, 48)
 Me.DateEdit1.Name = "DateEdit1"
 Me.DateEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.DateEdit1.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-Me.DateEdit1.Size = New System.Drawing.Size(145, 22)
+Me.DateEdit1.Size = New System.Drawing.Size(145, 20)
 Me.DateEdit1.TabIndex = 18
 '
 'LabelControl43
@@ -9291,7 +10191,7 @@ Me.ComboBoxEdit1.Name = "ComboBoxEdit1"
 Me.ComboBoxEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.ComboBoxEdit1.Properties.Items.AddRange(New Object() {"A", "D", ""})
 Me.ComboBoxEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
-Me.ComboBoxEdit1.Size = New System.Drawing.Size(60, 22)
+Me.ComboBoxEdit1.Size = New System.Drawing.Size(60, 20)
 Me.ComboBoxEdit1.TabIndex = 59
 '
 'LabelControl44
@@ -9310,7 +10210,7 @@ Me.DateEdit2.Location = New System.Drawing.Point(192, 168)
 Me.DateEdit2.Name = "DateEdit2"
 Me.DateEdit2.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.DateEdit2.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-Me.DateEdit2.Size = New System.Drawing.Size(182, 22)
+Me.DateEdit2.Size = New System.Drawing.Size(182, 20)
 Me.DateEdit2.TabIndex = 50
 '
 'LookUpEdit3
@@ -9323,7 +10223,7 @@ Me.LookUpEdit3.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.L
 Me.LookUpEdit3.Properties.DisplayMember = "DisplayMember"
 Me.LookUpEdit3.Properties.NullText = ""
 Me.LookUpEdit3.Properties.ValueMember = "Value"
-Me.LookUpEdit3.Size = New System.Drawing.Size(182, 22)
+Me.LookUpEdit3.Size = New System.Drawing.Size(182, 20)
 Me.LookUpEdit3.TabIndex = 48
 '
 'Label4
@@ -9361,7 +10261,7 @@ Me.TextEdit6.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.o
 Me.TextEdit6.Enabled = false
 Me.TextEdit6.Location = New System.Drawing.Point(192, 389)
 Me.TextEdit6.Name = "TextEdit6"
-Me.TextEdit6.Size = New System.Drawing.Size(96, 22)
+Me.TextEdit6.Size = New System.Drawing.Size(96, 20)
 Me.TextEdit6.TabIndex = 43
 '
 'LabelControl46
@@ -9380,7 +10280,7 @@ Me.SpinEdit1.Enabled = false
 Me.SpinEdit1.Location = New System.Drawing.Point(288, 278)
 Me.SpinEdit1.Name = "SpinEdit1"
 Me.SpinEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-Me.SpinEdit1.Size = New System.Drawing.Size(86, 22)
+Me.SpinEdit1.Size = New System.Drawing.Size(86, 20)
 Me.SpinEdit1.TabIndex = 41
 '
 'LabelControl47
@@ -9402,7 +10302,7 @@ Me.DateEdit3.Name = "DateEdit3"
 Me.DateEdit3.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
 Me.DateEdit3.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.DateEdit3.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-Me.DateEdit3.Size = New System.Drawing.Size(182, 22)
+Me.DateEdit3.Size = New System.Drawing.Size(182, 20)
 Me.DateEdit3.TabIndex = 39
 '
 'CheckEdit1
@@ -9415,7 +10315,7 @@ Me.CheckEdit1.Properties.Caption = "Auto-Stop"
 Me.CheckEdit1.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
 Me.CheckEdit1.Properties.ValueChecked = 1
 Me.CheckEdit1.Properties.ValueUnchecked = 0
-Me.CheckEdit1.Size = New System.Drawing.Size(115, 21)
+Me.CheckEdit1.Size = New System.Drawing.Size(115, 19)
 Me.CheckEdit1.TabIndex = 38
 '
 'TextEdit7
@@ -9425,7 +10325,7 @@ Me.TextEdit7.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.objDS,
 Me.TextEdit7.Enabled = false
 Me.TextEdit7.Location = New System.Drawing.Point(192, 306)
 Me.TextEdit7.Name = "TextEdit7"
-Me.TextEdit7.Size = New System.Drawing.Size(134, 22)
+Me.TextEdit7.Size = New System.Drawing.Size(134, 20)
 Me.TextEdit7.TabIndex = 37
 '
 'LookUpEdit4
@@ -9440,7 +10340,7 @@ Me.LookUpEdit4.Properties.DataSource = Me.objDS.discount_code
 Me.LookUpEdit4.Properties.DisplayMember = "discount_code"
 Me.LookUpEdit4.Properties.NullText = ""
 Me.LookUpEdit4.Properties.ValueMember = "discount_code_id"
-Me.LookUpEdit4.Size = New System.Drawing.Size(182, 22)
+Me.LookUpEdit4.Size = New System.Drawing.Size(182, 20)
 Me.LookUpEdit4.TabIndex = 36
 '
 'LabelControl59
@@ -9469,7 +10369,7 @@ Me.CheckEdit2.Properties.Caption = "Multi-Shipment"
 Me.CheckEdit2.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
 Me.CheckEdit2.Properties.ValueChecked = 1
 Me.CheckEdit2.Properties.ValueUnchecked = 0
-Me.CheckEdit2.Size = New System.Drawing.Size(115, 21)
+Me.CheckEdit2.Size = New System.Drawing.Size(115, 19)
 Me.CheckEdit2.TabIndex = 30
 '
 'LookUpEdit5
@@ -9484,7 +10384,7 @@ Me.LookUpEdit5.Properties.DataSource = Me.objDS.products_abo
 Me.LookUpEdit5.Properties.DisplayMember = "products_title"
 Me.LookUpEdit5.Properties.NullText = ""
 Me.LookUpEdit5.Properties.ValueMember = "products_id"
-Me.LookUpEdit5.Size = New System.Drawing.Size(182, 22)
+Me.LookUpEdit5.Size = New System.Drawing.Size(182, 20)
 Me.LookUpEdit5.TabIndex = 29
 '
 'SpinEdit2
@@ -9495,7 +10395,7 @@ Me.SpinEdit2.Enabled = false
 Me.SpinEdit2.Location = New System.Drawing.Point(288, 250)
 Me.SpinEdit2.Name = "SpinEdit2"
 Me.SpinEdit2.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-Me.SpinEdit2.Size = New System.Drawing.Size(86, 22)
+Me.SpinEdit2.Size = New System.Drawing.Size(86, 20)
 Me.SpinEdit2.TabIndex = 27
 '
 'SpinEdit3
@@ -9506,7 +10406,7 @@ Me.SpinEdit3.Enabled = false
 Me.SpinEdit3.Location = New System.Drawing.Point(192, 278)
 Me.SpinEdit3.Name = "SpinEdit3"
 Me.SpinEdit3.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-Me.SpinEdit3.Size = New System.Drawing.Size(86, 22)
+Me.SpinEdit3.Size = New System.Drawing.Size(86, 20)
 Me.SpinEdit3.TabIndex = 26
 '
 'SpinEdit4
@@ -9517,7 +10417,7 @@ Me.SpinEdit4.Enabled = false
 Me.SpinEdit4.Location = New System.Drawing.Point(192, 250)
 Me.SpinEdit4.Name = "SpinEdit4"
 Me.SpinEdit4.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-Me.SpinEdit4.Size = New System.Drawing.Size(86, 22)
+Me.SpinEdit4.Size = New System.Drawing.Size(86, 20)
 Me.SpinEdit4.TabIndex = 25
 '
 'LabelControl61
@@ -9565,7 +10465,7 @@ Me.SpinEdit5.Properties.MaxLength = 1000
 Me.SpinEdit5.Properties.MaxValue = New Decimal(New Integer() {1000, 0, 0, 0})
 Me.SpinEdit5.Properties.MinValue = New Decimal(New Integer() {1, 0, 0, -2147483648})
 Me.SpinEdit5.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor
-Me.SpinEdit5.Size = New System.Drawing.Size(182, 22)
+Me.SpinEdit5.Size = New System.Drawing.Size(182, 20)
 Me.SpinEdit5.TabIndex = 20
 '
 'LabelControl65
@@ -9593,7 +10493,7 @@ Me.DateEdit4.Location = New System.Drawing.Point(192, 107)
 Me.DateEdit4.Name = "DateEdit4"
 Me.DateEdit4.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.DateEdit4.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-Me.DateEdit4.Size = New System.Drawing.Size(182, 22)
+Me.DateEdit4.Size = New System.Drawing.Size(182, 20)
 Me.DateEdit4.TabIndex = 17
 '
 'LookUpEdit6
@@ -9608,7 +10508,7 @@ Me.LookUpEdit6.Properties.DataSource = Me.objDS.products_abo
 Me.LookUpEdit6.Properties.DisplayMember = "products_title"
 Me.LookUpEdit6.Properties.NullText = ""
 Me.LookUpEdit6.Properties.ValueMember = "products_id"
-Me.LookUpEdit6.Size = New System.Drawing.Size(182, 22)
+Me.LookUpEdit6.Size = New System.Drawing.Size(182, 20)
 Me.LookUpEdit6.TabIndex = 15
 '
 'LabelControl67
@@ -9723,7 +10623,7 @@ Me.TextEdit8.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.o
 Me.TextEdit8.Enabled = false
 Me.TextEdit8.Location = New System.Drawing.Point(461, 32)
 Me.TextEdit8.Name = "TextEdit8"
-Me.TextEdit8.Size = New System.Drawing.Size(249, 22)
+Me.TextEdit8.Size = New System.Drawing.Size(249, 20)
 Me.TextEdit8.TabIndex = 17
 '
 'TextEdit9
@@ -9732,7 +10632,7 @@ Me.TextEdit9.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.o
 Me.TextEdit9.Enabled = false
 Me.TextEdit9.Location = New System.Drawing.Point(182, 32)
 Me.TextEdit9.Name = "TextEdit9"
-Me.TextEdit9.Size = New System.Drawing.Size(269, 22)
+Me.TextEdit9.Size = New System.Drawing.Size(269, 20)
 Me.TextEdit9.TabIndex = 16
 '
 'LabelControl69
@@ -9755,7 +10655,7 @@ Me.LookUpEdit7.Properties.DataSource = Me.objDS.country
 Me.LookUpEdit7.Properties.DisplayMember = "countries_name"
 Me.LookUpEdit7.Properties.NullText = ""
 Me.LookUpEdit7.Properties.ValueMember = "countries_id"
-Me.LookUpEdit7.Size = New System.Drawing.Size(528, 22)
+Me.LookUpEdit7.Size = New System.Drawing.Size(528, 20)
 Me.LookUpEdit7.TabIndex = 14
 '
 'TextEdit10
@@ -9764,7 +10664,7 @@ Me.TextEdit10.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.
 Me.TextEdit10.Enabled = false
 Me.TextEdit10.Location = New System.Drawing.Point(336, 88)
 Me.TextEdit10.Name = "TextEdit10"
-Me.TextEdit10.Size = New System.Drawing.Size(374, 22)
+Me.TextEdit10.Size = New System.Drawing.Size(374, 20)
 Me.TextEdit10.TabIndex = 13
 '
 'TextEdit11
@@ -9773,7 +10673,7 @@ Me.TextEdit11.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.
 Me.TextEdit11.Enabled = false
 Me.TextEdit11.Location = New System.Drawing.Point(182, 88)
 Me.TextEdit11.Name = "TextEdit11"
-Me.TextEdit11.Size = New System.Drawing.Size(144, 22)
+Me.TextEdit11.Size = New System.Drawing.Size(144, 20)
 Me.TextEdit11.TabIndex = 12
 '
 'TextEdit12
@@ -9782,7 +10682,7 @@ Me.TextEdit12.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.
 Me.TextEdit12.Enabled = false
 Me.TextEdit12.Location = New System.Drawing.Point(182, 60)
 Me.TextEdit12.Name = "TextEdit12"
-Me.TextEdit12.Size = New System.Drawing.Size(528, 22)
+Me.TextEdit12.Size = New System.Drawing.Size(528, 20)
 Me.TextEdit12.TabIndex = 10
 '
 'LabelControl70
@@ -9799,7 +10699,7 @@ Me.TextEdit13.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.
 Me.TextEdit13.Enabled = false
 Me.TextEdit13.Location = New System.Drawing.Point(173, 335)
 Me.TextEdit13.Name = "TextEdit13"
-Me.TextEdit13.Size = New System.Drawing.Size(182, 22)
+Me.TextEdit13.Size = New System.Drawing.Size(182, 20)
 Me.TextEdit13.TabIndex = 59
 '
 'SpinEdit6
@@ -9812,7 +10712,7 @@ Me.SpinEdit6.Name = "SpinEdit6"
 Me.SpinEdit6.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
 Me.SpinEdit6.Properties.MaxLength = 100000
 Me.SpinEdit6.Properties.MaxValue = New Decimal(New Integer() {9999999, 0, 0, 0})
-Me.SpinEdit6.Size = New System.Drawing.Size(182, 22)
+Me.SpinEdit6.Size = New System.Drawing.Size(182, 20)
 Me.SpinEdit6.TabIndex = 26
 '
 'LabelControl71
@@ -9832,7 +10732,7 @@ Me.CheckEdit3.Name = "CheckEdit3"
 Me.CheckEdit3.Properties.Caption = "Red Listed"
 Me.CheckEdit3.Properties.ValueChecked = 1
 Me.CheckEdit3.Properties.ValueUnchecked = 0
-Me.CheckEdit3.Size = New System.Drawing.Size(154, 21)
+Me.CheckEdit3.Size = New System.Drawing.Size(154, 19)
 Me.CheckEdit3.TabIndex = 54
 '
 'TextEdit14
@@ -9841,7 +10741,7 @@ Me.TextEdit14.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.
 Me.TextEdit14.Enabled = false
 Me.TextEdit14.Location = New System.Drawing.Point(173, 267)
 Me.TextEdit14.Name = "TextEdit14"
-Me.TextEdit14.Size = New System.Drawing.Size(528, 22)
+Me.TextEdit14.Size = New System.Drawing.Size(528, 20)
 Me.TextEdit14.TabIndex = 57
 '
 'CheckEdit4
@@ -9853,7 +10753,7 @@ Me.CheckEdit4.Name = "CheckEdit4"
 Me.CheckEdit4.Properties.Caption = "Black Listed"
 Me.CheckEdit4.Properties.ValueChecked = 1
 Me.CheckEdit4.Properties.ValueUnchecked = 0
-Me.CheckEdit4.Size = New System.Drawing.Size(177, 21)
+Me.CheckEdit4.Size = New System.Drawing.Size(177, 19)
 Me.CheckEdit4.TabIndex = 53
 '
 'TextEdit15
@@ -9861,7 +10761,7 @@ Me.CheckEdit4.TabIndex = 53
 Me.TextEdit15.Enabled = false
 Me.TextEdit15.Location = New System.Drawing.Point(355, 207)
 Me.TextEdit15.Name = "TextEdit15"
-Me.TextEdit15.Size = New System.Drawing.Size(34, 22)
+Me.TextEdit15.Size = New System.Drawing.Size(34, 20)
 Me.TextEdit15.TabIndex = 56
 '
 'CheckEdit5
@@ -9873,7 +10773,7 @@ Me.CheckEdit5.Name = "CheckEdit5"
 Me.CheckEdit5.Properties.Caption = "NewsLetter Partner"
 Me.CheckEdit5.Properties.ValueChecked = 1
 Me.CheckEdit5.Properties.ValueUnchecked = 0
-Me.CheckEdit5.Size = New System.Drawing.Size(183, 21)
+Me.CheckEdit5.Size = New System.Drawing.Size(183, 19)
 Me.CheckEdit5.TabIndex = 52
 '
 'LabelControl72
@@ -9894,7 +10794,7 @@ Me.CheckEdit6.Properties.Caption = "NewsLetter"
 Me.CheckEdit6.Properties.ValueChecked = 1
 Me.CheckEdit6.Properties.ValueUnchecked = 0
 Me.CheckEdit6.RightToLeft = System.Windows.Forms.RightToLeft.No
-Me.CheckEdit6.Size = New System.Drawing.Size(154, 21)
+Me.CheckEdit6.Size = New System.Drawing.Size(154, 19)
 Me.CheckEdit6.TabIndex = 51
 '
 'TextEdit16
@@ -9903,7 +10803,7 @@ Me.TextEdit16.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.
 Me.TextEdit16.Enabled = false
 Me.TextEdit16.Location = New System.Drawing.Point(173, 237)
 Me.TextEdit16.Name = "TextEdit16"
-Me.TextEdit16.Size = New System.Drawing.Size(33, 22)
+Me.TextEdit16.Size = New System.Drawing.Size(33, 20)
 Me.TextEdit16.TabIndex = 54
 '
 'LabelControl73
@@ -9928,7 +10828,7 @@ Me.TextEdit17.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.
 Me.TextEdit17.Enabled = false
 Me.TextEdit17.Location = New System.Drawing.Point(526, 300)
 Me.TextEdit17.Name = "TextEdit17"
-Me.TextEdit17.Size = New System.Drawing.Size(182, 22)
+Me.TextEdit17.Size = New System.Drawing.Size(182, 20)
 Me.TextEdit17.TabIndex = 48
 '
 'LabelControl75
@@ -9967,7 +10867,7 @@ Me.TextEdit18.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.
 Me.TextEdit18.Enabled = false
 Me.TextEdit18.Location = New System.Drawing.Point(173, 363)
 Me.TextEdit18.Name = "TextEdit18"
-Me.TextEdit18.Size = New System.Drawing.Size(182, 22)
+Me.TextEdit18.Size = New System.Drawing.Size(182, 20)
 Me.TextEdit18.TabIndex = 46
 '
 'LabelControl78
@@ -9998,7 +10898,7 @@ Me.LookUpEdit8.Properties.DataSource = Me.objDS.generalentity
 Me.LookUpEdit8.Properties.DisplayMember = "Name"
 Me.LookUpEdit8.Properties.NullText = ""
 Me.LookUpEdit8.Properties.ValueMember = "EntityID"
-Me.LookUpEdit8.Size = New System.Drawing.Size(269, 22)
+Me.LookUpEdit8.Size = New System.Drawing.Size(269, 20)
 Me.LookUpEdit8.TabIndex = 44
 '
 'LabelControl80
@@ -10037,7 +10937,7 @@ Me.LookUpEdit9.Properties.DataSource = Me.objDS.languages
 Me.LookUpEdit9.Properties.DisplayMember = "name"
 Me.LookUpEdit9.Properties.NullText = ""
 Me.LookUpEdit9.Properties.ValueMember = "languages_id"
-Me.LookUpEdit9.Size = New System.Drawing.Size(182, 22)
+Me.LookUpEdit9.Size = New System.Drawing.Size(182, 20)
 Me.LookUpEdit9.TabIndex = 17
 '
 'DateEdit5
@@ -10050,7 +10950,7 @@ Me.DateEdit5.Name = "DateEdit5"
 Me.DateEdit5.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.[True]
 Me.DateEdit5.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.DateEdit5.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-Me.DateEdit5.Size = New System.Drawing.Size(173, 22)
+Me.DateEdit5.Size = New System.Drawing.Size(173, 20)
 Me.DateEdit5.TabIndex = 41
 '
 'LabelControl83
@@ -10067,7 +10967,7 @@ Me.TextEdit19.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.
 Me.TextEdit19.Enabled = false
 Me.TextEdit19.Location = New System.Drawing.Point(173, 179)
 Me.TextEdit19.Name = "TextEdit19"
-Me.TextEdit19.Size = New System.Drawing.Size(269, 22)
+Me.TextEdit19.Size = New System.Drawing.Size(269, 20)
 Me.TextEdit19.TabIndex = 20
 '
 'HyperLinkEdit1
@@ -10077,7 +10977,7 @@ Me.HyperLinkEdit1.Enabled = false
 Me.HyperLinkEdit1.Location = New System.Drawing.Point(173, 151)
 Me.HyperLinkEdit1.Name = "HyperLinkEdit1"
 Me.HyperLinkEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard
-Me.HyperLinkEdit1.Size = New System.Drawing.Size(528, 22)
+Me.HyperLinkEdit1.Size = New System.Drawing.Size(528, 20)
 Me.HyperLinkEdit1.TabIndex = 19
 '
 'TextEdit20
@@ -10086,7 +10986,7 @@ Me.TextEdit20.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.
 Me.TextEdit20.Enabled = false
 Me.TextEdit20.Location = New System.Drawing.Point(451, 179)
 Me.TextEdit20.Name = "TextEdit20"
-Me.TextEdit20.Size = New System.Drawing.Size(250, 22)
+Me.TextEdit20.Size = New System.Drawing.Size(250, 20)
 Me.TextEdit20.TabIndex = 18
 '
 'LabelControl84
@@ -10111,7 +11011,7 @@ Me.CheckEdit7.Properties.Caption = "ABO"
 Me.CheckEdit7.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
 Me.CheckEdit7.Properties.ValueChecked = 1
 Me.CheckEdit7.Properties.ValueUnchecked = 0
-Me.CheckEdit7.Size = New System.Drawing.Size(67, 26)
+Me.CheckEdit7.Size = New System.Drawing.Size(67, 21)
 Me.CheckEdit7.TabIndex = 15
 '
 'LabelControl85
@@ -10131,7 +11031,7 @@ Me.DateEdit6.Location = New System.Drawing.Point(173, 207)
 Me.DateEdit6.Name = "DateEdit6"
 Me.DateEdit6.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
 Me.DateEdit6.Properties.VistaTimeProperties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
-Me.DateEdit6.Size = New System.Drawing.Size(153, 22)
+Me.DateEdit6.Size = New System.Drawing.Size(153, 20)
 Me.DateEdit6.TabIndex = 10
 '
 'TextEdit21
@@ -10140,7 +11040,7 @@ Me.TextEdit21.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.
 Me.TextEdit21.Enabled = false
 Me.TextEdit21.Location = New System.Drawing.Point(451, 123)
 Me.TextEdit21.Name = "TextEdit21"
-Me.TextEdit21.Size = New System.Drawing.Size(250, 22)
+Me.TextEdit21.Size = New System.Drawing.Size(250, 20)
 Me.TextEdit21.TabIndex = 9
 '
 'TextEdit22
@@ -10149,7 +11049,7 @@ Me.TextEdit22.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.
 Me.TextEdit22.Enabled = false
 Me.TextEdit22.Location = New System.Drawing.Point(173, 123)
 Me.TextEdit22.Name = "TextEdit22"
-Me.TextEdit22.Size = New System.Drawing.Size(269, 22)
+Me.TextEdit22.Size = New System.Drawing.Size(269, 20)
 Me.TextEdit22.TabIndex = 7
 '
 'LabelControl86
@@ -10167,7 +11067,7 @@ Me.TextEdit23.Enabled = false
 Me.TextEdit23.Location = New System.Drawing.Point(173, 59)
 Me.TextEdit23.Name = "TextEdit23"
 Me.TextEdit23.Properties.ReadOnly = true
-Me.TextEdit23.Size = New System.Drawing.Size(153, 22)
+Me.TextEdit23.Size = New System.Drawing.Size(153, 20)
 Me.TextEdit23.TabIndex = 5
 '
 'LabelControl87
@@ -10304,6 +11204,13 @@ CType(Me.txt_cc_card_no2.Properties,System.ComponentModel.ISupportInitialize).En
 CType(Me.txt_cc_owner2.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.GroupDomiciliation,System.ComponentModel.ISupportInitialize).EndInit
 Me.GroupDomiciliation.ResumeLayout(false)
+CType(Me.PanelControl2,System.ComponentModel.ISupportInitialize).EndInit
+Me.PanelControl2.ResumeLayout(false)
+Me.PanelControl2.PerformLayout
+CType(Me.TextEdit24.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.TextEdit25.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.TextEdit26.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.cmbInvoiceEDDManadateStatus.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.panelDomiciliation,System.ComponentModel.ISupportInitialize).EndInit
 Me.panelDomiciliation.ResumeLayout(false)
 Me.panelDomiciliation.PerformLayout
@@ -10466,6 +11373,42 @@ CType(Me.txtcustomers_name_search.Properties,System.ComponentModel.ISupportIniti
 CType(Me.txtcustomers_id_search.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.XTabCustomers,System.ComponentModel.ISupportInitialize).EndInit
 Me.XTabCustomers.ResumeLayout(false)
+Me.tabEDD.ResumeLayout(false)
+Me.tabEDD.PerformLayout
+CType(Me.chkBICChanged.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.chkMandateIDChanged.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.chkEDDIBANChanged.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.grdEddHistory,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.grdViewEddHistory,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.RepositoryItemLookUpEdit2,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.cmbLastPaymentStatus.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtEDDSigningCity.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtDebtorIdentificationCode.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtCustomersEDDCountry.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtEDDSignatureDate.Properties.VistaTimeProperties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtEDDSignatureDate.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtEDDCreateDate.Properties.VistaTimeProperties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtEDDCreateDate.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtLastUpdate.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtKBO.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtBIC.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtGemeente.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtContractDescrp.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtContractID.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtDebtorRefpartyCode.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtDebtorRefpartyName.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtCustomersEDDCity.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtCustomersEDDPostcode.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtCustomersEDDStreetNumber.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtCustomersEDDName.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtMandateRef.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtEDDCustomersID.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtEDDMandateID.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtIBAN.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtReference.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.cmbEDDMandateStatus.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtVolgnr.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.txtEddID.Properties,System.ComponentModel.ISupportInitialize).EndInit
 Me.tabComment.ResumeLayout(false)
 CType(Me.MemoCustomersComment.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.GridCustComment,System.ComponentModel.ISupportInitialize).EndInit
@@ -10622,6 +11565,8 @@ End Sub
     Dim _oldSuspended As Integer
     Private _lstSuspended As New List(Of DVDPostBuziness.clsKeyCombo)
     Private _lstADULTSVOD As New List(Of DVDPostBuziness.clsKeyCombo)
+    Private _lstEddMandateStatus As New List(Of DVDPostBuziness.clsKeyCombo)
+    Private _lstEDDlastPaymenttatus As New List(Of DVDPostBuziness.clsKeyCombo)
     Private _loadInfo As Boolean
 
 
@@ -10805,8 +11750,10 @@ End Sub
             Me.BindingContext(objDS, TableName).EndCurrentEdit()
             Me.BindingContext(objDS, "address_book_default").EndCurrentEdit()
             Me.BindingContext(objDS, "customer_attributes").EndCurrentEdit()
+            Me.BindingContext(objDS, "customers_edd").EndCurrentEdit()
 
             ' DvdPostData.clsConnection.UpdateDataTableInDB(objDS.Tables(TableName), "SELECT * FROM customers where customers_id = " & _CurrentCustomerID)
+            updateInsertCustomersEDD()
             MainData.Save()
 
 
@@ -10847,6 +11794,8 @@ End Sub
             '  DvdPostData.clsConnection.FillDataSet(objDS.Tables("payment_offline_status"), "SELECT * FROM payment_offline_status ")
             LoadSuspended()
             LoadADULTSVOD()
+            LoadEDDMandateStatus()
+            LoadEDDPaymentStatus()
         Catch ex As Exception
             Throw ex
         End Try
@@ -11184,6 +12133,36 @@ End Sub
 
     End Sub
 
+    Private Sub LoadEDDMandateStatus()
+
+        _lstEddMandateStatus.Add(New DVDPostBuziness.clsKeyCombo("waiting signed docment", 1))
+        _lstEddMandateStatus.Add(New DVDPostBuziness.clsKeyCombo("signed document received", 2))
+        _lstEddMandateStatus.Add(New DVDPostBuziness.clsKeyCombo("first", 3))
+        _lstEddMandateStatus.Add(New DVDPostBuziness.clsKeyCombo("recurrent", 4))
+        _lstEddMandateStatus.Add(New DVDPostBuziness.clsKeyCombo("stop initated", 5))
+        _lstEddMandateStatus.Add(New DVDPostBuziness.clsKeyCombo("stop sent in bank", 6))
+        _lstEddMandateStatus.Add(New DVDPostBuziness.clsKeyCombo("stopped", 7))
+        _lstEddMandateStatus.Add(New DVDPostBuziness.clsKeyCombo("", -1))
+        Me.cmbEDDMandateStatus.Properties.DataSource = _lstEddMandateStatus
+        cmbEDDMandateStatus.Enabled = False
+        Me.cmbInvoiceEDDManadateStatus.Properties.DataSource = _lstEddMandateStatus
+
+
+    End Sub
+
+    Private Sub LoadEDDPaymentStatus()
+
+        _lstEDDlastPaymenttatus.Add(New DVDPostBuziness.clsKeyCombo("paid", 0))
+        _lstEDDlastPaymenttatus.Add(New DVDPostBuziness.clsKeyCombo("reason not specified", 1))
+        _lstEDDlastPaymenttatus.Add(New DVDPostBuziness.clsKeyCombo("debtor disagrees", 2))
+        _lstEDDlastPaymenttatus.Add(New DVDPostBuziness.clsKeyCombo("debtor acount problem", 3))
+        _lstEDDlastPaymenttatus.Add(New DVDPostBuziness.clsKeyCombo("technical problem", 4))
+        _lstEDDlastPaymenttatus.Add(New DVDPostBuziness.clsKeyCombo("", -1))
+        Me.cmbLastPaymentStatus.Properties.DataSource = _lstEDDlastPaymenttatus
+        cmbLastPaymentStatus.Enabled = False
+
+    End Sub
+
     Private Sub loadAboHist(ByVal index As Integer, ByVal customers_id As Integer)
 
         If refreshTab(index) Then
@@ -11205,6 +12184,45 @@ End Sub
         sql = DvdPostData.ClsCustomersData.getSelectAttributes(customers_id)
         DvdPostData.clsConnection.FillDataSet(objDS.Tables("customer_attributes"), sql)
 
+    End Sub
+
+    Private Sub loadCustomerEDD(ByVal customers_id As Integer)
+        Dim sql As String
+        objDS.Tables("customers_edd").Clear()
+        objDS.Tables("customers_edd_history").Clear()
+        objDS.Tables("edd_changed").Clear()
+        chkEDDIBANChanged.Visible = False
+        chkMandateIDChanged.Visible = False
+        chkBICChanged.Visible = False
+
+        sql = DvdPostData.ClsCustomersData.getSelectCustomersEDD(customers_id)
+        DvdPostData.clsConnection.FillDataSet(objDS.Tables("customers_edd"), sql)
+
+        sql = DvdPostData.ClsCustomersData.getSelectCustomersEDDHistory(customers_id)
+        DvdPostData.clsConnection.FillDataSet(objDS.Tables("customers_edd_history"), sql)
+
+        sql = DvdPostData.ClsCustomersData.getSelectCustomersEDDChanges(customers_id)
+        DvdPostData.clsConnection.FillDataSet(objDS.Tables("edd_changed"), sql)
+
+        grdEddHistory.DataSource = objDS.Tables("customers_edd_history")
+        grdEddHistory.Refresh()
+
+        If objDS.Tables("edd_changed").Rows.Count > 0 Then
+            chkEDDIBANChanged.Checked = objDS.edd_changed(0).iban
+            chkEDDIBANChanged.Visible = objDS.edd_changed(0).iban
+            '
+            chkMandateIDChanged.Checked = objDS.edd_changed(0).edd_mandate_id
+            chkMandateIDChanged.Visible = objDS.edd_changed(0).edd_mandate_id
+            '
+            chkBICChanged.Checked = objDS.edd_changed(0).bic
+            chkBICChanged.Visible = objDS.edd_changed(0).bic
+        End If
+
+        If objDS.Tables("customers_edd").Rows.Count > 0 Then
+            cmbLastPaymentStatus.EditValue = objDS.Tables("customers_edd").Rows(0)("last_payment_status")
+            cmbEDDMandateStatus.EditValue = objDS.Tables("customers_edd").Rows(0)("edd_mandate_status")
+            cmbInvoiceEDDManadateStatus.EditValue = objDS.Tables("customers_edd").Rows(0)("edd_mandate_status")
+        End If
     End Sub
     Private Sub loadCustomerSVOD(ByVal customers_id As Integer)
         Dim sql As String
@@ -11254,6 +12272,8 @@ End Sub
         objDS.Tables("customer_attributes").Clear()
         objDS.Tables("customers_svod").Clear()
         objDS.Tables("customers").Clear()
+        objDS.Tables("customers_edd").Clear()
+        objDS.Tables("customers_edd_history").Clear()
 
 
         MainData = New ClsCustomersInfo.clsCustomer(SessionInfo, objDS, _CurrentCustomerID)
@@ -11289,7 +12309,7 @@ End Sub
         End If
         cmbSuspended.EditValue = drCust("customers_abo_suspended")
         cmbADULTSVODStatus.EditValue = drCust("svod_adult")
-       
+
         'calcul the Age
         If drCust("customers_dob") IsNot (DBNull.Value) Then
             txtYearsOld.Text = calculAge(DateBirthday.EditValue)
@@ -11312,6 +12332,7 @@ End Sub
         'display addressbook
         loadAddressBook(_CurrentCustomerID)
         loadAttributesCustomer(_CurrentCustomerID)
+        loadCustomerEDD(_CurrentCustomerID)
         loadCustomerSVOD(_CurrentCustomerID)
         loadCptReconduction(_CurrentCustomerID)
         chkFt.Checked = DVDPostBuziness.ClsCustomers.isFT(_CurrentCustomerID)
@@ -11443,6 +12464,35 @@ End Sub
         ChangeStateControl(txtNextDVDRemain, False)
         ChangeStateControl(txtNextPrice, False)
         ChangeStateControl(txtDiscRecurring, False)
+
+        'EDD
+        ChangeStateControl(txtVolgnr, Enabling)
+        ChangeStateControl(txtReference, Enabling)
+        ChangeStateControl(txtIBAN, Enabling)
+        ChangeStateControl(txtEDDMandateID, Enabling)
+        ChangeStateControl(cmbEDDMandateStatus, Enabling)
+        'ChangeStateControl(txtEDDCustomersID, Enabling)
+        ChangeStateControl(cmbLastPaymentStatus, Enabling)
+        ChangeStateControl(txtMandateRef, Enabling)
+        ChangeStateControl(txtEDDCreateDate, Enabling)
+        ChangeStateControl(txtEDDSignatureDate, Enabling)
+        ChangeStateControl(txtCustomersEDDName, Enabling)
+        ChangeStateControl(txtCustomersEDDStreetNumber, Enabling)
+        ChangeStateControl(txtCustomersEDDPostcode, Enabling)
+        ChangeStateControl(txtCustomersEDDCity, Enabling)
+        ChangeStateControl(txtEDDSigningCity, Enabling)
+        ChangeStateControl(txtNextPrice, Enabling)
+        ChangeStateControl(txtCustomersEDDCountry, Enabling)
+        ChangeStateControl(txtDebtorIdentificationCode, Enabling)
+        ChangeStateControl(txtDebtorRefpartyName, Enabling)
+        ChangeStateControl(txtDebtorRefpartyCode, Enabling)
+        ChangeStateControl(txtContractID, Enabling)
+        ChangeStateControl(txtContractDescrp, Enabling)
+        ChangeStateControl(txtGemeente, Enabling)
+        ChangeStateControl(txtBIC, Enabling)
+        ChangeStateControl(txtKBO, Enabling)
+        ChangeStateControl(txtLastUpdate, Enabling)
+        ChangeStateControl(btnEDDNew, Enabling)
 
         _saveCustomersComment = Enabling
 
@@ -11797,6 +12847,46 @@ End Sub
                 DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Phone_History, ex, customers_id)
             End Try
         End If
+
+
+    End Sub
+
+    Private Sub updateInsertCustomersEDD()
+
+        Dim customers_abo As Integer
+        Dim customers_id As Integer
+        Dim other_reason As String
+        Dim stop_phone_id As String
+        Dim call_phone As String
+        Dim count As Integer
+        Dim sql As String
+        Dim existCust As Boolean
+        Dim registration_step As Integer
+        Dim payment_method As Integer
+
+        customers_id = _CurrentCustomerID
+        If DateCallPhoneActivation.EditValue IsNot Nothing Then
+            call_phone = DateCallPhoneActivation.DateTime.ToString("yyyy-MM-dd HH:mm:ss")
+        Else
+            call_phone = String.Empty
+        End If
+
+        'existCust = exist(customers_id)
+
+        Try
+            If objDS.Tables("customers_edd").Rows.Count > 0 AndAlso objDS.Tables("customers_edd").Rows(0).RowState = DataRowState.Added Then
+                sql = DvdPostData.ClsCustomersData.GetInsertCustomersEDD(txtVolgnr.EditValue, txtReference.EditValue, txtIBAN.EditValue, txtEDDMandateID.EditValue, cmbEDDMandateStatus.EditValue, txtEDDCustomersID.EditValue, cmbLastPaymentStatus.EditValue, txtMandateRef.EditValue, txtEDDCreateDate.EditValue, txtEDDSignatureDate.EditValue, txtCustomersEDDName.EditValue, txtCustomersEDDStreetNumber.EditValue, txtCustomersEDDPostcode.EditValue, txtCustomersEDDCity.EditValue, txtEDDSigningCity.EditValue, txtCustomersEDDCountry.EditValue, txtDebtorIdentificationCode.EditValue, txtDebtorRefpartyName.EditValue, txtDebtorRefpartyCode.EditValue, txtContractID.EditValue, txtContractDescrp.EditValue, txtGemeente.EditValue, txtBIC.EditValue, txtKBO.EditValue, txtLastUpdate.EditValue)
+                count = DvdPostData.clsConnection.ExecuteNonQuery(sql)
+            Else
+                sql = "SELECT * FROM customers_edd where customers_id = " & customers_id
+                DvdPostData.clsConnection.UpdateDataTableInDB(objDS.Tables("customers_edd"), sql)
+            End If
+
+        Catch ex As Exception
+            DvdPostData.clsConnection.CancelBulkQuery()
+            DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Phone_History, ex, customers_id)
+        End Try
+
 
 
     End Sub
@@ -12925,6 +14015,44 @@ End Sub
 
             DvdPostData.clsConnection.ExecuteNonQuery(sql, True)
         End If
+
+    End Sub
+
+    Private Sub btnEDDNew_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEDDNew.Click
+
+        If objDS.Tables("customers").Rows(0)("customers_abo_payment_method") <> 2 Then
+            MsgBox("Customer's payment method should be Domiciliation", MsgBoxStyle.Information, "Domiciliation Info")
+            Return
+        End If
+        Dim edd As dsCustomerMaint.customers_eddRow = objDS.Tables("customers_edd").NewRow()
+        objDS.Tables("customers_edd").Rows.Add(edd)
+        Dim blank As String = String.Empty
+
+        txtVolgnr.EditValue = blank
+        txtReference.EditValue = blank
+        txtIBAN.EditValue = blank
+        txtEDDMandateID.EditValue = blank
+        cmbEDDMandateStatus.EditValue = 2
+        txtEDDCustomersID.EditValue = _CurrentCustomerID
+        'cmbLastPaymentStatus.EditValue = -1
+        txtMandateRef.EditValue = blank
+        txtEDDCreateDate.EditValue = DateTime.MinValue
+        txtEDDSignatureDate.EditValue = DateTime.MinValue
+        txtCustomersEDDName.EditValue = blank
+        txtCustomersEDDStreetNumber.EditValue = blank
+        txtCustomersEDDPostcode.EditValue = blank
+        txtCustomersEDDCity.EditValue = blank
+        txtEDDSigningCity.EditValue = blank
+        txtCustomersEDDCountry.EditValue = blank
+        txtDebtorIdentificationCode.EditValue = blank
+        txtDebtorRefpartyName.EditValue = blank
+        txtDebtorRefpartyCode.EditValue = blank
+        txtContractID.EditValue = blank
+        txtContractDescrp.EditValue = blank
+        txtGemeente.EditValue = blank
+        txtBIC.EditValue = blank
+        txtKBO.EditValue = blank
+        txtLastUpdate.EditValue = blank
 
     End Sub
 End Class

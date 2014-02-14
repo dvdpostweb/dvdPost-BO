@@ -238,6 +238,38 @@ Public Class ClsCustomersData
         sql = " select * from customer_attributes a where a.customer_id = " & customers_id
         Return sql
     End Function
+    Public Shared Function getSelectCustomersEDD(ByVal customers_id As Integer) As String
+        Dim sql As String
+        sql = " select * from customers_edd a where a.customers_id = " & customers_id
+        Return sql
+    End Function
+
+    Public Shared Function getSelectCustomersEDDHistory(ByVal customers_id As Integer) As String
+        Dim sql As String
+        sql = " select * from customers_edd_history a where a.customers_id = " & customers_id & " order by history_created_at desc"
+        Return sql
+    End Function
+
+    Public Shared Function getSelectCustomersEDDChanges(ByVal customers_id As Integer) As String
+        Dim sql As String
+        sql = " SELECT ce.iban <> ceh.iban iban, ce.edd_mandate_id <> ceh.edd_mandate_id edd_mandate_id, ce.bic <> ceh.bic bic, ce.kbo <> ceh.kbo kbo " & _
+              " FROM customers_edd ce join ( select * from customers_edd_history " & _
+              " WHERE history_created_at < (SELECT cre_dt_tm FROM payment_edd p WHERE customers_id = " & customers_id & _
+              " AND type_r_transaction = 0 order by id desc limit 1 ) order by history_id desc limit 1) ceh on ce.customers_id = ceh.customers_id "
+
+        Return sql
+    End Function
+
+    Public Shared Function getSelectCustomersEDDChangesWithOldValues(ByVal customers_id As Integer) As String
+        Dim sql As String
+        sql = " SELECT ce.iban <> ceh.iban iban, ceh.iban oldiban, ce.edd_mandate_id <> ceh.edd_mandate_id edd_mandate_id, ceh.edd_mandate_id oldedd_mandate_id, ce.bic <> ceh.bic bic, ceh.bic oldbic " & _
+              " FROM customers_edd ce join ( select * from customers_edd_history " & _
+              " WHERE history_created_at < (SELECT cre_dt_tm FROM payment_edd p WHERE customers_id = " & customers_id & _
+              " AND type_r_transaction = 0 order by id desc limit 1 ) order by history_id desc limit 1) ceh on ce.customers_id = ceh.customers_id "
+
+        Return sql
+    End Function
+
     Public Shared Function getSelectSVOD(ByVal customers_id As Integer) As String
         Dim sql As String
         sql = " select * from customers_svod sv where sv.customer_id = " & customers_id
@@ -622,9 +654,59 @@ Public Class ClsCustomersData
         sql = sql & " p.products_price,"
         sql = sql & " '-1' amount,"
         sql = sql & " ca.combined, "
-        sql = sql & "( SELECT if(pa.qty_dvd_max >= 0, 1, 0) FROM products_abo pa WHERE pa.products_id = c.customers_next_abo_type ) as npp_logic" ' npp
+        sql = sql & "( SELECT if(pa.qty_dvd_max >= 0, 1, 0) FROM products_abo pa WHERE pa.products_id = c.customers_next_abo_type ) as npp_logic " ' npp
         sql = sql & " FROM customers c join products p on c.customers_next_abo_type = p.products_id "
         sql = sql & " join customer_attributes ca on c.customers_id = ca.customer_id "
+        sql = sql & " WHERE date(customers_abo_validityto) <= '" & strmysqldate & "'"
+        sql = sql & " AND customers_abo = 1 "
+        sql = sql & " AND customers_abo_payment_method = " & typePayment & " and customers_abo_suspended = 0 "
+
+
+        If customers_id > -1 Then
+            sql = sql & " AND c.customers_id = " & customers_id
+        Else
+            sql = sql & " AND EntityID = " & country_id
+        End If
+        Return sql
+    End Function
+
+    Public Shared Function GetSelectDomiciliationReconductionCustomers(ByVal typePayment As Integer, ByVal country_id As Integer, ByVal customers_id As Integer) As String
+        Dim sql As String
+
+        Dim strmysqldate As String = DVDPostTools.ClsDate.formatDate()
+
+        sql = "select c.customers_abo_auto_stop_next_reconduction,"
+        sql = sql & " c.customers_next_abo_type,c.customers_abo,"
+        sql = sql & " c.customers_abo_type,"
+        sql = sql & " c.customers_abo_payment_method,"
+        sql = sql & " c.customers_id,"
+        sql = sql & " c.customers_abo_dvd_norm,"
+        sql = sql & " c.customers_abo_dvd_adult,"
+        sql = sql & " c.customers_email_address,"
+        sql = sql & " concat(c.customers_firstname,' ',c.customers_lastname) customers_name,"
+        sql = sql & " p.products_model,"
+        sql = sql & "if(date(c.customers_abo_discount_recurring_to_date) > now(), 1, 0) as recurring_discount, "
+        sql = sql & " c.customers_abo_validityto,"
+        sql = sql & " c.activation_discount_code_id,"
+        sql = sql & " c.activation_discount_code_type,"
+        sql = sql & " c.customers_next_discount_code,"
+        sql = sql & " domiciliation_number,"
+        sql = sql & " c.ogone_card_type,"
+        sql = sql & " c.ogone_card_no,"
+        sql = sql & " c.ogone_exp_date,"
+        sql = sql & " p.products_price,"
+        sql = sql & " '-1' amount,"
+        sql = sql & " ca.combined, "
+        sql = sql & "( SELECT if(pa.qty_dvd_max >= 0, 1, 0) FROM products_abo pa WHERE pa.products_id = c.customers_next_abo_type ) as npp_logic, " ' npp
+        sql = sql & " dom80.* , edd.*, "
+        sql = sql & " ( SELECT if(isnull(ceh.bic) or isnull(ce.bic),0,ce.bic <> ceh.bic) " & _
+                    " FROM customers_edd ce left join ( select * from customers_edd_history ceh1 " & _
+                    " WHERE history_created_at < (SELECT cre_dt_tm FROM payment_edd p WHERE p.customers_id = ceh1.customers_id " & _
+                    " AND type_r_transaction = 0 order by id desc limit 1 ) order by history_id desc limit 1) ceh on ce.customers_id = ceh.customers_id where ce.customers_id = c.customers_id) bic_changed"
+        sql = sql & " FROM customers c join products p on c.customers_next_abo_type = p.products_id "
+        sql = sql & " join customer_attributes ca on c.customers_id = ca.customer_id "
+        sql = sql & " join customers_edd edd on edd.customers_id = c.customers_id "
+        sql = sql & " left join dom80 dom80 on dom80.dom_nr = c.domiciliation_number "
         sql = sql & " WHERE date(customers_abo_validityto) <= '" & strmysqldate & "'"
         sql = sql & " AND customers_abo = 1 "
         sql = sql & " AND customers_abo_payment_method = " & typePayment & " and customers_abo_suspended = 0 "
@@ -1009,6 +1091,195 @@ Public Class ClsCustomersData
         Return sql
     End Function
 
+    Public Shared Function GetInsertCustomersEDD(ByVal volgnr As String, ByVal reference As String, ByVal iban As String, _
+    ByVal edd_mandate_id As String, ByVal edd_mandate_status As Integer, ByVal customers_id As Integer, ByVal last_payment_status As Integer, _
+    ByVal mandate_ref As String, ByVal create_date As String, ByVal signature_date As String, ByVal customer_edd_name As String, _
+    ByVal customer_edd_street_number As String, ByVal customer_edd_postcode As String, ByVal customer_edd_city As String, ByVal edd_signing_city As String, _
+    ByVal customer_edd_country As String, ByVal debtor_identification_code As String, ByVal debtor_refparty_name As String, ByVal debtor_refparty_code As String, _
+    ByVal contract_id As String, ByVal contract_dscrp As String, ByVal gemeente As String, ByVal bic As String, ByVal kbo As String, ByVal last_update As String) As String
+        Dim sql As String
+        Dim strSignatureDate As String
+        Dim strCreateDate As String
+
+        Dim strvolgnr As String
+        Dim strreference As String
+        Dim striban As String
+        Dim stredd_mandate_id As String
+        Dim strmandate_ref As String
+        Dim strcustomer_edd_name As String
+        Dim strcustomer_edd_street_number As String
+        Dim strcustomer_edd_postcode As String
+        Dim strcustomer_edd_city As String
+        Dim stredd_signing_city As String
+        Dim strcustomer_edd_country As String
+        Dim strdebtor_identification_code As String
+        Dim strdebtor_refparty_name As String
+        Dim strdebtor_refparty_code As String
+        Dim strcontract_id As String
+        Dim strcontract_dscrp As String
+        Dim strgemeente As String
+        Dim strbic As String
+        Dim strkbo As String
+        Dim strlast_update As String
+
+        '
+        If signature_date = DateTime.MinValue Then
+            strSignatureDate = "null"
+        Else
+            strSignatureDate = "'" & DVDPostTools.ClsDate.formatDateDB(signature_date) & "'"
+        End If
+
+        If create_date = DateTime.MinValue Then
+            strCreateDate = "null"
+        Else
+            strCreateDate = "'" & DVDPostTools.ClsDate.formatDateDB(create_date) & "'"
+        End If
+        '
+
+        If volgnr.Equals(String.Empty) Then
+            strvolgnr = "null"
+        Else
+            strvolgnr = volgnr
+        End If
+
+        If reference.Equals(String.Empty) Then
+            strreference = "null"
+        Else
+            strreference = reference
+        End If
+
+        If iban.Equals(String.Empty) Then
+            striban = "null"
+        Else
+            striban = iban
+        End If
+
+        If edd_mandate_id.Equals(String.Empty) Then
+            stredd_mandate_id = "null"
+        Else
+            stredd_mandate_id = edd_mandate_id
+        End If
+
+        If mandate_ref.Equals(String.Empty) Then
+            strmandate_ref = "null"
+        Else
+            strmandate_ref = edd_mandate_id
+        End If
+
+        If customer_edd_name.Equals(String.Empty) Then
+            strcustomer_edd_name = "null"
+        Else
+            strcustomer_edd_name = customer_edd_name
+        End If
+
+        If customer_edd_street_number.Equals(String.Empty) Then
+            strcustomer_edd_street_number = "null"
+        Else
+            strcustomer_edd_street_number = customer_edd_street_number
+        End If
+
+        If customer_edd_postcode.Equals(String.Empty) Then
+            strcustomer_edd_postcode = "null"
+        Else
+            strcustomer_edd_postcode = customer_edd_postcode
+        End If
+
+        If customer_edd_city.Equals(String.Empty) Then
+            strcustomer_edd_city = "null"
+        Else
+            strcustomer_edd_city = customer_edd_city
+        End If
+
+        If edd_signing_city.Equals(String.Empty) Then
+            stredd_signing_city = "null"
+        Else
+            stredd_signing_city = edd_signing_city
+        End If
+
+        If customer_edd_country.Equals(String.Empty) Then
+            strcustomer_edd_country = "null"
+        Else
+            strcustomer_edd_country = customer_edd_country
+        End If
+
+        If debtor_identification_code.Equals(String.Empty) Then
+            strdebtor_identification_code = "null"
+        Else
+            strdebtor_identification_code = debtor_identification_code
+        End If
+
+        If debtor_refparty_name.Equals(String.Empty) Then
+            strdebtor_refparty_name = "null"
+        Else
+            strdebtor_refparty_name = debtor_refparty_name
+        End If
+
+        If debtor_refparty_code.Equals(String.Empty) Then
+            strdebtor_refparty_code = "null"
+        Else
+            strdebtor_refparty_code = debtor_refparty_code
+        End If
+
+        If customer_edd_country.Equals(String.Empty) Then
+            strcustomer_edd_country = "null"
+        Else
+            strcustomer_edd_country = customer_edd_country
+        End If
+
+        If debtor_identification_code.Equals(String.Empty) Then
+            strdebtor_identification_code = "null"
+        Else
+            strdebtor_identification_code = debtor_identification_code
+        End If
+
+        If debtor_refparty_name.Equals(String.Empty) Then
+            strdebtor_refparty_name = "null"
+        Else
+            strdebtor_refparty_name = debtor_refparty_name
+        End If
+        '
+        If contract_id.Equals(String.Empty) Then
+            strcontract_id = "null"
+        Else
+            strcontract_id = contract_id
+        End If
+
+        If contract_dscrp.Equals(String.Empty) Then
+            strcontract_dscrp = "null"
+        Else
+            strcontract_dscrp = contract_dscrp
+        End If
+
+        If gemeente.Equals(String.Empty) Then
+            strgemeente = "null"
+        Else
+            strgemeente = gemeente
+        End If
+
+        If bic.Equals(String.Empty) Then
+            strbic = "null"
+        Else
+            strbic = bic
+        End If
+
+        If kbo.Equals(String.Empty) Then
+            strkbo = "null"
+        Else
+            strkbo = kbo
+        End If
+
+        If last_update.Equals(String.Empty) Then
+            strlast_update = "null"
+        Else
+            strlast_update = last_update
+        End If
+
+        sql = "insert into customers_edd(  volgnr ,  reference ,  iban ,  edd_mandate_id ,  edd_mandate_status ,  customers_id ,  last_payment_status ,  mandate_ref ,  create_date ,  signature_date ,  customer_edd_name ,  customer_edd_street_number ,  customer_edd_postcode ,  customer_edd_city ,  edd_signing_city ,  customer_edd_country ,  debtor_identification_code ,  debtor_refparty_name ,  debtor_refparty_code ,  contract_id ,  contract_dscrp ,  gemeente ,  bic ,  kbo ,  last_update) " & _
+               " values('" & strvolgnr & "','" & strreference & "','" & striban & "', '" & stredd_mandate_id & "', " & edd_mandate_status & ", " & customers_id & ", " & last_payment_status & ", '" & strmandate_ref & "', " & strCreateDate & "', " & strSignatureDate & ", '" & strcustomer_edd_name & "','" & strcustomer_edd_street_number & "','" & strcustomer_edd_postcode & "','" & strcustomer_edd_city & "','" & stredd_signing_city & "','" & strcustomer_edd_country & "','" & strdebtor_identification_code & "','" & strdebtor_refparty_name & "','" & strdebtor_refparty_code & "','" & strcontract_id & "','" & strcontract_dscrp & "','" & strgemeente & "','" & strbic & "','" & strkbo & "','" & strlast_update & "')"
+
+        Return sql
+    End Function
+
     'Public Shared Function GetInsertVodAccess(ByVal customers_id) As String
     '    Dim sql As String
     '    sql = "insert beta_tests values (null," & customers_id & ")"
@@ -1016,6 +1287,7 @@ Public Class ClsCustomersData
     'End Function
 
 #End Region
+
 #Region "update"
 
     Public Shared Function GetUpdateNextProductType(ByVal customers_id As Integer, ByVal nextproduct_id As Integer) As String
@@ -1156,6 +1428,17 @@ Public Class ClsCustomersData
     Public Shared Function GetUpdateCredit(ByVal customers_id As Integer, ByVal credit As Integer) As String
         Dim sql As String
         sql = "update customers set customers_abo_dvd_credit = customers_abo_dvd_credit + " & credit & " where customers_id = " & customers_id
+        Return sql
+    End Function
+
+    Public Shared Function GetUpdateEddMandateStatus(ByVal customers_id As Integer, ByVal edd_mandate_status As Integer, ByVal signatureDate As Date) As String
+        Dim sql As String
+        Dim signatureDateExtension As String = String.Empty
+        If signatureDate <> DateTime.MinValue Then
+            signatureDateExtension = " , signature_date = " & "'" & DVDPostTools.ClsDate.formatDateDB(signatureDate) & "' "
+        End If
+
+        sql = "update customers_edd set edd_mandate_status = " & edd_mandate_status & signatureDateExtension & " where customers_id = " & customers_id
         Return sql
     End Function
 

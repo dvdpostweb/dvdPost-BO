@@ -117,59 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="xrTextModel3.Name" xml:space="preserve">
-    <value>xrTextModel3</value>
+  <metadata name="countryname.Name" xml:space="preserve">
+    <value>countryname</value>
   </metadata>
-  <data name="xrTextModel3.SerializableRtfString" xml:space="preserve">
-    <value>ewBcAHIAdABmADEAXABhAG4AcwBpAFwAYQBuAHMAaQBjAHAAZwAxADIANQAyAFwAZABlAGYAZgAwAHsAXABmAG8AbgB0AHQAYgBsAHsAXABmADAAXABmAHIAbwBtAGEAbgBcAGYAcAByAHEAMgBcAGYAYwBoAGEAcgBzAGUAdAAwACAAVABpAG0AZQBzACAATgBlAHcAIABSAG8AbQBhAG4AOwB9AHsAXABmADEAXABmAG4AaQBsACAAVABpAG0AZQBzACAATgBlAHcAIABSAG8AbQBhAG4AOwB9AH0ADQAKAFwAdgBpAGUAdwBrAGkAbgBkADQAXAB1AGMAMQBcAHAAYQByAGQAXABsAGEAbgBnADEAMAAzADMAXABmADAAXABmAHMAMgA0ACAAQQBzACAAcwBvAG8AbgAgAGEAcwAgAHcAZQAgAHIAZQBjAGUAaQB2AGUAIAB5AG8AdQByACAAcABhAHkAbQBlAG4AdAAsACAAdwBlACAAdwBpAGwAbAAgAHUAbgAtAHMAdQBzAHAAZQBuAGQAIAB5AG8AdQByACAAYQBjAGMAbwB1AG4AdAAuACAASQBmACAAeQBvAHUAIABhAGwAcgBlAGEAZAB5ACAAcABhAGkAZAAgAHQAaABlACAAbwB1AHQAcwB0AGEAbgBkAGkAbgBnACAAYgBhAGwAYQBuAGMAZQAsACAAcABsAGUAYQBzAGUAIABkAGkAcwByAGUAZwBhAHIAZAAgAHQAaABpAHMAIABuAG8AdABpAGMAZQAuACAARgBvAHIAIABmAHUAcgB0AGgAZQByACAAcQB1AGUAcwB0AGkAbwBuAHMAIABwAGwAZQBhAHMAZQAgAGMAYQBsAGwAIAB1AHMAIABvAG4AIAAwADIALwA1ADAAMwAuADYAOAAuADEAMQAgAG8AcgAgAHMAZQBuAGQAIAB1AHMAIABhAG4AIABlAG0AYQBpAGwAIABhAHQAIABjAHIAZQBkAGkAdABjAG8AbgB0AHIAbwBsAEAAZAB2AGQAcABvAHMAdAAuAGIAZQBcAHAAYQByAA0ACgBcAGwAYQBuAGcAMgAwADYAMABcAGYAMQBcAHAAYQByAA0ACgB9AA0ACgA=</value>
-  </data>
-  <metadata name="xrPageInfo1.Name" xml:space="preserve">
-    <value>xrPageInfo1</value>
-  </metadata>
-  <metadata name="xrLabel11.Name" xml:space="preserve">
-    <value>xrLabel11</value>
-  </metadata>
-  <metadata name="xrTextResult1.Name" xml:space="preserve">
-    <value>xrTextResult1</value>
-  </metadata>
-  <data name="xrTextResult1.Scripts.OnBeforePrint" xml:space="preserve">
-    <value>Private Sub OnBeforePrint(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintEventArgs)
-Dim result as XRRichText = sender 	
-  Dim _StrFirstName as string = GetCurrentColumnValue("customers_firstname").ToString()
-  Dim _StrLastName as string = GetCurrentColumnValue("customers_lastname").ToString()
-  Dim _StrGender as string = GetCurrentColumnValue("customers_gender")
-  Dim _StrDate as string = "2013-06-12"
-
-
-   Dim _StrFullName as string = ""
- 
-   _StrFullName = "Dear" &amp; " " &amp; _StrFirstName &amp; " " &amp; _StrLastName &amp; ","
-   
-    result.text =   xrTextModel1.Text
-    xrLabel1.text = Microsoft.VisualBasic.StrConv(_StrFullName, Microsoft.VisualBasic.VbStrConv.ProperCase)
-     result.text =  xrTextModel1.Text.Replace("$$$payment_offline_reason_date$$$",_StrDate)
-   
-End Sub</value>
-  </data>
-  <data name="xrTextResult1.SerializableRtfString" xml:space="preserve">
-    <value>ewBcAHIAdABmADEAXABhAG4AcwBpAGMAcABnADEAMgA1ADIADQAKAHsADQAKAFwAZgBvAG4AdAB0AGIAbAANAAoAewBcAGYAMAAgAFQAaQBtAGUAcwAgAE4AZQB3ACAAUgBvAG0AYQBuADsAfQANAAoAfQANAAoAewANAAoAXABjAG8AbABvAHIAdABiAGwADQAKADsADQAKAH0ADQAKAHsAXABwAGEAcgBkAFwAcABsAGEAaQBuAFwAcQBsAFwAcABhAHIAfQANAAoAfQANAAoA</value>
-  </data>
-  <metadata name="addressCustomersResult.Name" xml:space="preserve">
-    <value>addressCustomersResult</value>
-  </metadata>
-  <data name="addressCustomersResult.Scripts.OnBeforePrint" xml:space="preserve">
+  <data name="countryname.Scripts.OnBeforePrint" xml:space="preserve">
     <value>Private Sub OnBeforePrint(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintEventArgs)
   Dim result as XRLabel = sender
-  Dim _StrEntryStreetAddress as string = GetCurrentColumnValue("entry_street_address").ToString()
+  Dim _StrEntryStreetAddress as string = GetCurrentColumnValue("country_name").ToString()
  
-   result.Text = addressCustomers.Text.Replace("$$$addressCustomers$$$" , Microsoft.VisualBasic.StrConv(_StrEntryStreetAddress, Microsoft.VisualBasic.VbStrConv.ProperCase) ) 
+   result.Text = countryname.Text.Replace("$$$country_name$$$" , Microsoft.VisualBasic.StrConv(_StrEntryStreetAddress, Microsoft.VisualBasic.VbStrConv.ProperCase) ) 
 
 result.text = System.Text.Encoding.ASCII.GetString(System.Text.Encoding.GetEncoding(1251).GetBytes(result.text))
   
 End Sub</value>
   </data>
-  <metadata name="hesaddress3.Name" xml:space="preserve">
-    <value>hesaddress3</value>
+  <metadata name="postCodeAndCity.Name" xml:space="preserve">
+    <value>postCodeAndCity</value>
+  </metadata>
+  <metadata name="XrPictureBox3.Name" xml:space="preserve">
+    <value>XrPictureBox3</value>
+  </metadata>
+  <metadata name="GroupHeader1.Name" xml:space="preserve">
+    <value>GroupHeader1</value>
+  </metadata>
+  <metadata name="xrPictureBox1.Name" xml:space="preserve">
+    <value>xrPictureBox1</value>
   </metadata>
   <metadata name="postCodeAndCityResult.Name" xml:space="preserve">
     <value>postCodeAndCityResult</value>
@@ -188,94 +160,6 @@ Dim result as XRLabel = sender
 result.text = System.Text.Encoding.ASCII.GetString(System.Text.Encoding.GetEncoding(1251).GetBytes(result.text))
 End Sub</value>
   </data>
-  <metadata name="xrTextModel1.Name" xml:space="preserve">
-    <value>xrTextModel1</value>
-  </metadata>
-  <data name="xrTextModel1.SerializableRtfString" xml:space="preserve">
-    <value>ewBcAHIAdABmADEAXABhAG4AcwBpAFwAYQBuAHMAaQBjAHAAZwAxADIANQAyAFwAZABlAGYAZgAwAHsAXABmAG8AbgB0AHQAYgBsAHsAXABmADAAXABmAHIAbwBtAGEAbgBcAGYAcAByAHEAMgBcAGYAYwBoAGEAcgBzAGUAdAAwACAAVABpAG0AZQBzACAATgBlAHcAIABSAG8AbQBhAG4AOwB9AHsAXABmADEAXABmAG4AaQBsAFwAZgBjAGgAYQByAHMAZQB0ADIAMwA4ACAAVgBlAHIAZABhAG4AYQA7AH0AewBcAGYAMgBcAGYAbgBpAGwAIABUAGkAbQBlAHMAIABOAGUAdwAgAFIAbwBtAGEAbgA7AH0AfQANAAoAewBcAGMAbwBsAG8AcgB0AGIAbAAgADsAXAByAGUAZAAwAFwAZwByAGUAZQBuADAAXABiAGwAdQBlADAAOwB9AA0ACgBcAHYAaQBlAHcAawBpAG4AZAA0AFwAdQBjADEAXABwAGEAcgBkAFwAcwBiADEAMAAwAFwAcwBhADEAMAAwAFwAbABhAG4AZwAxADAAMwAzAFwAZgAwAFwAZgBzADIANAAgAEQAZQBzAHAAaQB0AGUAIABvAGYAIABzAGUAdgBlAHIAYQBsACAAcgBlAG0AaQBuAGQAZQByAHMAIABzAGUAbgB0ACAAYgB5ACAAZQBtAGEAaQBsACwAIAB3AGUAIABzAHQAaQBsAGwAIABoAGEAdgBlACAAbgBvAHQAIAByAGUAYwBlAGkAdgBlAGQAIAB5AG8AdQByACAAcABhAHkAbQBlAG4AdAAgAGYAbwByACAAeQBvAHUAcgAgAHMAdQBiAHMAYwByAGkAcAB0AGkAbwBuACAAbwBmACAAJAAkACQAcABhAHkAbQBlAG4AdABfAG8AZgBmAGwAaQBuAGUAXwByAGUAYQBzAG8AbgBfAGQAYQB0AGUAJAAkACQALgBcAHAAYQByAA0ACgBcAGMAZgAxAFwAbABhAG4AZwA5AFwAZgAxAFwAZgBzADIAMAAgAE0AYQB5AGIAZQAgAHkAbwB1ACAAZABpAGQAIABuAG8AdAAgAHIAZQBjAGUAaQB2AGUAIABvAHUAcgAgAGUAbQBhAGkAbABzAC4AIABJAG4AIAB0AGgAYQB0ACAAYwBhAHMAZQAgAHAAbABlAGEAcwBlACAAYQBkAGQAIABkAHYAZABwAG8AcwB0AEAAZAB2AGQAcABvAHMAdAAuAGIAZQAgAHQAbwAgAHkAbwB1AHIAIABjAG8AbgB0AGEAYwB0AHMALgAgAFcAZQAgAG8AZgBmAGUAcgAgAHkAbwB1ACAAYQAgAGwAYQBzAHQAIABjAGgAYQBuAGMAZQAgAHQAbwAgAG0AYQBrAGUAIAB0AGgAZQAgAHAAYQB5AG0AZQBuAHQAIABcAGIAIAB3AGkAdABoAGkAbgAgADgAIABkAGEAeQBzAC4AIABcAGIAMAAgAEEAcwAgAHMAdABhAHQAZQBkACAAaQBuACAAbwB1AHIAIABwAHIAZQB2AGkAbwB1AHMAIABlAG0AYQBpAGwAIAB3AGUAIABoAGEAdgBlACAAcwB1AHMAcABlAG4AZABlAGQAIAB5AG8AdQByACAAYQBjAGMAbwB1AG4AdAAgAHcAaABpAGwAZQAgAHcAYQBpAHQAaQBuAGcAIABmAG8AcgAgAHQAaABlACAAcABhAHkAbQBlAG4AdABcAGMAZgAwAFwAbABhAG4AZwAxADAAMwAzAFwAZgAwAFwAZgBzADIANABcAHAAYQByAA0ACgBcAHAAYQByAGQAXABjAGYAMQBcAGwAYQBuAGcAOQBcAGYAMQBcAGYAcwAyADAAIABQAGwAZQBhAHMAZQAgAGYAaQBuAGQAIABiAGUAbABvAHcAIAB0AGgAZQAgAGQAZQB0AGEAaQBsAHMAIABvAGYAIAB5AG8AdQByACAAcABhAHkAbQBlAG4AdAAgAGEAbgBkACAAdABoAGUAIAB0AHIAYQBuAHMAZgBlAHIAIABkAG8AYwB1AG0AZQBuAHQAIAB0AG8AIAB1AHMAZQBcAGMAZgAwAFwAbABhAG4AZwAyADAANgAwAFwAZgAyAFwAZgBzADIANABcAHAAYQByAA0ACgB9AA0ACgA=</value>
-  </data>
-  <metadata name="xrLabel7.Name" xml:space="preserve">
-    <value>xrLabel7</value>
-  </metadata>
-  <metadata name="hesaddress1.Name" xml:space="preserve">
-    <value>hesaddress1</value>
-  </metadata>
-  <metadata name="accountNumber.Name" xml:space="preserve">
-    <value>accountNumber</value>
-  </metadata>
-  <metadata name="montant.Name" xml:space="preserve">
-    <value>montant</value>
-  </metadata>
-  <metadata name="GroupFooter1.Name" xml:space="preserve">
-    <value>GroupFooter1</value>
-  </metadata>
-  <metadata name="XrPictureBox2.Name" xml:space="preserve">
-    <value>XrPictureBox2</value>
-  </metadata>
-  <metadata name="xrLabel8.Name" xml:space="preserve">
-    <value>xrLabel8</value>
-  </metadata>
-  <metadata name="xrLabel12.Name" xml:space="preserve">
-    <value>xrLabel12</value>
-  </metadata>
-  <data name="xrLabel12.Scripts.OnBeforePrint" xml:space="preserve">
-    <value>Private Sub OnBeforePrint(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintEventArgs)
-   'Get the current value of the "Fax" data column
-   Dim _StrCom as string = GetCurrentColumnValue("communication").ToString()
-   Dim _Char as char
-   Dim _i as integer
-   'Check if the value is null, then cancel the printing
-   xrLabel12.text = "+  +  +"
-   for _i = 0 to _StrCom.Length - 1
-      _char = _strCom.chars(_i)
-      xrLabel12.text = xrLabel12.text &amp; "   " &amp; _char
-      if _i = 2 then
-        xrLabel12.text = xrLabel12.text &amp; "  /"
-      end if
-      if _i = 6 then
-        xrLabel12.text = xrLabel12.text &amp; "  /"
-      end if
-   Next
-   xrLabel12.text = xrLabel12.text &amp; "  +  +  +"
-
-End Sub</value>
-  </data>
-  <metadata name="xrLabel10.Name" xml:space="preserve">
-    <value>xrLabel10</value>
-  </metadata>
-  <metadata name="xrLabel9.Name" xml:space="preserve">
-    <value>xrLabel9</value>
-  </metadata>
-  <metadata name="xrLabel13.Name" xml:space="preserve">
-    <value>xrLabel13</value>
-  </metadata>
-  <metadata name="iban.Name" xml:space="preserve">
-    <value>iban</value>
-  </metadata>
-  <metadata name="bic.Name" xml:space="preserve">
-    <value>bic</value>
-  </metadata>
-  <metadata name="hesaddress2.Name" xml:space="preserve">
-    <value>hesaddress2</value>
-  </metadata>
-  <metadata name="xrTextModel2.Name" xml:space="preserve">
-    <value>xrTextModel2</value>
-  </metadata>
-  <metadata name="xrRichText2.Name" xml:space="preserve">
-    <value>xrRichText2</value>
-  </metadata>
-  <data name="xrRichText2.SerializableRtfString" xml:space="preserve">
-    <value>ewBcAHIAdABmADEAXABhAG4AcwBpAFwAYQBuAHMAaQBjAHAAZwAxADIANQAyAFwAZABlAGYAZgAwAHsAXABmAG8AbgB0AHQAYgBsAHsAXABmADAAXABmAG4AaQBsACAAVgBlAHIAZABhAG4AYQA7AH0AewBcAGYAMQBcAGYAbgBpAGwAXABmAGMAaABhAHIAcwBlAHQAMAAgAFYAZQByAGQAYQBuAGEAOwB9AHsAXABmADIAXABmAG4AaQBsACAAVABpAG0AZQBzACAATgBlAHcAIABSAG8AbQBhAG4AOwB9AHsAXABmADMAXABmAHIAbwBtAGEAbgBcAGYAcAByAHEAMgBcAGYAYwBoAGEAcgBzAGUAdAAwACAAVABpAG0AZQBzACAATgBlAHcAIABSAG8AbQBhAG4AOwB9AH0ADQAKAHsAXABjAG8AbABvAHIAdABiAGwAIAA7AFwAcgBlAGQAMABcAGcAcgBlAGUAbgAwAFwAYgBsAHUAZQAwADsAfQANAAoAXAB2AGkAZQB3AGsAaQBuAGQANABcAHUAYwAxAFwAcABhAHIAZABcAHEAYwBcAGMAZgAxAFwAbABhAG4AZwAyADAANgAwAFwAZgAwAFwAZgBzADEANgAgAEgAbwBtAGUAIABFAG4AdABlAHIAdABhAGkAbgBtAGUAbgB0ACAAUwBlAHIAdgBpAGMAZQBzACAAcwBhAC8AbgB2ACAALQAgAE4AdQBtAFwAZgAxAFwAJwBlADkAXABmADAAIAByAG8AIABSAFwAZgAxAFwAJwBlADkAXABmADAAIABwAG8AbgBzAGUAMQAwADcAMAAtADkAOQAgAC0AIAAxADAANwAwACAAQQBuAGQAZQByAGwAZQBjAGgAdAAgAE0AYQBpAGwAIAAtACAAVABWAEEAIAA6ACAAQgBFADAANAA3ADgALgA1ADEAMAAuADUAMAAyAFwAYwBmADAAXABmADIAXABmAHMAMgA0AFwAcABhAHIADQAKAFwAYwBmADEAXABmADEAXABmAHMAMQA2ACAAVABlAGwAOgAgACsAMwAyACAAKAAwACkAIABcAGMAZgAwACAAMgAgADUAMAAzACAANgA4ACAAMQAxAFwAZgAzAFwAZgBzADIANAAgACAAXABjAGYAMQBcAGYAMABcAGYAcwAxADYAIAAgACAAIABGAGEAeAA6ACAAKwAzADIAIAAoADAAKQAgADIAIABcAGYAMQAgADcAOQAxAFwAZgAwACAAIABcAGYAMQAgADUAMgBcAGYAMAAgACAAXABmADEAIAA4ADQAXABmADAAIAAgACAAIAAgAEQAZQB4AGkAYQA6ACAAMAA2ADgAIAAyADQAMQA2ADgAOAA2ACAANgAxACAAIAAgAEkAQgBBAE4AOgAgAEIARQA2ADIAIAAwADYAOAAyACAANAAxADYAOAAgADgANgA2ADEAXABjAGYAMABcAGYAMgBcAGYAcwAyADQAXABwAGEAcgANAAoAXABwAGEAcgBkAFwAcABhAHIADQAKAH0ADQAKAA==</value>
-  </data>
-  <metadata name="xrLabel5.Name" xml:space="preserve">
-    <value>xrLabel5</value>
-  </metadata>
-  <metadata name="name.Name" xml:space="preserve">
-    <value>name</value>
-  </metadata>
-  <metadata name="xrLabel16.Name" xml:space="preserve">
-    <value>xrLabel16</value>
-  </metadata>
   <metadata name="nameResult.Name" xml:space="preserve">
     <value>nameResult</value>
   </metadata>
@@ -292,62 +176,50 @@ Dim result as XRLabel = sender
   result.text = System.Text.Encoding.ASCII.GetString(System.Text.Encoding.GetEncoding(1251).GetBytes(result.text))
 End Sub</value>
   </data>
-  <metadata name="xrLabel1.Name" xml:space="preserve">
-    <value>xrLabel1</value>
+  <metadata name="name.Name" xml:space="preserve">
+    <value>name</value>
+  </metadata>
+  <metadata name="addressCustomersResult.Name" xml:space="preserve">
+    <value>addressCustomersResult</value>
+  </metadata>
+  <data name="addressCustomersResult.Scripts.OnBeforePrint" xml:space="preserve">
+    <value>Private Sub OnBeforePrint(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintEventArgs)
+  Dim result as XRLabel = sender
+  Dim _StrEntryStreetAddress as string = GetCurrentColumnValue("entry_street_address").ToString()
+ 
+   result.Text = addressCustomers.Text.Replace("$$$addressCustomers$$$" , Microsoft.VisualBasic.StrConv(_StrEntryStreetAddress, Microsoft.VisualBasic.VbStrConv.ProperCase) ) 
+
+result.text = System.Text.Encoding.ASCII.GetString(System.Text.Encoding.GetEncoding(1251).GetBytes(result.text))
+  
+End Sub</value>
+  </data>
+  <metadata name="addressCustomers.Name" xml:space="preserve">
+    <value>addressCustomers</value>
   </metadata>
   <metadata name="xrLabel3.Name" xml:space="preserve">
     <value>xrLabel3</value>
   </metadata>
-  <metadata name="xrPictureBox1.Name" xml:space="preserve">
-    <value>xrPictureBox1</value>
+  <metadata name="GroupFooter1.Name" xml:space="preserve">
+    <value>GroupFooter1</value>
   </metadata>
-  <metadata name="xrRichText1.Name" xml:space="preserve">
-    <value>xrRichText1</value>
+  <metadata name="xrRichText2.Name" xml:space="preserve">
+    <value>xrRichText2</value>
   </metadata>
-  <data name="xrRichText1.SerializableRtfString" xml:space="preserve">
-    <value>ewBcAHIAdABmADEAXABhAG4AcwBpAGMAcABnADEAMgA1ADIADQAKAHsADQAKAFwAZgBvAG4AdAB0AGIAbAANAAoAewBcAGYAMAAgAFQAaQBtAGUAcwAgAE4AZQB3ACAAUgBvAG0AYQBuADsAfQANAAoAewBcAGYAMQAgAFYAZQByAGQAYQBuAGEAOwB9AA0ACgB9AA0ACgB7AA0ACgBcAGMAbwBsAG8AcgB0AGIAbAANAAoAOwANAAoAXAByAGUAZAAwAFwAZwByAGUAZQBuADAAXABiAGwAdQBlADAAOwANAAoAfQANAAoAewBcAHAAYQByAGQAXABwAGwAYQBpAG4AXABxAGwAewBcAGYAMQBcAGYAcwAyADAAXABjAGYAMQAgAEEAbgBkAGUAcgBsAGUAYwBoAHQALAB9AFwAcABhAHIAfQANAAoAfQANAAoA</value>
+  <data name="xrRichText2.SerializableRtfString" xml:space="preserve">
+    <value>ewBcAHIAdABmADEAXABhAG4AcwBpAFwAYQBuAHMAaQBjAHAAZwAxADIANQAyAFwAZABlAGYAZgAwAHsAXABmAG8AbgB0AHQAYgBsAHsAXABmADAAXABmAG4AaQBsACAAVgBlAHIAZABhAG4AYQA7AH0AewBcAGYAMQBcAGYAbgBpAGwAXABmAGMAaABhAHIAcwBlAHQAMAAgAFYAZQByAGQAYQBuAGEAOwB9AHsAXABmADIAXABmAG4AaQBsACAAVABpAG0AZQBzACAATgBlAHcAIABSAG8AbQBhAG4AOwB9AHsAXABmADMAXABmAHIAbwBtAGEAbgBcAGYAcAByAHEAMgBcAGYAYwBoAGEAcgBzAGUAdAAwACAAVABpAG0AZQBzACAATgBlAHcAIABSAG8AbQBhAG4AOwB9AH0ADQAKAHsAXABjAG8AbABvAHIAdABiAGwAIAA7AFwAcgBlAGQAMABcAGcAcgBlAGUAbgAwAFwAYgBsAHUAZQAwADsAfQANAAoAXAB2AGkAZQB3AGsAaQBuAGQANABcAHUAYwAxAFwAcABhAHIAZABcAHEAYwBcAGMAZgAxAFwAbABhAG4AZwAyADAANgAwAFwAZgAwAFwAZgBzADEANgAgAEgAbwBtAGUAIABFAG4AdABlAHIAdABhAGkAbgBtAGUAbgB0ACAAUwBlAHIAdgBpAGMAZQBzACAAcwBhAC8AbgB2ACAALQAgAE4AdQBtAFwAZgAxAFwAJwBlADkAXABmADAAIAByAG8AIABSAFwAZgAxAFwAJwBlADkAXABmADAAIABwAG8AbgBzAGUAMQAwADcAMAAtADkAOQAgAC0AIAAxADAANwAwACAAQQBuAGQAZQByAGwAZQBjAGgAdAAgAE0AYQBpAGwAIAAtACAAVABWAEEAIAA6ACAAQgBFADAANAA3ADgALgA1ADEAMAAuADUAMAAyAFwAYwBmADAAXABmADIAXABmAHMAMgA0AFwAcABhAHIADQAKAFwAYwBmADEAXABmADEAXABmAHMAMQA2ACAAVABlAGwAOgAgACsAMwAyACAAKAAwACkAIABcAGMAZgAwACAAMgAgADUAMAAzACAANgA4ACAAMQAxAFwAZgAzAFwAZgBzADIANAAgACAAXABjAGYAMQBcAGYAMABcAGYAcwAxADYAIAAgACAAIABGAGEAeAA6ACAAKwAzADIAIAAoADAAKQAgADIAIABcAGYAMQAgADcAOQAxAFwAZgAwACAAIABcAGYAMQAgADUAMgBcAGYAMAAgACAAXABmADEAIAA4ADQAXABmADAAIAAgACAAIAAgAEQAZQB4AGkAYQA6ACAAMAA2ADgAIAAyADQAMQA2ADgAOAA2ACAANgAxACAAIAAgAEkAQgBBAE4AOgAgAEIARQA2ADIAIAAwADYAOAAyACAANAAxADYAOAAgADgANgA2ADEAXABjAGYAMABcAGYAMgBcAGYAcwAyADQAXABwAGEAcgANAAoAXABwAGEAcgBkAFwAcABhAHIADQAKAH0ADQAKAA==</value>
   </data>
-  <metadata name="postCodeAndCity.Name" xml:space="preserve">
-    <value>postCodeAndCity</value>
+  <metadata name="xrTextModel1.Name" xml:space="preserve">
+    <value>xrTextModel1</value>
   </metadata>
-  <metadata name="GroupHeader1.Name" xml:space="preserve">
-    <value>GroupHeader1</value>
-  </metadata>
-  <metadata name="XrPictureBox3.Name" xml:space="preserve">
-    <value>XrPictureBox3</value>
-  </metadata>
-  <metadata name="xrLabel6.Name" xml:space="preserve">
-    <value>xrLabel6</value>
-  </metadata>
-  <metadata name="addressCustomers.Name" xml:space="preserve">
-    <value>addressCustomers</value>
+  <data name="xrTextModel1.SerializableRtfString" xml:space="preserve">
+    <value>ewBcAHIAdABmADEAXABhAG4AcwBpAFwAYQBuAHMAaQBjAHAAZwAxADIANQAyAFwAZABlAGYAZgAwAHsAXABmAG8AbgB0AHQAYgBsAHsAXABmADAAXABmAHMAdwBpAHMAcwBcAGYAcAByAHEAMgBcAGYAYwBoAGEAcgBzAGUAdAAwACAAQwBhAGwAaQBiAHIAaQA7AH0AewBcAGYAMQBcAGYAbgBpAGwAIABUAGkAbQBlAHMAIABOAGUAdwAgAFIAbwBtAGEAbgA7AH0AfQANAAoAXAB2AGkAZQB3AGsAaQBuAGQANABcAHUAYwAxAFwAcABhAHIAZABcAGwAYQBuAGcAMQAwADMAMwBcAGYAMABcAGYAcwAyADIAXABwAGEAcgANAAoAXABwAGEAcgANAAoAXABwAGEAcgANAAoARABlAGEAcgAgAEMAdQBzAHQAbwBtAGUAcgAsAFwAcABhAHIADQAKAFwAcABhAHIADQAKAFcAZQAgAHcAbwB1AGwAZAAgAGwAaQBrAGUAIAB0AG8AIABpAG4AZgBvAHIAbQAgAHkAbwB1ACAAdABoAGEAdAAgAHcAZQAgAGgAYQB2AGUAIABkAGUAYwBpAGQAZQBkACAAdABvACAAYQBjAHQAaQB2AGUAbAB5ACAAcABhAHIAdABpAGMAaQBwAGEAdABlACAAaQBuACAAdABoAGUAIABFAHUAcgBvAHAAZQBhAG4AIABtAGEAcgBrAGUAdAAgAGIAeQAgAFwAcABhAHIADQAKAHUAcwBpAG4AZwAgAHQAaABlACAARQB1AHIAbwBwAGUAYQBuACAAZABpAHIAZQBjAHQAIABkAGUAYgBpAHQAIAAoAFMARQBQAEEAKQAgAGEAcwAgAGEAIABwAGEAeQBtAGUAbgB0ACAAaQBuAHMAdAByAHUAbQBlAG4AdAAuACAAXABwAGEAcgANAAoAXABwAGEAcgANAAoAVABoAGUAIABFAHUAcgBvAHAAZQBhAG4AIABkAGkAcgBlAGMAdAAgAGQAZQBiAGkAdAAgAGkAcwAgAGEAIABoAGEAcgBtAG8AbgBpAHoAZQBkACAAcAByAG8AZAB1AGMAdAAgAHQAaABhAHQAIABjAGEAbgAgAGIAZQAgAHUAcwBlAGQAIABhAGwAbAAgAG8AdgBlAHIAIABFAHUAcgBvAHAAZQAgAGYAbwByACAAYQBsAGwAIAB0AHIAYQBuAHMAYQBjAHQAaQBvAG4AcwAgAGkAbgAgAEUAdQByAG8AcwAuAFwAcABhAHIADQAKAFwAcABhAHIADQAKAFUAbgB0AGkAbAAgAG4AbwB3ACAAeQBvAHUAIABoAGEAdgBlACAAcABhAGkAZAAgAG8AdQByACAAaQBuAHYAbwBpAGMAZQBzACAAYgB5ACAAbQBlAGEAbgBzACAAbwBmACAAdABoAGUAIABCAGUAbABnAGkAYQBuACAAZABpAHIAZQBjAHQAIABkAGUAYgBpAHQAIAAoAEQATwBNADgAMAA6ACIAZABlACAAQgBlAGwAZwBpAHMAYwBoAGUAIABcAHAAYQByAA0ACgBcAHAAYQByAGQAXABzAGwAMgA0ADAAXABzAGwAbQB1AGwAdAAxACAAZABvAG0AaQBjAGkAbABpAGUAcgBpAG4AZwAiACAALwAgACIAbABhACAAZABvAG0AaQBjAGkAbABpAGEAdABpAG8AbgAgAGIAZQBsAGcAZQAiACkALgAgAFwAcABhAHIADQAKAFwAcABhAHIAZAAgAFQAaABpAHMAIABCAGUAbABnAGkAYQBuACAAZABpAHIAZQBjAHQAIABkAGUAYgBpAHQAIABtAGEAbgBkAGEAdABlACAAdwBpAGwAbAAgAGIAZQAgAGEAdQB0AG8AbQBhAHQAaQBjAGEAbABsAHkAIAByAGUAcABsAGEAYwBlAGQAIABiAHkAIABhACAARQB1AHIAbwBwAGUAYQBuACAAZABpAHIAZQBjAHQAIABkAGUAYgBpAHQAIABtAGEAbgBkAGEAdABlAC4AIABcAHAAYQByAA0ACgBcAHAAYQByAA0ACgBEAGEAdABhACAAbwBmACAAdABoAGUAIABuAGUAdwAgAEUAdQByAG8AcABlAGEAbgAgAGQAaQByAGUAYwB0ACAAZABlAGIAaQB0ACAAbQBhAG4AZABhAHQAZQA6AFwAcABhAHIADQAKAFIAZQBmAGUAcgBlAG4AYwBlADoAIABCAEUANgA1AFoAWgBaADAANAA3ADgANQAxADAANQAwADIAXABwAGEAcgANAAoAXABwAGEAcgANAAoAUABsAGUAYQBzAGUAIABuAG8AdABlACAAdABoAGEAdAAgAG4AbwAgAGEAYwB0AGkAbwBuACAAaQBzACAAcgBlAHEAdQBpAHIAZQBkACAAYQB0ACAAeQBvAHUAcgAgAHMAaQBkAGUALAAgAHQAaABpAHMAIABjAGgAYQBuAGcAZQAgAGIAZQBpAG4AZwAgAGYAdQBsAGwAeQAgAGEAdQB0AG8AbQBhAHQAZQBkAC4AIABcAHAAYQByAA0ACgBXAGUAIAB3AG8AdQBsAGQAIABhAGwAcwBvACAAbABpAGsAZQAgAHQAbwAgAGEAcwBrACAAeQBvAHUAIABuAG8AdAAgAHQAbwAgAHIAZQB2AG8AawBlACAAeQBvAHUAcgAgAGMAdQByAHIAZQBuAHQAIABCAGUAbABnAGkAYQBuACAAZABpAHIAZQBjAHQAIABkAGUAYgBpAHQAIABtAGEAbgBkAGEAdABlACAAYQB0ACAAeQBvAHUAcgAgAGIAYQBuAGsALgAgAFQAaABlACAAcgBlAHYAbwBjAGEAdABpAG8AbgAgAHcAaQBsAGwAIABiAGUAIABkAG8AbgBlACAAYQB1AHQAbwBtAGEAdABpAGMAYQBsAGwAeQAgAGEAcwAgAHMAbwBvAG4AIABhAHMAIAB3AGUAIABoAGEAdgBlACAAYwBvAG0AcABsAGUAdABlAGwAeQAgAG0AaQBnAHIAYQB0AGUAZAAgAHQAbwB3AGEAcgBkAHMAIAB0AGgAZQAgAEUAdQByAG8AcABlAGEAbgAgAGQAaQByAGUAYwB0ACAAZABlAGIAaQB0AC4AXABwAGEAcgANAAoAXABsAGEAbgBnADIAMAA2ADAAXABmADEAXABmAHMAMgA0AFwAcABhAHIADQAKAH0ADQAKAA==</value>
+  </data>
+  <metadata name="xrPageInfo1.Name" xml:space="preserve">
+    <value>xrPageInfo1</value>
   </metadata>
   <metadata name="Detail.Name" xml:space="preserve">
     <value>Detail</value>
   </metadata>
-  <metadata name="XrLabel2.Name" xml:space="preserve">
-    <value>XrLabel2</value>
-  </metadata>
-  <metadata name="communication.Name" xml:space="preserve">
-    <value>communication</value>
-  </metadata>
-  <metadata name="xrTextlResult2.Name" xml:space="preserve">
-    <value>xrTextlResult2</value>
-  </metadata>
-  <data name="xrTextlResult2.Scripts.OnBeforePrint" xml:space="preserve">
-    <value>Private Sub OnBeforePrint(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintEventArgs)
-Dim result as XRLabel = sender 
-
-   Dim _StrMontant as string = GetCurrentColumnValue("amount").ToString()
-   dim _strCommunication as string = GetCurrentColumnValue("communication").ToString()   
-
-
-   montant.text = _StrMontant
-   communication.text = _strCommunication
-       
-
-End Sub</value>
-  </data>
   <metadata name="dataTable1.Name" xml:space="preserve">
     <value>dataTable1</value>
   </metadata>

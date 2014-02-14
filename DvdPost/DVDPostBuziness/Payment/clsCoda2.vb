@@ -59,10 +59,16 @@ Public Class clsCoda2
             data = New dataStruct("ClientReference", GetType(MouvementPart2), MouvementPart2.posField.REFCLIENT)
             lst.Add(data)
 
+            data = New dataStruct("Communication2", GetType(MouvementPart2), MouvementPart2.posField.COMMUNICATION)
+            lst.Add(data)
+
             data = New dataStruct("CounterPartDetails", GetType(MouvementPart3), MouvementPart3.posField.NOMCONTREPARTIE)
             lst.Add(data)
 
             data = New dataStruct("BankAccountCounterPart", GetType(MouvementPart3), MouvementPart3.posField.NUMCOMPTECONTREPARTIE)
+            lst.Add(data)
+
+            data = New dataStruct("Communication3", GetType(MouvementPart3), MouvementPart3.posField.COMMUNICATION)
             lst.Add(data)
 
         End Sub
@@ -321,7 +327,7 @@ Public Class clsCoda2
             NUMDETAIL
             NUMCOMPTECONTREPARTIE
             NOMCONTREPARTIE
-            ' COMMUNICATION
+            COMMUNICATION
             CODESUITE
 
         End Enum
@@ -331,8 +337,8 @@ Public Class clsCoda2
         End Function
 
         Public Sub New()
-            '_struct = New Integer() {1, 2, 3, 7, 11, 48, 83, 126, 127, 128}
-            _struct = New Integer() {1, 2, 3, 7, 11, 48, 126, 127, 128}
+            _struct = New Integer() {1, 2, 3, 7, 11, 48, 83, 126, 127, 128}
+            '_struct = New Integer() {1, 2, 3, 7, 11, 48, 126, 127, 128}
         End Sub
     End Class
     Private Class InfoPart1
@@ -537,6 +543,32 @@ Public Class clsCoda2
 
         Public Sub New()
             _struct = New Integer() {1, 4, 16, 22, 52}
+        End Sub
+
+
+    End Class
+    Private Class EddCommunication
+        Inherits Coda
+
+        Private Const IDENTIFICATION As String = "127"
+        Enum posField
+            TYPE = 0
+            SETTLEMNTDATE
+            TYPEDD
+            DDSCHEME
+            PAIDREASONREFUSED
+            CREDITORCODE
+            MANDATEREF
+            COMMUNICATION
+            TYPERTRANS
+            REASON
+        End Enum
+        Public Overrides Function isValid(ByVal line As String) As Boolean
+            Return line.StartsWith(IDENTIFICATION)
+        End Function
+
+        Public Sub New()
+            _struct = New Integer() {1, 4, 10, 11, 12, 13, 48, 83, 145, 146, 150}
         End Sub
 
 
@@ -890,6 +922,7 @@ Public Class clsCoda2
         Dim dom80 As Dom80Communication = New Dom80Communication()
         Dim communicationstruct As CommunicationStructure = New CommunicationStructure()
         Dim communicationstructRecon As CommunicationStructureReconstitue = New CommunicationStructureReconstitue()
+        Dim edd As EddCommunication = New EddCommunication()
 
         Dim Current As Coda
         Dim isstruct As Boolean
@@ -898,6 +931,7 @@ Public Class clsCoda2
         For Each dr As DataRow In dt.Rows
             ok = False
             comStruct = dr("communication")
+            comStruct = comStruct.Replace("'", " ")
             strinsertdata = strInsertmodel
 
             isstruct = False
@@ -924,6 +958,15 @@ Public Class clsCoda2
                 strinsertdata = strinsertdata + " communication_type = '" + Current.GetVal(CommunicationStructure.posField.TYPE) + "',"
                 strinsertdata = strinsertdata + " structuredcomm12 = '" + Current.GetVal(CommunicationStructureReconstitue.posField.COMMUNICATION) + "',"
                 isstruct = True
+            ElseIf edd.isValid(comStruct) Then
+                Current = New EddCommunication()
+                Current.fillData(comStruct)
+                strinsertdata = strinsertdata + " communication_type = '" + Current.GetVal(EddCommunication.posField.TYPE) + "',"
+                strinsertdata = strinsertdata + " structuredcomm12 = '" + Current.GetVal(EddCommunication.posField.COMMUNICATION) + "',"
+                strinsertdata = strinsertdata + " paid_refund_reason = '" + Current.GetVal(EddCommunication.posField.PAIDREASONREFUSED) + "',"
+                strinsertdata = strinsertdata + " type_r_transaction = '" + Current.GetVal(EddCommunication.posField.TYPERTRANS) + "',"
+                strinsertdata = strinsertdata + " reason = '" + Current.GetVal(EddCommunication.posField.REASON) + "',"
+                isstruct = True
             End If
 
             If isstruct Then
@@ -948,6 +991,13 @@ Public Class clsCoda2
 
         sql = DvdPostData.ClsBatchDomiciliation.GetBankAccountMovementAmount(coda_filename)
         DvdPostData.clsConnection.ExecuteNonQuery(sql)
+    End Sub
+
+    Private Sub updatePaymentEdd()
+        Dim sql As String
+        sql = DvdPostData.ClsBatchDomiciliation.UpdateEDDPayment()
+        DvdPostData.clsConnection.ExecuteNonQuery(sql)
+
     End Sub
 
     Private Sub updateDomUnpaid(ByVal coda_filename As String) ', ByVal lst_datePivot As String)
@@ -1036,6 +1086,7 @@ Public Class clsCoda2
             updateDOMStructure(name_coda)
             updateamount(name_coda)
             updateDomUnpaid(name_coda)
+
             Return True
         End If
 

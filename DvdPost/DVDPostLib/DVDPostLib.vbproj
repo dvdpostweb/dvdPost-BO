@@ -580,6 +580,12 @@
     <Compile Include="LOGISTIC\frmListingOUT.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MARKETING\frmStreamingCode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAYMENT\Domiciliation\frmMandateLettters.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PAYMENT\DVDBilling\frmInvoice.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -628,6 +634,12 @@
     <Compile Include="PRODUCTS\frmSearchProduct.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reports\XtraReportPrepaymentLettres.Designer.vb">
+      <DependentUpon>XtraReportPrepaymentLettres.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\XtraReportPrepaymentLettres.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\rptADULTSVODSummary.Designer.vb">
       <DependentUpon>rptADULTSVODSummary.vb</DependentUpon>
     </Compile>
@@ -652,10 +664,10 @@
     <Compile Include="Reports\XtraReport1.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reports\XtraReport2.Designer.vb">
-      <DependentUpon>XtraReport2.vb</DependentUpon>
+    <Compile Include="Reports\XtraReport3.Designer.vb">
+      <DependentUpon>XtraReport3.vb</DependentUpon>
     </Compile>
-    <Compile Include="Reports\XtraReport2.vb">
+    <Compile Include="Reports\XtraReport3.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Site\frmSurveyDetail.vb">
@@ -999,6 +1011,18 @@
       <SubType>Designer</SubType>
       <DependentUpon>frmListingOUT.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MARKETING\frmStreamingCode.fr.resx">
+      <DependentUpon>frmStreamingCode.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MARKETING\frmStreamingCode.resx">
+      <DependentUpon>frmStreamingCode.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAYMENT\Domiciliation\frmMandateLettters.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMandateLettters.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PAYMENT\DVDBilling\frmInvoice.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmInvoice.vb</DependentUpon>
@@ -1059,6 +1083,14 @@
       <DependentUpon>frmSearchProduct.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraReportPrepaymentLettres.fr-BE.resx">
+      <DependentUpon>XtraReportPrepaymentLettres.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraReportPrepaymentLettres.resx">
+      <DependentUpon>XtraReportPrepaymentLettres.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptADULTSVODSummary.resx">
       <SubType>Designer</SubType>
       <DependentUpon>rptADULTSVODSummary.vb</DependentUpon>
@@ -1078,6 +1110,10 @@
     <EmbeddedResource Include="Reports\XtraReport1.resx">
       <SubType>Designer</SubType>
       <DependentUpon>XtraReport1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\XtraReport3.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>XtraReport3.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Site\frmSurveyDetail.fr.resx">
       <DependentUpon>frmSurveyDetail.vb</DependentUpon>

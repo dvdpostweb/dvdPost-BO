@@ -56,6 +56,7 @@ Public Class clsMail
         MAIL_REPLY_MESSAGERIE = 578
         MAIL_REPLY = 579
         MAIL_REGISTRATION = 600
+        MAIL_EDD_PREPAYMENT_NOTIF = 629
 
     End Enum
     Public Shared Function CreateVariableGeneric(ByVal str As String) As String
@@ -294,6 +295,7 @@ Public Class clsMail
             Dim SmtpMail As New Net.Mail.SmtpClient(dr("ParamValue"))
             SmtpMail.Credentials = New System.Net.NetworkCredential("Administrator", "DVD8(post")
             Try
+
                 SmtpMail.Send(mymail)
 
                 'End Try
@@ -447,6 +449,8 @@ Public Class clsMail
 
         Dim site As String
         Dim logo As String
+        Dim firstname As String = String.Empty
+        Dim lastname As String = String.Empty
 
         LoadSite()
         loadParams()
@@ -454,24 +458,20 @@ Public Class clsMail
         site = _drSite("site_link")
         logo = _drSite("logo")
 
-
         strSubject = MailRow("messages_subject")
         strmessage = MailRow("messages_html")
-        ' IsExistInString(strmessage, "$$$customers_name$$$") And
-        ' If CustRow.Table.Columns.Contains("customers_firstname") Then
-
-
-        '  Dim firstname As String = DVDPostTools.ClsString.Capitalize(CustRow("customers_firstname").ToString())
-        '  Dim lastname As String = DVDPostTools.ClsString.Capitalize(CustRow("customers_lastname").ToString())
-
+        If IsExistInString(strmessage, "$$$customers_name$$$") And CustRow.Table.Columns.Contains("customers_firstname") Then
+            firstname = DVDPostTools.ClsString.Capitalize(CustRow("customers_firstname").ToString())
+            lastname = DVDPostTools.ClsString.Capitalize(CustRow("customers_lastname").ToString())
+        End If
 
         'titre
 
         strmessage = ReplaceVar(strmessage, balise & "title" & balise, MailRow("messages_title"), lstvariable)
-     
+
         'customers_name
         'strmessage = Replace(strmessage, "$$$name$$$", firstname & " " & lastname)
-        'strmessage = Replace(strmessage, "$$$customers_name$$$", firstname & " " & lastname)
+        strmessage = Replace(strmessage, "$$$customers_name$$$", firstname & " " & lastname)
         'strmessage = Replace(strmessage, "$$$customers_email$$$", CustRow("customers_email_address"))
         'strmessage = Replace(strmessage, "$$$email$$$", CustRow("customers_email_address"))
         ''site & Logo
@@ -487,12 +487,12 @@ Public Class clsMail
         strmessage = ReplaceVar(strmessage, balise & "mail_id" & balise, mailHistoryId, lstvariable)
         strmessage = ReplaceVar(strmessage, balise & "mail_messages_sent_history_id" & balise, mailHistoryId + 1, lstvariable, True)
         ''customers_id
-        'strmessage = Replace(strmessage, "$$$customers_id$$$", CustRow("customers_id"))
+        strmessage = Replace(strmessage, "$$$customers_id$$$", CustRow("customers_id"))
 
         'strmessage = Replace(strmessage, "$$$dvdathome$$$", CustRow("customers_abo_dvd_home_norm") + CustRow("customers_abo_dvd_home_adult"))
         ''customers_abo_validityto
         'strmessage = Replace(strmessage, "$$$next_reconduction_date$$$", CustRow("customers_abo_validityto") & "")
-        '   End If
+        'End If
 
     End Sub
     'Private Shared Sub replacePaymentOffline(ByVal CustRow As DataRow, ByRef strmessage As String)
@@ -682,6 +682,7 @@ Public Class clsMail
         ReplaceInvoiceOpen(rowcustomers, strMessage, lstvariable)
         ReplaceIN_OUT(rowcustomers, RowMail, strMessage, lstvariable)
         ReplaceINDISPONIBLE(rowcustomers, RowMail, strMessage, lstvariable)
+        ReplaceEddPrePayment(rowcustomers, RowMail, strMessage, lstvariable)
         'replaceProductPicture(rowcustomers, strMessage)
         Return CreateMail(rowcustomers("customers_email_address"), strMessage, strSubject, eMailTest, emailFrom, emailName)
 
@@ -693,6 +694,18 @@ Public Class clsMail
         If IsExistInString(strMessage, balise & "gender_simple" & balise) Then
             result = getGender(CustRow("customers_gender"), customers_language)
             strMessage = ReplaceVar(strMessage, balise & "gender_simple" & balise, result, lstvariable)
+        End If
+
+    End Sub
+
+    Private Shared Sub ReplaceEddPrePayment(ByVal CustRow As DataRow, ByVal MailRow As DataRow, ByRef strMessage As String, ByRef lstvariable As String)
+        Dim balise As String = Getbalise()
+
+        If IsExistInString(strMessage, balise & "mandate_number" & balise) Then
+            strMessage = ReplaceVar(strMessage, balise & "debit_date" & balise, CustRow("debit_date"), lstvariable)
+            strMessage = ReplaceVar(strMessage, balise & "your_subscription" & balise, CustRow("your_subscription"), lstvariable)
+            strMessage = ReplaceVar(strMessage, balise & "subscription_price" & balise, CustRow("subscription_price"), lstvariable)
+            strMessage = ReplaceVar(strMessage, balise & "mandate_number" & balise, CustRow("mandate_number"), lstvariable)
         End If
 
     End Sub

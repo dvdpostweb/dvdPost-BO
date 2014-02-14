@@ -193,6 +193,31 @@ Public Class clsOffLinePayments
         End If
     End Sub
 
+    Public Shadows Sub SendEDDPrepaymentMail(ByVal notifDaysInAdvance As Integer)
+
+        Dim dtCustomers As New DataTable
+        Dim requiredPaymentDate As Date = DateTime.Now.AddDays(notifDaysInAdvance)
+
+
+        dtCustomers = DvdPostData.clsConnection.FillDataSet(DvdPostData.PaymentOfflineData.GetEddPrePymentNotification(requiredPaymentDate))
+        If dtCustomers.Rows.Count = 0 Then Return
+        ' au cas ou on rajouterait les 7 images
+        If clsMsgError.MsgBox("Do you want to send " & dtCustomers.Rows.Count & " mail ", MsgBoxStyle.OkCancel) = MsgBoxResult.Ok Then
+            Dim ok As Boolean
+            For Each rCustomer As DataRow In dtCustomers.Rows
+
+                ok = clsMail.SendMail(rCustomer, clsMail.Mail.MAIL_EDD_PREPAYMENT_NOTIF, True)
+                If Not ok Then
+                    clsMsgError.MsgBox("edd mail to customers_id " & rCustomer("customers_id") & " not sent ")
+                End If
+                'Return
+
+
+            Next
+            clsMsgError.MsgBox("sending mails for " & clsMail.Mail.MAIL_EDD_PREPAYMENT_NOTIF & " finished: OK = " & ok.ToString())
+        End If
+    End Sub
+
 
     Public Shadows Sub sendLetter(ByVal report_id As Integer, ByVal stepCurrent As Integer)
         Dim dt As New DataTable

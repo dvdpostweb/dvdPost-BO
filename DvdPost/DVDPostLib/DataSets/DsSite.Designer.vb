@@ -681,7 +681,7 @@ Partial Public Class DsSite
             Me.columnid.AllowDBNull = false
             Me.columnid.Unique = true
             Me.columnname.MaxLength = 100
-            Me.columnreference_id.MaxLength = 20
+            Me.columnreference_id.MaxLength = 30
             Me.columnactif_french.MaxLength = 4
             Me.columnactif_dutch.MaxLength = 4
             Me.columnactif_english.MaxLength = 4

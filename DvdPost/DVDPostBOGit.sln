@@ -24,6 +24,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BuildTasks", "BuildTasks\Bu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayPal_Merchant_SDK", "PayPal_Merchant_SDK\PayPal_Merchant_SDK.csproj", "{1F5FF00B-CE0F-40B8-9BC4-7B5ED2087266}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EddXml", "EddXml\EddXml.csproj", "{E4279A12-D309-414F-8F0A-8C87E73439D2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -115,6 +117,12 @@ Global
 		{1F5FF00B-CE0F-40B8-9BC4-7B5ED2087266}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F5FF00B-CE0F-40B8-9BC4-7B5ED2087266}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1F5FF00B-CE0F-40B8-9BC4-7B5ED2087266}.Release|x86.ActiveCfg = Release|Any CPU
+		{E4279A12-D309-414F-8F0A-8C87E73439D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4279A12-D309-414F-8F0A-8C87E73439D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4279A12-D309-414F-8F0A-8C87E73439D2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E4279A12-D309-414F-8F0A-8C87E73439D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4279A12-D309-414F-8F0A-8C87E73439D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4279A12-D309-414F-8F0A-8C87E73439D2}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

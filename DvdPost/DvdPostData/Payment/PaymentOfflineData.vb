@@ -453,6 +453,36 @@ Public Class PaymentOfflineData
         Return sql
     End Function
 
+    Public Shared Function GetDom80ToEDDMigration()
+        Dim sql As String
+        sql = "select c.*, ab.*, (select cc.countries_name from countries cc where cc.countries_id = ab.entry_country_id) as country_name from customers c left join address_book ab on c.customers_id = ab.customers_id and c.customers_default_address_id = ab.address_book_id where customers_abo_payment_method = 2 and customers_abo = 1 " & _
+            " and c.domiciliation_number in (select dom_nr from dom80) "
+
+        Return sql
+    End Function
+
+    Public Shared Function GetEddPrePymentNotification(ByVal reqColDate As Date)
+        Dim Sql As String
+        Dim strmysqldate As String = DVDPostTools.ClsDate.formatDate(reqColDate)
+
+        Sql = "select c.customers_id, c.customers_language, "
+        Sql = Sql & " c.customers_email_address,"
+        Sql = Sql & " concat(c.customers_firstname,' ',c.customers_lastname) customers_name,"
+        Sql = Sql & " p.products_model your_subscription,"
+        Sql = Sql & "'" & strmysqldate & "' debit_date, "
+        Sql = Sql & " p.products_price subscription_price,"
+        Sql = Sql & " edd.iban debtor_iban, edd.edd_mandate_id mandate_number "
+        Sql = Sql & " FROM customers c join products p on c.customers_next_abo_type = p.products_id "
+        Sql = Sql & " join customer_attributes ca on c.customers_id = ca.customer_id "
+        Sql = Sql & " join customers_edd edd on edd.customers_id = c.customers_id "
+        Sql = Sql & " WHERE ( (date( date_add(c.customers_abo_validityto, interval 6 day)) = '" & strmysqldate & "' and edd.edd_mandate_status = 2) "
+        Sql = Sql & " or ( (date(date_add(c.customers_abo_validityto, interval 3 day)) = '" & strmysqldate & "' and edd.edd_mandate_status = 4) ))"
+        Sql = Sql & " AND customers_abo = 1 "
+        Sql = Sql & " AND customers_abo_payment_method = 2 and customers_abo_suspended = 0 group by c.customers_id"
+
+        Return Sql
+    End Function
+
 
     '****** MATCHING RECOVERY -> PAYMENT ********************'
     '    ' matching recovery -> payment 

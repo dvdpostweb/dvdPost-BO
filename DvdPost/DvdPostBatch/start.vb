@@ -30,6 +30,7 @@ Module start
         End If
 
     End Function
+
     Function Main(ByVal cmdArgs() As String) As Integer
 
         Dim env As String
@@ -81,6 +82,10 @@ Module start
                 Dim _OffLinePay As New DVDPostBuziness.clsOffLinePayments()
                 _OffLinePay.ApplyAllTransitions()
 
+                If (Configuration.ConfigurationManager.AppSettings("eddprepayment") = "true") Then
+                    _OffLinePay.SendEDDPrepaymentMail(Configuration.ConfigurationManager.AppSettings("eddprepaymentnotif"))
+                End If
+
                 DVDPostBuziness.ClsCredits.UpdateCreditMoreMonth()
                 'Dim sql As String
                 'Sql = DvdPostData.clsProductDvd.GetStepProductDisabled()
@@ -91,7 +96,7 @@ Module start
                 clscust.CreateCustomersRotation()
                 Dim sql As String
                 'call store procedure to calculate average of the duration of keeping dvdat home
-                Sql = DvdPostData.ClsPurchaseSale.GetInsertCreateRateRotationAbo()
+                sql = DvdPostData.ClsPurchaseSale.GetInsertCreateRateRotationAbo()
                 DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
                 ' Dim cls As New DVDPostBuziness.ClsPurchaseSale
