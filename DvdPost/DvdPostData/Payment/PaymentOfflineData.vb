@@ -30,8 +30,39 @@ Public Class PaymentOfflineData
         REJECTDOMERROR = 26 ' open
         REJECTINSOLVENT = 27 ' open 
         IRRECOVERABLE = 28 ' close 
+        DOM_PROBLEM = 29 ' problem with EDD payment
+        EDD_CHANGED = 30 'NEW PAYMNET IS CREATED, THIS IS STOPED    
+        EDD_WILL_PAY = 31 'NEW PAYMENT IS CREATED, THIS IS STOPED
+        PAYPAL_PROBLEM = 32
+        PAYPAL_CHANGED = 33
+        PAYPAL_WILL_PAY = 34
     End Enum
-   
+
+    Enum Type_R_Transaction
+        PAID = 0
+        REJECT = 1
+        R_RETURN = 2
+        REFUND = 3
+        REVERSAL = 4
+        CANCELLATION = 5
+    End Enum
+
+    Enum Paid_Refund_Reason
+        PAID = 0
+        TECHNICAL_PROBLEM = 1
+        REASON_NOT_SPECIFIFED = 2
+        DEBTOR_DISAGREES = 3
+        DEBTOR_ACCOUNT_PROBLEM = 4
+    End Enum
+
+    Enum Paid_Or_Reason_For_Refund_Payment
+        PAID = 0
+        TECHNICAL_PROBLEM = 1
+        REASON_NOT_SPECIFIED
+        DEBTOR_DISAGREES
+        DEBTOR_ACCOUNT_PROBLEM
+    End Enum
+
     Enum TypeSend
         LETTER = 3
         LETTER_AVOCAT = 4
@@ -176,7 +207,7 @@ Public Class PaymentOfflineData
 
     End Function
 
-    Public Shared Function GetStepPaymentPrint(ByVal StepPayment As Integer) As String
+    Public Shared Function GetStepPaymentPrint(ByVal StepPayment As Integer, ByVal payment_method As ClsCustomersData.Payment_Method) As String
         Dim sql As String
         sql = "SELECT " & clsMassEmail.CapitalizeSql("c.customers_firstname", "c.customers_lastname") & " as customers_name," & _
                " c.customers_gender,p.amount as payment_offline_amount, " & _
@@ -185,8 +216,44 @@ Public Class PaymentOfflineData
                " c.customers_email_address,c.customers_language,c.customers_id " & _
                " FROM payment p join customers c on c.customers_id = p.customers_id " & _
                " where p.payment_status = " & StepPayment
+
+        If payment_method <> ClsCustomersData.Payment_Method.ALL Then
+            sql = sql & " and p.payment_method = " & payment_method
+        End If
+
         Return sql
     End Function
+
+    Private Shared Function GetColumnsSelectDomProblem() As String
+        Dim sql As String
+        sql = "SELECT capm.customers_abo_payment_method_name, c.customers_abo_payment_method " & _
+       ",c.customers_abo" & _
+       ",ps.name" & _
+       ",p.amount" & _
+       ",p.id" & _
+       ",p.communication" & _
+       ",c.customers_id" & _
+       ",p.date_added" & _
+       ",p.last_modified" & _
+       ", pe.sequence_type, pe.paid_or_refund_reason, epprs.description paid_or_refund_reason_name, pe.type_r_transaction, eprts.description type_r_transaction_name, pe.reason, e.dscrp " & _
+       ",c.customers_lastname" & _
+       ",c.customers_firstname" & _
+       ",c.customers_email_address" & _
+       ",c.customers_telephone" & _
+       ",c.customers_abo_validityto" & _
+       ",c.customers_language" & _
+       ",ab.entry_street_address" & _
+       ",ab.entry_postcode " & _
+       ",c.customers_abo_dvd_home_norm home_norm" & _
+       ",c.customers_abo_dvd_home_adult home_adult" & _
+       ",ab.entry_city " & _
+       ",c.customers_info_date_account_created" & _
+       ",p.payment_status,c.customers_next_abo_type"
+
+
+        Return sql
+    End Function
+
 
     Private Shared Function GetColumsSelectSummary() As String
         Dim sql As String
@@ -286,6 +353,23 @@ Public Class PaymentOfflineData
 
     End Function
 
+    Public Shared Function GetStepPaymentDomProblem(ByVal StepPayment As Integer) As String
+        Dim sql As String
+        sql = GetColumnsSelectDomProblem() & _
+              "  FROM  payment p " & _
+              " left join payment_status ps on ps.id = p.payment_status" & _
+              " left join customers_abo_payment_method capm on capm.customers_abo_payment_method_id = p.payment_method " & _
+              " left join customers c on c.customers_id = p.customers_id " & _
+              " left join address_book ab on c.customers_id = ab.customers_id and c.customers_default_address_id = ab.address_book_id " & _
+              " left join payment_edd pe on p.id = pe.pmt_instr_id and pe.customers_id = p.customers_id " & _
+              " JOIN ( select pmt_instr_id, max(id) id from payment_edd group by pmt_instr_id) pe1 on pe.id = pe1.id " & _
+              " left join edd_reason e on pe.reason = e.code " & _
+              " left join edd_payment_paid_refund_status epprs on pe.paid_or_refund_reason = epprs.id " & _
+              " left join edd_payment_r_transaction_status eprts on pe.type_r_transaction = eprts.id " & _
+              " where p.payment_status = " & StepPayment
+        Return sql
+    End Function
+
     Public Shared Function GetStepPaymentWithAbo(ByVal StepPayment As Integer) As String
         Dim sql As String
         sql = "SELECT p.date_added date_reconduction,p.*,c.*,pos.*,ab.*, " & _
@@ -324,10 +408,22 @@ Public Class PaymentOfflineData
     Public Shared Function UpdateStatus(ByVal old_status As Integer, _
                                         ByVal new_status As Integer, _
                                         ByVal delay As Integer, _
+                                        Optional ByVal payment_method As ClsCustomersData.Payment_Method = ClsCustomersData.Payment_Method.ALL, _
                                         Optional ByVal isclosed As Boolean = False, _
                                         Optional ByVal account_movements_id As String = Nothing) As String
         Dim sql As String
-        sql = ClsPayment.UpdateStatusAutomatic(old_status, new_status, delay, isclosed, account_movements_id)
+        sql = ClsPayment.UpdateStatusAutomatic(old_status, new_status, delay, payment_method, isclosed, account_movements_id)
+        Return sql
+    End Function
+
+    Public Shared Function UpdateStatusAndSetVodOnly(ByVal old_status As Integer, _
+                                        ByVal new_status As Integer, _
+                                        ByVal delay As Integer, _
+                                        ByVal payment_method As ClsCustomersData.Payment_Method, _
+                                        Optional ByVal isclosed As Boolean = False, _
+                                        Optional ByVal account_movements_id As String = Nothing) As String
+        Dim sql As String
+        sql = ClsPayment.UpdateStatusAutomatic(old_status, new_status, delay, payment_method, isclosed, account_movements_id)
         Return sql
     End Function
 
@@ -467,7 +563,10 @@ Public Class PaymentOfflineData
 
         Sql = "select c.customers_id, c.customers_language, "
         Sql = Sql & " c.customers_email_address,"
-        Sql = Sql & " concat(c.customers_firstname,' ',c.customers_lastname) customers_name,"
+        Sql = Sql & " concat(c.customers_firstname,' ',c.customers_lastname) as customers_name,"
+        Sql = Sql & " c.customers_firstname, c.customers_lastname, c.activation_discount_code_type, c.activation_discount_code_id, "
+        Sql = Sql & " c.customers_next_discount_code,"
+        Sql = Sql & "if(date(c.customers_abo_discount_recurring_to_date) > now(), 1, 0) as recurring_discount, "
         Sql = Sql & " p.products_model your_subscription,"
         Sql = Sql & "'" & strmysqldate & "' debit_date, "
         Sql = Sql & " p.products_price subscription_price,"

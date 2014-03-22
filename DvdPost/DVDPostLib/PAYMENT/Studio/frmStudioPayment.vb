@@ -2326,7 +2326,7 @@ Public Class frmStudioPayment
 
         dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
         Dim rpt As New rptStudioSummaryReport
-
+        'DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.BO, sql)
         rpt.DataSource = dt
         rpt.ShowPreview()
     End Sub

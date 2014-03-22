@@ -188,12 +188,16 @@ namespace EddXml
             //
         }
 
-        public void CreatePayment(DataRow dr, int cpt, string strcommunication, int lastDomId, string mndtId, string orgnlMndtId, string orgnlCdtrSchmeIdOthrID,
+        public void CreatePayment(DataRow dr, string strcommunication, int lastDomId, string mndtId, string orgnlMndtId, string orgnlCdtrSchmeIdOthrID,
             string dbtrNm, string dbtrIBAN, string dbtrAgentBIC, string dbtrStreetAddress, string dbtrPostCodeAndCityAddress, SequenceType1Code action, 
-            DateTime dateOfSignature, bool isMigration, bool ibanChanged, string oldIBAN, bool eddMandateIdChanged, string oldEddMandateId, bool bicChanged, string oldBIC)
+            DateTime dateOfSignature , bool isMigration, bool ibanChanged, string oldIBAN, bool eddMandateIdChanged, string oldEddMandateId, bool bicChanged, string oldBIC)
         {
             bool isInitiation = (EddXml.SequenceType1Code.FRST == action);
             DateTime signatureDate;
+            //if ( dateOfSignature = DBNull.Value)
+            //{
+            //    dateOfSignature = DateTime.MinValue;
+            //}   
             if (isInitiation && isMigration )
             {
                 signatureDate = DateTime.Now.AddDays(6);
@@ -217,51 +221,70 @@ namespace EddXml
             payment.DrctDbtTx.MndtRltdInf.MndtId = mndtId;
             payment.DrctDbtTx.MndtRltdInf.DtOfSgntr = signatureDate;
             payment.DrctDbtTx.MndtRltdInf.DtOfSgntrSpecified = true;
-            if (isInitiation && isMigration)
+            if (isInitiation )
             {
-                payment.DrctDbtTx.MndtRltdInf.AmdmntInd = true;
-                payment.DrctDbtTx.MndtRltdInf.AmdmntIndSpecified = true;
+                if (isMigration)
+                {
+                    payment.DrctDbtTx.MndtRltdInf.AmdmntInd = true;
+                    payment.DrctDbtTx.MndtRltdInf.AmdmntIndSpecified = true;
 
-                payment.DrctDbtTx.MndtRltdInf.AmdmntInfDtls = new AmendmentInformationDetails6();
-                payment.DrctDbtTx.MndtRltdInf.AmdmntInfDtls.OrgnlMndtId = (string)((isMigration?"DOM80":string.Empty) + orgnlMndtId);
-                payment.DrctDbtTx.MndtRltdInf.AmdmntInfDtls.OrgnlCdtrSchmeId = new PartyIdentification32();
-                Party6Choice party6Chice = new Party6Choice();
-                /*
-                OrganisationIdentification4 organisationIdentification4 = new OrganisationIdentification4();
-                organisationIdentification4.Othr = new GenericOrganisationIdentification1[1];
-                organisationIdentification4.Othr[0] = new GenericOrganisationIdentification1();
-                organisationIdentification4.Othr[0].Id = (isMigration?"DOM80":string.Empty) & orgnlCdtrSchmeIdOthrID;
-                organisationIdentification4.Othr[0].SchmeNm = new OrganisationIdentificationSchemeName1Choice();
-                organisationIdentification4.Othr[0].SchmeNm.Item = "SEPA";
-                organisationIdentification4.Othr[0].SchmeNm.ItemElementName = ItemChoiceType.Prtry;
-                */
-                PersonIdentification5 personIdentification5 = new PersonIdentification5();
-                personIdentification5.Othr = new GenericPersonIdentification1[1];
-                personIdentification5.Othr[0] = new GenericPersonIdentification1();
-                personIdentification5.Othr[0].Id = (string)((isMigration?"DOM80":string.Empty) + orgnlCdtrSchmeIdOthrID);
-                personIdentification5.Othr[0].SchmeNm = new PersonIdentificationSchemeName1Choice();
-                personIdentification5.Othr[0].SchmeNm.Item = "SEPA";
-                personIdentification5.Othr[0].SchmeNm.ItemElementName = ItemChoiceType1.Prtry;
-                party6Chice.Item = personIdentification5;
-                payment.DrctDbtTx.MndtRltdInf.AmdmntInfDtls.OrgnlCdtrSchmeId.Id = party6Chice;
-
+                    payment.DrctDbtTx.MndtRltdInf.AmdmntInfDtls = new AmendmentInformationDetails6();
+                    payment.DrctDbtTx.MndtRltdInf.AmdmntInfDtls.OrgnlMndtId = (string)((isMigration ? "DOM80" : string.Empty) + orgnlMndtId);
+                    payment.DrctDbtTx.MndtRltdInf.AmdmntInfDtls.OrgnlCdtrSchmeId = new PartyIdentification32();
+                    Party6Choice party6Chice = new Party6Choice();
+                    /*
+                    OrganisationIdentification4 organisationIdentification4 = new OrganisationIdentification4();
+                    organisationIdentification4.Othr = new GenericOrganisationIdentification1[1];
+                    organisationIdentification4.Othr[0] = new GenericOrganisationIdentification1();
+                    organisationIdentification4.Othr[0].Id = (isMigration?"DOM80":string.Empty) & orgnlCdtrSchmeIdOthrID;
+                    organisationIdentification4.Othr[0].SchmeNm = new OrganisationIdentificationSchemeName1Choice();
+                    organisationIdentification4.Othr[0].SchmeNm.Item = "SEPA";
+                    organisationIdentification4.Othr[0].SchmeNm.ItemElementName = ItemChoiceType.Prtry;
+                    */
+                    PersonIdentification5 personIdentification5 = new PersonIdentification5();
+                    personIdentification5.Othr = new GenericPersonIdentification1[1];
+                    personIdentification5.Othr[0] = new GenericPersonIdentification1();
+                    personIdentification5.Othr[0].Id = (string)((isMigration ? "DOM80" : string.Empty) + orgnlCdtrSchmeIdOthrID);
+                    personIdentification5.Othr[0].SchmeNm = new PersonIdentificationSchemeName1Choice();
+                    personIdentification5.Othr[0].SchmeNm.Item = "SEPA";
+                    personIdentification5.Othr[0].SchmeNm.ItemElementName = ItemChoiceType1.Prtry;
+                    party6Chice.Item = personIdentification5;
+                    payment.DrctDbtTx.MndtRltdInf.AmdmntInfDtls.OrgnlCdtrSchmeId.Id = party6Chice;
+                }
                 if (bicChanged)
                 {
+                    payment.DrctDbtTx.MndtRltdInf.AmdmntInd = true;
+                    payment.DrctDbtTx.MndtRltdInf.AmdmntIndSpecified = true;
+                    payment.DrctDbtTx.MndtRltdInf.AmdmntInfDtls = new AmendmentInformationDetails6();
                     payment.DrctDbtTx.MndtRltdInf.AmdmntInfDtls.OrgnlDbtrAgt = new BranchAndFinancialInstitutionIdentification4();
                     payment.DrctDbtTx.MndtRltdInf.AmdmntInfDtls.OrgnlDbtrAgt.FinInstnId = new FinancialInstitutionIdentification7();
                     payment.DrctDbtTx.MndtRltdInf.AmdmntInfDtls.OrgnlDbtrAgt.FinInstnId.BIC = oldBIC;
                     payment.DrctDbtTx.MndtRltdInf.AmdmntInfDtls.OrgnlDbtrAgt.FinInstnId.Othr = new GenericFinancialIdentification1();
-                    payment.DrctDbtTx.MndtRltdInf.AmdmntInfDtls.OrgnlDbtrAgt.FinInstnId.Othr.Id = "SMNDA";                    
+                    payment.DrctDbtTx.MndtRltdInf.AmdmntInfDtls.OrgnlDbtrAgt.FinInstnId.Othr.Id = "SMNDA";
+                    if (ibanChanged || eddMandateIdChanged)
+                    {                        
+                        if (ibanChanged)
+                        {
+                            payment.DrctDbtTx.MndtRltdInf.AmdmntInfDtls.OrgnlDbtrAcct = new CashAccount16();
+                            payment.DrctDbtTx.MndtRltdInf.AmdmntInfDtls.OrgnlDbtrAcct.Id = new AccountIdentification4Choice();
+                            payment.DrctDbtTx.MndtRltdInf.AmdmntInfDtls.OrgnlDbtrAcct.Id.Item = oldIBAN;
+                            payment.DrctDbtTx.MndtRltdInf.AmdmntInfDtls.OrgnlDbtrAcct.Nm = "IBAN";
+                        }
+                        if (eddMandateIdChanged)
+                        {
+                            payment.DrctDbtTx.MndtRltdInf.AmdmntInfDtls.OrgnlMndtId = (string)(orgnlMndtId);
+                        }
 
+                    }
                 }
             }
             else if (ibanChanged || eddMandateIdChanged )
             {
                 payment.DrctDbtTx.MndtRltdInf.AmdmntInd = true;
                 payment.DrctDbtTx.MndtRltdInf.AmdmntIndSpecified = true;
-
                 payment.DrctDbtTx.MndtRltdInf.AmdmntInfDtls = new AmendmentInformationDetails6();
-                if (ibanChanged && !bicChanged)
+
+                if (ibanChanged)
                 {
                     payment.DrctDbtTx.MndtRltdInf.AmdmntInfDtls.OrgnlDbtrAcct = new CashAccount16();
                     payment.DrctDbtTx.MndtRltdInf.AmdmntInfDtls.OrgnlDbtrAcct.Id = new AccountIdentification4Choice();
@@ -277,6 +300,7 @@ namespace EddXml
             else
             {
                 payment.DrctDbtTx.MndtRltdInf.AmdmntInd = false;
+                payment.DrctDbtTx.MndtRltdInf.AmdmntIndSpecified = false;
             }
 
             //
@@ -318,7 +342,7 @@ namespace EddXml
             //_eddXML.CstmrDrctDbtInitn.PmtInf[eddMandateStatusCounter[action.ToString()]].DrctDbtTxInf = new DirectDebitTransactionInformation9[numberOfTransactions];
         }
 
-        public void SerializeObject( string fileName)
+        public void SerializeObject( string filePathName)
         {
             if (_eddXML == null) { return; }
 
@@ -331,7 +355,7 @@ namespace EddXml
                     serializer.Serialize(stream, _eddXML);
                     stream.Position = 0;
                     xmlDocument.Load(stream);
-                    xmlDocument.Save(fileName);
+                    xmlDocument.Save(filePathName);
                     stream.Close();
                 }
             }

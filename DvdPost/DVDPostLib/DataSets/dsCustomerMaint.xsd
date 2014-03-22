@@ -551,9 +551,10 @@
               <xs:element name="contract_id" msprop:Generator_UserColumnName="contract_id" msprop:Generator_ColumnPropNameInRow="contract_id" msprop:Generator_ColumnVarNameInTable="columncontract_id" msprop:Generator_ColumnPropNameInTable="contract_idColumn" type="xs:string" minOccurs="0" />
               <xs:element name="contract_dscrp" msprop:Generator_UserColumnName="contract_dscrp" msprop:Generator_ColumnPropNameInRow="contract_dscrp" msprop:Generator_ColumnVarNameInTable="columncontract_dscrp" msprop:Generator_ColumnPropNameInTable="contract_dscrpColumn" type="xs:string" minOccurs="0" />
               <xs:element name="gemeente" msprop:Generator_UserColumnName="gemeente" msprop:Generator_ColumnPropNameInRow="gemeente" msprop:Generator_ColumnVarNameInTable="columngemeente" msprop:Generator_ColumnPropNameInTable="gemeenteColumn" type="xs:string" minOccurs="0" />
-              <xs:element name="bic" msprop:Generator_UserColumnName="bic" msprop:Generator_ColumnPropNameInRow="bic" msprop:Generator_ColumnVarNameInTable="columnbic" msprop:Generator_ColumnPropNameInTable="bicColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="bic" msprop:Generator_UserColumnName="bic" msprop:Generator_ColumnPropNameInRow="bic" msprop:Generator_ColumnVarNameInTable="columnbic" msprop:Generator_ColumnPropNameInTable="bicColumn" type="xs:string" default="" minOccurs="0" />
               <xs:element name="kbo" msprop:Generator_UserColumnName="kbo" msprop:Generator_ColumnPropNameInRow="kbo" msprop:Generator_ColumnVarNameInTable="columnkbo" msprop:Generator_ColumnPropNameInTable="kboColumn" type="xs:string" minOccurs="0" />
               <xs:element name="last_update" msprop:Generator_UserColumnName="last_update" msprop:Generator_ColumnPropNameInRow="last_update" msprop:Generator_ColumnVarNameInTable="columnlast_update" msprop:Generator_ColumnPropNameInTable="last_updateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="force_mandate_update" msprop:Generator_UserColumnName="force_mandate_update" msprop:Generator_ColumnVarNameInTable="columnforce_mandate_update" msprop:Generator_ColumnPropNameInRow="force_mandate_update" msprop:Generator_ColumnPropNameInTable="force_mandate_updateColumn" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -591,7 +592,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="edd_changed" msprop:Generator_UserTableName="edd_changed" msprop:Generator_RowDeletedName="edd_changedRowDeleted" msprop:Generator_TableClassName="edd_changedDataTable" msprop:Generator_RowChangedName="edd_changedRowChanged" msprop:Generator_RowClassName="edd_changedRow" msprop:Generator_RowChangingName="edd_changedRowChanging" msprop:Generator_RowEvArgName="edd_changedRowChangeEvent" msprop:Generator_RowEvHandlerName="edd_changedRowChangeEventHandler" msprop:Generator_TablePropName="edd_changed" msprop:Generator_TableVarName="tableedd_changed" msprop:Generator_RowDeletingName="edd_changedRowDeleting">
+        <xs:element name="edd_changed" msprop:Generator_UserTableName="edd_changed" msprop:Generator_RowDeletedName="edd_changedRowDeleted" msprop:Generator_RowChangedName="edd_changedRowChanged" msprop:Generator_RowClassName="edd_changedRow" msprop:Generator_RowChangingName="edd_changedRowChanging" msprop:Generator_RowEvArgName="edd_changedRowChangeEvent" msprop:Generator_RowEvHandlerName="edd_changedRowChangeEventHandler" msprop:Generator_TableClassName="edd_changedDataTable" msprop:Generator_TableVarName="tableedd_changed" msprop:Generator_RowDeletingName="edd_changedRowDeleting" msprop:Generator_TablePropName="edd_changed">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="iban" msprop:Generator_UserColumnName="iban" msprop:Generator_ColumnPropNameInRow="iban" msprop:Generator_ColumnVarNameInTable="columniban" msprop:Generator_ColumnPropNameInTable="ibanColumn" type="xs:boolean" minOccurs="0" />

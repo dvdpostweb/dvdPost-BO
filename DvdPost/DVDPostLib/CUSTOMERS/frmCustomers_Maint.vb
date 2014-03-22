@@ -974,6 +974,8 @@ Public Class frmCustomers_Maint
     Friend WithEvents LabelControl108 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents cmbInvoiceEDDManadateStatus As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LabelControl109 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents chkForceMandateUpdate As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents dtDateOfNextBatch As DevExpress.XtraEditors.TextEdit
     Friend WithEvents cmbDiscType As DevExpress.XtraEditors.ComboBoxEdit
 
 
@@ -1537,6 +1539,8 @@ Me.txtcustomers_id_search = New DevExpress.XtraEditors.TextEdit
 Me.LabelControl1 = New DevExpress.XtraEditors.LabelControl
 Me.XTabCustomers = New DevExpress.XtraTab.XtraTabControl
 Me.tabEDD = New DevExpress.XtraTab.XtraTabPage
+Me.dtDateOfNextBatch = New DevExpress.XtraEditors.TextEdit
+Me.chkForceMandateUpdate = New DevExpress.XtraEditors.CheckEdit
 Me.LabelControl109 = New DevExpress.XtraEditors.LabelControl
 Me.chkBICChanged = New DevExpress.XtraEditors.CheckEdit
 Me.chkMandateIDChanged = New DevExpress.XtraEditors.CheckEdit
@@ -2102,6 +2106,8 @@ CType(Me.txtcustomers_id_search.Properties,System.ComponentModel.ISupportInitial
 CType(Me.XTabCustomers,System.ComponentModel.ISupportInitialize).BeginInit
 Me.XTabCustomers.SuspendLayout
 Me.tabEDD.SuspendLayout
+CType(Me.dtDateOfNextBatch.Properties,System.ComponentModel.ISupportInitialize).BeginInit
+CType(Me.chkForceMandateUpdate.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.chkBICChanged.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.chkMandateIDChanged.Properties,System.ComponentModel.ISupportInitialize).BeginInit
 CType(Me.chkEDDIBANChanged.Properties,System.ComponentModel.ISupportInitialize).BeginInit
@@ -7700,6 +7706,8 @@ Me.XTabCustomers.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.tabS
 '
 'tabEDD
 '
+Me.tabEDD.Controls.Add(Me.dtDateOfNextBatch)
+Me.tabEDD.Controls.Add(Me.chkForceMandateUpdate)
 Me.tabEDD.Controls.Add(Me.LabelControl109)
 Me.tabEDD.Controls.Add(Me.chkBICChanged)
 Me.tabEDD.Controls.Add(Me.chkMandateIDChanged)
@@ -7763,6 +7771,34 @@ Me.tabEDD.ShowCloseButton = DevExpress.Utils.DefaultBoolean.[True]
 Me.tabEDD.Size = New System.Drawing.Size(1253, 783)
 Me.tabEDD.Text = "EDD"
 '
+'dtDateOfNextBatch
+'
+Me.dtDateOfNextBatch.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.id", true))
+Me.dtDateOfNextBatch.Enabled = false
+Me.dtDateOfNextBatch.Location = New System.Drawing.Point(890, 411)
+Me.dtDateOfNextBatch.Name = "dtDateOfNextBatch"
+Me.dtDateOfNextBatch.Properties.ReadOnly = true
+Me.dtDateOfNextBatch.Size = New System.Drawing.Size(128, 20)
+Me.dtDateOfNextBatch.TabIndex = 121
+'
+'chkForceMandateUpdate
+'
+Me.chkForceMandateUpdate.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers_edd.force_mandate_update", true))
+Me.chkForceMandateUpdate.EditValue = 0
+Me.chkForceMandateUpdate.Enabled = false
+Me.chkForceMandateUpdate.Location = New System.Drawing.Point(571, 412)
+Me.chkForceMandateUpdate.Name = "chkForceMandateUpdate"
+Me.chkForceMandateUpdate.Properties.Appearance.BackColor = System.Drawing.Color.Transparent
+Me.chkForceMandateUpdate.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 10!, System.Drawing.FontStyle.Bold)
+Me.chkForceMandateUpdate.Properties.Appearance.Options.UseBackColor = true
+Me.chkForceMandateUpdate.Properties.Appearance.Options.UseFont = true
+Me.chkForceMandateUpdate.Properties.Caption = "Force mandate update at next batch"
+Me.chkForceMandateUpdate.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
+Me.chkForceMandateUpdate.Properties.ValueChecked = 1
+Me.chkForceMandateUpdate.Properties.ValueUnchecked = 0
+Me.chkForceMandateUpdate.Size = New System.Drawing.Size(285, 21)
+Me.chkForceMandateUpdate.TabIndex = 120
+'
 'LabelControl109
 '
 Me.LabelControl109.Location = New System.Drawing.Point(30, 521)
@@ -7773,7 +7809,7 @@ Me.LabelControl109.Text = "EDD mandate history"
 '
 'chkBICChanged
 '
-Me.chkBICChanged.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_abo", true))
+Me.chkBICChanged.EditValue = 0
 Me.chkBICChanged.Enabled = false
 Me.chkBICChanged.Location = New System.Drawing.Point(952, 314)
 Me.chkBICChanged.Name = "chkBICChanged"
@@ -7790,7 +7826,6 @@ Me.chkBICChanged.TabIndex = 118
 '
 'chkMandateIDChanged
 '
-Me.chkMandateIDChanged.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_abo", true))
 Me.chkMandateIDChanged.Enabled = false
 Me.chkMandateIDChanged.Location = New System.Drawing.Point(407, 156)
 Me.chkMandateIDChanged.Name = "chkMandateIDChanged"
@@ -7807,7 +7842,6 @@ Me.chkMandateIDChanged.TabIndex = 117
 '
 'chkEDDIBANChanged
 '
-Me.chkEDDIBANChanged.DataBindings.Add(New System.Windows.Forms.Binding("EditValue", Me.objDS, "customers.customers_abo", true))
 Me.chkEDDIBANChanged.Enabled = false
 Me.chkEDDIBANChanged.Location = New System.Drawing.Point(407, 125)
 Me.chkEDDIBANChanged.Name = "chkEDDIBANChanged"
@@ -11375,6 +11409,8 @@ CType(Me.XTabCustomers,System.ComponentModel.ISupportInitialize).EndInit
 Me.XTabCustomers.ResumeLayout(false)
 Me.tabEDD.ResumeLayout(false)
 Me.tabEDD.PerformLayout
+CType(Me.dtDateOfNextBatch.Properties,System.ComponentModel.ISupportInitialize).EndInit
+CType(Me.chkForceMandateUpdate.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.chkBICChanged.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.chkMandateIDChanged.Properties,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.chkEDDIBANChanged.Properties,System.ComponentModel.ISupportInitialize).EndInit
@@ -11563,6 +11599,7 @@ End Sub
     Dim _newMgm As Integer
     Dim _old_date_Holiday As Date
     Dim _oldSuspended As Integer
+    Dim _oldBIC As String
     Private _lstSuspended As New List(Of DVDPostBuziness.clsKeyCombo)
     Private _lstADULTSVOD As New List(Of DVDPostBuziness.clsKeyCombo)
     Private _lstEddMandateStatus As New List(Of DVDPostBuziness.clsKeyCombo)
@@ -11663,6 +11700,11 @@ End Sub
         _oldMgm = txtPtSponsorShip.EditValue
         _newMgm = txtPtSponsorShip.EditValue
         _oldSuspended = cmbSuspended.EditValue
+        If Not txtBIC.EditValue Is DBNull.Value Then
+            _oldBIC = txtBIC.EditValue
+        Else
+            _oldBIC = String.Empty
+        End If
         SetState(EditState)
         PopMenuNew.Enabled = False
         PopMenuEdit.Enabled = False
@@ -12207,6 +12249,7 @@ End Sub
         grdEddHistory.DataSource = objDS.Tables("customers_edd_history")
         grdEddHistory.Refresh()
 
+
         If objDS.Tables("edd_changed").Rows.Count > 0 Then
             chkEDDIBANChanged.Checked = objDS.edd_changed(0).iban
             chkEDDIBANChanged.Visible = objDS.edd_changed(0).iban
@@ -12219,6 +12262,9 @@ End Sub
         End If
 
         If objDS.Tables("customers_edd").Rows.Count > 0 Then
+            chkForceMandateUpdate.Checked = objDS.customers_edd(0).force_mandate_update
+
+            chkForceMandateUpdate.Refresh()
             cmbLastPaymentStatus.EditValue = objDS.Tables("customers_edd").Rows(0)("last_payment_status")
             cmbEDDMandateStatus.EditValue = objDS.Tables("customers_edd").Rows(0)("edd_mandate_status")
             cmbInvoiceEDDManadateStatus.EditValue = objDS.Tables("customers_edd").Rows(0)("edd_mandate_status")
@@ -12493,6 +12539,7 @@ End Sub
         ChangeStateControl(txtKBO, Enabling)
         ChangeStateControl(txtLastUpdate, Enabling)
         ChangeStateControl(btnEDDNew, Enabling)
+        ChangeStateControl(chkForceMandateUpdate, Enabling)
 
         _saveCustomersComment = Enabling
 
@@ -12853,33 +12900,41 @@ End Sub
 
     Private Sub updateInsertCustomersEDD()
 
-        Dim customers_abo As Integer
+        'Dim customers_abo As Integer
         Dim customers_id As Integer
-        Dim other_reason As String
-        Dim stop_phone_id As String
-        Dim call_phone As String
+        'Dim other_reason As String
+        'Dim stop_phone_id As String
+        'Dim call_phone As String
         Dim count As Integer
         Dim sql As String
-        Dim existCust As Boolean
-        Dim registration_step As Integer
-        Dim payment_method As Integer
+        'Dim newBIC As String
+        'Dim registration_step As Integer
+        'Dim payment_method As Integer
 
         customers_id = _CurrentCustomerID
-        If DateCallPhoneActivation.EditValue IsNot Nothing Then
-            call_phone = DateCallPhoneActivation.DateTime.ToString("yyyy-MM-dd HH:mm:ss")
-        Else
-            call_phone = String.Empty
+        'If DateCallPhoneActivation.EditValue IsNot Nothing Then
+        '    call_phone = DateCallPhoneActivation.DateTime.ToString("yyyy-MM-dd HH:mm:ss")
+        'Else
+        '    call_phone = String.Empty
+        'End If
+
+        If objDS.Tables("customers_edd").Rows.Count = 0 Then
+            Return
         End If
-
-        'existCust = exist(customers_id)
-
         Try
             If objDS.Tables("customers_edd").Rows.Count > 0 AndAlso objDS.Tables("customers_edd").Rows(0).RowState = DataRowState.Added Then
                 sql = DvdPostData.ClsCustomersData.GetInsertCustomersEDD(txtVolgnr.EditValue, txtReference.EditValue, txtIBAN.EditValue, txtEDDMandateID.EditValue, cmbEDDMandateStatus.EditValue, txtEDDCustomersID.EditValue, cmbLastPaymentStatus.EditValue, txtMandateRef.EditValue, txtEDDCreateDate.EditValue, txtEDDSignatureDate.EditValue, txtCustomersEDDName.EditValue, txtCustomersEDDStreetNumber.EditValue, txtCustomersEDDPostcode.EditValue, txtCustomersEDDCity.EditValue, txtEDDSigningCity.EditValue, txtCustomersEDDCountry.EditValue, txtDebtorIdentificationCode.EditValue, txtDebtorRefpartyName.EditValue, txtDebtorRefpartyCode.EditValue, txtContractID.EditValue, txtContractDescrp.EditValue, txtGemeente.EditValue, txtBIC.EditValue, txtKBO.EditValue, txtLastUpdate.EditValue)
+
                 count = DvdPostData.clsConnection.ExecuteNonQuery(sql)
-            Else
+            ElseIf objDS.Tables("customers_edd").Rows(0).RowState = DataRowState.Modified Then
                 sql = "SELECT * FROM customers_edd where customers_id = " & customers_id
+                objDS.Tables("customers_edd").Rows(0)("last_update") = DateTime.Now
+                If objDS.Tables("customers_edd").Rows(0)("edd_mandate_status") = 4 AndAlso OpenType = "EDIT" AndAlso _oldBIC <> txtBIC.EditValue AndAlso MsgBox("Changing BIC will set customer to status FRST", MsgBoxStyle.OkCancel, "BIC changed") = MsgBoxResult.Ok Then
+                    objDS.Tables("customers_edd").Rows(0)("edd_mandate_status") = 3
+
+                End If
                 DvdPostData.clsConnection.UpdateDataTableInDB(objDS.Tables("customers_edd"), sql)
+                _oldBIC = txtBIC.EditValue
             End If
 
         Catch ex As Exception
@@ -14055,5 +14110,12 @@ End Sub
         txtLastUpdate.EditValue = blank
 
     End Sub
+
+    Private Sub txtBIC_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtBIC.Leave
+        'If OpenType = "EDIT" AndAlso _oldBIC <> txtBIC.EditValue AndAlso MsgBox("Changing BIC will set customer to status FRST", MsgBoxStyle.OkCancel, "BIC changed") = MsgBoxResult.Ok Then
+        '    cmbEDDMandateStatus.EditValue = 3
+        'End If
+    End Sub
+
 End Class
 

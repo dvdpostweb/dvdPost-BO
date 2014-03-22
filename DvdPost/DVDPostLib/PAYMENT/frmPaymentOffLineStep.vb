@@ -1,3 +1,4 @@
+Imports DvdPostData
 Public Class frmPaymentOffLineStep
     Inherits BizzLib.frmBKForm
 
@@ -64,6 +65,8 @@ Public Class frmPaymentOffLineStep
         Dim sql As String = ""
         If _parameters.TypeStepPaymentOffline = DvdPostData.PaymentOfflineData.StepPayment.ALL_RECOVERY Then
             sql = DvdPostData.PaymentOfflineData.GetStepPaymentALL()
+        ElseIf _parameters.TypeStepPaymentOffline = Convert.ToInt16(PaymentOfflineData.StepPayment.DOM_PROBLEM) Then
+            sql = DvdPostData.PaymentOfflineData.GetStepPaymentDomProblem(_parameters.TypeStepPaymentOffline)
         Else
             If isSummary Then
                 sql = DvdPostData.PaymentOfflineData.GetStepPaymentSummary(_parameters.TypeStepPaymentOffline)

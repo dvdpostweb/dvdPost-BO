@@ -1007,6 +1007,9 @@ Public Class clsCoda2
         Dim unpaid_insolvent As Integer
         Dim unpaid_CompteSolde As Integer
         Dim longtime_DomWaiting As Integer
+        Dim eddPaymentToDomProblem As Integer
+        Dim eddPaymentToPaid As Integer
+        Dim eddCustomersToRecurent As Integer
         Dim paid As Integer
         ' If lst_datePivot Is Nothing OrElse lst_datePivot.Length = 0 Then Return
         DvdPostData.clsConnection.CreateTransaction(False)
@@ -1015,30 +1018,39 @@ Public Class clsCoda2
             sql = DvdPostData.ClsBatchDomiciliation.getFlagReconduct()
             DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
-            ' flag status payment the error dom of coda's today temporary status 
-            sql = DvdPostData.ClsBatchDomiciliation.getFlagUnpaidDomInexist()
-            unpaid_inexistant = DvdPostData.clsConnection.ExecuteNonQuery(sql)
-            unpaid_inexistant = unpaid_inexistant / 2
+            If (Configuration.ConfigurationManager.AppSettings("edd") = "true") Then
+                'EddPaymentAndCustomerUpdate(eddPaymentToDomProblem, eddPaymentToPaid, eddCustomersToRecurent)
 
-            ' flag status payment insolvent of coda's today ->  temporary status
-            sql = DvdPostData.ClsBatchDomiciliation.getFlagUnpaidInsolvent()
-            unpaid_insolvent = DvdPostData.clsConnection.ExecuteNonQuery(sql)
+                sql = DvdPostData.ClsBatchDomiciliation.EDDPaymentToDomProblem()
+                eddPaymentToDomProblem = DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
-            unpaid_insolvent = unpaid_insolvent / 2
+            End If
 
-            ' flag status payment compte solde of coda's today ->  temporary status
-            sql = DvdPostData.ClsBatchDomiciliation.getFlagUnpaidCompteSolde()
-            unpaid_CompteSolde = DvdPostData.clsConnection.ExecuteNonQuery(sql)
+            If Not (Configuration.ConfigurationManager.AppSettings("edd") = "true") Then
+                ' flag status payment the error dom of coda's today temporary status 
+                sql = DvdPostData.ClsBatchDomiciliation.getFlagUnpaidDomInexist()
+                unpaid_inexistant = DvdPostData.clsConnection.ExecuteNonQuery(sql)
+                unpaid_inexistant = unpaid_inexistant / 2
 
-            unpaid_CompteSolde = unpaid_CompteSolde / 2
+                ' flag status payment insolvent of coda's today ->  temporary status
+                sql = DvdPostData.ClsBatchDomiciliation.getFlagUnpaidInsolvent()
+                unpaid_insolvent = DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
+                unpaid_insolvent = unpaid_insolvent / 2
+
+                ' flag status payment compte solde of coda's today ->  temporary status
+                sql = DvdPostData.ClsBatchDomiciliation.getFlagUnpaidCompteSolde()
+                unpaid_CompteSolde = DvdPostData.clsConnection.ExecuteNonQuery(sql)
+
+                unpaid_CompteSolde = unpaid_CompteSolde / 2
+
+                ' flag status payment recovery all payment error or insolvent 
+                sql = DvdPostData.ClsBatchDomiciliation.getInsertPaymentOfflineRequest()
+                DvdPostData.clsConnection.ExecuteNonQuery(sql)
+            End If
             ' flag status payment Paid of coda's today not error and not insolvent
             sql = DvdPostData.ClsBatchDomiciliation.getFlagPaidDom()
             paid = DvdPostData.clsConnection.ExecuteNonQuery(sql)
-
-            ' flag status payment recovery all payment error or insolvent 
-            sql = DvdPostData.ClsBatchDomiciliation.getInsertPaymentOfflineRequest()
-            DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
             '' flag status payment the error dom of coda's today definitif status 
             'sql = DvdPostData.ClsBatchDomiciliation.getChangeStatusUnpaidDomInexist()
@@ -1052,13 +1064,19 @@ Public Class clsCoda2
             sql = DvdPostData.ClsBatchDomiciliation.getChangeStatuspaidAfterLongTime()
             longtime_DomWaiting = DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
-            If unpaid_inexistant + unpaid_insolvent + unpaid_CompteSolde + longtime_DomWaiting + paid > 0 Then
+            sql = DvdPostData.ClsBatchDomiciliation.UpdateCustomersEDDMandateFrstToRecurrent()
+            eddCustomersToRecurent = DvdPostData.clsConnection.ExecuteNonQuery(sql)
+            
+            If unpaid_inexistant + unpaid_insolvent + unpaid_CompteSolde + longtime_DomWaiting + paid + eddPaymentToDomProblem + eddPaymentToPaid + eddCustomersToRecurent > 0 Then
                 clsMsgError.MsgBox("Domiciliation : " & coda_filename & vbNewLine & _
                 " Paid : " & paid & vbNewLine & _
                 " Unpaid inexistant : " & unpaid_inexistant & vbNewLine & _
                 " Unpaid insolvent : " & unpaid_insolvent & _
                 " Unpaid compteSolde : " & unpaid_CompteSolde & _
-                " LongTime Dom : " & longtime_DomWaiting)
+                " LongTime Dom : " & longtime_DomWaiting & _
+                " EDDPaymentToDomProblem : " & eddPaymentToDomProblem & _
+                " EDDPaymentToPaid : " & eddPaymentToPaid & _
+                " EDDCustomersToRecurent : " & eddCustomersToRecurent)
             End If
 
             DvdPostData.clsConnection.CommitTransaction(True)
@@ -1071,6 +1089,19 @@ Public Class clsCoda2
 
     End Sub
 
+    Private Sub EddPaymentAndCustomerUpdate(ByRef eddPaymentToDomProblem As Integer, ByRef eddPaymentToPaid As Integer, ByRef eddCustomersToRecurent As Integer)
+        Dim sql As String
+
+        'sql = DvdPostData.ClsBatchDomiciliation.EDDPaymentToDomProblem()
+        'eddPaymentToDomProblem = DvdPostData.clsConnection.ExecuteNonQuery(sql)
+
+        'sql = DvdPostData.ClsBatchDomiciliation.EDDPaymentToPaid()
+        'eddPaymentToPaid = DvdPostData.clsConnection.ExecuteNonQuery(sql)
+
+        'sql = DvdPostData.ClsBatchDomiciliation.UpdateCustomersEDDMandateFrstToRecurrent()
+        'eddCustomersToRecurent = DvdPostData.clsConnection.ExecuteNonQuery(sql)
+
+    End Sub
     Public Function AnalyseFile(ByVal filePath As String) As Boolean
 
         Dim lstDataCoda As List(Of Coda)

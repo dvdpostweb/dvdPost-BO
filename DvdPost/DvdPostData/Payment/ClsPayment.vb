@@ -113,6 +113,49 @@ Public Class ClsPayment
         Return sql
 
     End Function
+
+    Public Shared Function GetUpdateReturnedToRecurentPayments(ByVal country_id As Integer, ByVal customers_id As Integer)
+
+        Dim sql As String
+
+        sql = " UPDATE payment p join payment_edd pe on p.id = pe.pmt_instr_id  "
+        sql = sql & " join customers_edd edd on edd.customers_id = p.customers_id "
+        sql = sql & " set p.payment_status = " & PaymentOfflineData.StepPayment.WAITING_PAYMENT
+        sql = sql & " , user_modified = " & clsSession.user_id
+        sql = sql & " , last_modified = now() "
+        sql = sql & " WHERE pe.sequence_type = 'FRST' and type_r_transaction =  " & PaymentOfflineData.Type_R_Transaction.R_RETURN & "  and p.payment_status = " & PaymentOfflineData.StepPayment.DOM_PROBLEM
+        'sql = sql & " AND customers_abo = 1 "
+        'sql = sql & " AND customers_abo_payment_method = " & typePayment & " and customers_abo_suspended = 0 "
+
+        If customers_id > -1 Then
+            sql = sql & " AND c.customers_id = " & customers_id
+        End If
+
+        Return sql
+
+    End Function
+
+    Public Shared Function GetUpdateForceMandateUpdatePayment(ByVal country_id As Integer, ByVal customers_id As Integer)
+
+        Dim sql As String
+
+        sql = " UPDATE payment p join payment_edd pe on p.id = pe.pmt_instr_id  "
+        sql = sql & " join customers_edd edd on edd.customers_id = p.customers_id "
+        sql = sql & " set p.payment_status = " & PaymentOfflineData.StepPayment.WAITING_PAYMENT
+        sql = sql & " , user_modified = " & clsSession.user_id
+        sql = sql & " , last_modified = now(), edd.force_mandate_update = 0 "
+        sql = sql & " WHERE edd.force_mandate_update = 1 AND p.payment_status = " & PaymentOfflineData.StepPayment.EDD_CHANGED
+        'sql = sql & " AND customers_abo = 1 "
+        'sql = sql & " AND customers_abo_payment_method = " & typePayment & " and customers_abo_suspended = 0 "
+
+        If customers_id > -1 Then
+            sql = sql & " AND edd.customers_id = " & customers_id
+        End If
+
+        Return sql
+
+    End Function
+
     Public Shared Function GetUpdatePaymentStatus(ByVal list_id As String, ByVal status As PaymentOfflineData.StepPayment) As String
         Dim sql As String
         sql = " update payment p " & _
@@ -181,6 +224,8 @@ Public Class ClsPayment
 
     Public Shared Function CreatePayPalPaymentsHistory(ByVal payment_id As Integer, ByVal xml_request As String, ByVal xml_response As String, ByVal message As String, ByVal customers_id As Integer)
         Dim sql As String
+
+
         sql = "insert into paypal_payments_history "
         sql = sql & " (payment_id, pp_request, pp_response, created_date, message, customer_id) "
         sql = sql & " values (" & payment_id & ", '" & xml_request & "', '" & xml_response & "',now() , '" & message & "', " & customers_id & ")"
@@ -227,7 +272,8 @@ Public Class ClsPayment
                                                  ByVal new_status As Integer, _
                                                  ByVal delay As Integer, _
                                                  ByVal isclosed As Boolean, _
-                                                 ByVal account_movements_id As String) As String
+                                                 ByVal account_movements_id As String, _
+                                                 Optional ByVal payment_method As ClsCustomersData.Payment_Method = ClsCustomersData.Payment_Method.ALL) As String
         Dim sql As String
         Dim sqlConditionForTransition As String
         sql = " update payment set " & _
@@ -246,6 +292,9 @@ Public Class ClsPayment
         End If
 
         sql = sql & " where payment_status=" & old_status
+        If payment_method = ClsCustomersData.Payment_Method.ALL Then
+            sql = sql & "   and payment_method = " & payment_method
+        End If
         sql = sql & sqlConditionForTransition
 
         Return sql

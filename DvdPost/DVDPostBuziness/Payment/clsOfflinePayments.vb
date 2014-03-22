@@ -36,6 +36,16 @@ Public Class clsOffLinePayments
     Public Const DAYS_LETTER_AVOCAT_SENT As Integer = 20
     Public Const DAYS_EUROFIDES_SENT As Integer = 30
 
+    Public Const EDD_DAYS_WILL_PAY As Integer = 10
+    Public Const EDD_DAYS_MAIL_SENT As Integer = 10
+    Public Const EDD_DAYS_MAIL2_SENT As Integer = 10
+    Public Const EDD_DAYS_LETTER_SENT As Integer = 20
+
+    Public Const PAYPAL_DAYS_WILL_PAY As Integer = 10
+    Public Const PAYPAL_DAYS_MAIL_SENT As Integer = 10
+    Public Const PAYPAL_DAYS_MAIL2_SENT As Integer = 10
+    Public Const PAYPAL_DAYS_LETTER_SENT As Integer = 20
+
 #End Region
 
 
@@ -50,7 +60,6 @@ Public Class clsOffLinePayments
         Select Case stepcurrent
             Case PaymentOfflineData.StepPayment.CREATE_RECOVERY
                 Return PaymentOfflineData.StepPayment.MAIL_TO_SEND
-
 
             Case PaymentOfflineData.StepPayment.MAIL_TO_SEND
                 Return PaymentOfflineData.StepPayment.MAIL_SENT
@@ -92,7 +101,110 @@ Public Class clsOffLinePayments
 
     End Function
 
-    Public Sub UpdatePaymentOfflineStatus(ByVal old_status As Integer, ByVal new_status As Integer, ByVal delay As Integer, Optional ByVal isClosed As Boolean = False, Optional ByVal account_movements_id As String = Nothing)
+    Public Function DomiciliationPaymentRecovery_StepNextPaymentOffline(ByVal stepcurrent As PaymentOfflineData.StepPayment) As PaymentOfflineData.StepPayment
+
+
+        Select Case stepcurrent
+            Case PaymentOfflineData.StepPayment.EDD_WILL_PAY
+                Return PaymentOfflineData.StepPayment.MAIL2_TO_SEND
+
+            Case PaymentOfflineData.StepPayment.MAIL_SENT
+                Return PaymentOfflineData.StepPayment.MAIL2_TO_SEND
+
+            Case PaymentOfflineData.StepPayment.MAIL2_TO_SEND
+                Return PaymentOfflineData.StepPayment.MAIL2_SENT
+
+            Case PaymentOfflineData.StepPayment.MAIL2_SENT
+                Return PaymentOfflineData.StepPayment.LETTER_TO_SEND
+
+            Case PaymentOfflineData.StepPayment.LETTER_TO_SEND
+                Return PaymentOfflineData.StepPayment.LETTER_SENT
+
+            Case PaymentOfflineData.StepPayment.LETTER_SENT
+                Return PaymentOfflineData.StepPayment.CALL
+
+            Case PaymentOfflineData.StepPayment.DELAY_PROCESS, _
+                 PaymentOfflineData.StepPayment.RECALL_CUSTOMERS
+
+                Return PaymentOfflineData.StepPayment.LETTER_AVOCAT_TO_SEND
+
+            Case PaymentOfflineData.StepPayment.LETTER_AVOCAT_TO_SEND
+                Return PaymentOfflineData.StepPayment.LETTER_AVOCAT_SENT
+
+            Case PaymentOfflineData.StepPayment.LETTER_AVOCAT_SENT
+                Return PaymentOfflineData.StepPayment.EUROFIDES_TO_SEND
+
+            Case PaymentOfflineData.StepPayment.EUROFIDES_TO_SEND
+                Return PaymentOfflineData.StepPayment.EUROFIDES_SENT
+
+            Case Else
+                Return Nothing
+
+        End Select
+
+
+    End Function
+
+    Public Function OgonePaymentRecovery_StepNextPaymentOffline(ByVal stepcurrent As PaymentOfflineData.StepPayment) As PaymentOfflineData.StepPayment
+
+        StepNextPaymentOffline(stepcurrent)
+    End Function
+
+    Public Function VirmanPaymentRecovery_StepNextPaymentOffline(ByVal stepcurrent As PaymentOfflineData.StepPayment) As PaymentOfflineData.StepPayment
+
+        StepNextPaymentOffline(stepcurrent)
+    End Function
+
+    Public Function PaypalPaymentRecovery_StepNextPaymentOffline(ByVal stepcurrent As PaymentOfflineData.StepPayment) As PaymentOfflineData.StepPayment
+
+        Select Case stepcurrent
+            Case PaymentOfflineData.StepPayment.PAYPAL_WILL_PAY
+                Return PaymentOfflineData.StepPayment.MAIL2_TO_SEND
+
+            Case PaymentOfflineData.StepPayment.MAIL_SENT
+                Return PaymentOfflineData.StepPayment.MAIL2_TO_SEND
+
+            Case PaymentOfflineData.StepPayment.MAIL2_TO_SEND
+                Return PaymentOfflineData.StepPayment.MAIL2_SENT
+
+            Case PaymentOfflineData.StepPayment.MAIL2_SENT
+                Return PaymentOfflineData.StepPayment.LETTER_TO_SEND
+
+            Case PaymentOfflineData.StepPayment.LETTER_TO_SEND
+                Return PaymentOfflineData.StepPayment.LETTER_SENT
+
+            Case PaymentOfflineData.StepPayment.LETTER_SENT
+                Return PaymentOfflineData.StepPayment.CALL
+
+            Case PaymentOfflineData.StepPayment.DELAY_PROCESS, _
+                 PaymentOfflineData.StepPayment.RECALL_CUSTOMERS
+
+                Return PaymentOfflineData.StepPayment.LETTER_AVOCAT_TO_SEND
+
+            Case PaymentOfflineData.StepPayment.LETTER_AVOCAT_TO_SEND
+                Return PaymentOfflineData.StepPayment.LETTER_AVOCAT_SENT
+
+            Case PaymentOfflineData.StepPayment.LETTER_AVOCAT_SENT
+                Return PaymentOfflineData.StepPayment.EUROFIDES_TO_SEND
+
+            Case PaymentOfflineData.StepPayment.EUROFIDES_TO_SEND
+                Return PaymentOfflineData.StepPayment.EUROFIDES_SENT
+
+            Case Else
+                Return Nothing
+
+        End Select
+        'StepNextPaymentOffline(stepcurrent)
+    End Function
+
+    Public Sub UpdatePaymentOfflineStatus(ByVal old_status As Integer, ByVal new_status As Integer, ByVal delay As Integer, Optional ByVal payment_method As ClsCustomersData.Payment_Method = ClsCustomersData.Payment_Method.ALL, Optional ByVal isClosed As Boolean = False, Optional ByVal account_movements_id As String = Nothing)
+        If old_status = 0 Then Exit Sub
+
+        DvdPostData.clsConnection.ExecuteNonQuery(DvdPostData.PaymentOfflineData.UpdateStatus(old_status, new_status, delay, payment_method, isClosed, account_movements_id))
+
+    End Sub
+
+    Public Sub UpdatePaymentOfflineStatusAndSetVodOnly(ByVal old_status As Integer, ByVal new_status As Integer, ByVal delay As Integer, Optional ByVal isClosed As Boolean = False, Optional ByVal account_movements_id As String = Nothing)
         If old_status = 0 Then Exit Sub
 
         DvdPostData.clsConnection.ExecuteNonQuery(DvdPostData.PaymentOfflineData.UpdateStatus(old_status, new_status, delay, isClosed, account_movements_id))
@@ -134,6 +246,94 @@ Public Class clsOffLinePayments
         DvdPostData.clsConnection.CommitTransaction(True)
 
     End Sub
+
+    Public Sub OgonePaymentRecovery_ApplyAllTransitions()
+        'ABO
+        OgonePaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.CREATE_RECOVERY)
+
+        SendMail(PaymentOfflineData.StepPayment.MAIL_TO_SEND, DVDPostBuziness.clsMail.Mail.MAIL_RECOVERY)
+        OgonePaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.MAIL_SENT)
+
+        SendMail(PaymentOfflineData.StepPayment.MAIL2_TO_SEND, DVDPostBuziness.clsMail.Mail.MAIL2_RECOVERY)
+        OgonePaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.MAIL2_SENT)
+
+        sendLetter(PaymentOfflineData.TypeSend.LETTER, PaymentOfflineData.StepPayment.LETTER_TO_SEND)
+        OgonePaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.LETTER_SENT)
+
+        OgonePaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.DELAY_PROCESS)
+        OgonePaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.RECALL_CUSTOMERS)
+        OgonePaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.LETTER_AVOCAT_SENT)
+
+        DvdPostData.clsConnection.CommitTransaction(True)
+
+    End Sub
+
+    Public Sub VirmanPaymentRecovery_ApplyAllTransitions()
+        'ABO
+        VirmanPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.CREATE_RECOVERY)
+
+        SendMail(PaymentOfflineData.StepPayment.MAIL_TO_SEND, DVDPostBuziness.clsMail.Mail.MAIL_RECOVERY)
+        VirmanPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.MAIL_SENT)
+
+        SendMail(PaymentOfflineData.StepPayment.MAIL2_TO_SEND, DVDPostBuziness.clsMail.Mail.MAIL2_RECOVERY)
+        VirmanPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.MAIL2_SENT)
+
+        sendLetter(PaymentOfflineData.TypeSend.LETTER, PaymentOfflineData.StepPayment.LETTER_TO_SEND)
+        VirmanPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.LETTER_SENT)
+
+        VirmanPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.DELAY_PROCESS)
+        VirmanPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.RECALL_CUSTOMERS)
+        VirmanPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.LETTER_AVOCAT_SENT)
+
+        DvdPostData.clsConnection.CommitTransaction(True)
+
+    End Sub
+
+    Public Sub PayPalPaymentRecovery_ApplyAllTransitions()
+        'ABO
+        PayPalPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.PAYPAL_CHANGED)
+        PayPalPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.MAIL_SENT)
+
+        'SendMail(PaymentOfflineData.StepPayment.MAIL_TO_SEND, DVDPostBuziness.clsMail.Mail.MAIL_RECOVERY)
+        'PayPalPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.MAIL_SENT)
+
+        SendMail(PaymentOfflineData.StepPayment.MAIL2_TO_SEND, DVDPostBuziness.clsMail.Mail.MAIL2_RECOVERY, ClsCustomersData.Payment_Method.PAYPAL)
+        PayPalPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.MAIL2_SENT)
+
+        sendLetter(PaymentOfflineData.TypeSend.LETTER, PaymentOfflineData.StepPayment.LETTER_TO_SEND)
+        PayPalPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.LETTER_SENT)
+
+        PayPalPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.DELAY_PROCESS)
+        PayPalPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.RECALL_CUSTOMERS)
+        PayPalPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.LETTER_AVOCAT_SENT)
+
+        DvdPostData.clsConnection.CommitTransaction(True)
+
+    End Sub
+
+    Public Sub DomiciliationPaymentRecovery_ApplyAllTransitions()
+        'ABO
+        DomiciliationPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.EDD_WILL_PAY)
+        DomiciliationPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.MAIL_SENT)
+
+        'SendMail(PaymentOfflineData.StepPayment.MAIL_TO_SEND, DVDPostBuziness.clsMail.Mail.MAIL_RECOVERY)
+        'DomiciliationPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.MAIL_SENT)
+
+        SendMail(PaymentOfflineData.StepPayment.MAIL2_TO_SEND, DVDPostBuziness.clsMail.Mail.MAIL2_RECOVERY, ClsCustomersData.Payment_Method.DOMICILIATION)
+        DomiciliationPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.MAIL2_SENT)
+
+        sendLetter(PaymentOfflineData.TypeSend.LETTER, PaymentOfflineData.StepPayment.LETTER_TO_SEND)
+
+        DomiciliationPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.LETTER_SENT)
+
+        DomiciliationPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.DELAY_PROCESS)
+        DomiciliationPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.RECALL_CUSTOMERS)
+        DomiciliationPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.LETTER_AVOCAT_SENT)
+
+        DvdPostData.clsConnection.CommitTransaction(True)
+
+    End Sub
+
     Public Sub applyTransition(ByVal old_status As Integer)
 
         Dim new_Status As Integer = StepNextPaymentOffline(old_status)
@@ -142,6 +342,74 @@ Public Class clsOffLinePayments
         UpdatePaymentOfflineStatus(old_status, new_Status, delay, False, Nothing)
     End Sub
 
+    Public Sub DomiciliationPaymentRecovery_applyTransition(ByVal old_status As Integer)
+
+
+        Dim new_Status As Integer = DomiciliationPaymentRecovery_StepNextPaymentOffline(old_status)
+        Dim delay As Integer = DomiciliationPaymentRecovery_DelayForStep(old_status)
+        If old_status = PaymentOfflineData.StepPayment.MAIL2_SENT Then
+            suspendedPaymentDomiciliation(delay)
+        End If
+        UpdatePaymentOfflineStatus(old_status, new_Status, delay, ClsCustomersData.Payment_Method.DOMICILIATION, False, Nothing)
+
+    End Sub
+
+    Public Sub OgonePaymentRecovery_applyTransition(ByVal old_status As Integer)
+
+
+        Dim new_Status As Integer = OgonePaymentRecovery_StepNextPaymentOffline(old_status)
+        Dim delay As Integer = OgonePaymentRecovery_DelayForStep(old_status)
+
+
+        UpdatePaymentOfflineStatus(old_status, new_Status, delay, ClsCustomersData.Payment_Method.OGONE, False, Nothing)
+
+    End Sub
+
+    Public Sub VirmanPaymentRecovery_applyTransition(ByVal old_status As Integer)
+
+
+        Dim new_Status As Integer = VirmanPaymentRecovery_StepNextPaymentOffline(old_status)
+        Dim delay As Integer = VirmanPaymentRecovery_DelayForStep(old_status)
+
+        UpdatePaymentOfflineStatus(old_status, new_Status, delay, ClsCustomersData.Payment_Method.VIREMENT, False, Nothing)
+
+    End Sub
+
+    Public Sub PayPalPaymentRecovery_applyTransition(ByVal old_status As Integer)
+
+        Dim new_Status As Integer = PaypalPaymentRecovery_StepNextPaymentOffline(old_status)
+        Dim delay As Integer = PayPalPaymentRecovery_DelayForStep(old_status)
+
+        UpdatePaymentOfflineStatus(old_status, new_Status, delay, ClsCustomersData.Payment_Method.PAYPAL, False, Nothing)
+
+    End Sub
+
+    Public Function OgonePaymentRecovery_DelayForStep(ByVal stepcurrent As PaymentOfflineData.StepPayment) As Integer
+        DelayForStep(stepcurrent)
+
+    End Function
+
+    Public Function VirmanPaymentRecovery_DelayForStep(ByVal stepcurrent As PaymentOfflineData.StepPayment) As Integer
+        DelayForStep(stepcurrent)
+
+    End Function
+    Public Function PayPalPaymentRecovery_DelayForStep(ByVal stepcurrent As PaymentOfflineData.StepPayment) As Integer
+        'DelayForStep(stepcurrent)
+
+        Select Case stepcurrent
+            Case PaymentOfflineData.StepPayment.PAYPAL_WILL_PAY
+                Return PAYPAL_DAYS_WILL_PAY
+            Case PaymentOfflineData.StepPayment.MAIL_SENT
+                Return PAYPAL_DAYS_MAIL_SENT
+            Case PaymentOfflineData.StepPayment.MAIL2_SENT
+                Return PAYPAL_DAYS_MAIL2_SENT
+            Case PaymentOfflineData.StepPayment.LETTER_SENT
+                Return PAYPAL_DAYS_LETTER_SENT
+            Case Else
+                Return Nothing
+        End Select
+
+    End Function
     Public Function DelayForStep(ByVal stepcurrent As PaymentOfflineData.StepPayment) As Integer
 
 
@@ -169,12 +437,30 @@ Public Class clsOffLinePayments
 
     End Function
 
-    Public Shadows Sub SendMail(ByVal stepCurrent As Integer, ByVal mail_id As clsMail.Mail)
+    Public Function DomiciliationPaymentRecovery_DelayForStep(ByVal stepcurrent As PaymentOfflineData.StepPayment) As Integer
+
+        Select Case stepcurrent
+            Case PaymentOfflineData.StepPayment.EDD_WILL_PAY
+                Return EDD_DAYS_WILL_PAY
+            Case PaymentOfflineData.StepPayment.MAIL_SENT
+                Return EDD_DAYS_MAIL_SENT
+            Case PaymentOfflineData.StepPayment.MAIL2_SENT
+                Return EDD_DAYS_MAIL2_SENT
+            Case PaymentOfflineData.StepPayment.LETTER_SENT
+                Return EDD_DAYS_LETTER_SENT
+            Case Else
+                Return Nothing
+
+        End Select
+
+    End Function
+
+    Public Shadows Sub SendMail(ByVal stepCurrent As Integer, ByVal mail_id As clsMail.Mail, Optional ByVal payment_method As ClsCustomersData.Payment_Method = ClsCustomersData.Payment_Method.ALL)
 
         Dim dtCustomers As New DataTable
         Dim dtPictureDVD As DataTable = Nothing
 
-        dtCustomers = DvdPostData.clsConnection.FillDataSet(DvdPostData.PaymentOfflineData.GetStepPaymentPrint(stepCurrent))
+        dtCustomers = DvdPostData.clsConnection.FillDataSet(DvdPostData.PaymentOfflineData.GetStepPaymentPrint(stepCurrent, payment_method))
         If dtCustomers.Rows.Count = 0 Then Return
         ' au cas ou on rajouterait les 7 images
         If clsMsgError.MsgBox("Do you want to send " & dtCustomers.Rows.Count & " mail ", MsgBoxStyle.OkCancel) = MsgBoxResult.Ok Then
@@ -197,7 +483,7 @@ Public Class clsOffLinePayments
 
         Dim dtCustomers As New DataTable
         Dim requiredPaymentDate As Date = DateTime.Now.AddDays(notifDaysInAdvance)
-
+        Dim clscust As New DVDPostBuziness.ClsCustomers()
 
         dtCustomers = DvdPostData.clsConnection.FillDataSet(DvdPostData.PaymentOfflineData.GetEddPrePymentNotification(requiredPaymentDate))
         If dtCustomers.Rows.Count = 0 Then Return
@@ -206,7 +492,10 @@ Public Class clsOffLinePayments
             Dim ok As Boolean
             For Each rCustomer As DataRow In dtCustomers.Rows
 
-                ok = clsMail.SendMail(rCustomer, clsMail.Mail.MAIL_EDD_PREPAYMENT_NOTIF, True)
+                Dim price As String = clscust.ManageReductionInfo(rCustomer)
+
+                rCustomer("subscription_price") = price
+                'ok = clsMail.SendMail(rCustomer, clsMail.Mail.MAIL_EDD_PREPAYMENT_NOTIF, True)
                 If Not ok Then
                     clsMsgError.MsgBox("edd mail to customers_id " & rCustomer("customers_id") & " not sent ")
                 End If
@@ -229,7 +518,7 @@ Public Class clsOffLinePayments
 
 
     Public Function GetStep(ByVal stepcurrent As Integer) As String()
-        Dim listAction() As String = {"Mail", "Mail2", "Letter", "Recall", "Delay Process", "Letter Avocat", "EuroFides", "Design Report", "Irrecoverable", "Eurofides To Send"}
+        Dim listAction() As String = {"Mail", "Mail2", "Letter", "Recall", "Delay Process", "Letter Avocat", "EuroFides", "Design Report", "Irrecoverable", "Eurofides To Send", "Dom Changed", "Dom Will Pay", "Dom Mail Sent", "PayPal Changed", "PayPal Will Pay", "PayPal Mail Sent"}
 
         Select Case stepcurrent
             Case PaymentOfflineData.StepPayment.CREATE_RECOVERY
@@ -259,7 +548,12 @@ Public Class clsOffLinePayments
             Case PaymentOfflineData.StepPayment.EUROFIDES_TO_SEND
                 Dim listResult() As String = {listAction(6), listAction(8)}
                 Return listResult
-       
+            Case PaymentOfflineData.StepPayment.DOM_PROBLEM
+                Dim listResult() As String = {listAction(10), listAction(11), listAction(12)}
+                Return listResult
+            Case PaymentOfflineData.StepPayment.PAYPAL_PROBLEM
+                Dim listResult() As String = {listAction(13), listAction(14), listAction(15)}
+                Return listResult
             Case Else
                 Return Nothing
 
@@ -287,9 +581,22 @@ Public Class clsOffLinePayments
             Case "Irrecoverable"
                 ToChangeStatus(PaymentOfflineData.StepPayment.IRRECOVERABLE, GridView1, True)
             Case "Eurofides To Send"
-                ToChangeStatus(PaymentOfflineData.StepPayment.EUROFIDES_TO_SEND, GridView1, True)
+                ToChangeStatus(PaymentOfflineData.StepPayment.EUROFIDES_TO_SEND, GridView1, False)
             Case "Design Report"
                 designReport()
+            Case "Dom Changed"
+                ToChangeStatus(PaymentOfflineData.StepPayment.EDD_CHANGED, GridView1, False)
+            Case "Dom Will Pay"
+                ToChangeStatus(PaymentOfflineData.StepPayment.EDD_WILL_PAY, GridView1, False)
+            Case "Dom Mail Sent"
+                ToChangeStatus(PaymentOfflineData.StepPayment.MAIL_SENT, GridView1, False)
+            Case "PayPal Changed"
+                ToChangeStatus(PaymentOfflineData.StepPayment.PAYPAL_CHANGED, GridView1, False)
+            Case "PayPal Will Pay"
+                ToChangeStatus(PaymentOfflineData.StepPayment.PAYPAL_WILL_PAY, GridView1, False)
+            Case "PayPal Mail Sent"
+                ToChangeStatus(PaymentOfflineData.StepPayment.MAIL_SENT, GridView1, False)
+
         End Select
 
     End Sub
@@ -316,6 +623,24 @@ Public Class clsOffLinePayments
         Dim ok As Boolean
         ' with table suspension
         sql = DvdPostData.ClsCustomersData.GetSelectSuspended()
+        dt = DvdPostData.clsConnection.FillDataSet(sql)
+
+
+        For Each dr As DataRow In dt.Rows
+            ok = DVDPostBuziness.ClsWebServices.CallSuspended(dr("customers_id"), DateTime.Now, ClsWebServices.TypeSuspend.PAYMENT)
+            If ok Then cpt_suspended += 1
+        Next
+
+        Return cpt_suspended
+    End Function
+
+    Private Shared Function suspendedPaymentDomiciliation(ByVal delay As Integer) As Integer
+        Dim sql As String
+        Dim dt As DataTable
+        Dim cpt_suspended As Integer
+        Dim ok As Boolean
+        ' with table suspension
+        sql = DvdPostData.ClsCustomersData.GetSelectSuspendedDomiciliation(delay)
         dt = DvdPostData.clsConnection.FillDataSet(sql)
 
 

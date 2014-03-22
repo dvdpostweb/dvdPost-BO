@@ -459,7 +459,7 @@ Public Class ClsVod
                   ", updated_at = now() " & _
                   " where country = " & strCountry & " and imdb_id = " & imdb_id & "; "
             If doStatusUpdate Then
-                sql = sql & " update streaming_products set status = " & strStatus & ", drm = " & str_drm & _
+                sql = sql & " update streaming_products set status = " & strStatus & ", drm = " & str_drm & ", studio_id = " & strStudio & _
                 ", updated_at = now() " & _
                 " where source = 'alphanetworks' and imdb_id = " & imdb_id & _
                 " and status <> 'deleted' and language_id " & strlanguagedoStatusUpdate & " and subtitle_id " & strLanguageSubtitledoStatusUpdate & ";"

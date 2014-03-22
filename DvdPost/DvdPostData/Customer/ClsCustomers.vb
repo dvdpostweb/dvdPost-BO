@@ -82,6 +82,7 @@ Public Class ClsCustomersData
         VIREMENT = 3
         PAYPAL = 4
         '  BANK_TRANSFER = 0
+        ALL = 5
     End Enum
 
     Public Enum TypePaymentCommunication
@@ -147,6 +148,16 @@ Public Class ClsCustomersData
     Public Enum WhereDVD
         [IN] = 1
         [OUT] = 0
+    End Enum
+
+    Public Enum EDD_MANDATE_STATUS
+        waiting_signed_document = 1
+        signed_document_received = 2
+        first = 3
+        recurrent = 4
+        stop_initated = 5
+        stop_sent_in_bank = 6
+        sttoped = 7
     End Enum
 
 #End Region
@@ -252,20 +263,20 @@ Public Class ClsCustomersData
 
     Public Shared Function getSelectCustomersEDDChanges(ByVal customers_id As Integer) As String
         Dim sql As String
-        sql = " SELECT ce.iban <> ceh.iban iban, ce.edd_mandate_id <> ceh.edd_mandate_id edd_mandate_id, ce.bic <> ceh.bic bic, ce.kbo <> ceh.kbo kbo " & _
+        sql = " SELECT if(isnull(ceh.iban) or isnull(ce.iban),0,ce.iban <> ceh.iban) iban, if(isnull(ceh.edd_mandate_id) or isnull(ce.edd_mandate_id),0,ce.edd_mandate_id <> ceh.edd_mandate_id) edd_mandate_id, if(isnull(ceh.bic) or isnull(ce.bic),0,ce.bic <> ceh.bic) bic, if(isnull(ceh.kbo ) or isnull(ce.kbo ),0,ce.kbo  <> ceh.kbo ) kbo " & _
               " FROM customers_edd ce join ( select * from customers_edd_history " & _
-              " WHERE history_created_at < (SELECT cre_dt_tm FROM payment_edd p WHERE customers_id = " & customers_id & _
-              " AND type_r_transaction = 0 order by id desc limit 1 ) order by history_id desc limit 1) ceh on ce.customers_id = ceh.customers_id "
+              " WHERE history_created_at > (SELECT cre_dt_tm FROM payment_edd p WHERE customers_id = " & customers_id & _
+              " AND type_r_transaction = " & PaymentOfflineData.Type_R_Transaction.PAID & " order by id desc limit 1 ) order by history_id ) ceh on ce.customers_id = ceh.customers_id where ce.customers_id = " & customers_id & " limit 1"
 
         Return sql
     End Function
 
     Public Shared Function getSelectCustomersEDDChangesWithOldValues(ByVal customers_id As Integer) As String
         Dim sql As String
-        sql = " SELECT ce.iban <> ceh.iban iban, ceh.iban oldiban, ce.edd_mandate_id <> ceh.edd_mandate_id edd_mandate_id, ceh.edd_mandate_id oldedd_mandate_id, ce.bic <> ceh.bic bic, ceh.bic oldbic " & _
+        sql = " SELECT if(isnull(ceh.iban) or isnull(ce.iban),0,ce.iban <> ceh.iban) iban, ceh.iban oldiban, if(isnull(ceh.edd_mandate_id) or isnull(ce.edd_mandate_id),0,ce.edd_mandate_id <> ceh.edd_mandate_id) edd_mandate_id, ceh.edd_mandate_id oldedd_mandate_id, if(isnull(ceh.bic) or isnull(ce.bic),0,ce.bic <> ceh.bic) bic, ceh.bic oldbic " & _
               " FROM customers_edd ce join ( select * from customers_edd_history " & _
-              " WHERE history_created_at < (SELECT cre_dt_tm FROM payment_edd p WHERE customers_id = " & customers_id & _
-              " AND type_r_transaction = 0 order by id desc limit 1 ) order by history_id desc limit 1) ceh on ce.customers_id = ceh.customers_id "
+              " WHERE history_created_at > (SELECT cre_dt_tm FROM payment_edd p WHERE customers_id = " & customers_id & _
+              " AND type_r_transaction = " & PaymentOfflineData.Type_R_Transaction.PAID & " order by id desc limit 1 ) order by history_id ) ceh on ce.customers_id = ceh.customers_id where ce.customers_id = " & customers_id & " limit 1"
 
         Return sql
     End Function
@@ -701,8 +712,8 @@ Public Class ClsCustomersData
         sql = sql & " dom80.* , edd.*, "
         sql = sql & " ( SELECT if(isnull(ceh.bic) or isnull(ce.bic),0,ce.bic <> ceh.bic) " & _
                     " FROM customers_edd ce left join ( select * from customers_edd_history ceh1 " & _
-                    " WHERE history_created_at < (SELECT cre_dt_tm FROM payment_edd p WHERE p.customers_id = ceh1.customers_id " & _
-                    " AND type_r_transaction = 0 order by id desc limit 1 ) order by history_id desc limit 1) ceh on ce.customers_id = ceh.customers_id where ce.customers_id = c.customers_id) bic_changed"
+                    " WHERE history_created_at > (SELECT cre_dt_tm FROM payment_edd p WHERE p.customers_id = ceh1.customers_id " & _
+                    " AND type_r_transaction = " & PaymentOfflineData.Type_R_Transaction.PAID & " order by id desc limit 1 ) order by history_id desc ) ceh on ce.customers_id = ceh.customers_id where ce.customers_id = c.customers_id limit 1) bic_changed"
         sql = sql & " FROM customers c join products p on c.customers_next_abo_type = p.products_id "
         sql = sql & " join customer_attributes ca on c.customers_id = ca.customer_id "
         sql = sql & " join customers_edd edd on edd.customers_id = c.customers_id "
@@ -718,6 +729,106 @@ Public Class ClsCustomersData
             sql = sql & " AND EntityID = " & country_id
         End If
         Return sql
+    End Function
+
+    Public Shared Function GetSelectDomiciliationReturnedToRecurent(ByVal typePayment As Integer, ByVal country_id As Integer, ByVal customers_id As Integer) As String
+        Dim sql As String
+
+        Dim strmysqldate As String = DVDPostTools.ClsDate.formatDate()
+
+        sql = "select c.customers_abo_auto_stop_next_reconduction,"
+        sql = sql & " c.customers_next_abo_type,c.customers_abo,"
+        sql = sql & " c.customers_abo_type,"
+        sql = sql & " c.customers_abo_payment_method,"
+        sql = sql & " c.customers_id,"
+        sql = sql & " c.customers_abo_dvd_norm,"
+        sql = sql & " c.customers_abo_dvd_adult,"
+        sql = sql & " c.customers_email_address,"
+        sql = sql & " concat(c.customers_firstname,' ',c.customers_lastname) customers_name,"
+        sql = sql & " p.products_model,"
+        sql = sql & "if(date(c.customers_abo_discount_recurring_to_date) > now(), 1, 0) as recurring_discount, "
+        sql = sql & " c.customers_abo_validityto,"
+        sql = sql & " c.activation_discount_code_id,"
+        sql = sql & " c.activation_discount_code_type,"
+        sql = sql & " c.customers_next_discount_code,"
+        sql = sql & " domiciliation_number,"
+        sql = sql & " c.ogone_card_type,"
+        sql = sql & " c.ogone_card_no,"
+        sql = sql & " c.ogone_exp_date,"
+        sql = sql & " p.products_price,"
+        sql = sql & " pe.InstdAmt amount,"
+        sql = sql & " ca.combined, "
+        sql = sql & "( SELECT if(pa.qty_dvd_max >= 0, 1, 0) FROM products_abo pa WHERE pa.products_id = c.customers_next_abo_type ) as npp_logic, " ' npp
+        sql = sql & " dom80.* , edd.*, pe.id as parent_id, pe.pmt_instr_id, pe.end_to_end_id, "
+        sql = sql & " ( SELECT if(isnull(ceh.bic) or isnull(ce.bic),0,ce.bic <> ceh.bic) " & _
+                    " FROM customers_edd ce left join ( select * from customers_edd_history ceh1 " & _
+                    " WHERE history_created_at > (SELECT cre_dt_tm FROM payment_edd p WHERE p.customers_id = ceh1.customers_id " & _
+                    " AND type_r_transaction = " & PaymentOfflineData.Type_R_Transaction.PAID & " order by id desc limit 1 ) order by history_id desc ) ceh on ce.customers_id = ceh.customers_id where ce.customers_id = c.customers_id limit 1) bic_changed"
+        sql = sql & " FROM payment_edd pe join customers c on pe.customers_id = c.customers_id join products p on c.customers_next_abo_type = p.products_id "
+        sql = sql & " join customer_attributes ca on c.customers_id = ca.customer_id "
+        sql = sql & " join customers_edd edd on edd.customers_id = c.customers_id "
+        sql = sql & " left join dom80 dom80 on dom80.dom_nr = c.domiciliation_number "
+        sql = sql & " WHERE pe.sequence_type = 'FRST' and type_r_transaction = " & PaymentOfflineData.Type_R_Transaction.R_RETURN
+        'sql = sql & " AND customers_abo = 1 "
+        'sql = sql & " AND customers_abo_payment_method = " & typePayment & " and customers_abo_suspended = 0 "
+
+        If customers_id > -1 Then
+            sql = sql & " AND c.customers_id = " & customers_id
+        Else
+            sql = sql & " AND EntityID = " & country_id
+        End If
+        Return sql
+
+    End Function
+
+    Public Shared Function GetSelectDomiciliationForceMandateUpdate(ByVal typePayment As Integer, ByVal country_id As Integer, ByVal customers_id As Integer) As String
+        Dim sql As String
+
+        Dim strmysqldate As String = DVDPostTools.ClsDate.formatDate()
+
+        sql = "select c.customers_abo_auto_stop_next_reconduction,"
+        sql = sql & " c.customers_next_abo_type,c.customers_abo,"
+        sql = sql & " c.customers_abo_type,"
+        sql = sql & " c.customers_abo_payment_method,"
+        sql = sql & " c.customers_id,"
+        sql = sql & " c.customers_abo_dvd_norm,"
+        sql = sql & " c.customers_abo_dvd_adult,"
+        sql = sql & " c.customers_email_address,"
+        sql = sql & " concat(c.customers_firstname,' ',c.customers_lastname) customers_name,"
+        sql = sql & " p.products_model,"
+        sql = sql & "if(date(c.customers_abo_discount_recurring_to_date) > now(), 1, 0) as recurring_discount, "
+        sql = sql & " c.customers_abo_validityto,"
+        sql = sql & " c.activation_discount_code_id,"
+        sql = sql & " c.activation_discount_code_type,"
+        sql = sql & " c.customers_next_discount_code,"
+        sql = sql & " c.domiciliation_number,"
+        sql = sql & " c.ogone_card_type,"
+        sql = sql & " c.ogone_card_no,"
+        sql = sql & " c.ogone_exp_date,"
+        sql = sql & " p.products_price,"
+        sql = sql & " pe.InstdAmt amount,"
+        sql = sql & " ca.combined, "
+        sql = sql & "( SELECT if(pa.qty_dvd_max >= 0, 1, 0) FROM products_abo pa WHERE pa.products_id = c.customers_next_abo_type ) as npp_logic, " ' npp
+        sql = sql & " dom80.* , edd.*, pe.id as parent_id, "
+        sql = sql & " ( SELECT if(isnull(ceh.bic) or isnull(ce.bic),0,ce.bic <> ceh.bic) "
+        sql = sql & " FROM customers_edd ce left join ( select * from customers_edd_history ceh1 "
+        sql = sql & " WHERE history_created_at > (SELECT cre_dt_tm FROM payment_edd p WHERE p.customers_id = ceh1.customers_id "
+        sql = sql & " AND type_r_transaction = " & PaymentOfflineData.Type_R_Transaction.PAID & " order by id desc limit 1 ) order by history_id desc ) ceh on ce.customers_id = ceh.customers_id where ce.customers_id = c.customers_id limit 1) bic_changed"
+        sql = sql & " , pe.id as parent_id, pe.pmt_instr_id, pe.end_to_end_id "
+        sql = sql & " FROM payment py join customers c on py.customers_id = c.customers_id join products p on c.customers_next_abo_type = p.products_id "
+        sql = sql & " join payment_edd pe on pe.pmt_instr_id = py.id "
+        sql = sql & " join customer_attributes ca on c.customers_id = ca.customer_id "
+        sql = sql & " join customers_edd edd on edd.customers_id = c.customers_id "
+        sql = sql & " left join dom80 dom80 on dom80.dom_nr = c.domiciliation_number "
+        sql = sql & " WHERE edd.force_mandate_update = 1 AND py.payment_status = " & PaymentOfflineData.StepPayment.EDD_CHANGED
+
+        If customers_id > -1 Then
+            sql = sql & " AND c.customers_id = " & customers_id
+            'Else
+            '    sql = sql & " AND EntityID = " & country_id
+        End If
+        Return sql
+
     End Function
 
     Public Shared Function GetSelectReconductionPayPalCustomers(ByVal typePayment As Integer, ByVal country_id As Integer, ByVal customers_id As Integer) As String
@@ -755,6 +866,48 @@ Public Class ClsCustomersData
         sql = sql & " WHERE date(customers_abo_validityto) <= '" & strmysqldate & "'"
         sql = sql & " AND customers_abo = 1 "
         sql = sql & " AND customers_abo_payment_method = " & typePayment & " and customers_abo_suspended = 0 "
+
+
+        If customers_id > -1 Then
+            sql = sql & " AND c.customers_id = " & customers_id
+        Else
+            sql = sql & " AND EntityID = " & country_id
+        End If
+        Return sql
+    End Function
+
+    Public Shared Function GetSelectPayPalRetryPayment(ByVal typePayment As Integer, ByVal country_id As Integer, ByVal customers_id As Integer) As String
+        Dim sql As String
+
+        Dim strmysqldate As String = DVDPostTools.ClsDate.formatDate()
+
+        sql = "select c.customers_abo_auto_stop_next_reconduction,"
+        sql = sql & " c.customers_next_abo_type,c.customers_abo,"
+        sql = sql & " c.customers_abo_type,"
+        sql = sql & " c.customers_abo_payment_method,"
+        sql = sql & " c.customers_id,"
+        sql = sql & " c.customers_abo_dvd_norm,"
+        sql = sql & " c.customers_abo_dvd_adult,"
+        sql = sql & " c.customers_email_address,"
+        sql = sql & " concat(c.customers_firstname,' ',c.customers_lastname) customers_name,"
+        sql = sql & " p.products_model,"
+        sql = sql & "if(date(c.customers_abo_discount_recurring_to_date) > now(), 1, 0) as recurring_discount, "
+        sql = sql & " c.customers_abo_validityto,"
+        sql = sql & " c.activation_discount_code_id,"
+        sql = sql & " c.activation_discount_code_type,"
+        sql = sql & " c.customers_next_discount_code,"
+        sql = sql & " p.products_price,"
+        sql = sql & " pe.amount amount,"
+        sql = sql & " ca.combined,  "
+        sql = sql & "( SELECT if(pa.qty_dvd_max >= 0, 1, 0) FROM products_abo pa WHERE pa.products_id = c.customers_next_abo_type ) as npp_logic, " 'npp
+        sql = sql & " c.paypal_agreement_id, c.paypal_transaction_id, " 'paypal
+        sql = sql & " pe.id payment_id"
+        sql = sql & " FROM payment pe join customers c on pe.customers_id = c.customers_id "
+        sql = sql & " JOIN products p on c.customers_next_abo_type = p.products_id "
+        sql = sql & " join customer_attributes ca on c.customers_id = ca.customer_id "
+        sql = sql & " WHERE pe.payment_status = " & PaymentOfflineData.StepPayment.PAYPAL_CHANGED
+        sql = sql & " AND c.customers_abo = 1 "
+        sql = sql & " AND pe.payment_method = " & typePayment
 
 
         If customers_id > -1 Then
@@ -1009,6 +1162,20 @@ Public Class ClsCustomersData
               "                                            ) payment_offline on payment_offline.customers_id = c.customers_id" & _
               " join (select p.customers_id,count(*) cpt from payment p  where p.payment_status in (" & PaymentOfflineData.GetListRecovery() & ") group by p.customers_id) qty_paid on qty_paid.customers_id = c.customers_id " & _
               " where c.customers_abo_suspended = " & Suspended.OK & " and c.customers_abo = " & abo.VALID & " and (payment_offline.cpt > 0 or qty_paid.cpt >= 2) "
+
+        Return sql
+    End Function
+
+    Public Shared Function GetSelectSuspendedDomiciliation(ByVal delay As Integer) As String
+        Dim sql As String
+
+        sql = "select * from customers c left join (select p.customers_id,count(*) cpt from payment p " & _
+              "                                             where p.payment_method = " & ClsCustomersData.Payment_Method.DOMICILIATION & _
+              "                                               and p.payment_status in (" & PaymentOfflineData.StepPayment.MAIL2_SENT & ")" & _
+              "                                               and to_days(date_add(p.last_modified,INTERVAL " & delay & " DAY))<=to_days(curdate()) " & _
+              "                                             group by p.customers_id " & _
+              "                                            ) payment_offline on payment_offline.customers_id = c.customers_id " & _
+              " where c.customers_abo_suspended = " & Suspended.OK & " and c.customers_abo = " & abo.VALID & " and payment_offline.cpt > 0 "
 
         Return sql
     End Function
@@ -1579,6 +1746,27 @@ Public Class ClsCustomersData
 
         Return sql
 
+    End Function
+
+    Public Shared Function getUpdateOnlyVod(ByVal customer_id As Integer, ByVal only_vod As Integer, _
+                                            ByVal delay As Integer, ByVal old_status As Integer, _
+                                            ByVal new_status As Integer) As String
+        Dim sql As String
+
+        sql = " update customer_attributes ca join payment p on ca.customer_id = p.customers_id " & _
+              " set ca.only_vod = " & only_vod & ", ca.updated_at = now() " & _
+              ", p.last_modified=now() " & _
+              ", p.user_modified = " & clsSession.user_id & _
+              ", p.payment_status = " & new_status & _
+              " where p.payment_status = " & old_status & _
+              "   and p.payment_method = " & ClsCustomersData.Payment_Method.DOMICILIATION & _
+              "   and to_days(date_add(p.last_modified,INTERVAL " & delay & " DAY))<=to_days(curdate())"
+
+        If customer_id > -1 Then
+            sql = sql & " and ca.customer_id = " & customer_id
+        End If
+
+        Return sql
     End Function
 
 

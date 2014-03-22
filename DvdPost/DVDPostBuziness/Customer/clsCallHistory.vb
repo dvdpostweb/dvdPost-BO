@@ -99,6 +99,12 @@ Public Class clsCallHistory
         Return dv
     End Function
 
+    Public Shared Function getParent(ByVal id As Integer, ByVal parents As String) As DataView
+        Dim dv As DataView
+        dv = New DataView(arbre, "id = " & id & " and parent_id in (" & parents & ")", "", DataViewRowState.CurrentRows)
+        Return dv
+    End Function
+
     Public Shared Function isMainCurrentNode() As Boolean
         Return DVDPostBuziness.clsCallHistory.Queue.Count = 0
     End Function
@@ -125,22 +131,31 @@ Public Class clsCallHistory
         result = DvdPostData.clsConnection.ExecuteScalar(sql)
         Return result
     End Function
-    '''' <summary>
-    '''' recursive to find the way to nodeMain 
-    '''' </summary>
-    '''' <param name="id"></param>
-    '''' <param name="lst"></param>
-    '''' <remarks></remarks>
-    'Private Shared Sub FindParent(ByVal id As Integer, ByRef lst As List(Of Integer))
-    '    Dim dv As DataView
+    ''' <summary>
+    ''' recursive to find the way to nodeMain 
+    ''' </summary>
+    ''' <param name="id"></param>
+    ''' <param name="lst"></param>
+    ''' <remarks></remarks>
+    Private Shared Sub FindParent(ByVal id As Integer, ByRef lst As List(Of Integer), ByVal dt As DataTable)
+        Dim dv As DataView
+        Dim parents As String = String.Empty
 
-    '    dv = getParent(id)
-    '    lst.Add(id)
-    '    If dv.Count = 1 And Not dv(0)("parent_id") Is DBNull.Value Then
-    '        FindParent(dv(0)("parent_id"), lst)
-    '    End If
+        dv = New DataView(arbre, "id = " & id, "", DataViewRowState.CurrentRows)
+        For Each dr As DataRow In dt.Rows
+            parents &= dr("call_id") & ","
+        Next
+        parents = parents.TrimEnd(" ")
+        parents = parents.TrimEnd(",")
+        dv = getParent(id, parents)
+        lst.Add(id)
+        If dv.Count = 1 And dv.Count > 0 Then
+            If Not dv(0)("parent_id") Is DBNull.Value Then
+                FindParent(dv(0)("parent_id"), lst, dt)
+            End If
+        End If
 
-    'End Sub
+    End Sub
     Public Shared Function Loadhistory(ByVal customers_id As Integer) As DataTable
 
         Dim dt As DataTable
@@ -154,21 +169,24 @@ Public Class clsCallHistory
     End Function
     Public Shared Function LoadValue(ByVal history_id As Integer) As String
 
-        Dim dt As DataTable
+        Dim dt As DataTable = New DataTable()
         Dim sql As String
         Dim result As String = ""
+        Dim lst As List(Of Integer) = New List(Of Integer)
+
         sql = DvdPostData.clsCallHistory.getSelectCallDetailHistory(history_id)
         dt = DvdPostData.clsConnection.FillDataSet(sql)
-
+        dt.Columns.Add("level", System.Type.GetType("System.Int16"))
 
         For Each dr As DataRow In dt.Rows
-            result = dr("text") + " -> " + result
+            lst.Clear()
+            FindParent(dr("call_id"), lst, dt)
+            dr("level") = lst.Count
         Next
 
-
-        'For Each dr As DataRow In dt.Rows
-        '    FindParent(dr("call_id"), lst)
-        'Next
+        For Each dr As DataRow In dt.Select("1=1", "level DESC")
+            result = dr("text") + " -> " + result
+        Next
 
         Return result
     End Function

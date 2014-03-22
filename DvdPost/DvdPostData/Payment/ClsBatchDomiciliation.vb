@@ -10,6 +10,17 @@ Public Class ClsBatchDomiciliation
         ACTIVATION_DOM70
         REJET_OGONE
     End Enum
+
+    Public Enum EDD_MANDATE_STATUS
+        WAITING_SIGNED_DOCUMENT = 1
+        SIGNED_DOCUMENT_RECEIVED = 2
+        FIRST = 3
+        RECURRENT = 4
+        stop_initated = 5
+        stop_sent_in_bank = 6
+        sttoped = 7
+    End Enum
+
     Public Shared Function GetListUnpaid() As String
         Dim str As String
 
@@ -60,7 +71,7 @@ Public Class ClsBatchDomiciliation
 
         Return sql
     End Function
-  
+
     'Public Shared Function getChangeStatusUnpaidDomInexist() As String
     '    Dim sql As String
 
@@ -182,13 +193,21 @@ Public Class ClsBatchDomiciliation
     Public Shared Function CreateEddPayment(ByVal customers_id As Integer, ByVal msg_id As Integer, ByVal pmt_inf_id As Integer, _
                                                         ByVal pmt_instr_id As Integer, _
                                                         ByVal end_to_end_id As String, _
+                                                        ByVal InstdAmt As Decimal, _
                                                         ByVal cre_dt_tm As String, _
+                                                        ByVal sequence_type As String, _
                                                         ByVal reqd_colltn_dt As String, _
                                                         ByVal edd_payment_status As Integer, _
-                                                        ByVal iban As String) As String
+                                                        ByVal iban As String, ByVal parent_id As Integer) As String
         Dim sql As String
-        sql = String.Format("insert into payment_edd(customers_id, msg_id, pmt_inf_id, pmt_instr_id, end_to_end_id, cre_dt_tm, reqd_colltn_dt, edd_payment_status, iban) " & _
-                " values({0}, {1}, {2}, {3},'{4}', '{5}', '{6}', {7}, '{8}')", customers_id, msg_id, pmt_inf_id, pmt_instr_id, end_to_end_id, cre_dt_tm, reqd_colltn_dt, edd_payment_status, iban)
+        Dim strParent_id As String
+        If parent_id = 0 Then
+            strParent_id = "null"
+        Else
+            strParent_id = parent_id
+        End If
+        sql = String.Format("insert into payment_edd(customers_id, msg_id, pmt_inf_id, pmt_instr_id, end_to_end_id, InstdAmt, cre_dt_tm, sequence_type, reqd_colltn_dt, edd_payment_status, iban, system_created_at, parent_id) " & _
+                " values({0}, {1}, {2}, {3},'{4}', {5}, '{6}', '{7}', '{8}', '{9}', '{10}', now(), {11})", customers_id, msg_id, pmt_inf_id, pmt_instr_id, end_to_end_id, DVDPostTools.ClsPrice.FormatPrice(InstdAmt), cre_dt_tm, sequence_type, reqd_colltn_dt, edd_payment_status, iban, strParent_id)
 
         Return sql
     End Function
@@ -202,9 +221,51 @@ Public Class ClsBatchDomiciliation
         Return sql
     End Function
 
+    Public Shared Function EDDPaymentToDomProblem() As String
+        Dim sql As String
+        sql = "UPDATE bank_account_movements b join payment p on b.structuredComm12 = p.communication " & _
+              "  JOIN payment_edd pe on p.id = pe.pmt_instr_id " & _
+              "  JOIN ( select pmt_instr_id, max(id) id from payment_edd group by pmt_instr_id) pe1 on pe.id = pe1.id " & _
+              "   SET pe.type_r_transaction = b.type_r_transaction, pe.paid_or_refund_reason = b.paid_refund_reason, pe.reason = b.reason, " & _
+              "       p.payment_status = " & PaymentOfflineData.StepPayment.DOM_PROBLEM & ", p.last_modified = now(), b.customers_id = p.customers_id  " & _
+              "       b.ismatching = " & ClsMatching.matching_type.NOPAYMENT & _
+              " WHERE b.date_coda_created = date(now()) and p.payment_status = " & PaymentOfflineData.StepPayment.WAITING_PAYMENT & _
+              "   AND (b.paid_refund_reason <> " & PaymentOfflineData.Paid_Refund_Reason.PAID & " or b.type_r_transaction <> " & PaymentOfflineData.Type_R_Transaction.PAID & " )"
+
+        Return sql
+    End Function
+
+    Public Shared Function EDDPaymentToPaid() As String
+        Dim sql As String
+        sql = "UPDATE bank_account_movements b join payment p on b.structuredComm12 = p.communication " & _
+              "  JOIN payment_edd pe on p.id = pe.pmt_instr_id " & _
+              "  JOIN ( select pmt_instr_id, max(id) id from payment_edd group by pmt_instr_id) pe1 on pe.id = pe1.id " & _
+              "   SET pe.type_r_transaction = b.type_r_transaction, pe.paid_or_refund_reason = b.paid_refund_reason, pe.reason = b.reason, " & _
+              "       p.payment_status = " & PaymentOfflineData.StepPayment.PAID & ", p.last_modified = now(), b.customers_id = p.customers_id" & _
+              "       b.ismatching = " & ClsMatching.matching_type.DOMICILIATION & _
+              " WHERE b.date_coda_created = date(now()) and p.payment_status = " & PaymentOfflineData.StepPayment.WAITING_PAYMENT & _
+              "   AND b.paid_refund_reason = " & PaymentOfflineData.Paid_Refund_Reason.PAID & " AND b.type_r_transaction = " & PaymentOfflineData.Type_R_Transaction.PAID
+
+        Return sql
+    End Function
+
+    Public Shared Function UpdateCustomersEDDMandateFrstToRecurrent() As String
+        Dim sql As String
+        sql = " update bank_account_movement bam join customers_edd ce on bam.custoemrs_id = ce.customers_id "
+        sql = sql & " join customers c on ce.customers_id = c.customers_id "
+        sql = sql & " join payment p on c.customers_id = p.customers_id AND b.structuredComm12 = p.communication "
+        sql = sql & " SET ce.edd_mandate_status = " & EDD_MANDATE_STATUS.RECURRENT & " , ce.last_update = now() "
+        sql = sql & " WHERE customers_abo = 1 "
+        sql = sql & " AND ce.edd_mandate_status = " & EDD_MANDATE_STATUS.FIRST
+        sql = sql & " AND c.customers_abo_payment_method = 2 "
+        sql = sql & " AND ( (p.payment_status = " & PaymentOfflineData.StepPayment.PAID & ") OR ( p.payment_status = " & PaymentOfflineData.StepPayment.DOM_PROBLEM & " AND bam.type_r_transaction = " & PaymentOfflineData.Type_R_Transaction.R_RETURN & " ) )"
+        sql = sql & " AND bam.date_coda_created = date(now()) "
+        Return sql
+    End Function
+
     Public Shared Function SelectEDDPaymentReturnedToRecurrent() As String
         Dim sql As String
-        sql = "SELECT * payment_edd p where type_r_transaction = 2 "
+        sql = "SELECT * payment_edd p where type_r_transaction = " & PaymentOfflineData.Type_R_Transaction.R_RETURN & " and sequence_type = 'FRST' "
 
         Return sql
     End Function

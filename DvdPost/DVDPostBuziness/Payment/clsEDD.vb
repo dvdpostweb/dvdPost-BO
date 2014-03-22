@@ -8,7 +8,7 @@ Public Class clsEDD
     Const FORMATDATE As String = "ddMMyy"
     Const FORMATDATETIME As String = "yyMMddHHmm"
     Const BLANK As String = " "
-    Const KEYFILE As String = "Path_Dom80"
+    Const KEYFILE As String = "Path_EDD"
 
 
     ' utiliser pour gerer la progress bar
@@ -17,23 +17,23 @@ Public Class clsEDD
     Public Event ReInitProgressbar_event()
     Const CREDITOR_NAME As String = "HOME ENTERTAINMENT SERVICES"
 
-    Public Shared Function CreatePathFile(ByVal tBatch As String, ByVal country As String) As String
+    Public Shared Function CreatePathFile(ByVal country As String, ByVal fileOrder As Integer, ByVal eddAction As EddXml.SequenceType1Code) As String
         Dim nameFile As String
         Dim path_file As String
 
         path_file = Configuration.ConfigurationManager.AppSettings(KEYFILE)
-        nameFile = country & "_" & tBatch.ToString() & "_" & DVDPostTools.ClsDate.formatDate() & ".txt"
+        nameFile = country & "_" & DVDPostTools.ClsDate.formatDate() & "_" & fileOrder & "_" & eddAction.ToString() & "PAIN008.xml"
 
         Return path_file & nameFile
 
     End Function
 
-    Public Shared Function CreatePathFileADULTSVOD(ByVal tBatch As String, ByVal country As String) As String
+    Public Shared Function CreatePathFileADULTSVOD(ByVal tBatch As String, ByVal country As String, ByVal fileOrder As Integer, ByVal eddAction As EddXml.SequenceType1Code) As String
         Dim nameFile As String
         Dim path_file As String
 
         path_file = Configuration.ConfigurationManager.AppSettings(KEYFILE)
-        nameFile = "ADULTSVOD_" & country & "_" & tBatch.ToString() & "_" & DVDPostTools.ClsDate.formatDate() & ".txt"
+        nameFile = "ADULTSVOD_" & country & "_" & tBatch.ToString() & "_" & DVDPostTools.ClsDate.formatDate() & "_" & fileOrder & "_" & eddAction.ToString() & "PAIN008.xml"
 
         Return path_file & nameFile
 
@@ -53,7 +53,7 @@ Public Class clsEDD
     End Function
 
 
-    Public Function GenerateEDDFile(ByVal dtReconduction As DataTable) As String
+    Public Function GenerateEDDFile(ByVal dtReconduction As DataTable, ByVal fileOrder As Integer) As String
         'Dim path As String
         Dim totalDomId As Integer = 0
         Dim numberOfRefund As Integer = 0
@@ -69,7 +69,7 @@ Public Class clsEDD
         Dim pmtInfId As Integer
         Dim sumAmount As Decimal
         Dim messDT As String = String.Empty
-        Dim strEddManager As String
+        Dim strEddManager As String = String.Empty
         Dim eddManager As EddXml.EDDManager
         Dim clsCustomers As ClsCustomers = New ClsCustomers()
         Dim strEddSequenceTypeStatus As String = String.Empty
@@ -97,34 +97,37 @@ Public Class clsEDD
                     strEddSequenceTypeStatus = " edd_mandate_status in ( 5, 6)  and bic_changed = 0 "
             End Select
 
-            eddManager = New EddXml.EDDManager()
-            '
-            sqlMsgId = DvdPostData.ClsPayment.getLastEddMsgId()
-            msgId = DvdPostData.clsConnection.ExecuteScalar(sqlMsgId)
-            msgId += 1
-            '
-            sqlPmtInfId = DvdPostData.ClsPayment.getLastEddPmtInfId()
-            pmtInfId = DvdPostData.clsConnection.ExecuteScalar(sqlPmtInfId)
-            pmtInfId += 1
-            '
-            For Each row As DataRow In dtReconduction.Select(strEddSequenceTypeStatus)
-                sumAmount += Decimal.Parse(row("amount"))
-            Next
+            If dtReconduction.Select(strEddSequenceTypeStatus).Length > 0 Then
+                eddManager = New EddXml.EDDManager()
+                '
+                sqlMsgId = DvdPostData.ClsPayment.getLastEddMsgId()
+                msgId = DvdPostData.clsConnection.ExecuteScalar(sqlMsgId)
+                msgId += 1
+                '
+                sqlPmtInfId = DvdPostData.ClsPayment.getLastEddPmtInfId()
+                pmtInfId = DvdPostData.clsConnection.ExecuteScalar(sqlPmtInfId)
+                pmtInfId += 1
+                '
+                For Each row As DataRow In dtReconduction.Select(strEddSequenceTypeStatus)
+                    sumAmount += Decimal.Parse(row("amount"))
+                Next
 
-            messDT = eddManager.Header(dtReconduction.Select(strEddSequenceTypeStatus).Length, msgId, sumAmount)
+                messDT = eddManager.Header(dtReconduction.Select(strEddSequenceTypeStatus).Length, msgId, sumAmount)
 
-            GenearatePmtInf(clsCustomers, eddManager, dtReconduction, item, eddAction, strEddSequenceTypeStatus, pmtInfId, cpt, msgId, messDT)
-            'If dtReconduction.Select("edd_mandate_status in " & strEddMandateStatuses).Length = 0 Then
-            '    pmtInfId += 1
-            'End If
+                GenearatePmtInf(clsCustomers, eddManager, dtReconduction, item, eddAction, strEddSequenceTypeStatus, pmtInfId, cpt, msgId, messDT)
+                'If dtReconduction.Select("edd_mandate_status in " & strEddMandateStatuses).Length = 0 Then
+                '    pmtInfId += 1
+                'End If
 
-            '
-            eddManager.finalizeXMLDoc()
-            eddManager.SerializeObject("c:\" & messDT.Substring(0, 8) & "_" & eddAction.ToString() & "_PAIN008.xml")
-            Dim strEddManagerTmp = eddManager.SerializeObjectToString()
-            strEddManager += strEddManagerTmp
-            sql = DvdPostData.ClsPayment.getCreateEddPmtInf(msgId, pmtInfId, strEddManagerTmp.Replace("'", "''"), messDT)
-            lastDomId = DvdPostData.clsConnection.ExecuteScalar(sql)
+                '
+                eddManager.finalizeXMLDoc()
+                eddManager.SerializeObject(CreatePathFile(DvdPostData.ClsCustomersData.Country.BELGIUM.ToString(), fileOrder, eddAction))
+
+                Dim strEddManagerTmp = eddManager.SerializeObjectToString()
+                strEddManager += strEddManagerTmp
+                sql = DvdPostData.ClsPayment.getCreateEddPmtInf(msgId, pmtInfId, strEddManagerTmp.Replace("'", "''"), messDT)
+                lastDomId = DvdPostData.clsConnection.ExecuteScalar(sql)
+            End If
         Next
 
         Return strEddManager
@@ -176,44 +179,59 @@ Public Class clsEDD
             Dim oldbic As String = String.Empty
 
             cpt = cpt + 1
-            strcommunication = clsCompta.CreateCommunicationStruct(lastDomId + cpt, DvdPostData.ClsCustomersData.TypePaymentCommunication.DOMICILIATION)
-            If ClsBatchDomiciliation.InsertDomiciliationPayment(dr, strcommunication, lastDomId + cpt) Then
+            'strcommunication = clsCompta.CreateCommunicationStruct(lastDomId + cpt, DvdPostData.ClsCustomersData.TypePaymentCommunication.DOMICILIATION)
+            'If ClsBatchDomiciliation.InsertDomiciliationPayment(dr, strcommunication, lastDomId + cpt) Then
 
-                Sql = DvdPostData.ClsCustomersData.getSelectCustomersEDDChangesWithOldValues(clsCustomers.GetCustomersId(dr))
-                DvdPostData.clsConnection.FillDataSet(debtorChanged, Sql)
-                If debtorChanged.Rows.Count > 0 Then
-                    ibanChanged = debtorChanged.Rows(0)("iban")
-                    oldiban = debtorChanged.Rows(0)("oldiban")
+            Sql = DvdPostData.ClsCustomersData.getSelectCustomersEDDChangesWithOldValues(clsCustomers.GetCustomersId(dr))
+            DvdPostData.clsConnection.FillDataSet(debtorChanged, Sql)
+            oldeddMandateId = clsCustomers.getCustomersDomiciliationNumber(dr)
+            If debtorChanged.Rows.Count > 0 Then
+                ibanChanged = debtorChanged.Rows(0)("iban")
+                oldiban = debtorChanged.Rows(0)("oldiban")
 
-                    eddMandateIdChanged = debtorChanged.Rows(0)("edd_mandate_id")
-                    oldeddMandateId = debtorChanged.Rows(0)("oldedd_mandate_id")
+                eddMandateIdChanged = debtorChanged.Rows(0)("edd_mandate_id")
+                oldeddMandateId = debtorChanged.Rows(0)("oldedd_mandate_id")
 
-                    bicChanged = debtorChanged.Rows(0)("bic")
-                    oldbic = debtorChanged.Rows(0)("oldbic")
-                End If
-
-                ClsBatchDomiciliation.InsertEddPayment(clsCustomers.GetCustomersId(dr), msgId, pmtInfId, lastDomId + cpt, strcommunication, messDT, _
-                                                        requestCollectionDate, -1, clsCustomers.GetCustomersIBAN(dr))
-                '"BE65ZZZ0478510502"
-
-                eddManager.CreatePayment(dr, cpt, strcommunication, lastDomId + cpt, clsCustomers.GetEddManadateId(dr), clsCustomers.getCustomersDomiciliationNumber(dr), "00478510502", _
-                                            clsCustomers.GetCustomersName(dr), clsCustomers.GetCustomersIBAN(dr), clsCustomers.GetCustomersAgentBIC(dr), clsCustomers.GetCustomersStreetAddress(dr), _
-                                            clsCustomers.GetCustomersPostCodeAndCity(dr), eddAction, clsCustomers.GetCustomersDateofSignature(dr), clsCustomers.IsDom80Migraiton(dr), _
-                                            ibanChanged, oldiban, eddMandateIdChanged, oldeddMandateId, bicChanged, oldbic)
-                If clsCustomers.GetEddMandateStatus(dr).Equals(EddXml.EDDMANDATESTATUS.MANADATESIGNED_WAITINGONBANKINITIATION Or bicChanged) Then
-                    If clsCustomers.IsDom80Migraiton(dr) Then
-                        signatureDom80MigrationDate = DateTime.Now.AddDays(6)
-                    End If
-
-                    sqlEddMandateStatus = DvdPostData.ClsCustomersData.GetUpdateEddMandateStatus(clsCustomers.GetCustomersId(dr), _
-                                            EddXml.EDDMANDATESTATUS.SENTTOBANKFORINITIATION, signatureDom80MigrationDate)
-                    DvdPostData.clsConnection.ExecuteScalar(sqlEddMandateStatus)
-
-                    RaiseEvent stepMapping_event(cpt)
-                End If
-            Else
-                cpt -= 1
+                bicChanged = debtorChanged.Rows(0)("bic")
+                oldbic = debtorChanged.Rows(0)("oldbic")
             End If
+
+            ' Checks if parent row in payment_edd table exists. This is in case "returned to recurrent"
+            Dim parent_id As Integer = 0
+            Dim pmt_instr_id As String = String.Empty
+            Dim end_to_end_id As String = String.Empty
+
+            If dr.Table.Columns.Contains("parent_id") Then
+                parent_id = dr("parent_id")
+                pmt_instr_id = dr("pmt_instr_id")
+                end_to_end_id = dr("end_to_end_id")
+            Else
+                strcommunication = clsCompta.CreateCommunicationStruct(lastDomId + cpt, DvdPostData.ClsCustomersData.TypePaymentCommunication.DOMICILIATION)
+                pmt_instr_id = lastDomId + cpt
+                end_to_end_id = strcommunication
+                If Not ClsBatchDomiciliation.InsertDomiciliationPayment(dr, strcommunication, pmt_instr_id) Then
+                    cpt -= 1
+                End If
+            End If
+            ClsBatchDomiciliation.InsertEddPayment(clsCustomers.GetCustomersId(dr), msgId, pmtInfId, pmt_instr_id, end_to_end_id, dr("amount"), messDT, eddAction.ToString(), DVDPostTools.ClsDate.formatDateTimeDB(requestCollectionDate), -1, clsCustomers.GetCustomersIBAN(dr), parent_id)
+            '"BE65ZZZ0478510502"
+
+            eddManager.CreatePayment(dr, end_to_end_id, pmt_instr_id, clsCustomers.GetEddManadateId(dr), oldeddMandateId, "00478510502", _
+                                        clsCustomers.GetCustomersName(dr), clsCustomers.GetCustomersIBAN(dr), clsCustomers.GetCustomersAgentBIC(dr), clsCustomers.GetCustomersStreetAddress(dr), _
+                                        clsCustomers.GetCustomersPostCodeAndCity(dr), eddAction, clsCustomers.GetCustomersDateofSignature(dr), clsCustomers.IsDom80Migraiton(dr), _
+                                        ibanChanged, oldiban, eddMandateIdChanged, oldeddMandateId, bicChanged, oldbic)
+            If clsCustomers.GetEddMandateStatus(dr).Equals(EddXml.EDDMANDATESTATUS.MANADATESIGNED_WAITINGONBANKINITIATION Or bicChanged) Then
+                If clsCustomers.IsDom80Migraiton(dr) Then
+                    signatureDom80MigrationDate = DateTime.Now.AddDays(6)
+                End If
+
+                sqlEddMandateStatus = DvdPostData.ClsCustomersData.GetUpdateEddMandateStatus(clsCustomers.GetCustomersId(dr), _
+                                        EddXml.EDDMANDATESTATUS.SENTTOBANKFORINITIATION, signatureDom80MigrationDate)
+                DvdPostData.clsConnection.ExecuteScalar(sqlEddMandateStatus)
+
+                RaiseEvent stepMapping_event(cpt)
+            End If
+
 
 
         Next

@@ -51,9 +51,9 @@ Module start
                 clscust.ReconductionOgone(DvdPostData.ClsCustomersData.Country.BELGIUM)
                 clscust.ReconductionOgone(DvdPostData.ClsCustomersData.Country.NEDERLANDS)
 
-                clscust.ReconductionOgoneADULTSVOD(DvdPostData.ClsCustomersData.Country.BELGIUM)
-                clscust.ReconductionOgoneADULTSVOD(DvdPostData.ClsCustomersData.Country.NEDERLANDS)
-                clscust.ReconductionOgoneADULTSVOD(DvdPostData.ClsCustomersData.Country.LUXEMBOURG)
+                'clscust.ReconductionOgoneADULTSVOD(DvdPostData.ClsCustomersData.Country.BELGIUM)
+                'clscust.ReconductionOgoneADULTSVOD(DvdPostData.ClsCustomersData.Country.NEDERLANDS)
+                'clscust.ReconductionOgoneADULTSVOD(DvdPostData.ClsCustomersData.Country.LUXEMBOURG)
 
                 clscust.ChangeCard_customers(DvdPostData.ClsCustomersData.Country.BELGIUM)
                 clscust.ChangeCard_customers(DvdPostData.ClsCustomersData.Country.NEDERLANDS)
@@ -65,6 +65,11 @@ Module start
 
                 clscust.ReconductionDomiciliationADULTSVOD(DvdPostData.ClsCustomersData.Country.BELGIUM)
 
+                If (Configuration.ConfigurationManager.AppSettings("edd") = "true") Then
+                    'clscust.DomiciliationReturnedToRecurent(DvdPostData.ClsCustomersData.Country.BELGIUM)
+                    clscust.DomiciliationForceMandateUpdate(DvdPostData.ClsCustomersData.Country.BELGIUM)
+                End If
+
                 'clscust.ReconductionPhone(DvdPostData.ClsCustomersData.Country.BELGIQUE)
                 'clscust.ReconductionPhone(DvdPostData.ClsCustomersData.Country.PAYSBAS)
 
@@ -74,13 +79,17 @@ Module start
                 clscust.ReconductionVirement(DvdPostData.ClsCustomersData.Country.BELGIUM)
                 clscust.ReconductionVirement(DvdPostData.ClsCustomersData.Country.NEDERLANDS)
 
-                clscust.ReconductionVirementADULTSVOD(DvdPostData.ClsCustomersData.Country.BELGIUM)
-                clscust.ReconductionVirementADULTSVOD(DvdPostData.ClsCustomersData.Country.NEDERLANDS)
+                'clscust.ReconductionVirementADULTSVOD(DvdPostData.ClsCustomersData.Country.BELGIUM)
+                'clscust.ReconductionVirementADULTSVOD(DvdPostData.ClsCustomersData.Country.NEDERLANDS)
 
                 DVDPostBuziness.ClsBankTransfer.print()
 
                 Dim _OffLinePay As New DVDPostBuziness.clsOffLinePayments()
-                _OffLinePay.ApplyAllTransitions()
+                _OffLinePay.DomiciliationPaymentRecovery_ApplyAllTransitions()
+                _OffLinePay.VirmanPaymentRecovery_ApplyAllTransitions()
+                _OffLinePay.OgonePaymentRecovery_ApplyAllTransitions()
+                _OffLinePay.PayPalPaymentRecovery_ApplyAllTransitions()
+                '_OffLinePay.ApplyAllTransitions()
 
                 If (Configuration.ConfigurationManager.AppSettings("eddprepayment") = "true") Then
                     _OffLinePay.SendEDDPrepaymentMail(Configuration.ConfigurationManager.AppSettings("eddprepaymentnotif"))
@@ -111,8 +120,9 @@ Module start
                 clscust.ReconductionPayPal(DvdPostData.ClsCustomersData.Country.BELGIUM)
                 clscust.ReconductionPayPal(DvdPostData.ClsCustomersData.Country.NEDERLANDS)
 
-                clscust.ReconductionPayPalADULTSVOD(DvdPostData.ClsCustomersData.Country.BELGIUM)
-                clscust.ReconductionPayPalADULTSVOD(DvdPostData.ClsCustomersData.Country.NEDERLANDS)
+                clscust.RetryChangedPayPalPayment(DvdPostData.ClsCustomersData.Country.BELGIUM)
+                'clscust.ReconductionPayPalADULTSVOD(DvdPostData.ClsCustomersData.Country.BELGIUM)
+                'clscust.ReconductionPayPalADULTSVOD(DvdPostData.ClsCustomersData.Country.NEDERLANDS)
 
                 'PPV
                 If (Configuration.ConfigurationManager.AppSettings("do_ppv") = "true") Then

@@ -21,13 +21,15 @@ Public Class ClsBatchDomiciliation
     Public Shared Function InsertEddPayment(ByVal customers_id As Integer, ByVal msg_id As Integer, ByVal pmt_inf_id As Integer, _
                                                         ByVal pmt_instr_id As Integer, _
                                                         ByVal end_to_end_id As String, _
+                                                        ByVal InstdAmt As Decimal, _
                                                         ByVal cre_dt_tm As String, _
+                                                        ByVal sequence_type As String, _
                                                         ByVal reqd_colltn_dt As String, _
                                                         ByVal edd_payment_status As Integer, _
-                                                        ByVal iban As String)
+                                                        ByVal iban As String, ByVal parent_id As Integer)
         Dim sql As String
         Try
-            sql = DvdPostData.ClsBatchDomiciliation.CreateEddPayment(customers_id, msg_id, pmt_inf_id, pmt_instr_id, end_to_end_id, cre_dt_tm, reqd_colltn_dt, edd_payment_status, iban)
+            sql = DvdPostData.ClsBatchDomiciliation.CreateEddPayment(customers_id, msg_id, pmt_inf_id, pmt_instr_id, end_to_end_id, InstdAmt, cre_dt_tm, sequence_type, reqd_colltn_dt, edd_payment_status, iban, parent_id)
             DvdPostData.clsConnection.ExecuteNonQuery(sql)
             Return True
         Catch ex As Exception

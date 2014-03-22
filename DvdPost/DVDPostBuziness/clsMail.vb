@@ -451,6 +451,7 @@ Public Class clsMail
         Dim logo As String
         Dim firstname As String = String.Empty
         Dim lastname As String = String.Empty
+        Dim customers_name As String = String.Empty
 
         LoadSite()
         loadParams()
@@ -460,9 +461,14 @@ Public Class clsMail
 
         strSubject = MailRow("messages_subject")
         strmessage = MailRow("messages_html")
+        Dim isCustomers_Name As Boolean = False
+
         If IsExistInString(strmessage, "$$$customers_name$$$") And CustRow.Table.Columns.Contains("customers_firstname") Then
             firstname = DVDPostTools.ClsString.Capitalize(CustRow("customers_firstname").ToString())
             lastname = DVDPostTools.ClsString.Capitalize(CustRow("customers_lastname").ToString())
+        ElseIf CustRow.Table.Columns.Contains("customers_name") Then
+            customers_name = DVDPostTools.ClsString.Capitalize(CustRow("customers_name").ToString())
+            isCustomers_Name = True
         End If
 
         'titre
@@ -471,7 +477,21 @@ Public Class clsMail
 
         'customers_name
         'strmessage = Replace(strmessage, "$$$name$$$", firstname & " " & lastname)
-        strmessage = Replace(strmessage, "$$$customers_name$$$", firstname & " " & lastname)
+        Try
+            If isCustomers_Name Then
+                strmessage = ReplaceVar(strmessage, "$$$customers_name$$$", customers_name, lstvariable)
+            End If
+
+            If IsExistInString(strmessage, "$$$customers_name$$$") And CustRow.Table.Columns.Contains("customers_firstname") Then
+                strmessage = ReplaceVar(strmessage, "$$$customers_name$$$", firstname & " " & lastname, lstvariable)
+            End If
+        Catch
+            clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Email, CustRow("customers_id"))
+        End Try
+
+
+
+
         'strmessage = Replace(strmessage, "$$$customers_email$$$", CustRow("customers_email_address"))
         'strmessage = Replace(strmessage, "$$$email$$$", CustRow("customers_email_address"))
         ''site & Logo
@@ -493,6 +513,7 @@ Public Class clsMail
         ''customers_abo_validityto
         'strmessage = Replace(strmessage, "$$$next_reconduction_date$$$", CustRow("customers_abo_validityto") & "")
         'End If
+        'clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Email, strmessage)
 
     End Sub
     'Private Shared Sub replacePaymentOffline(ByVal CustRow As DataRow, ByRef strmessage As String)
@@ -630,6 +651,7 @@ Public Class clsMail
         ''titre
         Dim mymail As Net.Mail.MailMessage
         Dim balise As String = New String(BaliseMail, cptRepeat)
+        'clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Email, htmlMsg)
         If Not htmlMsg.Contains(balise) Then
             mymail = New Net.Mail.MailMessage(strFrom, strTo)
             mymail.From = New Net.Mail.MailAddress(strFrom, strName)
