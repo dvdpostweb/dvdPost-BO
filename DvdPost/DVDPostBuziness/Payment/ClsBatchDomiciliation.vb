@@ -21,7 +21,7 @@ Public Class ClsBatchDomiciliation
     Public Shared Function InsertEddPayment(ByVal customers_id As Integer, ByVal msg_id As Integer, ByVal pmt_inf_id As Integer, _
                                                         ByVal pmt_instr_id As Integer, _
                                                         ByVal end_to_end_id As String, _
-                                                        ByVal InstdAmt As Decimal, _
+                                                        ByVal InstdAmt As String, _
                                                         ByVal cre_dt_tm As String, _
                                                         ByVal sequence_type As String, _
                                                         ByVal reqd_colltn_dt As String, _

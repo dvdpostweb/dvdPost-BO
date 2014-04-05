@@ -147,12 +147,12 @@ Public Class clsOffLinePayments
 
     Public Function OgonePaymentRecovery_StepNextPaymentOffline(ByVal stepcurrent As PaymentOfflineData.StepPayment) As PaymentOfflineData.StepPayment
 
-        StepNextPaymentOffline(stepcurrent)
+        Return StepNextPaymentOffline(stepcurrent)
     End Function
 
     Public Function VirmanPaymentRecovery_StepNextPaymentOffline(ByVal stepcurrent As PaymentOfflineData.StepPayment) As PaymentOfflineData.StepPayment
 
-        StepNextPaymentOffline(stepcurrent)
+        Return StepNextPaymentOffline(stepcurrent)
     End Function
 
     Public Function PaypalPaymentRecovery_StepNextPaymentOffline(ByVal stepcurrent As PaymentOfflineData.StepPayment) As PaymentOfflineData.StepPayment
@@ -291,7 +291,7 @@ Public Class clsOffLinePayments
 
     Public Sub PayPalPaymentRecovery_ApplyAllTransitions()
         'ABO
-        PayPalPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.PAYPAL_CHANGED)
+        PayPalPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.PAYPAL_WILL_PAY)
         PayPalPaymentRecovery_applyTransition(PaymentOfflineData.StepPayment.MAIL_SENT)
 
         'SendMail(PaymentOfflineData.StepPayment.MAIL_TO_SEND, DVDPostBuziness.clsMail.Mail.MAIL_RECOVERY)
@@ -385,12 +385,12 @@ Public Class clsOffLinePayments
     End Sub
 
     Public Function OgonePaymentRecovery_DelayForStep(ByVal stepcurrent As PaymentOfflineData.StepPayment) As Integer
-        DelayForStep(stepcurrent)
+        Return DelayForStep(stepcurrent)
 
     End Function
 
     Public Function VirmanPaymentRecovery_DelayForStep(ByVal stepcurrent As PaymentOfflineData.StepPayment) As Integer
-        DelayForStep(stepcurrent)
+        Return DelayForStep(stepcurrent)
 
     End Function
     Public Function PayPalPaymentRecovery_DelayForStep(ByVal stepcurrent As PaymentOfflineData.StepPayment) As Integer
@@ -494,8 +494,8 @@ Public Class clsOffLinePayments
 
                 Dim price As String = clscust.ManageReductionInfo(rCustomer)
 
-                rCustomer("subscription_price") = price
-                'ok = clsMail.SendMail(rCustomer, clsMail.Mail.MAIL_EDD_PREPAYMENT_NOTIF, True)
+                rCustomer("subscription_price") = price.Replace(".", ",")
+                ok = clsMail.SendMail(rCustomer, clsMail.Mail.MAIL_EDD_PREPAYMENT_NOTIF, True)
                 If Not ok Then
                     clsMsgError.MsgBox("edd mail to customers_id " & rCustomer("customers_id") & " not sent ")
                 End If

@@ -279,7 +279,8 @@ Public Class ClsPayment
         sql = " update payment set " & _
               " payment_status=" & new_status & _
               ", last_modified=now() " & _
-              ", user_modified = " & clsSession.user_id
+              ", user_modified = " & clsSession.user_id & _
+              ", last_status_id = " & old_status
 
         sqlConditionForTransition = " and to_days(date_add(last_modified,INTERVAL " & delay & " DAY))<=to_days(curdate())"
 
@@ -292,7 +293,7 @@ Public Class ClsPayment
         End If
 
         sql = sql & " where payment_status=" & old_status
-        If payment_method = ClsCustomersData.Payment_Method.ALL Then
+        If Not payment_method = ClsCustomersData.Payment_Method.ALL Then
             sql = sql & "   and payment_method = " & payment_method
         End If
         sql = sql & sqlConditionForTransition

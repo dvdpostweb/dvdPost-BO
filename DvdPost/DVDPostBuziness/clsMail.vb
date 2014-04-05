@@ -726,7 +726,7 @@ Public Class clsMail
         If IsExistInString(strMessage, balise & "mandate_number" & balise) Then
             strMessage = ReplaceVar(strMessage, balise & "debit_date" & balise, CustRow("debit_date"), lstvariable)
             strMessage = ReplaceVar(strMessage, balise & "your_subscription" & balise, CustRow("your_subscription"), lstvariable)
-            strMessage = ReplaceVar(strMessage, balise & "subscription_price" & balise, CustRow("subscription_price"), lstvariable)
+            strMessage = ReplaceVar(strMessage, balise & "subscription_price" & balise, DVDPostTools.ClsPrice.FormatPrice(CustRow("subscription_price")), lstvariable)
             strMessage = ReplaceVar(strMessage, balise & "mandate_number" & balise, CustRow("mandate_number"), lstvariable)
         End If
 

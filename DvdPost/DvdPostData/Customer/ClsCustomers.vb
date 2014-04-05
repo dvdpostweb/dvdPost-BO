@@ -896,15 +896,13 @@ Public Class ClsCustomersData
         sql = sql & " c.activation_discount_code_id,"
         sql = sql & " c.activation_discount_code_type,"
         sql = sql & " c.customers_next_discount_code,"
-        sql = sql & " p.products_price,"
-        sql = sql & " pe.amount amount,"
-        sql = sql & " ca.combined,  "
+        sql = sql & " pe.amount products_price, "
+        sql = sql & " '' amount,"
         sql = sql & "( SELECT if(pa.qty_dvd_max >= 0, 1, 0) FROM products_abo pa WHERE pa.products_id = c.customers_next_abo_type ) as npp_logic, " 'npp
         sql = sql & " c.paypal_agreement_id, c.paypal_transaction_id, " 'paypal
         sql = sql & " pe.id payment_id"
         sql = sql & " FROM payment pe join customers c on pe.customers_id = c.customers_id "
         sql = sql & " JOIN products p on c.customers_next_abo_type = p.products_id "
-        sql = sql & " join customer_attributes ca on c.customers_id = ca.customer_id "
         sql = sql & " WHERE pe.payment_status = " & PaymentOfflineData.StepPayment.PAYPAL_CHANGED
         sql = sql & " AND c.customers_abo = 1 "
         sql = sql & " AND pe.payment_method = " & typePayment

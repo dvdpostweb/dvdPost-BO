@@ -268,6 +268,7 @@ Public Class PaymentOfflineData
         ",p.last_modified" & _
         ",c.customers_lastname" & _
         ",c.customers_firstname" & _
+        ",c.customers_dob Date_of_birth" & _
         ",c.customers_email_address" & _
         ",c.customers_telephone" & _
         ",c.customers_language " & _
@@ -412,7 +413,7 @@ Public Class PaymentOfflineData
                                         Optional ByVal isclosed As Boolean = False, _
                                         Optional ByVal account_movements_id As String = Nothing) As String
         Dim sql As String
-        sql = ClsPayment.UpdateStatusAutomatic(old_status, new_status, delay, payment_method, isclosed, account_movements_id)
+        sql = ClsPayment.UpdateStatusAutomatic(old_status, new_status, delay, isclosed, account_movements_id, payment_method)
         Return sql
     End Function
 
@@ -423,7 +424,7 @@ Public Class PaymentOfflineData
                                         Optional ByVal isclosed As Boolean = False, _
                                         Optional ByVal account_movements_id As String = Nothing) As String
         Dim sql As String
-        sql = ClsPayment.UpdateStatusAutomatic(old_status, new_status, delay, payment_method, isclosed, account_movements_id)
+        sql = ClsPayment.UpdateStatusAutomatic(old_status, new_status, delay, isclosed, account_movements_id, payment_method)
         Return sql
     End Function
 

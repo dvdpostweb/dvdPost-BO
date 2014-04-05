@@ -65,14 +65,14 @@ namespace EddXml
 
         }
 
-        public string Header(int numberOfTransactions, string messageID, decimal ctrlSUM )
+        public string Header(int numberOfTransactions, string messageID, string ctrlSUM )
         {
             DateTime mesDT = DateTime.Now;            
             _eddXML.CstmrDrctDbtInitn.GrpHdr = new GroupHeader39(); 
             _eddXML.CstmrDrctDbtInitn.GrpHdr.MsgId = messageID;
             _eddXML.CstmrDrctDbtInitn.GrpHdr.CreDtTm = mesDT;
             _eddXML.CstmrDrctDbtInitn.GrpHdr.CtrlSumSpecified = true;
-            _eddXML.CstmrDrctDbtInitn.GrpHdr.CtrlSum = ctrlSUM;
+            _eddXML.CstmrDrctDbtInitn.GrpHdr.CtrlSum = decimal.Parse(FormatPrice(ctrlSUM));
             _eddXML.CstmrDrctDbtInitn.GrpHdr.NbOfTxs = numberOfTransactions.ToString();
             
             Party6Choice orgid = new Party6Choice();
@@ -91,7 +91,7 @@ namespace EddXml
 
         }
 
-        public void paymentInfoCreditor(string pmtInfId, int numberOfTransactions, decimal ctrlSUM, SequenceType1Code action)
+        public void paymentInfoCreditor(string pmtInfId, int numberOfTransactions, string ctrlSUM, SequenceType1Code action)
         {
             //_eddXML.CstmrDrctDbtInitn.PmtInf = new PaymentInstructionInformation4[1];
             //_eddXML.CstmrDrctDbtInitn.PmtInf[0] = new PaymentInstructionInformation4(); 
@@ -119,7 +119,7 @@ namespace EddXml
             pmtInfCreditor.PmtMtd = PaymentMethod2Code.DD;
             pmtInfCreditor.BtchBookg = true;
             pmtInfCreditor.NbOfTxs = numberOfTransactions.ToString();
-            pmtInfCreditor.CtrlSum = ctrlSUM;
+            pmtInfCreditor.CtrlSum = decimal.Parse(FormatPrice(ctrlSUM));
             pmtInfCreditor.CtrlSumSpecified = true;
             //
             PaymentTypeInformation20 pmtTypeInfo20 = new PaymentTypeInformation20();
@@ -188,7 +188,13 @@ namespace EddXml
             //
         }
 
-        public void CreatePayment(DataRow dr, string strcommunication, int lastDomId, string mndtId, string orgnlMndtId, string orgnlCdtrSchmeIdOthrID,
+        public static string FormatPrice(string result)
+        {
+            return result.Replace(".", ",");
+
+        }
+
+        public void CreatePayment(DataRow dr, string amount, string strcommunication, int lastDomId, string mndtId, string orgnlMndtId, string orgnlCdtrSchmeIdOthrID,
             string dbtrNm, string dbtrIBAN, string dbtrAgentBIC, string dbtrStreetAddress, string dbtrPostCodeAndCityAddress, SequenceType1Code action, 
             DateTime dateOfSignature , bool isMigration, bool ibanChanged, string oldIBAN, bool eddMandateIdChanged, string oldEddMandateId, bool bicChanged, string oldBIC)
         {
@@ -214,7 +220,7 @@ namespace EddXml
             //
             payment.InstdAmt = new ActiveOrHistoricCurrencyAndAmount();
             payment.InstdAmt.Ccy = "EUR";
-            payment.InstdAmt.Value = getAmount(dr);
+            payment.InstdAmt.Value = decimal.Parse(FormatPrice(amount));
             //
             payment.DrctDbtTx = new DirectDebitTransaction6();
             payment.DrctDbtTx.MndtRltdInf = new MandateRelatedInformation6();
@@ -393,7 +399,7 @@ namespace EddXml
 
         private decimal getAmount(DataRow drReconduction ) 
         {
-            return decimal.Parse(drReconduction["amount"].ToString ());
+            return decimal.Parse((string)drReconduction["amount"]);
         }
     }
 }

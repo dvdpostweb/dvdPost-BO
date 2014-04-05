@@ -62,8 +62,10 @@ Module start
                 clscust.RejetFileOgone()
 
                 clscust.ReconductionDomiciliation(DvdPostData.ClsCustomersData.Country.BELGIUM)
+                clscust.ReconductionDomiciliation(DvdPostData.ClsCustomersData.Country.NEDERLANDS)
+                clscust.ReconductionDomiciliation(DvdPostData.ClsCustomersData.Country.LUXEMBOURG)
 
-                clscust.ReconductionDomiciliationADULTSVOD(DvdPostData.ClsCustomersData.Country.BELGIUM)
+                'clscust.ReconductionDomiciliationADULTSVOD(DvdPostData.ClsCustomersData.Country.BELGIUM)
 
                 If (Configuration.ConfigurationManager.AppSettings("edd") = "true") Then
                     'clscust.DomiciliationReturnedToRecurent(DvdPostData.ClsCustomersData.Country.BELGIUM)

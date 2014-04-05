@@ -109,10 +109,10 @@ Public Class clsEDD
                 pmtInfId += 1
                 '
                 For Each row As DataRow In dtReconduction.Select(strEddSequenceTypeStatus)
-                    sumAmount += Decimal.Parse(row("amount"))
+                    sumAmount += Decimal.Parse(row("amount").Replace(".", ","))
                 Next
 
-                messDT = eddManager.Header(dtReconduction.Select(strEddSequenceTypeStatus).Length, msgId, sumAmount)
+                messDT = eddManager.Header(dtReconduction.Select(strEddSequenceTypeStatus).Length, msgId, sumAmount.ToString())
 
                 GenearatePmtInf(clsCustomers, eddManager, dtReconduction, item, eddAction, strEddSequenceTypeStatus, pmtInfId, cpt, msgId, messDT)
                 'If dtReconduction.Select("edd_mandate_status in " & strEddMandateStatuses).Length = 0 Then
@@ -165,10 +165,10 @@ Public Class clsEDD
         lastDomId = DvdPostData.clsConnection.ExecuteScalar(Sql)
 
         For Each row As DataRow In dtReconduction.Select(strEddSequenceTypeStatus)
-            sumAmount += Decimal.Parse(row("amount"))
+            sumAmount += Decimal.Parse(row("amount").Replace(".", ","))
         Next
 
-        eddManager.paymentInfoCreditor(pmtInfId, dtReconduction.Select(strEddSequenceTypeStatus).Length, sumAmount, eddAction)
+        eddManager.paymentInfoCreditor(pmtInfId, dtReconduction.Select(strEddSequenceTypeStatus).Length, sumAmount.ToString(), eddAction)
         For Each dr As DataRow In dtReconduction.Select(strEddSequenceTypeStatus)
             Dim debtorChanged As DataTable = New DataTable()
             Dim ibanChanged As Boolean = False
@@ -216,7 +216,7 @@ Public Class clsEDD
             ClsBatchDomiciliation.InsertEddPayment(clsCustomers.GetCustomersId(dr), msgId, pmtInfId, pmt_instr_id, end_to_end_id, dr("amount"), messDT, eddAction.ToString(), DVDPostTools.ClsDate.formatDateTimeDB(requestCollectionDate), -1, clsCustomers.GetCustomersIBAN(dr), parent_id)
             '"BE65ZZZ0478510502"
 
-            eddManager.CreatePayment(dr, end_to_end_id, pmt_instr_id, clsCustomers.GetEddManadateId(dr), oldeddMandateId, "00478510502", _
+            eddManager.CreatePayment(dr, dr("amount"), end_to_end_id, pmt_instr_id, clsCustomers.GetEddManadateId(dr), oldeddMandateId, "00478510502", _
                                         clsCustomers.GetCustomersName(dr), clsCustomers.GetCustomersIBAN(dr), clsCustomers.GetCustomersAgentBIC(dr), clsCustomers.GetCustomersStreetAddress(dr), _
                                         clsCustomers.GetCustomersPostCodeAndCity(dr), eddAction, clsCustomers.GetCustomersDateofSignature(dr), clsCustomers.IsDom80Migraiton(dr), _
                                         ibanChanged, oldiban, eddMandateIdChanged, oldeddMandateId, bicChanged, oldbic)

@@ -189,7 +189,11 @@ Public Class ClsCustomers
         If drCustomer("domiciliation_number") Is DBNull.Value Then
             Return ""
         Else
-            Return drCustomer("domiciliation_number")
+            Dim mandateRef As String = String.Empty
+            If Not drCustomer("mandate_ref") Is DBNull.Value Then
+                mandateRef = drCustomer("mandate_ref")
+            End If
+            Return drCustomer("domiciliation_number") & mandateRef
         End If
     End Function
 
@@ -2113,15 +2117,24 @@ Public Class ClsCustomers
                             message = paypalResult.Response.Ack.Value.ToString()
                             str = 6
                         Else
+                            Try
+                                str = 51
+                                sql = DvdPostData.clsBatchBankTransfert.UpdateStatusBankTransfert(GetPaymentId(drCustomers), PaymentOfflineData.StepPayment.PAYPAL_PROBLEM)
+                                DvdPostData.clsConnection.ExecuteNonQuery(sql)
+                            Catch ex As Exception
+                                clsMsgError.MsgBox(ex.Message)
+                                clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Reconduction, ex, customers_id & " : position: " & str)
+                            End Try
                             str = 7
                             message = paypalResult.Response.Ack.Value.ToString()
                             str = 8
                             If paypalResult.Response.Errors.Count > 0 Then
                                 str = 9
                                 Try
-                                    message = message & ":" & paypalResult.Response.DoReferenceTransactionResponseDetails.PaymentInfo.PaymentError.LongMessage
-                                    sql = DvdPostData.clsBatchBankTransfert.UpdateStatusBankTransfert(GetPaymentId(drCustomers), PaymentOfflineData.StepPayment.PAYPAL_PROBLEM)
-                                    DvdPostData.clsConnection.ExecuteNonQuery(sql)
+                                    message = message & " : " & paypalResult.Response.Errors(0).LongMessage
+                                    If Not paypalResult.Response.DoReferenceTransactionResponseDetails Is Nothing Then
+                                        message = message & " :: " & paypalResult.Response.DoReferenceTransactionResponseDetails.PaymentInfo.PaymentError.LongMessage
+                                    End If
                                     str = 10
                                 Catch ex As Exception
                                     message = message & ":" & ex.Message
@@ -2167,12 +2180,10 @@ Public Class ClsCustomers
     End Function
 
     Public Function RetryChangedPayPalPayment(ByVal idcountry As ClsCustomersData.Country, Optional ByVal customers_id As Integer = -1, Optional ByVal classique As Boolean = True) As Boolean
-        Dim dtResult As DataTable
         Dim dtPayPalRetry As DataTable
-        Dim cpt_result As Integer
         Dim sql As String
         Dim str As String = ""
-        DvdPostData.clsConnection.CreateTransaction(True)
+        'DvdPostData.clsConnection.CreateTransaction(True)
         Try
             sql = DvdPostData.ClsCustomersData.GetSelectPayPalRetryPayment(ClsCustomersData.Payment_Method.PAYPAL, idcountry, customers_id)
             dtPayPalRetry = DvdPostData.clsConnection.FillDataSet(sql)
@@ -2185,8 +2196,9 @@ Public Class ClsCustomers
             Dim strRequest As String
             Dim strResponse As String
             str = 1
-
+            clsMsgError.MsgBox("Are you sur to process " & dtPayPalRetry.Rows.Count & " RetryChangedPayPalPayment ? ", MsgBoxStyle.OkCancel)
             If dtPayPalRetry.Rows.Count > 0 Then
+
                 For Each drCustomers As DataRow In dtPayPalRetry.Rows
                     Dim paypalResult As PayPal.PayPalResponse
 
@@ -2194,6 +2206,7 @@ Public Class ClsCustomers
                     str = 2
                     sql = DvdPostData.ClsPayment.GetUpdatePaymentStatus(GetPaymentId(drCustomers), PaymentOfflineData.StepPayment.WAITING_PAYMENT, PaymentOfflineData.StepPayment.PAYPAL_CHANGED)
                     DvdPostData.clsConnection.ExecuteNonQuery(sql)
+                    drCustomers("amount") = DVDPostTools.ClsPrice.FormatPrice(drCustomers("products_price").ToString())
                     paypalResult = paypal.PayPalSendPayments(drCustomers)
                     str = 3
                     Dim message As String
@@ -2216,8 +2229,10 @@ Public Class ClsCustomers
 
                                 If paypalResult.Response.Errors.Count > 0 Then
                                     str = 9
-
-                                    message = message & ":" & paypalResult.Response.DoReferenceTransactionResponseDetails.PaymentInfo.PaymentError.LongMessage
+                                    message = message & " : " & paypalResult.Response.Errors(0).LongMessage
+                                    If Not paypalResult.Response.DoReferenceTransactionResponseDetails Is Nothing Then
+                                        message = message & " :: " & paypalResult.Response.DoReferenceTransactionResponseDetails.PaymentInfo.PaymentError.LongMessage
+                                    End If
                                     str = 10
                                 End If
                             Catch ex As Exception
@@ -2227,8 +2242,8 @@ Public Class ClsCustomers
 
                             str = 11
 
-                            DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Batch, "PayPal payment does not succedded. Please check logs, the returned status is : " & paypalResult.Response.Ack.Value.ToString(), GetCustomersId(drCustomers))
-                            str = 12
+                            'DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Batch, "PayPal payment does not succedded. Please check logs, the returned status is : " & paypalResult.Response.Ack.Value.ToString(), GetCustomersId(drCustomers))
+                            'str = 12
                         End If
                     Else
                         str = 13

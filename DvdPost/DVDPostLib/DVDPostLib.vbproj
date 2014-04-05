@@ -462,6 +462,12 @@
     <Compile Include="CUSTOMERS\frmStatusOrder.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CUSTOMERS\frmWelcomeCall.Designer.vb">
+      <DependentUpon>frmWelcomeCall.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CUSTOMERS\frmWelcomeCall.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DataSets\dsABOProcess.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -633,6 +639,12 @@
     </Compile>
     <Compile Include="PRODUCTS\frmSearchProduct.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\rptStudioSummaryNoProductStudios.Designer.vb">
+      <DependentUpon>rptStudioSummaryNoProductStudios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptStudioSummaryNoProductStudios.vb">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\XtraReportPrepaymentLettres.Designer.vb">
       <DependentUpon>XtraReportPrepaymentLettres.vb</DependentUpon>
@@ -999,6 +1011,10 @@
       <SubType>Designer</SubType>
       <DependentUpon>frmViewDiscountCode.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CUSTOMERS\frmWelcomeCall.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmWelcomeCall.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LOGISTIC\frmABOProcessPerStep_type.resx">
       <DependentUpon>frmABOProcessPerStep_type.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -1082,6 +1098,10 @@
     <EmbeddedResource Include="PRODUCTS\frmSearchProduct.resx">
       <DependentUpon>frmSearchProduct.vb</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptStudioSummaryNoProductStudios.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>rptStudioSummaryNoProductStudios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\XtraReportPrepaymentLettres.fr-BE.resx">
       <DependentUpon>XtraReportPrepaymentLettres.vb</DependentUpon>

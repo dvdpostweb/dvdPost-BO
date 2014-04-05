@@ -47,4 +47,45 @@ Public Class frmStatVOD
     End Sub
    
 
+    Private Sub btnVodByChannels_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVodByChannels.Click
+        Dim sql As String
+        sql = DvdPostData.clsStatVOD.GetSelectVODbyChannels(txtFromDate.EditValue, txtToDate.EditValue)
+
+        loadData(sql)
+    End Sub
+
+    Private Sub btnVodByChannelsPlush_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVodByChannelsPlush.Click
+        Dim sql As String
+        sql = DvdPostData.clsStatVOD.GetSelectVODbyChannelsPlush(txtFromDate.EditValue, txtToDate.EditValue)
+
+        loadData(sql)
+    End Sub
+
+    Private Sub btnCustomersNmbrWathed_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCustomersNmbrWathed.Click
+        Dim sql As String
+        sql = "call reportCustomerNumberOfWatched('" & DVDPostTools.ClsDate.formatDate(txtFromDate.EditValue) & "','" & DVDPostTools.ClsDate.formatDate(txtToDate.EditValue) & "')"
+
+        loadData(sql)
+    End Sub
+
+    Private Sub btnCustomersByWatchedPlush_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCustomersByWatchedPlush.Click
+        Dim sql As String
+        sql = DvdPostData.clsStatVOD.GetSelectNumberCustByNumbWatchedPlush()
+
+        loadData(sql)
+    End Sub
+
+    Private Sub btnSpentCreditEarlier_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSpentCreditEarlier.Click
+        Dim sql As String
+        sql = DvdPostData.clsStatVOD.GetSelectSpentCreditBefore(txtFromDate.EditValue, txtToDate.EditValue, speCreditEarlier.EditValue)
+
+        loadData(sql)
+    End Sub
+
+    Private Sub SimpleButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SimpleButton1.Click
+        Dim sql As String
+        sql = DvdPostData.clsStatVOD.GetSelectSpentCreditBefore(txtFromDate.EditValue, txtToDate.EditValue, speCreditEarlier.EditValue)
+
+        loadData(sql)
+    End Sub
 End Class

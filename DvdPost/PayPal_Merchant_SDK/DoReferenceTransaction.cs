@@ -130,7 +130,7 @@ namespace PayPal
             //{
                 PaymentDetailsItemType itemDetails = new PaymentDetailsItemType();
                 itemDetails.Name = (string)rCustomer["products_model"];
-                itemDetails.Amount = new BasicAmountType(currency, (string)rCustomer["amount"]);
+                itemDetails.Amount = new BasicAmountType(currency, rCustomer["amount"].ToString() );
                 itemDetails.Quantity = 1;
                 itemDetails.ItemCategory = (ItemCategoryType)
                 Enum.Parse(typeof(ItemCategoryType), "DIGITAL");

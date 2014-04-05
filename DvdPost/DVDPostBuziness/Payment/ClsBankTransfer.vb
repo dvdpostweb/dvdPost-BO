@@ -81,7 +81,7 @@ Public Class ClsBankTransfer
 
     Private Shared Sub changeStatus(ByVal dt As DataTable)
         Dim list_id As String = ""
-        Dim sql As String
+        Dim sql As String = ""
         Dim cpt_result As Integer
         Dim cpt As Integer
         If clsMsgError.MsgBox("Are you sur to change status print ? ", MsgBoxStyle.OkCancel) = MsgBoxResult.Ok Then
@@ -100,7 +100,7 @@ Public Class ClsBankTransfer
                 clsMsgError.MsgBox(cpt_result & "/" & cpt & " customers update status " & DvdPostData.PaymentOfflineData.StepPayment.PRINTED)
 
             Catch ex As Exception
-                clsMsgError.MsgBox("ERROR changed status", MsgBoxStyle.Critical)
+                clsMsgError.MsgBox("ERROR changed status : ", MsgBoxStyle.Critical)
             End Try
 
         End If

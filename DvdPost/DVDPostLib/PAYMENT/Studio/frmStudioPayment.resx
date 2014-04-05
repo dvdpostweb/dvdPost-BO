@@ -1780,6 +1780,36 @@
   <data name="&gt;&gt;TabStudio.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="chkReportNoProductStudio.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkReportNoProductStudio.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkReportNoProductStudio.Location" type="System.Drawing.Point, System.Drawing">
+    <value>705, 244</value>
+  </data>
+  <data name="chkReportNoProductStudio.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 17</value>
+  </data>
+  <data name="chkReportNoProductStudio.TabIndex" type="System.Int32, mscorlib">
+    <value>118</value>
+  </data>
+  <data name="chkReportNoProductStudio.Text" xml:space="preserve">
+    <value>Report no  product studio</value>
+  </data>
+  <data name="&gt;&gt;chkReportNoProductStudio.Name" xml:space="preserve">
+    <value>chkReportNoProductStudio</value>
+  </data>
+  <data name="&gt;&gt;chkReportNoProductStudio.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chkReportNoProductStudio.Parent" xml:space="preserve">
+    <value>TabCreateReport</value>
+  </data>
+  <data name="&gt;&gt;chkReportNoProductStudio.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="ckhTestPlush.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1808,7 +1838,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;ckhTestPlush.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnSVODDetailedReport.Location" type="System.Drawing.Point, System.Drawing">
     <value>162, 325</value>
@@ -1832,7 +1862,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;btnSVODDetailedReport.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnSVODSummaryReport.Location" type="System.Drawing.Point, System.Drawing">
     <value>437, 325</value>
@@ -1856,7 +1886,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;btnSVODSummaryReport.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="chkPlush.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1886,7 +1916,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;chkPlush.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="chkCineartSpecial.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1916,7 +1946,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;chkCineartSpecial.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="chkKPN.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1946,7 +1976,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;chkKPN.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="chkDVDPost.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1973,7 +2003,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;chkDVDPost.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="btnKPNDetailReport.Location" type="System.Drawing.Point, System.Drawing">
     <value>162, 288</value>
@@ -1997,7 +2027,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;btnKPNDetailReport.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="btnADULTSVODSummary.Location" type="System.Drawing.Point, System.Drawing">
     <value>705, 364</value>
@@ -2021,7 +2051,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;btnADULTSVODSummary.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="SimpleButton1.Location" type="System.Drawing.Point, System.Drawing">
     <value>437, 364</value>
@@ -2045,7 +2075,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;SimpleButton1.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="btnADULTSVODDetailedReport.Location" type="System.Drawing.Point, System.Drawing">
     <value>162, 364</value>
@@ -2069,7 +2099,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;btnADULTSVODDetailedReport.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="btnCineartSummaryNew.Location" type="System.Drawing.Point, System.Drawing">
     <value>437, 415</value>
@@ -2093,7 +2123,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;btnCineartSummaryNew.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="btnCineartSummaryBackcatalogue.Location" type="System.Drawing.Point, System.Drawing">
     <value>437, 460</value>
@@ -2117,7 +2147,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;btnCineartSummaryBackcatalogue.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="btnCineartDetailNew.Location" type="System.Drawing.Point, System.Drawing">
     <value>161, 415</value>
@@ -2141,7 +2171,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;btnCineartDetailNew.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="btnCineartDetailBackcatalogue.Location" type="System.Drawing.Point, System.Drawing">
     <value>161, 460</value>
@@ -2165,7 +2195,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;btnCineartDetailBackcatalogue.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="LabelControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>56, 159</value>
@@ -2189,7 +2219,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;LabelControl1.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="txtToDate.Location" type="System.Drawing.Point, System.Drawing">
     <value>161, 156</value>
@@ -2213,7 +2243,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;txtToDate.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="LabelControl4.Location" type="System.Drawing.Point, System.Drawing">
     <value>56, 116</value>
@@ -2237,7 +2267,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;LabelControl4.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="txtFromDate.Location" type="System.Drawing.Point, System.Drawing">
     <value>161, 113</value>
@@ -2261,7 +2291,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;txtFromDate.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="btnCreateDetailedReport.Location" type="System.Drawing.Point, System.Drawing">
     <value>162, 244</value>
@@ -2285,7 +2315,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;btnCreateDetailedReport.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="btnCreateSummaryReport.Location" type="System.Drawing.Point, System.Drawing">
     <value>437, 244</value>
@@ -2309,7 +2339,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;btnCreateSummaryReport.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="cmdBillingReportFormat.Location" type="System.Drawing.Point, System.Drawing">
     <value>161, 33</value>
@@ -2336,7 +2366,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;cmdBillingReportFormat.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="lblBillingReportFormat.Location" type="System.Drawing.Point, System.Drawing">
     <value>56, 36</value>
@@ -2360,7 +2390,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;lblBillingReportFormat.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>23</value>
   </data>
   <data name="cmbStudioBilling.EditValue" xml:space="preserve">
     <value>DVD_NORMAL</value>
@@ -2390,7 +2420,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;cmbStudioBilling.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>24</value>
   </data>
   <data name="lblStudioBilling.Location" type="System.Drawing.Point, System.Drawing">
     <value>56, 75</value>
@@ -2414,7 +2444,7 @@
     <value>TabCreateReport</value>
   </data>
   <data name="&gt;&gt;lblStudioBilling.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>25</value>
   </data>
   <data name="TabCreateReport.Size" type="System.Drawing.Size, System.Drawing">
     <value>1183, 805</value>
@@ -2476,6 +2506,66 @@
   <data name="&gt;&gt;TabStudioDetailReport.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="ckIncludePlushSabam.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ckIncludePlushSabam.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ckIncludePlushSabam.Location" type="System.Drawing.Point, System.Drawing">
+    <value>406, 105</value>
+  </data>
+  <data name="ckIncludePlushSabam.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 17</value>
+  </data>
+  <data name="ckIncludePlushSabam.TabIndex" type="System.Int32, mscorlib">
+    <value>116</value>
+  </data>
+  <data name="ckIncludePlushSabam.Text" xml:space="preserve">
+    <value>Include Plush in summary report</value>
+  </data>
+  <data name="&gt;&gt;ckIncludePlushSabam.Name" xml:space="preserve">
+    <value>ckIncludePlushSabam</value>
+  </data>
+  <data name="&gt;&gt;ckIncludePlushSabam.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ckIncludePlushSabam.Parent" xml:space="preserve">
+    <value>XtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;ckIncludePlushSabam.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ckIncludeDVDPostSabam.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ckIncludeDVDPostSabam.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="ckIncludeDVDPostSabam.Location" type="System.Drawing.Point, System.Drawing">
+    <value>406, 65</value>
+  </data>
+  <data name="ckIncludeDVDPostSabam.Size" type="System.Drawing.Size, System.Drawing">
+    <value>193, 17</value>
+  </data>
+  <data name="ckIncludeDVDPostSabam.TabIndex" type="System.Int32, mscorlib">
+    <value>115</value>
+  </data>
+  <data name="ckIncludeDVDPostSabam.Text" xml:space="preserve">
+    <value>Include DVDPost in summary report</value>
+  </data>
+  <data name="&gt;&gt;ckIncludeDVDPostSabam.Name" xml:space="preserve">
+    <value>ckIncludeDVDPostSabam</value>
+  </data>
+  <data name="&gt;&gt;ckIncludeDVDPostSabam.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ckIncludeDVDPostSabam.Parent" xml:space="preserve">
+    <value>XtraTabPage1</value>
+  </data>
+  <data name="&gt;&gt;ckIncludeDVDPostSabam.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="cmbProductType.Location" type="System.Drawing.Point, System.Drawing">
     <value>197, 61</value>
   </data>
@@ -2501,7 +2591,7 @@
     <value>XtraTabPage1</value>
   </data>
   <data name="&gt;&gt;cmbProductType.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="lblProductType.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 65</value>
@@ -2525,7 +2615,7 @@
     <value>XtraTabPage1</value>
   </data>
   <data name="&gt;&gt;lblProductType.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="LabelControl2.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 147</value>
@@ -2549,7 +2639,7 @@
     <value>XtraTabPage1</value>
   </data>
   <data name="&gt;&gt;LabelControl2.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="dtSABAMTo.Location" type="System.Drawing.Point, System.Drawing">
     <value>197, 144</value>
@@ -2573,7 +2663,7 @@
     <value>XtraTabPage1</value>
   </data>
   <data name="&gt;&gt;dtSABAMTo.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="LabelControl3.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 110</value>
@@ -2597,7 +2687,7 @@
     <value>XtraTabPage1</value>
   </data>
   <data name="&gt;&gt;LabelControl3.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="dtSABAMFrom.Location" type="System.Drawing.Point, System.Drawing">
     <value>197, 103</value>
@@ -2621,7 +2711,7 @@
     <value>XtraTabPage1</value>
   </data>
   <data name="&gt;&gt;dtSABAMFrom.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="btnCreateSABAMDetail.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 205</value>
@@ -2645,7 +2735,7 @@
     <value>XtraTabPage1</value>
   </data>
   <data name="&gt;&gt;btnCreateSABAMDetail.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="btnCreateSABAMSummary.Location" type="System.Drawing.Point, System.Drawing">
     <value>264, 205</value>
@@ -2669,7 +2759,7 @@
     <value>XtraTabPage1</value>
   </data>
   <data name="&gt;&gt;btnCreateSABAMSummary.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="XtraTabPage1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1183, 805</value>
@@ -3930,7 +4020,7 @@
     <value>DsSite1</value>
   </data>
   <data name="&gt;&gt;DsSite1.Type" xml:space="preserve">
-    <value>DVDPostLib.DsSite, DVDPostLib, Version=2.0.5050.4, Culture=neutral, PublicKeyToken=null</value>
+    <value>DVDPostLib.DsSite, DVDPostLib, Version=2.0.5203.8, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;GridView1.Name" xml:space="preserve">
     <value>GridView1</value>

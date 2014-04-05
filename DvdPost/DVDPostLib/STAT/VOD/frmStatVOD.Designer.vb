@@ -27,7 +27,15 @@ Partial Class frmStatVOD
         Me.txtToDate = New DevExpress.XtraEditors.DateEdit
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
         Me.GCWithDate = New DevExpress.XtraEditors.GroupControl
+        Me.btnSpentCreditEarlier = New DevExpress.XtraEditors.SimpleButton
+        Me.speCreditEarlier = New DevExpress.XtraEditors.SpinEdit
+        Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl
+        Me.btnCustomersByWatchedPlush = New DevExpress.XtraEditors.SimpleButton
+        Me.btnCustomersNmbrWathed = New DevExpress.XtraEditors.SimpleButton
+        Me.btnVodByChannelsPlush = New DevExpress.XtraEditors.SimpleButton
+        Me.btnVodByChannels = New DevExpress.XtraEditors.SimpleButton
         Me.btnTopWatchedVOD = New DevExpress.XtraEditors.SimpleButton
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton
         Me.Panel1.SuspendLayout()
         CType(Me.TabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -46,6 +54,7 @@ Partial Class frmStatVOD
         CType(Me.txtToDate.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GCWithDate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GCWithDate.SuspendLayout()
+        CType(Me.speCreditEarlier.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -122,6 +131,14 @@ Partial Class frmStatVOD
         'GCWithDate
         '
         Me.GCWithDate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
+        Me.GCWithDate.Controls.Add(Me.SimpleButton1)
+        Me.GCWithDate.Controls.Add(Me.btnSpentCreditEarlier)
+        Me.GCWithDate.Controls.Add(Me.speCreditEarlier)
+        Me.GCWithDate.Controls.Add(Me.LabelControl3)
+        Me.GCWithDate.Controls.Add(Me.btnCustomersByWatchedPlush)
+        Me.GCWithDate.Controls.Add(Me.btnCustomersNmbrWathed)
+        Me.GCWithDate.Controls.Add(Me.btnVodByChannelsPlush)
+        Me.GCWithDate.Controls.Add(Me.btnVodByChannels)
         Me.GCWithDate.Controls.Add(Me.btnTopWatchedVOD)
         Me.GCWithDate.Controls.Add(Me.LabelControl2)
         Me.GCWithDate.Controls.Add(Me.txtToDate)
@@ -129,9 +146,78 @@ Partial Class frmStatVOD
         Me.GCWithDate.Controls.Add(Me.txtFromDate)
         Me.GCWithDate.Location = New System.Drawing.Point(23, 24)
         Me.GCWithDate.Name = "GCWithDate"
-        Me.GCWithDate.Size = New System.Drawing.Size(485, 168)
+        Me.GCWithDate.Size = New System.Drawing.Size(1016, 339)
         Me.GCWithDate.TabIndex = 38
         Me.GCWithDate.Text = "Stat With Date"
+        '
+        'btnSpentCreditEarlier
+        '
+        Me.btnSpentCreditEarlier.Location = New System.Drawing.Point(762, 79)
+        Me.btnSpentCreditEarlier.Name = "btnSpentCreditEarlier"
+        Me.HelpProvider1.SetShowHelp(Me.btnSpentCreditEarlier, False)
+        Me.btnSpentCreditEarlier.Size = New System.Drawing.Size(183, 46)
+        Me.btnSpentCreditEarlier.TabIndex = 46
+        Me.btnSpentCreditEarlier.Text = "Spent Credit Before"
+        '
+        'speCreditEarlier
+        '
+        Me.speCreditEarlier.EditValue = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.speCreditEarlier.Location = New System.Drawing.Point(845, 53)
+        Me.speCreditEarlier.Name = "speCreditEarlier"
+        Me.speCreditEarlier.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton})
+        Me.speCreditEarlier.Properties.MaxValue = New Decimal(New Integer() {30, 0, 0, 0})
+        Me.speCreditEarlier.Properties.MinValue = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.speCreditEarlier.Size = New System.Drawing.Size(100, 20)
+        Me.speCreditEarlier.TabIndex = 45
+        '
+        'LabelControl3
+        '
+        Me.LabelControl3.Location = New System.Drawing.Point(649, 56)
+        Me.LabelControl3.Name = "LabelControl3"
+        Me.HelpProvider1.SetShowHelp(Me.LabelControl3, False)
+        Me.LabelControl3.Size = New System.Drawing.Size(169, 13)
+        Me.LabelControl3.TabIndex = 44
+        Me.LabelControl3.Text = "Number of days credit spent earlier"
+        '
+        'btnCustomersByWatchedPlush
+        '
+        Me.btnCustomersByWatchedPlush.Location = New System.Drawing.Point(424, 146)
+        Me.btnCustomersByWatchedPlush.Name = "btnCustomersByWatchedPlush"
+        Me.HelpProvider1.SetShowHelp(Me.btnCustomersByWatchedPlush, False)
+        Me.btnCustomersByWatchedPlush.Size = New System.Drawing.Size(183, 46)
+        Me.btnCustomersByWatchedPlush.TabIndex = 42
+        Me.btnCustomersByWatchedPlush.Text = "#Custom. By #Watched - Plush"
+        Me.btnCustomersByWatchedPlush.ToolTip = "#VOD by channels"
+        '
+        'btnCustomersNmbrWathed
+        '
+        Me.btnCustomersNmbrWathed.Location = New System.Drawing.Point(424, 87)
+        Me.btnCustomersNmbrWathed.Name = "btnCustomersNmbrWathed"
+        Me.HelpProvider1.SetShowHelp(Me.btnCustomersNmbrWathed, False)
+        Me.btnCustomersNmbrWathed.Size = New System.Drawing.Size(183, 46)
+        Me.btnCustomersNmbrWathed.TabIndex = 41
+        Me.btnCustomersNmbrWathed.Text = "#Customers by watched - DVDPost"
+        Me.btnCustomersNmbrWathed.ToolTip = "#VOD by channels"
+        '
+        'btnVodByChannelsPlush
+        '
+        Me.btnVodByChannelsPlush.Location = New System.Drawing.Point(218, 149)
+        Me.btnVodByChannelsPlush.Name = "btnVodByChannelsPlush"
+        Me.HelpProvider1.SetShowHelp(Me.btnVodByChannelsPlush, False)
+        Me.btnVodByChannelsPlush.Size = New System.Drawing.Size(183, 46)
+        Me.btnVodByChannelsPlush.TabIndex = 40
+        Me.btnVodByChannelsPlush.Text = "#VOD by channels - Plush"
+        Me.btnVodByChannelsPlush.ToolTip = "#VOD by channels"
+        '
+        'btnVodByChannels
+        '
+        Me.btnVodByChannels.Location = New System.Drawing.Point(218, 87)
+        Me.btnVodByChannels.Name = "btnVodByChannels"
+        Me.HelpProvider1.SetShowHelp(Me.btnVodByChannels, False)
+        Me.btnVodByChannels.Size = New System.Drawing.Size(183, 46)
+        Me.btnVodByChannels.TabIndex = 39
+        Me.btnVodByChannels.Text = "#VOD by channels - DVDPost"
+        Me.btnVodByChannels.ToolTip = "#VOD by channels"
         '
         'btnTopWatchedVOD
         '
@@ -142,6 +228,15 @@ Partial Class frmStatVOD
         Me.btnTopWatchedVOD.TabIndex = 38
         Me.btnTopWatchedVOD.Text = "Top Watched VOD"
         Me.btnTopWatchedVOD.ToolTip = "Top watched VOD movies"
+        '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.Location = New System.Drawing.Point(424, 202)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.HelpProvider1.SetShowHelp(Me.SimpleButton1, False)
+        Me.SimpleButton1.Size = New System.Drawing.Size(183, 46)
+        Me.SimpleButton1.TabIndex = 47
+        Me.SimpleButton1.Text = "Not Spent Credits"
         '
         'frmStatVOD
         '
@@ -170,6 +265,7 @@ Partial Class frmStatVOD
         CType(Me.GCWithDate, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GCWithDate.ResumeLayout(False)
         Me.GCWithDate.PerformLayout()
+        CType(Me.speCreditEarlier.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -179,4 +275,12 @@ Partial Class frmStatVOD
     Friend WithEvents txtToDate As DevExpress.XtraEditors.DateEdit
     Friend WithEvents GCWithDate As DevExpress.XtraEditors.GroupControl
     Friend WithEvents btnTopWatchedVOD As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnVodByChannels As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnVodByChannelsPlush As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnCustomersNmbrWathed As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnCustomersByWatchedPlush As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents LabelControl3 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents speCreditEarlier As DevExpress.XtraEditors.SpinEdit
+    Friend WithEvents btnSpentCreditEarlier As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
 End Class

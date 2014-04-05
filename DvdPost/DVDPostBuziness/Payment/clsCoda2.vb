@@ -1009,8 +1009,9 @@ Public Class clsCoda2
         Dim longtime_DomWaiting As Integer
         Dim eddPaymentToDomProblem As Integer
         Dim eddPaymentToPaid As Integer
-        Dim eddCustomersToRecurent As Integer
+        Dim eddCustomersToRecurrent As Integer
         Dim paid As Integer
+
         ' If lst_datePivot Is Nothing OrElse lst_datePivot.Length = 0 Then Return
         DvdPostData.clsConnection.CreateTransaction(False)
         Try
@@ -1018,39 +1019,39 @@ Public Class clsCoda2
             sql = DvdPostData.ClsBatchDomiciliation.getFlagReconduct()
             DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
-            If (Configuration.ConfigurationManager.AppSettings("edd") = "true") Then
-                'EddPaymentAndCustomerUpdate(eddPaymentToDomProblem, eddPaymentToPaid, eddCustomersToRecurent)
+            'EddPaymentAndCustomerUpdate(eddPaymentToDomProblem, eddPaymentToPaid, eddCustomersToRecurent)
 
-                sql = DvdPostData.ClsBatchDomiciliation.EDDPaymentToDomProblem()
-                eddPaymentToDomProblem = DvdPostData.clsConnection.ExecuteNonQuery(sql)
+            sql = DvdPostData.ClsBatchDomiciliation.EDDPaymentToDomProblem()
+            eddPaymentToDomProblem = DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
-            End If
+            ' flag status payment the error dom of coda's today temporary status 
+            sql = DvdPostData.ClsBatchDomiciliation.getFlagUnpaidDomInexist()
+            unpaid_inexistant = DvdPostData.clsConnection.ExecuteNonQuery(sql)
+            unpaid_inexistant = unpaid_inexistant / 2
 
-            If Not (Configuration.ConfigurationManager.AppSettings("edd") = "true") Then
-                ' flag status payment the error dom of coda's today temporary status 
-                sql = DvdPostData.ClsBatchDomiciliation.getFlagUnpaidDomInexist()
-                unpaid_inexistant = DvdPostData.clsConnection.ExecuteNonQuery(sql)
-                unpaid_inexistant = unpaid_inexistant / 2
+            ' flag status payment insolvent of coda's today ->  temporary status
+            sql = DvdPostData.ClsBatchDomiciliation.getFlagUnpaidInsolvent()
+            unpaid_insolvent = DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
-                ' flag status payment insolvent of coda's today ->  temporary status
-                sql = DvdPostData.ClsBatchDomiciliation.getFlagUnpaidInsolvent()
-                unpaid_insolvent = DvdPostData.clsConnection.ExecuteNonQuery(sql)
+            unpaid_insolvent = unpaid_insolvent / 2
 
-                unpaid_insolvent = unpaid_insolvent / 2
+            ' flag status payment compte solde of coda's today ->  temporary status
+            sql = DvdPostData.ClsBatchDomiciliation.getFlagUnpaidCompteSolde()
+            unpaid_CompteSolde = DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
-                ' flag status payment compte solde of coda's today ->  temporary status
-                sql = DvdPostData.ClsBatchDomiciliation.getFlagUnpaidCompteSolde()
-                unpaid_CompteSolde = DvdPostData.clsConnection.ExecuteNonQuery(sql)
+            unpaid_CompteSolde = unpaid_CompteSolde / 2
 
-                unpaid_CompteSolde = unpaid_CompteSolde / 2
-
-                ' flag status payment recovery all payment error or insolvent 
-                sql = DvdPostData.ClsBatchDomiciliation.getInsertPaymentOfflineRequest()
-                DvdPostData.clsConnection.ExecuteNonQuery(sql)
-            End If
             ' flag status payment Paid of coda's today not error and not insolvent
             sql = DvdPostData.ClsBatchDomiciliation.getFlagPaidDom()
             paid = DvdPostData.clsConnection.ExecuteNonQuery(sql)
+
+            sql = DvdPostData.ClsBatchDomiciliation.getEDDFlagPaidDom()
+            eddPaymentToPaid = DvdPostData.clsConnection.ExecuteNonQuery(sql)
+
+            ' flag status payment recovery all payment error or insolvent 
+            sql = DvdPostData.ClsBatchDomiciliation.getInsertPaymentOfflineRequest()
+            DvdPostData.clsConnection.ExecuteNonQuery(sql)
+
 
             '' flag status payment the error dom of coda's today definitif status 
             'sql = DvdPostData.ClsBatchDomiciliation.getChangeStatusUnpaidDomInexist()
@@ -1065,9 +1066,9 @@ Public Class clsCoda2
             longtime_DomWaiting = DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
             sql = DvdPostData.ClsBatchDomiciliation.UpdateCustomersEDDMandateFrstToRecurrent()
-            eddCustomersToRecurent = DvdPostData.clsConnection.ExecuteNonQuery(sql)
-            
-            If unpaid_inexistant + unpaid_insolvent + unpaid_CompteSolde + longtime_DomWaiting + paid + eddPaymentToDomProblem + eddPaymentToPaid + eddCustomersToRecurent > 0 Then
+            eddCustomersToRecurrent = DvdPostData.clsConnection.ExecuteNonQuery(sql)
+
+            If unpaid_inexistant + unpaid_insolvent + unpaid_CompteSolde + longtime_DomWaiting + paid + eddPaymentToDomProblem + eddPaymentToPaid + eddCustomersToRecurrent > 0 Then
                 clsMsgError.MsgBox("Domiciliation : " & coda_filename & vbNewLine & _
                 " Paid : " & paid & vbNewLine & _
                 " Unpaid inexistant : " & unpaid_inexistant & vbNewLine & _
@@ -1076,7 +1077,7 @@ Public Class clsCoda2
                 " LongTime Dom : " & longtime_DomWaiting & _
                 " EDDPaymentToDomProblem : " & eddPaymentToDomProblem & _
                 " EDDPaymentToPaid : " & eddPaymentToPaid & _
-                " EDDCustomersToRecurent : " & eddCustomersToRecurent)
+                " EDDCustomersToRecurrent : " & eddCustomersToRecurrent)
             End If
 
             DvdPostData.clsConnection.CommitTransaction(True)
