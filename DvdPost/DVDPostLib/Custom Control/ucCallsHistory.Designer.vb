@@ -73,60 +73,68 @@ Partial Class ucCallsHistory
         '
         'pnlCallQuestionnaire
         '
+        Me.pnlCallQuestionnaire.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnlCallQuestionnaire.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
         Me.pnlCallQuestionnaire.Controls.Add(Me.btnFinish)
         Me.pnlCallQuestionnaire.Controls.Add(Me.btnSuivant)
         Me.pnlCallQuestionnaire.Controls.Add(Me.btnPrec)
         Me.pnlCallQuestionnaire.Controls.Add(Me.lblTitle)
         Me.pnlCallQuestionnaire.Controls.Add(Me.rgCallDetail)
-        Me.pnlCallQuestionnaire.Location = New System.Drawing.Point(794, 46)
+        Me.pnlCallQuestionnaire.Location = New System.Drawing.Point(267, 35)
+        Me.pnlCallQuestionnaire.Margin = New System.Windows.Forms.Padding(2)
         Me.pnlCallQuestionnaire.Name = "pnlCallQuestionnaire"
-        Me.pnlCallQuestionnaire.Size = New System.Drawing.Size(454, 491)
+        Me.pnlCallQuestionnaire.Size = New System.Drawing.Size(824, 399)
         Me.pnlCallQuestionnaire.TabIndex = 3
         Me.pnlCallQuestionnaire.Visible = False
         '
         'btnFinish
         '
         Me.btnFinish.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnFinish.Location = New System.Drawing.Point(179, 387)
+        Me.btnFinish.Location = New System.Drawing.Point(134, 314)
+        Me.btnFinish.Margin = New System.Windows.Forms.Padding(2)
         Me.btnFinish.Name = "btnFinish"
-        Me.btnFinish.Size = New System.Drawing.Size(91, 37)
+        Me.btnFinish.Size = New System.Drawing.Size(552, 30)
         Me.btnFinish.TabIndex = 40
         Me.btnFinish.Text = "FIN"
         '
         'btnSuivant
         '
         Me.btnSuivant.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnSuivant.Location = New System.Drawing.Point(365, 387)
+        Me.btnSuivant.Location = New System.Drawing.Point(758, 314)
+        Me.btnSuivant.Margin = New System.Windows.Forms.Padding(2)
         Me.btnSuivant.Name = "btnSuivant"
-        Me.btnSuivant.Size = New System.Drawing.Size(75, 37)
+        Me.btnSuivant.Size = New System.Drawing.Size(56, 30)
         Me.btnSuivant.TabIndex = 39
         Me.btnSuivant.Text = "suivant"
         '
         'btnPrec
         '
-        Me.btnPrec.Location = New System.Drawing.Point(10, 387)
+        Me.btnPrec.Location = New System.Drawing.Point(8, 314)
+        Me.btnPrec.Margin = New System.Windows.Forms.Padding(2)
         Me.btnPrec.Name = "btnPrec"
-        Me.btnPrec.Size = New System.Drawing.Size(84, 37)
+        Me.btnPrec.Size = New System.Drawing.Size(63, 30)
         Me.btnPrec.TabIndex = 38
         Me.btnPrec.Text = "prec"
         '
         'lblTitle
         '
-        Me.lblTitle.Location = New System.Drawing.Point(37, 23)
+        Me.lblTitle.Location = New System.Drawing.Point(28, 19)
+        Me.lblTitle.Margin = New System.Windows.Forms.Padding(2)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(21, 16)
+        Me.lblTitle.Size = New System.Drawing.Size(18, 13)
         Me.lblTitle.TabIndex = 37
         Me.lblTitle.Text = "title"
         '
         'rgCallDetail
         '
-        Me.rgCallDetail.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.rgCallDetail.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.rgCallDetail.Location = New System.Drawing.Point(10, 53)
+        Me.rgCallDetail.AutoSizeInLayoutControl = True
+        Me.rgCallDetail.Location = New System.Drawing.Point(8, 43)
+        Me.rgCallDetail.Margin = New System.Windows.Forms.Padding(2)
         Me.rgCallDetail.Name = "rgCallDetail"
-        Me.rgCallDetail.Size = New System.Drawing.Size(430, 328)
+        Me.rgCallDetail.Size = New System.Drawing.Size(806, 266)
         Me.rgCallDetail.TabIndex = 36
         '
         'pnlCallData
@@ -146,151 +154,169 @@ Partial Class ucCallsHistory
         Me.pnlCallData.Controls.Add(Me.chkCallFt)
         Me.pnlCallData.Controls.Add(Me.txtCallCustomers_id)
         Me.pnlCallData.Controls.Add(Me.lblCallCustomers_id)
-        Me.pnlCallData.Location = New System.Drawing.Point(447, 46)
+        Me.pnlCallData.Location = New System.Drawing.Point(2, 33)
+        Me.pnlCallData.Margin = New System.Windows.Forms.Padding(2)
         Me.pnlCallData.Name = "pnlCallData"
-        Me.pnlCallData.Size = New System.Drawing.Size(341, 496)
+        Me.pnlCallData.Size = New System.Drawing.Size(256, 403)
         Me.pnlCallData.TabIndex = 2
         Me.pnlCallData.Visible = False
         '
         'memCallComment
         '
-        Me.memCallComment.Location = New System.Drawing.Point(7, 293)
+        Me.memCallComment.Location = New System.Drawing.Point(5, 238)
+        Me.memCallComment.Margin = New System.Windows.Forms.Padding(2)
         Me.memCallComment.Name = "memCallComment"
-        Me.memCallComment.Size = New System.Drawing.Size(329, 198)
+        Me.memCallComment.Size = New System.Drawing.Size(247, 161)
         Me.memCallComment.TabIndex = 38
         '
         'lblCallComment
         '
-        Me.lblCallComment.Location = New System.Drawing.Point(10, 271)
+        Me.lblCallComment.Location = New System.Drawing.Point(8, 220)
+        Me.lblCallComment.Margin = New System.Windows.Forms.Padding(2)
         Me.lblCallComment.Name = "lblCallComment"
-        Me.lblCallComment.Size = New System.Drawing.Size(53, 16)
+        Me.lblCallComment.Size = New System.Drawing.Size(43, 13)
         Me.lblCallComment.TabIndex = 37
         Me.lblCallComment.Text = "comment"
         '
         'lblcallContact
         '
-        Me.lblcallContact.Location = New System.Drawing.Point(7, 183)
+        Me.lblcallContact.Location = New System.Drawing.Point(5, 149)
+        Me.lblcallContact.Margin = New System.Windows.Forms.Padding(2)
         Me.lblcallContact.Name = "lblcallContact"
-        Me.lblcallContact.Size = New System.Drawing.Size(41, 16)
+        Me.lblcallContact.Size = New System.Drawing.Size(36, 13)
         Me.lblcallContact.TabIndex = 36
         Me.lblcallContact.Text = "contact"
         '
         'rgContact
         '
-        Me.rgContact.Location = New System.Drawing.Point(110, 183)
+        Me.rgContact.Location = New System.Drawing.Point(82, 149)
+        Me.rgContact.Margin = New System.Windows.Forms.Padding(2)
         Me.rgContact.Name = "rgContact"
-        Me.rgContact.Size = New System.Drawing.Size(145, 96)
+        Me.rgContact.Size = New System.Drawing.Size(109, 78)
         Me.rgContact.TabIndex = 35
         '
         'txtCallEndDate
         '
         Me.txtCallEndDate.Enabled = False
-        Me.txtCallEndDate.Location = New System.Drawing.Point(110, 146)
+        Me.txtCallEndDate.Location = New System.Drawing.Point(82, 119)
+        Me.txtCallEndDate.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCallEndDate.Name = "txtCallEndDate"
         Me.txtCallEndDate.Properties.ReadOnly = True
-        Me.txtCallEndDate.Size = New System.Drawing.Size(145, 22)
+        Me.txtCallEndDate.Size = New System.Drawing.Size(109, 20)
         Me.txtCallEndDate.TabIndex = 34
         '
         'lblCallEndDate
         '
-        Me.lblCallEndDate.Location = New System.Drawing.Point(5, 149)
+        Me.lblCallEndDate.Location = New System.Drawing.Point(4, 121)
+        Me.lblCallEndDate.Margin = New System.Windows.Forms.Padding(2)
         Me.lblCallEndDate.Name = "lblCallEndDate"
-        Me.lblCallEndDate.Size = New System.Drawing.Size(53, 16)
+        Me.lblCallEndDate.Size = New System.Drawing.Size(46, 13)
         Me.lblCallEndDate.TabIndex = 33
         Me.lblCallEndDate.Text = "end_date"
         '
         'txtCallStartDate
         '
         Me.txtCallStartDate.Enabled = False
-        Me.txtCallStartDate.Location = New System.Drawing.Point(110, 109)
+        Me.txtCallStartDate.Location = New System.Drawing.Point(82, 89)
+        Me.txtCallStartDate.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCallStartDate.Name = "txtCallStartDate"
         Me.txtCallStartDate.Properties.ReadOnly = True
-        Me.txtCallStartDate.Size = New System.Drawing.Size(145, 22)
+        Me.txtCallStartDate.Size = New System.Drawing.Size(109, 20)
         Me.txtCallStartDate.TabIndex = 32
         '
         'lblCallStartDate
         '
-        Me.lblCallStartDate.Location = New System.Drawing.Point(5, 112)
+        Me.lblCallStartDate.Location = New System.Drawing.Point(4, 91)
+        Me.lblCallStartDate.Margin = New System.Windows.Forms.Padding(2)
         Me.lblCallStartDate.Name = "lblCallStartDate"
-        Me.lblCallStartDate.Size = New System.Drawing.Size(58, 16)
+        Me.lblCallStartDate.Size = New System.Drawing.Size(51, 13)
         Me.lblCallStartDate.TabIndex = 31
         Me.lblCallStartDate.Text = "start_date"
         '
         'txtCallReconduction
         '
         Me.txtCallReconduction.Enabled = False
-        Me.txtCallReconduction.Location = New System.Drawing.Point(110, 75)
+        Me.txtCallReconduction.Location = New System.Drawing.Point(82, 61)
+        Me.txtCallReconduction.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCallReconduction.Name = "txtCallReconduction"
         Me.txtCallReconduction.Properties.ReadOnly = True
-        Me.txtCallReconduction.Size = New System.Drawing.Size(145, 22)
+        Me.txtCallReconduction.Size = New System.Drawing.Size(109, 20)
         Me.txtCallReconduction.TabIndex = 30
         '
         'lblCallReconduction
         '
-        Me.lblCallReconduction.Location = New System.Drawing.Point(5, 78)
+        Me.lblCallReconduction.Location = New System.Drawing.Point(4, 63)
+        Me.lblCallReconduction.Margin = New System.Windows.Forms.Padding(2)
         Me.lblCallReconduction.Name = "lblCallReconduction"
-        Me.lblCallReconduction.Size = New System.Drawing.Size(96, 16)
+        Me.lblCallReconduction.Size = New System.Drawing.Size(81, 13)
         Me.lblCallReconduction.TabIndex = 29
         Me.lblCallReconduction.Text = "Nb reconduction "
         '
         'lblCallFt
         '
-        Me.lblCallFt.Location = New System.Drawing.Point(7, 53)
+        Me.lblCallFt.Location = New System.Drawing.Point(5, 43)
+        Me.lblCallFt.Margin = New System.Windows.Forms.Padding(2)
         Me.lblCallFt.Name = "lblCallFt"
-        Me.lblCallFt.Size = New System.Drawing.Size(15, 16)
+        Me.lblCallFt.Size = New System.Drawing.Size(12, 13)
         Me.lblCallFt.TabIndex = 9
         Me.lblCallFt.Text = "FT"
         '
         'chkCallFt
         '
-        Me.chkCallFt.Location = New System.Drawing.Point(108, 51)
+        Me.chkCallFt.Location = New System.Drawing.Point(81, 41)
+        Me.chkCallFt.Margin = New System.Windows.Forms.Padding(2)
         Me.chkCallFt.Name = "chkCallFt"
         Me.chkCallFt.Properties.Caption = ""
-        Me.chkCallFt.Size = New System.Drawing.Size(147, 21)
+        Me.chkCallFt.Size = New System.Drawing.Size(110, 19)
         Me.chkCallFt.TabIndex = 8
         '
         'txtCallCustomers_id
         '
         Me.txtCallCustomers_id.Enabled = False
-        Me.txtCallCustomers_id.Location = New System.Drawing.Point(110, 17)
+        Me.txtCallCustomers_id.Location = New System.Drawing.Point(82, 14)
+        Me.txtCallCustomers_id.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCallCustomers_id.Name = "txtCallCustomers_id"
         Me.txtCallCustomers_id.Properties.ReadOnly = True
-        Me.txtCallCustomers_id.Size = New System.Drawing.Size(145, 22)
+        Me.txtCallCustomers_id.Size = New System.Drawing.Size(109, 20)
         Me.txtCallCustomers_id.TabIndex = 7
         '
         'lblCallCustomers_id
         '
-        Me.lblCallCustomers_id.Location = New System.Drawing.Point(7, 20)
+        Me.lblCallCustomers_id.Location = New System.Drawing.Point(5, 16)
+        Me.lblCallCustomers_id.Margin = New System.Windows.Forms.Padding(2)
         Me.lblCallCustomers_id.Name = "lblCallCustomers_id"
-        Me.lblCallCustomers_id.Size = New System.Drawing.Size(71, 16)
+        Me.lblCallCustomers_id.Size = New System.Drawing.Size(60, 13)
         Me.lblCallCustomers_id.TabIndex = 6
         Me.lblCallCustomers_id.Text = "Customer ID"
         '
         'btnCallNew
         '
-        Me.btnCallNew.Location = New System.Drawing.Point(447, 3)
+        Me.btnCallNew.Location = New System.Drawing.Point(335, 2)
+        Me.btnCallNew.Margin = New System.Windows.Forms.Padding(2)
         Me.btnCallNew.Name = "btnCallNew"
-        Me.btnCallNew.Size = New System.Drawing.Size(130, 37)
+        Me.btnCallNew.Size = New System.Drawing.Size(98, 30)
         Me.btnCallNew.TabIndex = 41
         Me.btnCallNew.Text = "Appel"
         '
         'pnlCallHistory
         '
-        Me.pnlCallHistory.Controls.Add(Me.GridCallHistory)
-        Me.pnlCallHistory.Location = New System.Drawing.Point(3, 3)
+        Me.pnlCallHistory.Controls.Add(Me.pnlCallData)
+        Me.pnlCallHistory.Location = New System.Drawing.Point(2, 2)
+        Me.pnlCallHistory.Margin = New System.Windows.Forms.Padding(2)
         Me.pnlCallHistory.Name = "pnlCallHistory"
-        Me.pnlCallHistory.Size = New System.Drawing.Size(438, 539)
+        Me.pnlCallHistory.Size = New System.Drawing.Size(261, 432)
         Me.pnlCallHistory.TabIndex = 42
         '
         'GridCallHistory
         '
-        Me.GridCallHistory.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GridCallHistory.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(2)
         Me.GridCallHistory.EmbeddedNavigator.Name = ""
         Me.GridCallHistory.FormsUseDefaultLookAndFeel = False
-        Me.GridCallHistory.Location = New System.Drawing.Point(0, 0)
+        Me.GridCallHistory.Location = New System.Drawing.Point(0, 438)
         Me.GridCallHistory.MainView = Me.GridViewCallHistory
+        Me.GridCallHistory.Margin = New System.Windows.Forms.Padding(2)
         Me.GridCallHistory.Name = "GridCallHistory"
-        Me.GridCallHistory.Size = New System.Drawing.Size(438, 539)
+        Me.GridCallHistory.Size = New System.Drawing.Size(837, 148)
         Me.GridCallHistory.TabIndex = 0
         Me.GridCallHistory.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewCallHistory, Me.GridView2})
         '
@@ -358,23 +384,27 @@ Partial Class ucCallsHistory
         '
         'lblCallValues
         '
-        Me.lblCallValues.Location = New System.Drawing.Point(674, 14)
+        Me.lblCallValues.Location = New System.Drawing.Point(506, 11)
+        Me.lblCallValues.Margin = New System.Windows.Forms.Padding(2)
         Me.lblCallValues.Name = "lblCallValues"
-        Me.lblCallValues.Size = New System.Drawing.Size(72, 16)
+        Me.lblCallValues.Size = New System.Drawing.Size(58, 13)
         Me.lblCallValues.TabIndex = 41
         Me.lblCallValues.Text = "lblCallValues"
         '
         'ucCallsHistory
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
+        Me.Controls.Add(Me.GridCallHistory)
+        Me.Controls.Add(Me.pnlCallQuestionnaire)
         Me.Controls.Add(Me.lblCallValues)
         Me.Controls.Add(Me.pnlCallHistory)
         Me.Controls.Add(Me.btnCallNew)
-        Me.Controls.Add(Me.pnlCallQuestionnaire)
-        Me.Controls.Add(Me.pnlCallData)
+        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MinimumSize = New System.Drawing.Size(956, 470)
         Me.Name = "ucCallsHistory"
-        Me.Size = New System.Drawing.Size(1274, 579)
+        Me.Size = New System.Drawing.Size(1100, 588)
         CType(Me.pnlCallQuestionnaire, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlCallQuestionnaire.ResumeLayout(False)
         Me.pnlCallQuestionnaire.PerformLayout()

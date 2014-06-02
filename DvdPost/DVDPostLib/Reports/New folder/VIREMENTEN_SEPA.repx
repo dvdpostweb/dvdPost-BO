@@ -1,70 +1,70 @@
 /// <XRTypeInfo>
 ///   <AssemblyFullName>DevExpress.XtraReports.v8.1, Version=8.1.1.0, Culture=neutral, PublicKeyToken=9b171c9fd64da1d1</AssemblyFullName>
-///   <AssemblyLocation>C:\Windows\assembly\GAC_MSIL\DevExpress.XtraReports.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraReports.v8.1.dll</AssemblyLocation>
+///   <AssemblyLocation>C:\windows\assembly\GAC_MSIL\DevExpress.XtraReports.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraReports.v8.1.dll</AssemblyLocation>
 ///   <TypeName>DevExpress.XtraReports.UI.XtraReport</TypeName>
 ///   <Localization>en-US</Localization>
 ///   <References>
-///     <Reference Path="C:\Users\Alic\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\hjgblq2u01\DVDPostLib.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\Microsoft.VisualBasic\8.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualBasic.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Deployment\2.0.0.0__b03f5f7f11d50a3a\System.Deployment.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System\2.0.0.0__b77a5c561934e089\System.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Configuration\2.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Xml\2.0.0.0__b77a5c561934e089\System.Xml.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Data.SqlXml\2.0.0.0__b77a5c561934e089\System.Data.SqlXml.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Security\2.0.0.0__b03f5f7f11d50a3a\System.Security.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Windows.Forms\2.0.0.0__b77a5c561934e089\System.Windows.Forms.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Drawing\2.0.0.0__b03f5f7f11d50a3a\System.Drawing.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\Accessibility\2.0.0.0__b03f5f7f11d50a3a\Accessibility.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Runtime.Serialization.Formatters.Soap\2.0.0.0__b03f5f7f11d50a3a\System.Runtime.Serialization.Formatters.Soap.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Runtime.Remoting\2.0.0.0__b77a5c561934e089\System.Runtime.Remoting.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_32\System.Web\2.0.0.0__b03f5f7f11d50a3a\System.Web.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_32\System.Data\2.0.0.0__b77a5c561934e089\System.Data.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\Microsoft.VisualC\8.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualC.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_32\System.Transactions\2.0.0.0__b77a5c561934e089\System.Transactions.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_32\System.EnterpriseServices\2.0.0.0__b03f5f7f11d50a3a\System.EnterpriseServices.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.DirectoryServices\2.0.0.0__b03f5f7f11d50a3a\System.DirectoryServices.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Design\2.0.0.0__b03f5f7f11d50a3a\System.Design.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Drawing.Design\2.0.0.0__b03f5f7f11d50a3a\System.Drawing.Design.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_32\System.Data.OracleClient\2.0.0.0__b77a5c561934e089\System.Data.OracleClient.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Web.RegularExpressions\2.0.0.0__b03f5f7f11d50a3a\System.Web.RegularExpressions.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.DirectoryServices.Protocols\2.0.0.0__b03f5f7f11d50a3a\System.DirectoryServices.Protocols.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.ServiceProcess\2.0.0.0__b03f5f7f11d50a3a\System.ServiceProcess.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Configuration.Install\2.0.0.0__b03f5f7f11d50a3a\System.Configuration.Install.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\System.Management\2.0.0.0__b03f5f7f11d50a3a\System.Management.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\Microsoft.JScript\8.0.0.0__b03f5f7f11d50a3a\Microsoft.JScript.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\Microsoft.Vsa\8.0.0.0__b03f5f7f11d50a3a\Microsoft.Vsa.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraEditors.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraEditors.v8.1.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.Utils.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.Utils.v8.1.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.Data.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.Data.v8.1.dll" />
-///     <Reference Path="C:\Users\Alic\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\gmltmgui01\BizzLib.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraGrid.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraGrid.v8.1.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraLayout.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraLayout.v8.1.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraBars.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraBars.v8.1.dll" />
-///     <Reference Path="C:\Users\Alic\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\rzyfbosp01\MySql.Data.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraPrinting.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraPrinting.v8.1.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraRichTextEdit.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraRichTextEdit.v8.1.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraCharts.v8.1.UI\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraCharts.v8.1.UI.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraCharts.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraCharts.v8.1.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.Charts.v8.1.Core\8.1.1.0__9b171c9fd64da1d1\DevExpress.Charts.v8.1.Core.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraNavBar.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraNavBar.v8.1.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraPivotGrid.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraPivotGrid.v8.1.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraPivotGrid.v8.1.Core\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraPivotGrid.v8.1.Core.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraReports.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraReports.v8.1.dll" />
-///     <Reference Path="C:\Users\Alic\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\dmydbobj01\DvdPostData.dll" />
-///     <Reference Path="C:\Users\Alic\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\fkizn-jg01\DVDPostTools.dll" />
-///     <Reference Path="C:\Users\Alic\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\0pmeph5w01\DVDPostBuziness.dll" />
-///     <Reference Path="C:\Users\Alic\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\atye9m_z01\EddXml.dll" />
-///     <Reference Path="C:\Users\Alic\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\6q-0rpnb01\PayPal_Merchant_SDK.dll" />
-///     <Reference Path="C:\Users\Alic\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\tvkle8cp01\log4net.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraTreeList.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraTreeList.v8.1.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraSpellChecker.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraSpellChecker.v8.1.dll" />
-///     <Reference Path="C:\Windows\assembly\GAC_MSIL\DevExpress.XtraSpellChecker.v8.1.Core\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraSpellChecker.v8.1.Core.dll" />
-///     <Reference Path="C:\Users\Alic\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\j9xio5au01\SSH.dll" />
-///     <Reference Path="C:\Users\Alic\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\5bzmsiwe01\SSHLibrary.dll" />
-///     <Reference Path="C:\Users\Alic\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\rsde7rkp01\Org.Mentalis.Security.dll" />
-///     <Reference Path="C:\Users\Alic\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\gnek5cli01\DiffieHellman.dll" />
-///     <Reference Path="C:\Users\Alic\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\eodarzmh01\EmailVerifierComponent.dll" />
+///     <Reference Path="C:\Users\Igor\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\6z4bq9q801\DVDPostLib.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\Microsoft.VisualBasic\8.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualBasic.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\System.Deployment\2.0.0.0__b03f5f7f11d50a3a\System.Deployment.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\System\2.0.0.0__b77a5c561934e089\System.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\System.Configuration\2.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\System.Xml\2.0.0.0__b77a5c561934e089\System.Xml.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\System.Data.SqlXml\2.0.0.0__b77a5c561934e089\System.Data.SqlXml.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\System.Security\2.0.0.0__b03f5f7f11d50a3a\System.Security.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\System.Windows.Forms\2.0.0.0__b77a5c561934e089\System.Windows.Forms.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\System.Drawing\2.0.0.0__b03f5f7f11d50a3a\System.Drawing.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\Accessibility\2.0.0.0__b03f5f7f11d50a3a\Accessibility.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\System.Runtime.Serialization.Formatters.Soap\2.0.0.0__b03f5f7f11d50a3a\System.Runtime.Serialization.Formatters.Soap.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\System.Runtime.Remoting\2.0.0.0__b77a5c561934e089\System.Runtime.Remoting.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_32\System.Web\2.0.0.0__b03f5f7f11d50a3a\System.Web.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_32\System.Data\2.0.0.0__b77a5c561934e089\System.Data.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\Microsoft.VisualC\8.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualC.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_32\System.Transactions\2.0.0.0__b77a5c561934e089\System.Transactions.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_32\System.EnterpriseServices\2.0.0.0__b03f5f7f11d50a3a\System.EnterpriseServices.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\System.DirectoryServices\2.0.0.0__b03f5f7f11d50a3a\System.DirectoryServices.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\System.Design\2.0.0.0__b03f5f7f11d50a3a\System.Design.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\System.Drawing.Design\2.0.0.0__b03f5f7f11d50a3a\System.Drawing.Design.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_32\System.Data.OracleClient\2.0.0.0__b77a5c561934e089\System.Data.OracleClient.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\System.Web.RegularExpressions\2.0.0.0__b03f5f7f11d50a3a\System.Web.RegularExpressions.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\System.DirectoryServices.Protocols\2.0.0.0__b03f5f7f11d50a3a\System.DirectoryServices.Protocols.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\System.ServiceProcess\2.0.0.0__b03f5f7f11d50a3a\System.ServiceProcess.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\System.Configuration.Install\2.0.0.0__b03f5f7f11d50a3a\System.Configuration.Install.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\System.Management\2.0.0.0__b03f5f7f11d50a3a\System.Management.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\Microsoft.JScript\8.0.0.0__b03f5f7f11d50a3a\Microsoft.JScript.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\Microsoft.Vsa\8.0.0.0__b03f5f7f11d50a3a\Microsoft.Vsa.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\DevExpress.XtraEditors.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraEditors.v8.1.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\DevExpress.Utils.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.Utils.v8.1.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\DevExpress.Data.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.Data.v8.1.dll" />
+///     <Reference Path="C:\Users\Igor\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\zoo7st6101\BizzLib.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\DevExpress.XtraGrid.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraGrid.v8.1.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\DevExpress.XtraLayout.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraLayout.v8.1.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\DevExpress.XtraBars.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraBars.v8.1.dll" />
+///     <Reference Path="C:\Users\Igor\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\ptxeg_aa01\MySql.Data.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\DevExpress.XtraPrinting.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraPrinting.v8.1.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\DevExpress.XtraRichTextEdit.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraRichTextEdit.v8.1.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\DevExpress.XtraCharts.v8.1.UI\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraCharts.v8.1.UI.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\DevExpress.XtraCharts.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraCharts.v8.1.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\DevExpress.Charts.v8.1.Core\8.1.1.0__9b171c9fd64da1d1\DevExpress.Charts.v8.1.Core.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\DevExpress.XtraNavBar.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraNavBar.v8.1.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\DevExpress.XtraPivotGrid.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraPivotGrid.v8.1.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\DevExpress.XtraPivotGrid.v8.1.Core\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraPivotGrid.v8.1.Core.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\DevExpress.XtraReports.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraReports.v8.1.dll" />
+///     <Reference Path="C:\Users\Igor\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\e0loh7jc01\DvdPostData.dll" />
+///     <Reference Path="C:\Users\Igor\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\zv3_vidr01\DVDPostTools.dll" />
+///     <Reference Path="C:\Users\Igor\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\r8yqz0wl01\DVDPostBuziness.dll" />
+///     <Reference Path="C:\Users\Igor\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\2kxcnfwa01\EddXml.dll" />
+///     <Reference Path="C:\Users\Igor\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\5peaqyqa01\PayPal_Merchant_SDK.dll" />
+///     <Reference Path="C:\Users\Igor\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\gmxeebne01\log4net.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\DevExpress.XtraTreeList.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraTreeList.v8.1.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\DevExpress.XtraSpellChecker.v8.1\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraSpellChecker.v8.1.dll" />
+///     <Reference Path="C:\windows\assembly\GAC_MSIL\DevExpress.XtraSpellChecker.v8.1.Core\8.1.1.0__9b171c9fd64da1d1\DevExpress.XtraSpellChecker.v8.1.Core.dll" />
+///     <Reference Path="C:\Users\Igor\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\mzn6yv5d01\SSH.dll" />
+///     <Reference Path="C:\Users\Igor\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\tx_0pg8n01\SSHLibrary.dll" />
+///     <Reference Path="C:\Users\Igor\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\nz6oi8i801\Org.Mentalis.Security.dll" />
+///     <Reference Path="C:\Users\Igor\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\mkksppsk01\DiffieHellman.dll" />
+///     <Reference Path="C:\Users\Igor\AppData\Local\Microsoft\VisualStudio\8.0\ProjectAssemblies\ggwjrnwx01\EmailVerifierComponent.dll" />
 ///   </References>
 /// </XRTypeInfo>
 namespace XtraReportSerialization {
@@ -146,7 +146,7 @@ namespace XtraReportSerialization {
                         "W0uRHJhd2luZywgVmVyc2lvbj0yLjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuP" +
                         "WIwM2Y1ZjdmMTFkNTBhM2EFAQAAABVTeXN0ZW0uRHJhd2luZy5CaXRtYXABAAAABERhdGEHAgIAAAAJA" +
                         "wAAAA8DAAAA35UAAAKJUE5HDQoaCgAAAA1JSERSAAADjQAAAbsIAgAAAOiK5/cAAAABc1JHQgCuzhzpA" +
-                        "AAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwQAADsEBuJFr7QAAlXRJREFUeF7t/Yt/FEXe9o///iP1U" +
+                        "AAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAlXRJREFUeF7t/Yt/FEXe9o///iP1U" +
                         "VT4KvgooC67unh7utWMJEA4mMUYQQ2sQcNpDYZzJGggGtZgwEgk4RAMYgLhkBVYxGhAdvWRXfYWDzfdM" +
                         "z3Tc8yvqj7VM93Vk8lMZiAzyXW93q+8Mj3dV1cfZvqa6uqq/98gBEEQBEEQBOWfRj+nakW3pIl95pwsO" +
                         "KzJiBe0M2KTES9oZ8QmI17QzohNRrygnZwvOKzJiBe0M2KTES9oZ8QmI17QzohNRrygnZwvmOdrH/GCd" +
@@ -1048,7 +1048,7 @@ namespace XtraReportSerialization {
             this.GroupHeader1.Dpi = 254F;
             this.GroupHeader1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
                         new DevExpress.XtraReports.UI.GroupField("payment_offline_request_id", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
-            this.GroupHeader1.Height = 751;
+            this.GroupHeader1.Height = 752;
             this.GroupHeader1.Name = "GroupHeader1";
             this.GroupHeader1.PageBreak = DevExpress.XtraReports.UI.PageBreak.BeforeBand;
             this.GroupHeader1.RepeatEveryPage = true;
@@ -1070,7 +1070,7 @@ namespace XtraReportSerialization {
                         this.xrLabel8,
                         this.XrPictureBox2});
             this.GroupFooter1.Dpi = 254F;
-            this.GroupFooter1.Height = 1172;
+            this.GroupFooter1.Height = 1186;
             this.GroupFooter1.Name = "GroupFooter1";
             this.GroupFooter1.PageBreak = DevExpress.XtraReports.UI.PageBreak.BeforeBand;
             this.GroupFooter1.RepeatEveryPage = true;
@@ -1079,10 +1079,10 @@ namespace XtraReportSerialization {
             // 
             this.dateLimitPayment.Dpi = 254F;
             this.dateLimitPayment.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateLimitPayment.Location = new System.Drawing.Point(1090, 491);
+            this.dateLimitPayment.Location = new System.Drawing.Point(1090, 490);
             this.dateLimitPayment.Name = "dateLimitPayment";
             this.dateLimitPayment.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.dateLimitPayment.Size = new System.Drawing.Size(254, 42);
+            this.dateLimitPayment.Size = new System.Drawing.Size(254, 43);
             this.dateLimitPayment.StylePriority.UseFont = false;
             this.dateLimitPayment.Text = "00/00/0000";
             // 
@@ -1090,10 +1090,10 @@ namespace XtraReportSerialization {
             // 
             this.accountNumber.Dpi = 254F;
             this.accountNumber.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.accountNumber.Location = new System.Drawing.Point(820, 383);
+            this.accountNumber.Location = new System.Drawing.Point(820, 384);
             this.accountNumber.Name = "accountNumber";
             this.accountNumber.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.accountNumber.Size = new System.Drawing.Size(545, 42);
+            this.accountNumber.Size = new System.Drawing.Size(546, 43);
             this.accountNumber.StylePriority.UseFont = false;
             this.accountNumber.Text = "B E 6 2 0 6 8 2 4 16 8 8 6 6 1";
             // 
@@ -1102,10 +1102,10 @@ namespace XtraReportSerialization {
             this.communication.Dpi = 254F;
             this.communication.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.communication.ForeColor = System.Drawing.Color.Black;
-            this.communication.Location = new System.Drawing.Point(895, 425);
+            this.communication.Location = new System.Drawing.Point(894, 424);
             this.communication.Name = "communication";
             this.communication.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.communication.Size = new System.Drawing.Size(423, 42);
+            this.communication.Size = new System.Drawing.Size(424, 43);
             this.communication.StylePriority.UseFont = false;
             this.communication.StylePriority.UseForeColor = false;
             this.communication.Text = "123456789123";
@@ -1115,10 +1115,10 @@ namespace XtraReportSerialization {
             this.aboDate.Dpi = 254F;
             this.aboDate.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aboDate.ForeColor = System.Drawing.Color.Black;
-            this.aboDate.Location = new System.Drawing.Point(955, 341);
+            this.aboDate.Location = new System.Drawing.Point(955, 340);
             this.aboDate.Name = "aboDate";
             this.aboDate.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.aboDate.Size = new System.Drawing.Size(317, 64);
+            this.aboDate.Size = new System.Drawing.Size(318, 64);
             this.aboDate.StylePriority.UseFont = false;
             this.aboDate.StylePriority.UseForeColor = false;
             this.aboDate.Text = "00/00/0000";
@@ -1128,10 +1128,10 @@ namespace XtraReportSerialization {
             this.creditAbo.Dpi = 254F;
             this.creditAbo.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.creditAbo.ForeColor = System.Drawing.Color.Black;
-            this.creditAbo.Location = new System.Drawing.Point(900, 299);
+            this.creditAbo.Location = new System.Drawing.Point(899, 300);
             this.creditAbo.Name = "creditAbo";
             this.creditAbo.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.creditAbo.Size = new System.Drawing.Size(90, 42);
+            this.creditAbo.Size = new System.Drawing.Size(89, 43);
             this.creditAbo.StylePriority.UseFont = false;
             this.creditAbo.StylePriority.UseForeColor = false;
             this.creditAbo.StylePriority.UseTextAlignment = false;
@@ -1143,10 +1143,10 @@ namespace XtraReportSerialization {
             this.montant.Dpi = 254F;
             this.montant.Font = new System.Drawing.Font("Verdana", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.montant.ForeColor = System.Drawing.Color.IndianRed;
-            this.montant.Location = new System.Drawing.Point(985, 260);
+            this.montant.Location = new System.Drawing.Point(986, 259);
             this.montant.Name = "montant";
             this.montant.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.montant.Size = new System.Drawing.Size(127, 42);
+            this.montant.Size = new System.Drawing.Size(127, 43);
             this.montant.StylePriority.UseFont = false;
             this.montant.StylePriority.UseForeColor = false;
             this.montant.StylePriority.UseTextAlignment = false;
@@ -1157,10 +1157,10 @@ namespace XtraReportSerialization {
             // 
             this.xrLabel1.Dpi = 254F;
             this.xrLabel1.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel1.Location = new System.Drawing.Point(85, 106);
+            this.xrLabel1.Location = new System.Drawing.Point(84, 107);
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel1.Size = new System.Drawing.Size(1058, 64);
+            this.xrLabel1.Size = new System.Drawing.Size(1059, 63);
             this.xrLabel1.StylePriority.UseFont = false;
             this.xrLabel1.Text = "$$$name$$$ ";
             // 
@@ -1168,10 +1168,10 @@ namespace XtraReportSerialization {
             // 
             this.xrRichText2.Dpi = 254F;
             this.xrRichText2.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrRichText2.Location = new System.Drawing.Point(169, 1101);
+            this.xrRichText2.Location = new System.Drawing.Point(170, 1100);
             this.xrRichText2.Name = "xrRichText2";
             this.xrRichText2.SerializableRtfString = resources.GetString("xrRichText2.SerializableRtfString");
-            this.xrRichText2.Size = new System.Drawing.Size(1630, 85);
+            this.xrRichText2.Size = new System.Drawing.Size(1631, 84);
             this.xrRichText2.StylePriority.UseFont = false;
             this.xrRichText2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
@@ -1179,11 +1179,11 @@ namespace XtraReportSerialization {
             // 
             this.xrLabel3.Dpi = 254F;
             this.xrLabel3.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel3.Location = new System.Drawing.Point(85, 868);
+            this.xrLabel3.Location = new System.Drawing.Point(84, 869);
             this.xrLabel3.Multiline = true;
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
-            this.xrLabel3.Size = new System.Drawing.Size(529, 85);
+            this.xrLabel3.Size = new System.Drawing.Size(528, 84);
             this.xrLabel3.StylePriority.UseFont = false;
             this.xrLabel3.StylePriority.UsePadding = false;
             this.xrLabel3.Text = "Customer Service Manager";
@@ -1193,11 +1193,11 @@ namespace XtraReportSerialization {
             this.xrTextModel2.BackColor = System.Drawing.Color.Empty;
             this.xrTextModel2.Dpi = 254F;
             this.xrTextModel2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrTextModel2.Location = new System.Drawing.Point(402, 254);
+            this.xrTextModel2.Location = new System.Drawing.Point(401, 254);
             this.xrTextModel2.Multiline = true;
             this.xrTextModel2.Name = "xrTextModel2";
             this.xrTextModel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrTextModel2.Size = new System.Drawing.Size(1080, 212);
+            this.xrTextModel2.Size = new System.Drawing.Size(1080, 211);
             this.xrTextModel2.StylePriority.UseBackColor = false;
             this.xrTextModel2.StylePriority.UseFont = false;
             this.xrTextModel2.StylePriority.UseTextAlignment = false;
@@ -1213,12 +1213,12 @@ namespace XtraReportSerialization {
             this.xrTextlResult2.BorderWidth = 1;
             this.xrTextlResult2.Dpi = 254F;
             this.xrTextlResult2.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrTextlResult2.Location = new System.Drawing.Point(402, 254);
+            this.xrTextlResult2.Location = new System.Drawing.Point(401, 254);
             this.xrTextlResult2.Multiline = true;
             this.xrTextlResult2.Name = "xrTextlResult2";
             this.xrTextlResult2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.xrTextlResult2.Scripts.OnBeforePrint = resources.GetString("xrTextlResult2.Scripts.OnBeforePrint");
-            this.xrTextlResult2.Size = new System.Drawing.Size(1080, 212);
+            this.xrTextlResult2.Size = new System.Drawing.Size(1080, 211);
             this.xrTextlResult2.StylePriority.UseBackColor = false;
             this.xrTextlResult2.StylePriority.UseBorders = false;
             this.xrTextlResult2.StylePriority.UseBorderWidth = false;
@@ -1233,10 +1233,10 @@ namespace XtraReportSerialization {
             this.xrTextModel3.Dpi = 254F;
             this.xrTextModel3.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrTextModel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.xrTextModel3.Location = new System.Drawing.Point(85, 487);
+            this.xrTextModel3.Location = new System.Drawing.Point(84, 488);
             this.xrTextModel3.Name = "xrTextModel3";
             this.xrTextModel3.SerializableRtfString = resources.GetString("xrTextModel3.SerializableRtfString");
-            this.xrTextModel3.Size = new System.Drawing.Size(1778, 296);
+            this.xrTextModel3.Size = new System.Drawing.Size(1778, 297);
             this.xrTextModel3.StylePriority.UseFont = false;
             this.xrTextModel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
@@ -1247,7 +1247,7 @@ namespace XtraReportSerialization {
             this.xrTextModel1.Dpi = 254F;
             this.xrTextModel1.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrTextModel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.xrTextModel1.Location = new System.Drawing.Point(85, 190);
+            this.xrTextModel1.Location = new System.Drawing.Point(84, 190);
             this.xrTextModel1.Name = "xrTextModel1";
             this.xrTextModel1.SerializableRtfString = resources.GetString("xrTextModel1.SerializableRtfString");
             this.xrTextModel1.Size = new System.Drawing.Size(1778, 64);
@@ -1262,7 +1262,7 @@ namespace XtraReportSerialization {
             this.xrTextResult1.Dpi = 254F;
             this.xrTextResult1.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrTextResult1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.xrTextResult1.Location = new System.Drawing.Point(85, 190);
+            this.xrTextResult1.Location = new System.Drawing.Point(84, 190);
             this.xrTextResult1.Name = "xrTextResult1";
             this.xrTextResult1.Scripts.OnBeforePrint = resources.GetString("xrTextResult1.Scripts.OnBeforePrint");
             this.xrTextResult1.SerializableRtfString = resources.GetString("xrTextResult1.SerializableRtfString");
@@ -1275,19 +1275,19 @@ namespace XtraReportSerialization {
             this.xrPictureBox1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.xrPictureBox1.ImageUrl = "\\\\stockholm\\share\\Bizkeys\\Reports\\Compta\\letterClick&Post\\image\\logo_dvdpost_BE_C" +
                 "MJN.jpg";
-            this.xrPictureBox1.Location = new System.Drawing.Point(106, 42);
+            this.xrPictureBox1.Location = new System.Drawing.Point(107, 43);
             this.xrPictureBox1.Name = "xrPictureBox1";
-            this.xrPictureBox1.Size = new System.Drawing.Size(572, 360);
+            this.xrPictureBox1.Size = new System.Drawing.Size(572, 361);
             this.xrPictureBox1.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
             // 
             // xrLabel6
             // 
             this.xrLabel6.Dpi = 254F;
             this.xrLabel6.Font = new System.Drawing.Font("Verdana", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel6.Location = new System.Drawing.Point(85, 572);
+            this.xrLabel6.Location = new System.Drawing.Point(84, 572);
             this.xrLabel6.Name = "xrLabel6";
             this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel6.Size = new System.Drawing.Size(360, 42);
+            this.xrLabel6.Size = new System.Drawing.Size(361, 43);
             this.xrLabel6.StylePriority.UseFont = false;
             this.xrLabel6.Text = "Your reference:";
             // 
@@ -1297,10 +1297,10 @@ namespace XtraReportSerialization {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "Offline_Payment_Step_View1.customers_id", "")});
             this.xrLabel5.Dpi = 254F;
             this.xrLabel5.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrLabel5.Location = new System.Drawing.Point(402, 572);
+            this.xrLabel5.Location = new System.Drawing.Point(401, 572);
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel5.Size = new System.Drawing.Size(381, 42);
+            this.xrLabel5.Size = new System.Drawing.Size(381, 43);
             this.xrLabel5.StylePriority.UseFont = false;
             this.xrLabel5.Text = "xrLabel15";
             // 
@@ -1312,7 +1312,7 @@ namespace XtraReportSerialization {
             this.postCodeAndCityResult.Name = "postCodeAndCityResult";
             this.postCodeAndCityResult.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.postCodeAndCityResult.Scripts.OnBeforePrint = resources.GetString("postCodeAndCityResult.Scripts.OnBeforePrint");
-            this.postCodeAndCityResult.Size = new System.Drawing.Size(572, 42);
+            this.postCodeAndCityResult.Size = new System.Drawing.Size(572, 43);
             this.postCodeAndCityResult.StylePriority.UseFont = false;
             this.postCodeAndCityResult.StylePriority.UseTextAlignment = false;
             this.postCodeAndCityResult.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
@@ -1321,11 +1321,11 @@ namespace XtraReportSerialization {
             // 
             this.nameResult.Dpi = 254F;
             this.nameResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameResult.Location = new System.Drawing.Point(783, 508);
+            this.nameResult.Location = new System.Drawing.Point(782, 508);
             this.nameResult.Name = "nameResult";
             this.nameResult.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.nameResult.Scripts.OnBeforePrint = resources.GetString("nameResult.Scripts.OnBeforePrint");
-            this.nameResult.Size = new System.Drawing.Size(868, 42);
+            this.nameResult.Size = new System.Drawing.Size(869, 43);
             this.nameResult.StylePriority.UseFont = false;
             this.nameResult.StylePriority.UseTextAlignment = false;
             this.nameResult.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
@@ -1333,10 +1333,10 @@ namespace XtraReportSerialization {
             // postCodeAndCity
             // 
             this.postCodeAndCity.Dpi = 254F;
-            this.postCodeAndCity.Location = new System.Drawing.Point(1228, 635);
+            this.postCodeAndCity.Location = new System.Drawing.Point(1227, 635);
             this.postCodeAndCity.Name = "postCodeAndCity";
             this.postCodeAndCity.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.postCodeAndCity.Size = new System.Drawing.Size(423, 42);
+            this.postCodeAndCity.Size = new System.Drawing.Size(424, 43);
             this.postCodeAndCity.StylePriority.UseTextAlignment = false;
             this.postCodeAndCity.Text = "$$$postCodeAndCity$$$";
             this.postCodeAndCity.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
@@ -1345,11 +1345,11 @@ namespace XtraReportSerialization {
             // name
             // 
             this.name.Dpi = 254F;
-            this.name.Location = new System.Drawing.Point(1164, 508);
+            this.name.Location = new System.Drawing.Point(1163, 508);
             this.name.Multiline = true;
             this.name.Name = "name";
             this.name.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.name.Size = new System.Drawing.Size(487, 42);
+            this.name.Size = new System.Drawing.Size(488, 43);
             this.name.StylePriority.UseTextAlignment = false;
             this.name.Text = "$$$name$$$";
             this.name.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
@@ -1364,7 +1364,7 @@ namespace XtraReportSerialization {
             this.xrLabel16.Dpi = 254F;
             this.xrLabel16.Font = new System.Drawing.Font("Verdana", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel16.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.xrLabel16.Location = new System.Drawing.Point(85, 508);
+            this.xrLabel16.Location = new System.Drawing.Point(84, 508);
             this.xrLabel16.Name = "xrLabel16";
             this.xrLabel16.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.xrLabel16.Size = new System.Drawing.Size(444, 64);
@@ -1381,11 +1381,11 @@ namespace XtraReportSerialization {
             this.xrRichText1.Dpi = 254F;
             this.xrRichText1.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrRichText1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.xrRichText1.Location = new System.Drawing.Point(85, 656);
+            this.xrRichText1.Location = new System.Drawing.Point(84, 655);
             this.xrRichText1.Name = "xrRichText1";
             this.xrRichText1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
             this.xrRichText1.SerializableRtfString = resources.GetString("xrRichText1.SerializableRtfString");
-            this.xrRichText1.Size = new System.Drawing.Size(212, 64);
+            this.xrRichText1.Size = new System.Drawing.Size(211, 64);
             this.xrRichText1.StylePriority.UseFont = false;
             this.xrRichText1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
@@ -1399,7 +1399,7 @@ namespace XtraReportSerialization {
             this.xrPageInfo1.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrPageInfo1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.xrPageInfo1.Format = "{0:dd/MM/yyyy}";
-            this.xrPageInfo1.Location = new System.Drawing.Point(296, 656);
+            this.xrPageInfo1.Location = new System.Drawing.Point(297, 655);
             this.xrPageInfo1.Name = "xrPageInfo1";
             this.xrPageInfo1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
             this.xrPageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
@@ -1413,11 +1413,11 @@ namespace XtraReportSerialization {
             // 
             this.addressCustomersResult.Dpi = 254F;
             this.addressCustomersResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressCustomersResult.Location = new System.Drawing.Point(783, 572);
+            this.addressCustomersResult.Location = new System.Drawing.Point(782, 572);
             this.addressCustomersResult.Name = "addressCustomersResult";
             this.addressCustomersResult.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
             this.addressCustomersResult.Scripts.OnBeforePrint = resources.GetString("addressCustomersResult.Scripts.OnBeforePrint");
-            this.addressCustomersResult.Size = new System.Drawing.Size(868, 42);
+            this.addressCustomersResult.Size = new System.Drawing.Size(869, 43);
             this.addressCustomersResult.StylePriority.UseFont = false;
             this.addressCustomersResult.StylePriority.UseTextAlignment = false;
             this.addressCustomersResult.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
@@ -1425,10 +1425,10 @@ namespace XtraReportSerialization {
             // addressCustomers
             // 
             this.addressCustomers.Dpi = 254F;
-            this.addressCustomers.Location = new System.Drawing.Point(783, 572);
+            this.addressCustomers.Location = new System.Drawing.Point(782, 572);
             this.addressCustomers.Name = "addressCustomers";
             this.addressCustomers.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.addressCustomers.Size = new System.Drawing.Size(868, 42);
+            this.addressCustomers.Size = new System.Drawing.Size(869, 43);
             this.addressCustomers.StylePriority.UseTextAlignment = false;
             this.addressCustomers.Text = "$$$addressCustomers$$$";
             this.addressCustomers.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
@@ -1441,7 +1441,7 @@ namespace XtraReportSerialization {
             this.iban.Location = new System.Drawing.Point(373, 511);
             this.iban.Name = "iban";
             this.iban.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.iban.Size = new System.Drawing.Size(1058, 40);
+            this.iban.Size = new System.Drawing.Size(1059, 41);
             this.iban.StylePriority.UseFont = false;
             this.iban.Text = "B E 6 2 0 6 8 2 4 1 6 8 8 6 6 1";
             // 
@@ -1449,10 +1449,10 @@ namespace XtraReportSerialization {
             // 
             this.bic.Dpi = 254F;
             this.bic.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bic.Location = new System.Drawing.Point(370, 579);
+            this.bic.Location = new System.Drawing.Point(371, 579);
             this.bic.Name = "bic";
             this.bic.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.bic.Size = new System.Drawing.Size(1058, 40);
+            this.bic.Size = new System.Drawing.Size(1059, 41);
             this.bic.StylePriority.UseFont = false;
             this.bic.Text = "G K C C B E B B";
             // 
@@ -1463,7 +1463,7 @@ namespace XtraReportSerialization {
             this.hesaddress1.Location = new System.Drawing.Point(368, 640);
             this.hesaddress1.Name = "hesaddress1";
             this.hesaddress1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.hesaddress1.Size = new System.Drawing.Size(1058, 40);
+            this.hesaddress1.Size = new System.Drawing.Size(1059, 41);
             this.hesaddress1.StylePriority.UseFont = false;
             this.hesaddress1.Text = "HOME ENTERTAINMENT";
             // 
@@ -1471,10 +1471,10 @@ namespace XtraReportSerialization {
             // 
             this.hesaddress2.Dpi = 254F;
             this.hesaddress2.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hesaddress2.Location = new System.Drawing.Point(368, 677);
+            this.hesaddress2.Location = new System.Drawing.Point(368, 678);
             this.hesaddress2.Name = "hesaddress2";
             this.hesaddress2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.hesaddress2.Size = new System.Drawing.Size(1058, 40);
+            this.hesaddress2.Size = new System.Drawing.Size(1059, 41);
             this.hesaddress2.StylePriority.UseFont = false;
             this.hesaddress2.Text = "SERVICES S A";
             // 
@@ -1485,7 +1485,7 @@ namespace XtraReportSerialization {
             this.hesaddress3.Location = new System.Drawing.Point(368, 709);
             this.hesaddress3.Name = "hesaddress3";
             this.hesaddress3.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.hesaddress3.Size = new System.Drawing.Size(1058, 40);
+            this.hesaddress3.Size = new System.Drawing.Size(1059, 41);
             this.hesaddress3.StylePriority.UseFont = false;
             this.hesaddress3.Text = "1070 BRUXELLES";
             // 
@@ -1496,22 +1496,22 @@ namespace XtraReportSerialization {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "Offline_Payment_Step_View1.entry_city", "")});
             this.xrLabel13.Dpi = 254F;
             this.xrLabel13.Font = new System.Drawing.Font("Times New Roman", 11F);
-            this.xrLabel13.Location = new System.Drawing.Point(540, 435);
+            this.xrLabel13.Location = new System.Drawing.Point(541, 434);
             this.xrLabel13.Name = "xrLabel13";
             this.xrLabel13.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
-            this.xrLabel13.Size = new System.Drawing.Size(487, 42);
+            this.xrLabel13.Size = new System.Drawing.Size(488, 43);
             this.xrLabel13.Text = "xrLabel13";
             // 
             // xrLabel7
             // 
             this.xrLabel7.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "Offline_Payment_Step_View1.amount", "{0: #  #  #    .   0   0}")});
+                        new DevExpress.XtraReports.UI.XRBinding("Text", null, "Offline_Payment_Step_View1.amount", "{0: # # # . 0 0}")});
             this.xrLabel7.Dpi = 254F;
             this.xrLabel7.Font = new System.Drawing.Font("Times New Roman", 11F);
-            this.xrLabel7.Location = new System.Drawing.Point(1389, 214);
+            this.xrLabel7.Location = new System.Drawing.Point(1389, 213);
             this.xrLabel7.Name = "xrLabel7";
             this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
-            this.xrLabel7.Size = new System.Drawing.Size(479, 42);
+            this.xrLabel7.Size = new System.Drawing.Size(480, 43);
             this.xrLabel7.StylePriority.UsePadding = false;
             this.xrLabel7.Text = "xrLabel7";
             this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
@@ -1526,7 +1526,7 @@ namespace XtraReportSerialization {
             this.xrLabel9.Location = new System.Drawing.Point(561, 361);
             this.xrLabel9.Name = "xrLabel9";
             this.xrLabel9.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
-            this.xrLabel9.Size = new System.Drawing.Size(471, 45);
+            this.xrLabel9.Size = new System.Drawing.Size(470, 46);
             this.xrLabel9.StylePriority.UsePadding = false;
             this.xrLabel9.Text = "xrLabel9";
             // 
@@ -1537,10 +1537,10 @@ namespace XtraReportSerialization {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "Offline_Payment_Step_View1.entry_street_address", "")});
             this.xrLabel10.Dpi = 254F;
             this.xrLabel10.Font = new System.Drawing.Font("Times New Roman", 11F);
-            this.xrLabel10.Location = new System.Drawing.Point(373, 400);
+            this.xrLabel10.Location = new System.Drawing.Point(373, 399);
             this.xrLabel10.Name = "xrLabel10";
             this.xrLabel10.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
-            this.xrLabel10.Size = new System.Drawing.Size(669, 45);
+            this.xrLabel10.Size = new System.Drawing.Size(668, 46);
             this.xrLabel10.StylePriority.UsePadding = false;
             this.xrLabel10.Text = "xrLabel10";
             // 
@@ -1554,7 +1554,7 @@ namespace XtraReportSerialization {
             this.xrLabel11.Location = new System.Drawing.Point(368, 439);
             this.xrLabel11.Name = "xrLabel11";
             this.xrLabel11.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
-            this.xrLabel11.Size = new System.Drawing.Size(161, 40);
+            this.xrLabel11.Size = new System.Drawing.Size(160, 41);
             this.xrLabel11.StylePriority.UsePadding = false;
             this.xrLabel11.Text = "xrLabel11";
             // 
@@ -1564,11 +1564,11 @@ namespace XtraReportSerialization {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "Offline_Payment_Step_View1.communication", "{0:# # # - # # # # - # # # # #}")});
             this.xrLabel12.Dpi = 254F;
             this.xrLabel12.Font = new System.Drawing.Font("Times New Roman", 11F);
-            this.xrLabel12.Location = new System.Drawing.Point(374, 774);
+            this.xrLabel12.Location = new System.Drawing.Point(373, 775);
             this.xrLabel12.Name = "xrLabel12";
             this.xrLabel12.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
             this.xrLabel12.Scripts.OnBeforePrint = resources.GetString("xrLabel12.Scripts.OnBeforePrint");
-            this.xrLabel12.Size = new System.Drawing.Size(1199, 40);
+            this.xrLabel12.Size = new System.Drawing.Size(1199, 41);
             this.xrLabel12.StylePriority.UseFont = false;
             this.xrLabel12.StylePriority.UsePadding = false;
             this.xrLabel12.Text = "1234567891234";
@@ -1580,10 +1580,10 @@ namespace XtraReportSerialization {
                         new DevExpress.XtraReports.UI.XRBinding("Text", null, "Offline_Payment_Step_View1.customers_firstname", "")});
             this.xrLabel8.Dpi = 254F;
             this.xrLabel8.Font = new System.Drawing.Font("Times New Roman", 11F);
-            this.xrLabel8.Location = new System.Drawing.Point(373, 360);
+            this.xrLabel8.Location = new System.Drawing.Point(373, 361);
             this.xrLabel8.Name = "xrLabel8";
             this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
-            this.xrLabel8.Size = new System.Drawing.Size(190, 45);
+            this.xrLabel8.Size = new System.Drawing.Size(190, 46);
             this.xrLabel8.StylePriority.UsePadding = false;
             this.xrLabel8.Text = "xrLabel8";
             // 
@@ -1591,10 +1591,11 @@ namespace XtraReportSerialization {
             // 
             this.XrPictureBox2.Dpi = 254F;
             this.XrPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("XrPictureBox2.Image")));
-            this.XrPictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.XrPictureBox2.ImageUrl = "D:\\DVDPost\\dvdPost-BO\\dvdPost-BO\\DvdPost\\DVDPostLib\\Reports\\InvoiceMargin.png";
+            this.XrPictureBox2.Location = new System.Drawing.Point(13, 19);
             this.XrPictureBox2.Name = "XrPictureBox2";
-            this.XrPictureBox2.Size = new System.Drawing.Size(2405, 1172);
-            this.XrPictureBox2.Sizing = DevExpress.XtraPrinting.ImageSizeMode.AutoSize;
+            this.XrPictureBox2.Size = new System.Drawing.Size(2072, 1132);
+            this.XrPictureBox2.Sizing = DevExpress.XtraPrinting.ImageSizeMode.StretchImage;
             // 
             // dataTable1
             // 
@@ -1611,7 +1612,7 @@ namespace XtraReportSerialization {
             this.DataSource = this.dataTable1;
             this.Dpi = 254F;
             this.ExportOptions.Pdf.NeverEmbeddedFonts = "Microsoft Sans Serif";
-            this.Margins = new System.Drawing.Printing.Margins(99, 0, 0, 0);
+            this.Margins = new System.Drawing.Printing.Margins(0, 0, 0, 0);
             this.Name = "XtraReport1";
             this.PageHeight = 2969;
             this.PageWidth = 2101;

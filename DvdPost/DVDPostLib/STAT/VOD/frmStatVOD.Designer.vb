@@ -27,6 +27,7 @@ Partial Class frmStatVOD
         Me.txtToDate = New DevExpress.XtraEditors.DateEdit
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
         Me.GCWithDate = New DevExpress.XtraEditors.GroupControl
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton
         Me.btnSpentCreditEarlier = New DevExpress.XtraEditors.SimpleButton
         Me.speCreditEarlier = New DevExpress.XtraEditors.SpinEdit
         Me.LabelControl3 = New DevExpress.XtraEditors.LabelControl
@@ -35,7 +36,6 @@ Partial Class frmStatVOD
         Me.btnVodByChannelsPlush = New DevExpress.XtraEditors.SimpleButton
         Me.btnVodByChannels = New DevExpress.XtraEditors.SimpleButton
         Me.btnTopWatchedVOD = New DevExpress.XtraEditors.SimpleButton
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton
         Me.Panel1.SuspendLayout()
         CType(Me.TabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -150,6 +150,15 @@ Partial Class frmStatVOD
         Me.GCWithDate.TabIndex = 38
         Me.GCWithDate.Text = "Stat With Date"
         '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.Location = New System.Drawing.Point(424, 202)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.HelpProvider1.SetShowHelp(Me.SimpleButton1, False)
+        Me.SimpleButton1.Size = New System.Drawing.Size(183, 46)
+        Me.SimpleButton1.TabIndex = 47
+        Me.SimpleButton1.Text = "Not Spent Credits"
+        '
         'btnSpentCreditEarlier
         '
         Me.btnSpentCreditEarlier.Location = New System.Drawing.Point(762, 79)
@@ -196,7 +205,7 @@ Partial Class frmStatVOD
         Me.HelpProvider1.SetShowHelp(Me.btnCustomersNmbrWathed, False)
         Me.btnCustomersNmbrWathed.Size = New System.Drawing.Size(183, 46)
         Me.btnCustomersNmbrWathed.TabIndex = 41
-        Me.btnCustomersNmbrWathed.Text = "#Customers by watched - DVDPost"
+        Me.btnCustomersNmbrWathed.Text = "#Customers by #Watched - DVDPost"
         Me.btnCustomersNmbrWathed.ToolTip = "#VOD by channels"
         '
         'btnVodByChannelsPlush
@@ -228,15 +237,6 @@ Partial Class frmStatVOD
         Me.btnTopWatchedVOD.TabIndex = 38
         Me.btnTopWatchedVOD.Text = "Top Watched VOD"
         Me.btnTopWatchedVOD.ToolTip = "Top watched VOD movies"
-        '
-        'SimpleButton1
-        '
-        Me.SimpleButton1.Location = New System.Drawing.Point(424, 202)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.HelpProvider1.SetShowHelp(Me.SimpleButton1, False)
-        Me.SimpleButton1.Size = New System.Drawing.Size(183, 46)
-        Me.SimpleButton1.TabIndex = 47
-        Me.SimpleButton1.Text = "Not Spent Credits"
         '
         'frmStatVOD
         '

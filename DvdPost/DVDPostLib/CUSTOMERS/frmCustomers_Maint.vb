@@ -8459,13 +8459,16 @@ Me.tabCalls.Text = "calls"
 '
 'UcCallsHistory1
 '
+Me.UcCallsHistory1.AutoSize = true
 Me.UcCallsHistory1.customers_id = 0
+Me.UcCallsHistory1.Dock = System.Windows.Forms.DockStyle.Fill
 Me.UcCallsHistory1.FT = false
-Me.UcCallsHistory1.Location = New System.Drawing.Point(7, 3)
-Me.UcCallsHistory1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+Me.UcCallsHistory1.Location = New System.Drawing.Point(0, 0)
+Me.UcCallsHistory1.Margin = New System.Windows.Forms.Padding(2)
+Me.UcCallsHistory1.MinimumSize = New System.Drawing.Size(956, 470)
 Me.UcCallsHistory1.Name = "UcCallsHistory1"
 Me.UcCallsHistory1.Reconductions = 0
-Me.UcCallsHistory1.Size = New System.Drawing.Size(1037, 514)
+Me.UcCallsHistory1.Size = New System.Drawing.Size(1253, 783)
 Me.UcCallsHistory1.TabIndex = 0
 '
 'tabMessagerie
@@ -11451,6 +11454,7 @@ CType(Me.GridCustComment,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.GridViewCustComment,System.ComponentModel.ISupportInitialize).EndInit
 CType(Me.MemoInsertComment.Properties,System.ComponentModel.ISupportInitialize).EndInit
 Me.tabCalls.ResumeLayout(false)
+Me.tabCalls.PerformLayout
 Me.tabMessagerie.ResumeLayout(false)
 Me.tabSponsorShip.ResumeLayout(false)
 CType(Me.GCCodeLinked,System.ComponentModel.ISupportInitialize).EndInit
@@ -12432,7 +12436,11 @@ End Sub
         ChangeStateControl(txtABOCredit, Enabling And isrightAccess() And Not DVDPostBuziness.ClsInventory.isAboprocessRun())
         ChangeStateControl(txtRemainDVD, Enabling And isrightAccess() And DVDPostBuziness.ClsInventory.isNPP(txtCustomers_id.Text) And Not DVDPostBuziness.ClsInventory.isAboprocessRun())
         ChangeStateControl(cmbNextDiscCode, Enabling And isrightAccess())
-        ChangeStateControl(txtAbo_ValidityTo, Enabling And isrightAccess())
+        Dim isEDDFirst As Boolean = False
+        If objDS.customers_edd.Rows.Count > 0 Then
+            isEDDFirst = (objDS.customers_edd(0).edd_mandate_status = DVDPostBuziness.ClsCustomers.EDDMANDATESTATUS.SENTTOBANKFORINITIATION)
+        End If
+        ChangeStateControl(txtAbo_ValidityTo, Enabling And isrightAccess() And Not isEDDFirst)
         ChangeStateControl(cmbPPVStatus, Enabling)
 
 

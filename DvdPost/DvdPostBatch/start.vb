@@ -118,6 +118,7 @@ Module start
                 clscust.UpdateDvd_at_Home()
                 DVDPostBuziness.ClsVod.UpdateVodCreditsAfterStartPeriod()
                 DVDPostBuziness.ClsVod.UpdateSoonVod()
+                DVDPostBuziness.ClsproductsDvd.UpdateInCinema()
 
                 clscust.ReconductionPayPal(DvdPostData.ClsCustomersData.Country.BELGIUM)
                 clscust.ReconductionPayPal(DvdPostData.ClsCustomersData.Country.NEDERLANDS)

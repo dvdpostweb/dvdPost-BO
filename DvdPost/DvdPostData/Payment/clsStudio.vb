@@ -762,8 +762,8 @@ allstudio & _
 " join (select s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at," & _
 " ( select studio_id from plush_production.streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id  and sp1.source = 'alphanetworks' and sp1.status = 'online_test_ok' order by updated_at desc limit 1 ) as studio_id from plush_production.streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' group by s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at) sp on p.imdb_id = sp.imdb_id  and ( ( t.created_at between sp.available_from and expire_at ) or (t.created_at between sp.available_backcatalogue_from and expire_backcatalogue_at))" & _
 " join plush_production.customers c on t.customer_id = c.customers_id" & _
-" left join " & dbPrefix & ".studio s on s.studio_id = sp.studio_id" & _
-" left join " & dbPrefix & ".studio ps on ps.studio_id = p.products_studio" & _
+" left join dvdpost_be_prod.studio s on s.studio_id = sp.studio_id" & _
+" left join dvdpost_be_prod.studio ps on ps.studio_id = p.products_studio" & _
 " left join plush_production.directors d on d.directors_id = p.products_directors_id" & _
 " where t.compensed = 0 and date(t.created_at) >= date(cc.last_abo_start) and date(t.created_at) <= date(cc.last_abo_end) " & _
 " and t.is_ppv = 0 and t.overwatched = 1 and cc.report_year = year('" & DVDPostTools.ClsDate.formatDate(dateFrom) & "') and cc.report_month = month('" & DVDPostTools.ClsDate.formatDate(dateFrom) & "')" & _
@@ -832,6 +832,61 @@ allstudio & _
 
     End Function
 
+    Public Shared Function GetStudioPrisonsDetailedReport(ByVal dateFrom As String, ByVal dateTo As String, ByVal studio_id As Integer) As String
+
+        '" if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)) credits, " & _
+        Dim sql As String
+        Dim allstudio As String = String.Empty
+
+        If studio_id <> -1 Then
+            allstudio = allstudio & " and s.studio_id = " & studio_id
+        End If
+
+        sql = " select  x.vodstudio, x.productstudio, x.products_title, " & _
+ " x.imdb_id, x.products_type, x.created_at, x.products_date_available, x.available_from, " & _
+ " x.expire_at, x.available_backcatalogue_from, x.expire_backcatalogue_at, x.catalogue_type , " & _
+ " x.price_of_movie_tvac price_of_movie_tvac, format((x.price_of_movie_tvac/1.21),2) price_of_movie_htva, " & _
+" case x.catalogue_type when 'N' then " & _
+" format(if(((x.price_of_movie_tvac/1.21) * x.fee_new_vod) < x.minimum_new_vod, x.minimum_new_vod, ((x.price_of_movie_tvac/1.21) * x.fee_new_vod)),2) " & _
+" when 'B' then " & _
+" format(if(((x.price_of_movie_tvac/1.21) * x.fee_back_catalogue) < x.minimum_back_catalogue, x.minimum_back_catalogue, ((x.price_of_movie_tvac/1.21) * x.fee_back_catalogue)),2) " & _
+" end amount from " & _
+" ( select " & _
+" s.studio_name vodstudio, " & _
+" ps.studio_name as productstudio, " & _
+" p.products_title, " & _
+" t.imdb_id, " & _
+" p.products_type, " & _
+" concat(date(t.watched_date),time(t.watched_time)) created_at, " & _
+" p.products_date_available, " & _
+" sp.available_from, " & _
+" sp.expire_at," & _
+" sp.available_backcatalogue_from, " & _
+" sp.expire_backcatalogue_at, " & _
+" if(t.watched_date between available_from and expire_at,'N',if(t.watched_date between available_backcatalogue_from and expire_backcatalogue_at,'B','B')) as catalogue_type, " & _
+" 11 qty_credit, " & _
+" format(t.price,2) price_of_movie_tvac, " & _
+" format(format(t.price,2)/ 1.21,2) price_of_movie_htva, " & _
+" s.minimum_new_vod, " & _
+" s.fee_new_vod, " & _
+" s.minimum_back_catalogue, " & _
+" s.fee_back_catalogue " & _
+" from prison_reports t " & _
+" join (select imdb_id,products_directors_id,products_date_available,products_title, products_studio, products_type from products group by imdb_id) p on t.imdb_id = p.imdb_id " & _
+" join (select s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at,s.credits, s.is_ppv, " & _
+" ( select studio_id from streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id  and sp1.source = 'alphanetworks' and sp1.status = 'online_test_ok' order by updated_at desc limit 1 ) as studio_id from streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' group by s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at) sp on p.imdb_id = sp.imdb_id  and ( ( t.watched_date between sp.available_from and expire_at ) or (t.watched_date between sp.available_backcatalogue_from and expire_backcatalogue_at))" & _
+" left join studio s on s.studio_id = sp.studio_id " & _
+" left join studio ps on ps.studio_id = p.products_studio " & _
+" left join directors d on d.directors_id = p.products_directors_id " & _
+" where sp.is_ppv = 0 and t.in_abcd = 1 and date(t.watched_date) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.watched_date) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
+allstudio & _
+" group by s.studio_name, ps.studio_name, t.id " & _
+" order by s.studio_name, ps.studio_name,  p.products_title " & _
+" ) x  "
+
+        Return sql
+
+    End Function
 
     Public Shared Function GetStudioADULTSVODDetailedReport(ByVal dateFrom As String, ByVal dateTo As String, ByVal studio_id As Integer) As String
 
@@ -913,7 +968,7 @@ allstudio & _
     End Function
 
 
-    Public Shared Function GetStudioSummaryReport(ByVal dateFrom As String, ByVal dateTo As String, ByVal studio_id As Integer, Optional ByVal isDVDPOST As Boolean = True, Optional ByVal isKPN As Boolean = True, Optional ByVal isPlush As Boolean = True) As String
+    Public Shared Function GetStudioSummaryReport(ByVal dateFrom As String, ByVal dateTo As String, ByVal studio_id As Integer, Optional ByVal isDVDPOST As Boolean = True, Optional ByVal isKPN As Boolean = True, Optional ByVal isPlush As Boolean = True, Optional ByVal isPrisons As Boolean = True) As String
         '
         '"  if(created_at between available_from and expire_at,s.cost_for_new,if(created_at between available_backcatalogue_from and expire_backcatalogue_at,s.cost,1)) credits, " & _
         Dim sql As String
@@ -1009,6 +1064,38 @@ allstudio & _
 allstudio & _
 " group by vodstudio, productstudio, t.id "
 
+        Dim sqlPrisons As String = " select 'Prisons' source, " & _
+" s.studio_name vodstudio, " & _
+" ps.studio_name as productstudio, " & _
+" p.products_title, " & _
+" t.imdb_id, " & _
+" p.products_type, " & _
+" concat(date(t.watched_date),time(t.watched_time)) created_at, " & _
+" p.products_date_available, " & _
+" sp.available_from, " & _
+" sp.expire_at," & _
+" sp.available_backcatalogue_from, " & _
+" sp.expire_backcatalogue_at, " & _
+" if(t.watched_date between available_from and expire_at,'N',if(t.watched_date between available_backcatalogue_from and expire_backcatalogue_at,'B','B')) as catalogue_type, " & _
+" 11 qty_credit, " & _
+" format(t.price,2) price_of_movie_tvac, " & _
+" format(format(t.price,2)/ 1.21,2) price_of_movie_htva, " & _
+" s.minimum_new_vod, " & _
+" s.fee_new_vod, " & _
+" s.minimum_back_catalogue, " & _
+" s.fee_back_catalogue " & _
+" from prison_reports t " & _
+" join (select imdb_id,products_directors_id,products_date_available,products_title, products_studio, products_type from products group by imdb_id) p on t.imdb_id = p.imdb_id " & _
+" join (select s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at,s.credits, s.is_ppv, " & _
+" ( select studio_id from streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id  and sp1.source = 'alphanetworks' and sp1.status = 'online_test_ok' order by updated_at desc limit 1 ) as studio_id from streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' group by s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at) sp on p.imdb_id = sp.imdb_id  and ( ( t.watched_date between sp.available_from and expire_at ) or (t.watched_date between sp.available_backcatalogue_from and expire_backcatalogue_at))" & _
+" left join studio s on s.studio_id = sp.studio_id " & _
+" left join studio ps on ps.studio_id = p.products_studio " & _
+" left join directors d on d.directors_id = p.products_directors_id " & _
+" where sp.is_ppv = 0 and t.in_abcd = 1 and date(t.watched_date) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.watched_date) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
+allstudio & _
+" group by vodstudio, productstudio, t.id "
+
+
         Dim sqlPLUSH As String = " select 'PLUSH' source, " & _
 " s.studio_name vodstudio, " & _
 " ps.studio_name as productstudio, " & _
@@ -1058,6 +1145,14 @@ allstudio & _
 
         If isPlush Then
             sql = sql & sqlPLUSH
+        End If
+
+        If isPrisons And (isDVDPOST Or isKPN Or isPlush) Then
+            sql = sql & " union all"
+        End If
+
+        If isPrisons Then
+            sql = sql & sqlPrisons
         End If
 
         sql = sql & " order by vodstudio, productstudio, products_title" & _
@@ -1125,8 +1220,8 @@ allstudio & _
 " join (select s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at," & _
 " ( select studio_id from plush_production.streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id  and sp1.source = 'alphanetworks' and sp1.status = 'online_test_ok' order by updated_at desc limit 1 ) as studio_id from plush_production.streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' group by s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at) sp on p.imdb_id = sp.imdb_id  and ( ( t.created_at between sp.available_from and expire_at ) or (t.created_at between sp.available_backcatalogue_from and expire_backcatalogue_at))" & _
 " join plush_production.customers c on t.customer_id = c.customers_id" & _
-" left join " & dbPrefix & ".studio s on s.studio_id = sp.studio_id" & _
-" left join " & dbPrefix & ".studio ps on ps.studio_id = p.products_studio" & _
+" left join dvdpost_be_prod.studio s on s.studio_id = sp.studio_id" & _
+" left join dvdpost_be_prod.studio ps on ps.studio_id = p.products_studio" & _
 " left join plush_production.directors d on d.directors_id = p.products_directors_id" & _
 " where t.compensed = 0 and date(t.created_at) >= date(cc.last_abo_start) and date(t.created_at) <= date(cc.last_abo_end) " & _
 " and t.is_ppv = 0 and t.overwatched = 1 and cc.report_year = year('" & DVDPostTools.ClsDate.formatDate(dateFrom) & "') and cc.report_month = month('" & DVDPostTools.ClsDate.formatDate(dateFrom) & "')" & _
@@ -1230,8 +1325,8 @@ allstudio & _
 " x.customer_id, x.customers_abo_type, " & _
 " (select d.directors_name from directors d where d.directors_id = x.products_directors_id) directors_name , x.imdb_id, x.products_title, x.products_type, x.created_at, x.products_date_available, x.available_from, " & _
 " x.expire_at, x.available_backcatalogue_from, x.expire_backcatalogue_at, x.catalogue_type , x.products_price, x.qty_credit, " & _
-" x.qty_at_home, replace(format(x.price_of_movie_tvac,2),'.',',') 'Price per film', if( x.products_type = 'DVD_ADULT', '1.00%', '1.375%') 'SABAM%', " & _
-"replace(format((x.price_of_movie_tvac/1.21) * if( x.products_type = 'DVD_ADULT', 0.01, 0.01375),2),'.',',') 'Sabam Fee' " & _
+" x.qty_at_home, round(x.price_of_movie_tvac,2) 'Price per film', if( x.products_type = 'DVD_ADULT', '1.00%', '1.375%') 'SABAM%', " & _
+"round((x.price_of_movie_tvac/1.21) * if( x.products_type = 'DVD_ADULT', 0.01, 0.01375),2) 'Sabam Fee' " & _
 " from " & _
 " ( "
 
@@ -1255,8 +1350,8 @@ allstudio & _
         " if(fn_customers_credit(customers_id, t.created_at) = 0,11, fn_customers_credit(customers_id, t.created_at)) qty_credit, " & _
         " pa.qty_at_home, " & _
         " t.credits, " & _
-        " format(if(t.is_ppv = 1, t.ppv_price, (pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11, fn_customers_credit(customers_id, t.created_at))) * t.credits),2) price_of_movie_tvac, " & _
-        " format((((pabo.products_price /  if( fn_customers_credit(customers_id, t.created_at)=0,11, fn_customers_credit(customers_id, t.created_at))) * t.credits) / 1.21),2) price_of_movie_htva, " & _
+        " if(t.is_ppv = 1, t.ppv_price,if(if(isnull(t.price),0,t.price) > 0 , t.price, format((pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * t.credits,2))) price_of_movie_tvac, " & _
+        " round((if(t.is_ppv = 1, t.ppv_price, t.price) / 1.21),2) price_of_movie_htva, " & _
         " s.minimum_new_vod, " & _
         " s.fee_new_vod, " & _
         " s.minimum_back_catalogue, " & _
@@ -1305,8 +1400,8 @@ allstudio & _
         " join (select imdb_id,products_directors_id,products_date_available,products_title, products_studio, products_type from plush_production.products where products_type = '" & productsType & "' group by imdb_id) p on t.imdb_id = p.imdb_id " & _
         " join (select s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at, " & _
         " ( select studio_id from plush_production.streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id order by updated_at desc limit 1 ) as studio_id from plush_production.streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' group by s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at) sp on p.imdb_id = sp.imdb_id  and ( ( t.created_at between sp.available_from and expire_at ) or (t.created_at between sp.available_backcatalogue_from and expire_backcatalogue_at))" & _
-        " left join studio_reporting.studio s on s.studio_id = sp.studio_id " & _
-        " left join studio_reporting.studio ps on ps.studio_id = p.products_studio " & _
+        " left join dvdpost_be_prod.studio s on s.studio_id = sp.studio_id " & _
+        " left join dvdpost_be_prod.studio ps on ps.studio_id = p.products_studio " & _
         " left join plush_production.directors d on d.directors_id = p.products_directors_id " & _
         " join plush_production.customers c on c.customers_id = t.customer_id " & _
         " where t.overwatched = 1 and date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
@@ -1382,11 +1477,11 @@ allstudio & _
 
         sql = "select x.products_title, (select d.directors_name from directors d where d.directors_id = x.products_directors_id) directors_name , " & _
 " count(x.imdb_id) 'Nombre de products_title', " & _
-" replace(format(sum((x.price_of_movie_tvac/1.21)),2),'.',',') 'Somme de Price per film', " & _
-" replace(format(sum((x.price_of_movie_tvac/1.21)) * if( x.products_type = 'DVD_ADULT', 0.01, 0.01375),2),'.',',') 'Somme de Sabam Fee' " & _
+" round(sum((x.price_of_movie_tvac/1.21)),2) 'Somme de Price per film', " & _
+" round(sum((x.price_of_movie_tvac/1.21)) * if( x.products_type = 'DVD_ADULT', 0.01, 0.01375),2) 'Somme de Sabam Fee' " & _
 " from " & _
 " ( "
-
+        '" round(if(t.is_ppv = 1, t.ppv_price,t.price),2) price_of_movie_tvac, " & _
         Dim sqlDVDPOST As String
         sqlDVDPOST = "  select " & _
         "  p.products_title, " & _
@@ -1405,8 +1500,8 @@ allstudio & _
         "  if(fn_customers_credit(customers_id, t.created_at)=0,11, fn_customers_credit(customers_id, t.created_at)) qty_credit, " & _
         "  pa.qty_at_home, " & _
         " t.credits, " & _
-        " format(if(t.is_ppv = 1, t.ppv_price,(pabo.products_price /  t.credits) * t.credits),2) price_of_movie_tvac, " & _
-        " format((((pabo.products_price /  if( fn_customers_credit(customers_id, t.created_at)=0,11, fn_customers_credit(customers_id, t.created_at))) * t.credits) / 1.21),2) price_of_movie_htva, " & _
+        " if(t.is_ppv = 1, t.ppv_price,if(if(isnull(t.price),0,t.price) > 0 , t.price, format((pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * t.credits,2))) price_of_movie_tvac, " & _
+        " round((if(t.is_ppv = 1, t.ppv_price,t.price)/ 1.21),2) price_of_movie_htva, " & _
         " s.minimum_new_vod, " & _
         " s.fee_new_vod, " & _
         " s.minimum_back_catalogue, " & _
@@ -1443,18 +1538,18 @@ allstudio & _
         " 0 qty_credit, " & _
         " 0 qty_at_home, " & _
         " t.credits, " & _
-        " format(if(t.is_ppv = 1,t.ppv_price, t.svod_price), 2) price_of_movie_tvac, " & _
-        " format(format(if(t.is_ppv = 1,t.ppv_price, t.svod_price),2)/ 1.21,2) price_of_movie_htva, " & _
+        " round(if(t.is_ppv = 1,t.ppv_price, t.svod_price), 2) price_of_movie_tvac, " & _
+        " round(round(if(t.is_ppv = 1,t.ppv_price, t.svod_price),2)/ 1.21,2) price_of_movie_htva, " & _
         " s.minimum_new_vod, " & _
         " s.fee_new_vod, " & _
         " s.minimum_back_catalogue, " & _
         " s.fee_back_catalogue " & _
         " from studio_reporting.reporting_tokens t " & _
-        " join (select imdb_id,products_directors_id,products_date_available,products_title, products_studio, products_type from plush_production.products group by imdb_id) p on t.imdb_id = p.imdb_id " & _
+        " join (select imdb_id,products_directors_id,products_date_available,products_title, products_studio, products_type from plush_production.products where products_type = '" & productsType & "' group by imdb_id) p on t.imdb_id = p.imdb_id " & _
         " join (select s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at, " & _
         " ( select studio_id from plush_production.streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id order by updated_at desc limit 1 ) as studio_id from plush_production.streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' group by s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at) sp on p.imdb_id = sp.imdb_id  and ( ( t.created_at between sp.available_from and expire_at ) or (t.created_at between sp.available_backcatalogue_from and expire_backcatalogue_at))" & _
-        " left join studio_reporting.studio s on s.studio_id = sp.studio_id " & _
-        " left join studio_reporting.studio ps on ps.studio_id = p.products_studio " & _
+        " left join dvdpost_be_prod.studio s on s.studio_id = sp.studio_id " & _
+        " left join dvdpost_be_prod.studio ps on ps.studio_id = p.products_studio " & _
         " left join plush_production.directors d on d.directors_id = p.products_directors_id " & _
         " join plush_production.customers c on c.customers_id = t.customer_id " & _
         " where t.overwatched = 1 and date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _

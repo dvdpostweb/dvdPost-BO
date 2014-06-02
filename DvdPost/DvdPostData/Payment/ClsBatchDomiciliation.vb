@@ -84,8 +84,8 @@ Public Class ClsBatchDomiciliation
     Public Shared Function getChangeStatuspaidAfterLongTime() As String
         Dim sql As String
 
-        sql = "update payment p set p.payment_status = " & PaymentOfflineData.StepPayment.PAID & _
-            " ,p.last_modified = now() " & _
+        sql = "update payment p set p.last_status_id = p.payment_status , p.payment_status = " & PaymentOfflineData.StepPayment.PAID & _
+            " , p.last_modified = now() ,p.date_closed = now() " & _
         " where p.payment_method = " & ClsCustomersData.Payment_Method.DOMICILIATION & " and p.payment_status = " & PaymentOfflineData.StepPayment.WAITING_PAYMENT & _
         " and date_add(p.date_added,interval " & NB_DAYSOFWAITING & " DAY) <= date(now())"
 
@@ -111,8 +111,8 @@ Public Class ClsBatchDomiciliation
     Public Shared Function getFlagPaidDom() As String
         Dim sql As String
 
-        sql = " update payment p set p.payment_status = " & PaymentOfflineData.StepPayment.PAID & ",p.last_modified = now() " & _
-              " , p.last_status_id = p.payment_status ,p.date_closed = now() " & _
+        sql = " update payment p set p.last_status_id = p.payment_status, p.payment_status = " & PaymentOfflineData.StepPayment.PAID & ",p.last_modified = now() " & _
+              " , p.date_closed = now() " & _
               " where p.payment_method = " & ClsCustomersData.Payment_Method.DOMICILIATION & _
               " and not p.payment_status in (" & PaymentOfflineData.StepPayment.REJECTDOMERROR & "," & PaymentOfflineData.StepPayment.REJECTINSOLVENT & ")" & _
               " and p.date_added in (select dom_date from (select distinct p2.date_added dom_date" & _
@@ -126,8 +126,8 @@ Public Class ClsBatchDomiciliation
     Public Shared Function getEDDFlagPaidDom() As String
         Dim sql As String
 
-        sql = " update payment p set p.payment_status = " & PaymentOfflineData.StepPayment.PAID & ",p.last_modified = now() " & _
-              " , p.last_status_id = p.payment_status ,p.date_closed = now() " & _
+        sql = " update payment p set p.last_status_id = p.payment_status, p.payment_status = " & PaymentOfflineData.StepPayment.PAID & ",p.last_modified = now() " & _
+              " , p.date_closed = now() " & _
               " where p.payment_method = " & ClsCustomersData.Payment_Method.DOMICILIATION & _
               " and not p.payment_status = " & PaymentOfflineData.StepPayment.DOM_PROBLEM & _
               " and p.date_added in (select dom_date from (select distinct p2.date_added dom_date" & _
@@ -242,8 +242,8 @@ Public Class ClsBatchDomiciliation
               "  JOIN payment_edd pe on p.id = pe.pmt_instr_id " & _
               "  JOIN ( select pmt_instr_id, max(id) id from payment_edd group by pmt_instr_id) pe1 on pe.id = pe1.id " & _
               "   SET pe.type_r_transaction = b.type_r_transaction, pe.paid_or_refund_reason = b.paid_refund_reason, pe.reason = b.reason, " & _
-              "       p.payment_status = " & PaymentOfflineData.StepPayment.DOM_PROBLEM & ", p.last_modified = now(), b.customers_id = p.customers_id,  " & _
-              "       b.ismatching = " & ClsMatching.matching_type.DOMICILIATION & _
+              "        p.last_status_id = p.payment_status, p.payment_status = " & PaymentOfflineData.StepPayment.DOM_PROBLEM & ", p.last_modified = now(), b.customers_id = p.customers_id,  " & _
+              "       b.ismatching = " & ClsMatching.matching_type.DOMICILIATION & " , p.account_movements_id = b.account_movements_id " & _
               " WHERE b.date_coda_created = date(now()) and p.payment_status in (" & PaymentOfflineData.StepPayment.WAITING_PAYMENT & "," & PaymentOfflineData.StepPayment.PAID & ")" & _
               "   AND (b.paid_refund_reason <> " & PaymentOfflineData.Paid_Refund_Reason.PAID & " or b.type_r_transaction <> " & PaymentOfflineData.Type_R_Transaction.PAID & _
               " ) and b.communication_type = 127 and b.paid_refund_reason is not null and b.type_r_transaction is not null "
@@ -267,16 +267,32 @@ Public Class ClsBatchDomiciliation
 
     Public Shared Function UpdateCustomersEDDMandateFrstToRecurrent() As String
         Dim sql As String
-        sql = " update bank_account_movements bam join customers_edd ce on bam.customers_id = ce.customers_id "
-        sql = sql & " join customers c on ce.customers_id = c.customers_id "
-        sql = sql & " join payment p on c.customers_id = p.customers_id AND bam.structuredComm12 = p.communication "
+        sql = " update customers_edd ce join customers c on ce.customers_id = c.customers_id "
+        sql = sql & " join payment p on c.customers_id = p.customers_id "
         sql = sql & " SET ce.edd_mandate_status = " & EDD_MANDATE_STATUS.RECURRENT & " , ce.last_update = now() "
         sql = sql & " WHERE customers_abo = 1 "
         sql = sql & " AND ce.edd_mandate_status = " & EDD_MANDATE_STATUS.FIRST
         sql = sql & " AND c.customers_abo_payment_method = " & ClsCustomersData.Payment_Method.DOMICILIATION
-        sql = sql & " AND ( (p.payment_status = " & PaymentOfflineData.StepPayment.PAID & ") OR ( p.payment_status = " & PaymentOfflineData.StepPayment.DOM_PROBLEM & " AND bam.type_r_transaction = " & PaymentOfflineData.Type_R_Transaction.R_RETURN & " ) )"
-        sql = sql & " AND bam.date_coda_created = date(now()) "
+        sql = sql & " AND p.payment_method = " & ClsCustomersData.Payment_Method.DOMICILIATION
+        sql = sql & " AND p.payment_status = " & PaymentOfflineData.StepPayment.PAID
+        sql = sql & " AND date(p.last_modified) = date(now())"
         Return sql
+    End Function
+
+    Public Shared Function UpdateCustomersEDDMandateFrstToRecurrentR_RETURN() As String
+        Dim Sql As String
+
+        Sql = " update bank_account_movements bam join customers_edd ce on bam.customers_id = ce.customers_id "
+        Sql = Sql & " join customers c on ce.customers_id = c.customers_id "
+        Sql = Sql & " join payment p on c.customers_id = p.customers_id "
+        Sql = Sql & " SET ce.edd_mandate_status = " & EDD_MANDATE_STATUS.RECURRENT & " , ce.last_update = now() "
+        Sql = Sql & " WHERE customers_abo = 1 "
+        Sql = Sql & " AND ce.edd_mandate_status = " & EDD_MANDATE_STATUS.FIRST
+        Sql = Sql & " AND c.customers_abo_payment_method = " & ClsCustomersData.Payment_Method.DOMICILIATION
+        Sql = Sql & " AND p.payment_method = " & ClsCustomersData.Payment_Method.DOMICILIATION
+        Sql = Sql & " AND p.payment_status = " & PaymentOfflineData.StepPayment.DOM_PROBLEM & " AND bam.type_r_transaction is not null AND bam.type_r_transaction = " & PaymentOfflineData.Type_R_Transaction.R_RETURN
+        Sql = Sql & " AND date(p.last_modified) = date(now()) AND bam.date_coda_created = date(now())"
+        Return Sql
     End Function
 
     Public Shared Function SelectEDDPaymentReturnedToRecurrent() As String

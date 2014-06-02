@@ -355,13 +355,24 @@ namespace EddXml
             try
             {
                 XmlDocument xmlDocument = new XmlDocument();
+                XmlDocument xmlDocumentWrite = new XmlDocument();
+                string strReplace;
+
+                XmlDeclaration xdecl = xmlDocument.CreateXmlDeclaration("1.0", "UTF-8", "yes");                
+                xmlDocument.AppendChild(xdecl);
+                
                 XmlSerializer serializer = new XmlSerializer(_eddXML.GetType());
                 using (MemoryStream stream = new MemoryStream())
                 {
-                    serializer.Serialize(stream, _eddXML);
+                    StreamWriter sw = new StreamWriter(stream, System.Text.Encoding.UTF8);    
+                    //serializer.Serialize(stream, _eddXML);
+                    serializer.Serialize(sw, _eddXML);
                     stream.Position = 0;
                     xmlDocument.Load(stream);
-                    xmlDocument.Save(filePathName);
+                    strReplace = xmlDocument.OuterXml;
+                    strReplace = strReplace.Replace("<Document xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns=\"urn:iso:std:iso:20022:tech:xsd:pain.008.001.02\">", "<Document xmlns=\"urn:iso:std:iso:20022:tech:xsd:pain.008.001.02\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchemainstance\">"); 
+                    xmlDocumentWrite.LoadXml(strReplace);
+                    xmlDocumentWrite.Save(filePathName);
                     stream.Close();
                 }
             }

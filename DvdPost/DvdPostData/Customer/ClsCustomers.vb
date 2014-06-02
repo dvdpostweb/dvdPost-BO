@@ -266,7 +266,7 @@ Public Class ClsCustomersData
         sql = " SELECT if(isnull(ceh.iban) or isnull(ce.iban),0,ce.iban <> ceh.iban) iban, if(isnull(ceh.edd_mandate_id) or isnull(ce.edd_mandate_id),0,ce.edd_mandate_id <> ceh.edd_mandate_id) edd_mandate_id, if(isnull(ceh.bic) or isnull(ce.bic),0,ce.bic <> ceh.bic) bic, if(isnull(ceh.kbo ) or isnull(ce.kbo ),0,ce.kbo  <> ceh.kbo ) kbo " & _
               " FROM customers_edd ce join ( select * from customers_edd_history " & _
               " WHERE history_created_at > (SELECT cre_dt_tm FROM payment_edd p WHERE customers_id = " & customers_id & _
-              " AND type_r_transaction = " & PaymentOfflineData.Type_R_Transaction.PAID & " order by id desc limit 1 ) order by history_id ) ceh on ce.customers_id = ceh.customers_id where ce.customers_id = " & customers_id & " limit 1"
+              " AND type_r_transaction is null order by id desc limit 1 ) order by history_id ) ceh on ce.customers_id = ceh.customers_id where ce.customers_id = " & customers_id & " limit 1"
 
         Return sql
     End Function
@@ -276,7 +276,7 @@ Public Class ClsCustomersData
         sql = " SELECT if(isnull(ceh.iban) or isnull(ce.iban),0,ce.iban <> ceh.iban) iban, ceh.iban oldiban, if(isnull(ceh.edd_mandate_id) or isnull(ce.edd_mandate_id),0,ce.edd_mandate_id <> ceh.edd_mandate_id) edd_mandate_id, ceh.edd_mandate_id oldedd_mandate_id, if(isnull(ceh.bic) or isnull(ce.bic),0,ce.bic <> ceh.bic) bic, ceh.bic oldbic " & _
               " FROM customers_edd ce join ( select * from customers_edd_history " & _
               " WHERE history_created_at > (SELECT cre_dt_tm FROM payment_edd p WHERE customers_id = " & customers_id & _
-              " AND type_r_transaction = " & PaymentOfflineData.Type_R_Transaction.PAID & " order by id desc limit 1 ) order by history_id ) ceh on ce.customers_id = ceh.customers_id where ce.customers_id = " & customers_id & " limit 1"
+              " AND type_r_transaction is null order by id desc limit 1 ) order by history_id ) ceh on ce.customers_id = ceh.customers_id where ce.customers_id = " & customers_id & " limit 1"
 
         Return sql
     End Function
@@ -694,7 +694,8 @@ Public Class ClsCustomersData
         sql = sql & " c.customers_abo_dvd_norm,"
         sql = sql & " c.customers_abo_dvd_adult,"
         sql = sql & " c.customers_email_address,"
-        sql = sql & " concat(c.customers_firstname,' ',c.customers_lastname) customers_name,"
+        'sql = sql & " concat(c.customers_firstname,' ',c.customers_lastname) customers_name,"
+        sql = sql & " edd.customer_edd_name customers_name,"
         sql = sql & " p.products_model,"
         sql = sql & "if(date(c.customers_abo_discount_recurring_to_date) > now(), 1, 0) as recurring_discount, "
         sql = sql & " c.customers_abo_validityto,"
@@ -728,6 +729,9 @@ Public Class ClsCustomersData
         Else
             sql = sql & " AND EntityID = " & country_id
         End If
+
+        sql = sql & " group by c.customers_id "
+
         Return sql
     End Function
 
@@ -1503,7 +1507,7 @@ Public Class ClsCustomersData
     Public Shared Function GetUpdateAboStop(ByVal customers_id As Integer) As String
         Dim sql As String
 
-        sql = "update customers set  customers_abo = 0,customers_registration_step = 90 where customers_id = " & customers_id & " and customers_abo = 1"
+        sql = "update customers set  customers_abo = 0,customers_registration_step = 90, activation_discount_code_id = null, activation_discount_code_type = null, customers_next_discount_code = null, customers_abo_discount_recurring_to_date = null where customers_id = " & customers_id & " and customers_abo = 1"
         Return sql
 
     End Function

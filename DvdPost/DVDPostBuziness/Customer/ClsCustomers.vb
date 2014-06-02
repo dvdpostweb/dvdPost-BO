@@ -16,6 +16,13 @@ Public Class ClsCustomers
         STOP_ADULT_SVOD = 4
     End Enum
 
+    Public Enum EDDMANDATESTATUS
+        MANADATESIGNED_WAITINGONBANKINITIATION = 2
+        SENTTOBANKFORINITIATION = 3
+        INITIATEDATBANK = 4
+        STOPPED = 5
+    End Enum
+
     Public Shared Sub encryptPwd()
 
         Dim sql As String
@@ -446,6 +453,14 @@ Public Class ClsCustomers
     Private Function IsActivation(ByVal drCustomer As DataRow) As Boolean
         Return drCustomer("activation_discount_code_type") = ClsCustomersData.CODE_ACTIVATION
     End Function
+
+    Public Function IsEDDFirst(ByVal drCustomer As DataRow) As Boolean
+        If drCustomer Is Nothing Then
+            Return False
+        End If
+        Return drCustomer("edd_mandate_status") = EddXml.EDDMANDATESTATUS.SENTTOBANKFORINITIATION
+    End Function
+
     Private Function GetPriceProduct(ByVal drCustomer As DataRow) As Decimal
         Return drCustomer("products_price")
     End Function

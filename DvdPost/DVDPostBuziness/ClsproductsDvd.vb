@@ -33,6 +33,14 @@ Public Class ClsproductsDvd
         End If
     End Function
 
+    Public Shared Sub UpdateInCinema()
+        Dim sql As String
+
+        sql = DvdPostData.clsProducts.UpdateInCinema()
+        DvdPostData.clsConnection.ExecuteNonQuery(sql)
+
+    End Sub
+
 
    
 End Class

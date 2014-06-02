@@ -215,6 +215,8 @@ Public Class frmStudioPayment
     Friend WithEvents ckIncludePlushSabam As System.Windows.Forms.CheckBox
     Friend WithEvents ckIncludeDVDPostSabam As System.Windows.Forms.CheckBox
     Friend WithEvents chkReportNoProductStudio As System.Windows.Forms.CheckBox
+    Friend WithEvents chkPrisonsInclude As System.Windows.Forms.CheckBox
+    Friend WithEvents btnPrisonsDetailReport As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnSearch As DevExpress.XtraEditors.SimpleButton
 
 
@@ -310,6 +312,9 @@ Public Class frmStudioPayment
         Me.lblLanguageSound = New DevExpress.XtraEditors.LabelControl
         Me.btnSaveStudio = New DevExpress.XtraEditors.SimpleButton
         Me.TabCreateReport = New DevExpress.XtraTab.XtraTabPage
+        Me.btnPrisonsDetailReport = New DevExpress.XtraEditors.SimpleButton
+        Me.chkPrisonsInclude = New System.Windows.Forms.CheckBox
+        Me.chkReportNoProductStudio = New System.Windows.Forms.CheckBox
         Me.ckhTestPlush = New System.Windows.Forms.CheckBox
         Me.btnSVODDetailedReport = New DevExpress.XtraEditors.SimpleButton
         Me.btnSVODSummaryReport = New DevExpress.XtraEditors.SimpleButton
@@ -402,7 +407,6 @@ Public Class frmStudioPayment
         Me.LabelControl11 = New DevExpress.XtraEditors.LabelControl
         Me.LookUpEdit4 = New DevExpress.XtraEditors.LookUpEdit
         Me.LabelControl12 = New DevExpress.XtraEditors.LabelControl
-        Me.chkReportNoProductStudio = New System.Windows.Forms.CheckBox
         CType(Me.cmbViewListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtQuickSearchRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbReportListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1080,6 +1084,8 @@ Public Class frmStudioPayment
         '
         'TabCreateReport
         '
+        Me.TabCreateReport.Controls.Add(Me.btnPrisonsDetailReport)
+        Me.TabCreateReport.Controls.Add(Me.chkPrisonsInclude)
         Me.TabCreateReport.Controls.Add(Me.chkReportNoProductStudio)
         Me.TabCreateReport.Controls.Add(Me.ckhTestPlush)
         Me.TabCreateReport.Controls.Add(Me.btnSVODDetailedReport)
@@ -1108,6 +1114,23 @@ Public Class frmStudioPayment
         Me.TabCreateReport.Controls.Add(Me.lblStudioBilling)
         Me.TabCreateReport.Name = "TabCreateReport"
         resources.ApplyResources(Me.TabCreateReport, "TabCreateReport")
+        '
+        'btnPrisonsDetailReport
+        '
+        resources.ApplyResources(Me.btnPrisonsDetailReport, "btnPrisonsDetailReport")
+        Me.btnPrisonsDetailReport.Name = "btnPrisonsDetailReport"
+        '
+        'chkPrisonsInclude
+        '
+        resources.ApplyResources(Me.chkPrisonsInclude, "chkPrisonsInclude")
+        Me.chkPrisonsInclude.Name = "chkPrisonsInclude"
+        Me.chkPrisonsInclude.UseVisualStyleBackColor = True
+        '
+        'chkReportNoProductStudio
+        '
+        resources.ApplyResources(Me.chkReportNoProductStudio, "chkReportNoProductStudio")
+        Me.chkReportNoProductStudio.Name = "chkReportNoProductStudio"
+        Me.chkReportNoProductStudio.UseVisualStyleBackColor = True
         '
         'ckhTestPlush
         '
@@ -1657,12 +1680,6 @@ Public Class frmStudioPayment
         '
         resources.ApplyResources(Me.LabelControl12, "LabelControl12")
         Me.LabelControl12.Name = "LabelControl12"
-        '
-        'chkReportNoProductStudio
-        '
-        resources.ApplyResources(Me.chkReportNoProductStudio, "chkReportNoProductStudio")
-        Me.chkReportNoProductStudio.Name = "chkReportNoProductStudio"
-        Me.chkReportNoProductStudio.UseVisualStyleBackColor = True
         '
         'frmStudioPayment
         '
@@ -2349,7 +2366,7 @@ Public Class frmStudioPayment
         Dim dt As DataTable
         Dim sql As String
 
-        sql = DvdPostData.clsStudio.GetStudioSummaryReport(txtFromDate.EditValue, txtToDate.EditValue, cmbStudioBilling.EditValue, chkDVDPost.Checked, chkKPN.Checked, chkPlush.Checked)
+        sql = DvdPostData.clsStudio.GetStudioSummaryReport(txtFromDate.EditValue, txtToDate.EditValue, cmbStudioBilling.EditValue, chkDVDPost.Checked, chkKPN.Checked, chkPlush.Checked, chkPrisonsInclude.Checked)
 
         dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
 
@@ -2506,9 +2523,8 @@ Public Class frmStudioPayment
         Dim sql As String
 
         sql = DvdPostData.clsStudio.GetStudioKPNDetailedReport(txtFromDate.EditValue, txtToDate.EditValue, cmbStudioBilling.EditValue)
-
-        dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
-        ' dt = DvdPostData.clsConnection.FillDataSet(sql)
+        'dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
+        dt = DvdPostData.clsConnection.FillDataSet(sql)
         GridStudioDetail.DataSource = Nothing
         GridStudioDetail.Views(0).PopulateColumns()
 
@@ -2527,8 +2543,8 @@ Public Class frmStudioPayment
 
         sql = DvdPostData.clsStudio.GetStudioSVODDetailedReport(txtFromDate.EditValue, txtToDate.EditValue, cmbStudioBilling.EditValue, dbPrefix)
 
-        dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
-        ' dt = DvdPostData.clsConnection.FillDataSet(sql)
+        'dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
+        dt = DvdPostData.clsConnection.FillDataSet(sql)
         GridStudioDetail.DataSource = Nothing
         GridStudioDetail.Views(0).PopulateColumns()
 
@@ -2547,7 +2563,8 @@ Public Class frmStudioPayment
 
         sql = DvdPostData.clsStudio.GetStudioSVODSummaryReport(txtFromDate.EditValue, txtToDate.EditValue, cmbStudioBilling.EditValue, dbPrefix)
 
-        dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
+        'dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
+        dt = DvdPostData.clsConnection.FillDataSet(sql)
 
         If chkReportNoProductStudio.Checked Then
             Dim rpt1 As New rptStudioSummaryNoProductStudios
@@ -2562,6 +2579,21 @@ Public Class frmStudioPayment
 
     Private Sub BtnNewVodProduct_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnNewVodProduct.Click
         ChangeStep(StepForm.[NEW])
+    End Sub
+
+    Private Sub btnPrisonsDetailReport_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPrisonsDetailReport.Click
+        Dim dt As DataTable
+        Dim sql As String
+
+        sql = DvdPostData.clsStudio.GetStudioPrisonsDetailedReport(txtFromDate.EditValue, txtToDate.EditValue, cmbStudioBilling.EditValue)
+
+        dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
+        ' dt = DvdPostData.clsConnection.FillDataSet(sql)
+        GridStudioDetail.DataSource = Nothing
+        GridStudioDetail.Views(0).PopulateColumns()
+
+        GridStudioDetail.DataSource = dt
+        XtraTabStudio.SelectedTabPage = TabStudioDetailReport
     End Sub
 End Class
 

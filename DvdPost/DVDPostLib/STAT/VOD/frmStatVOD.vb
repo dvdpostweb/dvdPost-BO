@@ -70,7 +70,7 @@ Public Class frmStatVOD
 
     Private Sub btnCustomersByWatchedPlush_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCustomersByWatchedPlush.Click
         Dim sql As String
-        sql = DvdPostData.clsStatVOD.GetSelectNumberCustByNumbWatchedPlush()
+        sql = DvdPostData.clsStatVOD.GetSelectNumberCustByNumbWatchedPlush(txtFromDate.EditValue, txtToDate.EditValue)
 
         loadData(sql)
     End Sub
@@ -84,7 +84,7 @@ Public Class frmStatVOD
 
     Private Sub SimpleButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SimpleButton1.Click
         Dim sql As String
-        sql = DvdPostData.clsStatVOD.GetSelectSpentCreditBefore(txtFromDate.EditValue, txtToDate.EditValue, speCreditEarlier.EditValue)
+        sql = DvdPostData.clsStatVOD.GetSelectNotSpentCredit(txtFromDate.EditValue, txtToDate.EditValue, speCreditEarlier.EditValue)
 
         loadData(sql)
     End Sub

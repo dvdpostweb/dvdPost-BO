@@ -117,32 +117,104 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="countryname.Name" xml:space="preserve">
-    <value>countryname</value>
+  <metadata name="GroupFooter1.Name" xml:space="preserve">
+    <value>GroupFooter1</value>
   </metadata>
-  <data name="countryname.Scripts.OnBeforePrint" xml:space="preserve">
+  <metadata name="iban.Name" xml:space="preserve">
+    <value>iban</value>
+  </metadata>
+  <metadata name="bic.Name" xml:space="preserve">
+    <value>bic</value>
+  </metadata>
+  <metadata name="hesaddress1.Name" xml:space="preserve">
+    <value>hesaddress1</value>
+  </metadata>
+  <metadata name="hesaddress2.Name" xml:space="preserve">
+    <value>hesaddress2</value>
+  </metadata>
+  <metadata name="hesaddress3.Name" xml:space="preserve">
+    <value>hesaddress3</value>
+  </metadata>
+  <metadata name="xrLabel13.Name" xml:space="preserve">
+    <value>xrLabel13</value>
+  </metadata>
+  <metadata name="xrLabel7.Name" xml:space="preserve">
+    <value>xrLabel7</value>
+  </metadata>
+  <metadata name="xrLabel9.Name" xml:space="preserve">
+    <value>xrLabel9</value>
+  </metadata>
+  <metadata name="xrLabel10.Name" xml:space="preserve">
+    <value>xrLabel10</value>
+  </metadata>
+  <metadata name="xrLabel11.Name" xml:space="preserve">
+    <value>xrLabel11</value>
+  </metadata>
+  <metadata name="xrLabel12.Name" xml:space="preserve">
+    <value>xrLabel12</value>
+  </metadata>
+  <data name="xrLabel12.Scripts.OnBeforePrint" xml:space="preserve">
     <value>Private Sub OnBeforePrint(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintEventArgs)
-  Dim result as XRLabel = sender
-  Dim _StrEntryStreetAddress as string = GetCurrentColumnValue("country_name").ToString()
- 
-   result.Text = countryname.Text.Replace("$$$country_name$$$" , Microsoft.VisualBasic.StrConv(_StrEntryStreetAddress, Microsoft.VisualBasic.VbStrConv.ProperCase) ) 
+   'Get the current value of the "Fax" data column
+   Dim _StrCom as string = GetCurrentColumnValue("communication").ToString()
+   Dim _Char as char
+   Dim _i as integer
+   'Check if the value is null, then cancel the printing
+   xrLabel12.text = "+  +  +"
+   for _i = 0 to _StrCom.Length - 1
+      _char = _strCom.chars(_i)
+      xrLabel12.text = xrLabel12.text &amp; "   " &amp; _char
+      if _i = 2 then
+        xrLabel12.text = xrLabel12.text &amp; "  /"
+      end if
+      if _i = 6 then
+        xrLabel12.text = xrLabel12.text &amp; "  /"
+      end if
+   Next
+   xrLabel12.text = xrLabel12.text &amp; "  +  +  +"
 
-result.text = System.Text.Encoding.ASCII.GetString(System.Text.Encoding.GetEncoding(1251).GetBytes(result.text))
-  
 End Sub</value>
   </data>
-  <metadata name="postCodeAndCity.Name" xml:space="preserve">
-    <value>postCodeAndCity</value>
+  <metadata name="xrLabel8.Name" xml:space="preserve">
+    <value>xrLabel8</value>
   </metadata>
-  <metadata name="XrPictureBox3.Name" xml:space="preserve">
-    <value>XrPictureBox3</value>
+  <metadata name="communication.Name" xml:space="preserve">
+    <value>communication</value>
   </metadata>
-  <metadata name="GroupHeader1.Name" xml:space="preserve">
-    <value>GroupHeader1</value>
+  <metadata name="xrTextModel1.Name" xml:space="preserve">
+    <value>xrTextModel1</value>
   </metadata>
+  <data name="xrTextModel1.SerializableRtfString" xml:space="preserve">
+    <value>ewBcAHIAdABmADEAXABhAG4AcwBpAFwAYQBuAHMAaQBjAHAAZwAxADIANQAyAFwAZABlAGYAZgAwAHsAXABmAG8AbgB0AHQAYgBsAHsAXABmADAAXABmAG4AaQBsAFwAZgBjAGgAYQByAHMAZQB0ADAAIABWAGUAcgBkAGEAbgBhADsAfQB7AFwAZgAxAFwAZgBuAGkAbAAgAFQAaQBtAGUAcwAgAE4AZQB3ACAAUgBvAG0AYQBuADsAfQB9AA0ACgB7AFwAYwBvAGwAbwByAHQAYgBsACAAOwBcAHIAZQBkADAAXABnAHIAZQBlAG4AMABcAGIAbAB1AGUAMAA7AH0ADQAKAFwAdgBpAGUAdwBrAGkAbgBkADQAXAB1AGMAMQBcAHAAYQByAGQAXABjAGYAMQBcAGwAYQBuAGcAMgAwADYAMABcAGYAMABcAGYAcwAyADAAIABQAGwAZQBhAHMAZQAgAGYAaQBuAGQAIABiAGUAbABvAHcAIAB5AG8AdQByACAAdAByAGEAbgBzAGYAZQByACAAZABvAGMAdQBtAGUAbgB0ACAAcABlAHIAdABhAGkAbgBpAG4AZwAgAHQAbwAgAHkAbwB1AHIAIABzAHUAYgBzAGMAcgBpAHAAdABpAG8AbgAgAHQAbwAgAEQAVgBEAFAAbwBzAHQALgBcAGMAZgAwAFwAZgAxAFwAZgBzADIANABcAHAAYQByAA0ACgBcAGYAcwAyADAAXABwAGEAcgANAAoAXABmAHMAMgA0AFwAcABhAHIADQAKAFwAcABhAHIADQAKAH0ADQAKAA==</value>
+  </data>
   <metadata name="xrPictureBox1.Name" xml:space="preserve">
     <value>xrPictureBox1</value>
   </metadata>
+  <metadata name="xrLabel6.Name" xml:space="preserve">
+    <value>xrLabel6</value>
+  </metadata>
+  <metadata name="accountNumber.Name" xml:space="preserve">
+    <value>accountNumber</value>
+  </metadata>
+  <metadata name="montant.Name" xml:space="preserve">
+    <value>montant</value>
+  </metadata>
+  <metadata name="xrTextModel2.Name" xml:space="preserve">
+    <value>xrTextModel2</value>
+  </metadata>
+  <data name="xrTextModel2.Text" xml:space="preserve">
+    <value>Total amount:         €
+Subscription valid for:       rentals a month. 
+Valid as of:              .
+Account number:                                            .
+Reference:                        .                    </value>
+  </data>
+  <metadata name="xrTextModel3.Name" xml:space="preserve">
+    <value>xrTextModel3</value>
+  </metadata>
+  <data name="xrTextModel3.SerializableRtfString" xml:space="preserve">
+    <value>ewBcAHIAdABmADEAXABhAG4AcwBpAFwAYQBuAHMAaQBjAHAAZwAxADIANQAyAFwAZABlAGYAZgAwAHsAXABmAG8AbgB0AHQAYgBsAHsAXABmADAAXABmAG4AaQBsACAAVgBlAHIAZABhAG4AYQA7AH0AewBcAGYAMQBcAGYAbgBpAGwAXABmAGMAaABhAHIAcwBlAHQAMAAgAFYAZQByAGQAYQBuAGEAOwB9AHsAXABmADIAXABmAG4AaQBsACAAVABpAG0AZQBzACAATgBlAHcAIABSAG8AbQBhAG4AOwB9AH0ADQAKAHsAXABjAG8AbABvAHIAdABiAGwAIAA7AFwAcgBlAGQAMABcAGcAcgBlAGUAbgAwAFwAYgBsAHUAZQAwADsAfQANAAoAXAB2AGkAZQB3AGsAaQBuAGQANABcAHUAYwAxAFwAcABhAHIAZABcAGMAZgAxAFwAbABhAG4AZwAyADAANgAwAFwAZgAwAFwAZgBzADIAMAAgAE0AYQB5ACAAdwBlACAAawBpAG4AZABsAHkAIABhAHMAawAgAHkAbwB1ACAAdABvACAAcwBlAHQAdABsAGUAIAB5AG8AdQByACAAYQBjAGMAbwB1AG4AdAAgAHcAaQB0AGgAaQBuACAAdABoAGUAIABcAGYAMQAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAALgBcAGMAZgAwAFwAZgAyAFwAZgBzADIANABcAHAAYQByAA0ACgBcAGYAcwAyADAAXABwAGEAcgANAAoAXABjAGYAMQBcAGYAMAAgAEkAZgAgAHkAbwB1ACAAdwBpAHMAaAAgAHQAbwAgAHAAYQB5ACAAYgB5ACAAYwByAGUAZABpAHQAIABjAGEAcgBkACAAbwByACAAcwBoAG8AdQBsAGQAIAB5AG8AdQAgAGgAYQB2AGUAIABmAHUAdABoAGUAcgAgAHEAdQBlAHMAdABpAG8AbgBzACAAZABvACAAbgBvAHQAIABoAGUAcwBpAHQAYQB0AGUAIAB0AG8AIABjAG8AbgB0AGEAYwB0ACAAdQBzAC4AIABXAGUAIABjAGEAbgAgAGIAZQAgAHIAZQBhAGMAaABlAGQAIAB1AG4AZABlAHIAXABjAGYAMABcAGYAMgBcAGYAcwAyADQAXABwAGEAcgANAAoAXABjAGYAMQBcAGYAMABcAGYAcwAyADAAIAAwADIALwA1ADAAMwAuADYAOAAuADEAMQAgAG8AcgAgAHYAaQBhACAAZQBtAGEAaQBsACAAYQB0ACAAYwByAGUAZABpAHQAYwBvAG4AdAByAG8AbABAAGQAdgBkAHAAbwBzAHQALgBiAGUAXABmADEAIAAuAFwAYwBmADAAXABmADIAXABmAHMAMgA0AFwAcABhAHIADQAKAFwAZgBzADIAMABcAHAAYQByAA0ACgBcAGMAZgAxAFwAZgAwACAAVwBpAHMAaABpAG4AZwAgAHkAbwB1ACAAbQBhAG4AeQAgAG0AbwByAGUAIABwAGwAZQBhAHMAYQBuAHQAIABtAG8AdgBpAGUAIABuAGkAZwBoAHQAcwAgAHcAaQB0AGgAIABEAFYARABQAG8AcwB0AC4AXABjAGYAMABcAGYAMgBcAGYAcwAyADQAXABwAGEAcgANAAoAfQANAAoA</value>
+  </data>
   <metadata name="postCodeAndCityResult.Name" xml:space="preserve">
     <value>postCodeAndCityResult</value>
   </metadata>
@@ -157,9 +229,85 @@ Dim result as XRLabel = sender
   _StrPostCodeAndCity = _StrPostCode &amp; " " &amp; _strEntryCity
   result.Text = postCodeAndCity.Text.Replace("$$$postCodeAndCity$$$" , Microsoft.VisualBasic.StrConv(_StrPostCodeAndCity, Microsoft.VisualBasic.VbStrConv.ProperCase)   )
 
-result.text = System.Text.Encoding.ASCII.GetString(System.Text.Encoding.GetEncoding(1251).GetBytes(result.text))
+ result.text = System.Text.Encoding.ASCII.GetString(System.Text.Encoding.GetEncoding(1251).GetBytes(result.text))
 End Sub</value>
   </data>
+  <metadata name="xrTextlResult2.Name" xml:space="preserve">
+    <value>xrTextlResult2</value>
+  </metadata>
+  <data name="xrTextlResult2.Scripts.OnBeforePrint" xml:space="preserve">
+    <value>Private Sub OnBeforePrint(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintEventArgs)
+Dim result as XRLabel = sender 
+
+   Dim _StrDate as DateTime = GetCurrentColumnValue("date_added").ToString()
+   Dim _StrMontant as string = GetCurrentColumnValue("amount").ToString()
+   Dim _StrCredit as string = GetCurrentColumnValue("qty_credit").ToString()   
+   dim _strCommunication as string = GetCurrentColumnValue("communication").ToString()   
+   Dim _strDateNow as Date = Date.Now   
+   'Dim _strDatePayment as string =GetCurrentColumnValue("limit_date_payment").ToString()
+
+
+   'result.text =   xrTextModel2.Text.Replace("$$$abodate$$$" , _StrDate.ToShortDateString)
+   'result.text =   result.Text.Replace("$$$montant$$$" , _Strmontant)
+   'result.text =   result.Text.Replace("$$$credits_abo$$$" ,_StrCredit)	
+   'result.text =   result.Text.Replace("$$$communication$$$" , _Strcommunication )
+   montant.text = _StrMontant
+   creditAbo.text  = _StrCredit
+   aboDate.text = _StrDate.ToShortDateString
+   communication.text = _strCommunication
+
+   Dim strInterval As Date =  Microsoft.VisualBasic.DateAdd( Microsoft.VisualBasic.DateInterval.Day, 10, _strDateNow)
+   dateLimitPayment.text =  strInterval.ToShortDateString       
+       
+
+End Sub</value>
+  </data>
+  <metadata name="xrLabel16.Name" xml:space="preserve">
+    <value>xrLabel16</value>
+  </metadata>
+  <metadata name="creditAbo.Name" xml:space="preserve">
+    <value>creditAbo</value>
+  </metadata>
+  <metadata name="xrPageInfo1.Name" xml:space="preserve">
+    <value>xrPageInfo1</value>
+  </metadata>
+  <metadata name="postCodeAndCity.Name" xml:space="preserve">
+    <value>postCodeAndCity</value>
+  </metadata>
+  <metadata name="dataTable1.Name" xml:space="preserve">
+    <value>dataTable1</value>
+  </metadata>
+  <metadata name="aboDate.Name" xml:space="preserve">
+    <value>aboDate</value>
+  </metadata>
+  <metadata name="xrRichText2.Name" xml:space="preserve">
+    <value>xrRichText2</value>
+  </metadata>
+  <data name="xrRichText2.SerializableRtfString" xml:space="preserve">
+    <value>ewBcAHIAdABmADEAXABhAG4AcwBpAFwAYQBuAHMAaQBjAHAAZwAxADIANQAyAFwAZABlAGYAZgAwAHsAXABmAG8AbgB0AHQAYgBsAHsAXABmADAAXABmAG4AaQBsACAAVgBlAHIAZABhAG4AYQA7AH0AewBcAGYAMQBcAGYAbgBpAGwAXABmAGMAaABhAHIAcwBlAHQAMAAgAFYAZQByAGQAYQBuAGEAOwB9AHsAXABmADIAXABmAG4AaQBsACAAVABpAG0AZQBzACAATgBlAHcAIABSAG8AbQBhAG4AOwB9AHsAXABmADMAXABmAHIAbwBtAGEAbgBcAGYAcAByAHEAMgBcAGYAYwBoAGEAcgBzAGUAdAAwACAAVABpAG0AZQBzACAATgBlAHcAIABSAG8AbQBhAG4AOwB9AH0ADQAKAHsAXABjAG8AbABvAHIAdABiAGwAIAA7AFwAcgBlAGQAMABcAGcAcgBlAGUAbgAwAFwAYgBsAHUAZQAwADsAfQANAAoAXAB2AGkAZQB3AGsAaQBuAGQANABcAHUAYwAxAFwAcABhAHIAZABcAHEAYwBcAGMAZgAxAFwAbABhAG4AZwAyADAANgAwAFwAZgAwAFwAZgBzADEANgAgAEgAbwBtAGUAIABFAG4AdABlAHIAdABhAGkAbgBtAGUAbgB0ACAAUwBlAHIAdgBpAGMAZQBzACAAcwBhAC8AbgB2ACAALQAgAE4AdQBtAFwAZgAxAFwAJwBlADkAXABmADAAIAByAG8AIABSAFwAZgAxAFwAJwBlADkAXABmADAAIABwAG8AbgBzAGUAMQAwADcAMAAtADkAOQAgAC0AIAAxADAANwAwACAAQQBuAGQAZQByAGwAZQBjAGgAdAAgAE0AYQBpAGwAIAAtACAAVABWAEEAIAA6ACAAQgBFADAANAA3ADgALgA1ADEAMAAuADUAMAAyAFwAYwBmADAAXABmADIAXABmAHMAMgA0AFwAcABhAHIADQAKAFwAYwBmADEAXABmADEAXABmAHMAMQA2ACAAVABlAGwAOgAgACsAMwAyACAAKAAwACkAIABcAGMAZgAwACAAMgAgADUAMAAzACAANgA4ACAAMQAxAFwAZgAzAFwAZgBzADIANAAgACAAXABjAGYAMQBcAGYAMABcAGYAcwAxADYAIAAgACAAIABGAGEAeAA6ACAAKwAzADIAIAAoADAAKQAgADIAIABcAGYAMQAgADcAOQAxAFwAZgAwACAAIABcAGYAMQAgADUAMgBcAGYAMAAgACAAXABmADEAIAA4ADQAXABmADAAIAAgACAAIAAgAEQAZQB4AGkAYQA6ACAAMAA2ADgAIAAyADQAMQA2ADgAOAA2ACAANgAxACAAIAAgAEkAQgBBAE4AOgAgAEIARQA2ADIAIAAwADYAOAAyACAANAAxADYAOAAgADgANgA2ADEAXABwAGEAcgANAAoAfQANAAoA</value>
+  </data>
+  <metadata name="addressCustomersResult.Name" xml:space="preserve">
+    <value>addressCustomersResult</value>
+  </metadata>
+  <data name="addressCustomersResult.Scripts.OnBeforePrint" xml:space="preserve">
+    <value>Private Sub OnBeforePrint(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintEventArgs)
+  Dim result as XRLabel = sender
+  Dim _StrEntryStreetAddress as string = GetCurrentColumnValue("entry_street_address").ToString()
+ 
+   result.Text = addressCustomers.Text.Replace("$$$addressCustomers$$$" , Microsoft.VisualBasic.StrConv(_StrEntryStreetAddress, Microsoft.VisualBasic.VbStrConv.ProperCase) ) 
+
+  result.text = System.Text.Encoding.ASCII.GetString(System.Text.Encoding.GetEncoding(1251).GetBytes(result.text))
+End Sub</value>
+  </data>
+  <metadata name="xrLabel3.Name" xml:space="preserve">
+    <value>xrLabel3</value>
+  </metadata>
+  <metadata name="GroupHeader1.Name" xml:space="preserve">
+    <value>GroupHeader1</value>
+  </metadata>
+  <metadata name="xrLabel5.Name" xml:space="preserve">
+    <value>xrLabel5</value>
+  </metadata>
   <metadata name="nameResult.Name" xml:space="preserve">
     <value>nameResult</value>
   </metadata>
@@ -179,50 +327,54 @@ End Sub</value>
   <metadata name="name.Name" xml:space="preserve">
     <value>name</value>
   </metadata>
-  <metadata name="addressCustomersResult.Name" xml:space="preserve">
-    <value>addressCustomersResult</value>
+  <metadata name="xrRichText1.Name" xml:space="preserve">
+    <value>xrRichText1</value>
   </metadata>
-  <data name="addressCustomersResult.Scripts.OnBeforePrint" xml:space="preserve">
-    <value>Private Sub OnBeforePrint(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintEventArgs)
-  Dim result as XRLabel = sender
-  Dim _StrEntryStreetAddress as string = GetCurrentColumnValue("entry_street_address").ToString()
- 
-   result.Text = addressCustomers.Text.Replace("$$$addressCustomers$$$" , Microsoft.VisualBasic.StrConv(_StrEntryStreetAddress, Microsoft.VisualBasic.VbStrConv.ProperCase) ) 
-
-result.text = System.Text.Encoding.ASCII.GetString(System.Text.Encoding.GetEncoding(1251).GetBytes(result.text))
-  
-End Sub</value>
+  <data name="xrRichText1.SerializableRtfString" xml:space="preserve">
+    <value>ewBcAHIAdABmADEAXABhAG4AcwBpAGMAcABnADEAMgA1ADIADQAKAHsADQAKAFwAZgBvAG4AdAB0AGIAbAANAAoAewBcAGYAMAAgAFQAaQBtAGUAcwAgAE4AZQB3ACAAUgBvAG0AYQBuADsAfQANAAoAewBcAGYAMQAgAFYAZQByAGQAYQBuAGEAOwB9AA0ACgB9AA0ACgB7AA0ACgBcAGMAbwBsAG8AcgB0AGIAbAANAAoAOwANAAoAXAByAGUAZAAwAFwAZwByAGUAZQBuADAAXABiAGwAdQBlADAAOwANAAoAfQANAAoAewBcAHAAYQByAGQAXABwAGwAYQBpAG4AXABxAGwAewBcAGYAMQBcAGYAcwAyADAAXABjAGYAMQAgAEEAbgBkAGUAcgBsAGUAYwBoAHQALAB9AFwAcABhAHIAfQANAAoAfQANAAoA</value>
   </data>
   <metadata name="addressCustomers.Name" xml:space="preserve">
     <value>addressCustomers</value>
   </metadata>
-  <metadata name="xrLabel3.Name" xml:space="preserve">
-    <value>xrLabel3</value>
-  </metadata>
-  <metadata name="GroupFooter1.Name" xml:space="preserve">
-    <value>GroupFooter1</value>
-  </metadata>
-  <metadata name="xrRichText2.Name" xml:space="preserve">
-    <value>xrRichText2</value>
-  </metadata>
-  <data name="xrRichText2.SerializableRtfString" xml:space="preserve">
-    <value>ewBcAHIAdABmADEAXABhAG4AcwBpAFwAYQBuAHMAaQBjAHAAZwAxADIANQAyAFwAZABlAGYAZgAwAHsAXABmAG8AbgB0AHQAYgBsAHsAXABmADAAXABmAG4AaQBsACAAVgBlAHIAZABhAG4AYQA7AH0AewBcAGYAMQBcAGYAbgBpAGwAXABmAGMAaABhAHIAcwBlAHQAMAAgAFYAZQByAGQAYQBuAGEAOwB9AHsAXABmADIAXABmAG4AaQBsACAAVABpAG0AZQBzACAATgBlAHcAIABSAG8AbQBhAG4AOwB9AHsAXABmADMAXABmAHIAbwBtAGEAbgBcAGYAcAByAHEAMgBcAGYAYwBoAGEAcgBzAGUAdAAwACAAVABpAG0AZQBzACAATgBlAHcAIABSAG8AbQBhAG4AOwB9AH0ADQAKAHsAXABjAG8AbABvAHIAdABiAGwAIAA7AFwAcgBlAGQAMABcAGcAcgBlAGUAbgAwAFwAYgBsAHUAZQAwADsAfQANAAoAXAB2AGkAZQB3AGsAaQBuAGQANABcAHUAYwAxAFwAcABhAHIAZABcAHEAYwBcAGMAZgAxAFwAbABhAG4AZwAyADAANgAwAFwAZgAwAFwAZgBzADEANgAgAEgAbwBtAGUAIABFAG4AdABlAHIAdABhAGkAbgBtAGUAbgB0ACAAUwBlAHIAdgBpAGMAZQBzACAAcwBhAC8AbgB2ACAALQAgAE4AdQBtAFwAZgAxAFwAJwBlADkAXABmADAAIAByAG8AIABSAFwAZgAxAFwAJwBlADkAXABmADAAIABwAG8AbgBzAGUAMQAwADcAMAAtADkAOQAgAC0AIAAxADAANwAwACAAQQBuAGQAZQByAGwAZQBjAGgAdAAgAE0AYQBpAGwAIAAtACAAVABWAEEAIAA6ACAAQgBFADAANAA3ADgALgA1ADEAMAAuADUAMAAyAFwAYwBmADAAXABmADIAXABmAHMAMgA0AFwAcABhAHIADQAKAFwAYwBmADEAXABmADEAXABmAHMAMQA2ACAAVABlAGwAOgAgACsAMwAyACAAKAAwACkAIABcAGMAZgAwACAAMgAgADUAMAAzACAANgA4ACAAMQAxAFwAZgAzAFwAZgBzADIANAAgACAAXABjAGYAMQBcAGYAMABcAGYAcwAxADYAIAAgACAAIABGAGEAeAA6ACAAKwAzADIAIAAoADAAKQAgADIAIABcAGYAMQAgADcAOQAxAFwAZgAwACAAIABcAGYAMQAgADUAMgBcAGYAMAAgACAAXABmADEAIAA4ADQAXABmADAAIAAgACAAIAAgAEQAZQB4AGkAYQA6ACAAMAA2ADgAIAAyADQAMQA2ADgAOAA2ACAANgAxACAAIAAgAEkAQgBBAE4AOgAgAEIARQA2ADIAIAAwADYAOAAyACAANAAxADYAOAAgADgANgA2ADEAXABjAGYAMABcAGYAMgBcAGYAcwAyADQAXABwAGEAcgANAAoAXABwAGEAcgBkAFwAcABhAHIADQAKAH0ADQAKAA==</value>
-  </data>
-  <metadata name="xrTextModel1.Name" xml:space="preserve">
-    <value>xrTextModel1</value>
-  </metadata>
-  <data name="xrTextModel1.SerializableRtfString" xml:space="preserve">
-    <value>ewBcAHIAdABmADEAXABhAG4AcwBpAFwAYQBuAHMAaQBjAHAAZwAxADIANQAyAFwAZABlAGYAZgAwAHsAXABmAG8AbgB0AHQAYgBsAHsAXABmADAAXABmAHMAdwBpAHMAcwBcAGYAcAByAHEAMgBcAGYAYwBoAGEAcgBzAGUAdAAwACAAQwBhAGwAaQBiAHIAaQA7AH0AewBcAGYAMQBcAGYAbgBpAGwAIABUAGkAbQBlAHMAIABOAGUAdwAgAFIAbwBtAGEAbgA7AH0AfQANAAoAXAB2AGkAZQB3AGsAaQBuAGQANABcAHUAYwAxAFwAcABhAHIAZABcAGwAYQBuAGcAMQAwADMAMwBcAGYAMABcAGYAcwAyADIAXABwAGEAcgANAAoAXABwAGEAcgANAAoAXABwAGEAcgANAAoARABlAGEAcgAgAEMAdQBzAHQAbwBtAGUAcgAsAFwAcABhAHIADQAKAFwAcABhAHIADQAKAFcAZQAgAHcAbwB1AGwAZAAgAGwAaQBrAGUAIAB0AG8AIABpAG4AZgBvAHIAbQAgAHkAbwB1ACAAdABoAGEAdAAgAHcAZQAgAGgAYQB2AGUAIABkAGUAYwBpAGQAZQBkACAAdABvACAAYQBjAHQAaQB2AGUAbAB5ACAAcABhAHIAdABpAGMAaQBwAGEAdABlACAAaQBuACAAdABoAGUAIABFAHUAcgBvAHAAZQBhAG4AIABtAGEAcgBrAGUAdAAgAGIAeQAgAFwAcABhAHIADQAKAHUAcwBpAG4AZwAgAHQAaABlACAARQB1AHIAbwBwAGUAYQBuACAAZABpAHIAZQBjAHQAIABkAGUAYgBpAHQAIAAoAFMARQBQAEEAKQAgAGEAcwAgAGEAIABwAGEAeQBtAGUAbgB0ACAAaQBuAHMAdAByAHUAbQBlAG4AdAAuACAAXABwAGEAcgANAAoAXABwAGEAcgANAAoAVABoAGUAIABFAHUAcgBvAHAAZQBhAG4AIABkAGkAcgBlAGMAdAAgAGQAZQBiAGkAdAAgAGkAcwAgAGEAIABoAGEAcgBtAG8AbgBpAHoAZQBkACAAcAByAG8AZAB1AGMAdAAgAHQAaABhAHQAIABjAGEAbgAgAGIAZQAgAHUAcwBlAGQAIABhAGwAbAAgAG8AdgBlAHIAIABFAHUAcgBvAHAAZQAgAGYAbwByACAAYQBsAGwAIAB0AHIAYQBuAHMAYQBjAHQAaQBvAG4AcwAgAGkAbgAgAEUAdQByAG8AcwAuAFwAcABhAHIADQAKAFwAcABhAHIADQAKAFUAbgB0AGkAbAAgAG4AbwB3ACAAeQBvAHUAIABoAGEAdgBlACAAcABhAGkAZAAgAG8AdQByACAAaQBuAHYAbwBpAGMAZQBzACAAYgB5ACAAbQBlAGEAbgBzACAAbwBmACAAdABoAGUAIABCAGUAbABnAGkAYQBuACAAZABpAHIAZQBjAHQAIABkAGUAYgBpAHQAIAAoAEQATwBNADgAMAA6ACIAZABlACAAQgBlAGwAZwBpAHMAYwBoAGUAIABcAHAAYQByAA0ACgBcAHAAYQByAGQAXABzAGwAMgA0ADAAXABzAGwAbQB1AGwAdAAxACAAZABvAG0AaQBjAGkAbABpAGUAcgBpAG4AZwAiACAALwAgACIAbABhACAAZABvAG0AaQBjAGkAbABpAGEAdABpAG8AbgAgAGIAZQBsAGcAZQAiACkALgAgAFwAcABhAHIADQAKAFwAcABhAHIAZAAgAFQAaABpAHMAIABCAGUAbABnAGkAYQBuACAAZABpAHIAZQBjAHQAIABkAGUAYgBpAHQAIABtAGEAbgBkAGEAdABlACAAdwBpAGwAbAAgAGIAZQAgAGEAdQB0AG8AbQBhAHQAaQBjAGEAbABsAHkAIAByAGUAcABsAGEAYwBlAGQAIABiAHkAIABhACAARQB1AHIAbwBwAGUAYQBuACAAZABpAHIAZQBjAHQAIABkAGUAYgBpAHQAIABtAGEAbgBkAGEAdABlAC4AIABcAHAAYQByAA0ACgBcAHAAYQByAA0ACgBEAGEAdABhACAAbwBmACAAdABoAGUAIABuAGUAdwAgAEUAdQByAG8AcABlAGEAbgAgAGQAaQByAGUAYwB0ACAAZABlAGIAaQB0ACAAbQBhAG4AZABhAHQAZQA6AFwAcABhAHIADQAKAFIAZQBmAGUAcgBlAG4AYwBlADoAIABCAEUANgA1AFoAWgBaADAANAA3ADgANQAxADAANQAwADIAXABwAGEAcgANAAoAXABwAGEAcgANAAoAUABsAGUAYQBzAGUAIABuAG8AdABlACAAdABoAGEAdAAgAG4AbwAgAGEAYwB0AGkAbwBuACAAaQBzACAAcgBlAHEAdQBpAHIAZQBkACAAYQB0ACAAeQBvAHUAcgAgAHMAaQBkAGUALAAgAHQAaABpAHMAIABjAGgAYQBuAGcAZQAgAGIAZQBpAG4AZwAgAGYAdQBsAGwAeQAgAGEAdQB0AG8AbQBhAHQAZQBkAC4AIABcAHAAYQByAA0ACgBXAGUAIAB3AG8AdQBsAGQAIABhAGwAcwBvACAAbABpAGsAZQAgAHQAbwAgAGEAcwBrACAAeQBvAHUAIABuAG8AdAAgAHQAbwAgAHIAZQB2AG8AawBlACAAeQBvAHUAcgAgAGMAdQByAHIAZQBuAHQAIABCAGUAbABnAGkAYQBuACAAZABpAHIAZQBjAHQAIABkAGUAYgBpAHQAIABtAGEAbgBkAGEAdABlACAAYQB0ACAAeQBvAHUAcgAgAGIAYQBuAGsALgAgAFQAaABlACAAcgBlAHYAbwBjAGEAdABpAG8AbgAgAHcAaQBsAGwAIABiAGUAIABkAG8AbgBlACAAYQB1AHQAbwBtAGEAdABpAGMAYQBsAGwAeQAgAGEAcwAgAHMAbwBvAG4AIABhAHMAIAB3AGUAIABoAGEAdgBlACAAYwBvAG0AcABsAGUAdABlAGwAeQAgAG0AaQBnAHIAYQB0AGUAZAAgAHQAbwB3AGEAcgBkAHMAIAB0AGgAZQAgAEUAdQByAG8AcABlAGEAbgAgAGQAaQByAGUAYwB0ACAAZABlAGIAaQB0AC4AXABwAGEAcgANAAoAXABsAGEAbgBnADIAMAA2ADAAXABmADEAXABmAHMAMgA0AFwAcABhAHIADQAKAH0ADQAKAA==</value>
-  </data>
-  <metadata name="xrPageInfo1.Name" xml:space="preserve">
-    <value>xrPageInfo1</value>
-  </metadata>
   <metadata name="Detail.Name" xml:space="preserve">
     <value>Detail</value>
   </metadata>
-  <metadata name="dataTable1.Name" xml:space="preserve">
-    <value>dataTable1</value>
+  <metadata name="dateLimitPayment.Name" xml:space="preserve">
+    <value>dateLimitPayment</value>
   </metadata>
+  <metadata name="xrLabel1.Name" xml:space="preserve">
+    <value>xrLabel1</value>
+  </metadata>
+  <metadata name="xrTextResult1.Name" xml:space="preserve">
+    <value>xrTextResult1</value>
+  </metadata>
+  <data name="xrTextResult1.Scripts.OnBeforePrint" xml:space="preserve">
+    <value>Private Sub OnBeforePrint(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintEventArgs)
+Dim result as XRRichText = sender 	
+  Dim _StrFirstName as string = GetCurrentColumnValue("customers_firstname").ToString()
+   Dim _StrLastName as string = GetCurrentColumnValue("customers_lastname").ToString()
+   Dim _StrGender as string = GetCurrentColumnValue("customers_gender")
+
+
+
+   Dim _StrFullName as string = ""
+   'if _strGender = "F" or _strGender = "f" then
+   '  _StrFullName = "Chere "
+   'else
+   '   _StrFullName = "Cher "
+   'end if
+   _StrFullName = "Dear" &amp; " " &amp; _StrFirstName &amp; " " &amp; _StrLastName &amp; ","
+   
+   'result.text =   xrTextModel1.Text.Replace("$$$name$$$" , _StrFullName  )
+    result.text =   xrTextModel1.Text
+   xrLabel1.text = Microsoft.VisualBasic.StrConv(_StrFullName, Microsoft.VisualBasic.VbStrConv.ProperCase)
+
+   
+End Sub</value>
+  </data>
+  <data name="xrTextResult1.SerializableRtfString" xml:space="preserve">
+    <value>ewBcAHIAdABmADEAXABhAG4AcwBpAGMAcABnADEAMgA1ADIADQAKAHsADQAKAFwAZgBvAG4AdAB0AGIAbAANAAoAewBcAGYAMAAgAFQAaQBtAGUAcwAgAE4AZQB3ACAAUgBvAG0AYQBuADsAfQANAAoAfQANAAoAewANAAoAXABjAG8AbABvAHIAdABiAGwADQAKADsADQAKAH0ADQAKAHsAXABwAGEAcgBkAFwAcABsAGEAaQBuAFwAcQBsAFwAcABhAHIAfQANAAoAfQANAAoA</value>
+  </data>
   <metadata name="$this.SnapToGrid" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>

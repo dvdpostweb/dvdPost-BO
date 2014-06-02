@@ -1068,6 +1068,9 @@ Public Class clsCoda2
             sql = DvdPostData.ClsBatchDomiciliation.UpdateCustomersEDDMandateFrstToRecurrent()
             eddCustomersToRecurrent = DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
+            sql = DvdPostData.ClsBatchDomiciliation.UpdateCustomersEDDMandateFrstToRecurrentR_RETURN()
+            eddCustomersToRecurrent = DvdPostData.clsConnection.ExecuteNonQuery(sql)
+
             If unpaid_inexistant + unpaid_insolvent + unpaid_CompteSolde + longtime_DomWaiting + paid + eddPaymentToDomProblem + eddPaymentToPaid + eddCustomersToRecurrent > 0 Then
                 clsMsgError.MsgBox("Domiciliation : " & coda_filename & vbNewLine & _
                 " Paid : " & paid & vbNewLine & _
