@@ -95,7 +95,11 @@ Public Class PaymentOfflineData
               DVDPostTools.clsEnum.getValueStrEnum(StepPayment.CALL) + "," + _
               DVDPostTools.clsEnum.getValueStrEnum(StepPayment.RECALL_CUSTOMERS) + "," + _
               DVDPostTools.clsEnum.getValueStrEnum(StepPayment.DELAY_PROCESS) + "," + _
-              GetListRecoverySuspended()
+              DVDPostTools.clsEnum.getValueStrEnum(StepPayment.DOM_PROBLEM) + "," + _
+              DVDPostTools.clsEnum.getValueStrEnum(StepPayment.PAYPAL_PROBLEM) + "," + _
+              DVDPostTools.clsEnum.getValueStrEnum(StepPayment.PAYPAL_WILL_PAY) + "," + _
+              DVDPostTools.clsEnum.getValueStrEnum(StepPayment.EDD_WILL_PAY) + "," + _
+        GetListRecoverySuspended()
         Return str
 
     End Function
@@ -372,17 +376,31 @@ Public Class PaymentOfflineData
     End Function
 
     Public Shared Function GetStepPaymentWithAbo(ByVal StepPayment As Integer) As String
+        'Dim sql As String
+        'sql = "SELECT p.date_added date_reconduction,p.*,c.*,pos.*,ab.*, " & _
+        '"(SELECT pa.qty_credit from abo a " & _
+        '" join products_abo pa on a.product_id = pa.products_id " & _
+        '" where a.customerid = p.customers_id  order by a.abo_id desc  limit 1) as qty_credit " & _
+        '" FROM payment p left join customers c on c.customers_id = p.customers_id " & _
+        '" left join customers_abo_payment_method capm on capm.customers_abo_payment_method_id = c.customers_abo_payment_method" & _
+        '" left join payment_status pos on pos.id = p.payment_status" & _
+        '" left join address_book ab on c.customers_id = ab.customers_id and c.customers_default_address_id = ab.address_book_id " & _
+        '" where p.payment_status = " & StepPayment
+        'Return sql
+
         Dim sql As String
         sql = "SELECT p.date_added date_reconduction,p.*,c.*,pos.*,ab.*, " & _
         "(SELECT pa.qty_credit from abo a " & _
         " join products_abo pa on a.product_id = pa.products_id " & _
-        " where a.customerid = p.customers_id  order by a.abo_id desc  limit 1) as qty_credit " & _
+        " where a.customerid = p.customers_id  order by a.abo_id desc  limit 1) as qty_credit, co.countries_name " & _
         " FROM payment p left join customers c on c.customers_id = p.customers_id " & _
         " left join customers_abo_payment_method capm on capm.customers_abo_payment_method_id = c.customers_abo_payment_method" & _
         " left join payment_status pos on pos.id = p.payment_status" & _
         " left join address_book ab on c.customers_id = ab.customers_id and c.customers_default_address_id = ab.address_book_id " & _
+        " left join country co on co.countries_id = ab.entry_country_id " & _
         " where p.payment_status = " & StepPayment
         Return sql
+
     End Function
 
     Public Shared Function getListStepChanged(ByVal delay As Integer, ByVal old_status As Integer) As String

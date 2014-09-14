@@ -2413,6 +2413,8 @@ Public Class ClsCustomers
             Dim clsBatchOgone As ClsBatchOgone = New ClsBatchOgone()
             flux = clsBatchOgone.CreateBatchFile(dtResult, idcountry)
             ok = DVDPostTools.clsFile.WriteFileNoExist(clsBatchOgone.CreatePathFile(clsBatchOgone.TypeBatch.CHANGE_CREDITCARD, idcountry), flux)
+            DvdPostData.clsConnection.ExecuteNonQuery(DvdPostData.ClsBatchOgone.OgonePaymentBatch(flux))
+
         End If
     End Function
     Public Function ReconductionOgone(ByVal idcountry As ClsCustomersData.Country) As Boolean

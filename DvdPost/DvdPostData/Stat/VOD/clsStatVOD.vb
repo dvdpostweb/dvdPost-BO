@@ -13,6 +13,30 @@ Public Class clsStatVOD
         Return sql
     End Function
 
+    Public Shared Function GetSelectTopWatcheVOD_KPN(ByVal dateFrom As String, ByVal dateTo As String) As String
+        Dim sql As String
+        sql = " select cnt.imdb_id,p.products_id, p.products_title, cnt.watched, " & _
+                " (select studio_name from studio s where s.studio_id = sp.studio_id) as studio, " & _
+                " sp.expire_at " & _
+                " from ( select t.imdb_id, count(*) watched from an_kpn_reports t where date(t.date_achat) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.date_achat) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' group by imdb_id ) cnt " & _
+                " join streaming_products sp on cnt.imdb_id = sp.imdb_id " & _
+                " join products p on cnt.imdb_id = p.imdb_id where sp.status <> 'deleted' and sp.source = 'alphanetworks'" & _
+                " group by cnt.imdb_id order by cnt.watched desc"
+        Return sql
+    End Function
+
+    Public Shared Function GetSelectTopWatcheVOD_PRISONS(ByVal dateFrom As String, ByVal dateTo As String) As String
+        Dim sql As String
+        sql = " select cnt.imdb_id,p.products_id, p.products_title, cnt.watched, " & _
+                " (select studio_name from studio s where s.studio_id = sp.studio_id) as studio, " & _
+                " sp.expire_at " & _
+                " from ( select t.imdb_id, count(*) watched from prison_reports t where date(t.watched_date) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.watched_date) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' group by imdb_id ) cnt " & _
+                " join streaming_products sp on cnt.imdb_id = sp.imdb_id " & _
+                " join products p on cnt.imdb_id = p.imdb_id where sp.status <> 'deleted' and sp.source = 'alphanetworks'" & _
+                " group by cnt.imdb_id order by cnt.watched desc"
+        Return sql
+    End Function
+
     Public Shared Function GetSelectVODbyChannels(ByVal dateFrom As String, ByVal dateTo As String) As String
         Dim sql As String
         sql = " select year(t.created_at) Y, month(t.created_at) M," & _

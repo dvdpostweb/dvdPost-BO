@@ -810,7 +810,7 @@ Public Class ClsCustomersData
         sql = sql & " c.ogone_card_no,"
         sql = sql & " c.ogone_exp_date,"
         sql = sql & " p.products_price,"
-        sql = sql & " pe.InstdAmt amount,"
+        sql = sql & " cast(pe.InstdAmt as char) amount,"
         sql = sql & " ca.combined, "
         sql = sql & "( SELECT if(pa.qty_dvd_max >= 0, 1, 0) FROM products_abo pa WHERE pa.products_id = c.customers_next_abo_type ) as npp_logic, " ' npp
         sql = sql & " dom80.* , edd.*, pe.id as parent_id, "

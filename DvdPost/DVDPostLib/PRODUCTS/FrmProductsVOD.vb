@@ -50,6 +50,8 @@ Public Class FrmProductsVOD
         chkIsPPVNL.Checked = False
         txtPPVPriceNL.EditValue = blank
         chkDRM.Checked = blank
+        chkIsAkamai.Checked = blank
+        chkIsPrison.Checked = blank
 
     End Sub
     Private Sub loadData(ByVal row As DataRow)
@@ -137,6 +139,17 @@ Public Class FrmProductsVOD
             chkDRM.Checked = row("drm")
         End If
 
+        If row("akamai") Is DBNull.Value Then
+            chkIsAkamai.Checked = False
+        Else
+            chkIsAkamai.Checked = row("akamai")
+        End If
+
+        If row("prison") Is DBNull.Value Then
+            chkIsPrison.Checked = False
+        Else
+            chkIsPrison.Checked = row("prison")
+        End If
     End Sub
 
     Private Sub loadDataTrailer(ByVal row As DataRow)
@@ -332,6 +345,8 @@ Public Class FrmProductsVOD
         chkIsPPV.Enabled = enable
         txtPPVPrice.Enabled = enable And chkIsPPV.Checked
         chkDRM.Enabled = enable
+        chkIsAkamai.Enabled = False
+        chkIsPrison.Enabled = False
 
         LuxEnable(enable)
         NLEnable(enable)

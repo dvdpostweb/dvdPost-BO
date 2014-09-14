@@ -74,10 +74,10 @@ Public Class rptDVDLabel2
         Me.XrLabel4.Dpi = 254.0!
         Me.XrLabel4.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Bold)
         Me.XrLabel4.KeepTogether = True
-        Me.XrLabel4.Location = New System.Drawing.Point(56, 16)
+        Me.XrLabel4.Location = New System.Drawing.Point(24, 16)
         Me.XrLabel4.Name = "XrLabel4"
         Me.XrLabel4.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
-        Me.XrLabel4.Size = New System.Drawing.Size(53, 201)
+        Me.XrLabel4.Size = New System.Drawing.Size(79, 201)
         Me.XrLabel4.Text = "XrLabel1"
         Me.XrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         '
@@ -88,10 +88,10 @@ Public Class rptDVDLabel2
         Me.XrLabel3.Dpi = 254.0!
         Me.XrLabel3.Font = New System.Drawing.Font("Arial", 11.0!, System.Drawing.FontStyle.Bold)
         Me.XrLabel3.KeepTogether = True
-        Me.XrLabel3.Location = New System.Drawing.Point(286, 16)
+        Me.XrLabel3.Location = New System.Drawing.Point(288, 16)
         Me.XrLabel3.Name = "XrLabel3"
         Me.XrLabel3.Padding = New DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254.0!)
-        Me.XrLabel3.Size = New System.Drawing.Size(53, 201)
+        Me.XrLabel3.Size = New System.Drawing.Size(93, 201)
         Me.XrLabel3.Text = "XXXXX-YYY"
         Me.XrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter
         '
@@ -106,7 +106,7 @@ Public Class rptDVDLabel2
         Me.XrBarCode1.Module = 3.0!
         Me.XrBarCode1.Name = "XrBarCode1"
         Me.XrBarCode1.PaddingInfo = New DevExpress.XtraPrinting.PaddingInfo(25, 25, 0, 0, 254.0!)
-        Me.XrBarCode1.Size = New System.Drawing.Size(355, 135)
+        Me.XrBarCode1.Size = New System.Drawing.Size(368, 135)
         Me.XrBarCode1.StylePriority.UseBorderWidth = False
         Me.XrBarCode1.StylePriority.UseFont = False
         Me.XrBarCode1.Symbology = EaN13Generator1
@@ -149,7 +149,7 @@ Public Class rptDVDLabel2
         Me.DataMember = "products_labels"
         Me.DataSource = Me.objDS
         Me.Dpi = 254.0!
-        Me.Margins = New System.Drawing.Printing.Margins(10, 10, 10, 10)
+        Me.Margins = New System.Drawing.Printing.Margins(5, 5, 5, 5)
         Me.PageHeight = 410
         Me.PageWidth = 410
         Me.PaperKind = System.Drawing.Printing.PaperKind.Custom

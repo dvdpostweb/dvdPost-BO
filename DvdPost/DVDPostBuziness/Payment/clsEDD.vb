@@ -109,7 +109,7 @@ Public Class clsEDD
                 pmtInfId += 1
                 '
                 For Each row As DataRow In dtReconduction.Select(strEddSequenceTypeStatus)
-                    sumAmount += Decimal.Parse(row("amount").Replace(".", ","))
+                    sumAmount += Decimal.Parse(row("amount").ToString().Replace(".", ","))
                 Next
 
                 messDT = eddManager.Header(dtReconduction.Select(strEddSequenceTypeStatus).Length, msgId, sumAmount.ToString())

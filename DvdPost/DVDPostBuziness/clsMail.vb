@@ -292,13 +292,19 @@ Public Class clsMail
         If dr("Name") = STRPARAMSMTPSERVER Then
 
 
-            Dim SmtpMail As New Net.Mail.SmtpClient(dr("ParamValue"))
-            SmtpMail.Credentials = New System.Net.NetworkCredential("Administrator", "DVD8(post")
+            Dim SmtpMail As New Net.Mail.SmtpClient(dr("ParamValue"), 25)
+            'Dim SmtpMail As New Net.Mail.SmtpClient("smtp.gmail.com", 587)
+            SmtpMail.UseDefaultCredentials = False
+            'SmtpMail.Credentials = New System.Net.NetworkCredential("Administrator", "DVD8(post")
+            SmtpMail.Credentials = New System.Net.NetworkCredential("AKIAJWYB62J46J7BCHSA", "AsK1NVp2KN7FCUnZKyZOKgB/lCJlPcyZpzBnipI4XObv")
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls
+            SmtpMail.EnableSsl = True
+
+
             Try
 
-                SmtpMail.Send(mymail)
 
-                'End Try
+                SmtpMail.Send(mymail)
 
             Catch ex As SmtpFailedRecipientsException
                 clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Email, ex)
@@ -316,7 +322,7 @@ Public Class clsMail
                     End If
 
                 Next
-            Catch ex As Exception
+                'Catch ex As Exception
                 While (ex.InnerException IsNot Nothing)
                     ex = ex.InnerException
                     clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Email, ex)

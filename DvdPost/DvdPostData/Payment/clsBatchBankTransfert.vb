@@ -170,6 +170,30 @@ Public Class clsBatchBankTransfert
 
     End Function
     Public Shared Function GetDataPaymentCustomer(ByVal nb_limitdaysPayment As Integer, Optional ByVal customer_id As Integer = 0) As String
+        'Dim Sql As String
+        'Dim customerStr As String = ""
+        'Dim strvaliduser As String = ""
+        'If customer_id > 0 Then
+        '    customerStr = " And c.customers_id = " & customer_id
+        'End If
+
+        'strvaliduser = " c.customers_abo = 1 and customers_abo_suspended = 0 "
+
+
+        'Sql = "SELECT distinct pa.qty_credit,c.customers_gender,c.customers_language,c.customers_id, c.customers_firstname , c.customers_lastname,c.customers_email_address,p.*, " & _
+        '    " c.customers_abo ,ab.entry_street_address, ab.entry_postcode,ab.entry_city " & _
+        '    ",c.customers_abo_validityto ,c.customers_abo," & _
+        '    " date(date_add(now() , interval " & nb_limitdaysPayment & " day)) as limit_date_payment " & _
+        '    " FROM customers c join payment p on c.customers_id = p.customers_id " & _
+        '    " join abo a on p.abo_id = a.abo_id and a.product_id <> (SELECT products_id  FROM products where products_title = 'ADULTSVOD') " & _
+        '    " join products_abo pa on c.customers_abo_type = pa.products_id " & _
+        '    " left join address_book ab on ab.address_book_id = c.customers_default_address_id and c.customers_id = ab.customers_id " & _
+        '    " where " & strvaliduser & customerStr & " And p.amount > 0 And p.payment_status = " & PaymentOfflineData.StepPayment.WAITING_PAYMENT & _
+        '     " and p.payment_method = " & ClsCustomersData.Payment_Method.VIREMENT & _
+        '     " order by  c.customers_language ASC "
+
+        'Return Sql
+
         Dim Sql As String
         Dim customerStr As String = ""
         Dim strvaliduser As String = ""
@@ -182,12 +206,13 @@ Public Class clsBatchBankTransfert
 
         Sql = "SELECT distinct pa.qty_credit,c.customers_gender,c.customers_language,c.customers_id, c.customers_firstname , c.customers_lastname,c.customers_email_address,p.*, " & _
             " c.customers_abo ,ab.entry_street_address, ab.entry_postcode,ab.entry_city " & _
-            ",c.customers_abo_validityto ,c.customers_abo," & _
+            ",c.customers_abo_validityto ,c.customers_abo,co.countries_name," & _
             " date(date_add(now() , interval " & nb_limitdaysPayment & " day)) as limit_date_payment " & _
             " FROM customers c join payment p on c.customers_id = p.customers_id " & _
             " join abo a on p.abo_id = a.abo_id and a.product_id <> (SELECT products_id  FROM products where products_title = 'ADULTSVOD') " & _
             " join products_abo pa on c.customers_abo_type = pa.products_id " & _
             " left join address_book ab on ab.address_book_id = c.customers_default_address_id and c.customers_id = ab.customers_id " & _
+            " left join country co on co.countries_id = ab.entry_country_id " & _
             " where " & strvaliduser & customerStr & " And p.amount > 0 And p.payment_status = " & PaymentOfflineData.StepPayment.WAITING_PAYMENT & _
              " and p.payment_method = " & ClsCustomersData.Payment_Method.VIREMENT & _
              " order by  c.customers_language ASC "

@@ -289,7 +289,7 @@ Public Class clsStudio
        " from studio_reporting.reporting_tokens t " & _
        " join (select imdb_id,products_directors_id,products_date_available,products_title, products_studio, products_type from plush_production.products group by imdb_id) p on t.imdb_id = p.imdb_id " & _
        " join (select s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at, " & _
-       " ( select studio_id from plush_production.streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id order by updated_at desc limit 1 ) as studio_id from plush_production.streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' and month(available_backcatalogue_from) = month('" & DVDPostTools.ClsDate.formatDate(dateFrom) & "') and year(available_backcatalogue_from ) < year('" & DVDPostTools.ClsDate.formatDate(dateFrom) & "') group by s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at) sp on p.imdb_id = sp.imdb_id " & _
+       " ( select studio_id from plush_ production.streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id order by updated_at desc limit 1 ) as studio_id from plush_production.streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' and month(available_backcatalogue_from) = month('" & DVDPostTools.ClsDate.formatDate(dateFrom) & "') and year(available_backcatalogue_from ) < year('" & DVDPostTools.ClsDate.formatDate(dateFrom) & "') group by s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at) sp on p.imdb_id = sp.imdb_id " & _
        " left join studio_reporting.studio s on s.studio_id = sp.studio_id " & _
        " left join studio_reporting.studio ps on ps.studio_id = p.products_studio " & _
        " left join plush_production.directors d on d.directors_id = p.products_directors_id " & _
@@ -979,26 +979,31 @@ allstudio & _
             allstudio = allstudio & " and s.studio_id = " & studio_id
         End If
 
-        sql = " select y.vodstudio, y.productstudio, y.products_title, y.number_titles, y.tvac_sum, y.htvac_sum," & _
-              " sum(case y.catalogue_type " & _
-  " when 'N' then " & _
-  "if( " & _
-  "(y.htvac_sum * y.fee_new_vod) < y.minimum_new_vod, " & _
-  "format(y.minimum_new_vod,2), " & _
-  " format(htvac_sum * y.fee_new_vod,2)) " & _
-  "when 'B' then " & _
-  "if(" & _
-  "(htvac_sum * y.fee_back_catalogue) < y.minimum_back_catalogue," & _
-  "format(y.minimum_back_catalogue,2)," & _
-  "format(htvac_sum * y.fee_back_catalogue,2))" & _
-  " end ) amount_sum, y.date_created, y.period_start, y.period_end" & _
+        '      sql = " select y.vodstudio, y.productstudio, y.products_title, y.number_titles, y.tvac_sum, y.htvac_sum," & _
+        '            " sum(case y.catalogue_type " & _
+        '" when 'N' then " & _
+        '"if( " & _
+        '"(y.htvac_sum * y.fee_new_vod) < y.minimum_new_vod, " & _
+        '"format(y.minimum_new_vod,2), " & _
+        '" format(htvac_sum * y.fee_new_vod,2)) " & _
+        '"when 'B' then " & _
+        '"if(" & _
+        '"(htvac_sum * y.fee_back_catalogue) < y.minimum_back_catalogue," & _
+        '"format(y.minimum_back_catalogue,2)," & _
+        '"format(htvac_sum * y.fee_back_catalogue,2))" & _
+        '" end ) amount_sum, y.date_created, y.period_start, y.period_end" & _
+        '      " from " & _
+        sql = " select x.vodstudio, x.productstudio, x.products_title, count(x.imdb_id) number_titles, sum(format(x.price_of_movie_tvac,2))  tvac_sum, " & _
+                " sum(format(x.price_of_movie_tvac,2)/1.21) htvac_sum, " & _
+                "  sum( " & _
+ " case x.catalogue_type " & _
+ " when 'N' then if( (x.price_of_movie_htva * x.fee_new_vod) < x.minimum_new_vod, format(x.minimum_new_vod,2),  format(price_of_movie_htva * x.fee_new_vod,2)) " & _
+ " when 'B' then if((x.price_of_movie_htva * x.fee_back_catalogue) < x.minimum_back_catalogue,x.minimum_back_catalogue,format(price_of_movie_htva * x.fee_back_catalogue,2)) " & _
+ " end ) amount_sum, " & _
+                " x.catalogue_type, x.fee_new_vod, x.minimum_new_vod, x.minimum_back_catalogue, x.fee_back_catalogue " & _
+        ", date(sysdate()) date_created, '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' period_start , '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' period_end" & _
         " from " & _
-"(  select x.vodstudio, x.productstudio, x.products_title, count(x.imdb_id) number_titles, sum(format(x.price_of_movie_tvac,2))  tvac_sum, " & _
-        " sum(format(x.price_of_movie_tvac,2)/1.21) htvac_sum, " & _
-        " x.catalogue_type, x.fee_new_vod, x.minimum_new_vod, x.minimum_back_catalogue, x.fee_back_catalogue " & _
-", date(sysdate()) date_created, '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' period_start , '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' period_end" & _
-" from " & _
-" ( "
+        " ( "
         Dim sqlDVDPOST As String = "  select 'DVDPOST' source, " & _
 "  s.studio_name vodstudio, " & _
 "  ps.studio_name as productstudio, " & _
@@ -1014,7 +1019,7 @@ allstudio & _
 "  if(created_at between available_from and expire_at,'N',if(created_at between available_backcatalogue_from and expire_backcatalogue_at,'B','B')) as catalogue_type, " & _
 "  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at)) qty_credit, " & _
 " if(t.is_ppv = 1, t.ppv_price,if(t.price > 0 , t.price, format((pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * t.credits,2))) price_of_movie_tvac, " & _
-" if(t.is_ppv = 1, t.ppv_price,if(t.price > 0 , t.price, format((((pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * t.credits) / 1.21),2))) price_of_movie_htva, " & _
+" if(t.is_ppv = 1, t.ppv_price,if(t.price > 0 , format(t.price/1.21,2), format((((pabo.products_price /  if(fn_customers_credit(customers_id, t.created_at)=0,11,fn_customers_credit(customers_id, t.created_at))) * t.credits) / 1.21),2))) price_of_movie_htva, " & _
 " s.minimum_new_vod, " & _
 " s.fee_new_vod, " & _
 " s.minimum_back_catalogue, " & _
@@ -1156,8 +1161,8 @@ allstudio & _
         End If
 
         sql = sql & " order by vodstudio, productstudio, products_title" & _
-" ) x  where x.qty_credit <> 10000 " & _
-" group by 1,2,3 ) y group by 1,2,3"
+" ) x  where x.qty_credit <> 10000 group by 1,2,3 "
+        '" group by 1,2,3 ) y group by 1,2,3"
 
         Return sql
 

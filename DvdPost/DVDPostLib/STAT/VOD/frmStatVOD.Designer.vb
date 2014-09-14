@@ -36,6 +36,8 @@ Partial Class frmStatVOD
         Me.btnVodByChannelsPlush = New DevExpress.XtraEditors.SimpleButton
         Me.btnVodByChannels = New DevExpress.XtraEditors.SimpleButton
         Me.btnTopWatchedVOD = New DevExpress.XtraEditors.SimpleButton
+        Me.btnTopWatchedKPN = New DevExpress.XtraEditors.SimpleButton
+        Me.btnTopWatchedPrisons = New DevExpress.XtraEditors.SimpleButton
         Me.Panel1.SuspendLayout()
         CType(Me.TabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -131,6 +133,8 @@ Partial Class frmStatVOD
         'GCWithDate
         '
         Me.GCWithDate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
+        Me.GCWithDate.Controls.Add(Me.btnTopWatchedPrisons)
+        Me.GCWithDate.Controls.Add(Me.btnTopWatchedKPN)
         Me.GCWithDate.Controls.Add(Me.SimpleButton1)
         Me.GCWithDate.Controls.Add(Me.btnSpentCreditEarlier)
         Me.GCWithDate.Controls.Add(Me.speCreditEarlier)
@@ -238,6 +242,26 @@ Partial Class frmStatVOD
         Me.btnTopWatchedVOD.Text = "Top Watched VOD"
         Me.btnTopWatchedVOD.ToolTip = "Top watched VOD movies"
         '
+        'btnTopWatchedKPN
+        '
+        Me.btnTopWatchedKPN.Location = New System.Drawing.Point(13, 146)
+        Me.btnTopWatchedKPN.Name = "btnTopWatchedKPN"
+        Me.HelpProvider1.SetShowHelp(Me.btnTopWatchedKPN, False)
+        Me.btnTopWatchedKPN.Size = New System.Drawing.Size(183, 46)
+        Me.btnTopWatchedKPN.TabIndex = 48
+        Me.btnTopWatchedKPN.Text = "Top Watched VOD KPN"
+        Me.btnTopWatchedKPN.ToolTip = "Top watched VOD movies"
+        '
+        'btnTopWatchedPrisons
+        '
+        Me.btnTopWatchedPrisons.Location = New System.Drawing.Point(13, 202)
+        Me.btnTopWatchedPrisons.Name = "btnTopWatchedPrisons"
+        Me.HelpProvider1.SetShowHelp(Me.btnTopWatchedPrisons, False)
+        Me.btnTopWatchedPrisons.Size = New System.Drawing.Size(183, 46)
+        Me.btnTopWatchedPrisons.TabIndex = 49
+        Me.btnTopWatchedPrisons.Text = "Top Watched VOD Prisons"
+        Me.btnTopWatchedPrisons.ToolTip = "Top watched VOD movies"
+        '
         'frmStatVOD
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -283,4 +307,6 @@ Partial Class frmStatVOD
     Friend WithEvents speCreditEarlier As DevExpress.XtraEditors.SpinEdit
     Friend WithEvents btnSpentCreditEarlier As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnTopWatchedPrisons As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnTopWatchedKPN As DevExpress.XtraEditors.SimpleButton
 End Class

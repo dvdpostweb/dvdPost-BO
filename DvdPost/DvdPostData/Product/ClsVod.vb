@@ -132,7 +132,7 @@ Public Class ClsVod
 
     Public Shared Function SearchAllViewVod() As String
         Dim sql As String
-        sql = " SELECT distinct sp.*, P.products_title products_name " & _
+        sql = " SELECT distinct sp.*, P.products_title products_name, (select count(*) > 0 from plush_production.akamai_movies where imdb_id = sp.imdb_id) akamai, (select count(*) > 0 from prison_movies where imdb_id = sp.imdb_id) prison    " & _
               " from (select imdb_id,products_title from products group by imdb_id) P " & _
               " join streaming_products sp on sp.imdb_id = P.imdb_id " & _
               " where sp.status <> 'deleted' "
@@ -150,7 +150,7 @@ Public Class ClsVod
 
     Public Shared Function SearchViewVodpartTitle(ByVal partTitle As String) As String
         Dim sql As String
-        sql = " SELECT distinct sp.*, P.products_title products_name " & _
+        sql = " SELECT distinct sp.*, P.products_title products_name, (select count(*) > 0 from plush_production.akamai_movies where imdb_id = sp.imdb_id) akamai, (select count(*) > 0 from prison_movies where imdb_id = sp.imdb_id) prison  " & _
               " from (select imdb_id,products_title from products group by imdb_id) P " & _
               " join streaming_products sp on sp.imdb_id = P.imdb_id " & _
               " where sp.status <> 'deleted' and products_title like '%" & partTitle.Trim & "%'  "
@@ -159,7 +159,7 @@ Public Class ClsVod
 
     Public Shared Function SearchViewTrailerpartTitle(ByVal partTitle As String) As String
         Dim sql As String
-        sql = " SELECT distinct st.*, P.products_title products_name " & _
+        sql = " SELECT distinct st.*, P.products_title products_name, (select count(*) > 0 from plush_produciton.akamai_movies where imdb_id = sp.imdb_id) akamai, (select count(*) > 0 from prison_movies where imdb_id = sp.imdb_id) prison   " & _
               " from (select imdb_id, products_title from products group by imdb_id) P " & _
               " join streaming_trailers st on st.imdb_id = P.imdb_id " & _
               " where st.status <> 'deleted' and products_title like '%" & partTitle.Trim & "%'  "
@@ -168,7 +168,7 @@ Public Class ClsVod
 
     Private Shared Function SearchViewVodProductStatus(ByVal status As String) As String
         Dim sql As String
-        sql = " SELECT distinct sp.*, P.products_title products_name " & _
+        sql = " SELECT distinct sp.*, P.products_title products_name, (select count(*) > 0 from plush_production.akamai_movies where imdb_id = sp.imdb_id) akamai, (select count(*) > 0 from prison_movies where imdb_id = sp.imdb_id) prison   " & _
               " from (select imdb_id,products_title from products group by imdb_id) P " & _
               " join streaming_products sp on sp.imdb_id = P.imdb_id " & _
               " where sp.status = '" & status & "' group by sp.imdb_id, sp.language_id, sp.subtitle_id "
@@ -208,7 +208,7 @@ Public Class ClsVod
 
     Public Shared Function SearchViewVodProduct(ByVal products_id As Integer) As String
         Dim sql As String
-        sql = " SELECT distinct sp.*, P.products_title products_name " & _
+        sql = " SELECT distinct sp.*, P.products_title products_name, (select count(*) > 0 from plush_production.akamai_movies where imdb_id = sp.imdb_id) akamai, (select count(*) > 0 from prison_movies where imdb_id = sp.imdb_id) prison   " & _
               " from (select imdb_id,products_title,products_id from products group by imdb_id) P " & _
               " join streaming_products sp on sp.imdb_id = P.imdb_id " & _
               " where sp.status <> 'deleted' and P.products_id = " & products_id
@@ -226,7 +226,7 @@ Public Class ClsVod
 
     Public Shared Function SearchViewVodImdb(ByVal imdb_id As Integer) As String
         Dim sql As String
-        sql = " SELECT distinct sp.*, P.products_title products_name " & _
+        sql = " SELECT distinct sp.*, P.products_title products_name, (select count(*) > 0 from plush_production.akamai_movies where imdb_id = sp.imdb_id) akamai, (select count(*) > 0 from prison_movies where imdb_id = sp.imdb_id) prison   " & _
               " from (select imdb_id,products_title from products group by imdb_id) P " & _
               " join streaming_products sp on sp.imdb_id = P.imdb_id " & _
               " where status <> 'deleted' and P.imdb_id = " & imdb_id
@@ -411,7 +411,7 @@ Public Class ClsVod
         End If
 
         If ppv_price = "" Then
-            str_ppv_price = "null"
+            str_ppv_price = "0"
         Else
             str_ppv_price = ppv_price.Replace(",", ".")
         End If
@@ -680,7 +680,7 @@ Public Class ClsVod
         End If
 
         If ppv_price = "" Then
-            str_ppv_price = "null"
+            str_ppv_price = "0"
         Else
             str_ppv_price = ppv_price.Replace(",", ".")
         End If

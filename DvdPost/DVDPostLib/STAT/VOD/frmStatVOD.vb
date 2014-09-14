@@ -88,4 +88,18 @@ Public Class frmStatVOD
 
         loadData(sql)
     End Sub
+
+    Private Sub btnTopWatchedKPN_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTopWatchedKPN.Click
+        Dim sql As String
+        sql = DvdPostData.clsStatVOD.GetSelectTopWatcheVOD_KPN(txtFromDate.EditValue, txtToDate.EditValue)
+
+        loadData(sql)
+    End Sub
+
+    Private Sub btnTopWatchedPrisons_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTopWatchedPrisons.Click
+        Dim sql As String
+        sql = DvdPostData.clsStatVOD.GetSelectTopWatcheVOD_PRISONS(txtFromDate.EditValue, txtToDate.EditValue)
+
+        loadData(sql)
+    End Sub
 End Class
