@@ -209,55 +209,55 @@ Public Class frmStockInventory
         '
         'btnFindBarCode
         '
-        Me.btnFindBarCode.Location = New System.Drawing.Point(845, 18)
+        Me.btnFindBarCode.Location = New System.Drawing.Point(704, 16)
         Me.btnFindBarCode.Name = "btnFindBarCode"
-        Me.btnFindBarCode.Size = New System.Drawing.Size(105, 27)
+        Me.btnFindBarCode.Size = New System.Drawing.Size(88, 23)
         Me.btnFindBarCode.TabIndex = 3
         Me.btnFindBarCode.Text = "Find Bar Code"
         '
         'txtDVD_ID
         '
         Me.txtDVD_ID.Enabled = False
-        Me.txtDVD_ID.Location = New System.Drawing.Point(710, 46)
+        Me.txtDVD_ID.Location = New System.Drawing.Point(592, 40)
         Me.txtDVD_ID.Name = "txtDVD_ID"
         Me.txtDVD_ID.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDVD_ID.Properties.Appearance.Options.UseFont = True
         Me.txtDVD_ID.Properties.ReadOnly = True
-        Me.txtDVD_ID.Size = New System.Drawing.Size(116, 26)
+        Me.txtDVD_ID.Size = New System.Drawing.Size(96, 22)
         Me.txtDVD_ID.TabIndex = 29
         '
         'LabelControl5
         '
-        Me.LabelControl5.Location = New System.Drawing.Point(614, 46)
+        Me.LabelControl5.Location = New System.Drawing.Point(512, 40)
         Me.LabelControl5.Name = "LabelControl5"
-        Me.LabelControl5.Size = New System.Drawing.Size(40, 16)
+        Me.LabelControl5.Size = New System.Drawing.Size(34, 13)
         Me.LabelControl5.TabIndex = 28
         Me.LabelControl5.Text = "DVD ID"
         '
         'txtProducts_id
         '
         Me.txtProducts_id.Enabled = False
-        Me.txtProducts_id.Location = New System.Drawing.Point(461, 46)
+        Me.txtProducts_id.Location = New System.Drawing.Point(384, 40)
         Me.txtProducts_id.Name = "txtProducts_id"
         Me.txtProducts_id.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtProducts_id.Properties.Appearance.Options.UseFont = True
         Me.txtProducts_id.Properties.ReadOnly = True
-        Me.txtProducts_id.Size = New System.Drawing.Size(115, 26)
+        Me.txtProducts_id.Size = New System.Drawing.Size(96, 22)
         Me.txtProducts_id.TabIndex = 24
         '
         'LabelControl2
         '
-        Me.LabelControl2.Location = New System.Drawing.Point(365, 18)
+        Me.LabelControl2.Location = New System.Drawing.Point(304, 16)
         Me.LabelControl2.Name = "LabelControl2"
-        Me.LabelControl2.Size = New System.Drawing.Size(55, 16)
+        Me.LabelControl2.Size = New System.Drawing.Size(47, 13)
         Me.LabelControl2.TabIndex = 23
         Me.LabelControl2.Text = "BareCode"
         '
         'LabelControl1
         '
-        Me.LabelControl1.Location = New System.Drawing.Point(365, 46)
+        Me.LabelControl1.Location = New System.Drawing.Point(304, 40)
         Me.LabelControl1.Name = "LabelControl1"
-        Me.LabelControl1.Size = New System.Drawing.Size(59, 16)
+        Me.LabelControl1.Size = New System.Drawing.Size(51, 13)
         Me.LabelControl1.TabIndex = 5
         Me.LabelControl1.Text = "Product ID"
         '
@@ -277,16 +277,16 @@ Public Class frmStockInventory
         Me.PanelControl1.Controls.Add(Me.LabelControl2)
         Me.PanelControl1.Controls.Add(Me.LabelControl1)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelControl1.Location = New System.Drawing.Point(0, 35)
+        Me.PanelControl1.Location = New System.Drawing.Point(0, 30)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(1168, 95)
+        Me.PanelControl1.Size = New System.Drawing.Size(1168, 82)
         Me.PanelControl1.TabIndex = 30
         '
         'txtBarCode
         '
-        Me.txtBarCode.Location = New System.Drawing.Point(461, 16)
+        Me.txtBarCode.Location = New System.Drawing.Point(384, 14)
         Me.txtBarCode.Name = "txtBarCode"
-        Me.txtBarCode.Size = New System.Drawing.Size(365, 22)
+        Me.txtBarCode.Size = New System.Drawing.Size(304, 20)
         Me.txtBarCode.TabIndex = 37
         '
         'btnUnlock
@@ -296,43 +296,43 @@ Public Class frmStockInventory
         Me.btnUnlock.Appearance.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUnlock.Appearance.Options.UseBackColor = True
         Me.btnUnlock.Appearance.Options.UseFont = True
-        Me.btnUnlock.Location = New System.Drawing.Point(364, 15)
+        Me.btnUnlock.Location = New System.Drawing.Point(303, 13)
         Me.btnUnlock.Name = "btnUnlock"
-        Me.btnUnlock.Size = New System.Drawing.Size(90, 74)
+        Me.btnUnlock.Size = New System.Drawing.Size(75, 64)
         Me.btnUnlock.TabIndex = 36
         Me.btnUnlock.Text = "unlock"
         Me.btnUnlock.Visible = False
         '
         'chkResetCounter
         '
-        Me.chkResetCounter.Location = New System.Drawing.Point(958, 55)
+        Me.chkResetCounter.Location = New System.Drawing.Point(798, 48)
         Me.chkResetCounter.Name = "chkResetCounter"
         Me.chkResetCounter.Properties.Caption = "Reset Rotation Counter"
-        Me.chkResetCounter.Size = New System.Drawing.Size(171, 21)
+        Me.chkResetCounter.Size = New System.Drawing.Size(143, 19)
         Me.chkResetCounter.TabIndex = 35
         '
         'TEQSQL
         '
-        Me.TEQSQL.Location = New System.Drawing.Point(10, 28)
+        Me.TEQSQL.Location = New System.Drawing.Point(8, 24)
         Me.TEQSQL.Name = "TEQSQL"
-        Me.TEQSQL.Size = New System.Drawing.Size(316, 22)
+        Me.TEQSQL.Size = New System.Drawing.Size(264, 20)
         Me.TEQSQL.TabIndex = 34
         Me.TEQSQL.Visible = False
         '
         'btnOK1
         '
-        Me.btnOK1.Location = New System.Drawing.Point(960, 18)
+        Me.btnOK1.Location = New System.Drawing.Point(800, 16)
         Me.btnOK1.Name = "btnOK1"
-        Me.btnOK1.Size = New System.Drawing.Size(106, 27)
+        Me.btnOK1.Size = New System.Drawing.Size(88, 23)
         Me.btnOK1.TabIndex = 33
         Me.btnOK1.Text = "ok"
         '
         'CEBadSticker
         '
-        Me.CEBadSticker.Location = New System.Drawing.Point(845, 55)
+        Me.CEBadSticker.Location = New System.Drawing.Point(704, 48)
         Me.CEBadSticker.Name = "CEBadSticker"
         Me.CEBadSticker.Properties.Caption = "BadLabel"
-        Me.CEBadSticker.Size = New System.Drawing.Size(90, 21)
+        Me.CEBadSticker.Size = New System.Drawing.Size(75, 19)
         Me.CEBadSticker.TabIndex = 30
         '
         'GridInventary
@@ -340,10 +340,10 @@ Public Class frmStockInventory
         Me.GridInventary.DataSource = Me.objDS.products_dvd_stock_1
         Me.GridInventary.EmbeddedNavigator.Name = ""
         Me.GridInventary.FormsUseDefaultLookAndFeel = False
-        Me.GridInventary.Location = New System.Drawing.Point(0, 234)
+        Me.GridInventary.Location = New System.Drawing.Point(0, 203)
         Me.GridInventary.MainView = Me.GridViewInventary
         Me.GridInventary.Name = "GridInventary"
-        Me.GridInventary.Size = New System.Drawing.Size(907, 589)
+        Me.GridInventary.Size = New System.Drawing.Size(756, 510)
         Me.GridInventary.TabIndex = 1
         Me.GridInventary.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.GridViewInventary, Me.GridView1})
         '
@@ -552,16 +552,16 @@ Public Class frmStockInventory
         Me.PanelControl2.Controls.Add(Me.btnClear)
         Me.PanelControl2.Controls.Add(Me.btnSearchActif)
         Me.PanelControl2.Controls.Add(Me.LabelControl3)
-        Me.PanelControl2.Location = New System.Drawing.Point(6, 136)
+        Me.PanelControl2.Location = New System.Drawing.Point(5, 118)
         Me.PanelControl2.Name = "PanelControl2"
-        Me.PanelControl2.Size = New System.Drawing.Size(764, 103)
+        Me.PanelControl2.Size = New System.Drawing.Size(637, 89)
         Me.PanelControl2.TabIndex = 0
         '
         'btnBoxEmpty
         '
-        Me.btnBoxEmpty.Location = New System.Drawing.Point(576, 28)
+        Me.btnBoxEmpty.Location = New System.Drawing.Point(480, 24)
         Me.btnBoxEmpty.Name = "btnBoxEmpty"
-        Me.btnBoxEmpty.Size = New System.Drawing.Size(183, 27)
+        Me.btnBoxEmpty.Size = New System.Drawing.Size(152, 24)
         ToolTipTitleItem1.Text = "box empty"
         ToolTipItem1.LeftIndent = 6
         ToolTipItem1.Text = "box empty order by number of dvd"
@@ -574,9 +574,9 @@ Public Class frmStockInventory
         '
         'btnBoxOrderInventory
         '
-        Me.btnBoxOrderInventory.Location = New System.Drawing.Point(576, 0)
+        Me.btnBoxOrderInventory.Location = New System.Drawing.Point(480, 0)
         Me.btnBoxOrderInventory.Name = "btnBoxOrderInventory"
-        Me.btnBoxOrderInventory.Size = New System.Drawing.Size(183, 27)
+        Me.btnBoxOrderInventory.Size = New System.Drawing.Size(152, 23)
         ToolTipTitleItem2.Text = "order inventory"
         ToolTipItem2.LeftIndent = 6
         ToolTipItem2.Text = "order by inventory last date"
@@ -588,9 +588,9 @@ Public Class frmStockInventory
         '
         'btnFindBox
         '
-        Me.btnFindBox.Location = New System.Drawing.Point(482, 28)
+        Me.btnFindBox.Location = New System.Drawing.Point(402, 24)
         Me.btnFindBox.Name = "btnFindBox"
-        Me.btnFindBox.Size = New System.Drawing.Size(87, 27)
+        Me.btnFindBox.Size = New System.Drawing.Size(72, 24)
         ToolTipTitleItem3.Text = "find box"
         ToolTipItem3.LeftIndent = 6
         ToolTipItem3.Text = "find box the least filled"
@@ -602,30 +602,30 @@ Public Class frmStockInventory
         '
         'txtINFO
         '
-        Me.txtINFO.Location = New System.Drawing.Point(305, 61)
+        Me.txtINFO.Location = New System.Drawing.Point(254, 53)
         Me.txtINFO.Name = "txtINFO"
         Me.txtINFO.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
         Me.txtINFO.Properties.Appearance.ForeColor = System.Drawing.Color.Firebrick
         Me.txtINFO.Properties.Appearance.Options.UseFont = True
         Me.txtINFO.Properties.Appearance.Options.UseForeColor = True
-        Me.txtINFO.Size = New System.Drawing.Size(403, 27)
+        Me.txtINFO.Size = New System.Drawing.Size(336, 23)
         Me.txtINFO.TabIndex = 43
         '
         'chkAllDVD
         '
-        Me.chkAllDVD.Location = New System.Drawing.Point(480, 10)
+        Me.chkAllDVD.Location = New System.Drawing.Point(400, 9)
         Me.chkAllDVD.Name = "chkAllDVD"
         Me.chkAllDVD.Properties.Caption = "All DVD"
-        Me.chkAllDVD.Size = New System.Drawing.Size(90, 21)
+        Me.chkAllDVD.Size = New System.Drawing.Size(75, 19)
         Me.chkAllDVD.TabIndex = 42
         Me.chkAllDVD.ToolTip = "etat de la boite"
         Me.chkAllDVD.Visible = False
         '
         'btnResetNbrs1
         '
-        Me.btnResetNbrs1.Location = New System.Drawing.Point(58, 65)
+        Me.btnResetNbrs1.Location = New System.Drawing.Point(48, 56)
         Me.btnResetNbrs1.Name = "btnResetNbrs1"
-        Me.btnResetNbrs1.Size = New System.Drawing.Size(86, 26)
+        Me.btnResetNbrs1.Size = New System.Drawing.Size(72, 23)
         ToolTipTitleItem4.Text = "Reser Numbers"
         ToolTipItem4.LeftIndent = 6
         ToolTipItem4.Text = "This will reser dvd position id in the box"
@@ -640,7 +640,7 @@ Public Class frmStockInventory
         '
         Me.txtBoxID.CausesValidation = False
         Me.txtBoxID.EditValue = New Decimal(New Integer() {0, 0, 0, 0})
-        Me.txtBoxID.Location = New System.Drawing.Point(58, 9)
+        Me.txtBoxID.Location = New System.Drawing.Point(48, 8)
         Me.txtBoxID.Name = "txtBoxID"
         Me.txtBoxID.Properties.Appearance.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBoxID.Properties.Appearance.Options.UseFont = True
@@ -651,39 +651,39 @@ Public Class frmStockInventory
         Me.txtBoxID.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric
         Me.txtBoxID.Properties.IsFloatValue = False
         Me.txtBoxID.Properties.Mask.EditMask = "n0"
-        Me.txtBoxID.Size = New System.Drawing.Size(140, 35)
+        Me.txtBoxID.Size = New System.Drawing.Size(117, 29)
         Me.txtBoxID.TabIndex = 33
         '
         'BTPartDeleteReadyToRent
         '
-        Me.BTPartDeleteReadyToRent.Location = New System.Drawing.Point(154, 65)
+        Me.BTPartDeleteReadyToRent.Location = New System.Drawing.Point(128, 56)
         Me.BTPartDeleteReadyToRent.Name = "BTPartDeleteReadyToRent"
-        Me.BTPartDeleteReadyToRent.Size = New System.Drawing.Size(144, 26)
+        Me.BTPartDeleteReadyToRent.Size = New System.Drawing.Size(120, 23)
         Me.BTPartDeleteReadyToRent.TabIndex = 32
         Me.BTPartDeleteReadyToRent.Text = "Delete selected DVD"
         Me.BTPartDeleteReadyToRent.Visible = False
         '
         'btnClear
         '
-        Me.btnClear.Location = New System.Drawing.Point(379, 6)
+        Me.btnClear.Location = New System.Drawing.Point(316, 5)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(67, 48)
+        Me.btnClear.Size = New System.Drawing.Size(56, 42)
         Me.btnClear.TabIndex = 29
         Me.btnClear.Text = "Clear"
         '
         'btnSearchActif
         '
-        Me.btnSearchActif.Location = New System.Drawing.Point(222, 6)
+        Me.btnSearchActif.Location = New System.Drawing.Point(185, 5)
         Me.btnSearchActif.Name = "btnSearchActif"
-        Me.btnSearchActif.Size = New System.Drawing.Size(98, 48)
+        Me.btnSearchActif.Size = New System.Drawing.Size(82, 42)
         Me.btnSearchActif.TabIndex = 27
         Me.btnSearchActif.Text = "Search"
         '
         'LabelControl3
         '
-        Me.LabelControl3.Location = New System.Drawing.Point(10, 14)
+        Me.LabelControl3.Location = New System.Drawing.Point(8, 12)
         Me.LabelControl3.Name = "LabelControl3"
-        Me.LabelControl3.Size = New System.Drawing.Size(32, 16)
+        Me.LabelControl3.Size = New System.Drawing.Size(29, 13)
         Me.LabelControl3.TabIndex = 28
         Me.LabelControl3.Text = "BoxID"
         '
@@ -691,9 +691,9 @@ Public Class frmStockInventory
         '
         Me.LblcptLost.Appearance.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblcptLost.Appearance.Options.UseFont = True
-        Me.LblcptLost.Location = New System.Drawing.Point(1022, 150)
+        Me.LblcptLost.Location = New System.Drawing.Point(852, 130)
         Me.LblcptLost.Name = "LblcptLost"
-        Me.LblcptLost.Size = New System.Drawing.Size(15, 29)
+        Me.LblcptLost.Size = New System.Drawing.Size(12, 23)
         Me.LblcptLost.TabIndex = 63
         Me.LblcptLost.Text = "0"
         Me.LblcptLost.Visible = False
@@ -702,33 +702,33 @@ Public Class frmStockInventory
         '
         Me.LblCpRefound.Appearance.Font = New System.Drawing.Font("Tahoma", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblCpRefound.Appearance.Options.UseFont = True
-        Me.LblCpRefound.Location = New System.Drawing.Point(858, 150)
+        Me.LblCpRefound.Location = New System.Drawing.Point(715, 130)
         Me.LblCpRefound.Name = "LblCpRefound"
-        Me.LblCpRefound.Size = New System.Drawing.Size(15, 29)
+        Me.LblCpRefound.Size = New System.Drawing.Size(12, 23)
         Me.LblCpRefound.TabIndex = 62
         Me.LblCpRefound.Text = "0"
         '
         'LblLost
         '
-        Me.LblLost.Location = New System.Drawing.Point(961, 159)
+        Me.LblLost.Location = New System.Drawing.Point(801, 138)
         Me.LblLost.Name = "LblLost"
-        Me.LblLost.Size = New System.Drawing.Size(33, 16)
+        Me.LblLost.Size = New System.Drawing.Size(28, 13)
         Me.LblLost.TabIndex = 61
         Me.LblLost.Text = "perdu"
         Me.LblLost.Visible = False
         '
         'LblRefound
         '
-        Me.LblRefound.Location = New System.Drawing.Point(776, 157)
+        Me.LblRefound.Location = New System.Drawing.Point(647, 136)
         Me.LblRefound.Name = "LblRefound"
-        Me.LblRefound.Size = New System.Drawing.Size(51, 16)
+        Me.LblRefound.Size = New System.Drawing.Size(45, 13)
         Me.LblRefound.TabIndex = 60
         Me.LblRefound.Text = "Retrouve"
         '
         'frmStockInventory
         '
         Me.AcceptButton = Me.btnOK1
-        Me.AutoScaleBaseSize = New System.Drawing.Size(6, 15)
+        Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
         Me.ClientSize = New System.Drawing.Size(1168, 715)
         Me.Controls.Add(Me.LblcptLost)
         Me.Controls.Add(Me.LblCpRefound)

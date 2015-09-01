@@ -378,6 +378,7 @@
     <Compile Include="Classes\clsProducts.vb">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\clsVodSerie.vb" />
     <Compile Include="Custom Control\ucCallsHistory.Designer.vb">
       <DependentUpon>ucCallsHistory.vb</DependentUpon>
     </Compile>
@@ -616,6 +617,9 @@
     <Compile Include="PAYMENT\Studio\frmStudioPayment.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PRODUCTS\frmVOD_Maint.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PRODUCTS\frmDiagFindProductID.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -639,6 +643,12 @@
     </Compile>
     <Compile Include="PRODUCTS\frmSearchProduct.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\rptUniverCineSummaryReport.Designer.vb">
+      <DependentUpon>rptUniverCineSummaryReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\rptUniverCineSummaryReport.vb">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\rptStudioSummaryNoProductStudios.Designer.vb">
       <DependentUpon>rptStudioSummaryNoProductStudios.vb</DependentUpon>
@@ -1063,6 +1073,10 @@
       <DependentUpon>frmStudioPayment.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="PRODUCTS\frmVOD_Maint.resx">
+      <DependentUpon>frmVOD_Maint.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="PRODUCTS\frmDiagFindProductID.resx">
       <DependentUpon>frmDiagFindProductID.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -1097,6 +1111,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PRODUCTS\frmSearchProduct.resx">
       <DependentUpon>frmSearchProduct.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptUniverCineSummaryReport.resx">
+      <DependentUpon>rptUniverCineSummaryReport.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptStudioSummaryNoProductStudios.resx">
@@ -1619,6 +1637,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="Reports\New folder\VIREMENTEN_SEPA.repx" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DVDPostBuziness\DVDPostBuziness.vbproj">

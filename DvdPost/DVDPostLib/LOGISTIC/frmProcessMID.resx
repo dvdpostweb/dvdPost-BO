@@ -122,7 +122,7 @@
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="StatusBar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 974</value>
+    <value>0, 871</value>
   </data>
   <data name="StatusBar1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1351, 11</value>
@@ -143,7 +143,7 @@
     <value>0, 30</value>
   </data>
   <data name="Panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1351, 944</value>
+    <value>1351, 841</value>
   </data>
   <data name="&gt;&gt;Panel1.Name" xml:space="preserve">
     <value>Panel1</value>
@@ -195,7 +195,7 @@
     <value>5, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1351, 985</value>
+    <value>1351, 882</value>
   </data>
   <data name="$this.ShowHelp" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -591,7 +591,7 @@
     <value>BizzLib.frmGeneral_Browse, BizzLib, Version=1.0.3210.18722, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="TabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1351, 944</value>
+    <value>1351, 841</value>
   </data>
   <data name="&gt;&gt;TabControl1.Name" xml:space="preserve">
     <value>TabControl1</value>
@@ -1459,10 +1459,10 @@
     <value>5</value>
   </data>
   <data name="Panelstock.Location" type="System.Drawing.Point, System.Drawing">
-    <value>914, 101</value>
+    <value>1038, 101</value>
   </data>
   <data name="Panelstock.Size" type="System.Drawing.Size, System.Drawing">
-    <value>638, 1701</value>
+    <value>638, 2083</value>
   </data>
   <data name="Panelstock.TabIndex" type="System.Int32, mscorlib">
     <value>54</value>
@@ -1750,7 +1750,7 @@
     <value>24</value>
   </data>
   <data name="TabParameters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1117, 786</value>
+    <value>1342, 810</value>
   </data>
   <data name="&gt;&gt;TabParameters.Name" xml:space="preserve">
     <value>TabParameters</value>
@@ -1765,7 +1765,7 @@
     <value>0</value>
   </data>
   <data name="TabResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1342, 913</value>
+    <value>1342, 810</value>
   </data>
   <data name="&gt;&gt;TabResult.Name" xml:space="preserve">
     <value>TabResult</value>
@@ -1780,7 +1780,7 @@
     <value>1</value>
   </data>
   <data name="TabAnalyse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1117, 786</value>
+    <value>1095, 428</value>
   </data>
   <data name="&gt;&gt;TabAnalyse.Name" xml:space="preserve">
     <value>TabAnalyse</value>
@@ -1798,7 +1798,7 @@
     <value>226, 17</value>
   </metadata>
   <data name="UcPivotGrid1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1117, 786</value>
+    <value>1095, 428</value>
   </data>
   <data name="&gt;&gt;UcPivotGrid1.Name" xml:space="preserve">
     <value>UcPivotGrid1</value>
@@ -1813,7 +1813,7 @@
     <value>0</value>
   </data>
   <data name="UcChart1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1117, 786</value>
+    <value>1095, 428</value>
   </data>
   <data name="&gt;&gt;UcChart1.Name" xml:space="preserve">
     <value>UcChart1</value>
@@ -1828,7 +1828,7 @@
     <value>0</value>
   </data>
   <data name="TabChart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1117, 786</value>
+    <value>1095, 428</value>
   </data>
   <data name="&gt;&gt;TabChart.Name" xml:space="preserve">
     <value>TabChart</value>

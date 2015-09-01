@@ -976,6 +976,7 @@ Public Class frmCustomers_Maint
     Friend WithEvents LabelControl109 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents chkForceMandateUpdate As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents dtDateOfNextBatch As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents btnEurofidesSend As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cmbDiscType As DevExpress.XtraEditors.ComboBoxEdit
 
 
@@ -1183,6 +1184,7 @@ Me.RepositoryItemLookUpEdit5 = New DevExpress.XtraEditors.Repository.RepositoryI
 Me.colDomNumber = New DevExpress.XtraGrid.Columns.GridColumn
 Me.colabopay_id = New DevExpress.XtraGrid.Columns.GridColumn
 Me.tabPayment = New DevExpress.XtraTab.XtraTabPage
+Me.btnEurofidesSend = New DevExpress.XtraEditors.SimpleButton
 Me.GridPayment = New DevExpress.XtraGrid.GridControl
 Me.GridViewPayment = New DevExpress.XtraGrid.Views.Grid.GridView
 Me.ColLastModified = New DevExpress.XtraGrid.Columns.GridColumn
@@ -4171,6 +4173,7 @@ Me.colabopay_id.OptionsColumn.AllowEdit = false
 '
 Me.tabPayment.Appearance.Header.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold)
 Me.tabPayment.Appearance.Header.Options.UseFont = true
+Me.tabPayment.Controls.Add(Me.btnEurofidesSend)
 Me.tabPayment.Controls.Add(Me.GridPayment)
 Me.tabPayment.Controls.Add(Me.BtnPaid)
 Me.tabPayment.Controls.Add(Me.btnLoadPayment)
@@ -4187,6 +4190,14 @@ Me.tabPayment.Controls.Add(Me.LabelControl50)
 Me.tabPayment.Name = "tabPayment"
 Me.tabPayment.Size = New System.Drawing.Size(1253, 783)
 Me.tabPayment.Text = "Invoices"
+'
+'btnEurofidesSend
+'
+Me.btnEurofidesSend.Location = New System.Drawing.Point(658, 200)
+Me.btnEurofidesSend.Name = "btnEurofidesSend"
+Me.btnEurofidesSend.Size = New System.Drawing.Size(136, 23)
+Me.btnEurofidesSend.TabIndex = 65
+Me.btnEurofidesSend.Text = "EurofidesSent"
 '
 'GridPayment
 '
@@ -6067,7 +6078,7 @@ Me.tabMain.Text = "General Info"
 '
 Me.lblNextDVDRemain.Location = New System.Drawing.Point(632, 44)
 Me.lblNextDVDRemain.Name = "lblNextDVDRemain"
-Me.lblNextDVDRemain.Size = New System.Drawing.Size(84, 13)
+Me.lblNextDVDRemain.Size = New System.Drawing.Size(0, 13)
 Me.lblNextDVDRemain.TabIndex = 34
 Me.lblNextDVDRemain.Text = "Next DVD Remain"
 '
@@ -6120,7 +6131,7 @@ Me.lblCpt_reconduction.Text = "0"
 '
 Me.lblNbReconduction.Location = New System.Drawing.Point(16, 20)
 Me.lblNbReconduction.Name = "lblNbReconduction"
-Me.lblNbReconduction.Size = New System.Drawing.Size(109, 13)
+Me.lblNbReconduction.Size = New System.Drawing.Size(0, 13)
 Me.lblNbReconduction.TabIndex = 27
 Me.lblNbReconduction.Text = "Nombre reconduction :"
 '
@@ -6136,7 +6147,7 @@ Me.lblNextPrice.Text = "Next Price"
 '
 Me.lblNextCredit.Location = New System.Drawing.Point(632, 17)
 Me.lblNextCredit.Name = "lblNextCredit"
-Me.lblNextCredit.Size = New System.Drawing.Size(55, 13)
+Me.lblNextCredit.Size = New System.Drawing.Size(0, 13)
 Me.lblNextCredit.TabIndex = 22
 Me.lblNextCredit.Text = "Next Credit"
 '
@@ -12668,6 +12679,13 @@ End Sub
     End Sub
     Private Sub btnStopAtReconduction_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnStopAtReconduction.Click
         Dim _Return As Integer
+        '
+        Dim reasonStop As New frmChooseStop(SessionInfo, True)
+        reasonStop.drCustomer = objDS.Tables("customers").Rows(0)
+        reasonStop.customers_id = txtCustomers_id.EditValue
+        reasonStop.typeAbo = cmbABO.EditValue
+        reasonStop.ShowDialog()
+        '
         Dim _SQLTxt As String = "update customers set customers_abo_auto_stop_next_reconduction = 1, customers_abo_discount_recurring_to_date = null where customers_id = " & txtCustomers_id.EditValue
         _Return = DvdPostData.clsConnection.ExecuteNonQuery(_SQLTxt)
         If _Return = 1 Then
@@ -12687,7 +12705,7 @@ End Sub
         If MsgBox(" Confirmez votre demande de stop !", MsgBoxStyle.OkCancel) = MsgBoxResult.Cancel Then
             MsgBox("Demande Annulée ")
         Else
-            Dim reasonStop As New frmChooseStop(SessionInfo)
+            Dim reasonStop As New frmChooseStop(SessionInfo,False)
             reasonStop.drCustomer = objDS.Tables("customers").Rows(0)
             reasonStop.customers_id = txtCustomers_id.EditValue
             reasonStop.typeAbo = cmbABO.EditValue
@@ -12803,6 +12821,7 @@ End Sub
             ' cls.UpdateParrainage(_CurrentCustomerID, txtcustomers_email_address_search.Text.Trim, cmbABO.EditValue)
 
             If ok Then
+
                 MsgBox("Reconduction OK")
                 ' Dim sql As String
                 'sql = DvdPostData.ClsCustomersData.GetInsertVodAccess(_CurrentCustomerID)
@@ -13200,6 +13219,36 @@ End Sub
 
 
     End Function
+
+    Private Function EurofidesSendPayment(ByVal status As DvdPostData.PaymentOfflineData.StepPayment) As Boolean
+        Dim id As Integer
+        Dim strtype_payment As String
+
+        Dim dr As DataRow
+        Dim sql As String
+        Dim last_status As DvdPostData.PaymentOfflineData.StepPayment
+
+
+        dr = GridViewPayment.GetDataRow(GridViewPayment.FocusedRowHandle)
+        id = dr("id")
+        strtype_payment = dr("type_payment")
+        last_status = dr("payment_status_id")
+
+        If MsgBox("Are you sur to set (" & DVDPostTools.clsEnum.getNameStrEnum(status) & ") of this payment ID = " & id, MsgBoxStyle.OkCancel) = MsgBoxResult.Ok Then
+
+            sql = DvdPostData.ClsPayment.GetUpdatePaymentStatusToEurofidesToSend(id, status, last_status)
+            DvdPostData.clsConnection.ExecuteNonQuery(sql)
+
+            refreshTab(XTabCustomers.SelectedTabPageIndex) = True
+            loadPayment(XTabCustomers.SelectedTabPageIndex, _CurrentCustomerID)
+            Return True
+        Else
+            Return False
+        End If
+
+
+    End Function
+
     Private Sub btnCancelPayment_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnCancelPayment.Click
 
         If GridViewPayment.GetSelectedRows().Length = 0 Then
@@ -14125,5 +14174,18 @@ End Sub
         'End If
     End Sub
 
+    Private Sub btnEurofidesSend_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEurofidesSend.Click
+
+        If GridViewPayment.GetSelectedRows().Length = 0 Then
+            MsgBox("Please select one payment before set Eurofide Sent ")
+        End If
+
+        If EurofidesSendPayment(DvdPostData.PaymentOfflineData.StepPayment.EUROFIDES_SENT) Then
+            MsgBox("Eurofide Sent OK")
+        Else
+            MsgBox("Eurofide Sent Error")
+        End If
+
+    End Sub
 End Class
 

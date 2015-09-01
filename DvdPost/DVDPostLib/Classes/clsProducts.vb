@@ -1309,7 +1309,7 @@ Public Class clsProduct_DVD
 
         sql = "update orders o "
         sql = sql & " LEFT JOIN customers c on c.customers_id = o.customers_id "
-        sql = sql & " LEFT JOIN address_book ab on ab.address_book_id=c.customers_default_address_id and ab.customers_id=o.customers_id "
+        sql = sql & " LEFT JOIN address_book ab on ab.address_book_id = c.customers_default_address_id and ab.customers_id = o.customers_id "
         sql = sql & " LEFT JOIN country co on ab.entry_country_id=co.countries_id  "
         sql = sql & " set "
         sql = sql & " o.customers_name=concat(c.customers_firstname,' ',customers_lastname)"

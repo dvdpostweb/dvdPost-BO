@@ -357,6 +357,16 @@ Public Class ClsCustomers
 
     End Sub
 
+    Public Sub CreateAutoAboStopReasonAndHistory(ByVal drCustomer As DataRow, ByVal reason As ClsCustomersData.AboStopReason, ByVal comment As String)
+        Dim customers_id As Integer
+        Dim sql As String
+
+        customers_id = GetCustomersId(drCustomer)
+        sql = ClsCustomersData.GetInsertAutoAboStopReasonAndHistory(customers_id, reason, comment)
+        DvdPostData.clsConnection.ExecuteNonQuery(sql)
+
+    End Sub
+
     Private Sub CreateaboHistory(ByVal drCustomer As DataRow, ByVal ta As ClsCustomersData.TypeAction, Optional ByVal code_id As String = "null")
         Dim product_id As Integer
         Dim customers_id As Integer
@@ -447,11 +457,17 @@ Public Class ClsCustomers
         Return 0
     End Function
     Private Function IsDiscount(ByVal drCustomer As DataRow) As Boolean
-        Return drCustomer("activation_discount_code_type") = ClsCustomersData.CODE_DISCOUNT
+        If drCustomer("activation_discount_code_type") IsNot DBNull.Value Then
+            Return drCustomer("activation_discount_code_type") = ClsCustomersData.CODE_DISCOUNT
+        End If
+        Return False
     End Function
 
     Private Function IsActivation(ByVal drCustomer As DataRow) As Boolean
-        Return drCustomer("activation_discount_code_type") = ClsCustomersData.CODE_ACTIVATION
+        If drCustomer("activation_discount_code_type") IsNot DBNull.Value Then
+            drCustomer("activation_discount_code_type") = ClsCustomersData.CODE_ACTIVATION
+        End If
+        Return 0
     End Function
 
     Public Function IsEDDFirst(ByVal drCustomer As DataRow) As Boolean
@@ -2115,15 +2131,21 @@ Public Class ClsCustomers
 
             If dtResult.Rows.Count > 0 Then
                 For Each drCustomers As DataRow In dtResult.Rows
-                    Dim paypalResult As PayPal.PayPalResponse
+                    Dim paypalResult As PayPal.PayPalResponse = Nothing
 
                     customers_id = GetCustomersId(drCustomers)
                     str = 2
-                    paypalResult = paypal.PayPalSendPayments(drCustomers)
+                    Try
+                        paypalResult = paypal.PayPalSendPayments(drCustomers)
+                    Catch ex1 As Exception
+                        clsMsgError.MsgBox(ex1.Message)
+                        clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Reconduction, ex1, customers_id & " : position: " & str)
+
+                    End Try
                     str = 3
                     Dim message As String
 
-                    If paypalResult.Response.Ack.HasValue Then
+                    If Not paypalResult Is Nothing And paypalResult.Response.Ack.HasValue Then
                         str = 4
                         If (paypalResult.Response.Ack.Value = Global.PayPal.PayPalAPIInterfaceService.Model.AckCodeType.SUCCESS) Or (paypalResult.Response.Ack.Value = Global.PayPal.PayPalAPIInterfaceService.Model.AckCodeType.SUCCESSWITHWARNING) Then
                             sql = DvdPostData.clsBatchBankTransfert.UpdateStatusBankTransfert(GetPaymentId(drCustomers), PaymentOfflineData.StepPayment.PAID)

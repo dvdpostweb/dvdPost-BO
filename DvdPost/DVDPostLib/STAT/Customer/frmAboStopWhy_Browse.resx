@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="HelpProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>344, 17</value>
+    <value>363, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="StatusBar1.Location" type="System.Drawing.Point, System.Drawing">
@@ -155,7 +155,7 @@
     <value>0</value>
   </data>
   <metadata name="RightMouseMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>465, 17</value>
+    <value>492, 17</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -644,7 +644,7 @@
     <value>1</value>
   </data>
   <data name="TabAnalyse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1095, 415</value>
+    <value>1095, 513</value>
   </data>
   <data name="&gt;&gt;TabAnalyse.Name" xml:space="preserve">
     <value>TabAnalyse</value>
@@ -659,10 +659,10 @@
     <value>2</value>
   </data>
   <metadata name="SaveFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>215, 17</value>
+    <value>226, 17</value>
   </metadata>
   <data name="UcPivotGrid1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1095, 415</value>
+    <value>1095, 513</value>
   </data>
   <data name="&gt;&gt;UcPivotGrid1.Name" xml:space="preserve">
     <value>UcPivotGrid1</value>

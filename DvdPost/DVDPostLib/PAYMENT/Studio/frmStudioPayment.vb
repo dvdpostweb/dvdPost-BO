@@ -217,6 +217,7 @@ Public Class frmStudioPayment
     Friend WithEvents chkReportNoProductStudio As System.Windows.Forms.CheckBox
     Friend WithEvents chkPrisonsInclude As System.Windows.Forms.CheckBox
     Friend WithEvents btnPrisonsDetailReport As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnUniverCineSVODSummary As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnSearch As DevExpress.XtraEditors.SimpleButton
 
 
@@ -312,6 +313,7 @@ Public Class frmStudioPayment
         Me.lblLanguageSound = New DevExpress.XtraEditors.LabelControl
         Me.btnSaveStudio = New DevExpress.XtraEditors.SimpleButton
         Me.TabCreateReport = New DevExpress.XtraTab.XtraTabPage
+        Me.btnUniverCineSVODSummary = New DevExpress.XtraEditors.SimpleButton
         Me.btnPrisonsDetailReport = New DevExpress.XtraEditors.SimpleButton
         Me.chkPrisonsInclude = New System.Windows.Forms.CheckBox
         Me.chkReportNoProductStudio = New System.Windows.Forms.CheckBox
@@ -665,8 +667,8 @@ Public Class frmStudioPayment
         '
         resources.ApplyResources(Me.RepositoryItemCheckEdit1, "RepositoryItemCheckEdit1")
         Me.RepositoryItemCheckEdit1.Name = "RepositoryItemCheckEdit1"
-        Me.RepositoryItemCheckEdit1.ValueChecked = "1"
-        Me.RepositoryItemCheckEdit1.ValueUnchecked = "0"
+        Me.RepositoryItemCheckEdit1.ValueChecked = CType(1, Byte)
+        Me.RepositoryItemCheckEdit1.ValueUnchecked = CType(0, Byte)
         '
         'cmbLanguages
         '
@@ -1084,6 +1086,7 @@ Public Class frmStudioPayment
         '
         'TabCreateReport
         '
+        Me.TabCreateReport.Controls.Add(Me.btnUniverCineSVODSummary)
         Me.TabCreateReport.Controls.Add(Me.btnPrisonsDetailReport)
         Me.TabCreateReport.Controls.Add(Me.chkPrisonsInclude)
         Me.TabCreateReport.Controls.Add(Me.chkReportNoProductStudio)
@@ -1114,6 +1117,11 @@ Public Class frmStudioPayment
         Me.TabCreateReport.Controls.Add(Me.lblStudioBilling)
         Me.TabCreateReport.Name = "TabCreateReport"
         resources.ApplyResources(Me.TabCreateReport, "TabCreateReport")
+        '
+        'btnUniverCineSVODSummary
+        '
+        resources.ApplyResources(Me.btnUniverCineSVODSummary, "btnUniverCineSVODSummary")
+        Me.btnUniverCineSVODSummary.Name = "btnUniverCineSVODSummary"
         '
         'btnPrisonsDetailReport
         '
@@ -2594,6 +2602,32 @@ Public Class frmStudioPayment
 
         GridStudioDetail.DataSource = dt
         XtraTabStudio.SelectedTabPage = TabStudioDetailReport
+    End Sub
+
+    Private Sub btnUniverCineSVODSummary_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnUniverCineSVODSummary.Click
+        Dim dt As DataTable
+        Dim sql As String
+        Dim dbPrefix As String = "studio_reporting"
+
+        If ckhTestPlush.Checked Then
+            dbPrefix = "studio_reporting_test"
+        End If
+
+        sql = DvdPostData.clsStudio.GetUnivercineSVODSummaryReport(txtFromDate.EditValue, txtToDate.EditValue, cmbStudioBilling.EditValue, dbPrefix)
+
+        'dt = DvdPostData.clsConnection.FillDataSet(sql, DvdPostData.clsConnection.typeAccessDb.READ)
+        dt = DvdPostData.clsConnection.FillDataSet(sql)
+
+        'If chkReportNoProductStudio.Checked Then
+        '    Dim rpt1 As New rptUniverCineSummaryReport
+
+        '    rpt1.DataSource = dt
+        '    rpt1.ShowPreview()
+        'Else
+        Dim rpt As New rptUniverCineSummaryReport
+        rpt.DataSource = dt
+        rpt.ShowPreview()
+        'End If
     End Sub
 End Class
 

@@ -15,9 +15,9 @@ Public Class clsProducts
         Return sql
     End Function
 
-    Public Shared Function UpdateInCinema() As String
+    Public Shared Function UpdateInCinema(ByVal notInCinemaAfterDays As Integer) As String
         Dim sql As String
-        sql = " update products p set p.in_cinema_now = 0 where p.products_date_added < date_add(now(), interval -2 month) "
+        sql = " update products p set p.in_cinema_now = 0 where p.products_date_added < date_add(now(), interval -" & notInCinemaAfterDays & " day) "
         Return sql
     End Function
 

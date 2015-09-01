@@ -1099,22 +1099,36 @@ Public Class frmProcessMID
     End Sub
 
     Private Sub Pickin_ok(ByVal objProductDVD As clsProduct_DVD)
-        If DeleteDvdPickin(objProductDVD) Then
-            Dim drv As DataRowView
-            drv = searchDataRowview(objProductDVD)
+        Dim drv As DataRowView
+        Try
+            If DeleteDvdPickin(objProductDVD) Then
 
-            txtPick_BoxId.Text = drv("pick_boxid")
-            txtPick_Group.Text = drv("pick_group")
+                drv = searchDataRowview(objProductDVD)
 
-            objProductDVD.ChangeStateProductsDVD(objProductDVD.products_dvd_status, _
-                                        drv("box_id"), _
-                                        drv("pibox_id"), _
-                                        "PROCESS MID -> OUT", DvdPostData.ClsProducts_dvd_state.state.MID, objProductDVD.INOUT, drv("pick_boxid"), DvdPostData.clsProductDvd.INOUT.READYFOREXPEDITION)
-            _cptOut += 1
-        Else
-            txtINFO.Text = "Error DVD pickin Not found "
-        End If
+                If drv("pick_boxid") Is DBNull.Value Or drv("pick_boxid") Is Nothing Then
+                    System.Windows.Forms.MessageBox.Show("pick_boxid is dbnull, dvdid " & objProductDVD.DvdId)
 
+                End If
+
+                If drv("pick_group") Is DBNull.Value Or drv("pick_group") Is Nothing Then
+                    System.Windows.Forms.MessageBox.Show("pick_group is dbnull, dvdid " & objProductDVD.DvdId)
+
+                End If
+                txtPick_BoxId.Text = drv("pick_boxid")
+                txtPick_Group.Text = drv("pick_group")
+
+                objProductDVD.ChangeStateProductsDVD(objProductDVD.products_dvd_status, _
+                                            drv("box_id"), _
+                                            drv("pibox_id"), _
+                                            "PROCESS MID -> OUT", DvdPostData.ClsProducts_dvd_state.state.MID, objProductDVD.INOUT, drv("pick_boxid"), DvdPostData.clsProductDvd.INOUT.READYFOREXPEDITION)
+                _cptOut += 1
+            Else
+                txtINFO.Text = "Error DVD pickin Not found "
+            End If
+        Catch ex As Exception
+            DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Abo_Process, ex)
+            DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Abo_Process, "pick_boxid" & drv("pick_boxid") & " pick_group " & drv("pick_group"))
+        End Try
     End Sub
     Private Sub process_Ok()
         ' Dim _NewRow As DataRow

@@ -3,6 +3,8 @@ Public Class ClsVod
     Public Enum ListField
         ID = 0
         IMDB_ID
+        SEASON_ID
+        EPISODE_ID
         FILENAME
         AVAILABLE_FROM
         EXPIRE_AT
@@ -47,7 +49,7 @@ Public Class ClsVod
               " left join (SELECT token_id,count(*) cpt FROM token_ips t group by token_id) ti on ti.token_id = t.id " & _
               " where customer_id = " & customers_id & _
               " group by t.id " & _
-              " order by customer_id,p.imdb_id "
+              " order by customer_id, p.imdb_id "
 
         Return sql
     End Function
@@ -56,7 +58,7 @@ Public Class ClsVod
 
         Dim sql As String
 
-        sql = " SELECT s.imdb_id, s.filename FROM streaming_products s where source = 'ALPHANETWORKS' and status <> 'deleted' and (select count(*) from products p where p.imdb_id = s.imdb_id ) = 0 "
+        sql = " SELECT s.imdb_id, s.filename FROM streaming_products s where source <> 'SOFTLAYER' and status <> 'deleted' and (select count(*) from products p where p.imdb_id = s.imdb_id ) = 0 "
 
         Return sql
 
@@ -84,7 +86,7 @@ Public Class ClsVod
         Return sql
 
     End Function
-    Public Shared Function getSelectVod(ByVal imdb_id As Long, ByVal lang As Integer, ByVal subtitle As Integer, ByVal source As String, ByVal support As Integer) As String
+    Public Shared Function getSelectVod(ByVal imdb_id As Long, ByVal lang As Integer, ByVal season_id As Integer, ByVal episode_id As Integer, ByVal subtitle As Integer, ByVal source As String, ByVal support As Integer) As String
         Dim sql As String
         Dim strLanguageSubtitle As String
         If subtitle = 0 Then
@@ -93,14 +95,14 @@ Public Class ClsVod
             strLanguageSubtitle = "subtitle_id = " & subtitle
         End If
 
-        sql = " select * from streaming_products where imdb_id = " & imdb_id & _
+        sql = " select * from streaming_products where imdb_id = " & imdb_id & " and season_id = " & season_id & " and episode_id = " & episode_id & _
               " and language_id = " & lang & " and " & strLanguageSubtitle & _
               " and vod_support_id = " & support & _
               " and source = '" & source & "'" & " and status <> 'deleted' "
 
         Return sql
     End Function
-    Public Shared Function getSelectVod(ByVal imdb_id As Long, ByVal lang As Integer, ByVal subtitle As Integer) As String
+    Public Shared Function getSelectVod(ByVal imdb_id As Long, ByVal season_id As Integer, ByVal episode_id As Integer, ByVal lang As Integer, ByVal subtitle As Integer) As String
         Dim sql As String
         Dim strLanguageSubtitle As String
         If subtitle = 0 Then
@@ -109,7 +111,7 @@ Public Class ClsVod
             strLanguageSubtitle = "subtitle_id = " & subtitle
         End If
 
-        sql = " select * from streaming_products where imdb_id = " & imdb_id & _
+        sql = " select * from streaming_products where imdb_id = " & imdb_id & " and season_id = " & season_id & " and episode_id = " & episode_id & _
               " and language_id = " & lang & " and " & strLanguageSubtitle & " and  status <> 'deleted' "
 
         Return sql
@@ -132,7 +134,7 @@ Public Class ClsVod
 
     Public Shared Function SearchAllViewVod() As String
         Dim sql As String
-        sql = " SELECT distinct sp.*, P.products_title products_name, (select count(*) > 0 from plush_production.akamai_movies where imdb_id = sp.imdb_id) akamai, (select count(*) > 0 from prison_movies where imdb_id = sp.imdb_id) prison    " & _
+        sql = " SELECT distinct sp.*, P.products_title products_name, (select count(*) > 0 from plush_production.akamai_movies where imdb_id = sp.imdb_id and language_ID = sp.language_id and (subtitle_id = sp.subtitle_id or (subtitle_id is null and sp.subtitle_id is null))) akamai, (select count(*) > 0 from dvdpost_be_prod.prison_movies where imdb_id = sp.imdb_id) prison    " & _
               " from (select imdb_id,products_title from products group by imdb_id) P " & _
               " join streaming_products sp on sp.imdb_id = P.imdb_id " & _
               " where sp.status <> 'deleted' "
@@ -150,7 +152,7 @@ Public Class ClsVod
 
     Public Shared Function SearchViewVodpartTitle(ByVal partTitle As String) As String
         Dim sql As String
-        sql = " SELECT distinct sp.*, P.products_title products_name, (select count(*) > 0 from plush_production.akamai_movies where imdb_id = sp.imdb_id) akamai, (select count(*) > 0 from prison_movies where imdb_id = sp.imdb_id) prison  " & _
+        sql = " SELECT distinct sp.*, P.products_title products_name, (select count(*) > 0 from plush_production.akamai_movies where imdb_id = sp.imdb_id and language_ID = sp.language_id and (subtitle_id = sp.subtitle_id or (subtitle_id is null and sp.subtitle_id is null))) akamai, (select count(*) > 0 from dvdpost_be_prod.prison_movies where imdb_id = sp.imdb_id) prison  " & _
               " from (select imdb_id,products_title from products group by imdb_id) P " & _
               " join streaming_products sp on sp.imdb_id = P.imdb_id " & _
               " where sp.status <> 'deleted' and products_title like '%" & partTitle.Trim & "%'  "
@@ -159,7 +161,7 @@ Public Class ClsVod
 
     Public Shared Function SearchViewTrailerpartTitle(ByVal partTitle As String) As String
         Dim sql As String
-        sql = " SELECT distinct st.*, P.products_title products_name, (select count(*) > 0 from plush_produciton.akamai_movies where imdb_id = sp.imdb_id) akamai, (select count(*) > 0 from prison_movies where imdb_id = sp.imdb_id) prison   " & _
+        sql = " SELECT distinct st.*, P.products_title products_name, (select count(*) > 0 from plush_production.akamai_movies where imdb_id = st.imdb_id and language_ID = st.language_id and (subtitle_id = st.subtitle_id or (subtitle_id is null and st.subtitle_id is null))) akamai, (select count(*) > 0 from dvdpost_be_prod.prison_movies where imdb_id = st.imdb_id) prison   " & _
               " from (select imdb_id, products_title from products group by imdb_id) P " & _
               " join streaming_trailers st on st.imdb_id = P.imdb_id " & _
               " where st.status <> 'deleted' and products_title like '%" & partTitle.Trim & "%'  "
@@ -168,10 +170,10 @@ Public Class ClsVod
 
     Private Shared Function SearchViewVodProductStatus(ByVal status As String) As String
         Dim sql As String
-        sql = " SELECT distinct sp.*, P.products_title products_name, (select count(*) > 0 from plush_production.akamai_movies where imdb_id = sp.imdb_id) akamai, (select count(*) > 0 from prison_movies where imdb_id = sp.imdb_id) prison   " & _
-              " from (select imdb_id,products_title from products group by imdb_id) P " & _
-              " join streaming_products sp on sp.imdb_id = P.imdb_id " & _
-              " where sp.status = '" & status & "' group by sp.imdb_id, sp.language_id, sp.subtitle_id "
+        sql = " SELECT distinct sp.*, P.products_title products_name, (select count(*) > 0 from plush_production.akamai_movies where imdb_id = sp.imdb_id and language_ID = sp.language_id and (subtitle_id = sp.subtitle_id or (subtitle_id is null and sp.subtitle_id is null))) akamai, (select count(*) > 0 from dvdpost_be_prod.prison_movies where imdb_id = sp.imdb_id) prison   " & _
+              " from (select imdb_id, season_id, episode_id, products_title from products group by imdb_id, season_id, episode_id ) P " & _
+              " join streaming_products sp on sp.imdb_id = P.imdb_id and sp.season_id = P.season_id and sp.episode_id = P.episode_id " & _
+              " where sp.status = '" & status & "' group by sp.imdb_id, sp.season_id,sp.episode_id, sp.language_id, sp.subtitle_id "
         Return sql
     End Function
 
@@ -180,7 +182,7 @@ Public Class ClsVod
         sql = " SELECT distinct sp.*, P.products_title products_name " & _
               " from (select imdb_id,products_title from products group by imdb_id) P " & _
               " join streaming_products sp on sp.imdb_id = P.imdb_id " & _
-              " where sp.status = '" & status & "' group by sp.imdb_id, sp.language_id, sp.subtitle_id, sp.country "
+              " where sp.status = '" & status & "' group by sp.imdb_id, sp.season_id,sp.episode_id, sp.language_id, sp.subtitle_id, sp.country "
         Return sql
     End Function
 
@@ -208,7 +210,7 @@ Public Class ClsVod
 
     Public Shared Function SearchViewVodProduct(ByVal products_id As Integer) As String
         Dim sql As String
-        sql = " SELECT distinct sp.*, P.products_title products_name, (select count(*) > 0 from plush_production.akamai_movies where imdb_id = sp.imdb_id) akamai, (select count(*) > 0 from prison_movies where imdb_id = sp.imdb_id) prison   " & _
+        sql = " SELECT distinct sp.*, P.products_title products_name, (select count(*) > 0 from plush_production.akamai_movies where imdb_id = sp.imdb_id and language_ID = sp.language_id and (subtitle_id = sp.subtitle_id or (subtitle_id is null and sp.subtitle_id is null))) akamai, (select count(*) > 0 from dvdpost_be_prod.prison_movies where imdb_id = sp.imdb_id) prison   " & _
               " from (select imdb_id,products_title,products_id from products group by imdb_id) P " & _
               " join streaming_products sp on sp.imdb_id = P.imdb_id " & _
               " where sp.status <> 'deleted' and P.products_id = " & products_id
@@ -226,10 +228,19 @@ Public Class ClsVod
 
     Public Shared Function SearchViewVodImdb(ByVal imdb_id As Integer) As String
         Dim sql As String
-        sql = " SELECT distinct sp.*, P.products_title products_name, (select count(*) > 0 from plush_production.akamai_movies where imdb_id = sp.imdb_id) akamai, (select count(*) > 0 from prison_movies where imdb_id = sp.imdb_id) prison   " & _
+        sql = " SELECT distinct sp.*, P.products_title products_name, (select count(*) > 0 from plush_production.akamai_movies where imdb_id = sp.imdb_id and language_ID = sp.language_id and (subtitle_id = sp.subtitle_id or (subtitle_id is null and sp.subtitle_id is null))) akamai, (select count(*) > 0 from dvdpost_be_prod.prison_movies where imdb_id = sp.imdb_id) prison   " & _
               " from (select imdb_id,products_title from products group by imdb_id) P " & _
               " join streaming_products sp on sp.imdb_id = P.imdb_id " & _
               " where status <> 'deleted' and P.imdb_id = " & imdb_id
+        Return sql
+    End Function
+
+    Public Shared Function SearchViewVideoland(ByVal vl As Integer) As String
+        Dim sql As String
+        sql = " SELECT distinct sp.*, P.products_title products_name, (select count(*) > 0 from plush_production.akamai_movies where imdb_id = sp.imdb_id and language_ID = sp.language_id and (subtitle_id = sp.subtitle_id or (subtitle_id is null and sp.subtitle_id is null))) akamai, (select count(*) > 0 from dvdpost_be_prod.prison_movies where imdb_id = sp.imdb_id) prison   " & _
+              " from (select imdb_id,products_title from products group by imdb_id) P " & _
+              " join streaming_products sp on sp.imdb_id = P.imdb_id " & _
+              " where status <> 'deleted' and sp.videoland = " & vl
         Return sql
     End Function
 
@@ -239,6 +250,15 @@ Public Class ClsVod
               " from (select imdb_id,products_title from products group by imdb_id) P " & _
               " join streaming_trailers st on st.imdb_id = P.imdb_id " & _
               " where st.status <> 'deleted' and P.imdb_id = " & imdb_id
+        Return sql
+    End Function
+
+    Public Shared Function SearchViewTrailersVideoland(ByVal vl As Boolean) As String
+        Dim sql As String
+        sql = " SELECT distinct st.*, P.products_title products_name " & _
+              " from (select imdb_id,products_title from products group by imdb_id) P " & _
+              " join streaming_trailers st on st.imdb_id = P.imdb_id " & _
+              " where st.status <> 'deleted' and st.videoland = " & vl
         Return sql
     End Function
 
@@ -287,9 +307,10 @@ Public Class ClsVod
         Return sql
     End Function
 
-
     Public Shared Function GetUpdateVod(ByVal streaming_products_id As Integer, _
                                         ByVal imdb_id As Integer, _
+                                        ByVal season_id As Integer, _
+                                        ByVal episode_id As Integer, _
                                         ByVal filename As String, _
                                         ByVal available_from As DateTime, _
                                         ByVal expire_at As DateTime, _
@@ -308,6 +329,9 @@ Public Class ClsVod
                                         ByVal ppv_price As String, _
                                         ByVal country As String, _
                                         ByVal drm As String, _
+                                        ByVal vl As Boolean, _
+                                        ByVal VLReference As String, _
+                                        ByVal akamai_folder As String, _
                                         Optional ByVal doStatusUpdate As Boolean = False) As String
         Dim sql As String
         Dim strLanguageSubtitle As String
@@ -329,7 +353,13 @@ Public Class ClsVod
         Dim IsSamePPVPriceForAllAudioSubtitle As Boolean = True
         Dim strCountry As String
         Dim str_drm As String
+        Dim strVLReference = "null"
+        Dim strVL As String = "'0'"
+        Dim strAkamaiFolder As String = "null"
 
+        If VLReference <> "" Then
+            strVLReference = "'" & VLReference & "'"
+        End If
         If filename = "" Then
             strfilename = "null"
         Else
@@ -428,6 +458,14 @@ Public Class ClsVod
             str_drm = "'" & IIf(drm, 1, 0) & "'"
         End If
 
+        If vl Then
+            strVL = "'1'"
+        End If
+
+        If akamai_folder <> "" Then
+            strAkamaiFolder = "'" & akamai_folder & "'"
+        End If
+
         If IsSamePPVPriceForAllAudioSubtitle Then
 
             sql = "update streaming_products sp " & _
@@ -445,23 +483,29 @@ Public Class ClsVod
                   ", quality = " & strQuality & _
                   ", source = '" & source & "'" & _
                   ", imdb_id = " & strimbd_id & _
+                  ", season_id = " & season_id & _
+                  ", episode_id = " & episode_id & _
                   ", credits = " & credit & _
                   ", vod_support_id = " & strSupport & _
                   ", is_ppv = " & str_is_ppv & _
                   ", ppv_price = " & str_ppv_price & _
                   ", country = " & strCountry & _
                   ", drm = " & str_drm & _
+                  ", videoland = " & strVL & _
+                  ", videoland_reference = " & strVLReference & _
+                  ", akamai_folder = " & strAkamaiFolder & _
                   " where id = " & streaming_products_id
 
             sql = sql & " ; update streaming_products sp " & _
                   " set is_ppv = " & str_is_ppv & _
                   ", ppv_price = " & str_ppv_price & _
+                  ", videoland = " & strVL & _
                   ", updated_at = now() " & _
-                  " where country = " & strCountry & " and imdb_id = " & imdb_id & "; "
+                  " where country = " & strCountry & " and imdb_id = " & imdb_id & " and season_id = " & season_id & " and episode_id = " & episode_id & "; "
             If doStatusUpdate Then
                 sql = sql & " update streaming_products set status = " & strStatus & ", drm = " & str_drm & ", studio_id = " & strStudio & _
                 ", updated_at = now() " & _
-                " where source = 'alphanetworks' and imdb_id = " & imdb_id & _
+                " where source <> 'SOFTLAYER' and imdb_id = " & imdb_id & " and season_id = " & season_id & " and episode_id = " & episode_id & _
                 " and status <> 'deleted' and language_id " & strlanguagedoStatusUpdate & " and subtitle_id " & strLanguageSubtitledoStatusUpdate & ";"
             End If
         Else
@@ -480,14 +524,18 @@ Public Class ClsVod
                   ", quality = " & strQuality & _
                   ", source = '" & source & "'" & _
                   ", imdb_id = " & strimbd_id & _
+                  ", season_id = " & season_id & _
+                  ", episode_id = " & episode_id & _
                   ", credits = " & credit & _
                   ", vod_support_id = " & strSupport & _
                   ", is_ppv = " & str_is_ppv & _
                   ", ppv_price = " & str_ppv_price & _
                   ", country = " & strCountry & _
                   ", drm = " & str_drm & _
+                  ", videoland = " & strVL & _
+                  ", videoland_reference = " & strVLReference & _
+                  ", akamai_folder = " & strAkamaiFolder & _
                   " where id = " & streaming_products_id
-
         End If
         Return sql
     End Function
@@ -500,7 +548,8 @@ Public Class ClsVod
                                       ByVal available As Boolean, _
                                       ByVal language_id As Integer, _
                                       ByVal language_subtitle_id As Integer, _
-                                      ByVal status As String) As String
+                                      ByVal status As String, _
+                                      ByVal vl As Boolean) As String
         Dim sql As String
         Dim strLanguageSubtitle As String
         Dim strlanguage As String
@@ -509,6 +558,7 @@ Public Class ClsVod
         Dim stravailable_from As String
         Dim strexpire_at As String
         Dim strfilename As String
+        Dim strVL As String = "0"
 
         If filename = "" Then
             strfilename = "null"
@@ -551,6 +601,10 @@ Public Class ClsVod
             strLanguageSubtitle = language_subtitle_id
         End If
 
+        If vl Then
+            strVL = "1"
+        End If
+
         sql = "update streaming_trailers sp " & _
               " set filename = " & strfilename & "" & _
               ", available_from = " & stravailable_from & "" & _
@@ -560,6 +614,7 @@ Public Class ClsVod
               ", subtitle_id = " & strLanguageSubtitle & _
               ", updated_at = now()" & _
               ", status = " & strStatus & "" & _
+              ", videoland = " & strVL & _
               " where id = " & streaming_trailers_id
 
         Return sql
@@ -591,7 +646,11 @@ Public Class ClsVod
 
         Return sql
     End Function
+
+
     Public Shared Function GetInsertVod(ByVal imdb_id As Integer, _
+                                        ByVal season_id As Integer, _
+                                        ByVal episode_id As Integer, _
                                         ByVal filename As String, _
                                         ByVal available_from As DateTime, _
                                         ByVal expire_at As DateTime, _
@@ -604,12 +663,15 @@ Public Class ClsVod
                                         ByVal source As String, _
                                         ByVal support As Integer, _
                                         ByVal credit As Integer, _
-                                        ByVal available_backcatalogue_from As Date, _
-                                        ByVal expire_backcatalogue_at As Date, _
+                                        ByVal available_backcatalogue_from As DateTime, _
+                                        ByVal expire_backcatalogue_at As DateTime, _
                                         ByVal is_ppv As String, _
                                         ByVal ppv_price As String, _
                                         ByVal country As String, _
-                                        ByVal drm As String) As String
+                                        ByVal drm As String, _
+                                        ByVal vl As Boolean, _
+                                        ByVal vlReference As String, _
+                                        ByVal akamai_folder As String) As String
         Dim sql As String
         Dim strLanguageSubtitle As String
         Dim strQuality As String
@@ -624,6 +686,15 @@ Public Class ClsVod
         Dim IsSamePPVPriceForAllAudioSubtitle As Boolean = True
         Dim strCountry As String
         Dim str_drm As String
+        Dim strVL As String = "0"
+        Dim strSeasonID As String = "0"
+        Dim strEpisodeID As String = "0"
+        Dim strVLReference As String = "null"
+        Dim strAkamaiFolder As String = "null"
+
+        If Not vlReference <> "" Then
+            strVLReference = "'" & vlReference & "'"
+        End If
 
         If language_id <= 0 Then
             strlanguage = "null"
@@ -697,14 +768,22 @@ Public Class ClsVod
             str_drm = "'" & IIf(drm, 1, 0) & "'"
         End If
 
+        If vl Then
+            strVL = "1"
+        End If
+
+        If akamai_folder <> "" Then
+            strAkamaiFolder = "'" & akamai_folder & "'"
+        End If
+
         If (IsSamePPVPriceForAllAudioSubtitle) Then
             sql = "insert into streaming_products values (null," & imdb_id & ",'" & filename & "'," & strAvailable_from & _
-                              "," & strExpireAt & ", " & strBackcatalogue_from & ", " & strBackcatalogue_expire & "," & available & "," & strlanguage & "," & strLanguageSubtitle & ",now(),now()," & strStudio & ",'" & status & "'," & strQuality & ",'" & source & "'," & support & "," & credit & "," & str_is_ppv & "," & str_ppv_price & ", " & strCountry & ", " & str_drm & " ) ; " & _
-                              " update streaming_products set  is_ppv = " & str_is_ppv & ", ppv_price = " & str_ppv_price & " where country = " & strCountry & " and imdb_id = " & imdb_id & ";"
+                              "," & strExpireAt & ", " & strBackcatalogue_from & ", " & strBackcatalogue_expire & "," & available & "," & strlanguage & "," & strLanguageSubtitle & ",now(),now()," & strStudio & ",'" & status & "'," & strQuality & ",'" & source & "'," & support & "," & credit & "," & str_is_ppv & "," & str_ppv_price & ", " & strCountry & ", " & str_drm & ", " & season_id & ", " & episode_id & ", " & strVL & "," & strVLReference & "," & strAkamaiFolder & ") ; " & _
+                              " update streaming_products set  is_ppv = " & str_is_ppv & ", ppv_price = " & str_ppv_price & " where country = " & strCountry & " and imdb_id = " & imdb_id & " and season_id = " & season_id & " and episode_id = " & episode_id & ";"
         Else
 
             sql = "insert into streaming_products values (null," & imdb_id & ",'" & filename & "'," & strAvailable_from & _
-                  "," & strExpireAt & ", " & strBackcatalogue_from & ", " & strBackcatalogue_expire & "," & available & "," & strlanguage & "," & strLanguageSubtitle & ",now(),now()," & strStudio & ",'" & status & "'," & strQuality & ",'" & source & "'," & support & "," & credit & "," & str_is_ppv & "," & str_ppv_price & ", " & strCountry & ", " & str_drm & ")"
+                  "," & strExpireAt & ", " & strBackcatalogue_from & ", " & strBackcatalogue_expire & "," & available & "," & strlanguage & "," & strLanguageSubtitle & ",now(),now()," & strStudio & ",'" & status & "'," & strQuality & ",'" & source & "'," & support & "," & credit & "," & str_is_ppv & "," & str_ppv_price & ", " & strCountry & ", " & str_drm & ", " & season_id & ", " & episode_id & ", " & strVL & "," & strVLReference & "," & strAkamaiFolder & ") ; "
         End If
         Return sql
     End Function
@@ -716,12 +795,14 @@ Public Class ClsVod
                                        ByVal available As Boolean, _
                                        ByVal language_id As Integer, _
                                        ByVal language_subtitle_id As String, _
-                                       ByVal status As String) As String
+                                       ByVal status As String, _
+                                       ByVal vl As Boolean) As String
         Dim sql As String
         Dim strLanguageSubtitle As String
         Dim strlanguage As String
         Dim strExpireAt As String
         Dim strAvailable_from As String
+        Dim strVL As String = "0"
 
         If language_id <= 0 Then
             strlanguage = "null"
@@ -747,9 +828,13 @@ Public Class ClsVod
             strExpireAt = "'" & DVDPostTools.ClsDate.formatDateDB(expire_at) & "'"
         End If
 
-        sql = "insert into streaming_trailers(imdb_id, filename, available_from, expire_at, available, language_id, subtitle_id, created_at, updated_at, status)  values (" _
+        If vl Then
+            strVL = "1"
+        End If
+
+        sql = "insert into streaming_trailers(imdb_id, filename, available_from, expire_at, available, language_id, subtitle_id, created_at, updated_at, status, videoland)  values (" _
                 & imdb_id & ",'" & filename & "'," & strAvailable_from & "," & strExpireAt & "," & available & "," & strlanguage & "," & _
-                strLanguageSubtitle & ",now(),now()," & "'" & status & "')"
+                strLanguageSubtitle & ",now(),now()," & "'" & status & "', " & strVL & ")"
 
         Return sql
     End Function

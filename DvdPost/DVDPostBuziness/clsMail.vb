@@ -47,7 +47,7 @@ Public Class clsMail
         ' MAIL_RECEIVEDDOM = 424 ' not used 
         MAIL_SON_PAID = 447
         MAIL_SON_ACTIVATION = 448
-        MAIL_PAYMENT_INVALID_OGONE = 584 '438
+        MAIL_PAYMENT_INVALID_OGONE = 650 '584 '438
         MAIL_PAYMENT_INVALID_OGONE_OLD = 438
         ' Mail_ENDPERIODESSAI = 249 ' not used
         MAIL_VOD_CONFIRMATION = 571
@@ -57,6 +57,7 @@ Public Class clsMail
         MAIL_REPLY = 579
         MAIL_REGISTRATION = 600
         MAIL_EDD_PREPAYMENT_NOTIF = 629
+        MAIL_VIRMAN = 658
 
     End Enum
     Public Shared Function CreateVariableGeneric(ByVal str As String) As String
@@ -157,6 +158,63 @@ Public Class clsMail
         End If
         Return -1
     End Function
+
+    Private Shared Function SendObjectWithAttachement(ByVal mail_id As Mail, ByVal report As String, ByVal lstvariables As String, ByVal customers_lang As Integer, ByVal rowcustomers As DataRow, ByVal subject As String, Optional ByVal emailTest As String = "", Optional ByVal emailFrom As String = "", Optional ByVal emailName As String = "") As Integer
+        Dim sql As String
+        sql = DvdPostData.PaymentOfflineData.GetMail(mail_id, customers_lang)
+        Dim dtMail As New DataTable()
+        Dim result As Integer
+
+        dtMail = DvdPostData.clsConnection.FillDataSet(sql)
+        Dim mymail As Net.Mail.MailMessage
+        If dtMail.Rows.Count > 0 Then
+            Dim RowMail As DataRow = dtMail.Rows(0)
+            Try
+                DvdPostData.clsConnection.CreateTransaction(True)
+                Dim msg As String = ""
+                Dim strsubject As String = ""
+                Dim IdHistoryMail As Integer = DvdPostData.clsConnection.ExecuteScalar(DvdPostData.PaymentOfflineData.getMaxidMailHistory())
+                IdHistoryMail += 1
+                replaceParamCommun(rowcustomers, RowMail, IdHistoryMail, strsubject, msg, lstvariables)
+                msg = replacevariableInMsg(msg, lstvariables)
+                mymail = CreateMailWithAttachment(rowcustomers("customers_email_address"), report, msg, subject)
+
+                If mymail IsNot Nothing Then
+                    If isSendMail(RowMail, rowcustomers) Then
+                        SendMail(mymail)
+                        sql = DvdPostData.PaymentOfflineData.SaveMailHistory(rowcustomers("Customers_id"), mail_id, customers_lang, mymail.To(0).Address, lstvariables)
+                        result = DvdPostData.clsConnection.ExecuteNonQuery(sql)
+                        ' clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Email, DvdPostData.clsConnection.bulkQuery & " " & result & " " & sql)
+                        Dim cpt_result As Integer = 0
+                        DvdPostData.clsConnection.ExecuteBulkQuery(DvdPostData.clsMsgError.processType.Email, cpt_result)
+                        Return IdHistoryMail
+                    Else
+                        Return -1
+                    End If
+
+                Else
+                    Dim msgerror As String
+
+                    msgerror = "Error mail id : " & mail_id & " lang : " & customers_lang
+                    clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Email, msgerror)
+                    DvdPostData.clsConnection.CancelBulkQuery()
+                    Return -1
+                    'clsMsgError.MsgBox(msgerror)
+                End If
+
+            Catch ex As Exception
+                Dim msgerror As String
+                DvdPostData.clsConnection.CancelBulkQuery()
+                msgerror = "Error mail id : " & mail_id & " lang : " & customers_lang & " " & ex.Message
+                clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Email, msgerror)
+                Return -1
+                'Throw ex
+            End Try
+
+        End If
+        Return -1
+    End Function
+
     Private Shared Function isSendMail(ByVal RowMail As DataRow, ByVal RowCustomer As DataRow) As Boolean
         Dim isMailCopy As Boolean
         Dim sql As String
@@ -223,6 +281,66 @@ Public Class clsMail
         End If
         Return False
     End Function
+
+    Private Shared Function SendObjectWithAttachement(ByVal mail_id As Mail, ByVal report As String, ByVal customers_lang As Integer, ByVal rowcustomers As DataRow, Optional ByVal saveMessagerie As Boolean = True, Optional ByVal emailTest As String = "", Optional ByVal emailFrom As String = "", Optional ByVal emailName As String = "") As Boolean
+        Dim sql As String
+        sql = DvdPostData.PaymentOfflineData.GetMail(mail_id, customers_lang)
+
+        Dim dtMail As New DataTable()
+        Dim result As Integer
+        Dim lstvariable As String = String.Empty
+
+        dtMail = DvdPostData.clsConnection.FillDataSet(sql)
+        Dim mymail As Net.Mail.MailMessage
+        If dtMail.Rows.Count > 0 Then
+            Dim RowMail As DataRow = dtMail.Rows(0)
+            Try
+                DvdPostData.clsConnection.CreateTransaction(True)
+                mymail = FormatMailWithAttachment(RowMail, report, rowcustomers, customers_lang, lstvariable, emailTest, emailFrom, emailName)
+
+                If mymail IsNot Nothing Then
+                    If isSendMail(RowMail, rowcustomers) Then
+                        SendMail(mymail)
+                        sql = DvdPostData.PaymentOfflineData.SaveMailHistory(rowcustomers("Customers_id"), mail_id, customers_lang, mymail.To(0).Address, lstvariable)
+                        result = DvdPostData.clsConnection.ExecuteNonQuery(sql)
+                        ' clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Email, DvdPostData.clsConnection.bulkQuery & " " & result & " " & sql)
+                        Dim cpt_result As Integer = 0
+
+                        DvdPostData.clsConnection.ExecuteBulkQuery(DvdPostData.clsMsgError.processType.Email, cpt_result)
+                    Else
+                        DvdPostData.clsConnection.CancelBulkQuery()
+                    End If
+                    If saveMessagerie Then
+                        Dim categorie As Integer
+                        Dim IdHistoryMail As Integer
+                        categorie = getcategorie(mail_id)
+                        IdHistoryMail = DvdPostData.clsConnection.ExecuteScalar(DvdPostData.PaymentOfflineData.getMaxidMailHistory())
+                        DVDPostBuziness.clsMessagerie.GetCreateFullMessage(rowcustomers("Customers_id"), Nothing, categorie, mail_id, lstvariable, IdHistoryMail)
+                    End If
+                    Return True
+                Else
+                    Dim msgerror As String
+
+                    msgerror = "Error mail id : " & mail_id & " lang : " & customers_lang
+                    clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Email, msgerror)
+                    DvdPostData.clsConnection.CancelBulkQuery()
+                    Return False
+                    'clsMsgError.MsgBox(msgerror)
+                End If
+
+            Catch ex As Exception
+                Dim msgerror As String
+                DvdPostData.clsConnection.CancelBulkQuery()
+                msgerror = "Error mail id : " & mail_id & " lang : " & customers_lang & " " & ex.Message & " email: " & rowcustomers("customers_email_address")
+                clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Email, msgerror)
+                Return False
+                'Throw ex
+            End Try
+
+        End If
+        Return False
+    End Function
+
     Public Shared Function SendMail(ByVal customers_id As Integer, ByVal mail_id As Integer, ByVal lstvariables As String, ByVal subject As String) As Integer
         Dim sql As String
         Dim dt As DataTable
@@ -238,7 +356,12 @@ Public Class clsMail
     Public Shared Function SendMail(ByVal rowCustomers As DataRow, ByVal mail_id As Mail, Optional ByVal saveMessagerie As Boolean = True, Optional ByVal emailTest As String = "", Optional ByVal emailFrom As String = "", Optional ByVal emailName As String = "") As Boolean
         Return SendObject(mail_id, rowCustomers("customers_language"), rowCustomers, saveMessagerie, emailTest, emailFrom, emailName)
     End Function
-    Public Shared Function SendMail(ByVal MsgMail As String, ByVal Subject As String, ByVal MailTo As String, Optional ByVal emailFrom As String = "", Optional ByVal emailName As String = "") As Boolean
+
+    Public Shared Function SendMailWithAttachement(ByVal rowCustomers As DataRow, ByVal report As String, ByVal mail_id As Mail, Optional ByVal saveMessagerie As Boolean = True, Optional ByVal emailTest As String = "", Optional ByVal emailFrom As String = "", Optional ByVal emailName As String = "") As Boolean
+        Return SendObjectWithAttachement(mail_id, report, rowCustomers("customers_language"), rowCustomers, saveMessagerie, emailTest, emailFrom, emailName)
+    End Function
+
+    Public Shared Function SendMailWithAttachement(ByVal MsgMail As String, ByRef report As DevExpress.XtraReports.UI.XtraReport, ByVal Subject As String, ByVal MailTo As String, Optional ByVal emailFrom As String = "", Optional ByVal emailName As String = "") As Boolean
         Dim strFrom As String
         Dim strName As String
         If MsgMail.Length = 0 Then
@@ -265,6 +388,7 @@ Public Class clsMail
             mymail.Subject = Subject
             mymail.IsBodyHtml = True
             mymail.Body = MsgMail
+            
             SendMail(mymail)
 
         End If
@@ -296,14 +420,13 @@ Public Class clsMail
             'Dim SmtpMail As New Net.Mail.SmtpClient("smtp.gmail.com", 587)
             SmtpMail.UseDefaultCredentials = False
             'SmtpMail.Credentials = New System.Net.NetworkCredential("Administrator", "DVD8(post")
-            SmtpMail.Credentials = New System.Net.NetworkCredential("AKIAJWYB62J46J7BCHSA", "AsK1NVp2KN7FCUnZKyZOKgB/lCJlPcyZpzBnipI4XObv")
+            SmtpMail.Credentials = New System.Net.NetworkCredential("AKIAICQS7KIVA5N62SKQ", "Au/ZyAC8yBAZGGSPdGDNEz00v2biQZPjUnxpd+qLl3Xn")
             System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls
+
             SmtpMail.EnableSsl = True
 
 
             Try
-
-
                 SmtpMail.Send(mymail)
 
             Catch ex As SmtpFailedRecipientsException
@@ -458,6 +581,9 @@ Public Class clsMail
         Dim firstname As String = String.Empty
         Dim lastname As String = String.Empty
         Dim customers_name As String = String.Empty
+        Dim strHost As String = String.Empty
+        Dim strHostPrivate As String = String.Empty
+        Dim strHostPublic As String = String.Empty
 
         LoadSite()
         loadParams()
@@ -477,6 +603,33 @@ Public Class clsMail
             isCustomers_Name = True
         End If
 
+        If IsExistInString(strmessage, "$$$host$$$") Then
+            If CustRow("site").Equals("nl") Then
+                strHost = "www.dvdpost.nl"
+            Else
+                strHost = "www.dvdpost.be"
+            End If
+            strmessage = ReplaceVar(strmessage, balise & "host" & balise, strHost, lstvariable)
+        End If
+
+        If IsExistInString(strmessage, "$$$host_private$$$") Then
+            If CustRow("site").Equals("nl") Then
+                strHostPrivate = "private.dvdpost.nl"
+            Else
+                strHostPrivate = "private.dvdpost.com"
+            End If
+            strmessage = ReplaceVar(strmessage, balise & "host_private" & balise, strHostPrivate, lstvariable)
+        End If
+
+        If IsExistInString(strmessage, "$$$host_public$$$") Then
+            If CustRow("site").Equals("nl") Then
+                strHostPublic = "public.dvdpost.nl"
+            Else
+                strHostPublic = "public.dvdpost.com"
+            End If
+            strmessage = ReplaceVar(strmessage, balise & "host_public" & balise, strHostPublic, lstvariable)
+        End If
+
         'titre
 
         strmessage = ReplaceVar(strmessage, balise & "title" & balise, MailRow("messages_title"), lstvariable)
@@ -494,9 +647,6 @@ Public Class clsMail
         Catch
             clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Email, CustRow("customers_id"))
         End Try
-
-
-
 
         'strmessage = Replace(strmessage, "$$$customers_email$$$", CustRow("customers_email_address"))
         'strmessage = Replace(strmessage, "$$$email$$$", CustRow("customers_email_address"))
@@ -672,6 +822,56 @@ Public Class clsMail
         Return mymail
     End Function
 
+    Private Shared Function CreateMailWithAttachment(ByVal email As String, ByVal report As String, ByVal htmlMsg As String, ByVal subject As String, Optional ByVal eMailTest As String = "", Optional ByVal emailFrom As String = "", Optional ByVal emailName As String = "") As Net.Mail.MailMessage
+        Dim strTo As String
+        Dim strFrom As String
+        Dim strName As String
+
+        If eMailTest = "" Then
+            strTo = email
+        Else
+            strTo = eMailTest
+        End If
+
+        If emailFrom = "" Then
+            strFrom = MAIL_FROM
+        Else
+            strFrom = emailFrom
+        End If
+
+        If emailName = "" Then
+            strName = MAIL_NAME
+        Else
+            strName = emailName
+        End If
+
+        If DvdPostData.clsSession.isEnvTest Then
+            strTo = MAIL_TEST
+        End If
+        ' david debug 
+        'strTo = "dvb@dvdpost.be"
+        ''titre
+        Dim mymail As Net.Mail.MailMessage
+        Dim balise As String = New String(BaliseMail, cptRepeat)
+        'clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Email, htmlMsg)
+        If Not htmlMsg.Contains(balise) Then
+            mymail = New Net.Mail.MailMessage(strFrom, strTo)
+            mymail.From = New Net.Mail.MailAddress(strFrom, strName)
+            mymail.Subject = subject
+            mymail.IsBodyHtml = True
+            mymail.Body = htmlMsg
+            'Dim str As System.IO.MemoryStream = New System.IO.MemoryStream()
+            'report.ExportToPdf(str)
+            mymail.Attachments.Add(New Net.Mail.Attachment(report))
+
+        Else
+            Throw New Exception("Mail have parameters with $$$ ")
+        End If
+
+
+        Return mymail
+    End Function
+
     Private Shared Function FormatMail(ByVal RowMail As DataRow, _
                                       ByVal rowcustomers As DataRow, _
                                       ByVal customers_language As Integer, _
@@ -713,6 +913,51 @@ Public Class clsMail
         ReplaceEddPrePayment(rowcustomers, RowMail, strMessage, lstvariable)
         'replaceProductPicture(rowcustomers, strMessage)
         Return CreateMail(rowcustomers("customers_email_address"), strMessage, strSubject, eMailTest, emailFrom, emailName)
+
+    End Function
+
+    Private Shared Function FormatMailWithAttachment(ByVal RowMail As DataRow, _
+                                     ByVal report As String, _
+                                     ByVal rowcustomers As DataRow, _
+                                     ByVal customers_language As Integer, _
+                                     ByRef lstvariable As String, _
+                                     Optional ByVal eMailTest As String = "", Optional ByVal emailFrom As String = "", Optional ByVal emailName As String = "") As Net.Mail.MailMessage
+
+
+        Dim strSubject As String = ""
+        Dim strMessage As String = ""
+        Dim IdHistoryMail As Integer
+
+        IdHistoryMail = DvdPostData.clsConnection.ExecuteScalar(DvdPostData.PaymentOfflineData.getMaxidMailHistory())
+
+
+
+        replaceParamCommun(rowcustomers, RowMail, IdHistoryMail, strSubject, strMessage, lstvariable)
+
+        Dim dico_replace As Dictionary(Of String, String)
+
+        dico_replace = SearchVariableMail(strMessage)
+
+        strMessage = ReplaceData(strMessage, dico_replace, rowcustomers, lstvariable)
+
+        'replaceActivation(rowcustomers, strMessage)
+        'replaceLastOrder(rowcustomers, strMessage)
+        'replaceMemGetMem(rowcustomers, customers_language, strMessage)
+        'replaceVodx(rowcustomers, customers_language, strMessage)
+        'replaceProduct(rowcustomers, strMessage)
+        'replacePaymentOffline(rowcustomers, strMessage)
+        'replaceAbo(rowcustomers, customers_language, strMessage)
+        ReplacePictureDVD(rowcustomers, customers_language, strMessage, lstvariable)
+        'replacePromoCode(rowcustomers, strMessage)
+        'replaceMailSponsor(rowcustomers, strMessage, strSubject)
+        ReplaceGender(rowcustomers, customers_language, strMessage, lstvariable)
+        ReplaceActors(rowcustomers, strMessage, lstvariable)
+        ReplaceInvoiceOpen(rowcustomers, strMessage, lstvariable)
+        ReplaceIN_OUT(rowcustomers, RowMail, strMessage, lstvariable)
+        ReplaceINDISPONIBLE(rowcustomers, RowMail, strMessage, lstvariable)
+        ReplaceEddPrePayment(rowcustomers, RowMail, strMessage, lstvariable)
+        'replaceProductPicture(rowcustomers, strMessage)
+        Return CreateMailWithAttachment(rowcustomers("customers_email_address"), report, strMessage, strSubject, eMailTest, emailFrom, emailName)
 
     End Function
 

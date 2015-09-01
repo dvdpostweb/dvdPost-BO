@@ -33,10 +33,10 @@ Public Class ClsproductsDvd
         End If
     End Function
 
-    Public Shared Sub UpdateInCinema()
+    Public Shared Sub UpdateInCinema(ByVal notInCinemaAfterDays As Integer)
         Dim sql As String
 
-        sql = DvdPostData.clsProducts.UpdateInCinema()
+        sql = DvdPostData.clsProducts.UpdateInCinema(notInCinemaAfterDays)
         DvdPostData.clsConnection.ExecuteNonQuery(sql)
 
     End Sub

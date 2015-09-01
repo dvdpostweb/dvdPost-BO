@@ -82,11 +82,11 @@ Module UpdateStart
             End If
             Return False
         Catch ex As Exception
-            Dim s As String
+            Dim s As String = String.Empty
             If Not ex.InnerException Is Nothing Then
                 s = ex.InnerException.Message
             End If
-            'System.Windows.Forms.MessageBox.Show(ex.Message + " " + s, "Test1")
+            'MsgBox(ex.Message + " " + s, "Test1")
 
             Return False
         End Try

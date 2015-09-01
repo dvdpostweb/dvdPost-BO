@@ -23,7 +23,6 @@ Partial Class FrmProductsVOD
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Dim colDateStartUploaded As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmProductsVOD))
         Me.RepositoryItemLookUpEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.RepositoryItemLookUpEdit3 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
@@ -126,6 +125,7 @@ Partial Class FrmProductsVOD
         Me.cmbSubtitleTrailers = New DevExpress.XtraEditors.Repository.RepositoryItemComboBox
         Me.webTrailers = New System.Windows.Forms.WebBrowser
         Me.XTabSearch = New DevExpress.XtraTab.XtraTabPage
+        Me.chkSearchVideoland = New DevExpress.XtraEditors.CheckEdit
         Me.btnRipped = New DevExpress.XtraEditors.SimpleButton
         Me.BtnViewAll = New DevExpress.XtraEditors.SimpleButton
         Me.BtnNewVodProduct = New DevExpress.XtraEditors.SimpleButton
@@ -175,6 +175,16 @@ Partial Class FrmProductsVOD
         Me.colcountry = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.RepositoryItemLookUpEdit2 = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.XTabView = New DevExpress.XtraTab.XtraTabPage
+        Me.cmbAkamaiFolderView = New System.Windows.Forms.ComboBox
+        Me.LabelControl47 = New DevExpress.XtraEditors.LabelControl
+        Me.txtVideolandReference = New DevExpress.XtraEditors.TextEdit
+        Me.LabelControl46 = New DevExpress.XtraEditors.LabelControl
+        Me.chkVideoland = New DevExpress.XtraEditors.CheckEdit
+        Me.txtEpisodeView = New DevExpress.XtraEditors.TextEdit
+        Me.LabelControl45 = New DevExpress.XtraEditors.LabelControl
+        Me.txtSeasonView = New DevExpress.XtraEditors.TextEdit
+        Me.LabelControl44 = New DevExpress.XtraEditors.LabelControl
+        Me.chkIsPrison = New DevExpress.XtraEditors.CheckEdit
         Me.chkIsAkamai = New DevExpress.XtraEditors.CheckEdit
         Me.chkDRM = New DevExpress.XtraEditors.CheckEdit
         Me.btnMoveToPlush = New DevExpress.XtraEditors.SimpleButton
@@ -263,12 +273,12 @@ Partial Class FrmProductsVOD
         Me.RepositoryCmbStudio = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.colStatusUploaded = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.ColImdbUploaded = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+        Me.colSeasonID = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+        Me.colEpisodeID = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.colLangAudioUploaded = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.RepositorycmbLanguage = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
         Me.colLangSubtitleUploaded = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.RepositoryLanguageSubtitleGrid = New DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
-        Me.colDateExpiredUploaded = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
-        Me.colAvailableUploaded = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         Me.RepositorychkAvailable = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
         Me.WebSiteDvdPost = New System.Windows.Forms.WebBrowser
         Me.XTabFtp = New DevExpress.XtraTab.XtraTabPage
@@ -287,6 +297,8 @@ Partial Class FrmProductsVOD
         Me.BtnCompare = New System.Windows.Forms.Button
         Me.lblFTP = New System.Windows.Forms.Label
         Me.XtabAutomateTranscode = New DevExpress.XtraTab.XtraTabPage
+        Me.Label1 = New System.Windows.Forms.Label
+        Me.cmbFolderAtAkamai = New System.Windows.Forms.ComboBox
         Me.lblError = New System.Windows.Forms.Label
         Me.lblOk = New System.Windows.Forms.Label
         Me.lstError = New System.Windows.Forms.ListBox
@@ -302,6 +314,7 @@ Partial Class FrmProductsVOD
         Me.filename = New DevExpress.XtraGrid.Columns.GridColumn
         Me.btnAllNoMovieInfo = New DevExpress.XtraEditors.SimpleButton
         Me.XtraTabTrailerSearch = New DevExpress.XtraTab.XtraTabPage
+        Me.chkTrailerSearchVideoland = New DevExpress.XtraEditors.CheckEdit
         Me.btnTrailerViewAll = New DevExpress.XtraEditors.SimpleButton
         Me.btnTrailerNew = New DevExpress.XtraEditors.SimpleButton
         Me.btnTrailerSearch = New DevExpress.XtraEditors.SimpleButton
@@ -338,6 +351,7 @@ Partial Class FrmProductsVOD
         Me.RepositoryItemDateEdit3 = New DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
         Me.RepositoryItemDateEdit4 = New DevExpress.XtraEditors.Repository.RepositoryItemDateEdit
         Me.XtraTabTrailerView = New DevExpress.XtraTab.XtraTabPage
+        Me.chkTrailerVideoland = New DevExpress.XtraEditors.CheckEdit
         Me.txtTrailerID = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl43 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl40 = New DevExpress.XtraEditors.LabelControl
@@ -433,8 +447,6 @@ Partial Class FrmProductsVOD
         Me.LabelControl39 = New DevExpress.XtraEditors.LabelControl
         Me.SimpleButton9 = New DevExpress.XtraEditors.SimpleButton
         Me.SimpleButton10 = New DevExpress.XtraEditors.SimpleButton
-        Me.chkIsPrison = New DevExpress.XtraEditors.CheckEdit
-        colDateStartUploaded = New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
         CType(Me.cmbViewListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtQuickSearchRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbReportListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -458,6 +470,7 @@ Partial Class FrmProductsVOD
         CType(Me.cmbLanguagesTrailers, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbSubtitleTrailers, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XTabSearch.SuspendLayout()
+        CType(Me.chkSearchVideoland.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtImdb.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TxtProducts_id.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTitleSearch.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -481,6 +494,11 @@ Partial Class FrmProductsVOD
         CType(Me.chkcolAvailable, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XTabView.SuspendLayout()
+        CType(Me.txtVideolandReference.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkVideoland.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtEpisodeView.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txtSeasonView.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.chkIsPrison.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkIsAkamai.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.chkDRM.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -561,6 +579,7 @@ Partial Class FrmProductsVOD
         CType(Me.grdOnlyVODMovie, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabTrailerSearch.SuspendLayout()
+        CType(Me.chkTrailerSearchVideoland.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTrailerImdbSearch.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTrailerProductsIDSearch.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTrailerTitleSearch.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -584,6 +603,7 @@ Partial Class FrmProductsVOD
         CType(Me.RepositoryItemDateEdit4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RepositoryItemDateEdit4.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.XtraTabTrailerView.SuspendLayout()
+        CType(Me.chkTrailerVideoland.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtTrailerID.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbTrailerDateStart.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbTrailerDateStart.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -651,17 +671,7 @@ Partial Class FrmProductsVOD
         CType(Me.LookUpEdit10.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit15.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TextEdit16.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.chkIsPrison.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'colDateStartUploaded
-        '
-        colDateStartUploaded.Caption = "date start"
-        colDateStartUploaded.FieldName = "available_from"
-        colDateStartUploaded.Name = "colDateStartUploaded"
-        colDateStartUploaded.OptionsColumn.AllowEdit = False
-        colDateStartUploaded.Visible = True
-        colDateStartUploaded.Width = 48
         '
         'RepositoryItemLookUpEdit1
         '
@@ -1497,6 +1507,7 @@ Partial Class FrmProductsVOD
         '
         'XTabSearch
         '
+        Me.XTabSearch.Controls.Add(Me.chkSearchVideoland)
         Me.XTabSearch.Controls.Add(Me.btnRipped)
         Me.XTabSearch.Controls.Add(Me.BtnViewAll)
         Me.XTabSearch.Controls.Add(Me.BtnNewVodProduct)
@@ -1510,6 +1521,14 @@ Partial Class FrmProductsVOD
         Me.XTabSearch.Name = "XTabSearch"
         Me.XTabSearch.Size = New System.Drawing.Size(971, 634)
         Me.XTabSearch.Text = "Search"
+        '
+        'chkSearchVideoland
+        '
+        Me.chkSearchVideoland.Location = New System.Drawing.Point(155, 150)
+        Me.chkSearchVideoland.Name = "chkSearchVideoland"
+        Me.chkSearchVideoland.Properties.Caption = "VIDEOLAND"
+        Me.chkSearchVideoland.Size = New System.Drawing.Size(98, 19)
+        Me.chkSearchVideoland.TabIndex = 114
         '
         'btnRipped
         '
@@ -1624,7 +1643,7 @@ Partial Class FrmProductsVOD
         Me.GridViewSearch.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand1, Me.GridBand3, Me.GridBand4})
         Me.GridViewSearch.ColumnPanelRowHeight = 45
         Me.GridViewSearch.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.colImdb_id, Me.collanguage_id, Me.colproducts_name, Me.ColAvailable_from, Me.colExpireAt, Me.colAvailableBackCatalogueFrom, Me.colBackcatalogueExpireAt, Me.colLanguage_subtitle, Me.colAvailable, Me.colStudio, Me.colStatus, Me.colSource, Me.colQuality, Me.colSupportVod, Me.colCredit, Me.colcountry, Me.colDRM, Me.akamai, Me.colPrison})
-        Me.GridViewSearch.CustomizationFormBounds = New System.Drawing.Rectangle(-1592, 398, 225, 209)
+        Me.GridViewSearch.CustomizationFormBounds = New System.Drawing.Rectangle(0, 398, 225, 209)
         Me.GridViewSearch.DetailHeight = 50
         Me.GridViewSearch.GridControl = Me.GridVod
         Me.GridViewSearch.Name = "GridViewSearch"
@@ -1939,6 +1958,15 @@ Partial Class FrmProductsVOD
         '
         'XTabView
         '
+        Me.XTabView.Controls.Add(Me.cmbAkamaiFolderView)
+        Me.XTabView.Controls.Add(Me.LabelControl47)
+        Me.XTabView.Controls.Add(Me.txtVideolandReference)
+        Me.XTabView.Controls.Add(Me.LabelControl46)
+        Me.XTabView.Controls.Add(Me.chkVideoland)
+        Me.XTabView.Controls.Add(Me.txtEpisodeView)
+        Me.XTabView.Controls.Add(Me.LabelControl45)
+        Me.XTabView.Controls.Add(Me.txtSeasonView)
+        Me.XTabView.Controls.Add(Me.LabelControl44)
         Me.XTabView.Controls.Add(Me.chkIsPrison)
         Me.XTabView.Controls.Add(Me.chkIsAkamai)
         Me.XTabView.Controls.Add(Me.chkDRM)
@@ -1978,6 +2006,88 @@ Partial Class FrmProductsVOD
         Me.XTabView.Name = "XTabView"
         Me.XTabView.Size = New System.Drawing.Size(971, 634)
         Me.XTabView.Text = "View"
+        '
+        'cmbAkamaiFolderView
+        '
+        Me.cmbAkamaiFolderView.FormattingEnabled = True
+        Me.cmbAkamaiFolderView.Items.AddRange(New Object() {"", "2015_070809", "2015_101112", "2016_010203", "2016_040506"})
+        Me.cmbAkamaiFolderView.Location = New System.Drawing.Point(123, 209)
+        Me.cmbAkamaiFolderView.Name = "cmbAkamaiFolderView"
+        Me.cmbAkamaiFolderView.Size = New System.Drawing.Size(129, 21)
+        Me.cmbAkamaiFolderView.TabIndex = 117
+        '
+        'LabelControl47
+        '
+        Me.LabelControl47.Location = New System.Drawing.Point(17, 212)
+        Me.LabelControl47.Name = "LabelControl47"
+        Me.LabelControl47.Size = New System.Drawing.Size(64, 13)
+        Me.LabelControl47.TabIndex = 116
+        Me.LabelControl47.Text = "akamai folder"
+        '
+        'txtVideolandReference
+        '
+        Me.txtVideolandReference.Enabled = False
+        Me.txtVideolandReference.Location = New System.Drawing.Point(594, 271)
+        Me.txtVideolandReference.Name = "txtVideolandReference"
+        Me.txtVideolandReference.Size = New System.Drawing.Size(112, 20)
+        Me.txtVideolandReference.TabIndex = 115
+        '
+        'LabelControl46
+        '
+        Me.LabelControl46.Location = New System.Drawing.Point(472, 274)
+        Me.LabelControl46.Name = "LabelControl46"
+        Me.LabelControl46.Size = New System.Drawing.Size(99, 13)
+        Me.LabelControl46.TabIndex = 114
+        Me.LabelControl46.Text = "Videoland Reference"
+        '
+        'chkVideoland
+        '
+        Me.chkVideoland.Location = New System.Drawing.Point(540, 246)
+        Me.chkVideoland.Name = "chkVideoland"
+        Me.chkVideoland.Properties.Caption = "VIDEOLAND"
+        Me.chkVideoland.Size = New System.Drawing.Size(98, 19)
+        Me.chkVideoland.TabIndex = 113
+        '
+        'txtEpisodeView
+        '
+        Me.txtEpisodeView.Enabled = False
+        Me.txtEpisodeView.Location = New System.Drawing.Point(123, 151)
+        Me.txtEpisodeView.Name = "txtEpisodeView"
+        Me.txtEpisodeView.Size = New System.Drawing.Size(112, 20)
+        Me.txtEpisodeView.TabIndex = 112
+        '
+        'LabelControl45
+        '
+        Me.LabelControl45.Location = New System.Drawing.Point(18, 155)
+        Me.LabelControl45.Name = "LabelControl45"
+        Me.LabelControl45.Size = New System.Drawing.Size(37, 13)
+        Me.LabelControl45.TabIndex = 111
+        Me.LabelControl45.Text = "Episode"
+        '
+        'txtSeasonView
+        '
+        Me.txtSeasonView.Enabled = False
+        Me.txtSeasonView.Location = New System.Drawing.Point(123, 126)
+        Me.txtSeasonView.Name = "txtSeasonView"
+        Me.txtSeasonView.Size = New System.Drawing.Size(112, 20)
+        Me.txtSeasonView.TabIndex = 110
+        '
+        'LabelControl44
+        '
+        Me.LabelControl44.Location = New System.Drawing.Point(18, 130)
+        Me.LabelControl44.Name = "LabelControl44"
+        Me.LabelControl44.Size = New System.Drawing.Size(35, 13)
+        Me.LabelControl44.TabIndex = 109
+        Me.LabelControl44.Text = "Season"
+        '
+        'chkIsPrison
+        '
+        Me.chkIsPrison.Enabled = False
+        Me.chkIsPrison.Location = New System.Drawing.Point(540, 221)
+        Me.chkIsPrison.Name = "chkIsPrison"
+        Me.chkIsPrison.Properties.Caption = "Is Prison"
+        Me.chkIsPrison.Size = New System.Drawing.Size(69, 19)
+        Me.chkIsPrison.TabIndex = 108
         '
         'chkIsAkamai
         '
@@ -2545,7 +2655,7 @@ Partial Class FrmProductsVOD
         'cmbLanguageSubtitle
         '
         Me.cmbLanguageSubtitle.Enabled = False
-        Me.cmbLanguageSubtitle.Location = New System.Drawing.Point(123, 208)
+        Me.cmbLanguageSubtitle.Location = New System.Drawing.Point(123, 261)
         Me.cmbLanguageSubtitle.Name = "cmbLanguageSubtitle"
         Me.cmbLanguageSubtitle.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbLanguageSubtitle.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("subtitle_id", "id", 63, DevExpress.Utils.FormatType.Numeric, "", True, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("lngdsc", "Language", 64, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
@@ -2558,7 +2668,7 @@ Partial Class FrmProductsVOD
         'cmbLanguageSound
         '
         Me.cmbLanguageSound.Enabled = False
-        Me.cmbLanguageSound.Location = New System.Drawing.Point(123, 173)
+        Me.cmbLanguageSound.Location = New System.Drawing.Point(123, 235)
         Me.cmbLanguageSound.Name = "cmbLanguageSound"
         Me.cmbLanguageSound.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
         Me.cmbLanguageSound.Properties.Columns.AddRange(New DevExpress.XtraEditors.Controls.LookUpColumnInfo() {New DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "id", 63, DevExpress.Utils.FormatType.Numeric, "", True, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None), New DevExpress.XtraEditors.Controls.LookUpColumnInfo("lngdsc", "Language", 64, DevExpress.Utils.FormatType.None, "", True, DevExpress.Utils.HorzAlignment.Near)})
@@ -2571,14 +2681,14 @@ Partial Class FrmProductsVOD
         'TxtFilename
         '
         Me.TxtFilename.Enabled = False
-        Me.TxtFilename.Location = New System.Drawing.Point(123, 135)
+        Me.TxtFilename.Location = New System.Drawing.Point(123, 177)
         Me.TxtFilename.Name = "TxtFilename"
         Me.TxtFilename.Size = New System.Drawing.Size(179, 20)
         Me.TxtFilename.TabIndex = 66
         '
         'lblNameFile
         '
-        Me.lblNameFile.Location = New System.Drawing.Point(18, 139)
+        Me.lblNameFile.Location = New System.Drawing.Point(18, 180)
         Me.lblNameFile.Name = "lblNameFile"
         Me.lblNameFile.Size = New System.Drawing.Size(43, 13)
         Me.lblNameFile.TabIndex = 63
@@ -2586,7 +2696,7 @@ Partial Class FrmProductsVOD
         '
         'lblLanguage_subtitle
         '
-        Me.lblLanguage_subtitle.Location = New System.Drawing.Point(18, 212)
+        Me.lblLanguage_subtitle.Location = New System.Drawing.Point(18, 265)
         Me.lblLanguage_subtitle.Name = "lblLanguage_subtitle"
         Me.lblLanguage_subtitle.Size = New System.Drawing.Size(82, 13)
         Me.lblLanguage_subtitle.TabIndex = 60
@@ -2594,7 +2704,7 @@ Partial Class FrmProductsVOD
         '
         'lblLanguageSound
         '
-        Me.lblLanguageSound.Location = New System.Drawing.Point(17, 177)
+        Me.lblLanguageSound.Location = New System.Drawing.Point(17, 238)
         Me.lblLanguageSound.Name = "lblLanguageSound"
         Me.lblLanguageSound.Size = New System.Drawing.Size(76, 13)
         Me.lblLanguageSound.TabIndex = 59
@@ -2736,7 +2846,7 @@ Partial Class FrmProductsVOD
         'gridViewVodWatch
         '
         Me.gridViewVodWatch.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand2})
-        Me.gridViewVodWatch.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.ColImdbUploaded, Me.colLangAudioUploaded, Me.colProductNameUploaded, colDateStartUploaded, Me.colDateExpiredUploaded, Me.colLangSubtitleUploaded, Me.colAvailableUploaded, Me.colStudioUploaded, Me.colStatusUploaded, Me.colQuality2, Me.colBtnWatchFilm})
+        Me.gridViewVodWatch.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.ColImdbUploaded, Me.colSeasonID, Me.colEpisodeID, Me.colLangAudioUploaded, Me.colProductNameUploaded, Me.colLangSubtitleUploaded, Me.colStudioUploaded, Me.colStatusUploaded, Me.colQuality2, Me.colBtnWatchFilm})
         Me.gridViewVodWatch.CustomizationFormBounds = New System.Drawing.Rectangle(799, 449, 225, 209)
         Me.gridViewVodWatch.GridControl = Me.GridVodWatch
         Me.gridViewVodWatch.Name = "gridViewVodWatch"
@@ -2754,14 +2864,13 @@ Partial Class FrmProductsVOD
         Me.GridBand2.Columns.Add(Me.colStudioUploaded)
         Me.GridBand2.Columns.Add(Me.colStatusUploaded)
         Me.GridBand2.Columns.Add(Me.ColImdbUploaded)
+        Me.GridBand2.Columns.Add(Me.colSeasonID)
+        Me.GridBand2.Columns.Add(Me.colEpisodeID)
         Me.GridBand2.Columns.Add(Me.colLangAudioUploaded)
         Me.GridBand2.Columns.Add(Me.colLangSubtitleUploaded)
-        Me.GridBand2.Columns.Add(colDateStartUploaded)
-        Me.GridBand2.Columns.Add(Me.colDateExpiredUploaded)
-        Me.GridBand2.Columns.Add(Me.colAvailableUploaded)
         Me.GridBand2.MinWidth = 20
         Me.GridBand2.Name = "GridBand2"
-        Me.GridBand2.Width = 448
+        Me.GridBand2.Width = 415
         '
         'colBtnWatchFilm
         '
@@ -2770,7 +2879,7 @@ Partial Class FrmProductsVOD
         Me.colBtnWatchFilm.FieldName = "colBtnWatchFilm"
         Me.colBtnWatchFilm.Name = "colBtnWatchFilm"
         Me.colBtnWatchFilm.Visible = True
-        Me.colBtnWatchFilm.Width = 78
+        Me.colBtnWatchFilm.Width = 56
         '
         'RepositoryBtnWatchMovie
         '
@@ -2786,7 +2895,7 @@ Partial Class FrmProductsVOD
         Me.colQuality2.Name = "colQuality2"
         Me.colQuality2.OptionsColumn.AllowEdit = False
         Me.colQuality2.Visible = True
-        Me.colQuality2.Width = 32
+        Me.colQuality2.Width = 42
         '
         'colProductNameUploaded
         '
@@ -2795,7 +2904,7 @@ Partial Class FrmProductsVOD
         Me.colProductNameUploaded.Name = "colProductNameUploaded"
         Me.colProductNameUploaded.OptionsColumn.AllowEdit = False
         Me.colProductNameUploaded.Visible = True
-        Me.colProductNameUploaded.Width = 86
+        Me.colProductNameUploaded.Width = 85
         '
         'colStudioUploaded
         '
@@ -2829,7 +2938,23 @@ Partial Class FrmProductsVOD
         Me.ColImdbUploaded.Name = "ColImdbUploaded"
         Me.ColImdbUploaded.OptionsColumn.AllowEdit = False
         Me.ColImdbUploaded.Visible = True
-        Me.ColImdbUploaded.Width = 45
+        Me.ColImdbUploaded.Width = 51
+        '
+        'colSeasonID
+        '
+        Me.colSeasonID.Caption = "S"
+        Me.colSeasonID.FieldName = "season_id"
+        Me.colSeasonID.Name = "colSeasonID"
+        Me.colSeasonID.Visible = True
+        Me.colSeasonID.Width = 45
+        '
+        'colEpisodeID
+        '
+        Me.colEpisodeID.Caption = "Ep"
+        Me.colEpisodeID.FieldName = "episode_id"
+        Me.colEpisodeID.Name = "colEpisodeID"
+        Me.colEpisodeID.Visible = True
+        Me.colEpisodeID.Width = 48
         '
         'colLangAudioUploaded
         '
@@ -2839,7 +2964,7 @@ Partial Class FrmProductsVOD
         Me.colLangAudioUploaded.Name = "colLangAudioUploaded"
         Me.colLangAudioUploaded.OptionsColumn.AllowEdit = False
         Me.colLangAudioUploaded.Visible = True
-        Me.colLangAudioUploaded.Width = 36
+        Me.colLangAudioUploaded.Width = 42
         '
         'RepositorycmbLanguage
         '
@@ -2859,7 +2984,7 @@ Partial Class FrmProductsVOD
         Me.colLangSubtitleUploaded.Name = "colLangSubtitleUploaded"
         Me.colLangSubtitleUploaded.OptionsColumn.AllowEdit = False
         Me.colLangSubtitleUploaded.Visible = True
-        Me.colLangSubtitleUploaded.Width = 42
+        Me.colLangSubtitleUploaded.Width = 46
         '
         'RepositoryLanguageSubtitleGrid
         '
@@ -2869,26 +2994,6 @@ Partial Class FrmProductsVOD
         Me.RepositoryLanguageSubtitleGrid.DisplayMember = "code"
         Me.RepositoryLanguageSubtitleGrid.Name = "RepositoryLanguageSubtitleGrid"
         Me.RepositoryLanguageSubtitleGrid.NullText = ""
-        '
-        'colDateExpiredUploaded
-        '
-        Me.colDateExpiredUploaded.Caption = "date expired"
-        Me.colDateExpiredUploaded.FieldName = "expire_at"
-        Me.colDateExpiredUploaded.Name = "colDateExpiredUploaded"
-        Me.colDateExpiredUploaded.OptionsColumn.AllowEdit = False
-        Me.colDateExpiredUploaded.Visible = True
-        Me.colDateExpiredUploaded.Width = 61
-        '
-        'colAvailableUploaded
-        '
-        Me.colAvailableUploaded.Caption = "available"
-        Me.colAvailableUploaded.ColumnEdit = Me.RepositorychkAvailable
-        Me.colAvailableUploaded.FieldName = "available"
-        Me.colAvailableUploaded.Name = "colAvailableUploaded"
-        Me.colAvailableUploaded.OptionsColumn.AllowEdit = False
-        Me.colAvailableUploaded.OptionsColumn.ReadOnly = True
-        Me.colAvailableUploaded.Visible = True
-        Me.colAvailableUploaded.Width = 20
         '
         'RepositorychkAvailable
         '
@@ -3054,6 +3159,8 @@ Partial Class FrmProductsVOD
         '
         'XtabAutomateTranscode
         '
+        Me.XtabAutomateTranscode.Controls.Add(Me.Label1)
+        Me.XtabAutomateTranscode.Controls.Add(Me.cmbFolderAtAkamai)
         Me.XtabAutomateTranscode.Controls.Add(Me.lblError)
         Me.XtabAutomateTranscode.Controls.Add(Me.lblOk)
         Me.XtabAutomateTranscode.Controls.Add(Me.lstError)
@@ -3067,6 +3174,24 @@ Partial Class FrmProductsVOD
         Me.XtabAutomateTranscode.Size = New System.Drawing.Size(971, 634)
         Me.XtabAutomateTranscode.Text = "Automate Transcode"
         Me.XtabAutomateTranscode.Tooltip = "Deletes data from last load"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(13, 68)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(86, 13)
+        Me.Label1.TabIndex = 15
+        Me.Label1.Text = "Folder at Akamai"
+        '
+        'cmbFolderAtAkamai
+        '
+        Me.cmbFolderAtAkamai.FormattingEnabled = True
+        Me.cmbFolderAtAkamai.Items.AddRange(New Object() {"", "2015_070809", "2015_101112", "2016_010203", "2016_040506"})
+        Me.cmbFolderAtAkamai.Location = New System.Drawing.Point(9, 94)
+        Me.cmbFolderAtAkamai.Name = "cmbFolderAtAkamai"
+        Me.cmbFolderAtAkamai.Size = New System.Drawing.Size(129, 21)
+        Me.cmbFolderAtAkamai.TabIndex = 14
         '
         'lblError
         '
@@ -3108,7 +3233,7 @@ Partial Class FrmProductsVOD
         '
         'btnGenerateVod
         '
-        Me.btnGenerateVod.Location = New System.Drawing.Point(16, 58)
+        Me.btnGenerateVod.Location = New System.Drawing.Point(160, 94)
         Me.btnGenerateVod.Name = "btnGenerateVod"
         Me.btnGenerateVod.Size = New System.Drawing.Size(116, 23)
         Me.btnGenerateVod.TabIndex = 9
@@ -3195,6 +3320,7 @@ Partial Class FrmProductsVOD
         '
         'XtraTabTrailerSearch
         '
+        Me.XtraTabTrailerSearch.Controls.Add(Me.chkTrailerSearchVideoland)
         Me.XtraTabTrailerSearch.Controls.Add(Me.btnTrailerViewAll)
         Me.XtraTabTrailerSearch.Controls.Add(Me.btnTrailerNew)
         Me.XtraTabTrailerSearch.Controls.Add(Me.btnTrailerSearch)
@@ -3207,6 +3333,14 @@ Partial Class FrmProductsVOD
         Me.XtraTabTrailerSearch.Name = "XtraTabTrailerSearch"
         Me.XtraTabTrailerSearch.Size = New System.Drawing.Size(971, 634)
         Me.XtraTabTrailerSearch.Text = "Trailer search"
+        '
+        'chkTrailerSearchVideoland
+        '
+        Me.chkTrailerSearchVideoland.Location = New System.Drawing.Point(140, 139)
+        Me.chkTrailerSearchVideoland.Name = "chkTrailerSearchVideoland"
+        Me.chkTrailerSearchVideoland.Properties.Caption = "VIDEOLAND"
+        Me.chkTrailerSearchVideoland.Size = New System.Drawing.Size(98, 19)
+        Me.chkTrailerSearchVideoland.TabIndex = 115
         '
         'btnTrailerViewAll
         '
@@ -3512,6 +3646,7 @@ Partial Class FrmProductsVOD
         '
         'XtraTabTrailerView
         '
+        Me.XtraTabTrailerView.Controls.Add(Me.chkTrailerVideoland)
         Me.XtraTabTrailerView.Controls.Add(Me.txtTrailerID)
         Me.XtraTabTrailerView.Controls.Add(Me.LabelControl43)
         Me.XtraTabTrailerView.Controls.Add(Me.LabelControl40)
@@ -3537,6 +3672,15 @@ Partial Class FrmProductsVOD
         Me.XtraTabTrailerView.Name = "XtraTabTrailerView"
         Me.XtraTabTrailerView.Size = New System.Drawing.Size(971, 634)
         Me.XtraTabTrailerView.Text = "Trailer View"
+        '
+        'chkTrailerVideoland
+        '
+        Me.chkTrailerVideoland.Enabled = False
+        Me.chkTrailerVideoland.Location = New System.Drawing.Point(434, 216)
+        Me.chkTrailerVideoland.Name = "chkTrailerVideoland"
+        Me.chkTrailerVideoland.Properties.Caption = "VIDEOLAND"
+        Me.chkTrailerVideoland.Size = New System.Drawing.Size(98, 19)
+        Me.chkTrailerVideoland.TabIndex = 117
         '
         'txtTrailerID
         '
@@ -4428,15 +4572,6 @@ Partial Class FrmProductsVOD
         Me.SimpleButton10.TabIndex = 51
         Me.SimpleButton10.Text = "Edit"
         '
-        'chkIsPrison
-        '
-        Me.chkIsPrison.Enabled = False
-        Me.chkIsPrison.Location = New System.Drawing.Point(540, 221)
-        Me.chkIsPrison.Name = "chkIsPrison"
-        Me.chkIsPrison.Properties.Caption = "Is Prison"
-        Me.chkIsPrison.Size = New System.Drawing.Size(69, 19)
-        Me.chkIsPrison.TabIndex = 108
-        '
         'FrmProductsVOD
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -4478,6 +4613,7 @@ Partial Class FrmProductsVOD
         CType(Me.cmbSubtitleTrailers, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XTabSearch.ResumeLayout(False)
         Me.XTabSearch.PerformLayout()
+        CType(Me.chkSearchVideoland.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtImdb.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TxtProducts_id.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTitleSearch.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4502,6 +4638,11 @@ Partial Class FrmProductsVOD
         CType(Me.RepositoryItemLookUpEdit2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XTabView.ResumeLayout(False)
         Me.XTabView.PerformLayout()
+        CType(Me.txtVideolandReference.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkVideoland.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtEpisodeView.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txtSeasonView.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.chkIsPrison.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkIsAkamai.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.chkDRM.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
@@ -4589,6 +4730,7 @@ Partial Class FrmProductsVOD
         CType(Me.GridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabTrailerSearch.ResumeLayout(False)
         Me.XtraTabTrailerSearch.PerformLayout()
+        CType(Me.chkTrailerSearchVideoland.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTrailerImdbSearch.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTrailerProductsIDSearch.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTrailerTitleSearch.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4613,6 +4755,7 @@ Partial Class FrmProductsVOD
         CType(Me.RepositoryItemDateEdit4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.XtraTabTrailerView.ResumeLayout(False)
         Me.XtraTabTrailerView.PerformLayout()
+        CType(Me.chkTrailerVideoland.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtTrailerID.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbTrailerDateStart.Properties.VistaTimeProperties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cmbTrailerDateStart.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -4683,7 +4826,6 @@ Partial Class FrmProductsVOD
         CType(Me.LookUpEdit10.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit15.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TextEdit16.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.chkIsPrison.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -4763,8 +4905,6 @@ Partial Class FrmProductsVOD
     Friend WithEvents RepositorycmbLanguage As DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit
     Friend WithEvents colLangSubtitleUploaded As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
     Friend WithEvents colProductNameUploaded As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
-    Friend WithEvents colDateExpiredUploaded As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
-    Friend WithEvents colAvailableUploaded As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
     Friend WithEvents RepositorychkAvailable As DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
     Friend WithEvents lblHigh As DevExpress.XtraEditors.LabelControl
     Friend WithEvents btnRipped As DevExpress.XtraEditors.SimpleButton
@@ -5095,9 +5235,25 @@ Partial Class FrmProductsVOD
     Friend WithEvents akamai As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
     Friend WithEvents chkIsAkamai As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents colPrison As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents chkIsPrison As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents txtEpisodeView As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl45 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents txtSeasonView As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl44 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents colSeasonID As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents colEpisodeID As DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn
+    Friend WithEvents chkVideoland As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents chkSearchVideoland As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents chkTrailerVideoland As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents chkTrailerSearchVideoland As DevExpress.XtraEditors.CheckEdit
+    Friend WithEvents txtVideolandReference As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents LabelControl46 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents cmbFolderAtAkamai As System.Windows.Forms.ComboBox
+    Friend WithEvents cmbAkamaiFolderView As System.Windows.Forms.ComboBox
+    Friend WithEvents LabelControl47 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
     Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
-    Friend WithEvents chkIsPrison As DevExpress.XtraEditors.CheckEdit
 End Class

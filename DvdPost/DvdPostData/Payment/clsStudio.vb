@@ -180,7 +180,7 @@ Public Class clsStudio
        " left join directors d on d.directors_id = p.products_directors_id " & _
         " where t.compensed = 0 and s.studio_id = " & studio_id & _
         " and t.created_at between date_add('" & DVDPostTools.ClsDate.formatDate(dateFrom) & "', interval -1 year) and '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' " & _
-        " and t.kind in ('NORMAL','PPV') " & _
+        " and t.kind in ('NORMAL','PPV')  and t.videoland = 0 " & _
 " group by s.studio_name, ps.studio_name, c.customers_id, t.created_at " & _
   "             order by s.studio_name, ps.studio_name,  p.products_title, t.created_at " & _
    " ) x " & _
@@ -203,7 +203,10 @@ Public Class clsStudio
 " from " & _
 " ( "
         Dim sqlDVDPOST As String = "  select 'DVDPOST' source, " & _
-"  s.studio_name vodstudio, " & _
+" ifnull((select st.studio_name from streaming_viewing_histories s  " & _
+" left join streaming_products sp on sp.id = s.streaming_product_id " & _
+" left join studio st on st.studio_id = sp.studio_id " & _
+" where s.token_id = t.id limit 1), s.studio_name) vodstudio, " & _
 "  ps.studio_name as productstudio, " & _
 "  p.products_title, " & _
 "  t.imdb_id, " & _
@@ -232,7 +235,7 @@ Public Class clsStudio
  " left join studio ps on ps.studio_id = p.products_studio " & _
  " left join directors d on d.directors_id = p.products_directors_id " & _
 " where t.compensed = 0 and t.created_at between date_add('" & DVDPostTools.ClsDate.formatDate(dateFrom) & "', interval -1 year) and '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' " & _
-" and s.studio_id = " & in_studio_id & " and t.kind in ('NORMAL','PPV') " & _
+" and s.studio_id = " & in_studio_id & " and t.kind in ('NORMAL','PPV')  and t.videoland = 0" & _
 " group by vodstudio, productstudio, c.customers_id, t.created_at "
 
         Dim sqlKPN As String = " select 'KPN' source, " & _
@@ -391,7 +394,10 @@ Public Class clsStudio
 " end ) amount_sum from " & _
 " ( "
         Dim sqlDVDPOST As String = "  select 'DVDPOST' source, " & _
-"  s.studio_name vodstudio, " & _
+" ifnull((select st.studio_name from streaming_viewing_histories s  " & _
+" left join streaming_products sp on sp.id = s.streaming_product_id " & _
+" left join studio st on st.studio_id = sp.studio_id " & _
+" where s.token_id = t.id limit 1), s.studio_name) vodstudio, " & _
 "  ps.studio_name as productstudio, " & _
 "  p.products_title, " & _
 "  t.imdb_id, " & _
@@ -420,7 +426,7 @@ Public Class clsStudio
  " left join studio ps on ps.studio_id = p.products_studio " & _
  " left join directors d on d.directors_id = p.products_directors_id " & _
 " where t.compensed = 0 and sp.expire_at between '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' " & _
-" and s.studio_id = " & in_studio_id & " and t.kind in ('NORMAL','PPV') " & _
+" and s.studio_id = " & in_studio_id & " and t.kind in ('NORMAL','PPV')  and t.videoland = 0" & _
 " group by vodstudio, productstudio, c.customers_id, t.created_at "
 
         Dim sqlKPN As String = " select 'KPN' source, " & _
@@ -636,7 +642,7 @@ Public Class clsStudio
        " left join studio ps on ps.studio_id = p.products_studio " & _
        " left join directors d on d.directors_id = p.products_directors_id " & _
         "         where t.compensed = 0 and s.studio_id = " & in_studio_id & _
-        " and t.kind in ('NORMAL','PPV') " & _
+        " and t.kind in ('NORMAL','PPV')  and t.videoland = 0" & _
 " group by s.studio_name, ps.studio_name, c.customers_id, t.created_at " & _
   "             order by s.studio_name, ps.studio_name,  p.products_title, t.created_at  " & _
   " ) x " & _
@@ -704,7 +710,7 @@ Public Class clsStudio
 " left join studio ps on ps.studio_id = p.products_studio " & _
 " left join directors d on d.directors_id = p.products_directors_id " & _
 " where t.compensed = 0 and date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
-" and t.kind in ('NORMAL','PPV') " & _
+" and t.kind in ('NORMAL','PPV')  and t.videoland = 0 " & _
 allstudio & _
 " group by s.studio_name, ps.studio_name, c.customers_id, t.created_at " & _
 " order by s.studio_name, ps.studio_name,  p.products_title " & _
@@ -929,7 +935,7 @@ allstudio & _
 " left join studio ps on ps.studio_id = p.products_studio " & _
 " left join directors d on d.directors_id = p.products_directors_id " & _
 " where t.compensed = 0 and date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
-" and t.kind in ('SVOD_ADULT') " & _
+" and t.kind in ('SVOD_ADULT')  and t.videoland = 0" & _
 allstudio & _
 " group by s.studio_name, ps.studio_name, c.customers_id, t.created_at " & _
 " order by s.studio_name, ps.studio_name,  p.products_title " & _
@@ -1004,8 +1010,12 @@ allstudio & _
         ", date(sysdate()) date_created, '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' period_start , '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' period_end" & _
         " from " & _
         " ( "
+        '"  s.studio_name vodstudio, " & _
         Dim sqlDVDPOST As String = "  select 'DVDPOST' source, " & _
-"  s.studio_name vodstudio, " & _
+" ifnull((select st.studio_name from streaming_viewing_histories s  " & _
+" left join streaming_products sp on sp.id = s.streaming_product_id " & _
+" left join studio st on st.studio_id = sp.studio_id " & _
+" where s.token_id = t.id limit 1), s.studio_name) vodstudio, " & _
 "  ps.studio_name as productstudio, " & _
 "  p.products_title, " & _
 "  t.imdb_id, " & _
@@ -1026,15 +1036,15 @@ allstudio & _
 " s.fee_back_catalogue " & _
 "  from tokens t  " & _
 "  join (select imdb_id,products_directors_id,products_date_available,products_title, products_studio, products_type from products group by imdb_id) p on t.imdb_id = p.imdb_id " & _
- " join (select s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at,s.credits, " & _
- " ( select studio_id from streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id and sp1.source = 'alphanetworks' and sp1.status = 'online_test_ok' order by updated_at desc limit 1 ) as studio_id from streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' group by s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at) sp on p.imdb_id = sp.imdb_id  and ( ( t.created_at between sp.available_from and expire_at ) or (t.created_at between sp.available_backcatalogue_from and expire_backcatalogue_at))" & _
+ " join (select s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at, s.credits, " & _
+ " ( select studio_id from streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id  and sp1.source = 'alphanetworks' and sp1.status = 'online_test_ok' order by updated_at desc limit 1  ) as studio_id from streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' group by s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at) sp on p.imdb_id = sp.imdb_id  and ( ( t.created_at between sp.available_from and expire_at ) or (t.created_at between sp.available_backcatalogue_from and expire_backcatalogue_at))" & _
  " join customers c on t.customer_id = c.customers_id  join products pabo on pabo.products_id = fn_customers_abopackage(c.customers_id,t.created_at)  " & _
  " join products_abo pa on pabo.products_id = pa.products_id " & _
  " left join studio s on s.studio_id = sp.studio_id " & _
  " left join studio ps on ps.studio_id = p.products_studio " & _
  " left join directors d on d.directors_id = p.products_directors_id " & _
 " where t.compensed = 0 and date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
-" and t.kind in ('NORMAL','PPV') " & _
+" and t.kind in ('NORMAL','PPV') and t.videoland = 0" & _
 allstudio & _
 " group by vodstudio, productstudio, c.customers_id, t.created_at "
 
@@ -1228,7 +1238,7 @@ allstudio & _
 " left join dvdpost_be_prod.studio s on s.studio_id = sp.studio_id" & _
 " left join dvdpost_be_prod.studio ps on ps.studio_id = p.products_studio" & _
 " left join plush_production.directors d on d.directors_id = p.products_directors_id" & _
-" where t.compensed = 0 and date(t.created_at) >= date(cc.last_abo_start) and date(t.created_at) <= date(cc.last_abo_end) " & _
+" where t.compensed = 0 and date(t.created_at) >= date(cc.last_abo_start) and date(t.created_at) < date(cc.last_abo_end) " & _
 " and t.is_ppv = 0 and t.overwatched = 1 and cc.report_year = year('" & DVDPostTools.ClsDate.formatDate(dateFrom) & "') and cc.report_month = month('" & DVDPostTools.ClsDate.formatDate(dateFrom) & "')" & _
 allstudio & _
 " group by s.studio_name, ps.studio_name, c.customers_id, t.created_at " & _
@@ -1270,6 +1280,63 @@ allstudio & _
         '" where t.compensed = 0 and date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
         '" and t.is_ppv = 0 and t.overwatched = 1 " & _
 
+
+        Return sql
+    End Function
+
+    Public Shared Function GetUnivercineSVODSummaryReport(ByVal dateFrom As String, ByVal dateTo As String, ByVal studio_id As Integer, ByVal dbPrefix As String) As String
+        Dim sql As String
+
+        Dim UniverCineStudio As String = " and s.studio_id = 804"
+
+        'If studio_id <> -1 Then
+        'allstudio = allstudio & " and s.studio_id = 804"
+        'End If
+
+        sql = " select y.vodstudio, y.productstudio, y.products_title, y.number_titles, y.number_titles * y.svod_minimum_back_catalogue amount_sum, y.date_created, y.period_start, y.period_end" & _
+     " from " & _
+"(  select x.vodstudio, x.productstudio, x.products_title, count(x.imdb_id) number_titles, sum(format(x.price_of_movie_tvac,2))  tvac_sum, " & _
+     " sum(format(x.price_of_movie_tvac,2)/1.21) htvac_sum, " & _
+     " x.catalogue_type, x.svod_fee_new_vod, x.svod_minimum_new_vod, x.svod_minimum_back_catalogue, x.svod_fee_back_catalogue " & _
+", date(sysdate()) date_created, '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' period_start , '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' period_end" & _
+" from ( " & _
+" select " & _
+" s.studio_name vodstudio, " & _
+" ps.studio_name as productstudio, " & _
+" p.products_title," & _
+" cc.customer_id," & _
+" t.created_at," & _
+" cc.customers_abo_type," & _
+" c.customers_lastname," & _
+" c.customers_firstname," & _
+" c.customers_language," & _
+" t.imdb_id," & _
+" p.products_type," & _
+" p.products_date_available," & _
+" sp.available_from," & _
+" sp.expire_at," & _
+" sp.available_backcatalogue_from," & _
+" sp.expire_backcatalogue_at," & _
+" if(t.created_at between available_from and expire_at,'N',if(t.created_at between available_backcatalogue_from and expire_backcatalogue_at,'B','B')) as catalogue_type," & _
+" cast(t.svod_price as decimal(4,2)) price_of_movie_tvac," & _
+" cast((t.svod_price/ 1.21) as decimal(4,2))  price_of_movie_htva, " & _
+" s.svod_minimum_new_vod, " & _
+" s.svod_fee_new_vod, " & _
+" s.svod_minimum_back_catalogue, " & _
+" s.svod_fee_back_catalogue " & _
+" from " & dbPrefix & ".customers_counter cc join " & dbPrefix & ".reporting_tokens t on cc.customer_id = t.customer_id" & _
+" join (select imdb_id,products_directors_id,products_date_available,products_title, products_studio, products_type from plush_production.products group by imdb_id) p on t.imdb_id = p.imdb_id" & _
+" join (select s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at," & _
+" ( select studio_id from plush_production.streaming_products sp1 where sp1.studio_id is not null and sp1.studio_id > 0 and sp1.imdb_id = s.imdb_id  and sp1.source = 'alphanetworks' and sp1.status = 'online_test_ok' order by updated_at desc limit 1 ) as studio_id from plush_production.streaming_products s where s.source = 'alphanetworks' and s.status = 'online_test_ok' group by s.imdb_id, s.available_from, s.expire_at, s.available_backcatalogue_from, s.expire_backcatalogue_at) sp on p.imdb_id = sp.imdb_id  and ( ( t.created_at between sp.available_from and expire_at ) or (t.created_at between sp.available_backcatalogue_from and expire_backcatalogue_at))" & _
+" join plush_production.customers c on t.customer_id = c.customers_id" & _
+" left join dvdpost_be_prod.studio s on s.studio_id = sp.studio_id" & _
+" left join dvdpost_be_prod.studio ps on ps.studio_id = p.products_studio" & _
+" left join plush_production.directors d on d.directors_id = p.products_directors_id" & _
+" where t.compensed = 0 and date(t.created_at) >= date(cc.last_abo_start) and date(t.created_at) < date(cc.last_abo_end) " & _
+" and t.is_ppv = 0 and t.overwatched = 1 and cc.report_year = year('" & DVDPostTools.ClsDate.formatDate(dateFrom) & "') and cc.report_month = month('" & DVDPostTools.ClsDate.formatDate(dateFrom) & "')" & _
+UniverCineStudio & _
+" group by s.studio_name, ps.studio_name, c.customers_id, t.created_at " & _
+" ) x  group by x.vodstudio, x.productstudio, x.products_title order by x.vodstudio, x.productstudio, x.products_title ) y group by 1,2,3"
 
         Return sql
     End Function
@@ -1371,7 +1438,7 @@ allstudio & _
         " left join studio ps on ps.studio_id = p.products_studio " & _
         " left join directors d on d.directors_id = p.products_directors_id " & _
         " where t.compensed = 0 and date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
-        " and t.kind in ('NORMAL','PPV') " & _
+        " and t.kind in ('NORMAL','PPV')  and t.videoland = 0" & _
         " group by s.studio_name, ps.studio_name, c.customers_id, t.created_at " '& _
         '" order by s.studio_name, ps.studio_name,  p.products_title "
 
@@ -1521,7 +1588,7 @@ allstudio & _
          " left join studio ps on ps.studio_id = p.products_studio " & _
          " left join directors d on d.directors_id = p.products_directors_id " & _
         " where t.compensed = 0 and date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
-        " and t.kind in ('NORMAL','PPV') " & _
+        " and t.kind in ('NORMAL','PPV')  and t.videoland = 0" & _
         " group by s.studio_name, ps.studio_name, c.customers_id, t.created_at " '& _
         '" order by s.studio_name, ps.studio_name,  p.products_title "
 

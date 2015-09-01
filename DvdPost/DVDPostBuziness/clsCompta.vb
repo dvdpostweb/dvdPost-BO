@@ -119,6 +119,71 @@ Public Class clsCompta
         End Try
     End Sub
 
+    Friend Sub designReportAndSendEmail(ByVal dtOneCust As DataView, ByVal rowReport As DataRow)
+
+        Dim report As New DevExpress.XtraReports.UI.XtraReport
+
+        Dim path As String = rowReport("ReportPath")
+        Dim reportName As String = rowReport("name")
+        Dim pathEsker As String
+        Dim strdateFormat As String
+        Dim saveFileDialog As Windows.Forms.SaveFileDialog
+        report.LoadLayout(path & "\\" & rowReport("Name") & ".repx")
+        report.DataSource = dtOneCust.ToTable()
+        ' report.Name = "_" & Convert.ToString(Format(Date.Now, "yyyyMMdd")) & "_" & reportName
+        'ex.OpenReport(report)
+        'ex.FileName = path
+        'ex.Show()
+        'report.ShowDesigner()
+
+        Dim pdfOptions As DevExpress.XtraPrinting.PdfExportOptions = report.ExportOptions.Pdf
+        pdfOptions.Compressed = True
+        pdfOptions.NeverEmbeddedFonts = "Microsoft Sans Serif"
+        strdateFormat = Convert.ToString(Format(Date.Now, "yyyyMMdd"))
+        report.Name = reportName & "_" & strdateFormat & "_" & dtOneCust.ToTable().Rows(0)("customers_id")
+
+        Try
+            'report.ShowDesigner()
+            'report.ShowPreview()
+
+            'report.ExportToPdf("C:\Documents and Settings\gauthier\Bureau\" & Convert.ToString(Format(Date.Now, "yyyyMMdd")) & "_" & reportName & ".pdf")
+            Dim filename As String = strdateFormat & "_" & reportName & "_" & dtOneCust.ToTable().Rows(0)("customers_id")
+
+            If DvdPostData.clsSession.isBatch Then
+                pathEsker = System.Configuration.ConfigurationManager.AppSettings(KEY_ESKERLOADER)
+                If System.IO.Directory.Exists(pathEsker) Then
+                    report.ExportToPdf(pathEsker & filename & ".pdf")
+
+                Else
+                    clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Report, "ERROR path EskerLoader")
+                End If
+                Dim ok As Boolean
+                'For Each rCustomer As DataRow In dtCustomers.Rows
+
+                ok = clsMail.SendMailWithAttachement(dtOneCust.ToTable().Rows(0), pathEsker & filename & ".pdf", DVDPostBuziness.clsMail.Mail.MAIL_VIRMAN)
+                If Not ok Then
+                    clsMsgError.MsgBox("mail to customers_id " & dtOneCust.ToTable().Rows(0)("customers_id") & " not sent ")
+                End If
+                'Return
+                'ForcedUpdateStepStatus(stepCurrent, rCustomer("id"))
+
+                'Next
+                clsMsgError.MsgBox("sending mails for mail_id finished: OK = " & ok.ToString())
+            Else
+                saveFileDialog = New Windows.Forms.SaveFileDialog()
+                saveFileDialog.Filter = "pdf (*.pdf)|*.pdf "
+                saveFileDialog.FileName = filename
+                If (saveFileDialog.ShowDialog() = Windows.Forms.DialogResult.OK) Then
+                    report.ExportToPdf(saveFileDialog.FileName)
+                End If
+            End If
+
+        Catch e As Exception
+            clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Report, e)
+            clsMsgError.MsgBox(e.Message)
+        End Try
+    End Sub
+
     Public Sub sendLetter(ByVal dtCustomers As DataTable, ByVal report_id As Integer, Optional ByVal suspended As Boolean = False)
         Dim dvCust As DataView
         Dim dtReport As New DataTable
@@ -143,6 +208,31 @@ Public Class clsCompta
         End If
 
 
+
+    End Sub
+
+    Public Sub sendLetterAndEmail(ByVal dtCustomers As DataTable, ByVal report_id As Integer, Optional ByVal suspended As Boolean = False)
+        Dim dtReport As New DataTable
+
+        dtReport = DvdPostData.clsConnection.FillDataSet(DvdPostData.PaymentOfflineData.GetReport(report_id))
+        If dtReport.Rows.Count > 0 Then
+            For Each drv As DataRow In dtCustomers.Rows
+                Dim dt As DataTable = New DataTable()
+                For lang As Integer = 1 To 3
+                    Dim dvCust As DataView = New DataView(dtCustomers, "customers_language = " & lang & " and customers_id = " & drv("customers_id"), "customers_id ", DataViewRowState.CurrentRows)
+                    If dvCust.Count > 0 Then
+                        designReportAndSendEmail(dvCust, dtReport.Rows(lang - 1))
+                        If suspended Then
+                            For Each drvOne As DataRowView In dvCust
+                                If suspended Then
+                                    DvdPostData.clsConnection.ExecuteNonQuery(DvdPostData.ClsCustomersData.GetUpdateSuspendedCustomers(drvOne("customers_id")))
+                                End If
+                            Next
+                        End If
+                    End If
+                Next
+            Next
+        End If
 
     End Sub
 

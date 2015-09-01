@@ -35,10 +35,11 @@ Partial Class frmStatPayment
         Me.txtToDate = New DevExpress.XtraEditors.DateEdit
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
         Me.GCWithDate = New DevExpress.XtraEditors.GroupControl
+        Me.btnVodStatusHistory = New DevExpress.XtraEditors.SimpleButton
         Me.BtnLongTimeCust = New DevExpress.XtraEditors.SimpleButton
         Me.btnViewVodHistory = New DevExpress.XtraEditors.SimpleButton
         Me.btnViewStopCreditHistory = New DevExpress.XtraEditors.SimpleButton
-        Me.btnVodStatusHistory = New DevExpress.XtraEditors.SimpleButton
+        Me.btnDailyByPmtMethodStatus = New DevExpress.XtraEditors.SimpleButton
         Me.Panel1.SuspendLayout()
         CType(Me.TabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -72,6 +73,7 @@ Partial Class frmStatPayment
         '
         'TabParameters
         '
+        Me.TabParameters.Controls.Add(Me.btnDailyByPmtMethodStatus)
         Me.TabParameters.Controls.Add(Me.GCWithDate)
         Me.TabParameters.Controls.Add(Me.BtnUnusedCredit)
         '
@@ -235,6 +237,16 @@ Partial Class frmStatPayment
         Me.GCWithDate.TabIndex = 38
         Me.GCWithDate.Text = "Stat With Date"
         '
+        'btnVodStatusHistory
+        '
+        Me.btnVodStatusHistory.Location = New System.Drawing.Point(605, 134)
+        Me.btnVodStatusHistory.Name = "btnVodStatusHistory"
+        Me.HelpProvider1.SetShowHelp(Me.btnVodStatusHistory, False)
+        Me.btnVodStatusHistory.Size = New System.Drawing.Size(183, 46)
+        Me.btnVodStatusHistory.TabIndex = 42
+        Me.btnVodStatusHistory.Text = "VOD Status History"
+        Me.btnVodStatusHistory.ToolTip = "View VOD status History"
+        '
         'BtnLongTimeCust
         '
         Me.BtnLongTimeCust.Location = New System.Drawing.Point(605, 82)
@@ -265,15 +277,15 @@ Partial Class frmStatPayment
         Me.btnViewStopCreditHistory.Text = "Stop Credit History"
         Me.btnViewStopCreditHistory.ToolTip = "View Stop Credit History"
         '
-        'btnVodStatusHistory
+        'btnDailyByPmtMethodStatus
         '
-        Me.btnVodStatusHistory.Location = New System.Drawing.Point(605, 134)
-        Me.btnVodStatusHistory.Name = "btnVodStatusHistory"
-        Me.HelpProvider1.SetShowHelp(Me.btnVodStatusHistory, False)
-        Me.btnVodStatusHistory.Size = New System.Drawing.Size(183, 46)
-        Me.btnVodStatusHistory.TabIndex = 42
-        Me.btnVodStatusHistory.Text = "VOD Status History"
-        Me.btnVodStatusHistory.ToolTip = "View VOD status History"
+        Me.btnDailyByPmtMethodStatus.Location = New System.Drawing.Point(240, 296)
+        Me.btnDailyByPmtMethodStatus.Name = "btnDailyByPmtMethodStatus"
+        Me.HelpProvider1.SetShowHelp(Me.btnDailyByPmtMethodStatus, False)
+        Me.btnDailyByPmtMethodStatus.Size = New System.Drawing.Size(258, 46)
+        Me.btnDailyByPmtMethodStatus.TabIndex = 43
+        Me.btnDailyByPmtMethodStatus.Text = "Daily amount by payment method status "
+        Me.btnDailyByPmtMethodStatus.ToolTip = "View VOD status History"
         '
         'frmStatPayment
         '
@@ -322,4 +334,5 @@ Partial Class frmStatPayment
     Friend WithEvents btnViewVodHistory As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents BtnLongTimeCust As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnVodStatusHistory As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnDailyByPmtMethodStatus As DevExpress.XtraEditors.SimpleButton
 End Class

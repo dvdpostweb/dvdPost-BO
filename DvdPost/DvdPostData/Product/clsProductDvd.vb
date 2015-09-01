@@ -579,7 +579,7 @@ Public Class clsProductDvd
       " where c.customers_abo = 1 and c.customers_abo_suspended in(0,1) and ww.product_id = p.products_id) customers_active " & _
       ", ( select count(*) from wishlist ww  join customers c on ww.customers_id = c.customers_id " & _
       " where ((c.customers_abo = 1 and c.customers_abo_suspended = 2 ) or c.customers_abo = 0  )and ww.product_id = p.products_id) customers_not_active " & _
-      ", ( select if(count(*)>0,1,0) from dvdpost_be_prod.streaming_products sp where p.imdb_id = sp.imdb_id and sp.source = 'ALPHANETWORKS' and sp.status = 'online_test_ok' and ((sp.expire_at > sysdate() and sp.available_from < sysdate()) or ( sp.available_backcatalogue_from < sysdate() and sp.expire_backcatalogue_at > sysdate() ) ) ) vod_exists " & _
+      ", ( select if(count(*)>0,1,0) from dvdpost_be_prod.streaming_products sp where p.imdb_id = sp.imdb_id and sp.source <> 'SOFTLAYER' and sp.status = 'online_test_ok' and ((sp.expire_at > sysdate() and sp.available_from < sysdate()) or ( sp.available_backcatalogue_from < sysdate() and sp.expire_backcatalogue_at > sysdate() ) ) ) vod_exists " & _
       " from products p " & _
               " join products_description pde on p.products_id = pde.products_id and pde.language_id = 1 " & _
               " left join (select products_id,count(*) cpt_dvd from products_dvd pd where pd.products_dvd_status = 1 group by products_id) pdvd on p.products_id = pdvd.products_id " & _

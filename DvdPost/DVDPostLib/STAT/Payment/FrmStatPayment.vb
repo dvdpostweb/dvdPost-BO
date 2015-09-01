@@ -119,4 +119,11 @@ Public Class frmStatPayment
         'DvdPostData.clsConnection.timeoutMIN = 10
         loadData(sql)
     End Sub
+
+    Private Sub btnDailyByPmtMethodStatus_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDailyByPmtMethodStatus.Click
+        Dim sql As String
+        sql = DvdPostData.ClsStatPayment.GetViewDailyByPmtMethodAndStatus(txtFromDate.EditValue, txtToDate.EditValue)
+        'DvdPostData.clsConnection.timeoutMIN = 10
+        loadData(sql)
+    End Sub
 End Class

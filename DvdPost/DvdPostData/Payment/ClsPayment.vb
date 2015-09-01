@@ -168,6 +168,19 @@ Public Class ClsPayment
         Return sql
     End Function
 
+    Public Shared Function GetUpdatePaymentStatusToEurofidesToSend(ByVal id As Integer, ByVal status As PaymentOfflineData.StepPayment, ByVal old_status As PaymentOfflineData.StepPayment) As String
+        Dim sql As String
+
+        sql = " update payment " & _
+              " set payment_status=" & status & _
+              " ,last_modified=now()" & _
+              " , last_status_id = " & old_status & _
+              ", user_modified = " & clsSession.user_id & _
+              " where payment_status = " & old_status & _
+              " and id = " & id
+        Return sql
+    End Function
+
     Public Shared Function GetUpdatePaymentStatus(ByVal id As Integer, ByVal status As PaymentOfflineData.StepPayment, ByVal old_status As PaymentOfflineData.StepPayment) As String
         Dim sql As String
 

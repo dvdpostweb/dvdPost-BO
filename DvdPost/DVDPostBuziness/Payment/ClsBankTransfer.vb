@@ -79,6 +79,32 @@ Public Class ClsBankTransfer
 
     End Sub
 
+    Public Shared Sub printAndSendEmail(Optional ByVal customer_id As Integer = 0)
+
+        Dim chooseSql As String
+        Dim dt As DataTable
+        Dim chooseSqlADULTSVOD As String
+        Dim dtADULTSVOD As DataTable
+        'strDatePrint = GetDatePrint()
+
+        chooseSql = DvdPostData.clsBatchBankTransfert.GetDataPaymentCustomer(DvdPostData.clsBatchBankTransfert.LIMIT_DAYPAID, customer_id)
+        dt = DvdPostData.clsConnection.FillDataSet(chooseSql)
+
+        Dim clscompta As DVDPostBuziness.clsCompta = New DVDPostBuziness.clsCompta()
+        clscompta.sendLetterAndEmail(dt, DvdPostData.PaymentOfflineData.TypeSend.VIRMAN)
+        changeStatus(dt)
+        'adult svod
+        chooseSqlADULTSVOD = DvdPostData.clsBatchBankTransfert.GetDataADULTSVODPaymentCustomer(DvdPostData.clsBatchBankTransfert.LIMIT_DAYPAID, customer_id)
+        dtADULTSVOD = DvdPostData.clsConnection.FillDataSet(chooseSqlADULTSVOD)
+
+        clscompta.sendLetter(dtADULTSVOD, DvdPostData.PaymentOfflineData.TypeSend.LETTER_BANKTRANSFER_ADULTSVOD)
+        changeStatus(dtADULTSVOD)
+
+        chooseSql = DvdPostData.clsBatchBankTransfert.UpdateCustomersInRecoveryStep(DvdPostData.clsBatchBankTransfert.LIMIT_DAYPAID)
+        DvdPostData.clsConnection.ExecuteNonQuery(chooseSql)
+
+    End Sub
+
     Private Shared Sub changeStatus(ByVal dt As DataTable)
         Dim list_id As String = ""
         Dim sql As String = ""

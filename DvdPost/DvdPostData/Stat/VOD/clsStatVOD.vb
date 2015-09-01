@@ -63,6 +63,7 @@ Public Class clsStatVOD
 "case t.source_id " & _
 "when 53 then 'IDEVICES' " & _
 "when 54 then 'Samsung' " & _
+"when 57 then 'PlayStation' " & _
 "else 'WEBSITE' end source,  count(t.id) " & _
 "from plush_production.tokens t " & _
 "where date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "' " & _

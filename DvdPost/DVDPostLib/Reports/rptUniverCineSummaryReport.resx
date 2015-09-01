@@ -117,7 +117,97 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="DsProducts1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>142, 17</value>
+  <metadata name="Detail.Name" xml:space="preserve">
+    <value>Detail</value>
+  </metadata>
+  <metadata name="XrLabel14.Name" xml:space="preserve">
+    <value>XrLabel14</value>
+  </metadata>
+  <metadata name="XrLabel3.Name" xml:space="preserve">
+    <value>XrLabel3</value>
+  </metadata>
+  <metadata name="XrLabel2.Name" xml:space="preserve">
+    <value>XrLabel2</value>
+  </metadata>
+  <metadata name="XrLabel1.Name" xml:space="preserve">
+    <value>XrLabel1</value>
+  </metadata>
+  <metadata name="StudioBillingReport1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="StudioBillingReport1.Name" xml:space="preserve">
+    <value>StudioBillingReport1</value>
+  </metadata>
+  <metadata name="XtraGridBlending1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>181, 17</value>
+  </metadata>
+  <metadata name="XtraGridBlending1.Name" xml:space="preserve">
+    <value>XtraGridBlending1</value>
+  </metadata>
+  <metadata name="GroupHeader1.Name" xml:space="preserve">
+    <value>GroupHeader1</value>
+  </metadata>
+  <metadata name="GroupFooter1.Name" xml:space="preserve">
+    <value>GroupFooter1</value>
+  </metadata>
+  <metadata name="XrPanel1.Name" xml:space="preserve">
+    <value>XrPanel1</value>
+  </metadata>
+  <metadata name="XrLabel16.Name" xml:space="preserve">
+    <value>XrLabel16</value>
+  </metadata>
+  <metadata name="XrLabel15.Name" xml:space="preserve">
+    <value>XrLabel15</value>
+  </metadata>
+  <metadata name="XrLabel6.Name" xml:space="preserve">
+    <value>XrLabel6</value>
+  </metadata>
+  <metadata name="lblStudioSummary.Name" xml:space="preserve">
+    <value>lblStudioSummary</value>
+  </metadata>
+  <metadata name="ReportHeader.Name" xml:space="preserve">
+    <value>ReportHeader</value>
+  </metadata>
+  <metadata name="XrLabel9.Name" xml:space="preserve">
+    <value>XrLabel9</value>
+  </metadata>
+  <metadata name="XrLabel10.Name" xml:space="preserve">
+    <value>XrLabel10</value>
+  </metadata>
+  <metadata name="XrLabel13.Name" xml:space="preserve">
+    <value>XrLabel13</value>
+  </metadata>
+  <metadata name="XrLabel17.Name" xml:space="preserve">
+    <value>XrLabel17</value>
+  </metadata>
+  <metadata name="XrLabel22.Name" xml:space="preserve">
+    <value>XrLabel22</value>
+  </metadata>
+  <metadata name="XrLabel23.Name" xml:space="preserve">
+    <value>XrLabel23</value>
+  </metadata>
+  <metadata name="XrLabel24.Name" xml:space="preserve">
+    <value>XrLabel24</value>
+  </metadata>
+  <metadata name="XrLabel25.Name" xml:space="preserve">
+    <value>XrLabel25</value>
+  </metadata>
+  <metadata name="GroupFooter2.Name" xml:space="preserve">
+    <value>GroupFooter2</value>
+  </metadata>
+  <metadata name="XrLabel4.Name" xml:space="preserve">
+    <value>XrLabel4</value>
+  </metadata>
+  <metadata name="XrLabel20.Name" xml:space="preserve">
+    <value>XrLabel20</value>
+  </metadata>
+  <metadata name="XrLabel21.Name" xml:space="preserve">
+    <value>XrLabel21</value>
+  </metadata>
+  <metadata name="XrLabel26.Name" xml:space="preserve">
+    <value>XrLabel26</value>
+  </metadata>
+  <metadata name="$this.Name" xml:space="preserve">
+    <value>rptUniverCineSummaryReport</value>
   </metadata>
 </root>

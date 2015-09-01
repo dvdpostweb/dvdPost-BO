@@ -24,9 +24,8 @@ Public Class clsOdersStatusHistory
         COMPLAINT_INADMISSIBLE = 9
         LOST_BY_POST = 10
         TEMPORARY_INTERCHANGE = 11
+        PAID = 12
         TMP
-
-
     End Enum
     'Public Enum OrderStatus
     '    ORDERS_STATUS_READY_FOR_EXPEDITION = 1
@@ -103,7 +102,7 @@ Public Class clsOdersStatusHistory
         sql = " select id,name from orders_status_new where id in (" & _
               OrderStatusNew.BROKEN_CHARGE & "," & OrderStatusNew.CHECK & _
               "," & OrderStatusNew.INTERCHANGE & "," & OrderStatusNew.DELAYED_BACK & _
-              "," & OrderStatusNew.DELAYED_GO & ")"
+              "," & OrderStatusNew.DELAYED_GO & "," & OrderStatusNew.PAID & ")"
 
         Return sql
     End Function
@@ -313,7 +312,7 @@ Public Class clsOdersStatusHistory
         sql = "select op.orders_id,o.orders_status, op.orders_products_status,pd.products_dvd_status, op.products_dvd, o.customers_id, o.date_purchased " & _
          " from (select max(o.orders_id) orders_id from orders o " & _
          "       join orders_products op on o.orders_id = op.orders_id " & _
-         "       where op.products_id = " & products_id & " and op.products_dvd = " & dvd_id & " and o.orders_status not in (" & OrderStatusNew.RETURNED & "," & OrderStatusNew.COMPLAINT_INADMISSIBLE & ")) last_order " & _
+         "       where op.products_id = " & products_id & " and op.products_dvd = " & dvd_id & " and o.orders_status not in (" & OrderStatusNew.RETURNED & "," & OrderStatusNew.COMPLAINT_INADMISSIBLE & "," & OrderStatusNew.PAID & ")) last_order " & _
          " join orders o on last_order.orders_id = o.orders_id " & _
          " join orders_products op on op.orders_id = o.orders_id " & _
          " join products_dvd pd on pd.products_id = " & products_id & " and pd.products_dvdid = " & dvd_id

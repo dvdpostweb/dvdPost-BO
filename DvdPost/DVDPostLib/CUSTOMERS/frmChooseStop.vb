@@ -30,13 +30,19 @@ Public Class frmChooseStop
             Dim commentAboStop As String = Me.TextBox1.Text
             Dim cls As New DVDPostBuziness.ClsCustomers
             Dim reason_Id As Integer = Me.GridView1.GetDataRow(GridView1.FocusedRowHandle)("id")
+
+            If standard Then
+                cls.CreateAutoAboStopReasonAndHistory(drCustomer, reason_Id, commentAboStop)
+                Me.Close()
+                Return
+            End If
             cls.AboStopManual(drCustomer, reason_id, commentAboStop)
 
             ' Dim aboStop As New DVDPostBuziness.aboReconduction()
 
             'Dim _return As Integer
 
-            'If standard The
+
             ' aboStop.stopAbo(customers_id, typeAbo, "Manual Stop", reasonId, commentAboStop)
             MsgBox("Customer has been stopped", MsgBoxStyle.Exclamation)
             'Else

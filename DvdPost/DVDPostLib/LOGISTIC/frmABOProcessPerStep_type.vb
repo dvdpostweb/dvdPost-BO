@@ -1097,7 +1097,19 @@ Public Class frmABOProcessPerStep_type
     End Function
     Private Function GetFirstDVDSerie(ByVal WLRow As DataRowView, ByVal wl_viewSeries As DataView) As DataView
         Dim wl_viewFirst As DataView
-        wl_viewFirst = New DataView(wl_viewSeries.Table, "imdb_id_serie = " & WLRow("imdb_id_serie"), "products_series_id,products_series_number", DataViewRowState.Unchanged)
+        Dim different_serie_imdb As DataRow() = wl_viewSeries.Table.Select("products_series_id = " & WLRow("products_series_id"), "imdb_id_serie", DataViewRowState.Unchanged)
+        Dim imdb_counter As Integer = 1
+        Dim serie_diff_imdb As String = "imdb_id_serie = " & WLRow("imdb_id_serie")
+        If different_serie_imdb.Length > 1 Then
+            For index As Integer = 0 To different_serie_imdb.Length - 2
+                If different_serie_imdb(index)("imdb_id_serie") <> different_serie_imdb(index + 1)("imdb_id_serie") Then
+                    serie_diff_imdb = "products_series_id = " & WLRow("products_series_id")
+                    Exit For
+                End If
+            Next
+        End If
+
+        wl_viewFirst = New DataView(wl_viewSeries.Table, serie_diff_imdb, "products_series_id,products_series_number", DataViewRowState.Unchanged)
         Return wl_viewFirst
     End Function
 

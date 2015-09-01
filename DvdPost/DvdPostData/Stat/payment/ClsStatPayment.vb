@@ -283,6 +283,19 @@ Public Class ClsStatPayment
         Return sql
     End Function
 
+    Public Shared Function GetViewDailyByPmtMethodAndStatus(ByVal dateFrom As String, ByVal dateTo As String) As String
+        Dim sql As String
+
+        sql = " SELECT  year(p.date_added) y, month(p.date_added) m, day(p.date_added) d," & _
+" (SELECT pm.customers_abo_payment_method_name FROM customers_abo_payment_method pm where pm.customers_abo_payment_method_id = p.payment_method) Payment_Method, " & _
+" (SELECT ps.name FROM payment_status ps where ps.id = p.payment_status) Payment_Status, " & _
+" sum(amount) Amount " & _
+" FROM payment p where p.date_added > '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "'" & " and p.date_added <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
+" group by 1,2,3,4,5 order by 1,2,3,4,5 "
+
+        Return sql
+    End Function
+
     '    Public Shared Function getStatCreditHistory(ByVal dateFrom As String, ByVal dateTo As String) As String
     '        Dim sql As String
 

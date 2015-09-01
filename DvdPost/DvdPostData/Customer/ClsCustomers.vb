@@ -495,7 +495,7 @@ Public Class ClsCustomersData
         Dim sql As String
 
         sql = " select " & clsMassEmail.CapitalizeSql("customers_firstname", "customers_lastname") & " as customers_name, " & _
-              "c.customers_gender,c.customers_email_address,c.customers_language,c.customers_id,c.customers_abo_payment_method,c.customers_abo,c.customers_abo_dvd_home_norm,c.customers_abo_dvd_home_adult " & _
+              "c.customers_gender,c.customers_email_address, c.site, c.customers_language,c.customers_id,c.customers_abo_payment_method,c.customers_abo,c.customers_abo_dvd_home_norm,c.customers_abo_dvd_home_adult " & _
               " from customers c " & _
               " where c.customers_id = " & customers_id
         Return sql
@@ -717,7 +717,7 @@ Public Class ClsCustomersData
                     " AND type_r_transaction = " & PaymentOfflineData.Type_R_Transaction.PAID & " order by id desc limit 1 ) order by history_id desc ) ceh on ce.customers_id = ceh.customers_id where ce.customers_id = c.customers_id limit 1) bic_changed"
         sql = sql & " FROM customers c join products p on c.customers_next_abo_type = p.products_id "
         sql = sql & " join customer_attributes ca on c.customers_id = ca.customer_id "
-        sql = sql & " join customers_edd edd on edd.customers_id = c.customers_id "
+        sql = sql & " join customers_edd edd on edd.customers_id = c.customers_id and edd.edd_mandate_status in (2,3,4)"
         sql = sql & " left join dom80 dom80 on dom80.dom_nr = c.domiciliation_number "
         sql = sql & " WHERE date(customers_abo_validityto) <= '" & strmysqldate & "'"
         sql = sql & " AND customers_abo = 1 "
@@ -1234,6 +1234,16 @@ Public Class ClsCustomersData
     End Function
 #End Region
 #Region "insert"
+
+    Public Shared Function GetInsertAutoAboStopReasonAndHistory(ByVal customers_id As Integer, ByVal reason_id As Integer, ByVal commentAboStop As String) As String
+        Dim sql As String
+
+        sql = "insert into customers_abo_auto_stop ( customers_id ,date_stop ,reason_id ,COMMENT) "
+        sql = sql & " values ('" & customers_id & "',now(), " & reason_id & " ,'" & commentAboStop & "')"
+        Return sql
+
+    End Function
+
     Public Shared Function GetInsertHistoryAboStop(ByVal customers_id As Integer, ByVal reason_id As Integer, ByVal commentAboStop As String) As String
         Dim sql As String
 

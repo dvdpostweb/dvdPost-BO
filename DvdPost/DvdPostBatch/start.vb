@@ -84,8 +84,11 @@ Module start
                 'clscust.ReconductionVirementADULTSVOD(DvdPostData.ClsCustomersData.Country.BELGIUM)
                 'clscust.ReconductionVirementADULTSVOD(DvdPostData.ClsCustomersData.Country.NEDERLANDS)
 
-                DVDPostBuziness.ClsBankTransfer.print()
-
+                If (Configuration.ConfigurationManager.AppSettings("virmanonemail") = "true") Then
+                    DVDPostBuziness.ClsBankTransfer.printAndSendEmail()
+                Else
+                    DVDPostBuziness.ClsBankTransfer.print()
+                End If
                 Dim _OffLinePay As New DVDPostBuziness.clsOffLinePayments()
                 _OffLinePay.DomiciliationPaymentRecovery_ApplyAllTransitions()
                 _OffLinePay.VirmanPaymentRecovery_ApplyAllTransitions()
@@ -118,7 +121,7 @@ Module start
                 clscust.UpdateDvd_at_Home()
                 DVDPostBuziness.ClsVod.UpdateVodCreditsAfterStartPeriod()
                 DVDPostBuziness.ClsVod.UpdateSoonVod()
-                DVDPostBuziness.ClsproductsDvd.UpdateInCinema()
+                DVDPostBuziness.ClsproductsDvd.UpdateInCinema(Configuration.ConfigurationManager.AppSettings("notincinemaafterdays"))
 
                 clscust.ReconductionPayPal(DvdPostData.ClsCustomersData.Country.BELGIUM)
                 clscust.ReconductionPayPal(DvdPostData.ClsCustomersData.Country.NEDERLANDS)

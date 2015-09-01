@@ -7,7 +7,9 @@ Public Class frmSystemMenu_Browse
         MyBase.New()
 
         'This call is required by the Windows Form Designer.
+
         InitializeComponent()
+        
 
         'Add any initialization after the InitializeComponent() call
 
@@ -103,6 +105,7 @@ Public Class frmSystemMenu_Browse
     Friend WithEvents colSequence As DevExpress.XtraTreeList.Columns.TreeListColumn
     Friend WithEvents colMenuStartID1 As DevExpress.XtraTreeList.Columns.TreeListColumn
     Friend WithEvents colMenuStartCode1 As DevExpress.XtraTreeList.Columns.TreeListColumn
+    Friend WithEvents ImageList3 As System.Windows.Forms.ImageList
     Friend WithEvents colMenuStartCode21 As DevExpress.XtraTreeList.Columns.TreeListColumn
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
@@ -182,6 +185,7 @@ Public Class frmSystemMenu_Browse
         Me.OleDbSelectCommand2 = New System.Data.OleDb.OleDbCommand
         Me.OleDbUpdateCommand2 = New System.Data.OleDb.OleDbCommand
         Me.HelpProvider1 = New System.Windows.Forms.HelpProvider
+        Me.ImageList3 = New System.Windows.Forms.ImageList(Me.components)
         CType(Me.cmbViewListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtQuickSearchRepos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cmbReportListRepos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -206,9 +210,6 @@ Public Class frmSystemMenu_Browse
         Me.ImageList1.Images.SetKeyName(0, "")
         Me.ImageList1.Images.SetKeyName(1, "")
         Me.ImageList1.Images.SetKeyName(2, "")
-        Me.ImageList1.Images.SetKeyName(3, "")
-        Me.ImageList1.Images.SetKeyName(4, "")
-        Me.ImageList1.Images.SetKeyName(5, "")
         '
         'StatusBar1
         '
@@ -430,7 +431,7 @@ Public Class frmSystemMenu_Browse
         '
         Me.ToolBar1.Buttons.AddRange(New System.Windows.Forms.ToolBarButton() {Me.ToolBarButton1, Me.btnNew1, Me.btnEdit1, Me.btnDelete1, Me.btnSave1, Me.btnSep1, Me.btnPrint1})
         resources.ApplyResources(Me.ToolBar1, "ToolBar1")
-        Me.ToolBar1.ImageList = Me.ImageList1
+        Me.ToolBar1.ImageList = Me.ImageList3
         Me.ToolBar1.Name = "ToolBar1"
         Me.HelpProvider1.SetShowHelp(Me.ToolBar1, CType(resources.GetObject("ToolBar1.ShowHelp"), Boolean))
         '
@@ -745,6 +746,17 @@ Public Class frmSystemMenu_Browse
         'HelpProvider1
         '
         resources.ApplyResources(Me.HelpProvider1, "HelpProvider1")
+        '
+        'ImageList3
+        '
+        Me.ImageList3.ImageStream = CType(resources.GetObject("ImageList3.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList3.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList3.Images.SetKeyName(0, "")
+        Me.ImageList3.Images.SetKeyName(1, "")
+        Me.ImageList3.Images.SetKeyName(2, "")
+        Me.ImageList3.Images.SetKeyName(3, "")
+        Me.ImageList3.Images.SetKeyName(4, "")
+        Me.ImageList3.Images.SetKeyName(5, "")
         '
         'frmSystemMenu_Browse
         '
