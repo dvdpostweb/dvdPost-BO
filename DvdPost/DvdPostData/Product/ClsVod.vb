@@ -98,7 +98,7 @@ Public Class ClsVod
         sql = " select * from streaming_products where imdb_id = " & imdb_id & " and season_id = " & season_id & " and episode_id = " & episode_id & _
               " and language_id = " & lang & " and " & strLanguageSubtitle & _
               " and vod_support_id = " & support & _
-              " and source = '" & source & "'" & " and status <> 'deleted' "
+              " and status <> 'deleted' and source <> 'SOFTLAYER' "
 
         Return sql
     End Function
@@ -393,6 +393,7 @@ Public Class ClsVod
             strStudio = "null"
         Else
             strStudio = studio_id
+            is_ppv = IIf(studio_id.Equals("17"), "true", "")
         End If
 
         If status = "" Then
@@ -718,6 +719,7 @@ Public Class ClsVod
             strStudio = "null"
         Else
             strStudio = "'" & studio_id & "'"
+            is_ppv = IIf(studio_id.Equals("17"), "true", "")
         End If
 
         If available_from = DateTime.MinValue Then

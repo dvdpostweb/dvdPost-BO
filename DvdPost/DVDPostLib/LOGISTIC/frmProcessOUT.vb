@@ -890,7 +890,7 @@ Public Class frmProcessOUT
             _labelRow("delivery_postcode") = _row("delivery_postcode")
             _labelRow("lang_name") = _row("lang_name")
             _labelRow("group_abc") = "a"
-
+            _labelRow("flyer_code") = _row("flyer_code")
             objDS.Tables("envelope_labels_multishipment_det").Rows.Add(_labelRow)
         Else
             _XY = "Y"

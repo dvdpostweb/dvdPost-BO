@@ -140,7 +140,7 @@
     <Compile Include="clsAboStopWhy.vb" />
     <Compile Include="Payment\ClsBatchDomiciliation.vb" />
     <Compile Include="clsConnection.vb" />
-    <Compile Include="Customer\ClsCustomers.vb" />
+    <Compile Include="Customer\frmEMailCustomers.vb" />
     <Compile Include="clsEmailWishList.vb" />
     <Compile Include="clsMassEmail.vb" />
     <Compile Include="Logistic\clsProcessIN.vb" />

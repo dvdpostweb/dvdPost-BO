@@ -649,6 +649,8 @@ Public Class frmMain
         '            MsgBox("Error Update File " & ex.Message)
         '        End Try
 
+        MessageBox.Show(Application.StartupPath & "\DVDPostLib.dll")
+
         Dim assemblyBytes As Byte() = System.IO.File.ReadAllBytes(Application.StartupPath & "\DVDPostLib.dll")
         Dim assembly As System.Reflection.Assembly = System.Reflection.Assembly.Load(assemblyBytes)
 
@@ -659,7 +661,9 @@ Public Class frmMain
         'Me.Text = System.Reflection.Assembly.GetExecutingAssembly.GetName.Name & " " & SessionInfo.UserDocPath & " " & assembly.GetName.Version.ToString & _
         '       " - " & SessionInfo.UserFullName & " - " & SessionInfo.EntityName & "(" & SessionInfo.EntityCurr & ")"
         Me.Text = System.Reflection.Assembly.GetExecutingAssembly.GetName.Name & " " & DvdPostData.clsConnection.typeEnv & " " & assembly.GetName.Version.ToString & " " & DvdPostData.clsSession.FullName
+
         DvdPostData.clsSession.Version = Me.Text
+
         DVDPostBuziness.clsMsgError.FileAppend("Log_Connexion", "IN " & DvdPostData.clsSession.FullName & " " & DateTime.Now().ToString())
 
 #End If

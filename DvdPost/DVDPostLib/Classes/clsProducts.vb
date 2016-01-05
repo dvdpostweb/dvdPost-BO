@@ -722,6 +722,8 @@ Public Class clsProduct_DVD
         _row("products_other_language") = 0
         _row("products_product_type") = "Movie"
         _row("criteo_status") = 0
+        _row("belgium_ids") = String.Empty
+
         TableOfData.Rows.Add(_row)
         SaveAll()
         'Retreiving the ID just Created
@@ -1754,15 +1756,28 @@ Public Class clsProduct_DVD
 
     Private Sub ChangeOrder(ByVal orders_id As Integer, ByVal old_orders_status As DvdPostData.clsOdersStatusHistory.OrderStatusNew, ByVal new_status As DvdPostData.clsOdersStatusHistory.OrderStatusNew)
         Dim _sql As String
+        Dim sqlGiftSent As String
         _sql = " update orders o set o.orders_status = " & new_status & _
                 ", o.last_modified=now() where orders_id = " & orders_id
 
         Dim updatedRows As Integer = DvdPostData.clsConnection.ExecuteNonQuery(_sql)
         If Not updatedRows > 0 Then
         End If
-        _sql = "insert into orders_status_history  (orders_id, new_value, old_value, date_added, customer_notified ) values (" & orders_id & ", " & _
-            new_status & ", " & old_orders_status & ", now(), 0)"
-        updatedRows = DvdPostData.clsConnection.ExecuteNonQuery(_sql)
+        Try
+            _sql = "insert into orders_status_history  (orders_id, new_value, old_value, date_added, customer_notified ) values (" & orders_id & ", " & _
+                        new_status & ", " & old_orders_status & ", now(), 0)"
+            updatedRows = DvdPostData.clsConnection.ExecuteNonQuery(_sql)
+
+            If new_status = DvdPostData.clsOdersStatusHistory.OrderStatusNew.EXPEDITED Then
+                sqlGiftSent = "insert into customers_gift_sent(customers_id, activation_code,sent_at, campaign_id)" & _
+                                            " select o.customers_id, '' activation_code, now() sent_at, 2 campaign_id from orders o  where o.orders_id = " & orders_id
+                updatedRows = DvdPostData.clsConnection.ExecuteNonQuery(sqlGiftSent)
+            End If
+            
+        Catch ex As Exception
+
+        End Try
+        
     End Sub
 
     Public Sub setOrderAsExpedited(ByVal orders_id As Integer, ByVal old_orders_status As DvdPostData.clsOdersStatusHistory.OrderStatusNew)

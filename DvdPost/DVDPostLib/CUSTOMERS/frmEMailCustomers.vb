@@ -74,6 +74,8 @@ Public Class frmEMailCustomers
     Friend WithEvents textEmailName As DevExpress.XtraEditors.TextEdit
     Friend WithEvents GroupEmailFrom As System.Windows.Forms.GroupBox
     Friend WithEvents LabelControl5 As DevExpress.XtraEditors.LabelControl
+    Friend WithEvents btnNewsletter As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents cmbMessage As DevExpress.XtraEditors.LookUpEdit
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
@@ -101,17 +103,19 @@ Public Class frmEMailCustomers
         Me.CEAboStoppedSince = New DevExpress.XtraEditors.CheckEdit
         Me.SEAboStoppedDelay = New DevExpress.XtraEditors.SpinEdit
         Me.GroupEmailFrom = New System.Windows.Forms.GroupBox
+        Me.txtStrFrom = New DevExpress.XtraEditors.TextEdit
+        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl
+        Me.lblStrFrom = New DevExpress.XtraEditors.LabelControl
+        Me.textEmailName = New DevExpress.XtraEditors.TextEdit
+        Me.lblEmailName = New DevExpress.XtraEditors.LabelControl
+        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl
         Me.lblMessage = New DevExpress.XtraEditors.LabelControl
         Me.cmbMessage = New DevExpress.XtraEditors.LookUpEdit
         Me.TETestEmail = New DevExpress.XtraEditors.TextEdit
         Me.SBTest = New DevExpress.XtraEditors.SimpleButton
         Me.LabelControl2 = New DevExpress.XtraEditors.LabelControl
-        Me.txtStrFrom = New DevExpress.XtraEditors.TextEdit
-        Me.lblStrFrom = New DevExpress.XtraEditors.LabelControl
-        Me.LabelControl4 = New DevExpress.XtraEditors.LabelControl
-        Me.lblEmailName = New DevExpress.XtraEditors.LabelControl
-        Me.textEmailName = New DevExpress.XtraEditors.TextEdit
-        Me.LabelControl5 = New DevExpress.XtraEditors.LabelControl
+        Me.btnNewsletter = New DevExpress.XtraEditors.SimpleButton
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton
         Me.Panel1.SuspendLayout()
         CType(Me.TabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -142,10 +146,10 @@ Public Class frmEMailCustomers
         CType(Me.CEAboStoppedSince.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SEAboStoppedDelay.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupEmailFrom.SuspendLayout()
-        CType(Me.cmbMessage.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TETestEmail.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txtStrFrom.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.textEmailName.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.cmbMessage.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TETestEmail.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'StatusBar1
@@ -166,6 +170,8 @@ Public Class frmEMailCustomers
         '
         'TabParameters
         '
+        Me.TabParameters.Controls.Add(Me.SimpleButton1)
+        Me.TabParameters.Controls.Add(Me.btnNewsletter)
         Me.TabParameters.Controls.Add(Me.GroupEmailFrom)
         Me.TabParameters.Controls.Add(Me.GBFilter)
         Me.TabParameters.Controls.Add(Me.GroupFieldEmail)
@@ -380,6 +386,42 @@ Public Class frmEMailCustomers
         Me.ToolTipController1.SetSuperTip(Me.GroupEmailFrom, Nothing)
         Me.GroupEmailFrom.TabStop = False
         '
+        'txtStrFrom
+        '
+        resources.ApplyResources(Me.txtStrFrom, "txtStrFrom")
+        Me.txtStrFrom.Name = "txtStrFrom"
+        Me.HelpProvider1.SetShowHelp(Me.txtStrFrom, CType(resources.GetObject("txtStrFrom.ShowHelp"), Boolean))
+        '
+        'LabelControl5
+        '
+        resources.ApplyResources(Me.LabelControl5, "LabelControl5")
+        Me.LabelControl5.Name = "LabelControl5"
+        Me.HelpProvider1.SetShowHelp(Me.LabelControl5, CType(resources.GetObject("LabelControl5.ShowHelp"), Boolean))
+        '
+        'lblStrFrom
+        '
+        resources.ApplyResources(Me.lblStrFrom, "lblStrFrom")
+        Me.lblStrFrom.Name = "lblStrFrom"
+        Me.HelpProvider1.SetShowHelp(Me.lblStrFrom, CType(resources.GetObject("lblStrFrom.ShowHelp"), Boolean))
+        '
+        'textEmailName
+        '
+        resources.ApplyResources(Me.textEmailName, "textEmailName")
+        Me.textEmailName.Name = "textEmailName"
+        Me.HelpProvider1.SetShowHelp(Me.textEmailName, CType(resources.GetObject("textEmailName.ShowHelp"), Boolean))
+        '
+        'lblEmailName
+        '
+        resources.ApplyResources(Me.lblEmailName, "lblEmailName")
+        Me.lblEmailName.Name = "lblEmailName"
+        Me.HelpProvider1.SetShowHelp(Me.lblEmailName, CType(resources.GetObject("lblEmailName.ShowHelp"), Boolean))
+        '
+        'LabelControl4
+        '
+        resources.ApplyResources(Me.LabelControl4, "LabelControl4")
+        Me.LabelControl4.Name = "LabelControl4"
+        Me.HelpProvider1.SetShowHelp(Me.LabelControl4, CType(resources.GetObject("LabelControl4.ShowHelp"), Boolean))
+        '
         'lblMessage
         '
         resources.ApplyResources(Me.lblMessage, "lblMessage")
@@ -413,41 +455,17 @@ Public Class frmEMailCustomers
         Me.LabelControl2.Name = "LabelControl2"
         Me.HelpProvider1.SetShowHelp(Me.LabelControl2, CType(resources.GetObject("LabelControl2.ShowHelp"), Boolean))
         '
-        'txtStrFrom
+        'btnNewsletter
         '
-        resources.ApplyResources(Me.txtStrFrom, "txtStrFrom")
-        Me.txtStrFrom.Name = "txtStrFrom"
-        Me.HelpProvider1.SetShowHelp(Me.txtStrFrom, CType(resources.GetObject("txtStrFrom.ShowHelp"), Boolean))
+        resources.ApplyResources(Me.btnNewsletter, "btnNewsletter")
+        Me.btnNewsletter.Name = "btnNewsletter"
+        Me.HelpProvider1.SetShowHelp(Me.btnNewsletter, CType(resources.GetObject("btnNewsletter.ShowHelp"), Boolean))
         '
-        'lblStrFrom
+        'SimpleButton1
         '
-        resources.ApplyResources(Me.lblStrFrom, "lblStrFrom")
-        Me.lblStrFrom.Name = "lblStrFrom"
-        Me.HelpProvider1.SetShowHelp(Me.lblStrFrom, CType(resources.GetObject("lblStrFrom.ShowHelp"), Boolean))
-        '
-        'LabelControl4
-        '
-        resources.ApplyResources(Me.LabelControl4, "LabelControl4")
-        Me.LabelControl4.Name = "LabelControl4"
-        Me.HelpProvider1.SetShowHelp(Me.LabelControl4, CType(resources.GetObject("LabelControl4.ShowHelp"), Boolean))
-        '
-        'lblEmailName
-        '
-        resources.ApplyResources(Me.lblEmailName, "lblEmailName")
-        Me.lblEmailName.Name = "lblEmailName"
-        Me.HelpProvider1.SetShowHelp(Me.lblEmailName, CType(resources.GetObject("lblEmailName.ShowHelp"), Boolean))
-        '
-        'textEmailName
-        '
-        resources.ApplyResources(Me.textEmailName, "textEmailName")
-        Me.textEmailName.Name = "textEmailName"
-        Me.HelpProvider1.SetShowHelp(Me.textEmailName, CType(resources.GetObject("textEmailName.ShowHelp"), Boolean))
-        '
-        'LabelControl5
-        '
-        resources.ApplyResources(Me.LabelControl5, "LabelControl5")
-        Me.LabelControl5.Name = "LabelControl5"
-        Me.HelpProvider1.SetShowHelp(Me.LabelControl5, CType(resources.GetObject("LabelControl5.ShowHelp"), Boolean))
+        resources.ApplyResources(Me.SimpleButton1, "SimpleButton1")
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.HelpProvider1.SetShowHelp(Me.SimpleButton1, CType(resources.GetObject("SimpleButton1.ShowHelp"), Boolean))
         '
         'frmEMailCustomers
         '
@@ -489,10 +507,10 @@ Public Class frmEMailCustomers
         CType(Me.SEAboStoppedDelay.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupEmailFrom.ResumeLayout(False)
         Me.GroupEmailFrom.PerformLayout()
-        CType(Me.cmbMessage.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TETestEmail.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txtStrFrom.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.textEmailName.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.cmbMessage.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TETestEmail.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -672,7 +690,7 @@ Public Class frmEMailCustomers
         Next
 
         '  _CustRow = GridView1.GetDataRow(_i)
-      
+
 
     End Sub
     Private Sub addInfoNextReconduction()
@@ -1138,4 +1156,14 @@ Public Class frmEMailCustomers
 
 
 
+    Private Sub btnNewsletter_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNewsletter.Click
+        Dim custmers As DVDPostBuziness.ClsCustomers = New DVDPostBuziness.ClsCustomers()
+        custmers.SendNewsletter20150930()
+
+    End Sub
+
+    Private Sub SimpleButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SimpleButton1.Click
+        Dim custmers As DVDPostBuziness.ClsCustomers = New DVDPostBuziness.ClsCustomers()
+        custmers.SendVirmanAnnouncement()
+    End Sub
 End Class

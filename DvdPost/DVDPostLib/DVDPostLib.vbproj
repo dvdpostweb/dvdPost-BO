@@ -587,6 +587,12 @@
     <Compile Include="LOGISTIC\frmListingOUT.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MARKETING\frmSendNewsletter.Designer.vb">
+      <DependentUpon>frmSendNewsletter.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MARKETING\frmSendNewsletter.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MARKETING\frmStreamingCode.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -644,6 +650,9 @@
     <Compile Include="PRODUCTS\frmSearchProduct.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reports\rptNewEnveloppe.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\rptUniverCineSummaryReport.Designer.vb">
       <DependentUpon>rptUniverCineSummaryReport.vb</DependentUpon>
     </Compile>
@@ -666,9 +675,6 @@
       <DependentUpon>rptADULTSVODSummary.vb</DependentUpon>
     </Compile>
     <Compile Include="Reports\rptADULTSVODSummary.vb">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reports\rptNewEnveloppe.vb">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\rptDVDLabel2.vb">
@@ -1113,6 +1119,10 @@
       <DependentUpon>frmSearchProduct.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\rptNewEnveloppe.resx">
+      <DependentUpon>rptNewEnveloppe.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptUniverCineSummaryReport.resx">
       <DependentUpon>rptUniverCineSummaryReport.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -1132,10 +1142,6 @@
     <EmbeddedResource Include="Reports\rptADULTSVODSummary.resx">
       <SubType>Designer</SubType>
       <DependentUpon>rptADULTSVODSummary.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\rptNewEnveloppe.resx">
-      <DependentUpon>rptNewEnveloppe.vb</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\rptDVDLabel2.resx">
       <DependentUpon>rptDVDLabel2.vb</DependentUpon>

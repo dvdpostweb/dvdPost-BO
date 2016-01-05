@@ -507,13 +507,15 @@ Public Class frmDVD_Maint
     Friend WithEvents txtEpisode As DevExpress.XtraEditors.TextEdit
     Friend WithEvents LabelControl62 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents txtSeason As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents chkbbelgium_ids As System.Windows.Forms.CheckedListBox
+    Friend WithEvents LabelControl65 As DevExpress.XtraEditors.LabelControl
     Friend WithEvents LabelControl48 As DevExpress.XtraEditors.LabelControl
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Dim GridLevelNode1 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode
-        Dim FilterCondition1 As DevExpress.XtraTreeList.FilterCondition = New DevExpress.XtraTreeList.FilterCondition
+        Dim GridLevelNode2 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode
+        Dim FilterCondition6 As DevExpress.XtraTreeList.FilterCondition = New DevExpress.XtraTreeList.FilterCondition
+        Dim StyleFormatCondition4 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
         Dim StyleFormatCondition1 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
         Dim StyleFormatCondition2 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
-        Dim StyleFormatCondition3 As DevExpress.XtraGrid.StyleFormatCondition = New DevExpress.XtraGrid.StyleFormatCondition
         Me.colcategory_selected = New DevExpress.XtraTreeList.Columns.TreeListColumn
         Me.chkSelectCategory = New DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit
         Me.XTabControlProduct = New DevExpress.XtraTab.XtraTabControl
@@ -591,6 +593,8 @@ Public Class frmDVD_Maint
         Me.cmbSerie = New DevExpress.XtraEditors.LookUpEdit
         Me.lblSeries = New DevExpress.XtraEditors.LabelControl
         Me.grpMain = New DevExpress.XtraEditors.GroupControl
+        Me.chkbbelgium_ids = New System.Windows.Forms.CheckedListBox
+        Me.LabelControl65 = New DevExpress.XtraEditors.LabelControl
         Me.LabelControl69 = New DevExpress.XtraEditors.LabelControl
         Me.txtEpisode = New DevExpress.XtraEditors.TextEdit
         Me.LabelControl62 = New DevExpress.XtraEditors.LabelControl
@@ -1755,8 +1759,8 @@ Public Class frmDVD_Maint
         Me.GridActors.EmbeddedNavigator.Enabled = False
         Me.GridActors.EmbeddedNavigator.Name = ""
         Me.GridActors.FormsUseDefaultLookAndFeel = False
-        GridLevelNode1.RelationName = "Level1"
-        Me.GridActors.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode1})
+        GridLevelNode2.RelationName = "Level1"
+        Me.GridActors.LevelTree.Nodes.AddRange(New DevExpress.XtraGrid.GridLevelNode() {GridLevelNode2})
         Me.GridActors.Location = New System.Drawing.Point(2, 20)
         Me.GridActors.MainView = Me.GridViewActors
         Me.GridActors.Name = "GridActors"
@@ -2032,6 +2036,8 @@ Public Class frmDVD_Maint
         'grpMain
         '
         Me.grpMain.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowOnly
+        Me.grpMain.Controls.Add(Me.chkbbelgium_ids)
+        Me.grpMain.Controls.Add(Me.LabelControl65)
         Me.grpMain.Controls.Add(Me.LabelControl69)
         Me.grpMain.Controls.Add(Me.txtEpisode)
         Me.grpMain.Controls.Add(Me.LabelControl62)
@@ -2094,6 +2100,26 @@ Public Class frmDVD_Maint
         Me.grpMain.Size = New System.Drawing.Size(440, 510)
         Me.grpMain.TabIndex = 0
         Me.grpMain.Text = "General Info"
+        '
+        'chkbbelgium_ids
+        '
+        Me.chkbbelgium_ids.Enabled = False
+        Me.chkbbelgium_ids.FormattingEnabled = True
+        Me.chkbbelgium_ids.Items.AddRange(New Object() {"0", "1 country", "2 actor", "3 director", "4 making"})
+        Me.chkbbelgium_ids.Location = New System.Drawing.Point(330, 276)
+        Me.chkbbelgium_ids.Name = "chkbbelgium_ids"
+        Me.chkbbelgium_ids.ScrollAlwaysVisible = True
+        Me.chkbbelgium_ids.Size = New System.Drawing.Size(101, 49)
+        Me.chkbbelgium_ids.TabIndex = 68
+        Me.chkbbelgium_ids.ThreeDCheckBoxes = True
+        '
+        'LabelControl65
+        '
+        Me.LabelControl65.Location = New System.Drawing.Point(240, 272)
+        Me.LabelControl65.Name = "LabelControl65"
+        Me.LabelControl65.Size = New System.Drawing.Size(52, 13)
+        Me.LabelControl65.TabIndex = 67
+        Me.LabelControl65.Text = "BelgiumIDs"
         '
         'LabelControl69
         '
@@ -3307,11 +3333,11 @@ Public Class frmDVD_Maint
         Me.TreeListCategories.CustomizationFormBounds = New System.Drawing.Rectangle(960, 402, 208, 170)
         Me.TreeListCategories.DataSource = Me.objDS.categories_fr_view1
         Me.TreeListCategories.Dock = System.Windows.Forms.DockStyle.Fill
-        FilterCondition1.Column = Me.colcategory_selected
-        FilterCondition1.Condition = DevExpress.XtraTreeList.FilterConditionEnum.Equals
-        FilterCondition1.Value1 = True
-        FilterCondition1.Visible = True
-        Me.TreeListCategories.FilterConditions.AddRange(New DevExpress.XtraTreeList.FilterCondition() {FilterCondition1})
+        FilterCondition6.Column = Me.colcategory_selected
+        FilterCondition6.Condition = DevExpress.XtraTreeList.FilterConditionEnum.Equals
+        FilterCondition6.Value1 = True
+        FilterCondition6.Visible = True
+        Me.TreeListCategories.FilterConditions.AddRange(New DevExpress.XtraTreeList.FilterCondition() {FilterCondition6})
         Me.TreeListCategories.KeyFieldName = "categories_id"
         Me.TreeListCategories.Location = New System.Drawing.Point(2, 2)
         Me.TreeListCategories.Name = "TreeListCategories"
@@ -5158,7 +5184,7 @@ Public Class frmDVD_Maint
         'GridViewPrevision
         '
         Me.GridViewPrevision.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBandPrevision})
-        Me.GridViewPrevision.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition1})
+        Me.GridViewPrevision.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition4})
         Me.GridViewPrevision.GridControl = Me.GridPrevision
         Me.GridViewPrevision.Name = "GridViewPrevision"
         Me.GridViewPrevision.OptionsView.ShowFooter = True
@@ -5189,7 +5215,7 @@ Public Class frmDVD_Maint
         'gridViewWishlistCustomers
         '
         Me.gridViewWishlistCustomers.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand11})
-        Me.gridViewWishlistCustomers.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition2})
+        Me.gridViewWishlistCustomers.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition1})
         Me.gridViewWishlistCustomers.GridControl = Me.GridWishlistCustomers
         Me.gridViewWishlistCustomers.Name = "gridViewWishlistCustomers"
         Me.gridViewWishlistCustomers.OptionsBehavior.Editable = False
@@ -5513,7 +5539,7 @@ Public Class frmDVD_Maint
         'gridViewVODWishlist
         '
         Me.gridViewVODWishlist.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand12})
-        Me.gridViewVODWishlist.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition3})
+        Me.gridViewVODWishlist.FormatConditions.AddRange(New DevExpress.XtraGrid.StyleFormatCondition() {StyleFormatCondition2})
         Me.gridViewVODWishlist.GridControl = Me.GridVODWishlist
         Me.gridViewVODWishlist.Name = "gridViewVODWishlist"
         Me.gridViewVODWishlist.OptionsBehavior.Editable = False
@@ -6415,7 +6441,6 @@ Public Class frmDVD_Maint
             Dim params As DVDPostBuziness.clsSingleton = Nothing
             params = DVDPostBuziness.clsSingleton.Instance()
             Dim Dvd_Pr_ID As Integer = params.Products_dvd_id
-
             If Dvd_Pr_ID <> Nothing Then
                 txtQuickSearch.EditValue = Dvd_Pr_ID
                 If IsNumeric(txtQuickSearch.EditValue) Then
@@ -6490,6 +6515,15 @@ Public Class frmDVD_Maint
     Private Sub SaveChanges(ByVal Sender As System.Object, ByVal e As System.EventArgs) Handles PopMenuSave.Click, MyBase.EventSaveChanges
 
         Try
+            Dim txtbelgium_ids As String = String.Empty
+            For Each item As String In chkbbelgium_ids.CheckedItems
+                txtbelgium_ids += item.Substring(0, 1) & ","
+            Next
+            If txtbelgium_ids.Length > 0 Then
+                txtbelgium_ids = txtbelgium_ids.Remove(txtbelgium_ids.Length - 1)
+            End If
+
+            objDS.Tables("products").Select("products_id = " & CurrentProductID)(0)("belgium_ids") = txtbelgium_ids
             'Validate Fields and assign any Necessary ID
             MainData.ValidateRecordFields(CType(Me.BindingContext(objDS, TableName).Current, DataRowView))
             'Attempt to update the datasource.
@@ -6949,7 +6983,9 @@ Public Class frmDVD_Maint
 
 #End Region
     Private Sub ClearData()
-
+        For ind As Integer = 1 To chkbbelgium_ids.Items.Count - 1
+            chkbbelgium_ids.SetItemChecked(ind, False)
+        Next
         objDS.products.Clear()
         objDS.products_description.Clear()
         objDS.products_trailers.Clear()
@@ -7001,6 +7037,15 @@ Public Class frmDVD_Maint
             txtQuickSearch.EditValue = CurrentProductID
         End If
         InitRefeshTab()
+        Dim txtbelgium_ids As String = objDS.Tables("Products").Rows(0)("belgium_ids")
+        Dim belgiumids As String() = txtbelgium_ids.Split(",")
+        If belgiumids.Length = 1 And belgiumids(0).Equals(String.Empty) Then
+        Else
+            For Each i As Integer In belgiumids
+                chkbbelgium_ids.SetItemChecked(i, True)
+            Next
+        End If
+
 
         RefreshTab(XTabControlProduct.SelectedTabPage)
         ' MainData.LoadProductsDetail()
@@ -7055,7 +7100,7 @@ Public Class frmDVD_Maint
         txtImdb_id_serie.Enabled = Enabling
         txtSeason.Enabled = Enabling
         txtEpisode.Enabled = Enabling
-
+        chkbbelgium_ids.Enabled = Enabling
         'PictProducts_Image.Enabled = Enabling
         cmbSerie.Enabled = Enabling
         cmbVODSerieID.Enabled = Enabling

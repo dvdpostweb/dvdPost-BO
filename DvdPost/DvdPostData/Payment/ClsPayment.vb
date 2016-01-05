@@ -159,7 +159,7 @@ Public Class ClsPayment
     Public Shared Function GetUpdatePaymentStatus(ByVal list_id As String, ByVal status As PaymentOfflineData.StepPayment) As String
         Dim sql As String
         sql = " update payment p " & _
-              " set p.payment_status = " & status & _
+              " set last_status_id = payment_status, p.payment_status = " & status & _
               ", user_modified = " & clsSession.user_id & _
               ", last_modified = now() " & _
               " where p.id in (" & list_id & ")" & _
@@ -172,12 +172,11 @@ Public Class ClsPayment
         Dim sql As String
 
         sql = " update payment " & _
-              " set payment_status=" & status & _
+              " set last_status_id =payment_status, payment_status=" & status & _
               " ,last_modified=now()" & _
               " , last_status_id = " & old_status & _
               ", user_modified = " & clsSession.user_id & _
-              " where payment_status = " & old_status & _
-              " and id = " & id
+              " where  id = " & id
         Return sql
     End Function
 
@@ -185,11 +184,10 @@ Public Class ClsPayment
         Dim sql As String
 
         sql = " update payment " & _
-              " set payment_status=" & status & _
+              " set last_status_id =payment_status, payment_status=" & status & _
               " ,last_modified=now()" & _
               ", user_modified = " & clsSession.user_id & _
-              " where payment_status = " & old_status & _
-              " and id = " & id
+              " where id = " & id
         Return sql
     End Function
 
@@ -197,7 +195,7 @@ Public Class ClsPayment
         Dim sql As String
 
         sql = " update payment " & _
-              " set payment_status=" & status & _
+              " set last_status_id =payment_status, payment_status=" & status & _
               " ,last_modified=now()" & _
               ", user_modified = " & clsSession.user_id & _
               " where customers_id = " & customers_id & _

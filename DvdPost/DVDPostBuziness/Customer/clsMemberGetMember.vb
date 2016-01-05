@@ -27,7 +27,13 @@ Public Class clsMemberGetMember
 
             sqlFatherInfo = DvdPostData.clsMemberGetMember.getGodsonAndSponsorInfo(son_id, point)
             dtFatherInfo = DvdPostData.clsConnection.FillDataSet(sqlFatherInfo)
-            DVDPostBuziness.clsMail.SendMail(dtFatherInfo.Rows(0), clsMail.Mail.MAIL_SON_ACTIVATION, True, dtFatherInfo.Rows(0)("customers_email_address"), DvdPostData.clsMemberGetMember.MAIL_FROM_SPONSOR, DvdPostData.clsMemberGetMember.MAIL_FROM_SPONSOR_NAME)
+            Try
+                DVDPostBuziness.clsMail.SendMail(dtFatherInfo.Rows(0), clsMail.Mail.MAIL_SON_ACTIVATION, True, dtFatherInfo.Rows(0)("customers_email_address"), DvdPostData.clsMemberGetMember.MAIL_FROM_SPONSOR, DvdPostData.clsMemberGetMember.MAIL_FROM_SPONSOR_NAME)
+            Catch ex As Exception
+                Dim father As String = father_id.ToString()
+                clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Reconduction, ex, father)
+            End Try
+
 
         Else
             Return False

@@ -430,7 +430,7 @@ Public Class frmSecurityLogin
         End If
     End Sub
     Private Sub txtLogin_Leave(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtLogin.Leave
-       
+
     End Sub
 
     Private Sub btnDetail_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDetail.Click

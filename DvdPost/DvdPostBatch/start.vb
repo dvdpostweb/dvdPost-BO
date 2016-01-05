@@ -136,6 +136,9 @@ Module start
                     clsPPV.CreatePPVPaymentsManager(DvdPostData.ClsCustomersData.Country.BELGIUM, DateTime.Now.Date.AddDays(-1), DateTime.Now.Date)
                 End If
 
+                clscust.SendDVDNOTReturnedMoreThenMonth(5)
+
+
             Else
                 Console.WriteLine("Error Argument")
             End If

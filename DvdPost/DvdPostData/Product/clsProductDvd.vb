@@ -354,7 +354,7 @@ Public Class clsProductDvd
         If actor_id = 0 Then
             sql = ""
         Else
-            sql = " join directors dir on p.products_directos_id = dir.directors_id "
+            sql = " join directors dir on p.products_directors_id = dir.directors_id "
         End If
 
 

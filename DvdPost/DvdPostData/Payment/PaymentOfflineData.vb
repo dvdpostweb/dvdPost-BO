@@ -404,6 +404,13 @@ Public Class PaymentOfflineData
 
     End Function
 
+    Public Shared Function getInsertLetter_ToPost(ByVal customers_id As Integer, ByVal payment_id As Integer, ByVal letter_name As String) As String
+        Dim sql As String
+        sql = " insert into letters_to_post( customers_id, payment_id, letter_created, letter_sent_date, letter_sent_by_post,  letter_name) " & _
+        " values(" & customers_id & "," & payment_id & ", now(), null, 0, '" & letter_name & "')"
+        Return sql
+    End Function
+
     Public Shared Function getListStepChanged(ByVal delay As Integer, ByVal old_status As Integer) As String
 
         Dim sqlConditionForTransition As String

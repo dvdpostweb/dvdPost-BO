@@ -1138,9 +1138,12 @@ allstudio & _
 " left join studio s on s.studio_id = sp.studio_id " & _
 " left join studio ps on ps.studio_id = p.products_studio " & _
 " left join plush_production.directors d on d.directors_id = p.products_directors_id " & _
-" where t.is_ppv = 1 and date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
+" where t.is_ppv = 1 and not exists(select * from plush_production.tokens ppt where ppt.id = t.source_tokens_id and ppt.kind = 'FREE') " & _
+" and date(t.created_at) >= '" & DVDPostTools.ClsDate.formatDate(dateFrom) & "' and date(t.created_at) <= '" & DVDPostTools.ClsDate.formatDate(dateTo) & "'" & _
 allstudio & _
 " group by vodstudio, productstudio, t.id "
+
+        '
 
         If isDVDPOST Then
             sql = sql & sqlDVDPOST

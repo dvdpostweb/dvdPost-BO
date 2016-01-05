@@ -831,6 +831,11 @@ Public Class FrmProductsVOD
                     DvdPostData.clsConnection.ExecuteNonQuery(sql)
                 End If
             Else
+                If chkVideoland.EditValue = False And txtVideolandReference.EditValue <> "" Then
+                    DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Vod, txtId.EditValue & "vl = 0 and vl_ref exists")
+                    MsgBox("Vod is not saved. If this is VL movie, check VL flag", MsgBoxStyle.Critical)
+                    Return False
+                End If
                 sql = DvdPostData.ClsVod.GetUpdateVod(txtId.EditValue, txtImdbView.EditValue, txtSeasonView.EditValue, txtEpisodeView.EditValue, TxtFilename.EditValue, cmbDateStart.EditValue, cmbDateExpired.EditValue, chkAvailable.Checked, cmbLanguageSound.EditValue, cmbLanguageSubtitle.EditValue, cmbStudioEdit.EditValue, cmbStatus.EditValue, cmbQuality.EditValue, cmbSource.EditValue, cmbSupportVod.EditValue, spedCredit.EditValue, cmbDateLaterStart.EditValue, cmbDateLaterExpired.EditValue, chkIsPPV.EditValue, txtPPVPrice.EditValue, "BE", chkDRM.EditValue, chkVideoland.EditValue, txtVideolandReference.EditValue, cmbAkamaiFolderView.SelectedItem)
                 DvdPostData.clsConnection.ExecuteNonQuery(sql)
                 If chkLU.Checked Then
@@ -1357,7 +1362,7 @@ Public Class FrmProductsVOD
             If tmp.Length = 4 Then
                 result(DvdPostData.ClsVod.ListField.FILENAME) = tmp(0) & "_" & tmp(1) & "_" & tmp(2) 'elt(0)
                 result(DvdPostData.ClsVod.ListField.IMDB_ID) = tmp(0)
-                drm = True
+                drm = False
             ElseIf tmp.Length <> 5 Then
                 result = Nothing
                 drm = False
@@ -1572,7 +1577,7 @@ Public Class FrmProductsVOD
                     result(DvdPostData.ClsVod.ListField.STATUS) = "uploaded"
                     result(DvdPostData.ClsVod.ListField.AVAILABLE) = "true"
                     result(DvdPostData.ClsVod.ListField.SOURCE) = "ALPHANETWORKS"
-                    result(DvdPostData.ClsVod.ListField.CREDIT) = 1
+                    result(DvdPostData.ClsVod.ListField.CREDIT) = 2
                     result(DvdPostData.ClsVod.ListField.AVAILABLE_BACKCATALOGUE_FROM) = Date.MinValue
                     result(DvdPostData.ClsVod.ListField.EXPIRE_BACKKATALOGUE_AT) = Date.MinValue
 
@@ -1662,6 +1667,11 @@ Public Class FrmProductsVOD
         End If
         For Each dr As DataRow In dt.Rows
             Dim sql As String
+
+            If dr("videoland") = 0 And dr("videoland_reference") <> "" Then
+                MsgBox("If this is VL movie, VL flag should be checked ", MsgBoxStyle.Critical)
+                Return
+            End If
 
             sql = DvdPostData.ClsVod.GetUpdateVod(dr("id"), _
                                         IIf(dr("imdb_id") Is System.DBNull.Value, 0, dr("imdb_id")), _

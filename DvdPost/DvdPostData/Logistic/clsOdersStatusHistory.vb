@@ -324,13 +324,15 @@ Public Class clsOdersStatusHistory
     Public Shared Function GetLastOrders(ByVal products_id As Integer, ByVal dvd_id As Integer) As String
         Dim sql As String
         sql = " select ' ' multishipment_sm,1 customers_abo_multishipment,o.customers_id,op.products_id,op.products_dvd dvd_id, lang.name as lang_name,o.delivery_name,o.delivery_street_address,o.delivery_city, o.delivery_postcode, o.delivery_country," & _
-                " op.pick_group, op.pick_boxid,pd.box_id,op.orders_id,o.orders_status, op.orders_products_status,pd.products_dvd_status, op.products_dvd, c.customers_id, date_purchased " & _
+                " op.pick_group, op.pick_boxid,pd.box_id,op.orders_id,o.orders_status, op.orders_products_status,pd.products_dvd_status, op.products_dvd, c.customers_id, date_purchased, " & _
+                " if(isnull((select customers_id from customers_gift_sent cgs where cgs.customers_id = c.customers_id limit 1)),'','+') flyer_code " & _
                 " from (select max(o.orders_id) orders_id from orders_products op join orders o on op.orders_id = o.orders_id where o.orders_status <> " & OrderStatusNew.TEMPORARY_INTERCHANGE & " and op.products_id = " & products_id & " and op.products_dvd = " & dvd_id & ") last_order " & _
                 " join orders o on last_order.orders_id = o.orders_id " & _
                 " join orders_products op on op.orders_id = o.orders_id " & _
                 " join products_dvd pd on pd.products_id = " & products_id & " and pd.products_dvdid = " & dvd_id & _
                 " join customers c on c.customers_id = o.customers_id " & _
                 " join languages lang on lang.languages_id = c.customers_language "
+
 
         Return sql
     End Function

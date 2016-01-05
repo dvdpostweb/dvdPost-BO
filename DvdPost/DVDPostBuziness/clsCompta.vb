@@ -5,6 +5,7 @@ Public Class clsCompta
     Public Const DVDPOST_BANK_ACCOUNT_ING As String = "310191369467"
     Public Const DVDPOST_ACCOUNT_DEXIA As String = "068241688661"
     Public Const KEY_ESKERLOADER As String = "Path_EskerLoader"
+    Public Const SEND_EMAIL_AND_LETTER As String = "SendEmailAndLetter"
 
     'Public Sub New(ByVal CurrentSessionInfo As BizzLib.clsSessionInfo)
     '    'Add any initialization after the InitializeComponent() call
@@ -113,6 +114,8 @@ Public Class clsCompta
                 End If
             End If
 
+            DvdPostData.clsConnection.ExecuteNonQuery(DvdPostData.PaymentOfflineData.getInsertLetter_ToPost(dvCust.Item(0).Row.Item("customers_id"), dvCust.Item(0).Row.Item("id"), filename & ".pdf"))
+
         Catch e As Exception
             clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Report, e)
             clsMsgError.MsgBox(e.Message)
@@ -150,12 +153,12 @@ Public Class clsCompta
             Dim filename As String = strdateFormat & "_" & reportName & "_" & dtOneCust.ToTable().Rows(0)("customers_id")
 
             If DvdPostData.clsSession.isBatch Then
-                pathEsker = System.Configuration.ConfigurationManager.AppSettings(KEY_ESKERLOADER)
+                pathEsker = System.Configuration.ConfigurationManager.AppSettings(SEND_EMAIL_AND_LETTER)
                 If System.IO.Directory.Exists(pathEsker) Then
                     report.ExportToPdf(pathEsker & filename & ".pdf")
 
                 Else
-                    clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Report, "ERROR path EskerLoader")
+                    clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Report, "ERROR path SEND_EMAIL_AND_LETTER")
                 End If
                 Dim ok As Boolean
                 'For Each rCustomer As DataRow In dtCustomers.Rows
@@ -195,6 +198,7 @@ Public Class clsCompta
                 dvCust = New DataView(dtCustomers, "customers_language = " & lang, "customers_id ", DataViewRowState.CurrentRows)
                 If dvCust.Count > 0 Then
                     designReport(dvCust, dtReport.Rows(lang - 1))
+
                     If suspended Then
 
                         For Each drv As DataRowView In dvCust

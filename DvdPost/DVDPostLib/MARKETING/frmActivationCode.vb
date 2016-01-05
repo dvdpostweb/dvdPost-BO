@@ -154,10 +154,7 @@ Public Class frmActivationCode
     Friend WithEvents CheckPaypal As DevExpress.XtraEditors.CheckEdit
     Friend WithEvents cmbDiscountAction As DevExpress.XtraEditors.LookUpEdit
     Friend WithEvents LabelControl28 As DevExpress.XtraEditors.LabelControl
-    Friend WithEvents barDockControlTop As DevExpress.XtraBars.BarDockControl
-    Friend WithEvents barDockControlBottom As DevExpress.XtraBars.BarDockControl
-    Friend WithEvents barDockControlLeft As DevExpress.XtraBars.BarDockControl
-    Friend WithEvents barDockControlRight As DevExpress.XtraBars.BarDockControl
+   
     Friend WithEvents txtComment As DevExpress.XtraEditors.TextEdit
 
     <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
@@ -280,10 +277,6 @@ Public Class frmActivationCode
         Me.btnEditActivation = New DevExpress.XtraEditors.SimpleButton
         Me.btnNewDiscount = New DevExpress.XtraEditors.SimpleButton
         Me.BarManager2 = New DevExpress.XtraBars.BarManager(Me.components)
-        Me.barDockControlTop = New DevExpress.XtraBars.BarDockControl
-        Me.barDockControlBottom = New DevExpress.XtraBars.BarDockControl
-        Me.barDockControlLeft = New DevExpress.XtraBars.BarDockControl
-        Me.barDockControlRight = New DevExpress.XtraBars.BarDockControl
         Me.txtDVDRemain = New DevExpress.XtraEditors.SpinEdit
         Me.lblDvdRemain = New DevExpress.XtraEditors.LabelControl
         Me.CheckDebitCard = New DevExpress.XtraEditors.CheckEdit
@@ -1377,20 +1370,12 @@ Public Class frmActivationCode
         '
         resources.ApplyResources(Me, "$this")
         Me.BarManager1 = Me.BarManager2
-        Me.Controls.Add(Me.barDockControlLeft)
-        Me.Controls.Add(Me.barDockControlRight)
-        Me.Controls.Add(Me.barDockControlBottom)
-        Me.Controls.Add(Me.barDockControlTop)
         Me.HelpButton = False
         Me.HelpProvider1.SetHelpKeyword(Me, resources.GetString("$this.HelpKeyword"))
         Me.HelpProvider1.SetHelpNavigator(Me, CType(resources.GetObject("$this.HelpNavigator"), System.Windows.Forms.HelpNavigator))
         Me.HelpProvider1.SetHelpString(Me, resources.GetString("$this.HelpString"))
         Me.Name = "frmActivationCode"
         Me.HelpProvider1.SetShowHelp(Me, CType(resources.GetObject("$this.ShowHelp"), Boolean))
-        Me.Controls.SetChildIndex(Me.barDockControlTop, 0)
-        Me.Controls.SetChildIndex(Me.barDockControlBottom, 0)
-        Me.Controls.SetChildIndex(Me.barDockControlRight, 0)
-        Me.Controls.SetChildIndex(Me.barDockControlLeft, 0)
         Me.Controls.SetChildIndex(Me.StatusBar1, 0)
         Me.Controls.SetChildIndex(Me.Panel1, 0)
         Me.Panel1.ResumeLayout(False)

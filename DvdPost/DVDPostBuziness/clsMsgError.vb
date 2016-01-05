@@ -83,8 +83,14 @@ Public Class clsMsgError
         strsubject = Subject & DVDPostTools.clsEnum.getNameStrEnum(Type) & Author & DvdPostData.clsSession.user_id
         sql = DvdPostData.clsMsgError.InsertLogMsg(Type, msgError, customers_id)
         cpt = DvdPostData.clsConnection.ExecuteNonQuery(sql, True)
+        Try
+            Dim mymail As Net.Mail.MailMessage = New Net.Mail.MailMessage(MAILTO, MAILTO, strsubject, msgError)
 
-        clsMail.SendMail(msgError, strsubject, MAILTO)
+            clsMail.SendMail(mymail)
+        Catch ex As Exception
+
+        End Try
+
         Return cpt = 1
     End Function
 

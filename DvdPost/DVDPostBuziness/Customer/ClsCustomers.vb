@@ -268,6 +268,10 @@ Public Class ClsCustomers
         Return drCustomer("customers_id")
     End Function
 
+    Public Function GetCustomersIdToString(ByVal drCustomer As DataRow) As String
+        Return drCustomer("customers_id").ToString()
+    End Function
+
     Public Function GetEddManadateId(ByVal drCustomer As DataRow) As String
         Return drCustomer("edd_mandate_id")
     End Function
@@ -2131,6 +2135,7 @@ Public Class ClsCustomers
 
             If dtResult.Rows.Count > 0 Then
                 For Each drCustomers As DataRow In dtResult.Rows
+
                     Dim paypalResult As PayPal.PayPalResponse = Nothing
 
                     customers_id = GetCustomersId(drCustomers)
@@ -2139,11 +2144,11 @@ Public Class ClsCustomers
                         paypalResult = paypal.PayPalSendPayments(drCustomers)
                     Catch ex1 As Exception
                         clsMsgError.MsgBox(ex1.Message)
-                        clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Reconduction, ex1, customers_id & " : position: " & str)
+                        clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Reconduction, ex1, customers_id.ToString() & " : position: " & str)
 
                     End Try
                     str = 3
-                    Dim message As String
+                    Dim message As String = "paypalResult.Response.Ack is returned"
 
                     If Not paypalResult Is Nothing And paypalResult.Response.Ack.HasValue Then
                         str = 4
@@ -2158,13 +2163,13 @@ Public Class ClsCustomers
                                 str = 51
                                 sql = DvdPostData.clsBatchBankTransfert.UpdateStatusBankTransfert(GetPaymentId(drCustomers), PaymentOfflineData.StepPayment.PAYPAL_PROBLEM)
                                 DvdPostData.clsConnection.ExecuteNonQuery(sql)
+                                str = 7
+                                message = paypalResult.Response.Ack.Value.ToString()
+                                str = 8
                             Catch ex As Exception
                                 clsMsgError.MsgBox(ex.Message)
-                                clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Reconduction, ex, customers_id & " : position: " & str)
+                                clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Reconduction, ex, customers_id.ToString() & " : position: " & str)
                             End Try
-                            str = 7
-                            message = paypalResult.Response.Ack.Value.ToString()
-                            str = 8
                             If paypalResult.Response.Errors.Count > 0 Then
                                 str = 9
                                 Try
@@ -2176,13 +2181,19 @@ Public Class ClsCustomers
                                 Catch ex As Exception
                                     message = message & ":" & ex.Message
                                     clsMsgError.MsgBox(ex.Message)
-                                    clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Reconduction, ex, customers_id & " : position: " & str)
+                                    clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Reconduction, ex, customers_id.ToString() & " : position: " & str)
                                 End Try
                             End If
                             str = 11
+                            Try
+                                DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Batch, "PayPal payment does not succedded. Please check logs, the returned status is : " & paypalResult.Response.Ack.Value.ToString(), GetCustomersIdToString(drCustomers))
+                                str = 12
+                            Catch ex As Exception
+                                clsMsgError.MsgBox(ex.Message)
+                                clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Reconduction, ex, customers_id.ToString() & " : position: " & str)
+                            End Try
 
-                            DVDPostBuziness.clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Batch, "PayPal payment does not succedded. Please check logs, the returned status is : " & paypalResult.Response.Ack.Value.ToString(), GetCustomersId(drCustomers))
-                            str = 12
+
                         End If
                     Else
                         str = 13
@@ -2198,7 +2209,7 @@ Public Class ClsCustomers
                         str = 15
                     Catch ex1 As Exception
                         clsMsgError.MsgBox(ex1.Message)
-                        clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Reconduction, ex1, customers_id & " : position: " & str)
+                        clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Reconduction, ex1, customers_id.ToString() & " : position: " & str)
                     End Try
 
                 Next
@@ -2209,8 +2220,8 @@ Public Class ClsCustomers
             ' insert msg into db  
             DvdPostData.clsConnection.CancelBulkQuery()
             clsMsgError.MsgBox(ex.Message)
-            clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Reconduction, ex, customers_id & " : position: " & str)
-            Return True
+            clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Reconduction, ex, customers_id.ToString() & " : position: " & str)
+            Return False
         End Try
 
 
@@ -2237,18 +2248,24 @@ Public Class ClsCustomers
             If dtPayPalRetry.Rows.Count > 0 Then
 
                 For Each drCustomers As DataRow In dtPayPalRetry.Rows
-                    Dim paypalResult As PayPal.PayPalResponse
+                    Dim paypalResult As PayPal.PayPalResponse = Nothing
 
                     customers_id = GetCustomersId(drCustomers)
                     str = 2
                     sql = DvdPostData.ClsPayment.GetUpdatePaymentStatus(GetPaymentId(drCustomers), PaymentOfflineData.StepPayment.WAITING_PAYMENT, PaymentOfflineData.StepPayment.PAYPAL_CHANGED)
                     DvdPostData.clsConnection.ExecuteNonQuery(sql)
                     drCustomers("amount") = DVDPostTools.ClsPrice.FormatPrice(drCustomers("products_price").ToString())
-                    paypalResult = paypal.PayPalSendPayments(drCustomers)
-                    str = 3
-                    Dim message As String
+                    Try
+                        paypalResult = paypal.PayPalSendPayments(drCustomers)
+                    Catch ex1 As Exception
+                        clsMsgError.MsgBox(ex1.Message)
+                        clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Reconduction, ex1, customers_id & " : position: " & str)
+                    End Try
 
-                    If paypalResult.Response.Ack.HasValue Then
+                    str = 3
+                    Dim message As String = "paypalResult.Response.Ack is returned"
+
+                    If Not paypalResult Is Nothing And paypalResult.Response.Ack.HasValue Then
                         str = 4
                         If (paypalResult.Response.Ack.Value = Global.PayPal.PayPalAPIInterfaceService.Model.AckCodeType.SUCCESS) Or (paypalResult.Response.Ack.Value = Global.PayPal.PayPalAPIInterfaceService.Model.AckCodeType.SUCCESSWITHWARNING) Then
                             sql = DvdPostData.clsBatchBankTransfert.UpdateStatusBankTransfert(GetPaymentId(drCustomers), PaymentOfflineData.StepPayment.PAID)
@@ -2658,5 +2675,71 @@ Public Class ClsCustomers
         DvdPostData.clsConnection.ExecuteNonQuery(Sql)
     End Sub
 
+    Public Sub SendDVDNOTReturnedMoreThenMonth(ByVal notifDaysInAdvance As Integer)
+
+        Dim dtCustomers As New DataTable
+        dtCustomers = DvdPostData.clsConnection.FillDataSet(DvdPostData.ClsCustomersData.GetDVDNOTReturnedMoreThenMonth())
+
+        If dtCustomers.Rows.Count = 0 Then Return
+        ' au cas ou on rajouterait les 7 images
+        If clsMsgError.MsgBox("Do you want to send " & dtCustomers.Rows.Count & " mail ", MsgBoxStyle.OkCancel) = MsgBoxResult.Ok Then
+            Dim ok As Boolean
+            For Each rCustomer As DataRow In dtCustomers.Rows
+                ok = clsMail.SendMail(rCustomer, clsMail.Mail.MAIL_DVD_NOTRETURNED_MORE_THEN_MONTH, True)
+                If Not ok Then
+                    clsMsgError.MsgBox("edd mail to customers_id " & rCustomer("customers_id") & " not sent ")
+                End If
+                'Return
+
+
+            Next
+            clsMsgError.MsgBox("sending mails for " & clsMail.Mail.MAIL_EDD_PREPAYMENT_NOTIF & " finished: OK = " & ok.ToString())
+        End If
+    End Sub
+
+    Public Sub SendNewsletter20150930()
+
+        Dim dtCustomers As New DataTable
+        dtCustomers = DvdPostData.clsConnection.FillDataSet(DvdPostData.ClsCustomersData.GetNewsletter20150930())
+
+        If dtCustomers.Rows.Count = 0 Then Return
+        ' au cas ou on rajouterait les 7 images
+        If clsMsgError.MsgBox("Do you want to send " & dtCustomers.Rows.Count & " mail ", MsgBoxStyle.OkCancel) = MsgBoxResult.Ok Then
+            Dim ok As Boolean
+            For Each rCustomer As DataRow In dtCustomers.Rows
+                ok = clsMail.SendMail(rCustomer, clsMail.Mail.MAIL_NEWSLETTER_20150930, True)
+                If Not ok Then
+                    clsMsgError.MsgBox("edd mail to customers_id " & rCustomer("customers_id") & " not sent ")
+                End If
+                'Return
+
+
+            Next
+            clsMsgError.MsgBox("sending mails for " & clsMail.Mail.MAIL_NEWSLETTER_20150930 & " finished: OK = " & ok.ToString())
+        End If
+    End Sub
+
+
+    Public Sub SendVirmanAnnouncement()
+
+        Dim dtCustomers As New DataTable
+        dtCustomers = DvdPostData.clsConnection.FillDataSet(DvdPostData.ClsCustomersData.SendVirmanAnnouncement())
+
+        If dtCustomers.Rows.Count = 0 Then Return
+        ' au cas ou on rajouterait les 7 images
+        If clsMsgError.MsgBox("Do you want to send " & dtCustomers.Rows.Count & " mail ", MsgBoxStyle.OkCancel) = MsgBoxResult.Ok Then
+            Dim ok As Boolean
+            For Each rCustomer As DataRow In dtCustomers.Rows
+                ok = clsMail.SendMail(rCustomer, clsMail.Mail.MAIL_VIRMAN_ANNOUNCEMENT, True)
+                If Not ok Then
+                    clsMsgError.MsgBox("edd mail to customers_id " & rCustomer("customers_id") & " not sent ")
+                End If
+                'Return
+
+
+            Next
+            clsMsgError.MsgBox("sending mails for " & clsMail.Mail.MAIL_NEWSLETTER_20150930 & " finished: OK = " & ok.ToString())
+        End If
+    End Sub
 
 End Class

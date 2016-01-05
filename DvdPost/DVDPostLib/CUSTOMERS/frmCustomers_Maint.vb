@@ -2276,7 +2276,7 @@ Me.SuspendLayout
 '
 'StatusBar1
 '
-Me.StatusBar1.Location = New System.Drawing.Point(0, 864)
+Me.StatusBar1.Location = New System.Drawing.Point(0, 732)
 Me.StatusBar1.Size = New System.Drawing.Size(1262, 10)
 '
 'coldvd_finally_arrived_mail3
@@ -2688,7 +2688,7 @@ Me.GridSon.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView()
 'GridViewSon
 '
 Me.GridViewSon.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.used_date, Me.colSon_id, Me.son_abo_type, Me.points, Me.customers_lastname, Me.customers_firstname})
-Me.GridViewSon.CustomizationFormBounds = New System.Drawing.Rectangle(1382, 593, 218, 205)
+Me.GridViewSon.CustomizationFormBounds = New System.Drawing.Rectangle(1146, 388, 218, 205)
 Me.GridViewSon.GridControl = Me.GridSon
 Me.GridViewSon.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways
 Me.GridViewSon.Name = "GridViewSon"
@@ -3385,7 +3385,7 @@ Me.GridCustServ.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseV
 'gridViewCustServ
 '
 Me.gridViewCustServ.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colcustserv2_id, Me.colcustomers2_id6, Me.collanguage2_id, Me.custserv_cat_name2, Me.colcustomer2_date, Me.colorders2_id1, Me.colproducts2_id2, Me.coldvd2_id, Me.colsubject3, Me.colmessage3, Me.coladmindate3, Me.coladminmessage3, Me.colmessagesent3, coldvd_finally_arrived_mail3})
-Me.gridViewCustServ.CustomizationFormBounds = New System.Drawing.Rectangle(1384, 542, 216, 178)
+Me.gridViewCustServ.CustomizationFormBounds = New System.Drawing.Rectangle(1148, 542, 216, 178)
 Me.gridViewCustServ.GridControl = Me.GridCustServ
 Me.gridViewCustServ.Name = "gridViewCustServ"
 '
@@ -3655,7 +3655,7 @@ Me.GridBankAccountMovements.ViewCollection.AddRange(New DevExpress.XtraGrid.View
 'GridViewBankAccountMovements
 '
 Me.GridViewBankAccountMovements.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colIsmatching, Me.colBankAccountMovements_id, Me.coldate_coda_created, Me.colCodaFilename, Me.colamount2, Me.coldvdpost_bank_account, Me.colcommunicationStr, Me.GridColumn1, Me.colStructuredComm12, Me.colCounterpartdetails, Me.ColCommunication_type, Me.colEntireData, Me.colBankAccountClient, Me.colBankAccount_Customers_id, Me.colBankAccount_Comment})
-Me.GridViewBankAccountMovements.CustomizationFormBounds = New System.Drawing.Rectangle(1113, 176, 327, 364)
+Me.GridViewBankAccountMovements.CustomizationFormBounds = New System.Drawing.Rectangle(1037, 176, 327, 364)
 Me.GridViewBankAccountMovements.GridControl = Me.GridBankAccountMovements
 Me.GridViewBankAccountMovements.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways
 Me.GridViewBankAccountMovements.Name = "GridViewBankAccountMovements"
@@ -4027,7 +4027,7 @@ Me.GridABO.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView()
 '
 Me.GridViewABO.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand4})
 Me.GridViewABO.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.colcustomerid, Me.colAction, Me.colcode_id, Me.colDate, Me.colproduct_id1, Me.colpayment_method, Me.colprivilege_notified, Me.colsite})
-Me.GridViewABO.CustomizationFormBounds = New System.Drawing.Rectangle(1383, 422, 217, 222)
+Me.GridViewABO.CustomizationFormBounds = New System.Drawing.Rectangle(1147, 422, 217, 222)
 Me.GridViewABO.GridControl = Me.GridABO
 Me.GridViewABO.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways
 Me.GridViewABO.Name = "GridViewABO"
@@ -4214,7 +4214,7 @@ Me.GridPayment.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseVi
 'GridViewPayment
 '
 Me.GridViewPayment.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {ColTypePayment, ColPayment_id, ColAmountPay, ColDateAdded, Me.ColLastModified, Me.ColCommunicationPay, Me.ColCustomersID, Me.colPayment_status, ColIdMatching, Me.ColLast_status, Me.colDate_closed, Me.colDomNumber, Me.colabopay_id})
-Me.GridViewPayment.CustomizationFormBounds = New System.Drawing.Rectangle(1273, 240, 327, 364)
+Me.GridViewPayment.CustomizationFormBounds = New System.Drawing.Rectangle(1037, 240, 327, 364)
 Me.GridViewPayment.GridControl = Me.GridPayment
 Me.GridViewPayment.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways
 Me.GridViewPayment.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always
@@ -5782,7 +5782,7 @@ Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseV
 '
 Me.GridViewSearch.Bands.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.GridBand() {Me.GridBand1})
 Me.GridViewSearch.Columns.AddRange(New DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn() {Me.colcustomers_firstname, Me.colcustomers_lastname, Me.colcustomers_email_address, Me.colcustomers_abo, Me.colblack_listed, Me.custserv_customer_date, Me.colentry_postcode, Me.coldomiciliation_number, Me.col2customers_id, Me.colcustomers_language, Me.call_phone, Me.colentry_street_address, Me.phone_activation_id})
-Me.GridViewSearch.CustomizationFormBounds = New System.Drawing.Rectangle(1357, 529, 225, 209)
+Me.GridViewSearch.CustomizationFormBounds = New System.Drawing.Rectangle(1139, 529, 225, 209)
 Me.GridViewSearch.GridControl = Me.GridControl1
 Me.GridViewSearch.Name = "GridViewSearch"
 Me.GridViewSearch.OptionsView.ShowAutoFilterRow = true
@@ -6071,14 +6071,14 @@ Me.tabMain.Controls.Add(Me.btnStopAtReconduction)
 Me.tabMain.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
 Me.tabMain.Name = "tabMain"
 Me.tabMain.ShowCloseButton = DevExpress.Utils.DefaultBoolean.[True]
-Me.tabMain.Size = New System.Drawing.Size(1253, 783)
+Me.tabMain.Size = New System.Drawing.Size(1253, 651)
 Me.tabMain.Text = "General Info"
 '
 'lblNextDVDRemain
 '
 Me.lblNextDVDRemain.Location = New System.Drawing.Point(632, 44)
 Me.lblNextDVDRemain.Name = "lblNextDVDRemain"
-Me.lblNextDVDRemain.Size = New System.Drawing.Size(0, 13)
+Me.lblNextDVDRemain.Size = New System.Drawing.Size(84, 13)
 Me.lblNextDVDRemain.TabIndex = 34
 Me.lblNextDVDRemain.Text = "Next DVD Remain"
 '
@@ -6131,7 +6131,7 @@ Me.lblCpt_reconduction.Text = "0"
 '
 Me.lblNbReconduction.Location = New System.Drawing.Point(16, 20)
 Me.lblNbReconduction.Name = "lblNbReconduction"
-Me.lblNbReconduction.Size = New System.Drawing.Size(0, 13)
+Me.lblNbReconduction.Size = New System.Drawing.Size(109, 13)
 Me.lblNbReconduction.TabIndex = 27
 Me.lblNbReconduction.Text = "Nombre reconduction :"
 '
@@ -6147,7 +6147,7 @@ Me.lblNextPrice.Text = "Next Price"
 '
 Me.lblNextCredit.Location = New System.Drawing.Point(632, 17)
 Me.lblNextCredit.Name = "lblNextCredit"
-Me.lblNextCredit.Size = New System.Drawing.Size(0, 13)
+Me.lblNextCredit.Size = New System.Drawing.Size(55, 13)
 Me.lblNextCredit.TabIndex = 22
 Me.lblNextCredit.Text = "Next Credit"
 '
@@ -6825,7 +6825,7 @@ Me.GridAddress.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseVi
 'GridViewAddress
 '
 Me.GridViewAddress.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.entry_firstname, Me.entry_lastname, Me.entry_street_address, Me.entry_postcode, Me.entry_city, Me.countries_name, Me.cdate_added})
-Me.GridViewAddress.CustomizationFormBounds = New System.Drawing.Rectangle(1382, 593, 218, 205)
+Me.GridViewAddress.CustomizationFormBounds = New System.Drawing.Rectangle(1146, 388, 218, 205)
 Me.GridViewAddress.GridControl = Me.GridAddress
 Me.GridViewAddress.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways
 Me.GridViewAddress.Name = "GridViewAddress"
@@ -7711,7 +7711,7 @@ Me.XTabCustomers.Location = New System.Drawing.Point(0, 57)
 Me.XTabCustomers.Name = "XTabCustomers"
 Me.XTabCustomers.SelectedTabPage = Me.tabMain
 Me.XTabCustomers.ShowTabHeader = DevExpress.Utils.DefaultBoolean.[True]
-Me.XTabCustomers.Size = New System.Drawing.Size(1262, 817)
+Me.XTabCustomers.Size = New System.Drawing.Size(1262, 685)
 Me.XTabCustomers.TabIndex = 35
 Me.XTabCustomers.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.tabSearch, Me.tabMain, Me.tabEDD, Me.tabComment, Me.tabCalls, Me.tabWishList, Me.tabAboHistory, Me.tabOrdersHistor, Me.tabMessagerie, Me.tabCustServ, Me.tabPayment, Me.tabMailHistory, Me.tabSponsorShip, Me.tabPaymentMovements, Me.tabDroselia, Me.tabAboprocess, Me.tabAboProcessOld, Me.tabPurchase, Me.tabCreditHist, Me.tabCompensation, Me.tabProductsRating, Me.tabSuspendedHistory, Me.tabVodView, Me.tabCritiques, Me.tabConfig})
 '
@@ -7881,7 +7881,7 @@ Me.grdEddHistory.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.Base
 '
 'grdViewEddHistory
 '
-Me.grdViewEddHistory.CustomizationFormBounds = New System.Drawing.Rectangle(1273, 240, 327, 364)
+Me.grdViewEddHistory.CustomizationFormBounds = New System.Drawing.Rectangle(1037, 240, 327, 364)
 Me.grdViewEddHistory.GridControl = Me.grdEddHistory
 Me.grdViewEddHistory.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways
 Me.grdViewEddHistory.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always
@@ -8677,7 +8677,7 @@ Me.GridCustPointHistory.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Ba
 'GridViewCustPointHistory
 '
 Me.GridViewCustPointHistory.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.col2date_added, Me.customers_points_history, Me.customers_points_history_action_name, Me.customers_points_history_sub_action_name})
-Me.GridViewCustPointHistory.CustomizationFormBounds = New System.Drawing.Rectangle(1022, 668, 208, 170)
+Me.GridViewCustPointHistory.CustomizationFormBounds = New System.Drawing.Rectangle(1022, 498, 208, 170)
 Me.GridViewCustPointHistory.GridControl = Me.GridCustPointHistory
 Me.GridViewCustPointHistory.Name = "GridViewCustPointHistory"
 Me.GridViewCustPointHistory.OptionsCustomization.AllowColumnResizing = false
@@ -8750,7 +8750,7 @@ Me.GridGift.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView(
 'GridViewGift
 '
 Me.GridViewGift.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.date_attribution, Me.gift_sent, Me.points_customers, Me.gift_sent_date, Me.products_id_gift, Me.gift_name_fr, Me.gift_name_nl, Me.gift_name_en, Me.points_gift})
-Me.GridViewGift.CustomizationFormBounds = New System.Drawing.Rectangle(1022, 668, 208, 170)
+Me.GridViewGift.CustomizationFormBounds = New System.Drawing.Rectangle(1022, 498, 208, 170)
 Me.GridViewGift.GridControl = Me.GridGift
 Me.GridViewGift.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways
 Me.GridViewGift.Name = "GridViewGift"
@@ -8901,7 +8901,7 @@ Me.GridGodFather.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.Base
 'GridviewGodFather
 '
 Me.GridviewGodFather.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.coldate_used, Me.father_id, Me.colfather_abo_type, Me.col2customers_lastname, Me.col2customers_firstname})
-Me.GridviewGodFather.CustomizationFormBounds = New System.Drawing.Rectangle(1382, 593, 218, 205)
+Me.GridviewGodFather.CustomizationFormBounds = New System.Drawing.Rectangle(1146, 388, 218, 205)
 Me.GridviewGodFather.GridControl = Me.GridGodFather
 Me.GridviewGodFather.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways
 Me.GridviewGodFather.Name = "GridviewGodFather"
@@ -9390,7 +9390,7 @@ Me.GridCreditHistory.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.
 'GridViewCreditHistory
 '
 Me.GridViewCreditHistory.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.id, Me.credit, Me.quantity_paid, Me.date_added, Me.action_name, Me.quantity_free, Me.credit_free, Me.Col3Orders_id, Me.ColTotal, Me.ColTotalPaid, Me.colTotalFree})
-Me.GridViewCreditHistory.CustomizationFormBounds = New System.Drawing.Rectangle(1384, 626, 216, 178)
+Me.GridViewCreditHistory.CustomizationFormBounds = New System.Drawing.Rectangle(1148, 448, 216, 178)
 Me.GridViewCreditHistory.GridControl = Me.GridCreditHistory
 Me.GridViewCreditHistory.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways
 Me.GridViewCreditHistory.Name = "GridViewCreditHistory"
@@ -10044,7 +10044,7 @@ Me.GridViewCritiques.OptionsView.ShowFooter = true
 Me.tabConfig.Controls.Add(Me.btnRefreshTab)
 Me.tabConfig.Controls.Add(Me.ChkListConfig)
 Me.tabConfig.Name = "tabConfig"
-Me.tabConfig.Size = New System.Drawing.Size(1253, 783)
+Me.tabConfig.Size = New System.Drawing.Size(1253, 651)
 Me.tabConfig.Text = "Config"
 '
 'btnRefreshTab
@@ -11184,7 +11184,7 @@ Me.GridView3.Name = "GridView3"
 '
 Me.AutoScaleBaseSize = New System.Drawing.Size(5, 13)
 Me.AutoScroll = true
-Me.ClientSize = New System.Drawing.Size(1262, 874)
+Me.ClientSize = New System.Drawing.Size(1262, 742)
 Me.Controls.Add(Me.XTabCustomers)
 Me.Icon = CType(resources.GetObject("$this.Icon"),System.Drawing.Icon)
 Me.Name = "frmCustomers_Maint"

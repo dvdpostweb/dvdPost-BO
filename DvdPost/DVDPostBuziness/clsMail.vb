@@ -58,6 +58,9 @@ Public Class clsMail
         MAIL_REGISTRATION = 600
         MAIL_EDD_PREPAYMENT_NOTIF = 629
         MAIL_VIRMAN = 658
+        MAIL_DVD_NOTRETURNED_MORE_THEN_MONTH = 659
+        MAIL_NEWSLETTER_20150930 = 660
+        MAIL_VIRMAN_ANNOUNCEMENT = 661
 
     End Enum
     Public Shared Function CreateVariableGeneric(ByVal str As String) As String
@@ -273,7 +276,7 @@ Public Class clsMail
                 Dim msgerror As String
                 DvdPostData.clsConnection.CancelBulkQuery()
                 msgerror = "Error mail id : " & mail_id & " lang : " & customers_lang & " " & ex.Message & " email: " & rowcustomers("customers_email_address")
-                clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Email, msgerror)
+                clsMsgError.InsertLogMsg(DvdPostData.clsMsgError.processType.Email, msgerror, rowcustomers("Customers_id"))
                 Return False
                 'Throw ex
             End Try
